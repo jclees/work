@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="stylesheet" type="text/css" href="_css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="_css/style.css" />
+        <script>   
+            (function (doc, win) {//rem布局js
+                var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        if(clientWidth>=640){
+                            docEl.style.fontSize = '100px';
+                        }else{
+                            docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                        }
+                    };
+                if (!doc.addEventListener) return;
+                win.addEventListener(resizeEvt, recalc, false);
+                doc.addEventListener('DOMContentLoaded', recalc, false);
+            })(document, window);
+        </script> 
+    </head>
+    <body>
+       <div class="main_bg">
+           <img src="_images/main_bg.jpg" height="100%" width="100%" alt="" />
+           <div class="main">
+             <div class="mask_box">
+                 <div class="cont">
+                    <div class="result result01 show">
+                        <h3>今天的红包领取已经满额</h3>
+                        <!-- <p>请明天再来 扫码领取吧~</p>  -->
+                    </div>
+                    <div class="result result02 ">
+                        <h3>查无此码</h3>
+                        <!-- <p>请确保输入的验证码正确</p> -->
+                    </div>
+                    <div class="result result03">
+                        <h3>红包已被领取</h3>
+                        <!-- <p>此商品的防伪码为:<span>641564564456</span></p>
+                        <p>于2016年12月1日领取过红包</p> -->
+                    </div>
+                 </div>
+             </div>
+           </div>
+       </div>
+    </body>
+</html>

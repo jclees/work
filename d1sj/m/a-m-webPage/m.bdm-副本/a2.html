@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>aaaaa</title>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="_css/reset.css" />
+    <link href="_css/animate.min.css" rel="stylesheet" />
+    <style>
+        .tabs{
+            width:100%;
+            background:#239bd8;
+            position:relative;
+        }
+        .tabs a{
+            float:left;
+            padding:2% 6%;
+            color:#fff;
+            font-size:16px;
+        }
+        .tabs a.add {
+            font-size: 24px;
+            padding:0;
+            position:absolute;
+            right:2%;
+            top:2%;
+        }
+        .new_body{
+            position:fixed;
+            top:0;
+            left:0;
+            height:100%;
+            width:100%;
+            background:#fff;
+        }
+        .new_body .con_top {
+            width:100%;
+            padding:2% 2%;
+        }
+        .new_body .con_top h1 {
+            font-size: 16px;
+            color: #333;
+            float:left;
+            font-weight:500;
+        }
+        .new_body .con_top .set{
+            font-size:12px;
+            color:#999;
+            float:right;
+        }
+        .new_body ul li {
+            width: calc(100%/4);
+            float: left;
+            position: relative;
+        }
+        .new_body ul li a {
+            font-size: 14px;
+            color: #333;
+            background: #efefef;
+            border-radius: 3px;
+            text-align: center;
+            width:86%;
+            padding: 2% 0;
+            margin:0 auto 8%;
+            display:block;
+        }
+        .new_body ul li .del {
+            width: 16px;
+            height: 16px;
+            background: #ccc;
+            position: absolute;
+            right: 0;
+            top: -8px;
+            color: #fff;
+            font-size: 12px;
+            text-align: center;
+            border-radius: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <section class="tabs clearfix" >
+            <a href="javascript:;" v-for="(item,index) in navList">{{item}}</a>
+            <a class="add" @click="Add">+</a>
+        </section>
+        <section class="new_body" v-show="isShow">
+            <section>
+                <section class="con_top clearfix">
+                    <h1>我的频道</h1>
+                    <a href="javascript:;" class="set" id="ste" v-if="!showDel" @click="SetList(0)">编辑</a>
+                    <a href="javascript:;" class="set" id="ste" v-else @click="SetList(1)">完成</a>
+                </section>
+                <ul class="my_list" id="bar">
+                    <li v-for="(item, index) in navList"><a href="javascript:;">{{item}}<span class="del" @click="Del(item, index)" v-show="showDel">×</span></a></li>
+                </ul>
+            </section>
+            <section>
+                <section class="con_top clearfix">
+                    <h1>推荐频道</h1>
+                </section>
+                <ul class="tj_list">
+                    <li v-for="(item, index) in hotList"><a href="javascript:;" @click="xz(item, index)">{{item}}</a></li>
+                </ul>
+            </section>
+        </section>
+    </div>
+    
+    <!--<script src="_js/jquery-1.8.0.min.js"></script>-->
+    <script src="_js/Sortable.js"></script>
+    <script src="http://cdn.bootcss.com/angular.js/1.2.32/angular.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+    <script>
+
+        
+
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                isShow: false,
+                showDel: false,
+                setText: '编辑',
+                navList: ['头条', '历史'],
+                hotList: ['体育', '游戏', '社会', '娱乐']
+            },
+            mounted: function () {
+                var that = this
+                'use strict';
+
+                var byId = function (id) { return document.getElementById(id); },
+
+                    loadScripts = function (desc, callback) {
+                        var deps = [], key, idx = 0;
+
+                        for (key in desc) {
+                            deps.push(key);
+                        }
+
+                        (function _next() {
+                            var pid,
+                                name = deps[idx],
+                                script = document.createElement('script');
+
+                            script.type = 'text/javascript';
+                            script.src = desc[deps[idx]];
+
+                            pid = setInterval(function () {
+                                if (window[name]) {
+                                    clearTimeout(pid);
+
+                                    deps[idx++] = window[name];
+
+                                    if (deps[idx]) {
+                                        _next();
+                                    } else {
+                                        callback.apply(null, deps);
+                                    }
+                                }
+                            }, 30);
+
+                            document.getElementsByTagName('head')[0].appendChild(script);
+                        })()
+                    },
+
+                    console = window.console;
+
+
+                if (!console.log) {
+                    console.log = function () {
+                        alert([].join.apply(arguments, ' '));
+                    };
+                }
+
+                Sortable.create(byId('bar'), {
+                    group: "words",
+                    animation: 150,
+                    onAdd: function (evt) { },
+                    onUpdate: function (evt) { },
+                    onRemove: function (evt) { },
+                    onStart: function (evt) { },
+                    onEnd: function (evt) { }
+                });
+            },
+            methods: {
+                Add: function () {
+                    var that = this
+                    that.isShow = !that.isShow
+                },
+                SetList: function (status) {
+                    var that = this
+                    that.showDel = !that.showDel
+                },
+                Del: function (item,index) {
+                    var that = this
+                    that.$delete(that.navList, index)  
+                },
+                xz: function (item,index) {
+                    var that = this
+                    that.$set(that.navList, that.navList.length, item,)
+                    that.$delete(that.hotList, index)
+
+                }
+            }
+        })
+
+
+
+        //var data = ['头条', '历史', '体育', '游戏', '社会', '娱乐']
+        //var arr = []
+        //for (var i = 0; i < data.length; i++) {
+        //    $(".tj_list").append('<li><a href="javascript:;">' + data[i]+'</a></li>')
+        //}
+        //function SetList(t) {
+        //    $(t).text('完成').attr('onclick', 'SavaList(this)')
+        //    $(".my_list li").append('<span class="del" onclick="Del(this)">×</span>')
+        //}
+        //function SavaList(t) {
+        //    $(t).text('编辑').attr('onclick', 'SetList(this)')
+        //    $(".my_list li span.del").remove()
+
+        //    $(".my_list li a").each(function () {
+        //        arr.push($(this).text())
+        //    });
+        //    $(".new_body").hide()
+        //    $(".tabs").children('.add').siblings().remove()
+        //    for (var i = 0; i < arr.length; i++) {
+        //        $(".tabs").append('<a href="javascript:;">' + arr[i] + '</a>')
+        //    }
+        //}
+        //function Add() {
+        //    $(".new_body").show()
+        //}
+        //function Del(t) {
+        //    if ($(t).parents('.my_list').children().length <= 1) { return }
+        //    $(t).parents('li').remove()
+        //    $(t).parents('li').removeAttr('class')
+        //    $(".tj_list").append($(t).parents('li').clone().addClass(''))
+        //    $(".tj_list li span.del").remove()
+        //}
+        //$(".tj_list li").live('click', function () {
+        //    $(this).remove()
+        //    $(".my_list").append($(this).clone())
+        //    $("#ste").text() == '完成' ? $(".my_list li").append('<span class="del" onclick="Del(this)">×</span>') : $(".my_list li span.del").remove()
+        //})
+        
+    </script>
+</body>
+</html>

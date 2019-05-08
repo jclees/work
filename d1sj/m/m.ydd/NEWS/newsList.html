@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>首页</title>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="../_css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../_css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../_css/style.css" />
+</head>
+<body>
+    <nav id="menu" class="menu">
+        <a href="../index.html"><span><img src="../_images/side_icon_01.png" /></span>首页</a>
+        <a href="../product.html"><span><img src="../_images/side_icon_02.png" /></span>产品</a>
+        <a href="../NEWS/newsList.html"><span><img src="../_images/side_icon_03.png" /></span>新闻</a>
+    </nav>
+    <main id="panel" class="panel">
+        <header>
+            <h2>盈多多</h2>
+            <a href="javascript:;" class="menu_btn"></a>
+        </header>
+        <section class="news_list">
+            <h3>公告列表</h3>
+            <section>
+                <section>
+                    <a href="News20170622001.html">
+                        <h4 class="new">盈多多2.0版于2017年07月30日正式发布</h4>
+                        <span>发布时间：2017年07月20日</span>
+                        <p>盈多多平台自2017年1月21日上线以来，又迎来了发展史上第二个重大的时刻——2017年7月30日，盈多多2.0版正式上线！新上线版本......</p>
+                    </a>
+                </section>
+            </section>
+        </section>
+    </main>
+    <script src="../_js/jquery-1.8.0.min.js"></script>
+    <script src="../_js/zepto.js"></script>
+    <!-- 侧滑插件 -->
+    <script src="../dist/slideout.min.js"></script>
+    <script type="text/javascript" src="../_js/common.js"></script>
+    <!-- 侧滑插件 -->
+    <script>
+        var imgUrl = '_images/top.png'
+        $(function () {
+            //回到顶部
+            scrollTop(imgUrl);
+            //侧滑菜单
+            slideMenu();
+        })
+    </script>
+</body>
+</html>

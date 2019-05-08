@@ -1,0 +1,142 @@
+html{
+  height: 100%;
+  width: 100%;
+}
+body {
+  background:#03c57d;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+.page{
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+.auto_bg{
+  height: 100%;
+  width: 100%;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center center;
+}
+.main_wrap{
+  background: #fff;
+  border-radius: 0.2rem;
+  margin: 0 auto 0;
+  width: 80%;
+  padding: 0.6rem 0.4rem;
+  box-sizing: border-box;
+}
+.main_wrap .title{
+  font-size: 0.36rem;
+  color: #4c4c4c;
+  margin-bottom: 0.60rem;
+}
+.main_wrap .answers a{
+  font-size: 0.30rem;
+  color: #727171;
+  display: block;
+  border:1px solid #e1e1e1;
+  border-radius: 100px;
+  height: 0.77rem;
+  line-height: 0.77rem;
+  padding-left: 0.50rem;
+  margin-bottom: 0.40rem;
+}
+.main_wrap .answers a.cur{
+  background: #03c57d;
+  color: #fff;
+  border: transparent;
+  box-shadow:rgb(255, 255, 255,.8) 0px 0px 18px inset;
+}
+.loading{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+.loading > img{
+  width: 1.2rem;
+  margin: 0 auto;
+  display: block;
+}
+.loading > p{
+  font-size: 0.3rem;
+  color: #fff;
+  margin-top: 0.36rem;
+}
+
+
+
+
+
+
+
+
+
+.timu{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.timu .timu_hd{
+  font-size: 0.48rem;
+  padding: 0.8rem 0.4rem;
+  text-align: center;
+  color: #333;
+}
+.timu .timu_hd > div{
+  border-radius: 0.2rem;
+  background: #fff;
+  padding: 0.4rem 0;
+}
+.timu .timu_hd > div > div:first-of-type{
+  font-size: 0.4rem;
+  padding-top: 0.1rem;
+  color: #666;
+}
+.timu .timu_bd {
+  padding: 0.8rem 0.4rem;
+  position: relative;
+  /* left: 100%; */
+  width: 100%;
+}
+.timu .timu_bd .item{
+  width: 100%;
+}
+.timu .timu_bd .item > a{
+  display: block;
+  border-radius: 100px;
+  color: #333;
+  font-size: 0.52rem;
+  background: #fff;
+  padding: 0.2rem 0.4rem;
+  margin-bottom: 0.2rem;
+  position: relative;
+  transition: background 0.5s ease;
+}
+.timu .timu_bd .item > a.cur{
+  background: #ccc;
+}
+.timu .timu_bd .item > a.dui::after{
+  content: "√";
+  color: green;
+  font-size: 0.6rem;
+  position: absolute;
+  right: 0.4rem;
+  top: 50%;
+  transform: translate(0,-50%);
+}
+.timu .timu_bd .item > a.cuo::before{
+  content: "x";
+  color: red;
+  font-size: 0.6rem;
+  position: absolute;
+  right: 0.4rem;
+  top: 50%;
+  transform: translate(0,-50%);
+}

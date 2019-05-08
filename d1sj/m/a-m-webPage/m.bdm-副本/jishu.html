@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>111</title>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="_css/reset.css" />
+    <link href="_css/animate.min.css" rel="stylesheet" />
+    <style>
+        body{
+            background:#85cbad;
+        }
+        .keyb{
+            position:fixed;
+            left:0;
+            bottom:0;
+            background:#fff;
+            width:100%;
+        }
+        .keyb a.num {
+            width: calc(100%/3);
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            font-size: 18px;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            display: inline-block;
+        }
+        .keyb a.num:nth-child(3n){
+        border-right:none;
+        }
+        .keyb a.num:nth-child(10) {
+            display: block;
+            margin: 0 auto;
+            border-left: 1px solid #ccc;
+            border-bottom:none;
+        }
+        .main{
+            width:100%;
+            padding:2%;
+        }
+            .main div {
+                width: calc(100%/10);
+                height: 30px;
+                line-height: 30px;
+                float: left;
+                background: #c75353;
+                color: #fff;
+                text-align: center;
+            }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="main clearfix">
+            <div v-for="item in mainNum">{{item}}</div>
+        </div>
+        <div class="keyb" >
+            <p>还有{{s}}s刷新</p>
+            <a class="num" v-for="item in keybNum">{{item}}</a>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                s:null,
+                mainNum:[],
+                keybNum:['1','2','3','4','5','6','7','8','9','0']
+            },
+            mounted: function () {
+                var that = this
+                var a = 500
+                var arr = []
+                for (var i = 0; i < a; i++) {
+                    arr.push(i + 1)
+                }
+                that.mainNum = arr 
+            },
+            methods: {
+              
+            }
+        })
+    </script>
+</body>
+</html>

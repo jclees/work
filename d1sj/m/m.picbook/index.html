@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>首页</title>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/framework7/1.6.5/css/framework7.ios.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/framework7/1.6.5/css/framework7.ios.colors.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/home/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/home/style.css" />
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+            background-image: url(images/home/address_bg.png);
+            background-repeat: repeat;
+            overflow: auto !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layer"></div>
+    <div class="mask">
+        <img src="images/home/layer_con.png" alt="" class="mask_bg">
+        <div class="mask_con">
+            <div class="mask_con_tips">根据年龄发放绘本，以小区为单位共享，请确认年龄以及小区无误。</div>
+            <div class="btn_group clearfix">
+                <a href="javascript:;" class="fl edit_btn"></a>
+                <a href="vipPage.html" class="fl submit_btn"></a>
+            </div>
+        </div>
+    </div>
+    <div class="index_main">
+        <div class="index_main_top">
+            <img src="images/home/banner.png" alt="" class="banner">
+            <img src="images/home/banner_txt.png" alt="" class="banner_txt">
+            <img src="images/home/main_tit_addinfo.png" alt="" class="main_tit_addinfo">
+        </div>
+        <div class="index_form">
+            <img src="images/home/main_formside.png" alt="" class="main_formside side_icon">
+            <img src="images/home/main_formside_02.png" alt="" class="main_formside side_icon2">
+            <form>
+                <div class="index_form_wrap">
+                    <div class="inp_box">
+                        <label>姓名：</label>
+                        <input type="text" placeholder="请输入名字">
+                    </div>
+                    <div class="inp_box">
+                        <label>电话：</label>
+                        <input type="text" placeholder="请输入电话">
+                    </div>
+                    <div class="inp_box">
+                        <label>详细地址：</label>
+                        <input type="text" placeholder="省、市、区" readonly id="location" name="location">
+                    </div>
+                    <div class="inp_box">
+                        <input type="text" placeholder="详细地址">
+                    </div>
+                    <div class="inp_box">
+                        <label>居住小区：</label>
+                        <input type="text" placeholder="请输入居住小区">
+                    </div>
+                    <div class="inp_box">
+                        <label>居住小区：</label>
+                        <input type="text" placeholder="请输入居住小区">
+                    </div>
+                    <div class="inp_box">
+                        <label>居住小区：</label>
+                        <input type="text" placeholder="请输入居住小区">
+                    </div>
+                    <div class="inp_box">
+                        <label>居住小区：</label>
+                        <input type="text" placeholder="请输入居住小区">
+                    </div>
+                    <div class="inp_box">
+                        <label>居住小区：</label>
+                        <input type="text" placeholder="请输入居住小区">
+                    </div>
+                    <div class="inp_box">
+                        <label>居住小区：</label>
+                        <input type="text" placeholder="请输入居住小区">
+                    </div>
+                    <div class="inp_box">
+                        <label>宝宝年龄：</label>
+                        <input type="text" placeholder="请输入宝宝年龄">
+                    </div>
+                    <a href="javascript:;" class="box_center">
+                        <img src="images/home/submit_btn.png" alt="" class="submit_btn" id="submitBtn">
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="js/home/jquery-1.8.0.min.js"></script>
+    <script src="https://cdn.bootcss.com/framework7/1.6.5/js/framework7.min.js"></script>
+    <script src="js/home/regionsObject2.js"></script>
+    <script src="js/home/cityPicker.js"></script>
+    <script>
+        $("#submitBtn").on("click", function () {
+            $(".mask,.layer").show()
+            console.log($("#location").val())
+
+        })
+    </script>
+</body>
+
+</html>

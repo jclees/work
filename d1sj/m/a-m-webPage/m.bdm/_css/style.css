@@ -1,0 +1,143 @@
+.img_wrap{
+    position:relative;
+}
+.img_wrap img{
+    width:100%;
+}
+.img_wrap a{
+    position:absolute;
+}
+.fixed_wrap{
+    position:fixed;
+    bottom:10%;
+    right:3%;
+}
+.fixed_wrap a{
+    width:67px;
+    height:67px;
+    background:url(../_images/fixedUs.png) no-repeat;
+    background-size:cover;
+    display:block;
+}
+.conact_tabs {
+    border: 1px solid #3777db;
+    padding:5px;
+    border-radius:30px;
+    width:83%;
+    margin:10% auto 12%;
+}
+.conact_tabs a {
+    float: left;
+    width: 50%;
+    padding: 3% 6%;
+    background: #fff;
+    color: #3777db;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 30px;
+}
+.conact_tabs a.cur {
+    background: #3777db;
+    color: #fff;
+}
+.contact_infor tr {
+    
+}
+.contact_infor tr td {
+    position:relative;
+}
+.contact_infor tr td:first-of-type {
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+    width: 30%;
+    padding-left: 3%;
+}
+.contact_infor tr td:last-of-type {
+    padding-right: 5%;
+    width:70%;
+}
+.contact_infor tr td input[type="text"] {
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 4% 0 4% 6%;
+    width: 100%;
+    margin:0 0 3% 0;
+}
+.contact_infor tr td input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    position:absolute;
+    left:3%;
+    top:0;
+    overflow:hidden;
+}
+.contact_infor tr td input[type="radio"]:last-of-type{
+    left:24%;
+}
+.contact_infor .icon_radio{
+    width:16px;
+    height:16px;
+    display:inline-block;
+    background:url(../_images/radio.png) no-repeat;
+    background-size:cover;
+    margin: -3px 8px;
+}
+.contact_infor .icon_radio.cur{
+    background:url(../_images/radio_cur.png) no-repeat;
+    background-size:cover;
+}
+.contact_infor tr td select{
+    width:100%;
+    padding: 4% 0 4% 6%;
+    border-radius: 3px;
+    border: 1px solid #999;
+    color:#666;
+    margin:0 0 3% 0;
+}
+.contact_infor tr td textarea{
+    width:100%;
+    height:100px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding:4%;
+    color:#666;
+}
+.msg_wrap p{
+    text-align:center;
+    line-height:21px;
+    display:none;
+}
+.tabs_content > section{
+    display:none;
+}
+.tabs_content > section:first-of-type{
+    display:block;
+}
+.vip_adviser .ewm img{
+    width:60%;
+    margin:0 auto;
+}
+.vip_adviser p {
+    padding-top:20%;
+    font-size: 14px;
+    color: #3777db;
+    text-align:center;
+}
+.mask_box {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    display:none;
+}
+.mask_box .bg {
+    background: rgba(0,0,0,.6);
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    left:0;
+    top:0;
+}

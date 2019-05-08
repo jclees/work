@@ -1,0 +1,216 @@
+body {
+  background: #fff;
+  height: 100%;
+  width: 100%;
+  overflow:hidden;
+}
+.hd-w{
+  padding: 3.5vw 1.3vw 0;
+}
+.hd {
+  background: #ffbf00;
+  padding: 4.7vw 4vw 6vw;
+  border-radius: 2.1vw 2.1vw 0 0;
+  position: relative;
+}
+.hd .topbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  text-align: center;
+}
+.hd .topbar .my_rk{
+  font-size: 12px;
+}
+.hd .topbar .my_rk .cool{
+  font-size: 24px;
+}
+.hd .topbar .nums > div:first-of-type{
+  margin-bottom: 17px;
+}
+
+
+.hd .topbar .user {
+  display: flex;
+  align-items: center;
+}
+
+.hd .topbar .user .img {
+  width: 10.7vw;
+  height: 10.7vw;
+  border-radius: 100%;
+  background: #efefef;
+  margin-right: 1.3vw;
+  flex-shrink: 0;
+}
+
+.hd .topbar .user .name {
+  width: 20vw;
+  display: inline-block;
+  text-align: left;
+}
+
+/* .shadow {
+  position: fixed;
+  left: 50%;
+  top: 210px;
+  width: calc(100% - 58px);
+  transform: translate(-50%,0);
+  height: 10px;
+  z-index: 1;
+   background: #ffbf00;
+  box-shadow: 0 12px 20px rgba(255, 191, 0, 0.2);
+  box-shadow: 0 2px 10px #fcecba;
+} */
+.shadow{
+   position: absolute;
+  left: 50%;
+  bottom:-3.5vw;
+  width: calc(100% - 4.7vw);
+  z-index: 6;
+  transform: translate(-50%,0);
+}
+.hd .arrow {
+  position: absolute;
+  bottom: -3.2vw;
+  width: 0;
+  height: 0;
+  z-index: 2;
+  border-top: 0 solid transparent;
+  border-bottom: 3.6vw solid transparent;
+}
+
+.hd .arrow.arrl {
+  left: 0;
+  border-right: 2.7vw solid #e4a40a;
+}
+
+.hd .arrow.arrr {
+  right: 0;
+  border-left: 2.7vw solid #e4a40a;
+}
+
+.rk_con {
+  width: calc(100% - 7.7vw);
+  margin: 0 auto 0;
+  position: relative;
+  height: 300px;
+  overflow-x: auto;
+}
+
+.rk_con .wrap {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  font-size: 14px;
+  margin: 0 auto;
+  background: #fcfbf6;
+}
+
+.rk_con .wrap .item {
+  flex: 1;
+}
+.rk_con .wrap .item .rk_img{
+  width: 4vw;
+  padding-top: 2.7vw;
+  margin: 0 auto;
+}
+
+.rk_con .wrap .item .tit {
+  padding: 5.3vw 0 2.7vw;
+}
+
+.rk_con .wrap .item > div:not(.tit) {
+  font-size: 12px;
+  border-bottom: 1px solid #e3ebf6;
+  height: 12vw;
+  line-height: 12vw;
+}
+
+.rk_con .user {
+  width: 21.3vw;
+  display: flex;
+  align-items: center;
+}
+
+.rk_con .user .img {
+  width: 8vw;
+  height: 8vw;
+  border-radius: 100%;
+  background: #efefef;
+  margin-right: 1.3vw;
+  flex-shrink: 0;
+}
+
+.rk_con .user .name {
+  width: 13.3vw;
+  display: inline-block;
+}
+
+/* 
+.rk_con .tit {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 28px;
+  background: #fcfbf6;
+  padding: 40px 0 20px;
+}
+
+.rk_con .item {
+  background: #fcfbf6;
+  height: 90px;
+  line-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 24px;
+  border-bottom: 1px solid #e3ebf6;
+}
+
+.rk_con .item .user {
+  width: 160px;
+  display: flex;
+  align-items: center;
+}
+
+.rk_con .item .user .img {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background: lightpink;
+}
+
+.rk_con .item .user .name {
+  width: 100px;
+  display: inline-block;
+} */
+.succ_wrap{
+  padding: 19.3vw 4vw 0 4vw;
+}
+.succ_wrap .succ_img{
+  width: 100px;
+  height:  100px;
+  background-image: url(../../images/home/icon_succ.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+}
+.succ_wrap .tips{
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  padding: 6.7vw 0 26.7vw 0;
+}
+.succ_wrap .to_rk{
+  color: #fff;
+  font-size: 14px;
+  background: #1fb922;
+  border-radius: 5px;
+  width: 100%;
+  padding: 3.3vw 0;
+  display: block;
+  text-align: center;
+}
+

@@ -1,0 +1,107 @@
+body {
+  width: 100%;
+  height: 100%;
+
+}
+#menu{
+   background: -webkit-linear-gradient(#00d1ff, #001990); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#00d1ff, #001990); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#00d1ff, #001990); /* Firefox 3.6 - 15 */
+  background: linear-gradient(#00d1ff, #001990); /* ??????? */
+  position:fixed;
+  right:0;
+  top:0;
+  height:100%;
+  width:100%;
+  z-index:1;
+}
+#menu > div{
+    width: 100%;
+    position: absolute;
+    left: 20%; 
+    top: 10%;
+}
+#menu a{
+    color:#fff;
+    display:block;
+    font-size:16px;
+    /* height: 16%; */
+    width: 64%;
+    padding: 10% 0;
+    /* line-height: 168%; */
+    position:relative;
+    border-bottom:1px solid rgba(255, 255, 255, 0.2);
+}
+#menu a:last-child{
+    border-bottom:none;
+
+}
+#menu a span.icon{
+    width:25px;
+    height:25px;
+    background-image:url(../_images/side_icon_01.png);
+    background-repeat:no-repeat;
+    background-size:cover;
+    display:inline-block;
+    position:absolute;
+    left:33%;
+}
+#menu a span.icon_02{
+    background-image:url(../_images/side_icon_02.png);
+}
+#menu a span.icon_03{
+    background-image:url(../_images/side_icon_03.png);
+}
+#menu a span.icon_04{
+    background-image:url(../_images/side_icon_04.png);
+}
+#menu a span.icon_05{
+    background-image:url(../_images/side_icon_05.png);
+}
+#menu a span.icon_06{
+    background-image:url(../_images/side_icon_06.png);
+}
+#menu a span.act{
+    color:#fff600;
+    -webkit-filter:drop-shadow(0 0 0px #fff600);
+            filter:drop-shadow( 0 0 0px #fff600);
+}
+#menu a span.txt{
+    padding-left:48%;
+}
+.slideout-menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 256px;
+  min-height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  z-index: 0;
+  display: none;
+}
+
+.slideout-menu-left {
+  left: 0;
+}
+
+.slideout-menu-right {
+  right: 0;
+}
+
+.slideout-panel {
+  position: relative;
+  z-index: 1;
+  will-change: transform;
+  min-height: 100vh;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+  overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+  display: block;
+}

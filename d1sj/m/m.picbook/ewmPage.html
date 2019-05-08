@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>小区二维码</title>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/home/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/home/style.css" />
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+            background-image: url(images/home/address_bg.png);
+            background-repeat: repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="index_main">
+        <div class="index_main_top">
+            <img src="images/home/banner.png" alt="" class="banner">
+            <img src="images/home/banner_txt_ewm.png" alt="" class="banner_txt" style="width: 56vw;">
+            <img src="images/home/main_tit_ewm.png" alt="" class="main_tit_addinfo" style="width: 37.2vw;">
+        </div>
+        <div class="index_form">
+            <img src="images/home/main_formside.png" alt="" class="main_formside side_icon">
+            <img src="images/home/main_formside_02.png" alt="" class="main_formside side_icon2">
+            <div class="ewm">
+                <img src="" alt="">
+            </div>
+            <div class="box_center">
+                <a href="javascript:;" class="look_ewmbtn">查看二维码</a>
+            </div>
+            <div class="ewm_tips">注：二维码无效时请加客服微信（xxxxxx）</div>
+            <div class="ewm_tips msgtxt">为方便大家共享绘本，请将本活动告知小区熟悉的其他宝妈。</div>
+        </div>
+    </div>
+    <script src="js/home/jquery-1.8.0.min.js"></script>
+    <script>
+        $(".look_ewmbtn").on("click",function(){
+            $(this).hide()
+            $(".ewm").show()
+        })
+    </script>
+</body>
+
+</html>

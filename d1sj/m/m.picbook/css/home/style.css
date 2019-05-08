@@ -1,0 +1,206 @@
+/********公共样式************/
+body {
+  overflow: auto !important;
+}
+.picker-modal{
+  position: fixed !important;
+}
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+div,img,p{
+  cursor:pointer;
+}
+div,p,a,span,li,dt,dd{
+  word-wrap:break-word;
+}
+.box_center{
+  text-align: center;
+  display:block;
+}
+img{
+  border: none;
+}
+.layer{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  display: none;
+  background: rgba(0, 0, 0, .6);
+}
+.look_ewmbtn {
+  background: #2168e0;
+  background-image: -webkit-linear-gradient(top, #2168e0, #3f87ff);
+  background-image: -moz-linear-gradient(top, #2168e0, #3f87ff);
+  background-image: -ms-linear-gradient(top, #2168e0, #3f87ff);
+  background-image: -o-linear-gradient(top, #2168e0, #3f87ff);
+  background-image: linear-gradient(to bottom, #2168e0, #3f87ff);
+  -webkit-border-radius: 18;
+  -moz-border-radius: 18;
+  border-radius: 18px;
+  text-shadow: 0px 1px 0px #1952af;
+  -webkit-box-shadow: 3px 4px 0px 0px #1952af;
+  -moz-box-shadow: 3px 4px 0px 0px #1952af;
+  box-shadow: 3px 4px 0px 0px #1952af;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 12px 30px 12px 30px;
+  border: solid #3f87ff 1px;
+  text-decoration: none;
+  margin: 10vw auto 10vw;
+  display: inline-block;
+}
+.look_ewmbtn:hover {
+  color: #ffffff;
+  background: #3f87ff;
+  text-decoration: none;
+}
+/* 首页 */
+.index_main{
+  width: 100%;
+}
+.index_main .index_main_top{
+  width:100%;
+  position: relative;
+}
+.index_main .index_main_top .banner{
+  width: 100%;
+}
+.index_main .index_main_top .banner_txt{
+  width: 76.3vw;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top:50%;
+  left: 50%;
+}
+.index_main .main_tit_addinfo{
+  position: absolute;
+  bottom: -23%;
+  left: 8%;
+  width: 35.2vw;
+  z-index: 1;
+}
+.index_main .index_form{
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 4%;
+  background: #fff;
+  position: relative;
+  border: 1.1vw solid #3f87ff;
+  border-top: 12.9vw solid #3f87ff;
+}
+.index_main .index_form .main_formside{
+  position: absolute;
+  bottom: 40%;
+}
+.index_main .index_form .main_formside.side_icon{
+  width:8.4vw;
+  left: -7%;
+}
+.index_main .index_form .main_formside.side_icon2{
+  width:9.2vw;
+  right: -6%;
+  bottom: 10%;
+}
+.index_main .index_form .form_bg{
+  width: 99%
+}
+.index_main .index_form .index_form_wrap{
+  /* position: absolute;
+  left: 50%;
+  top: 18%;
+  width: 80%;
+  transform: translate(-50%,0); */
+  width: 90%;
+  margin:  3vw auto 0;
+}
+.index_main .index_form .inp_box{
+  width: 100%;
+  border-bottom:.3vw solid #3f87ff;
+  color:#3f87ff;
+  font-size: 4.6vw;
+  height: 12.7vw;
+  line-height: 12.7vw;
+}
+.index_main .index_form .inp_box input{
+  font-size:4.6vw;
+  width: 60%;
+  background: transparent;
+}
+.index_main .index_form .submit_btn{
+  width: 31.3vw;
+  display: inline-block;
+  margin: 1vw 0;
+}
+.index_main .index_form .ewm{
+  width: 37.6vw;
+  height: 37.6vw;
+  background: #ffa245;
+  margin: 6vw auto;
+  display: none;
+}
+.index_main .index_form .ewm image{
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.index_main .index_form .ewm_tips{
+  color: #000000;
+  text-align: center;
+  font-size: 4.1vw;
+}
+.index_main .index_form .ewm_tips.msgtxt{
+  width: 94%;
+  font-size: 4.6vw;
+  margin: 6vw auto;
+  text-align: left;
+}
+.mask{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 80.4vw;
+  z-index: 10;
+  display: none;
+  transform: translate(-50%,-50%);
+}
+.mask .mask_bg{
+  width: 80.4vw;
+}
+.mask .mask_con{
+  position: absolute;
+  top: 10%;
+  left: 0;
+  width: 100%;
+}
+.mask .mask_con .mask_con_tips{
+  text-align: center;
+  color: #3f87ff;
+  font-size: 4.5vw;
+  margin: 22% auto 0;
+  width: 80%;
+}
+.mask .mask_con .btn_group {
+  width: 100%;
+}
+.mask .mask_con .btn_group a{
+  width: 38%;
+  margin-top: 46px;
+  height: 14.4vw;
+  display: inline-block;
+  margin-left: 12%;
+}
+.mask .mask_con .btn_group a.submit_btn{
+  margin-left: 7%;
+}
+.sovip_btn{
+  width: 64.5vw;
+  margin: 15% auto;
+}

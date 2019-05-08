@@ -1,0 +1,43 @@
+/********公共样式************/
+.img_wrap{
+    position:relative;
+}
+.img_wrap img{
+    width:100%;
+}
+.my-gallery{
+    position: absolute;
+}
+.my-gallery01{
+    width: 90%;
+    height: 28%;
+    top: 0;
+    left: 50%;
+    margin-left: -45%;
+}
+.my-gallery02{
+    width: 40%;
+    height: 28%;
+    bottom: 11%;
+    left: 11%;
+}
+.my-gallery03{
+    width: 40%;
+    height: 28%;
+    bottom: 11%;
+    right: 11%;
+}
+.my-gallery figure{
+    width:100%;
+    height:100%;
+}
+
+.CN_my-gallery01{
+   height: 44%;
+}
+.CN_my-gallery02{
+    height: 40%;
+}
+.CN_my-gallery03{
+    height: 40%;
+}

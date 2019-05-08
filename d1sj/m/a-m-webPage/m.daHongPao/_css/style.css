@@ -1,0 +1,60 @@
+/********公共样式************/
+.full_img img{
+    width:100%;
+}
+section{
+    position:relative;
+}
+/********公共样式end************/
+.main{
+    padding:2%;
+}
+.main .query_res{
+    width:100%;
+    padding:4% 0;
+    font-size:16px;
+    color:#333;
+    background:#999;
+    text-align:center;
+    border-radius:10px;
+}
+.main h3{
+    text-align:center;
+    font-weight:normal;
+    font-size:16px;
+    padding:4% 0;
+}
+.main .pro_info dt {
+    float: left;
+    width: 50%;
+    padding-top: 6%;
+}
+.main .pro_info dt img{
+    width:100%;
+}
+.main .pro_info dd{
+    float:right;
+    width:50%;
+    padding-left:4%;
+}
+.main .pro_info dd p{
+    line-height:20px;
+}
+.main .intro{
+    padding-top:4%;
+}
+.main .intro p{
+    font-size:14px;
+    line-height:24px;
+}
+/*适配*/
+@media screen and (max-width:330px) {
+    .main .pro_info dt {
+        padding-top: 11%;
+    }
+}
+@media screen and (min-width:380px){
+   .main .pro_info dt {
+        padding-top: 5%;
+    }
+}

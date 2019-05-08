@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>康力基氨基葡萄糖</title>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <link href="_css/swiper.min.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="_css/animate.min.css" />
+        <link rel="stylesheet" type="text/css" href="_css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="_css/common.css" />
+        <link rel="stylesheet" type="text/css" href="_css/style.css" />
+        <style>
+        </style>
+    </head>
+    <body>
+        <nav id="menu" class="menu accordion animated fadeInLeft" style="display:none;">
+            <div>
+                <a href="index.html"><span class="icon act"></span><span class="txt act">产品</span></a>
+                <a href="origin.html"><span class="icon icon_02"></span><span class="txt">溯源</span></a>
+                <!--<a href="therapy.html"><span class="icon icon_03"></span><span class="txt">疗法</span></a>-->
+                <a href="serve.html"><span class="icon icon_04"></span><span class="txt">服务</span></a>
+                <a href="comp.html"><span class="icon icon_05"></span><span class="txt">企业</span></a>
+               <!-- <a href="buy.html"><span class="icon icon_06"></span><span class="txt">购买</span></a>-->
+            </div>
+        </nav>
+        <a href="javascript:;" class="menu_btn animated bounce"></a>
+        <main id="panel" class="panel">
+            <section><img src="_images/index_pic_01.jpg" /></section>
+            <section>
+                <img src="_images/index_pic_04.jpg" />
+            </section>
+            <section style="position:relative;">
+                <img src="_images/index_pic_05.jpg" />
+                <input type="text" name="name" placeholder="请输入四位防伪码" style="position: absolute; top: 8%; left: 8%; width: 50%; height: 54%; background: none; font-size: 16px; "  />
+                <a href="javascript:;" class="query_btn" style="position: absolute; top: 8%;right:0; width: 34%; height: 54%; "></a>
+            </section>
+            <section class="res" style="display:none;"><img src="_images/index_pic_02.jpg" /></section>
+            <section><img src="_images/index_pic_03.jpg" /></section>
+        </main>
+        <section class="fixed_btn">
+            <a href="javascript:;" class="lj_pj">评价<span></span></a>
+            <a href="javascript:;" class="see_pj">查看评价</a>
+        </section>
+        <section class="con_pjs" style="display:none;">
+            <img src="_images/pj_pic_01.jpg" />
+        </section>
+        <input type="text" class="aInpht"  name="name" placeholder=" 请对此商品做出评价！" style="position:absolute; display:none; background:none; left:5%; height:10%; top:10%; width:60%" />
+        <section class="lj_con" style="display:none;">
+            <img src="_images/pj_pic_02.jpg" />
+        </section>
+        <script src="_js/jquery-1.8.0.min.js"></script>
+        <script src="_js/zepto.js"></script>
+        <script src="_js/swiper.jquery.min.js"></script>
+        <!-- 侧滑插件 -->
+        <!--<script src="dist/slideout.min.js"></script>-->
+        <script type="text/javascript" src="_js/common.js"></script>
+        <!-- 侧滑插件 -->
+        <script>
+            $(function () {
+                $(".query_btn").on('click', function () {
+                    $(".res").show();
+                    $(".aInpht").hide()
+                })
+                $(".see_pj").on('click', function () {
+                    $(".panel").hide()
+                    $(".lj_con").hide()
+                    $(".aInpht").hide()
+                    $(".con_pjs").show();
+                })
+                $(".con_pjs").on('click', function () {
+                    $(".con_pjs").hide()
+                    $(".panel").show();
+                    $(".aInpht").hide()
+                })
+
+                $(".lj_pj").on('click', function () {
+                    $(".aInpht").show()
+                    $(".panel").hide();
+                    $(".con_pjs").hide()
+                    $(".lj_con").show()
+                })
+                $(".lj_con").on('click', function () {
+                    $(".panel").show();
+                    $(".aInpht").hide()
+                    $(".con_pjs").hide()
+                    $(".lj_con").hide()
+                })
+            })
+        </script>
+    </body>
+</html>

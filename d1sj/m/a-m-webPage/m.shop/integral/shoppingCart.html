@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>积分兑换</title>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <link rel="stylesheet" type="text/css" href="../_css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="../_css/style.css" />
+        <script type="text/javascript">
+            
+        </script>
+    </head>
+    <body>
+        <header>
+            <a href="integralDh.html" class="icon icon_arrow"></a>
+            <h3>购物车</h3>
+            <a href="javascript:;" class="txt all_btn">全选</a>
+        </header>
+        <div class="cart_con">
+            <div class="product_box clearfix">
+                <div class="check_box">
+                    <span class="check_pic"></span>
+                    <input type="checkbox" />
+                </div>
+                <dl class="clearfix">
+                    <dt><img src="../_images/pord.jpg" alt="" /></dt>
+                    <dd>
+                        <p>这是标题这是标题这是标题这是标题这是标题</p>
+                        <p>500/盒</p>
+                        <p class="clearfix">
+                            <span class="fl"><span class="jf_num">10</span>积分</span>
+                            <span class="select_num">
+                                <span class="icon icon_cut"></span>
+                                <span class="num">2</span>
+                                <span class="icon icon_add"></span>
+                                <span class="icon icon_del"></span>
+                            </span>
+                        </p>
+                    </dd>
+                </dl>
+            </div>
+            <div class="product_box clearfix">
+                <div class="check_box">
+                    <span class="check_pic"></span>
+                    <input type="checkbox" />
+                </div>
+                <dl class="clearfix">
+                    <dt><img src="../_images/pord.jpg" alt="" /></dt>
+                    <dd>
+                        <p>这是标题这是标题这是标题这是标题这是标题</p>
+                        <p>500/盒</p>
+                        <p class="clearfix">
+                            <span class="fl"><span class="jf_num">10</span>积分</span>
+                            <span class="select_num">
+                                <span class="icon icon_cut"></span>
+                                <span class="num">3</span>
+                                <span class="icon icon_add"></span>
+                                <span class="icon icon_del"></span>
+                            </span>
+                        </p>
+                    </dd>
+                </dl>
+            </div>
+            <div class="product_box clearfix">
+                <div class="check_box">
+                    <span class="check_pic"></span>
+                    <input type="checkbox" />
+                </div>
+                <dl class="clearfix">
+                    <dt><img src="../_images/pord.jpg" alt="" /></dt>
+                    <dd>
+                        <p>这是标题这是标题这是标题这是标题这是标题</p>
+                        <p>500/盒</p>
+                        <p class="clearfix">
+                            <span class="fl"><span class="jf_num">10</span>积分</span>
+                            <span class="select_num">
+                                <span class="icon icon_cut"></span>
+                                <span class="num">1</span>
+                                <span class="icon icon_add"></span>
+                                <span class="icon icon_del"></span>
+                            </span>
+                        </p>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="hide_box"></div>
+        <div class="cart_footer">
+            <div class="fl clearfix">
+                <div class="cart">
+                    <span class="order_num">3</span>
+                    <span class="icon_cart"></span>
+                </div>
+                <div class="integral">
+                    <p>所需要积分：<span class="num">300</span></p>
+                    <p>总积分：2500</p>
+                </div>
+            </div>
+            <div class="fr">
+                <a href="fillinOrder.html" class="btn">去结算</a>
+            </div>
+        </div>
+        <!-- 提示 -->
+        <div class="tip_box">
+            <div class="con"><p>请选中产品再删除！！</p><a href="javascript:;" class="btn">确定</a></div>
+        </div>
+        <script type="text/javascript" src="../_js/zepto-1.1.3.min.js"></script>
+        <!-- 提示框.js -->
+        <script type="text/javascript" src="../_js/tip.js"></script>
+        <script type="text/javascript">
+          var pord_num_total = 0;//产品个数初始值为0  个数总和
+          var jf_total = 0;//积分值为0  积分总和
+          $(".icon_add").each(function(index, el) {//循环增加按钮
+              $(this).on('touchend',function(){
+                  // 购物车
+                  $(this).siblings('.icon_cut,.num').show();//显示减号、产品个值
+                  var num = $(this).siblings('.num').text();//产品当前个数
+                  num ++;
+                  $(this).siblings('.num').text(num)//增加后的值赋给'.num'
+
+                  pord_num_total++;//
+                  $(".cart span").show();//购物车里的产品显示
+                  $(".cart .order_num").text(pord_num_total)//购物车产品个数总和
+
+                  //积分
+                  var cur_jf = $(this).parent().siblings().children('.jf_num').text()//当前积分
+                  jf_total=jf_total+parseInt(cur_jf)
+                  $('.integral .num').text(jf_total)
+              })            
+          });
+
+          $(".icon_cut").each(function(index, el) {//循环减号按钮
+              $(this).on('touchend',function(){
+                  var num = $(this).siblings('.num').text();//产品当前个数
+                  
+                  if(num == 1){
+                        console.log(pord_num_total)
+                      return;
+                  }else{
+                      //购物车
+                      num --;
+                      $(this).siblings('.num').text(num);//减去后的值赋给'.num'
+
+                      pord_num_total--;
+                      $(".cart .order_num").text(pord_num_total)//购物车产品个数总和
+
+                      //积分
+                      var cur_jf = $(this).parent().siblings().children('.jf_num').text()//当前积分
+                      jf_total=jf_total-parseInt(cur_jf)
+                      $('.integral .num').text(jf_total)
+
+                  }
+              })
+          });
+        /*全选按钮*/
+        $('.all_btn').on('touchend',function(){
+            if($(this).text() == '取消'){
+                $(this).text('全选')
+                $('.check_box input').prop('checked',false)
+                $('.check_box input').siblings().removeClass('act');
+            }else{
+                $(this).text('取消')
+                $('.check_box input').prop('checked',true)
+                $('.check_box input').siblings().addClass('act');
+            }
+        })
+        /*checked 选中换图*/
+        $('.check_box input').on('touchend',function(){
+            if(!$(this).prop('checked')){
+                $('.check_box input').prop('checked',false)
+                $(this).siblings().addClass('act');
+            }else{
+                $('.check_box input').prop('checked',true)
+                $(this).siblings().removeClass('act');
+            }
+        })
+        /*刪除单个产品*/
+        $('.icon_del').each(function(index, el) {
+            $(this).on('touchend',function(){
+                if($('.check_box input').prop('checked') == false){
+                    tip('请选中产品再删除！！');
+                }else{
+                    $(this).parents('.product_box').remove();
+                }
+            })
+        });
+        </script>
+    </body>
+</html>

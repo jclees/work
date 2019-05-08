@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>企业介绍</title>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link href="_css/swiper.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="_css/animate.min.css" />
+    <link rel="stylesheet" type="text/css" href="_css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="_css/common.css" />
+    <link rel="stylesheet" type="text/css" href="_css/style.css" />
+    <style>
+        body {
+            background: #0e131d;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav id="menu" class="menu accordion animated fadeInLeft" style="display:none;">
+        <div>
+            <a href="index.html"><span class="icon"></span><span class="txt">产品</span></a>
+            <a href="origin.html"><span class="icon icon_02"></span><span class="txt">溯源</span></a>
+            <!--<a href="therapy.html"><span class="icon icon_03"></span><span class="txt">疗法</span></a>-->
+            <a href="serve.html"><span class="icon icon_04"></span><span class="txt">服务</span></a>
+            <a href="comp.html"><span class="icon icon_05 act "></span><span class="txt act">企业</span></a>
+        </div>
+    </nav>
+    <main id="panel" class="panel" style="margin-bottom:44px;">
+        <a href="javascript:;" class="menu_btn animated bounce"></a>
+        <section style="position:relative;"><a href="javascript:;" class="contact" style=" position: absolute; bottom: 7%; left: 32%; width: 38%; height: 12%; "></a><img src="_images/comp_pic_01.jpg" /></section>
+        <section><a href="tel:010-58075449"><img src="_images/comp_pic_02.png" /></a></section>
+    </main>
+    <section class="btn">
+        <a href="http://www.kangliji.com/" target="_blank"><img src="_images/web_btn.jpg" /></a>
+    </section>
+    <section class="mask_bg">
+        <section class="bg"></section>
+        <p>
+            <img src="_images/ewm_ljz.png" />
+            <span>长按图片识别图中二维码</span><br />
+            <span>关注康力基</span>
+        </p>
+    </section>
+    <script src="_js/jquery-1.8.0.min.js"></script>
+    <script src="_js/zepto.js"></script>
+    <script src="_js/swiper.jquery.min.js"></script>
+    <!-- 侧滑插件 -->
+    <script src="dist/slideout.min.js"></script>
+    <script type="text/javascript" src="_js/common.js"></script>
+    <!-- 侧滑插件 -->
+    <script>
+        $('.contact').on('click', function () {
+            $('.mask_bg').show()
+        })
+        $('.mask_bg > .bg').on('click', function () {
+            $(this).parent().hide()
+        })
+    </script>
+</body>
+</html>

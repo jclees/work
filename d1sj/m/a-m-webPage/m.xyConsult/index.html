@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>首页</title>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="_css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="_css/style.css" />
+</head>
+<body>
+    <section class="boot_page">
+        <section>
+            <img src="_images/boot_page_01.jpg" />
+        </section>
+        <section>
+            <img src="_images/boot_page_02.jpg" />
+            <a href="product.html" class="close_btn"></a>
+        </section>
+    </section>
+    <script src="_js/zepto.js"></script>
+    <script>
+        function close() {
+            window.location.href = "product.html";
+        }
+        setInterval(function () {
+            close()
+        }, 5000)
+
+        $('.close_btn').on('touchend', function () {
+            close()
+        })
+    </script>
+</body>
+</html>

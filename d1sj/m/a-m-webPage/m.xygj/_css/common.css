@@ -1,0 +1,218 @@
+/********手风琴菜单样式************/
+.accordion {
+    background: rgba(66, 67, 75, 0.95);
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 100%;
+    height:100%;
+    display: none;
+    z-index: 1;
+ }
+.accordion .link {
+    cursor: pointer;
+    display: block;
+    color: #fff;
+    font-size: 20px;
+     position: relative;
+     -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;  
+    padding: 34px 0;
+}
+.accordion .border_t{
+    border-top:1px solid #666;
+}
+.accordion .border_b{
+    border-bottom:1px solid #666;
+}
+.accordion .link div{
+    width:40%;
+    margin:0 auto;
+}
+.accordion .link p{
+    float:left;
+    padding-left: 10px;
+}
+.accordion .link .icon{
+    width:22px;
+    height:22px;
+    background-repeat:no-repeat;
+    background-size:cover ;
+    float:left;
+    margin-top: 3px;
+}
+.accordion li i {
+    position: absolute;
+    top: 16px;
+    left: 12px;
+    font-size: 18px;
+    color: #595959;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+.accordion li.open .link {
+    color: #ff6969;
+}
+/* .accordion li.open .link .icon{
+    background-image:url(../_images/tit_icon_cur_01.png);
+} */
+
+/**
+ * Submenu
+ -----------------------------*/
+.accordion .submenu {
+    display: none;
+    font-size: 14px;
+ }
+.accordion .submenu li {
+ }
+.accordion .submenu a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    padding-top: 54px;
+    -webkit-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    text-align: center;
+ }
+ .accordion .submenu li:last-child a{
+    padding-bottom: 54px;
+ }
+.accordion .submenu a:hover {
+    background: #ff6969;
+    color: #FFF;
+ }
+.xy_header{
+    height:50px;
+    width:100%;
+}
+.xy_header nav{
+    width:90%;
+    margin:0 auto;
+}
+.xy_header nav h1 a{
+    display:block;
+    width:106px;
+    height:28px;
+    margin-top: 12px;
+    float:left;
+    background: url(../_images/logo.png) no-repeat;
+    background-size: cover;  
+}
+.xy_header nav .fr{
+    padding-top:17px;
+}
+.xy_header nav .about_btn{
+    float:left;
+    font-size: 14px;
+    color:#666;
+    vertical-align:middle;  
+}
+.xy_header nav .menu_btn{
+    width:19px;
+    height:15px;
+    float:left;
+    background: url(../_images/menu_btn.png) no-repeat;
+    background-size: 100% 100%;
+    margin-left: 10px;
+    margin-top: 2px;
+}
+.xy_header nav .menu_btn_02{
+    width:18px;
+    height:18px;
+    float:left;
+    background: url(../_images/menu_btn_02.png) no-repeat;
+    background-size: 100% 100%;
+    margin-left: 10px;
+    margin-top: 0;
+}
+.xy_footer{
+    width:100%;
+    padding:8% 0;
+}
+.xy_footer p{
+    text-align: center;
+    font-size:13px;
+}
+@media screen and (min-width:330px){
+    /********手风琴菜单样式************/
+    .accordion {
+        top: 56px;
+    }
+    .xy_header{
+        height:57px;
+    }
+    .xy_header nav h1 a{
+        width:119px;
+        height:32px;
+        margin-top: 14px;
+    }
+    .xy_header nav .fr{
+        padding-top: 20px;
+    }
+    .xy_header nav .about_btn{
+        font-size: 16px;
+    }
+    .xy_header nav .menu_btn{
+        width:23px;
+        height:16px;
+        margin-top: 1px;
+    }
+    .xy_header nav .menu_btn_02{
+        width:18px;
+        height:18px;
+        margin-top: 0;
+    }
+}
+@media screen and (min-width:380px){
+    /********手风琴菜单样式************/
+    .accordion {
+        top: 63px;
+    }
+    .xy_header{
+        height:63px;
+    }
+    .xy_header nav h1 a{
+        width:136px;
+        height:36px;
+        margin-top:16px;
+    }
+    .xy_header nav .fr{
+        padding-top: 22px;
+    }
+    .xy_header nav .about_btn{
+        font-size: 16px;
+    }
+    .xy_header nav .menu_btn{
+        width:21px;
+        height:19px;
+        margin-top: 2px;
+        margin-left: 20px;  
+    }
+    .xy_header nav .menu_btn_02{
+        width:20px;
+        height:20px;
+        margin-top: 2px;
+        margin-left: 20px; 
+    }
+    .accordion .link {
+        font-size: 23px;
+        padding: 38px 0;
+    }
+    .accordion .submenu a {
+        font-size: 18px;
+        padding-top: 56px;
+     }
+     .accordion .submenu li:last-child a{
+        padding-bottom: 56px;
+     }
+     .accordion .link .icon{
+         width:26px;
+         height:26px;
+         margin-top: 2px;
+     }
+}

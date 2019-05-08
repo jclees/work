@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>用户信息</title>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <link rel="stylesheet" type="text/css" href="../_css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="../_css/style.css" />
+        <!-- <script type="text/javascript" src="../_js/rem.js"></script> -->
+        
+        <script type="text/javascript">
+            (function () {
+                document.addEventListener('DOMContentLoaded', function () {
+                    var html = document.documentElement;
+                    var windowWidth = html.clientWidth;
+                    html.style.fontSize = windowWidth / 6.4 + 'px';
+                    // 等价于html.style.fontSize = windowWidth / 640 * 100 + 'px';
+                }, false);
+            })();
+        </script>
+        <style type="text/css">
+             html {font-size: 62.5%;}
+            /*body {1.4 × 10px = 14pxbackground: #f8f8f8;} */
+            h1 { font-size: 0.36rem;/*2.4 × 10px = 24px*/ 
+                width:1.4rem;
+                height: 1.4rem;
+                background: #ccf;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <header>
+            <a href="../integral/getIntegral.html" class="icon icon_arrow"></a>
+            <h3>我的</h3>
+        </header>
+        <ul class="user_hd clearfix">
+            <li><img src="../_images/func_02.jpg" alt="" /></li>
+            <li>王思聪</li>
+            <li>积分：155</li>
+        </ul>
+        <ul class="user_list">
+            <li>
+                <a href="javascript:;" class="clearfix">
+                    <span class="icon icon_info_01"></span><span class="fl">绑定后和积分通用</span>
+                </a>
+            </li>
+            <li>
+                <a href="order.html" class="clearfix">
+                    <span class="icon icon_info_02"></span><span class="fl">我的订单</span>
+                </a>
+            </li>
+            <li>
+                <a href="integral.html" class="clearfix">
+                    <span class="icon icon_info_03"></span><span class="fl">我的积分</span>
+                </a>
+            </li>
+            <li>
+                <a href="address.html" class="clearfix">
+                    <span class="icon icon_info_04"></span><span class="fl">收货地址</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;" class="clearfix">
+                    <span class="icon icon_info_05"></span><span class="fl">帮助中心</span>
+                </a>
+            </li>
+        </ul>
+        <h1></h1>
+
+    </body>
+</html>

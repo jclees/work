@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>新增地址</title>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <link rel="stylesheet" type="text/css" href="../_css/sm.css" />
+        <link rel="stylesheet" type="text/css" href="../_css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="../_css/style.css" />
+        <style type="text/css">
+            body{
+                background: #fff;
+            }
+            /* switch 按钮 */
+            .mui-switch {
+              width: 52px;
+              height: 31px;
+              position: relative;
+              border: 1px solid #dfdfdf;
+              background-color: #fdfdfd;
+              box-shadow: #dfdfdf 0 0 0 0 inset;
+              border-radius: 20px;
+              border-top-left-radius: 20px;
+              border-top-right-radius: 20px;
+              border-bottom-left-radius: 20px;
+              border-bottom-right-radius: 20px;
+              background-clip: content-box;
+              display: inline-block;
+
+              position:absolute;
+              top: 17%;
+              right: 4%;
+              
+              -webkit-appearance: none;
+              user-select: none;
+              outline: none; }
+              .mui-switch:before {
+                content: '';
+                width: 29px;
+                height: 29px;
+                position: absolute;
+                top: 0px;
+                left: 0;
+                border-radius: 20px;
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+                background-color: #fff;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); }
+              .mui-switch:checked {
+                border-color: #64bd63;
+                box-shadow: #64bd63 0 0 0 16px inset;
+                background-color: #64bd63; }
+                .mui-switch:checked:before {
+                  left: 21px; }
+              .mui-switch.mui-switch-animbg {
+                transition: background-color ease 0.4s; }
+                .mui-switch.mui-switch-animbg:before {
+                  transition: left 0.3s; }
+                .mui-switch.mui-switch-animbg:checked {
+                  box-shadow: #dfdfdf 0 0 0 0 inset;
+                  background-color: #64bd63;
+                  transition: border-color 0.4s, background-color ease 0.4s; }
+                  .mui-switch.mui-switch-animbg:checked:before {
+                    transition: left 0.3s; }
+              .mui-switch.mui-switch-anim {
+                transition: border cubic-bezier(0, 0, 0, 1) 0.4s, box-shadow cubic-bezier(0, 0, 0, 1) 0.4s; }
+                .mui-switch.mui-switch-anim:before {
+                  transition: left 0.3s; }
+                .mui-switch.mui-switch-anim:checked {
+                  box-shadow: #64bd63 0 0 0 16px inset;
+                  background-color: #64bd63;
+                  transition: border ease 0.4s, box-shadow ease 0.4s, background-color ease 1.2s; }
+                  .mui-switch.mui-switch-anim:checked:before {
+                    transition: left 0.3s; }
+        </style>
+    </head>
+    <body>
+        <header>
+            <a href="address.html" class="icon icon_arrow"></a>
+            <h3>新增地址</h3>
+        </header>
+        <div class="add_address_list">
+            <p><span>收货人</span><input type="text" placeholder="收货人" id="name" /></p>
+            <p><span>手机号</span><input type="text" placeholder="手机号" id="phone"/></p>
+            <p><span>所在地区</span>
+
+            <select>
+              <option value ="volvo">北京</option>
+              <option value ="volvo">北京</option>
+              <option value ="volvo">北京</option>
+            </select>
+            <select>
+              <option value ="volvo">北京</option>
+              <option value ="volvo">北京</option>
+              <option value ="volvo">北京</option>
+            </select>
+            <select>
+              <option value ="volvo">北京</option>
+              <option value ="volvo">北京</option>
+              <option value ="volvo">北京</option>
+            </select>
+            <select>
+              <option value ="volvo">北京</option>
+              <option value ="volvo">北京</option>
+              <option value ="volvo">北京</option>
+            </select>
+            </p>
+            <p><span>详细地址</span><input type="text" id="detailAdd" /></p>
+            <p><span>设置默认地址</span><input class="mui-switch mui-switch-anim" type="checkbox" checked></p>
+        </div>
+        <a href="javascript:;" class="address_submit">保 存</a>
+        <!-- 提示 -->
+        <div class="tip_box">
+            <div class="con"><p>请选中产品再删除！！</p><a href="javascript:;" class="btn">确定</a></div>
+        </div>
+        <script type="text/javascript" src="../_js/zepto-1.1.3.min.js"></script>
+        <script type="text/javascript" src="../_js/tip.js"></script>
+        <script type="text/javascript">
+             //验证
+             $('.address_submit').on('touchend',function(){
+              var name = $('#name').val(),
+                   phone = $('#phone').val(),
+                   city = $('#city-picker').val(),
+                   detailAdd = $('#detailAdd').val();
+
+                 if(name == '' || name == undefined){
+                   tip('请填写正确的收货人姓名!')
+                   return;
+                 }else if(!(/^1[34578]\d{9}$/.test(phone)) || phone == '' || phone == undefined ){
+                   tip('请填写正确的手机号!')
+                   return;
+                 }else if(city == '' || city == undefined){
+                   tip('请填写所在地区！')
+                   return;
+                 }else if(detailAdd == '' || detailAdd == undefined){
+                   tip('请填写详细收货地址！')
+                   return;
+                 }else{
+                  $(this).prop('href','address.html')
+                 }
+             })
+        </script>
+    </body>
+
+</html>

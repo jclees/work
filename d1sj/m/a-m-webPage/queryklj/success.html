@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <link rel="stylesheet" type="text/css" href="_css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="_css/style.css" />
+        <script>   
+            (function (doc, win) {//rem布局js
+                var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        if(clientWidth>=640){
+                            docEl.style.fontSize = '100px';
+                        }else{
+                            docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                        }
+                    };
+                if (!doc.addEventListener) return;
+                win.addEventListener(resizeEvt, recalc, false);
+                doc.addEventListener('DOMContentLoaded', recalc, false);
+            })(document, window);
+        </script> 
+    </head>
+    <body>
+        <div class="i_banner"><img id="banner" src="_images/banner3.jpg" alt="" /></div>
+        <div class="i_pro_intro succ">
+            <p>康力基氨基葡萄糖片</p>
+            <p>您所查询的商品第<span>一</span>次查询，请放心购买。</p>
+            <p>首次查询时间为<span>2016/11/03</span>  地点：<span>北京</span></p>
+        </div>
+        <img src="_images/tit1.jpg" height="100%" width="100%" alt="" />
+        <table class="details_box" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="first">批准文号：</td>
+                    <td class="last">国食健字G20200757</td>
+                </tr>
+                <tr>
+                    <td class="first">获得奖项：</td>
+                    <td class="last">2014年度最受消费者信赖关节保健品牌，CCTV央视网商城推荐品牌</td>
+                </tr>
+                <tr>
+                    <td class="first">标志性成分：</td>
+                    <td class="last">D-氨基葡萄糖硫酸钾盐</td>
+                </tr>
+                <tr>
+                    <td class="first">生产日期：</td>
+                    <td class="last">2016-06-30</td>
+                </tr>
+                <tr>
+                    <td class="first">有效期：</td>
+                    <td class="last">2018-06-29</td>
+                </tr>
+            </tbody>
+        </table>
+        <img src="_images/tit2.jpg" height="100%" width="100%" alt="" />
+        <table class="details_box" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="first">标志性成分原产地：</td>
+                    <td class="last">浙江</td>
+                </tr>
+                <tr>
+                    <td class="first">原料提取：</td>
+                    <td class="last">天然无污染海域生物</td>
+                </tr>
+                <tr>
+                    <td class="first">纯度：</td>
+                    <td class="last">99%</td>
+                </tr>
+                <tr>
+                    <td class="first">执行标准：</td>
+                    <td class="last">美国药典USP31版标准</td>
+                </tr>
+            </tbody>
+        </table>
+        <img src="_images/tit3.jpg" height="100%" width="100%" alt="" />
+        <table class="details_box" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="first">原产地：</td>
+                    <td class="last">北京</td>
+                </tr>
+                <tr>
+                    <td class="first">生产车间：</td>
+                    <td class="last">北京海德瑞制药有限公司保健品GMP车间</td>
+                </tr>
+                <tr>
+                    <td class="first">执行标准：</td>
+                    <td class="last">Q/FTBJK0001-2014%</td>
+                </tr>
+                <tr>
+                    <td class="first">生产许可：</td>
+                    <td class="last">（京药）卫食证字（2011）第110000-JS0017号</td>
+                </tr>
+                <tr>
+                    <td class="first">GMP证书编号：</td>
+                    <td class="last">京L0556</td>
+                </tr>
+            </tbody>
+        </table>
+        <img src="_images/tit4.jpg" height="100%" width="100%" alt="" />
+        <table class="details_box" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="first">研发机构：</td>
+                    <td class="last">北京药科大学分析测试中心</td>
+                </tr>
+                <tr>
+                    <td class="first">审批机构：</td>
+                    <td class="last">国家食品药品监督管理总局</td>
+                </tr>
+                <tr>
+                    <td class="first">第三方检验机构：</td>
+                    <td class="last">北京市疾控中心，北京市食品药品检定所，谱尼测试</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="i_ewm_gz">
+            <img src="_images/ewn_gz.jpg" height="100%" width="100%" alt="" />
+        </div>
+    </body>
+</html>

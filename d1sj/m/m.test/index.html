@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css" />
+    <link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css" />
+    <style>
+    </style>
+</head>
+
+<body class="body">
+    <!-- <div class="bol_box">
+        <div class="bol_img1">
+            <img src="images/bol_01.png" alt="">
+            <img src="images/bol_01.png" alt="">
+        </div>
+        <div class="bol_img2">
+            <img src="images/bol_02.png" alt="">
+            <img src="images/bol_02.png" alt="">
+        </div>
+        <div class="bol_img3">
+            <img src="images/bol_03.png" alt="">
+            <img src="images/bol_03.png" alt="">
+        </div>
+    </div> -->
+    <!-- <div class="bol_box">
+        <div class="bol_img2">
+            <img src="images/wave_02.png" alt="">
+            <img src="images/wave_02.png" alt="">
+        </div>
+        <div class="bol_img1">
+            <img src="images/wave_01.png" alt="">
+            <img src="images/wave_01.png" alt="">
+        </div>
+    </div> -->
+    <!-- <div class="wrap">
+        <div class="inp_box">
+            <input type="text" placeholder="标题" id="inp1" onchange="newInp.change(this, 1)">
+            <input type="text" placeholder="内容" id="inp2" onchange="newInp.change(this, 2)">
+        </div>
+    </div>
+    <button onclick="newInp.add()">添加</button> -->
+
+    <!-- <img src="images/01.png" alt="" class="img">
+    <div class="ld">
+        <img src="images/22.png" alt="" class="img2">
+    </div> -->
+    <div class="ld_main">
+        <p>login...</p>
+    </div>
+    <div class="anim-coin"></div>
+    <script src="js/jquery-1.8.0.min.js"></script>
+    <script src="js/loadImg.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/swiper/js/swiper.min.js"></script>
+    <script src="js/particles.min.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+
+        let s = 0;
+        let timer = setInterval(function () {
+                parseInt(s += (178/2))
+                if (s == (1246/2)) {
+                    s = 0
+                    return
+                }
+                $(".ld_main").css("background-position-x", "-" + s + "px")
+            }, 200)
+
+
+        $(".anim-coin").hover(function () {
+            let s = 0;
+            let timer = setInterval(function () {
+                parseInt(s += 70)
+                if (s == 560) {
+                    s = 0
+                    return
+                }
+                $(".anim-coin").css("background-position-x", "-" + s + "px")
+            }, 100)
+        }, function () {
+        })
+
+
+
+        
+        // var inp1val, inp2val;
+
+        // function change(t, i) {
+        //     if (i == 1) {
+        //         inp1val = $(t).val()
+        //     } else {
+        //         inp2val = $(t).val()
+        //     }
+        // }
+        // function add() {
+        //     if (inp1val == '' || inp1val == void 0) {
+        //         return
+        //     }
+        //     var newInp = '<div class="inp_box"><input type="text" placeholder="1111" onchange="change(this,1)"><input type="text" placeholder="2222" id="inp1" onchange="change(this,2)"></div>'
+        //     $(".wrap").append(newInp)
+        //     inp1val = ""
+        //     inp2val = ""
+        // }
+
+
+        function NewInp() {
+            this.inp1val = ""
+            this.inp2val = ""
+        }
+        NewInp.prototype = {
+            add: function () {
+                if (this.inp1val == '' || this.inp1val == void 0) {
+                    return
+                }
+                var newInp = '<div class="inp_box"><input type="text" placeholder="1111" onchange="newInp.change(this, 1)"><input type="text" placeholder="2222" id="inp1" onchange="newInp.change(this, 2)"></div>'
+                $(".wrap").append(newInp)
+                this.inp1val = ""
+                this.inp2val = ""
+            },
+            change: function (t, i) {
+                if (i == 1) {
+                    this.inp1val = $(t).val()
+                } else {
+                    this.inp2val = $(t).val()
+                }
+            }
+        }
+        // var newInp = new NewInp();
+
+
+
+
+    </script>
+
+</body>
+
+</html>

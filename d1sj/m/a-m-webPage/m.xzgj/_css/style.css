@@ -1,0 +1,327 @@
+body{
+    background: #fff;
+}
+/********手风琴菜单样式************/
+.accordion {
+    background: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 40%;
+    display: none;
+    z-index: 1;
+ }
+.accordion .link {
+    cursor: pointer;
+    display: block;
+    color: #666;
+    padding:10%;
+    font-size: 16px;
+    border-bottom: 1px solid #CCC;
+     position: relative;
+     -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;  
+}
+.accordion li i {
+    position: absolute;
+    top: 16px;
+    left: 12px;
+    font-size: 18px;
+    color: #595959;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+.accordion li.open .link {
+    color: #43b5de;
+}
+/**
+ * Submenu
+ -----------------------------*/
+.accordion .submenu {
+    display: none;
+    font-size: 14px;
+ }
+.accordion .submenu li {
+    border-bottom: 1px solid #ccc;
+ }
+.accordion .submenu a {
+    display: block;
+    text-decoration: none;
+    color: #666;
+    font-size: 12px;
+    padding: 10% 10% 10% 15%;
+    -webkit-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+ }
+.accordion .submenu a:hover {
+    background: #43b5de;
+    color: #FFF;
+ }
+.xz_header{
+    height:50px;
+    width:100%;
+    position: relative;
+}
+.xz_header nav{
+    width:90%;
+    margin:0 auto;
+}
+.xz_header nav h1 a{
+    display:block;
+    width:124px;
+    height:31px;
+    margin-top: 12px;
+    float:left;
+    background: url(../_images/logo.png) no-repeat;
+    background-size: cover;  
+}
+.xz_header nav .fr{
+    padding-top:17px;
+}
+.xz_header nav .about_btn{
+    float:left;
+    font-size: 14px;
+    color:#666;
+    vertical-align:middle;  
+}
+.xz_header nav .menu_btn{
+    width:19px;
+    height:15px;
+    float:left;
+    background: url(../_images/menu_btn.png) no-repeat;
+    background-size: 100% 100%;
+    margin-left: 10px;
+    margin-top: 2px;
+}
+.xz_footer{
+    width:100%;
+    border-top: 1px solid #999;
+}
+.xz_footer p{
+    text-align: center;
+    padding:8% 0;
+    font-size:12px;
+}
+
+/********首页样式************/
+.xz_banner{
+    width:100%;
+    position: relative;
+}
+.xz_banner img{
+    width:100%;
+}
+.xz_banner .banner_txt,.xz_banner .add_banner_txt{
+    position: absolute;
+    left:50%;
+    top: 50%;
+    text-align: center;
+    width:100%;
+    color:#fff;
+    -webkit-transform:translate3d(-50%,-50%,0);
+    transform:translate3d(-50%,-50%,0);
+}
+.xz_banner .banner_txt{
+   top: 87%; 
+}
+.xz_banner .banner_txt h2{
+    font-size: 27px;
+}
+.xz_banner .banner_txt p{
+    font-size: 12px;
+    padding:14% 0 8% 0;
+    line-height: 20px;
+}
+.xz_banner .banner_txt .contact_btn,.add_banner_txt .map_btn{
+    font-size: 12px;
+    display:inline-block;
+    padding: 3% 11%;   
+    background: #ee8a29;
+    margin: 0 auto;
+    color:#fff;
+}
+/********地址样式************/
+.xz_banner .add_banner_txt{
+    width:76%;
+    text-align: left;
+}
+.add_banner_txt h2{
+    font-size: 16px;
+    font-weight: normal;
+}
+.add_banner_txt h3{
+    font-size: 12px;
+    font-weight: normal;
+    padding:8% 0;
+}
+.add_banner_txt p{
+    font-size: 12px;
+    line-height: 20px;
+}
+.add_banner_txt .map_btn{
+    padding: 3% 9%;
+    margin-top: 7%;
+    font-size: 12px;   
+}
+/********关于我们样式************/
+.about_con{
+    width:85%;
+    margin:0 auto;
+    color:#666;
+}
+h2{
+    width:100%;
+}
+h2 img{
+    width:100%;
+}
+.about_con p{
+    color:#666;
+    font-size: 12px;
+    line-height: 20px;
+    margin-bottom: 3%;
+}
+.about_con dl dt img{
+   margin:0 auto;
+}
+.about_con dl dd{
+    text-align: center;
+}
+/********产品介绍样式************/
+.prt_con{
+    width:85%;
+    margin:0 auto;
+    color:#666;
+}
+.prt_con p{
+    font-size: 12px;
+    line-height: 20px;
+    margin-bottom: 3%;
+}
+.prt_con dl dt img{
+   margin:0 auto;
+}
+.prt_con dl dd{
+    text-align: center;
+}
+.prt_con h3{
+    color:#43b5de;
+    font-size: 14px;
+    padding:3% 0;
+}
+@media screen and (min-width:330px){
+    /********手风琴菜单样式************/
+    .accordion {
+        top: 56px;
+    }
+    .xz_header{
+        height:57px;
+    }
+    .xz_header nav h1 a{
+        width:143px;
+        height:36px;
+        margin-top: 14px;
+    }
+    .xz_header nav .fr{
+        padding-top: 20px;
+    }
+    .xz_header nav .about_btn{
+        font-size: 16px;
+    }
+    .xz_header nav .menu_btn{
+        width:23px;
+        height:16px;
+        margin-top: 1px;
+    }
+    /********首页样式************/
+    .xz_banner .banner_txt h2{
+        font-size: 32px;
+    }
+    .xz_banner .banner_txt p{
+        font-size: 14px;
+    }
+    .xz_banner .banner_txt .contact_btn{
+        font-size: 14px;
+    }
+    /********地址样式************/
+    .add_banner_txt h2{
+        font-size: 18px;
+    }
+    .add_banner_txt h3{
+        font-size: 14px;
+    }
+    .add_banner_txt p{
+        font-size: 14px;
+    }
+    .add_banner_txt .map_btn{
+        font-size: 14px;   
+    }
+    /********关于我们样式************/
+    .about_con p{
+        font-size: 14px;
+    }
+    /********产品介绍样式************/
+    .prt_con p{
+        font-size: 14px;
+    }
+}
+@media screen and (min-width:380px){
+    /********手风琴菜单样式************/
+    .accordion {
+        top: 63px;
+    }
+    .xz_header{
+        height:63px;
+    }
+    .xz_header nav h1 a{
+        width:157px;
+        height:39px;
+        margin-top:16px;
+    }
+    .xz_header nav .fr{
+        padding-top: 22px;
+    }
+    .xz_header nav .about_btn{
+        font-size: 16px;
+    }
+    .xz_header nav .menu_btn{
+        width:21px;
+        height:19px;
+        margin-top: 2px;
+        margin-left: 20px;  
+    }
+    /********首页样式************/
+    .xz_banner .banner_txt h2{
+        font-size: 36px;
+    }
+    .xz_banner .banner_txt p{
+        font-size: 16px;
+    }
+    .xz_banner .banner_txt .contact_btn{
+        font-size: 16px;
+    }
+    /********地址样式************/
+    .add_banner_txt h2{
+        font-size: 20px;
+    }
+    .add_banner_txt h3{
+        font-size: 16px;
+    }
+    .add_banner_txt p{
+        font-size: 16px;
+    }
+    .add_banner_txt .map_btn{
+        font-size: 16px;   
+    }
+    /********关于我们样式************/
+    .about_con p{
+        font-size: 16px;
+    }
+    /********产品介绍样式************/
+    .prt_con p{
+        font-size: 16px;
+    }
+}

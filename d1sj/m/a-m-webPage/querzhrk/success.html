@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <link rel="stylesheet" type="text/css" href="_css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="_css/style.css" />
+        <script>   
+            (function (doc, win) {//rem布局js
+                var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        if(clientWidth>=640){
+                            docEl.style.fontSize = '100px';
+                        }else{
+                            docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                        }
+                    };
+                if (!doc.addEventListener) return;
+                win.addEventListener(resizeEvt, recalc, false);
+                doc.addEventListener('DOMContentLoaded', recalc, false);
+            })(document, window);
+        </script> 
+    </head>
+    <body>
+        <div class="i_banner"><img src="_images/banner.jpg" alt="" /></div>
+        <div class="i_pro_intro succ">
+            <p>康力基氨基葡萄糖片</p>
+            <p>您所查询的商品第<span>一</span>次查询，请放心购买。</p>
+        </div>
+        <img src="_images/tit1.jpg" height="100%" width="100%" alt="" />
+        <table class="box" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="first">产品品牌</td>
+                    <td class="last">宏七</td>
+                </tr>
+                <tr>
+                    <td class="first">产品名称</td>
+                    <td class="last">女性款、血管款、关节炎款</td>
+                </tr>
+                <tr>
+                    <td class="first">产品规格</td>
+                    <td class="last">0.5/粒 x 40粒/盒 x 6盒</td>
+                </tr>
+            </tbody>
+        </table>
+        <img src="_images/logo.jpg" height="100%" width="100%" alt="" />
+        <img src="_images/tit2.jpg" height="100%" width="100%" alt="" />
+        <table class="box" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="first">原 产 地</td>
+                    <td class="last">北京</td>
+                </tr>
+                <tr>
+                    <td class="first">生产企业</td>
+                    <td class="last">北京航洋健康科技有限公司</td>
+                </tr>
+                <tr>
+                    <td class="first">执行标准</td>
+                    <td class="last">Q/NCS0016S-2016</td>
+                </tr>
+                <tr>
+                    <td class="first">生产许可证号</td>
+                    <td class="last">（京食药）卫食证字（2006）第110000-JS0118</td>
+                </tr>
+            </tbody>
+        </table>
+        <img src="_images/logo.jpg" height="100%" width="100%" alt="" />
+        <img src="_images/tit3.jpg" height="100%" width="100%" alt="" />
+        <div class="txt">
+            <p>二十一世纪，伴随工业化进程加快，社会压力加剧，心脑血管疾病及肿瘤性疾病爆发。健康成为最具关注的话题。中宏瑞康控股有限公司，致力于中国最高端健康管理、高端保健产品，打造健康管理最高平台。</p>
+            <p>目前，公司旗下设立浙江中宏瑞康、海南中宏瑞康及黑龙江中宏瑞康三家控股子公司。主营业务包括殿堂级健康管理项目-3H健康管理（Humanity:个性化 检测及管理；Healthcare:专家指导下的健康管理；Heal:疾病治愈及恢复）、高端保健产品-宏七，以及预防肿瘤、亚健康调理项目-生物免疫细胞治疗。</p>
+        </div>
+        <img src="_images/logo.jpg" height="100%" width="100%" alt="" />
+        <div class="i_ewm_gz">
+            <img src="_images/ewn_gz.jpg" height="100%" width="100%" alt="" />
+        </div>
+    </body>
+</html>

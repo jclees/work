@@ -1,0 +1,280 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>首页</title>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+    <link href="css/swiper.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <style>
+    </style>
+</head>
+
+<body>
+    <!-- 分享得积分按钮 -->
+    <div class="fixed_share openShare">
+        <img src="images/icon_indexShare.png" alt="">
+    </div>
+    <!-- 分享送积分弹窗 -->
+    <div class="share_layer">
+        <div class="cover closeShare"></div>
+        <div class="share_con">
+            <img src="images/share_tips.png" alt="">
+        </div>
+    </div>
+    <!-- 签到 -->
+    <div class="layer animated">
+        <div class="layer_cover"></div>
+        <div class="layer_main">
+            <div class="layer_main_cover">
+                <div class="layer_content">
+                    <div class="sign_tip">温馨提示</div>
+                    <div class="sign_day_list">
+                        <div>
+                            <div class="day_num">1</div>
+                            <img src='images/sign_gold.png' class="sign_gold">
+                            <div>+2</div>
+                        </div>
+                        <div>
+                            <div class="day_num">2</div>
+                            <img src='images/sign_cur_gold.png' class="sign_gold">
+                            <div>+2</div>
+                        </div>
+                        <div class="cur_day">
+                            <div class="day_num">3</div>
+                            <img src='images/sign_gold.png' class="sign_gold">
+                            <div>+3</div>
+                        </div>
+                        <div>
+                            <div class="day_num">4</div>
+                            <img src='images/sign_gold.png' class="sign_gold">
+                            <div>+1</div>
+                        </div>
+                        <div>
+                            <div class="day_num">5</div>
+                            <img src='images/sign_gold.png' class="sign_gold">
+                            <div>+1</div>
+                        </div>
+                        <div>
+                            <div class="day_num">6</div>
+
+                            <img src='images/sign_gold.png' class="sign_gold">
+                            <div>+1</div>
+                        </div>
+                        <div>
+                            <div class="day_num">7</div>
+                            <img src='images/sign_gold.png' class="sign_gold">
+                            <div>+10</div>
+                        </div>
+                    </div>
+                    <div class="layer_btn_group">
+                        <button class=" button1 ">立即签到</button>
+                    </div>
+                    <div class="total_day">本周累计签到3天，每周一重置签到奖励</div>
+                </div>
+            </div>
+            <a href="javascript:;" class="closeSign">
+                <img class="layer_close" src='images/sign_close.png'>
+            </a>
+        </div>
+    </div>
+    <!-- 签到成功弹框 -->
+    <div class="sign_success_wrap animated">
+        <div class="layer_cover"></div>
+        <div class="layer_main">
+            <div class="layer_main_cover">
+                <img src='images/sign_success_bg.png' class="layer_main_cover_bgpic">
+                <div class="layer_content">
+                    <div>累计签到送大礼</div>
+                    <div class="getjf">恭喜你获得20积分</div>
+                    <div class="layer_btn_group">
+                        <button class="closeSign">确定</button>
+                    </div>
+                </div>
+            </div>
+            <a href="javascript:;" class="closeSignSuccess">
+                <img class="layer_close" src='images/sign_close.png'>
+            </a>
+        </div>
+    </div>
+    <!-- 目录 -->
+    <div class="main_mlwrap" catchtouchmove="myCatchTouch">
+        <div class="cover closeMl"></div>
+        <div class="ml_list animated">
+            <div class="active">第一章：死亡游戏</div>
+            <div>第二章：死亡游戏
+                <img src="images/icon_lock.png" alt="" class="icon_lock">
+            </div>
+            <div>第二章：死亡游戏
+                <img src="images/icon_lock.png" alt="" class="icon_lock">
+            </div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第三章：死亡游戏</div>
+            <div>第四章：死亡游戏</div>
+            <div>第五章：死亡游戏</div>
+            <div>第五章：死亡游戏</div>
+            <div>第五章：死亡游戏</div>
+            <div>第五章：死亡游戏</div>
+            <div>第五章：死亡游戏</div>
+            <div>第五章：死亡游戏</div>
+            <div>第五章：死亡游戏</div>
+            <div>第五章：死亡游戏</div>
+            <div>第五章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+        </div>
+    </div>
+    <!-- 内容 -->
+    <div class="main">
+        <div class="main_book_intro">
+            <div class="book_cover goReadingBook">
+                <img src='images/book_cover.png'>
+            </div>
+            <div class="book_name">暗界神使</div>
+            <div class="book_author">火红森林</div>
+            <div class="book_intro unfold">
+                <span></span>
+                <div class="icon_unfold">
+                    <img src='images/icon_unfold.png'>
+                </div>
+            </div>
+        </div>
+        <div class="main_piece clearfix">
+            <div class="fl">
+                <a href="javascript:;" class="openMl">
+                    <img src='images/icon_ml.png' class="icon_ml">
+                    <div class="txt">查看目录</div>
+                </a>
+            </div>
+            <div class="fl openSign">
+                <img src='images/icon_sign.png' class="icon_sign">
+                <div class="txt">签到领书券</div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部导航 -->
+    <div class="main_nav">
+        <div class="nav_group clearfix">
+            <div class="fl goBookQuan">
+                <img src='images/icon_msg.png' class="icon_myshuq">
+                <div class="txt">我的书圈</div>
+            </div>
+            <!-- <div class="fl goReadingBook">
+                <div class="txt">免费阅读</div>
+            </div> -->
+            <div class="fl jxReading goReadingBook">
+                <div class="txt">继续阅读</div>
+                <p>第一章 死亡游戏 </p>
+            </div>
+            <div class="fl goPerson">
+                <img src='images/icon_user.png' class="icon_myinfo">
+                <div class="txt">个人中心</div>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script> -->
+    <script src="js/jquery-1.8.0.min.js"></script>
+    <script>
+        var tempintro = "大学毕业生姜爻在追查友人失踪案件中,意外得知自己本应在十年前就已死去的事实大学毕业生姜爻在追查友人失踪案件中,意外得知自己本应在十年前就已死去的事实.."
+        var intro = tempintro.substring(0, 37)
+        var unfoldFlag = true
+        var isDaysign = true
+        $(function () {
+            $(".book_intro").children("span").text(intro + "...")
+            var scrolltop = window.localStorage.getItem("scrolltop");
+        })
+        $(".openShare").on("click", function () {
+            $(".share_layer").show()
+        })
+        $(".closeShare").on("click", function () {
+            $(".share_layer").hide()
+        })
+        $(".closeMorebook").on("click", function () {
+            $(".morebook_wrap").hide()
+        })
+        $(".signBtn").on("click", function () {
+            $(".layer").hide()
+            $(".sign_success_wrap").show()
+            $(this).addClass('active')
+        })
+        $(".closeSignSuccess").on("click", function () {
+            $(".sign_success_wrap").hide()
+        })
+        $(".unfold").on("click", function () {
+            if (unfoldFlag) {
+                $(this).children("span").text(tempintro)
+                unfoldFlag = false
+            } else {
+                $(this).children("span").text(intro)
+                unfoldFlag = true
+            }
+            // console.log(intro)
+            $(".icon_unfold").toggleClass("active")
+        })
+        
+        $(".openSign").on("click", function () {
+            // $(".layer").addClass("fadeIn")
+            // setTimeout(() => {
+            $(".layer").show()
+            // }, 300);
+            isDaysign = false
+        })
+        $(".closeSign").on("click", function () {
+            // $(".layer").addClass("fadeOut")
+            // setTimeout(() => {
+            $(".layer").hide()
+            // }, 300);
+        })
+        $(".goReadingBook").on("click", function () {
+            window.location.href = 'readingbook.html'
+        })
+        $(".goBookQuan").on("click", function () {
+            window.location.href = 'mybookquan.html'
+        })
+        $(".goPerson").on("click", function () {
+            window.location.href = 'person.html'
+        })
+
+        var ModalHelper = (function (bodyCls) {
+            var scrollTop;
+            return {
+                afterOpen: function () {
+                    scrollTop = document.scrollingElement.scrollTop;
+                    document.body.classList.add(bodyCls);
+                    document.body.style.top = -scrollTop + 'px';
+                },
+                beforeClose: function () {
+                    document.body.classList.remove(bodyCls);
+                    // scrollTop lost after set position:fixed, restore it back.
+                    document.scrollingElement.scrollTop = scrollTop;
+                }
+            };
+        })('modal-open');
+        $(".openMl").on("click", function () {
+            ModalHelper.afterOpen()
+            $(".ml_list").removeClass("slideOutLeft").addClass("slideInLeft")
+            setTimeout(() => {
+                $(".main_mlwrap").show()
+            }, 300);
+        })
+        $(".closeMl").on("click", function () {
+            ModalHelper.beforeClose()
+            $(".ml_list").removeClass("slideInLeft").addClass("slideOutLeft")
+            setTimeout(() => {
+                $(".main_mlwrap").hide()
+            }, 300);
+        })
+    </script>
+</body>
+
+</html>

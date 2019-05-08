@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <link rel="stylesheet" type="text/css" href="_css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="_css/style.css" />
+        <script>   
+            (function (doc, win) {//rem布局js
+                var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        if(clientWidth>=640){
+                            docEl.style.fontSize = '100px';
+                        }else{
+                            docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                        }
+                    };
+                if (!doc.addEventListener) return;
+                win.addEventListener(resizeEvt, recalc, false);
+                doc.addEventListener('DOMContentLoaded', recalc, false);
+            })(document, window);
+        </script> 
+    </head>
+    <body>
+        <div class="i_banner"><img src="_images/banner.jpg" alt="" /></div>
+        <div class="i_pro_intro">
+            <p>品牌：<span>康立基</span></p>
+            <p>产品名称：<span>康力基氨基葡萄糖片</span></p>
+        </div>
+        <div class="i_search">
+            <p>验证方法</p>
+            <p>请刮开防伪标签上的涂层，在下框输入四位防伪码，点击“验证”。</p>
+            <form class="inp_box clearfix">
+                <input type="text" placeholder="请输入四位防伪码" />
+                <a href="success.html" class="btn">验证</a>
+            </form>
+        </div>
+        <div class="i_ewm_gz">
+            <img src="_images/ewn_gz.jpg" height="100%" width="100%" alt="" />
+        </div>
+    </body>
+</html>

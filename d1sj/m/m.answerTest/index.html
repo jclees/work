@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>首页</title>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/home/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/home/style.css" />
+    <!-- <link rel="stylesheet" href="js/home/layer_mobile/need/layer.css"> -->
+    <link rel="stylesheet" href="js/home/swiper/css/swiper.min.css">
+    <script src="js/home/rem.js"></script>
+    <style>
+        /* .page1 {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            position: absolute;
+        }
+
+        .page1 img {
+            display: block;
+            outline: none;
+            border: 0;
+            height: 100%;
+            width: 100%;
+        } */
+
+        .swiper-container-horizontal>.swiper-pagination-bullets,
+        .swiper-pagination-custom,
+        .swiper-pagination-fraction {
+            bottom: auto;
+            margin-top: 0.3rem;
+            color: #fff;
+            font-size: 0.27rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page page1" style="display: block;">
+        <!-- <a href="javascript:;" onclick="openAnswer(this)" class="auto_bg" style="background-image: url(images/home/page1_bg.jpg);"></a> -->
+        <a href="javascript:;" onclick="openAnswer(this)">
+            <img alt="" src="images/home/page1_bg.jpg" style="width:100%;">
+        </a>
+
+        <!-- <a href="javascript:;" onclick="openAnswer(this)">
+            <img alt="" src="images/home/page1_bg.jpg" style="width:100%;height: 100%;">
+        </a> -->
+    </div>
+    <div class="page page2">
+        <img src="images/home/page2_bg.jpg" alt="" style="width: 100%;">
+        <div class="main_wrap">
+            <div class="title">2、你的宝宝年龄：</div>
+            <div class="answers">
+                <a href="javascript:;">A、111</a>
+                <a href="javascript:;">B、22222</a>
+                <a href="javascript:;">B、22222</a>
+                <a href="javascript:;">B、22222</a>
+            </div>
+        </div>
+        <div style="color: #fff;text-align: center;font-size: 0.27rem;margin-top: 0.30rem;">1/1</div>
+
+    </div>
+    <div class="page page3">
+        <div class="loading">
+            <img src="images/home/loading.gif" alt="">
+            <p>正在努力计算中....</p>
+        </div>
+    </div>
+    <div class="page page4">
+        <!-- <a href="javascript:;" class="auto_bg" style="background-image: url(images/home/page4_bg.jpg);"></a> -->
+
+        <img alt="" src="images/home/page4_bg.jpg" style="width:100%;">
+    </div>
+    <!-- <div id="app">
+        <div class="page page2">
+
+            <div class="timu" v-for="(item,index) in answerData" :style="{ 'z-index': index==0 ? 1 : 0 }">
+                <div class="timu_hd">
+                    <div>
+                        <div>第 {{index+1}} 题</div>
+                        <div>{{item.tit}}</div>
+                    </div>
+                </div>
+                <div class="timu_bd clearfix">
+                    <div class="item">
+                        <a href="javascript:;" @click="chooseAnswer($event)" :data-iscur="item2.status" :data-index="index2" v-for="(item2,index2) in item.answer" :class="{cur:item2.status == 1 ?true:false,dui:item2.status == 1 ?true:false,cuo:item2.status == 0 ?true:false}">{{item2.content}}</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div> -->
+
+</body>
+<script src="js/home/jquery-1.8.0.min.js"></script>
+<!-- <script src="js/home/layer_mobile/layer.js"></script> -->
+<script src="js/home/swiper/js/swiper.min.js"></script>
+<script>
+    var swiper;
+    var idx = 1;
+    var status = 1;
+    $(".answers > a").on("click", function () {
+        var that = $(this);
+        if (status == 1) {
+            $(this).addClass("cur").siblings().removeClass("cur")
+        }
+        if (idx == $(".swiper-slide").length) {
+            setTimeout(function () {
+                that.parents(".page").hide().next().show()
+            }, 500)
+            setTimeout(function () {
+                $(".page3").hide()
+                $(".page4").show()
+            }, 1500)
+
+            status = 0
+            return
+        }
+        swiper.slideTo(idx++);
+    })
+    function openAnswer(t) {
+        $(t).parents(".page").hide().next().show()
+        swiper = new Swiper('.swiper-container', {
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'fraction',
+            },
+            noSwiping: true,
+            noSwipingClass: 'stop-swiping',
+        });
+    }
+
+</script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script> -->
+<!-- <script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            answerData: [{
+                id: 1,
+                tit: "请问1+1=？",
+                answer: [{
+                    "content": "1",
+                    "status": 0
+                }, {
+                    "content": "2",
+                    "status": 0
+                }, {
+                    "content": "3",
+                    "status": 0
+                }, {
+                    "content": "4",
+                    "status": 1
+                }]
+            }, {
+                id: 2,
+                tit: "请问2+2=？",
+                answer: [{
+                    "content": "1",
+                    "status": 0
+                }, {
+                    "content": "2",
+                    "status": 1
+                }, {
+                    "content": "3",
+                    "status": 0
+                }, {
+                    "content": "4",
+                    "status": 0
+                }]
+            }],
+            classData: {
+                'cur': this.isCur,
+                'dui': this.isYes,
+                'cuo': this.isNo
+            },
+            isYes: false,
+            isNo: false,
+            isCur: false
+        },
+        methods: {
+            chooseAnswer: function (e) {
+                var isCur = e.target.dataset.iscur
+                console.log(e.target.dataset.index)
+                // if (isCur == 1) {
+                //     vm.isCur = true
+                //     vm.isYes = true
+                // } else {
+                //     vm.isNo = true
+                // }
+            }
+        }
+    })
+</script> -->
+<!-- <script>
+
+    var data = [{
+        id: 1,
+        tit: "请问1+1=？",
+        answer: [{
+            "content": "1"
+        }, {
+            "content": "2"
+        }, {
+            "content": "3"
+        }, {
+            "content": "4"
+        }]
+    }, {
+        id: 2,
+        tit: "请问2+2=？",
+        answer: [{
+            "content": "1"
+        }, {
+            "content": "2"
+        }, {
+            "content": "3"
+        }, {
+            "content": "4"
+        }]
+    }];
+
+
+    for (var i in data) {
+        var newHtml = `
+    
+            <div class="timu">
+                <div class="timu_hd">
+                    <div>
+                        <div>第 ${data[i].id} 题</div>
+                        <div>${data[i].tit}</div>
+                    </div>
+                </div>
+                <div class="timu_bd clearfix">
+                    <div class="item">
+                        <a href="javascript:;" onclick="chooseAnswer(this)">${data[i].answer[i].content}</a>
+                    </div>
+                </div>
+            </div>
+
+        `
+        $(".page2").append(newHtml)
+    }
+    for (var i in data) {
+        for (var j in data[i].answer) {
+            console.log(data[i].answer[j])
+        }
+    }
+    // var html = '';
+    // html = `<div class="timu">
+    //         <div class="timu_hd">
+    //             <div>
+    //                 <div>第 ${data[0].id} 题</div>
+    //                 <div>${data[0].tit}</div>
+    //             </div>
+    //         </div>
+    //         <div class="timu_bd clearfix">
+    //             <div class="item">
+    //                 <a href="javascript:;" onclick="chooseAnswer(this)">${data[0].answer[0].content}</a>
+    //                 <a href="javascript:;" onclick="chooseAnswer(this)">${data[0].answer[1].content}</a>
+    //                 <a href="javascript:;" onclick="chooseAnswer(this)">${data[0].answer[2].content}</a>
+    //                 <a href="javascript:;" onclick="chooseAnswer(this)">${data[0].answer[3].content}</a>
+    //             </div>
+    //         </div>
+    //     </div>`
+    // $(".page2").append(html)
+
+
+
+
+
+    $(".timu_bd > .item").eq(0).css({
+        "display": "block"
+    })
+    var clickStat = true;
+    function chooseAnswer(t) {
+        if (clickStat) {
+            $(t).addClass("cur dui")
+            clickStat = false
+        }
+
+        if ($(t).parent().next().length == 0) {
+            return
+        }
+        setTimeout(() => {
+            clickStat = true
+            $(t).parent().next().css({
+                "display": "block"
+            })
+        }, 500);
+        //    console.log( $(t).parent().siblings().last().html())
+    }
+    function openAnswer() {
+        layer.open({
+            type: 2,
+            content: '加载中'
+        });
+    }
+</script> -->
+
+</html>

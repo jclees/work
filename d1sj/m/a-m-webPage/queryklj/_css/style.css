@@ -1,0 +1,86 @@
+html{
+    font-size: 100px;
+}
+body{
+    background: #f4f4f4;
+}
+.i_banner{
+    width:100%;
+    background: #fff;
+}
+.i_banner img{
+    margin:0 auto;
+    width:100%;
+}
+.i_pro_intro,.i_search{
+    width:100%;
+    background: #fff;
+    padding:0.3rem 0.26rem;
+    margin-bottom: 0.2rem;
+}
+.i_pro_intro p{
+    font-size: 0.3rem;
+}
+.i_pro_intro p:first-of-type,.i_search p:first-of-type{
+    font-size: 0.34rem;
+    color:#333;
+    padding-bottom: 0.2rem;
+}
+.i_pro_intro.succ p:first-of-type{
+    color:#0c9e49;
+}
+.i_search p{
+    font-size: 0.3rem;
+    line-height: 30px;
+}
+.i_search .inp_box{
+    margin-top: 0.2rem;
+}
+.i_search .inp_box input{
+    width:70%;
+    float:left;
+    height:0.86rem;
+    line-height:0.86rem;
+    font-size: 0.28rem;
+    padding-left: 0.26rem;
+    border:1px solid #ccc;
+}
+.i_search .inp_box .btn{
+    height:0.86rem;
+    line-height:0.86rem;
+    width:23%;
+    background: #0e9346;
+    float:right;
+    font-size: 0.32rem;
+    color:#fff;
+    text-align: center;
+}
+.details_box{
+    width:100%;
+    background: #fff;
+    font-size: 0.28rem;
+    background: #fff;
+    margin-bottom: 0.2rem;
+    padding: 0.2rem 0.26rem;
+}
+.details_box .first{
+    width:44%;
+    line-height: 28px;
+}
+.details_box .last{
+    color:#999;
+}
+.i_ewm_gz{
+    width:100%;
+}
+ 
+.error img{
+    width:1.94rem;
+    height:1.94rem;
+    margin:2.8rem auto 0;
+}
+.error dd{
+    padding-top: 0.2rem;
+    font-size: 0.32rem;
+    text-align: center;
+}

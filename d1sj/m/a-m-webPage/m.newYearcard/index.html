@@ -1,0 +1,324 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>信源贺卡</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <style>
+        html, body {
+            position: relative;
+            height: 100%;
+        }
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+
+            -webkit-tap-highlight-color: transparent;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-container-vertical>.swiper-pagination-bullets{
+            display:none;
+        }
+        .swiper-slide {
+            box-sizing: border-box;
+        }
+        .swiper-slide img {
+            width:100%;
+        }
+        body {
+            background: #ca2000;
+        }
+        .icon_wrap {
+            position: fixed;
+            z-index: 99;
+        }
+        .icon_wrap img{
+            width:37px;
+        }
+        .side {
+            bottom: 8%;
+            left: 50%;
+            margin-left: -18px;
+            animation: myfirst 2s infinite;
+        }
+        .music {
+            right:10%;
+            top:6%;
+        }
+        .music_rotate {
+            -webkit-animation: loading 3s linear infinite;
+            animation: loading 3s linear infinite;
+        }
+        @keyframes loading {
+            from {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            to {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes myfirst {
+            0% {
+                transform: translate(0px, 0px);
+            }
+
+            50% {
+                transform: translate(0px, -10px);
+            }
+
+            100% {
+                transform: translate(0px, 0px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <button id="fa">231232131231</button>
+    <div class="icon_wrap music music_rotate">
+        <audio loop autoplay id="mp3Btn">
+            <source src="music.mp3" type="audio/mpeg">
+        </audio>
+
+        <audio id="mp3Btn2">
+                <source src="bg_music_01.mp3" type="audio/mpeg">
+            </audio>
+        <img src="images/music_icon.png" alt="Alternate Text" />
+    </div>
+    <div class="icon_wrap side">
+        <img src="images/side_icon.png" alt="Alternate Text" />
+    </div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="images/01.jpg" alt="Alternate Text" /></div>
+            <div class="swiper-slide"><img src="images/02.jpg" alt="Alternate Text" /></div>
+            <div class="swiper-slide"><img src="images/03.jpg" alt="Alternate Text" /></div>
+            <div class="swiper-slide"><img src="images/04.jpg" alt="Alternate Text" /></div>
+            <div class="swiper-slide"><img src="images/05.jpg" alt="Alternate Text" /></div>
+            <div class="swiper-slide"><img src="images/06.jpg" alt="Alternate Text" /><a href="tel:400-180-9660" style="width: 40%;height: 10%;position: absolute;left: 36%;top: 60%;z-index:99;"></a></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!--下面是竖屏提示,性能原因丢最后-->
+    <div id="orientLayer" class="mod-orient-layer">
+        <div class="mod-orient-layer__content">
+            <i class="icon mod-orient-layer__icon-orient"></i>
+
+            <div class="mod-orient-layer__desc">为了更好的体验，请使用竖屏浏览</div>
+        </div>
+    </div>
+
+    <style type="text/css">
+        /* 样式放在结尾，防止 base64 图片造成拥塞 */
+        @keyframes rotation {
+            10% {
+                transform: rotate(90deg);
+                -webkit-transform: rotate(90deg);
+            }
+
+            50% {
+                transform: rotate(0);
+                -webkit-transform: rotate(0);
+            }
+
+            60% {
+                transform: rotate(0);
+                -webkit-transform: rotate(0);
+            }
+
+            90% {
+                transform: rotate(90deg);
+                -webkit-transform: rotate(90deg);
+            }
+
+            100% {
+                transform: rotate(90deg);
+                -webkit-transform: rotate(90deg);
+            }
+        }
+
+        @-webkit-keyframes rotation {
+            10% {
+                transform: rotate(90deg);
+                -webkit-transform: rotate(90deg);
+            }
+
+            50% {
+                transform: rotate(0);
+                -webkit-transform: rotate(0);
+            }
+
+            60% {
+                transform: rotate(0);
+                -webkit-transform: rotate(0);
+            }
+
+            90% {
+                transform: rotate(90deg);
+                -webkit-transform: rotate(90deg);
+            }
+
+            100% {
+                transform: rotate(90deg);
+                -webkit-transform: rotate(90deg);
+            }
+        }
+
+        .mod-orient-layer {
+            display: none;
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: #000;
+            z-index: 9997;
+        }
+
+        .mod-orient-layer__content {
+            position: absolute;
+            width: 100%;
+            top: 45%;
+            margin-top: -75px;
+            text-align: center;
+        }
+
+        .mod-orient-layer__icon-orient {
+            display: inline-block;
+            width: 67px;
+            height: 109px;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIYAAADaCAMAAABU68ovAAAAXVBMVEUAAAD29vb////x8fH////////x8fH5+fn29vby8vL////5+fn39/f6+vr////x8fH////////+/v7////09PT////x8fH39/f////////////////////x8fH///+WLTLGAAAAHXRSTlMAIpML+gb4ZhHWn1c2gvHBvq1uKJcC6k8b187lQ9yhhboAAAQYSURBVHja7d3blpowFIDhTUIAOchZDkre/zE7ycySrbUUpsRN2/1fzO18KzEqxEVgTiZNfgmmtxRc8iaR8HNe8x4BtjQePKayYCIoyBSgvNNE1AkNSHqZyLqk97EgUCCHBzZ5mkg7ScvIJuIyOyXBRFxgpqWZyGsAZLB1KjsJi8nutHU4JCRbFRH8tmirI9k8Jx2sqNs8K/m0LQkrktO2crgcgXGB4AiTEsB0hJfo9MGgX7CGcYiYwQxmMOOvZwRhBG8tCoMXjBDeXvWCEcHbi14wgCBmMIMZzGAGM5jxETNwzMAxA8cMHDNwzMAxA8cMHDNwzMAxA8cMHDNwzMAxY6E2rUQxnH2tz9cirlJFwFBJedaPnUv0M7++egPDE8iAJcIDmxwH5wwv9vUviw2kLbVO3TJU5uul/EyB0FoLp4x60PdGUd3qPurrWyjGGTc05u+1dcgI7/+tCCPARWGhH7o5Y7RCf+bH9ctXLp6v2BVDxfqz0oPXeSVaNtINo/1SXDv4dck8IIkbhtC2ol+iouEonTBCbYvVMnXOjxww6s/RFrBUpXHh/gw1rHj5d/qhYn9Gpk2FWh6xRBRX5Oj3Znh2Sq49/L6+y8pB26q9GbE2dbA2mVbx6I+7MfBglLCttm73ZQi7AD3iL4HqjFYJHSPRppqaUaJ3ATpGa+ckpGak2hRRMyqjGMkvl+xyFeSMwjAqcsZgGDdyhl0oNTnDN4yenJGZFGxNChP5/Y3efh6SM2rDOJMzboYxkDMqwyjIGcIw6F+io2FU1IxIm1JqRmgXSkvNKNCXeTpGrU0JNSO2c6LIGPgCS8AuDHz9ta0SXWDtxoDRH+MqlbC2Dt2G2JFRadtQZt2qq/orGowdGb2euxYiqWEpVWhTBnszoNAPdStuQwxqf0aocdWKW4Z+DfszIh8pxJqbuCE4YAC+4bm0evtipjpgJHeFnyyt1Ku2xa0bhjxr27p75rECNwyI9ZwvXkHq+7aTaMEV44YYy/spfgjgjNHaWW+GeUhGEX7tLlVinIFDDSgnOwhi1V6bU0b6tVS9eAERe863g4dRrtiHdc6o+nn5vtyVVgR79Cqt4uL6gfHPQyGqtP2vf7HADGbcYwaOGThm4JiBYwaOGThm4JiBYwaOGThm4JiBYwaOGThm4JiBYwaOGThm4JjhtOM+J/AgT008yDMkN/dPP9hzS8zAMQN3OEYeekp5YU7KOKXwVXqiY+QS7smcinGKABWdiBgpPJTSMHJ4KidhhPBUSMLw4CmPhKHgKUXCkHsygum71ftNSgCX6bsl8FQyfbcL5EdYsDk0R3j7aiA5wpt5AjKg/2gLJEBD/0Hf2OOf/vRrj6z/7GtP4B3nMKyjHA12kIPSjnJs3FEO0TvKkYJHOWCR+rjJH0Vn6fI5PjNbAAAAAElFTkSuQmCC');
+            transform: rotate(90deg);
+            -webkit-transform: rotate(90deg);
+            -webkit-animation: rotation infinite 1.5s ease-in-out;
+            animation: rotation infinite 1.5s ease-in-out;
+            -webkit-background-size: 67px;
+            background-size: 67px;
+        }
+
+        .mod-orient-layer__desc {
+            margin-top: 20px;
+            font-size: 15px;
+            color: #fff;
+        }
+
+        .mod-orient-layer__desc {
+            margin-top: 20px;
+            font-size: 15px;
+            color: #fff;
+        }
+    </style>
+    <script>
+        var orientLayer = document.getElementById("orientLayer");
+        //判断横屏竖屏
+        function checkDirect() {
+            if (document.documentElement.clientHeight >= document.documentElement.clientWidth) {
+                return "portrait";
+            } else {
+                return "landscape";
+            }
+        }
+        //显示屏幕方向提示浮层
+        function orientNotice() {
+            var orient = checkDirect();
+            if (orient == "portrait") {
+                orientLayer.style.display = "none";
+            } else {
+                orientLayer.style.display = "block";
+            }
+        }
+        function init() {
+            orientNotice();
+            window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function () {
+                setTimeout(orientNotice, 200);
+            })
+        }
+        init();
+    </script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script>
+        //alert($(window).width())
+        //alert($(window).height())
+        var swiper = new Swiper('.swiper-container', {
+            direction: 'vertical',
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            loop: true
+        });
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if (isAndroid) {
+            $(".swiper-slide ").css("padding", "0")
+            if ($(window).height() < 600 && $(window).width() > 359) {
+                $(".swiper-slide ").css("padding", "0 6%")
+            }
+        }
+        if (isiOS){
+            $(".swiper-slide ").css("padding", "0 6%")
+        }
+       
+        $("#fa").on("click",function(){
+            getId("mp3Btn2")
+        })
+        function getId(n){
+            let audioid = document.getElementById('mp3Btn');
+            if(n){
+                audioid = document.getElementById(n);
+            }
+            return audioid
+        }
+        var audio = getId();
+        audio.play();//播放
+        $(".music").on('click', function () {
+            //防止冒泡
+            event.stopPropagation();
+            if (audio.paused) //如果当前是暂停状态
+            {
+                audio.play();//播放
+                $(this).addClass("music_rotate")
+                $(this).find("img").attr('src', 'images/music_icon.png')
+                return;
+            }
+            audio.pause(); //暂停
+            $(this).removeClass("music_rotate")
+            $(this).find("img").attr('src', 'images/music_close_icon.png')
+        })
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            function audioAutoPlay() {
+                var audio = document.getElementById('mp3Btn');
+                audio.play();
+                document.addEventListener("WeixinJSBridgeReady", function () {
+                    audio.play();
+                }, false);
+            }
+            audioAutoPlay();
+
+        }); 
+        
+        
+    </script>
+</body>
+</html>

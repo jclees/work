@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="stylesheet" type="text/css" href="_css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="_css/style.css" />
+        <script>   
+            (function (doc, win) {//rem布局js
+                var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        if(clientWidth>=640){
+                            docEl.style.fontSize = '100px';
+                        }else{
+                            docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                        }
+                    };
+                if (!doc.addEventListener) return;
+                win.addEventListener(resizeEvt, recalc, false);
+                doc.addEventListener('DOMContentLoaded', recalc, false);
+            })(document, window);
+        </script> 
+    </head>
+    <body>
+       <div class="main_bg">
+           <img src="_images/main_bg.jpg" height="100%" width="100%" alt="" />
+           <div class="main">
+             <div class="mask_box">
+                 <div class="cont">
+                     <p>防伪码为：<span>12312313123</span></p>
+                 </div>
+             </div>
+             <p class="txt_tip font_30">请选择您的购买渠道</p>
+             <ul class="qd_list clearfix">
+                 <li>自营</li>
+                 <li>会员</li>
+                 <li>药店</li>
+                 <li>会销</li>
+             </ul>
+             <a href="javascript:;" class="btn">确定</a>
+           </div>
+       </div>
+       <script type="text/javascript" src="_js/zepto-1.1.3.min.js"></script>
+       <script type="text/javascript">
+            $(function(){
+              $(".qd_list li").on('touchend',function(){
+                $(this).addClass('act').siblings().removeClass('act');
+                var text = $(this).html();
+              })
+            })
+       </script>
+    </body>
+</html>

@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>关于我们</title>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link href="_css/swiper.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="_css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="_css/style.css" />
+    <style>
+        .swiper-container {
+            margin: 10% 0;
+            padding-bottom: 12%;
+        }
+
+        .swiper-pagination-bullet {
+            background: #1589ff;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="img_wrap">
+        <img src="_images/about_01.jpg" alt="Alternate Text" />
+    </section>
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <section class="img_wrap">
+                    <img src="_images/about_slide_01.png" alt="Alternate Text" />
+                </section>
+            </div>
+            <div class="swiper-slide">
+                <section class="img_wrap">
+                    <img src="_images/about_slide_02.png" alt="Alternate Text" />
+                </section>
+            </div>
+            <div class="swiper-slide">
+                <section class="img_wrap">
+                    <img src="_images/about_slide_03.png" alt="Alternate Text" />
+                </section>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+    <!-- Swiper JS -->
+    <section class="img_wrap">
+        <a href="tel:400-180-9660" style="width: 35%;height: 27%;right: 44%;bottom: 31%;"></a>
+        <img src="_images/about_02.jpg" alt="Alternate Text" />
+    </section>
+    <section class="img_wrap">
+        <a href="fastOpen.html" style="width: 40%;height: 52%;left: 50%;top: 0;margin-left: -20%;"></a>
+        <img src="_images/bdm_btn.jpg" alt="Alternate Text" />
+    </section>
+    <section class="fixed_wrap">
+        <a href="javascript:;" class="open_btn"></a>
+    </section>
+    <section class="mask_box">
+        <section class="bg"></section>
+        <section class="img_wrap" style="margin-top:8%;">
+            <a href="tel:400-180-9660" style="width: 35%; height: 9%; right: 24%;bottom: 4%;"></a>
+            <a href="javascript:;" style="width: 10%;height: 9%;right: 4%;top: 0;" class="close_btn"></a>
+            <a href="javascript:;" style="width: 30%;height: 27%;left: 50%;top: 33%;margin-left: -15%;"><img src="_images/ydd_ewm.jpg" style="height:100%;" alt="Alternate Text" /></a>
+            <img src="_images/fixedUs_02.png" alt="Alternate Text" />
+        </section>
+    </section>
+    <script src="_js/jquery-1.8.0.min.js"></script>
+    <script src="_js/swiper.min.js"></script>
+    <script src="_js/common.js"></script>
+    <script>
+        $(function () {
+            var swiper = new Swiper('.swiper-container', {
+                autoplayDisableOnInteraction: false,
+                autoplay: 5000,
+                speed: 1000,
+                pagination: '.swiper-pagination',
+                slidesPerView: 1,
+                paginationClickable: true,
+                spaceBetween: 30,
+                loop: true
+            });
+        })  
+    </script>
+</body>
+</html>

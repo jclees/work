@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>填写订单</title>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <link rel="stylesheet" type="text/css" href="../_css/sm.css" />
+        <link rel="stylesheet" type="text/css" href="../_css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="../_css/style.css" />
+        <style type="text/css">
+            body{
+                background: #fff;
+                overflow:visible;
+            }
+            p{
+                margin:0;
+            }
+            /* switch 按钮 */
+            .mui-switch {
+              width: 52px;
+              height: 31px;
+              position: relative;
+              border: 1px solid #dfdfdf;
+              background-color: #fdfdfd;
+              box-shadow: #dfdfdf 0 0 0 0 inset;
+              border-radius: 20px;
+              border-top-left-radius: 20px;
+              border-top-right-radius: 20px;
+              border-bottom-left-radius: 20px;
+              border-bottom-right-radius: 20px;
+              background-clip: content-box;
+              display: inline-block;
+
+              position:absolute;
+              top: 17%;
+              right: 4%;
+              
+              -webkit-appearance: none;
+              user-select: none;
+              outline: none; }
+              .mui-switch:before {
+                content: '';
+                width: 29px;
+                height: 29px;
+                position: absolute;
+                top: 0px;
+                left: 0;
+                border-radius: 20px;
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+                background-color: #fff;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); }
+              .mui-switch:checked {
+                border-color: #64bd63;
+                box-shadow: #64bd63 0 0 0 16px inset;
+                background-color: #64bd63; }
+                .mui-switch:checked:before {
+                  left: 21px; }
+              .mui-switch.mui-switch-animbg {
+                transition: background-color ease 0.4s; }
+                .mui-switch.mui-switch-animbg:before {
+                  transition: left 0.3s; }
+                .mui-switch.mui-switch-animbg:checked {
+                  box-shadow: #dfdfdf 0 0 0 0 inset;
+                  background-color: #64bd63;
+                  transition: border-color 0.4s, background-color ease 0.4s; }
+                  .mui-switch.mui-switch-animbg:checked:before {
+                    transition: left 0.3s; }
+              .mui-switch.mui-switch-anim {
+                transition: border cubic-bezier(0, 0, 0, 1) 0.4s, box-shadow cubic-bezier(0, 0, 0, 1) 0.4s; }
+                .mui-switch.mui-switch-anim:before {
+                  transition: left 0.3s; }
+                .mui-switch.mui-switch-anim:checked {
+                  box-shadow: #64bd63 0 0 0 16px inset;
+                  background-color: #64bd63;
+                  transition: border ease 0.4s, box-shadow ease 0.4s, background-color ease 1.2s; }
+                  .mui-switch.mui-switch-anim:checked:before {
+                    transition: left 0.3s; }
+        </style>
+    </head>
+    <body>
+        <header>
+            <a href="shoppingCart.html" class="icon icon_arrow"></a>
+            <h3>填写订单</h3>
+        </header>
+        <div class="fillin_ordder_con">
+            <!-- <div class="add_address_list">
+                <p><span>收货人</span><input type="text" placeholder="收货人" id="name" /></p>
+                <p><span>手机号</span><input type="text" placeholder="手机号" id="phone"/></p>
+                <p><span>所在地区</span><input type="text" placeholder="选择进行添加" id="city-picker" /></p>
+                <p><span>详细地址</span><input type="text" id="detailAdd" /></p>
+                <p><span>设置默认地址</span><input class="mui-switch mui-switch-anim" type="checkbox" checked></p>
+            </div> -->
+            <ul class="select_order_add clearfix">
+                <li class="clearfix">
+                    <div class="fl">
+                        <p><span>易烊千玺</span><span>188565645662</span></p>
+                        <p><span class="icon"></span>北京市海淀区西三旗</p>
+                    </div>
+                    <div class="fr"><a href="index.html"><span class="icon"></span></a>
+                </li>
+            </ul>
+            <p class="add_tip">*点击右箭头填写地址</p>
+            <div class="product_box clearfix">
+                <dl class="clearfix">
+                    <dt><img src="../_images/pord.jpg" alt="" /></dt>
+                    <dd>
+                        <p>这是标题这是标题这是标题这是标题这是标题</p>
+                        <p>300积分</p>
+                        <!-- <p class="clearfix">
+                            <span class="fl">300积分</span><span class="select_num"><span class="icon icon_del"></span><span class="num">1</span><span class="icon icon_add"></span></span>
+                        </p> -->
+                    </dd>
+                </dl>
+            </div>
+            <div class="add_address_list">
+                <p><span>应付积分</span><span>1000</span></p>
+            </div>
+        </div><!-- 
+        <div class="order_list">
+            <div>
+                <span>正在派送</span>
+                <p>订单号：E12312333</p>
+                <p>2015-4-5</p>
+            </div>
+            <div>
+                <ul class="clearfix">
+                    <li>
+                        <img src="../_images/func_01.jpg" alt="" />
+                        <p>1件</p>
+                    </li>
+                    <li>
+                        <img src="../_images/func_02.jpg" alt="" />
+                        <p>2件</p>
+                    </li>
+                    <li>
+                        <img src="../_images/func_01.jpg" alt="" />
+                        <p>3件</p>
+                    </li>
+                </ul>
+                <a href="orderDetails.html" class="detail_btn"><span class="icon icon_arrow2"></span></a>
+            </div>
+            <div>
+                <p>订单总积分：<span>10002555</span></p>
+                <p>一共6个商品</p>
+            </div>-->
+        </div> 
+        
+        
+        <div class="hide_box">这只是个隐藏盒子</div>
+        <div class="cart_footer">
+            <div class="fl clearfix">
+                <div class="cart">
+                    <span class="order_num">3</span>
+                    <span class="icon_cart"></span>
+                </div>
+                <div class="integral">
+                    <p>所需要积分：<span class="num">300</span></p>
+                    <p>总积分：2500</p>
+                </div>
+            </div>
+            <div class="fr">
+                <a href="index.html" class="btn" id="submitBtn">提交</a>
+            </div>
+        </div>
+        <script type="text/javascript" src="../_js/zepto-1.1.3.min.js"></script>
+        <script type="text/javascript" src="../_js/tip.js"></script>
+        <script type="text/javascript" src="../_js/sm.js"></script>
+        <script type="text/javascript" src="../_js/sm-city-picker.js"></script>
+        <script type="text/javascript">
+             //验证
+             // $('#submitBtn').on('touchend',function(){
+             //  var name = $('#name').val(),
+             //       phone = $('#phone').val(),
+             //       city = $('#city-picker').val(),
+             //       detailAdd = $('#detailAdd').val();
+             //     if(name == '' || name == undefined){
+             //       tip('请填写正确的收货人姓名!')
+             //       return;
+             //     }else if(!(/^1[34578]\d{9}$/.test(phone)) || phone == '' || phone == undefined ){
+             //       tip('请填写正确的手机号!')
+             //       return;
+             //     }else if(city == '' || city == undefined){
+             //       tip('请填写所在地区！')
+             //       return;
+             //     }else if(detailAdd == '' || detailAdd == undefined){
+             //       tip('请填写详细收货地址！')
+             //       return;
+             //     }else{
+             //      $(this).prop('href','index.html')
+             //     }
+             // })
+        </script>
+    </body>
+</html>

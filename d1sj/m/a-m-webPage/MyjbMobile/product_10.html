@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>商品详情</title>
+        <!-- 视图窗口，移动端特属的标签。 -->
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+        <!-- 是否启动webapp功能，会删除默认的苹果工具栏和菜单栏。 -->
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <!-- 这个主要是根据实际的页面设计的主体色为搭配来进行设置。 -->
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <!-- 忽略页面中的数字识别为电话号码,email识别 -->
+        <meta name="format-detection"content="telephone=no, email=no" />
+        <!-- 启用360浏览器的极速模式(webkit) -->
+        <meta name="renderer" content="webkit">
+        <!-- 避免IE使用兼容模式 -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+        <meta name="HandheldFriendly" content="true">
+        <!-- 微软的老式浏览器 -->
+        <meta name="MobileOptimized" content="320">
+        <!-- uc强制竖屏 -->
+        <meta name="screen-orientation" content="portrait">
+        <!-- QQ强制竖屏 -->
+        <meta name="x5-orientation" content="portrait">
+        <!-- UC强制全屏 -->
+        <meta name="full-screen" content="yes">
+        <!-- QQ强制全屏 -->
+        <meta name="x5-fullscreen" content="true">
+        <!-- UC应用模式 -->
+        <meta name="browsermode" content="application">
+        <!-- QQ应用模式 -->
+        <meta name="x5-page-mode" content="app"> 
+        <!-- windows phone 点击无高光 -->
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="renderer" content="webkit|ie-stand|ie-comp">
+        <meta name="sharetitle" content="商品详情">
+        <meta name="sharedesc" content="">
+        <meta name="full-screen" content="yes">
+        <meta name="x5-fullscreen" content="true">
+        <meta name="browsermode" content="application">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <style type="text/css">
+            .layout{
+                width:100%;
+                height:100%;
+            }
+            .layout img{width:100%;height:auto;display:block;border:0;}
+            .pic03-box{
+                width:100%;
+                position:relative;
+            }
+            .pro01-link,.pro02-link{
+                position:absolute;
+                bottom:0;
+                width:50%;
+                height:100px;
+            }
+            .pro01-link{
+                left:0;
+            }
+            .pro02-link{
+                right:0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="layout">
+            <img src="images/product_pic10.jpg" alt="" />
+            <img src="images/product_pic10-3.jpg" alt="" />
+            <div class="pic03-box">
+                <img src="images/product_pic10-2.jpg" alt="" />
+                <a href="http://item.m.jd.com/product/1202437196.html?sid=72c1b72da73ac85be8a76c3df3b73d49" class="pro01-link"></a>
+                <a href="http://item.m.jd.com/product/10097980231.html?sid=72c1b72da73ac85be8a76c3df3b73d49" class="pro02-link"></a>
+            </div>
+        </div>
+    </body>
+</html>

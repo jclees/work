@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>联系我们</title>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <link href="_css/swiper.min.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="_css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="_css/style.css" />
+        <style>
+            .radio {
+                width: 2rem;
+                height: 2rem;
+                border-radius: 50%;
+                position: relative;
+                -webkit-appearance: none;
+                -webkit-tap-highlight-color: rgba(0,0,0,0);
+                outline: none;
+                border: none;
+                background-repeat: repeat;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            select {
+                /*很关键：将默认的select选择框样式清除*/
+                appearance: none;
+                -moz-appearance: none;
+                -webkit-appearance: none;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="conact_tabs clearfix">
+            <a href="javascript:;" class="cur">您的专属顾问</a>
+            <a href="javascript:;">您的联系方式</a>
+        </section>
+        <section class="tabs_content">
+            <section class="vip_adviser">
+                <div class="ewm"><img src="_images/ydd_ewm.jpg" alt="Alternate Text" /></div>
+                <p>识别二维码为您安排专属顾问</p>
+            </section>
+            <section class="contact_infor">
+                <form id="form">
+                    <table width="100%">
+                        <tr>
+                            <td>您的称呼</td>
+                            <td><input type="text" name="Name" placeholder="请输入您的称呼" /></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="radio" name="Sex" value="男士" class="radio" checked /><span class="icon_radio cur"></span>男士<input type="radio" name="Sex" value="女士" class="radio" /><span class="icon_radio"></span>女士</td>
+                        </tr>
+                        <tr>
+                            <td>您的企业名称</td>
+                            <td><input type="text" name="CorpName" style="margin:3% 0;" placeholder="请输入您的企业名称" /></td>
+                        </tr>
+                        <tr>
+                            <td>您的所属行业</td>
+                            <td>
+                                <img src="_images/icon_select.png" style="position: absolute; right: 15%; top: 39%; width: 12px;" alt="Alternate Text" />
+                                <select name="Industry">
+                                    <option value="">请选择所属行业</option>
+                                    <option value="酒水饮料">酒水饮料</option>
+                                    <option value="食品">食品</option>
+                                    <option value="农业">农业</option>
+                                    <option value="医疗">医疗</option>
+                                    <option value="其他">其他</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>您的联系方式</td>
+                            <td><input type="text" name="Mobile" placeholder="请输入您的联系方式" /></td>
+                        </tr>
+                        <tr>
+                            <td>您的邮箱</td>
+                            <td><input type="text" name="Email" placeholder="请输入您的邮箱" /></td>
+                        </tr>
+                        <tr>
+                            <td style=" bottom: 32px;">您需要什么</td>
+                            <td>
+                                <textarea name="ContactDemand" placeholder="最多输入200个字符" maxlength="200"></textarea>
+                            </td>
+                        </tr>
+                    </table>
+                    <section class="img_wrap" style="margin:10% 0 2% 0;">
+                        <a href="javascript:;" style="width:40%;height:100%;margin-left:-20%;left:50%;top:0;" onclick="savaData(this)"></a>
+                        <img src="_images/submit_btn.png" alt="Alternate Text" />
+                    </section>
+                </form>
+            </section>
+        </section>
+        <section class="msg_wrap">
+            <p></p>
+        </section>
+        <section class="fixed_wrap">
+            <a href="javascript:;" class="open_btn"></a>
+        </section>
+        <section class="mask_box">
+            <section class="bg"></section>
+            <section class="img_wrap" style="margin-top:8%;">
+                <a href="tel:400-180-9660" style="width: 35%; height: 9%; right: 24%;bottom: 4%;"></a>
+                <a href="javascript:;" style="width: 10%;height: 9%;right: 4%;top: 0;" class="close_btn"></a>
+                <a href="javascript:;" style="width: 30%;height: 27%;left: 50%;top: 33%;margin-left: -15%;"><img src="_images/ydd_ewm.jpg" style="height:100%;" alt="Alternate Text" /></a>
+                <img src="_images/fixedUs_02.png" alt="Alternate Text" />
+            </section>
+        </section>
+        <script src="_js/jquery-1.8.0.min.js"></script>
+        <script src="_js/common.js"></script>
+        <script>
+            jQuery.prototype.serializeObject = function () {
+                var a, o, h, i, e;
+                a = this.serializeArray();
+                o = {};
+                h = o.hasOwnProperty;
+                for (i = 0; i < a.length; i++) {
+                    e = a[i];
+                    if (!h.call(o, e.name)) {
+                        o[e.name] = e.value;
+                    }
+                }
+                return o;
+            };
+
+            var flag = false
+            function savaData(t) {
+                var inputData = jQuery("form").serializeObject();
+                console.log(inputData)
+                if (inputData.Name != "") {
+                    flag = true
+                } else if (inputData.ContactDemand != "") {
+                    flag = true
+                } else if (inputData.Industry != "") {
+                    flag = true
+                } else if (inputData.CorpName != "") {
+                    flag = true
+                } else if (inputData.Mobile != "") {
+                    flag = true
+                } else if (inputData.Email != "") {
+                    flag = true
+                } else {
+                    flag = false
+                }
+                if (flag) {
+                    $.post('http://192.168.0.100:4001/AddContactInfo', inputData, function (data) {
+                        if (data.Result) {
+                            console.log(data)
+                            $(".msg_wrap p").show().html('提交成功，我们会尽快处理您的留言<br />期待与您的合作！').css('color', '#666')
+                            $(t).removeAttr("onclick")
+                            $(':input', '#form').not(':button, :submit, :reset, :hidden,:radio').val('').removeAttr('checked').removeAttr('selected');
+                            setInterval(function () {
+                                $(".msg_wrap p").hide()
+                                $(t).attr("onclick", "savaData(this)")
+                            }, 5000)
+                        }
+                    })
+                } else {
+                    $(".msg_wrap p").show().text('请填写您的联系方式，方便我们联系到您。').css('color', 'red')
+                    $(t).removeAttr("onclick")
+                    setTimeout(function () {
+                        $(".msg_wrap p").hide()
+                        $(t).attr("onclick", "savaData(this)")
+                    }, 5000)
+                }
+            }
+            $(":radio").on('click', function () {
+                $(this).next().addClass('cur').siblings().removeClass('cur')
+            })
+        </script>
+    </body>
+</html>

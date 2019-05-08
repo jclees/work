@@ -1,0 +1,138 @@
+/********首页样式************/
+.xy_banner{
+    width:100%;
+    position: relative;
+}
+.xy_banner img{
+    width:100%;
+}
+.xy_banner .banner_txt,.xy_banner .add_banner_txt{
+    position: absolute;
+    left:50%;
+    top: 50%;
+    width:82%;
+    text-align: center;
+    color:#fff;
+    -webkit-transform:translate3d(-50%,-50%,0);
+    transform:translate3d(-50%,-50%,0);
+}
+.xy_banner .banner_txt h2{
+    font-size: 27px;
+}
+.xy_banner .banner_txt p{
+    font-size: 12px;
+    padding:14% 0 8% 0;
+    line-height: 20px;
+}
+.xy_banner .banner_txt .contact_btn,.add_banner_txt .map_btn{
+    font-size: 12px;
+    display:inline-block;
+    padding: 3% 11%;   
+    background: #ee8a29;
+    margin: 0 auto;
+    color:#fff;
+}
+/********地址样式************/
+.xy_banner .add_banner_txt{
+    width:76%;
+    text-align: left;
+}
+.add_banner_txt h2{
+    font-size: 16px;
+    font-weight: normal;
+}
+.add_banner_txt h3{
+    font-size: 12px;
+    font-weight: normal;
+    padding:8% 0;
+}
+.add_banner_txt p{
+    font-size: 12px;
+    line-height: 20px;
+}
+.add_banner_txt .map_btn{
+    padding: 3% 9%;
+    margin-top: 7%;
+    font-size: 12px;   
+}
+/********关于我们样式************/
+.about_con{
+    width:85%;
+    margin:0 auto;
+    color:#666;
+}
+h2{
+    width:100%;
+}
+h2 img{
+    width:100%;
+}
+.about_con p{
+    font-size: 12px;
+    line-height: 20px;
+    margin-bottom: 3%;
+}
+.about_con dl dt img{
+   margin:0 auto;
+}
+.about_con dl dd{
+    text-align: center;
+}
+@media screen and (min-width:330px){
+    /********首页样式************/
+    .xy_banner .banner_txt h2{
+        font-size: 32px;
+    }
+    .xy_banner .banner_txt p{
+        font-size: 14px;
+    }
+    .xy_banner .banner_txt .contact_btn{
+        font-size: 14px;
+    }
+    /********地址样式************/
+    .add_banner_txt h2{
+        font-size: 18px;
+    }
+    .add_banner_txt h3{
+        font-size: 14px;
+    }
+    .add_banner_txt p{
+        font-size: 14px;
+    }
+    .add_banner_txt .map_btn{
+        font-size: 14px;   
+    }
+    /********关于我们样式************/
+    .about_con p{
+        font-size: 14px;
+    }
+}
+@media screen and (min-width:380px){
+    /********首页样式************/
+    .xy_banner .banner_txt h2{
+        font-size: 36px;
+    }
+    .xy_banner .banner_txt p{
+        font-size: 16px;
+    }
+    .xy_banner .banner_txt .contact_btn{
+        font-size: 16px;
+    }
+    /********地址样式************/
+    .add_banner_txt h2{
+        font-size: 20px;
+    }
+    .add_banner_txt h3{
+        font-size: 16px;
+    }
+    .add_banner_txt p{
+        font-size: 16px;
+    }
+    .add_banner_txt .map_btn{
+        font-size: 16px;   
+    }
+    /********关于我们样式************/
+    .about_con p{
+        font-size: 16px;
+    }
+}

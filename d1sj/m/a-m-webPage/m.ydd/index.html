@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>首页</title>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <link href="_css/swiper.min.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="_css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="_css/common.css" />
+        <link rel="stylesheet" type="text/css" href="_css/style.css" />
+        <style>
+        </style>
+    </head>
+    <body>
+        <nav id="menu" class="menu">
+            <a href="index.html"><span><img src="_images/side_icon_01.png" /></span>首页</a>
+            <a href="product.html"><span><img src="_images/side_icon_02.png" /></span>产品</a>
+            <a href="NEWS/newsList.html"><span><img src="_images/side_icon_03.png" /></span>新闻</a>
+        </nav>
+        <main id="panel" class="panel">
+            <header>
+                <h2>盈多多</h2>
+                <a href="javascript:;" class="menu_btn"></a>
+            </header>
+            <section class="index">
+                <section>
+                    <img src="_images/banner_01.jpg" alt="" />
+                    <h3>盈多多是什么</h3>
+                    <p>盈多多是帮助企业快速构建精细化管理、精准化营销模式的智慧移动物联网服务平台。为企业提供品牌保护、智慧追溯、渠道管控、数字营销、数据分析等一站式服务，有效的提升企业利益与品牌价值，构筑社会责任与安全。</p>
+                </section>
+                <section>
+                    <img src="_images/index_pic_01.jpg" alt="" />
+                    <img src="_images/index_pic_02.jpg" alt="" />
+                    <img src="_images/index_pic_03.jpg" alt="" />
+                    <img src="_images/index_pic_04.jpg" alt="" />
+                    <img src="_images/index_pic_05.jpg" alt="" />
+                    <img src="_images/index_pic_06.jpg" alt="" />
+                    <img src="_images/index_pic_07.jpg" alt="" />
+                    <img src="_images/index_pic_08.jpg" alt="" />
+                    <a href="product.html" class="product_btn"></a>
+                </section>
+                <section>
+                    <h3>盈多多是什么</h3>
+                    <p>多家企业共同的选择，轻松应对各种挑战，让生意更简单！</p>
+                </section>
+                <section>
+                    <div class="hz_con">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide" data-history="1">
+                                    <img src="_images/hzpic_01.jpg" />
+                                </div>
+                                <div class="swiper-slide" data-history="Slide 2">
+                                    <img src="_images/hzpic_02.jpg" />
+                                </div>
+                                <div class="swiper-slide" data-history="3">
+                                    <img src="_images/hzpic_03.jpg" />
+                                </div>
+                                <div class="swiper-slide" data-history="3">
+                                    <img src="_images/hzpic_04.jpg" />
+                                </div>
+                                <div class="swiper-slide" data-history="3">
+                                    <img src="_images/hzpic_05.jpg" />
+                                </div>
+                                <div class="swiper-slide" data-history="3">
+                                    <img src="_images/hzpic_06.jpg" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-prev arrow l_arrow"></div>
+                        <div class="swiper-button-next arrow r_arrow"></div>
+                    </div>
+                </section>
+            </section>
+            <footer>
+                <p>Copyright&copy;2014-2017 All rights reserved</p>
+                <p>北京信源国检科技有限公司版权所有  京ICP备15028741号</p>
+            </footer>
+        </main>
+        <script src="_js/jquery-1.8.0.min.js"></script>
+        <script src="_js/zepto.js"></script>
+        <script src="_js/swiper.jquery.min.js"></script>
+        <!-- 侧滑插件 -->
+        <script src="dist/slideout.min.js"></script>
+        <script type="text/javascript" src="_js/common.js"></script>
+        <!-- 侧滑插件 -->
+        <script>
+            var imgUrl = '_images/top.png'
+            $(function () {
+                //回到顶部
+                scrollTop(imgUrl);
+                //首页可滑动图片
+                var swiper = new Swiper('.swiper-container', {
+                    history: 'love',
+                    pagination: '.swiper-pagination',
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                    prevButton: '.swiper-button-prev',
+                    nextButton: '.swiper-button-next',
+                });
+                //侧滑菜单
+                slideMenu();
+            })
+        </script>
+    </body>
+</html>

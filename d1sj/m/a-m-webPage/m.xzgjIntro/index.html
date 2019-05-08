@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>信征国检</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <style>
+        
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+
+            -webkit-tap-highlight-color: transparent;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+        .amap-marker .marker-route {
+            position: absolute;
+            width: 40px;
+            height: 29px;
+            color: #e90000;
+            background: url(http://webapi.amap.com/theme/v1.3/images/newpc/poi-1.png) no-repeat;
+            cursor: pointer;
+        }
+
+        .amap-marker .marker-marker-bus-from {
+            background-position: -337px -30px;
+        }
+        body {
+            background: #252a35;
+        }
+        .icon_wrap {
+            position: fixed;
+            z-index: 99;
+        }
+        .icon_wrap img{
+            width:36px;
+        }
+        .side {
+            bottom: 8%;
+            left: 50%;
+            margin-left: -18px;
+            animation: myfirst 2s infinite;
+        }
+        .music {
+            right: 4%;
+            top: 5%;
+        }
+        .music_rotate {
+            -webkit-animation: loading 3s linear infinite;
+            animation: loading 3s linear infinite;
+        }
+        @keyframes loading {
+            from {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            to {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes myfirst {
+            0% {
+                transform: translate(0px, 0px);
+            }
+
+            50% {
+                transform: translate(0px, -10px);
+            }
+
+            100% {
+                transform: translate(0px, 0px);
+            }
+        }
+        .img_wrap{
+            position:relative;
+        }
+        .img_wrap img{
+            width:100%;
+        }
+        .map_box {
+            margin: 0 auto;
+            width: 90%;
+            height: 300px;
+            border-radius:10px;
+        }
+        .amap-drags, .amap-layers {
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="icon_wrap music music_rotate">
+        <audio loop autoplay id="mp3Btn">
+            <source src="music.mp3" type="audio/mpeg">
+        </audio>
+        <img src="images/music_icon.png" alt="Alternate Text" />
+    </div>
+    <div class="img_wrap">
+        <img src="images/01.jpg" alt="Alternate Text" />
+    </div>
+    <div id="container" class="map_box"></div>
+    <div class="img_wrap">
+        <a href="tel:010-84867110" style="width:34%; height:6%; position:absolute;top:16%;left:10%;"></a>
+        <a href="tel:010-59440320" style="width:34%; height:6%; position:absolute;top:26%;left:10%;"></a>
+        <img src="images/02.jpg" alt="Alternate Text" />
+    </div>
+    <script language="javascript" src="http://webapi.amap.com/maps?v=1.3&amp;key=e8496e8ac4b0f01100b98da5bde96597"></script>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        AMap.service('AMap.Geocoder', function () {//回调函数
+            //实例化Geocoder
+            geocoder = new AMap.Geocoder({
+                city: ""//城市，默认：“全国”
+            });
+            //TODO: 使用geocoder 对象完成相关功能
+            geocoder.getLocation('北京市朝阳区安慧北里秀园15号海亚大厦5层', function (status, result) {
+                if (status === 'complete' && result.info === 'OK') {
+                    //TODO:获得了有效经纬度，可以做一些展示工作
+                    //比如在获得的经纬度上打上一个Marker
+                    //console.log(result)
+                    //alert('经度'+result.geocodes[0].location.lng)
+                    //alert('纬度' + result.geocodes[0].location.lat)
+                    //debugger
+                    var lng = result.geocodes[0].location.lng;
+                    var lat = result.geocodes[0].location.lat;
+                    console.log(lng, lat)
+
+                    var map = new AMap.Map('container', {
+                        resizeEnable: true,
+                        center: [lng, lat],
+                        zoom: 13
+                    });
+                    var marker = new AMap.Marker({
+                        position: map.getCenter(),
+                        draggable: true,
+                        cursor: 'move',
+                        content: '<div class="marker-route marker-marker-bus-from"></div>'   //自定义点标记覆盖物内容
+                    });
+                    marker.setMap(map);
+                    // 设置点标记的动画效果，此处为弹跳效果
+                    //marker.setAnimation('AMAP_ANIMATION_BOUNCE');
+                    marker.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+                        offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
+                        content: "北京市朝阳区安慧北里秀园15号海亚大厦5层"
+                    });
+
+
+                } else {
+                    //获取经纬度失败
+                }
+            });
+        })
+       
+
+        var audio = document.getElementById('mp3Btn');
+        audio.play();//播放
+        $(".music").on('click', function () {
+            //防止冒泡
+            event.stopPropagation();
+            if (audio.paused) //如果当前是暂停状态
+            {
+                audio.play();//播放
+                $(this).addClass("music_rotate")
+                $(this).find("img").attr('src', 'images/music_icon.png')
+                return;
+            }
+            audio.pause(); //暂停
+            $(this).removeClass("music_rotate")
+            $(this).find("img").attr('src', 'images/music_close_icon.png')
+        })
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            function audioAutoPlay() {
+                var audio = document.getElementById('mp3Btn');
+                audio.play();
+                document.addEventListener("WeixinJSBridgeReady", function () {
+                    audio.play();
+                }, false);
+            }
+            audioAutoPlay();
+
+        });
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>企业介绍</title>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link href="_css/swiper.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="_css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="_css/style.css" />
+    <style>
+        body {
+            height: 100%;
+        }
+        .contact {
+            position: absolute;
+            top: 0;
+            left: 24%;
+            width: 20%;
+            height: 12%;
+        }
+        .mask_bg p img{
+            width:80%;
+        }
+    </style>
+</head>
+<body>
+    <main id="panel" class="panel" style="margin-bottom:44px;">
+        <section style="position:relative;"><img src="_images/comp_pic_01.jpg" /></section>
+        <section style="position:relative;"><a href="javascript:;" class="contact"></a><img src="_images/comp_pic_02.jpg" /></section>
+    </main>
+    <section class="mask_bg">
+        <section class="bg"></section>
+        <p>
+            <img src="_images/zjbg.jpg" />
+            <!--<span>长按图片识别图中二维码</span><br />
+            <span>关注康力基</span>-->
+        </p>
+    </section>
+    <script src="_js/jquery-1.8.0.min.js"></script>
+    <script>
+        $('.contact').on('click', function () {
+            $('.mask_bg').show()
+        })
+        $('.mask_bg > .bg').on('click', function () {
+            $(this).parent().hide()
+        })
+    </script>
+</body>
+</html>
