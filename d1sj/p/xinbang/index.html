@@ -1,0 +1,368 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+    <!-- 包含头部信息用于适应不同设备 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 包含 bootstrap 样式表 -->
+    <link rel="stylesheet" href="dist/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="dist/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .swiper-wrapper {
+            padding: 50px;
+        }
+
+        .swiper-container:last-of-type {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header header_1 side_ing">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="navbar-header" style="position: absolute;top: 0;">
+                    <a class="navbar-brand" href="#">
+                        <img src="images/logo.png" alt="" id="logo">
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="">
+                            <a href="index.html" class="cur">首页</a>
+                        </li>
+
+                        <li>
+                            <a href="aboutUs.html">关于我们</a>
+                        </li>
+                        <li>
+                            <a href="storageProduct.html">存储产品</a>
+                        </li>
+                        <li>
+                            <a href="officeProduct.html">办公设备</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:;" onclick="jumpUrl('newsList.html')" class="dropdown-toggle" data-toggle="dropdown">
+                                新闻中心
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="newsList.html">公司新闻</a>
+                                </li>
+                                <li>
+                                    <a href="#">行业新闻</a>
+                                </li>
+                                <li>
+                                    <a href="#">其他新闻</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="contact.html">联系我们</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="index">
+        <div class="banner">
+            <img src="images/index_banner.jpg" alt="" class="auto_img">
+        </div>
+        <div class="page page1">
+            <div class="container">
+                <div class="common_tit">
+                    <h2>企业介绍</h2>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <img src="images/index_pic_01.jpg" alt="" class="">
+                    </div>
+                    <div class="col-sm-6 right_con">
+                        <h3>北京新体验数码科技有限公司</h3>
+                        <p>北京新体验数码科技有限公司，是一家2003年创立于北京中关村的高新技术企业，公司自创建以来，始终坚持“诚信、尊重、高效、”的企业文化，一直以推动民族IT产业发展为已任，业务广泛涉及到计算机软硬件产品的研发、设计、推广和服务多个领域，旗下的
+                            “Cenby新邦”移动存储、数码系列产品以其独创设计、领先技术、专业服务、应用创新在获得业界和广大客户认可的同时，公司也得到坚实、稳定、迅速的发展。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="prod_nav clearfix">
+            <a href="javascript:;">
+                <div class="sub_wrap">
+                    <span></span>
+                    <p>储存产品</p>
+                    <em></em>
+                </div>
+            </a>
+            <a href="javascript:;">
+                <div class="sub_wrap">
+                    <span></span>
+                    <p>办公设备</p>
+                    <em></em>
+                </div>
+            </a>
+        </div>
+        <div class="page page3">
+            <div class="container">
+                <div class="common_tit">
+                    <h2>新闻中心</h2>
+                </div>
+                <ul class="row news_tab">
+                    <li class="col-sm-push-3 col-sm-3 text-center cur">
+                        <a href="javascript:;">公司新闻</a>
+                    </li>
+                    <li class="col-sm-offset-3 col-sm-3 text-center">
+                        <a href="javascript:;">行业新闻</a>
+                    </li>
+                </ul>
+                <div>
+                    <!-- Swiper -->
+                    <div class="swiper-container news1">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="newsDetail.html" class="news_con">
+                                    <img src="images/index_pic_03.jpg" alt="" class="auto_img">
+                                    <h3>成功入围08\09年中央政府采购协议供货商</h3>
+                                    <p>日前，中央政府09年度采购协议供货商招标顺利完成。此次项目招标是由中央国家机关政府采购中心组织，通过评标委员会公开、公平、公...</p>
+                                    <div class="news_con_bot clearfix">
+                                        <div class="pull-left">
+                                            <p>02-28</p>
+                                            <span>2019</span>
+                                        </div>
+                                        <div class="pull-right">
+                                            <div class="more_arrow"></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="newsDetail.html" class="news_con">
+                                    <img src="images/index_pic_04.jpg" alt="" class="auto_img">
+                                    <h3>市场观察：存储虚拟化时代 NAS强势上位</h3>
+                                    <p>谈到虚拟化存储时，你可以从NAS和众多的SAN架构中选择。共享存储经常被认为是虚拟化基础架构的理想选择，因为它允许虚拟机使用本...</p>
+                                    <div class="news_con_bot clearfix">
+                                        <div class="pull-left">
+                                            <p>02-28</p>
+                                            <span>2019</span>
+                                        </div>
+                                        <div class="pull-right">
+                                            <div class="more_arrow"></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="newsDetail.html" class="news_con">
+                                    <img src="images/index_pic_05.jpg" alt="" class="auto_img">
+                                    <h3>意大利临床试验</h3>
+                                    <p>我们选择了15位健康婴儿，年龄介于1岁至3岁，分为两组，一组给予圣安娜婴幼儿矿泉水来冲泡奶粉，另一组用一般的矿泉...</p>
+                                    <div class="news_con_bot clearfix">
+                                        <div class="pull-left">
+                                            <p>02-28</p>
+                                            <span>2019</span>
+                                        </div>
+                                        <div class="pull-right">
+                                            <div class="more_arrow"></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="javascript:;" class="news_con">
+                                    <img src="images/index_pic_03.jpg" alt="" class="auto_img">
+                                    <h3>cenby新邦 U盘</h3>
+                                    <p>今社会，U盘已经成为人们工作、生活中不可缺的一部分。目前U盘市场上鱼龙混杂，各种品牌，各种容量，各种价位的U盘层出不穷...</p>
+                                    <div class="news_con_bot clearfix">
+                                        <div class="pull-left">
+                                            <p>02-28</p>
+                                            <span>2019</span>
+                                        </div>
+                                        <div class="pull-right">
+                                            <div class="more_arrow"></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-button-prev"></div>
+                        <!--左箭头-->
+                        <div class="swiper-button-next"></div>
+                        <!--右箭头-->
+                    </div>
+                    <!-- Swiper -->
+                    <div class="swiper-container news2">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="javascript:;" class="news_con">
+                                    <img src="images/index_pic_03.jpg" alt="" class="auto_img">
+                                    <h3>222222222222222222222222222</h3>
+                                    <p>日前，中央政府09年度采购协议供货商招标顺利完成。此次项目招标是由中央国家机关政府采购中心组织，通过评标委员会公开、公平、公...</p>
+                                    <div class="news_con_bot clearfix">
+                                        <div class="pull-left">
+                                            <p>02-28</p>
+                                            <span>2019</span>
+                                        </div>
+                                        <div class="pull-right">
+                                            <div class="more_arrow"></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="javascript:;" class="news_con">
+                                    <img src="images/index_pic_03.jpg" alt="" class="auto_img">
+                                    <h3>222222222222222222222222222</h3>
+                                    <p>日前，中央政府09年度采购协议供货商招标顺利完成。此次项目招标是由中央国家机关政府采购中心组织，通过评标委员会公开、公平、公...</p>
+                                    <div class="news_con_bot clearfix">
+                                        <div class="pull-left">
+                                            <p>02-28</p>
+                                            <span>2019</span>
+                                        </div>
+                                        <div class="pull-right">
+                                            <div class="more_arrow"></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="javascript:;" class="news_con">
+                                    <img src="images/index_pic_03.jpg" alt="" class="auto_img">
+                                    <h3>222222222222222222222222222</h3>
+                                    <p>日前，中央政府09年度采购协议供货商招标顺利完成。此次项目招标是由中央国家机关政府采购中心组织，通过评标委员会公开、公平、公...</p>
+                                    <div class="news_con_bot clearfix">
+                                        <div class="pull-left">
+                                            <p>02-28</p>
+                                            <span>2019</span>
+                                        </div>
+                                        <div class="pull-right">
+                                            <div class="more_arrow"></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="javascript:;" class="news_con">
+                                    <img src="images/index_pic_03.jpg" alt="" class="auto_img">
+                                    <h3>222222222222222222222222222</h3>
+                                    <p>日前，中央政府09年度采购协议供货商招标顺利完成。此次项目招标是由中央国家机关政府采购中心组织，通过评标委员会公开、公平、公...</p>
+                                    <div class="news_con_bot clearfix">
+                                        <div class="pull-left">
+                                            <p>02-28</p>
+                                            <span>2019</span>
+                                        </div>
+                                        <div class="pull-right">
+                                            <div class="more_arrow"></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-button-prev"></div>
+                        <!--左箭头-->
+                        <div class="swiper-button-next"></div>
+                        <!--右箭头-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page page4">
+            <div class="common_tit">
+                <h2>服务流程</h2>
+            </div>
+            <img src="images/index_pic_06.jpg" alt="" class="center-block" style="margin-top: 70px;">
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 lt">
+                    <ul>
+                        <li>
+                            <p>地址：北京市海淀区学院路16号112-113室</p>
+                        </li>
+                        <li>
+                            <p>
+                                电话：400－0920-616
+                            </p>
+                        </li>
+                        <li>
+                            <p>传真：sheyufu</p>
+                        </li>
+                        <li>
+                            <p>网址：www.cenby.com</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 rt">
+                    <ul class="row">
+                        <li class="col-sm-offset-6">
+                            <p class="tit">产品热线</p>
+                        </li>
+                        <li class="col-sm-offset-6">
+                            <p class="tit" style="font-size:38px;">010-51659050</p>
+                        </li>
+                        <li class="col-sm-offset-6">
+                            <p class="tit" style="font-size:38px;">400-669-1151</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center visible-xs">
+                <p style="font-size: 12px;"> 2018©️版权所以，京ICP备
+                    <br>33309494号</p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+    <!-- 可选: 包含 jQuery 库 -->
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <!-- 可选: 合并了 Bootstrap JavaScript 插件 -->
+    <script src="https://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="dist/swiper/js/swiper.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        var swiper = new Swiper('.news1', {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        $(".news_tab > li").on("click", function () {
+            $(this).addClass("cur").siblings().removeClass("cur")
+            $(".swiper-container").eq($(this).index()).show().siblings().hide()
+            var swiper2 = new Swiper('.news2', {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+        })
+    </script>
+</body>
+
+</html>

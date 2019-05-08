@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>联系我们</title>
+    <!-- 包含头部信息用于适应不同设备 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 包含 bootstrap 样式表 -->
+    <link rel="stylesheet" href="dist/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background: #f4f7fc;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background: #fff;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contact">
+        <!-- <div class="dasai_banner sub">
+        </div> -->
+        <img src="images/us_banner.png" alt="" class="auto_img hidden-xs">
+        <img src="images/us_banner_xs.png" alt="" class="auto_img visible-xs">
+        <div class="container">
+            <ul class="row contact_list">
+                <li class="col-sm-6 text-center">
+                    <img src="images/icon_us_tel.png" alt="">
+                    <h3>1-678-557-0260（美国）</h3>
+                </li>
+                <li class="col-sm-6 text-center">
+                    <img src="images/icon_us_wx.png" alt="">
+                    <h3>ZXP18583857757</h3>
+                </li>
+                <li class="col-sm-6 text-center">
+                    <img src="images/icon_us_em.png" alt="">
+                    <h3>UniversalDance@163.combr
+                        <br>
+                            1724118854@qq.com</h3>
+                </li>
+                <li class="col-sm-6 text-center">
+                    <img src="images/icon_us_add.png" alt="">
+                    <h3>10750 Medlock Bridge Road, Johns 
+                            <br>
+                            Creek, Georgia 30097 USA</h3>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+    <!-- 可选: 包含 jQuery 库 -->
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <!-- 可选: 合并了 Bootstrap JavaScript 插件 -->
+    <script src="https://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        var openStatus = true,
+            initIntro = '环球舞蹈大赛本着"公平、公正、公开"的原则，面向全国舞蹈工作室的广大舞蹈爱好者，为我们的明日之星搭建自我展示的平台。通过参与环球舞蹈大赛，展示仙女和王子们的舞蹈成果....';
+        function openIntro(t) {
+            if (openStatus) {
+                openStatus = false
+                $(t).siblings("p").text('环球舞蹈大赛本着"公平、公正、公开"的原则，面向全国舞蹈工作室的广大舞蹈爱好者，为我们的明日之星搭建自我展示的平台。通过参与环球舞蹈大赛，展示仙女和王子们的舞蹈成果，提高每一位参赛者的自信心及团队凝聚力，丰富家庭精神生活，并且提高广大舞蹈工作室的国际知名度。')
+                $(t).children(".txt").text("收起")
+                $(t).children(".glyphicon").attr("class", "glyphicon glyphicon-menu-up")
+            } else {
+                openStatus = true
+                $(t).siblings("p").text(initIntro)
+                $(t).children(".txt").text("展开")
+                $(t).children(".glyphicon").attr("class", "glyphicon glyphicon-menu-down")
+            }
+        }
+    </script>
+</body>
+
+</html>

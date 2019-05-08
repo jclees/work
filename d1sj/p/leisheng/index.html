@@ -1,0 +1,321 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+    <!-- 包含头部信息用于适应不同设备 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 包含 bootstrap 样式表 -->
+    <link rel="stylesheet" href="dist/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="dist/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            font-size: 18px;
+            background: #fff;
+        }
+
+        .swiper-slide h3 {
+            font-size: 24px;
+            color: #333333;
+        }
+
+        .swiper-slide p {
+            font-size: 16px;
+            color: #737373;
+            padding: 30px 0 20px 0;
+        }
+
+        .swiper-pagination-bullet {
+            width: 20px;
+            height: 2px;
+            opacity: 1;
+            border-radius: 0;
+            background: #c5c5c5;
+        }
+
+        .swiper-pagination-bullet-active {
+            color: #fff;
+            background: #0074f3;
+        }
+
+        .swiper-container-horizontal>.swiper-pagination-bullets,
+        .swiper-pagination-custom,
+        .swiper-pagination-fraction {
+            bottom: 28px;
+        }
+        .swiper-button-prev, .swiper-container-rtl .swiper-button-next{
+            background-image: url(images/arrow_left.png);
+            left: 100px;
+        }
+        .swiper-button-next, .swiper-container-rtl .swiper-button-prev{
+            background-image: url(images/arrow_right.png);
+            right: 100px;
+        }
+        .swiper-button-next, .swiper-button-prev{
+            width: 86px;
+            height: 86px;
+            background-size:cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header header_1">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header" style="position: absolute;top: 0;">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="images/logo.png" alt="" id="logo">
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="">
+                            <a href="index.html">公司首页</a>
+                        </li>
+                        <li>
+                            <a href="aboutUs.html">关于我们</a>
+                        </li>
+                        <li>
+                            <a href="products.html">LED显示屏</a>
+                        </li>
+                        <li>
+                            <a href="products.html">LED照明</a>
+                        </li>
+                        <li>
+                            <a href="products.html">视频处理</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">联系我们</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="index">
+        <div class="banner">
+            <!-- Swiper -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/index_banner_01.jpg" alt="" class="auto_img">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/index_banner_01.jpg" alt="" class="auto_img">
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <!--左箭头-->
+                <div class="swiper-button-next"></div>
+                <!--右箭头-->
+            </div>
+        </div>
+        <div class="page page1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 right_con">
+                        <div class="common_tit">
+                            <h2>关于我们</h2>
+                            <span>ABOUT US</span>
+                            <div class="line"></div>
+                        </div>
+                        <p> “LEDSEE雷盛”是北京新体验数码科技有限公司集多年深入行业研究、多名技术专家论证，确保产品的工艺先进、质量可靠、技术领先，争取在光电显示领域树立一个新的丰碑而设立的产品品牌。
+                            <br>
+                            <br>北京新体验数码科技有限公司，是一家2003年创立于北京中关村的高新技术企业，公司自创建以来，始终坚持“诚信、尊重、高效、”的企业文化，已通过了ISO9000-2000质量认证，一直以推动民族IT产业发展为已任，业务广泛涉及到计算机软硬件产品的研发、设计、推广和服务多个领域，旗下的
+                            “LEDSEE雷盛”LED显示屏产品以其独创设计、领先技术、专业服务、应用创新在获得业界和广大客户认可的同时，公司也得到坚实、稳定、迅速的发展。
+                        </p>
+                        <a href="javascript:;" class="more_btn pull-right">READ MORE</a>
+                    </div>
+                    <div class="col-sm-6">
+                        <img src="images/index_pic_01.jpg" alt="" class="pull-right">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page page2">
+            <div class="common_tit text-center">
+                <h2>官网活动</h2>
+                <span>NEWS TENDENCY</span>
+                <div class="line" style="left: 50%;margin-left: -25px;"></div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 news_con">
+                        <h2>
+                            <em>01</em>
+                            <span>/</span>Article
+                        </h2>
+                        <h3>三八节，雷盛LED事业部放假</h3>
+                        <p>昨天是三八妇女节，一大早公司的女同胞们在男同胞的队列和鞠躬下走进公司，然后更加惊喜的是，每个女士的桌子上都会有不同的礼品，原来这是男士们精心为他们准备的节日喜爱礼品。有鲜花、娃娃、银质的手链、钥匙包，让女同志们更为吃惊的是，一项叩门的老板，竟然准备了神秘大礼，包的严严实实的，让我们中午放假...</p>
+                        <p class="date">2019/3/9</p>
+                    </div>
+                    <div class="col-sm-6 news_con">
+                        <h2>
+                            <em>02</em>
+                            <span>/</span>Article</h2>
+                        <h3>三八节，雷盛LED事业部放假</h3>
+                        <p>昨天是三八妇女节，一大早公司的女同胞们在男同胞的队列和鞠躬下走进公司，然后更加惊喜的是，每个女士的桌子上都会有不同的礼品，原来这是男士们精心为他们准备的节日喜爱礼品。有鲜花、娃娃、银质的手链、钥匙包，让女同志们更为吃惊的是，一项叩门的老板，竟然准备了神秘大礼，包的严严实实的，让我们中午放假...</p>
+                        <p class="date">2019/3/9</p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="javascript:;" class="more_btn">READ MORE</a>
+                </div>
+            </div>
+        </div>
+        <div class="page page3">
+            <div class="common_tit text-center">
+                <h2>产品中心</h2>
+                <span>PRODUCT CENTER</span>
+                <div class="line" style="left: 50%;margin-left: -25px;"></div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <a href="javascript:;" class="prod_con">
+                            <img src="images/index_pic_02.jpg" alt="">
+                            <img src="images/index_icon_05.png" alt="" class="arrow">
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="javascript:;" class="prod_con">
+                            <img src="images/index_pic_03.jpg" alt="">
+                            <img src="images/index_icon_05.png" alt="" class="arrow">
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="javascript:;" class="prod_con">
+                            <img src="images/index_pic_04.jpg" alt="">
+                            <img src="images/index_icon_05.png" alt="" class="arrow">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="common_bg" style="height: 600px;background-image: url(images/index_pic_05.jpg);"></div>
+        <div class="page page4">
+            <div class="common_tit text-center">
+                <h2>服务热线</h2>
+                <span>SERVICE HOTLINE</span>
+                <div class="line" style="left: 50%;margin-left: -25px;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer_contact">
+        <div class="container">
+            <div class="contact_con">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="contact_con_way clearfix">
+                            <div class="pull-left" style="margin-top: 28px;">
+                                <img src="images/index_icon_01.png" alt="" class="center-block">
+                            </div>
+                            <span class="line"></span>
+                            <div class="pull-left">
+                                <h2>地址</h2>
+                                <p>北京市海淀区学院路7号弘彧大厦1503</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="contact_con_way clearfix">
+                            <div class="pull-left" style="margin-top: 28px;">
+                                <img src="images/index_icon_02.png" alt="" class="center-block">
+                            </div>
+                            <span class="line"></span>
+                            <div class="pull-left">
+                                <h2>邮箱</h2>
+                                <p>190@sohu.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="contact_con_way clearfix">
+                            <div class="pull-left" style="margin-top: 25px;">
+                                <img src="images/index_icon_03.png" alt="" class="center-block">
+                            </div>
+                            <span class="line"></span>
+                            <div class="pull-left">
+                                <h2>400-669-1151</h2>
+                                <p>全国免费咨询热线</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="contact_con_way clearfix">
+                            <div class="pull-left" style="margin-top: 25px;">
+                                <img src="images/index_icon_04.png" alt="" class="center-block">
+                            </div>
+                            <span class="line"></span>
+                            <div class="pull-left">
+                                <h2>010-51659050</h2>
+                                <p>售后服务中心联系方式</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="javascript:;" class="common_bg" style="height: 244px;background-image: url(images/footer_pic_01.jpg);display: block;"></a>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="text-center">
+                <p> 2006－2019 北京新体验数码科技有限公司 | 湘ICP备11005060号
+                    <br>
+                    <br>本站关键词：LED全彩显示屏 北京LED显示屏 京东代运营 石景山装修公司</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+    <!-- 可选: 包含 jQuery 库 -->
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <!-- 可选: 合并了 Bootstrap JavaScript 插件 -->
+    <script src="https://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="dist/swiper/js/swiper.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: true
+        });
+        $(window).scroll(function () {
+            let bannerH = $(".banner").height(),
+                headerH = $(".header_1 .navbar").height(),
+                windowTop = $(window).scrollTop();
+            // console.log(headerH)
+            // console.log(bannerH)
+            // console.log(windowTop)
+            if (windowTop <= (bannerH - headerH)) {
+                $(".header_1").removeClass("side_ing")
+            } else {
+                $(".header_1").addClass("side_ing")
+            }
+        });
+    </script>
+</body>
+
+</html>

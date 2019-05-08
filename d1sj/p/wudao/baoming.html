@@ -1,0 +1,294 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>报名</title>
+    <!-- 包含头部信息用于适应不同设备 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 包含 bootstrap 样式表 -->
+    <link rel="stylesheet" href="dist/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="baoming">
+        <div class="dasai_banner sub min visible-xs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 text-center common_tit">
+                        <h2>环球舞蹈挑战赛</h2>
+                        <h3>报名表</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="container hidden-xs">
+                <div class="row">
+                    <div class="col-sm-12 text-center common_tit">
+                        <h2>环球舞蹈挑战赛</h2>
+                        <h3>报名表</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                    <form id="form1">
+                        <div class="input-group input-group-lg col-xs-12 col-sm-12">
+                            <label>姓名
+                                <span style="color: #ff0000">*</span>
+                            </label>
+                            <input type="text" class="form-control" placeholder="请输入" name="name">
+                        </div>
+                        <div class="input-group">
+                            <label>性别
+                                <span style="color: #ff0000">*</span>
+                            </label>
+                            <div class="">
+                                <div class='radio-check'>
+                                    <input type='radio' name='sex' id='radio1' value="0" checked/>
+                                    <label for='radio1' class>男</label>
+                                </div>
+                                <div class='radio-check'>
+                                    <input type='radio' name='sex' id='radio2' value="1" />
+                                    <label for='radio2' class>女</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-group input-group-lg col-xs-12 col-sm-12">
+                            <label>生日（年月日）
+                                <span style="color: #ff0000">*</span>
+                            </label>
+                            <input type="text" class="form-control" placeholder="请输入" name="shengri">
+                        </div>
+                        <div class="input-group input-group-lg col-xs-12 col-sm-12">
+                            <label>有效证件
+                                <span style="color: #ff0000">*</span>
+                            </label>
+                            <input type="text" class="form-control" placeholder="请输入">
+                        </div>
+                        <div class="input-group input-group-lg col-xs-12 col-sm-12">
+                            <label>联系电话
+                                <span style="color: #ff0000">*</span>
+                            </label>
+                            <input type="text" class="form-control" placeholder="请输入">
+                        </div>
+                        <div class="input-group input-group-lg col-xs-12 col-sm-12">
+                            <label>邮箱
+                                <span style="color: #ff0000">*</span>
+                            </label>
+                            <input type="text" class="form-control" placeholder="请输入">
+                        </div>
+                        <div class="input-group input-group-lg col-xs-12 col-sm-12">
+                            <label>报名方式
+                                <span style="color: #ff0000">*</span>
+                            </label>
+                            <input type="text" class="form-control" placeholder="请输入">
+                        </div>
+                        <div class="btn-group col-xs-12 col-sm-12">
+                            <label>参赛赛区
+                                <span style="color: #ff0000">*</span>
+                            </label>
+                            <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="txt">请选择</span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="javascript:;" onclick="showsSele(this)" data-name="" data-val="0">舞种1</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" onclick="showsSele(this)" data-name="" data-val="1">舞种2</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" onclick="showsSele(this)" data-name="" data-val="2">舞种3</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btn-group col-xs-12 col-sm-12">
+                            <label>参赛类别
+                                <span style="color: #ff0000">*</span>
+                            </label>
+                            <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="txt">请选择</span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="javascript:;" onclick="showsSele(this)" data-name="types2" data-val="0">舞种1</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" onclick="showsSele(this)" data-name="types2" data-val="1">舞种2</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" onclick="showsSele(this)" data-name="types2" data-val="2">舞种3</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <div class="input-group col-xs-12 col-sm-12" id="infoWrap">
+                            <label>参赛队员信息
+                                <span style="color: #ff0000">*</span>
+                            </label>
+                            <a href="javascript:;" class="pull-right glyphicon glyphicon-plus" style="padding-top: 5px;" onclick="addInfo(this)"></a>
+                            <div class="add_info_wrap">
+                                <div class="row">
+                                    <div class="col-xs-4 col-sm-3">
+                                        <input type="text" name="s1" id="" placeholder="姓名：">
+                                    </div>
+                                    <div class="col-xs-4 col-sm-2">
+                                        <input type="text" name="s2" id="" placeholder="年龄：">
+                                    </div>
+                                    <div class="col-xs-4 col-sm-2">
+                                        <input type="text" name="s3" id="" placeholder="性别：">
+                                    </div>
+                                    <div class="col-xs-7 col-sm-3">
+                                        <input type="text" name="s4" id="" placeholder="联系电话：">
+                                    </div>
+                                    <div class="col-xs-10 col-sm-4 last">
+                                        <input type="text" name="s5" id="" placeholder="有效证件：">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group col-xs-12 col-sm-12">
+                            <label>参赛舞种
+                                <span style="color: #ff0000">*</span>
+                            </label>
+                            <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="txt">请选择</span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="javascript:;" onclick="showsSele(this)" data-name="" data-val="0">舞种1</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" onclick="showsSele(this)" data-name="" data-val="1">舞种2</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" onclick="showsSele(this)" data-name="" data-val="2">舞种3</a>
+                                </li>
+                            </ul>
+                            <input type="text" name="wuzhong" hidden>
+                        </div>
+                        <div class="input-group">
+                            <label>参赛作品视频上传
+                                <span style="color: #ff0000">*</span>
+                            </label>
+                            <div class="upload_video">
+                                <img src="images/bm_icon_video.png" alt="">
+                                <input id="videoFile" type="file" onchange="UpladFile()">
+                                <p class="text-center" id="videoName" style="padding: 15px 0 0;display: none;"></p>
+                            </div>
+
+                        </div>
+                        <div class="input-group">
+                            <label>是否参加大师课
+                                <span style="color: #ff0000">*</span>
+                            </label>
+                            <div class="">
+                                <div class='radio-check'>
+                                    <input type='radio' name='yesorno' id='radio3' value="0" checked/>
+                                    <label for='radio3' class>是</label>
+                                </div>
+                                <div class='radio-check'>
+                                    <input type='radio' name='yesorno' id='radio4' value="1" />
+                                    <label for='radio4' class>否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="submit_btn col-xs-5 col-xs-offset-4 col-sm-3 col-sm-offset-4" onclick="savaData()">提 交</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+    <!-- 可选: 包含 jQuery 库 -->
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <!-- 可选: 合并了 Bootstrap JavaScript 插件 -->
+    <script src="https://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // 储存下拉框临时参数
+        var tempFormData = {};
+        // 显示下拉框并赋值
+        function showsSele(t) {
+            var thisTxt = $(t).text()
+            var thisName = $(t).attr("data-name")
+            var thisVal = $(t).attr("data-val")
+            $(t).parents(".dropdown-menu").siblings("button").children(".txt").text(thisTxt)
+            $(t).parents(".dropdown-menu").siblings("input").val(thisVal)
+
+            console.log($(t).parents(".dropdown-menu").siblings("input").val())
+            // tempFormData[thisName] = thisVal
+        }
+
+        function UpladFile() {
+            var fileObj = document.getElementById("videoFile").files[0]; // js 获取文件对象
+            if (fileObj.name) {
+                console.log(fileObj.name.length)
+                $("#videoName").show().text(fileObj.name);
+            } else {
+                alert("请选择文件");
+            }
+        }
+
+        //添加成员信息
+        function addInfo(t) {
+            for (var i = 0; i < $(".add_info_wrap input").length; i++) {
+                if ($(".add_info_wrap").find("input").eq(i).val() == "") {
+                    alert("队员信息不能为空")
+                    return
+                }
+            }
+            var newHtml = `<div class="add_info_wrap">
+                                <div class="row">
+                                    <div class="col-xs-4 col-sm-3">
+                                        <input type="text" name="s1" id="" placeholder="姓名：">
+                                    </div>
+                                    <div class="col-xs-4 col-sm-2">
+                                        <input type="text" name="s2" id="" placeholder="年龄：">
+                                    </div>
+                                    <div class="col-xs-4 col-sm-2">
+                                        <input type="text" name="s3" id="" placeholder="性别：">
+                                    </div>
+                                    <div class="col-xs-7 col-sm-3">
+                                        <input type="text" name="s4" id="" placeholder="联系电话：">
+                                    </div>
+                                    <div class="col-xs-10 col-sm-4 last">
+                                        <input type="text" name="s5" id="" placeholder="有效证件：">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <a href="javascript:;" class="pull-right glyphicon glyphicon-trash" onclick="removeInfo(this)"></a>
+                                </div>
+                            </div>`
+            $("#infoWrap").append(newHtml)
+        }
+        //删除成员信息
+        function removeInfo(t) {
+            $(t).parents(".add_info_wrap").remove()
+        }
+        //提交数据
+        function savaData() {
+            for (var i = 0; i < $(".add_info_wrap input").length; i++) {
+                if ($(".add_info_wrap").find("input").eq(i).val() == "") {
+                    alert("队员信息不能为空")
+                    return
+                }
+            }
+            var inpData = $("#form1").serializeObject();
+            console.log(inpData)
+
+            Object.assign(inpData, tempFormData)
+        }
+    </script>
+</body>
+
+</html>

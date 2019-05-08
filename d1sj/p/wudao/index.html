@@ -1,0 +1,449 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+    <!-- 包含头部信息用于适应不同设备 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 包含 bootstrap 样式表 -->
+    <link rel="stylesheet" href="dist/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="dist/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="header header_1 hidden-xs">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 sel_lang">
+                        <a href="javascript:;" class="text-right pull-right">
+                            <img src="images/icon_CN.png" alt="" class="pull-left">&nbsp;中文</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="navbar-header" style="position: absolute;top: 0;">
+                    <a class="navbar-brand" href="#">
+                        <img src="images/logo_act.png" alt="" id="logo">
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="">
+                            <a href="#">在线报名</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:;" onclick="jumpUrl('login.html')" class="dropdown-toggle" data-toggle="dropdown">
+                                关于大赛
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">比赛概述</a>
+                                </li>
+                                <li>
+                                    <a href="#">比赛舞种</a>
+                                </li>
+                                <li>
+                                    <a href="#">规则介绍</a>
+                                </li>
+                                <li>
+                                    <a href="#">奖项设置</a>
+                                </li>
+                                <li>
+                                    <a href="#">参赛要求</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="rater.html">专家评委</a>
+                        </li>
+                        <li>
+                            <a href="#">权威合作</a>
+                        </li>
+                        <li>
+                            <a href="#">赛事回顾</a>
+                        </li>
+                        <li>
+                            <a href="#">商务合作</a>
+                        </li>
+                        <li>
+                            <a href="#">联系我们</a>
+                        </li>
+                        <li>
+                            <a href="login.html">登录</a>
+                        </li>
+                        <li>
+                            <a href="register.html">注册</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="header header_2 side_ing visible-xs">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+                        <span class="sr-only">切换导航</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="javascript:;" class="glyphicon glyphicon-user hd_user"></a>
+                </div>
+                <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="">
+                            <a href="#">在线报名</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                关于大赛
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">比赛概述</a>
+                                </li>
+                                <li>
+                                    <a href="#">比赛舞种</a>
+                                </li>
+                                <li>
+                                    <a href="#">规则介绍</a>
+                                </li>
+                                <li>
+                                    <a href="#">奖项设置</a>
+                                </li>
+                                <li>
+                                    <a href="#">参赛要求</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">专家评委</a>
+                        </li>
+                        <li>
+                            <a href="#">权威合作</a>
+                        </li>
+                        <li>
+                            <a href="#">赛事回顾</a>
+                        </li>
+                        <li>
+                            <a href="#">商务合作</a>
+                        </li>
+                        <li>
+                            <a href="#">联系我们</a>
+                        </li>
+                        <li class="none_bor">
+                            <a href="#">登录</a>
+                        </li>
+                        <li class="none_bor">
+                            <a href="#" style="padding: 0  0 15px 15px;">注册</a>
+                        </li>
+                        <li class="none_bor">
+                            <a href="#" style="padding: 0  0 15px 15px;">English</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="index">
+        <div class="banner">
+            <img src="images/index_banner_01.png" alt="" class="auto_img hidden-xs">
+            <img src="images/index_banner_01_xs.png" alt="" class="auto_img visible-xs">
+        </div>
+        <div class="intro">
+            <div class="intro-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+                            <h2>环球舞蹈大赛</h2>
+                            <p class="text-left">环球舞蹈大赛本着"公平、公正、公开"的原则，面向全国舞蹈工作室的广大舞蹈爱好者，为我们的明日之星搭建自我展示的平台。通过参与环球舞蹈大赛，展示仙女和王子们的舞蹈成果....</p>
+                            <a href="javascript:;" class="open" onclick="openIntro(this)">
+                                <span class="txt">展开</span>
+                                <span class="glyphicon glyphicon-menu-down"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="intro-bot">
+                <div class="container">
+                    <div class="row">
+                        <a href="javascript:;" class="col-xs-12 col-sm-4 items">
+                            <div class="img_box">
+                                <img src="images/index_intro_01.png" alt="">
+                            </div>
+                            <ul class="mask">
+                                <li>
+                                    <div class="icon_box">
+                                        <img src="images/index_intro_04.png" alt="">
+                                    </div>
+                                </li>
+                                <li>参赛要求</li>
+                                <li>Entry Requirements</li>
+                                <li class="hidden-xs">查看详情></li>
+                            </ul>
+                        </a>
+                        <a href="javascript:;" class="col-xs-12 col-sm-4 items">
+                            <div class="img_box">
+                                <img src="images/index_intro_02.png" alt="">
+                            </div>
+                            <ul class="mask">
+                                <li>
+                                    <div class="icon_box">
+                                        <img src="images/index_intro_05.png" alt="">
+                                    </div>
+                                </li>
+                                <li>参赛要求</li>
+                                <li>Entry Requirements</li>
+                                <li class="hidden-xs">查看详情></li>
+                            </ul>
+                        </a>
+                        <a href="javascript:;" class="col-xs-12 col-sm-4 items">
+                            <div class="img_box">
+                                <img src="images/index_intro_03.png" alt="">
+                            </div>
+                            <ul class="mask">
+                                <li>
+                                    <div class="icon_box">
+                                        <img src="images/index_intro_06.png" alt="">
+                                    </div>
+                                </li>
+                                <li>参赛要求</li>
+                                <li>Entry Requirements</li>
+                                <li class="hidden-xs">查看详情></li>
+                            </ul>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="images/index_types_bg.png" alt="" class="auto_img">
+        <div class="types">
+            <div class="container">
+                <div class="row">
+                    <div class="tit text-center">
+                        <h2>参赛舞种</h2>
+                        <p>Types of dance</p>
+                    </div>
+                    <ul class="items">
+                        <li class="col-xs-6 col-sm-4">
+                            <a href="javascript:;">
+                                <img src="images/index_types_01.png" alt="">
+                                <div class="mask">
+                                    <div class="cover"></div>
+                                    <p class="txt">爵士舞</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-xs-6 col-sm-4">
+                            <a href="javascript:;">
+                                <img src="images/index_types_02.png" alt="">
+                                <div class="mask">
+                                    <div class="cover"></div>
+                                    <p class="txt">Hip-pop</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-xs-6 col-sm-4">
+                            <a href="javascript:;">
+                                <img src="images/index_types_03.png" alt="">
+                                <div class="mask">
+                                    <div class="cover"></div>
+                                    <p class="txt">踢踏舞</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-xs-6 col-sm-4">
+                            <a href="javascript:;">
+                                <img src="images/index_types_04.png" alt="">
+                                <div class="mask">
+                                    <div class="cover"></div>
+                                    <p class="txt">芭蕾</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-xs-6 col-sm-4">
+                            <a href="javascript:;">
+                                <img src="images/index_types_05.png" alt="">
+                                <div class="mask">
+                                    <div class="cover"></div>
+                                    <p class="txt">名族舞</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-xs-6 col-sm-4">
+                            <a href="javascript:;">
+                                <img src="images/index_types_06.png" alt="">
+                                <div class="mask">
+                                    <div class="cover"></div>
+                                    <p class="txt">查看更多>></p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="text-center common_tit">
+                <h2>部分合作伙伴</h2>
+            </div>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="https://www.baidu.com">
+                            <img src="images/hezuo_test.png" alt="">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.baidu.com">
+                            <img src="images/hezuo_test.png" alt="">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.baidu.com">
+                            <img src="images/hezuo_test.png" alt="">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.baidu.com">
+                            <img src="images/hezuo_test.png" alt="">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.baidu.com">
+                            <img src="images/hezuo_test.png" alt="">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.baidu.com">
+                            <img src="images/hezuo_test.png" alt="">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.baidu.com">
+                            <img src="images/hezuo_test.png" alt="">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.baidu.com">
+                            <img src="images/hezuo_test.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="row hidden-xs">
+                <div class="col-sm-6 lt">
+                    <ul>
+                        <li>
+                            <p>ADRESS 地址</p>
+                            <p>北京市昌平区北清路2号院园墅3006</p>
+                        </li>
+                        <li>
+                            <p>TELEPHONE 电话</p>
+                            <p>400－0920-616 </p>
+                        </li>
+                        <li>
+                            <p>WENCHAT 微信</p>
+                            <p>wx_id1233</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 rt">
+                    <ul class="row">
+                        <li class="col-sm-offset-4">
+                            <p class="tit">关注公众号：</p>
+                        </li>
+                        <li class="col-sm-4 col-sm-offset-4  text-center">
+                            <img src="images/erm.png" alt="报名咨询二维码">
+                            <p>报名咨询</p>
+                        </li>
+                        <li class="col-sm-4  text-center">
+                            <img src="images/erm.png" alt="公众号二维码">
+                            <p>公众号</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center visible-xs">
+                <p style="font-size: 12px;"> 2018©️版权所以，京ICP备
+                    <br>33309494号</p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+    <!-- 可选: 包含 jQuery 库 -->
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <!-- 可选: 合并了 Bootstrap JavaScript 插件 -->
+    <script src="https://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="dist/swiper/js/swiper.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        function jumpUrl(u){
+            window.location.href = u
+        }
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 3,
+            slidesPerColumn: 2,
+            spaceBetween: 30,
+            pagination: {
+                el: '.swiper-pagination',
+                autoplay: true,
+                loop: true
+            },
+        });
+
+        var openStatus = true,
+            initIntro = '环球舞蹈大赛本着"公平、公正、公开"的原则，面向全国舞蹈工作室的广大舞蹈爱好者，为我们的明日之星搭建自我展示的平台。通过参与环球舞蹈大赛，展示仙女和王子们的舞蹈成果....';
+        function openIntro(t) {
+            if (openStatus) {
+                openStatus = false
+                $(t).siblings("p").text('环球舞蹈大赛本着"公平、公正、公开"的原则，面向全国舞蹈工作室的广大舞蹈爱好者，为我们的明日之星搭建自我展示的平台。通过参与环球舞蹈大赛，展示仙女和王子们的舞蹈成果，提高每一位参赛者的自信心及团队凝聚力，丰富家庭精神生活，并且提高广大舞蹈工作室的国际知名度。')
+                $(t).children(".txt").text("收起")
+                $(t).children(".glyphicon").attr("class", "glyphicon glyphicon-menu-up")
+            } else {
+                openStatus = true
+                $(t).siblings("p").text(initIntro)
+                $(t).children(".txt").text("展开")
+                $(t).children(".glyphicon").attr("class", "glyphicon glyphicon-menu-down")
+            }
+        }
+        $(window).scroll(function () {
+            let bannerH = $(".banner").height(),
+                headerH = $(".header_1 .navbar").height(),
+                windowTop = $(window).scrollTop();
+            // console.log(headerH)
+            // console.log(bannerH)
+            // console.log(windowTop)
+            if (windowTop <= (bannerH - headerH)) {
+                $("#logo").attr("src", 'images/logo_act.png')
+                $(".header_1").removeClass("side_ing")
+            } else {
+                $("#logo").attr("src", 'images/logo.png')
+                $(".header_1").addClass("side_ing")
+            }
+        });
+    </script>
+</body>
+
+</html>

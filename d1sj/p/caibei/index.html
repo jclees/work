@@ -1,0 +1,577 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>彩贝精准营销</title>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="dist/layui/css/layui.css" />
+    <style>
+        body {
+            background: #f7f7fb;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="main_header clearfix">
+        <h2 class="fl">彩贝精准营销后台</h2>
+        <div class="hd_subnav fr">
+            <ul class="clearfix">
+                <li class="user_tel">182****4880</li>
+                <li class="user_img"></li>
+                <li class="user_balance">￥ 2842</li>
+                <li class="m_icon user_out" data-url="login.html" onclick="jumpUrl(this)"></li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="main_page">
+        <!-- 数据统计 -->
+        <div class="main_page_index" style="display: block;">
+            <div class="page_index_top page_round">
+                时间段选择：
+            </div>
+            <ul class="data_record clearfix">
+                <li class="page_round">
+                    <p>进店量</p>
+                    <p class="num">222</p>
+                </li>
+                <li class="page_round">
+                    <p>驻留用户</p>
+                    <p class="num">222</p>
+                </li>
+                <li class="page_round">
+                    <p>回头用户</p>
+                    <p class="num">222</p>
+                </li>
+                <li class="page_round">
+                    <p>新增用户</p>
+                    <p class="num">222</p>
+                </li>
+            </ul>
+            <div class="data_line page_round">
+                <ul class="data_line_nav clearfix">
+                    <li class="line_nav_act">
+                        <a href="javascript:;">进店量</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">驻留用户</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">回头用户</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">新增用户</a>
+                    </li>
+                </ul>
+                <div id="dataLine" style="width: 100%;height:450px;">
+
+                </div>
+            </div>
+            <ul class="data_table clearfix">
+                <li class="page_round">
+                    <p class="page_tit">客流量高的区域</p>
+                    <table class="layui-table" lay-size="lg" id="demo">
+                    </table>
+                </li>
+                <li class="page_round">
+                    <p class="page_tit">客流量低的区域</p>
+                </li>
+            </ul>
+            <ul class="data_cake clearfix">
+                <li class="page_round">
+                    <p>进店率</p>
+                    <div id="jdlv" style="width: 100%;height:400px;"></div>
+                </li>
+                <li class="page_round">
+                    <p>驻留率</p>
+                    <div id="zllv" style="width: 100%;height:400px;"></div>
+                </li>
+                <li class="page_round">
+                    <p>回头率</p>
+                    <div id="htlv" style="width: 100%;height:400px;"></div>
+                </li>
+                <li class="page_round">
+                    <p>手机品牌</p>
+                    <div id="telbrand" style="width: 100%;height:400px;"></div>
+                </li>
+            </ul>
+        </div>
+        <!-- 数据仓库 -->
+        <div class="main_page_macdata page_round">
+            <div class="page_tit">
+                MAC数据导出
+            </div>
+            <ul class="macdata_list">
+                <li>
+                    <label>时间段选择</label>
+                    <input type="text" value="2018-22-1"> 至
+                    <input type="text" value="2018-22-1">
+                </li>
+                <li>
+                    <label>设备</label>
+                    <input type="text" value="设备1">
+                    <input type="text" value="设备2">
+                    <input type="text" value="设备3">
+                    <input type="button" value="全部">
+                </li>
+                <li>
+                    <label>导出类型</label>
+                    <a href="javascript:;" class="macdata_type_btn">进店数据（不去重）</a>
+                    <a href="javascript:;" class="macdata_type_btn">进店数据（去重）</a>
+                    <a href="javascript:;" class="macdata_type_btn">临进数据（不去重）</a>
+                    <a href="javascript:;" class="macdata_type_btn">临进数据（去重）</a>
+                </li>
+            </ul>
+        </div>
+        <!-- 数据转化 -->
+        <div class="main_page_export">
+            <div class="export_opt page_round">
+                <div class="page_tit">
+                    数据转化
+                </div>
+                <form action="" class="page_round">
+                    <ul class="export_list">
+                        <li>
+                            <label>任务名称</label>
+                            <input type="text" placeholder="输入任务名称">
+                        </li>
+                        <li>
+                            <label>用户标签</label>
+                            <input type="text" placeholder="输入标签">
+                            <a href="javascript:;" class="export_type_btn" onclick="addExport(this)">添加</a>
+                        </li>
+                        <li>
+                            <label>MAC文件</label>
+                            <a href="javascript:;" class="export_type_btn opt_file_btn">
+                                <span class="m_icon opt_file"></span>选择文件</a>
+                        </li>
+                    </ul>
+                    <a href="javascript:;" class="submit_btn">￥ 提交转化</a>
+                </form>
+            </div>
+            <div class="export_table page_round">
+                <div class="page_tit">
+                    数据转化列表
+                </div>
+
+            </div>
+        </div>
+        <!-- 个人中心 -->
+        <div class="main_page_mine page_round">
+            <div class="mine_top">
+                <div class="user_img"></div>
+                <div class="user_name">名字</div>
+                <div class="user_type">普通用户（渠道商）</div>
+            </div>
+            <div class="mine_info">
+                <h2>账号信息</h2>
+                <ul class="form_wrap">
+                    <li>
+                        <label>账户余额：</label>
+                        <span class="form_cool">222</span>
+                        <a href="javascript:;" class="form_btn">充值</a>
+                    </li>
+                    <li>
+                        <label>用户名：</label>
+                        <span>啦啦啦啦啦啦</span>
+                        <a href="javascript:;" class="form_btn" data-name="用户名" onclick="modifyUserInfo(this)">修改</a>
+                    </li>
+                    <li>
+                        <label>密码：</label>
+                        <span>2222222</span>
+                        <a href="javascript:;" class="form_btn" data-name="密码" onclick="modifyUserInfo(this)">修改</a>
+                    </li>
+                    <li>
+                        <label>手机号码：</label>
+                        <span>123311222</span>
+                        <a href="javascript:;" class="form_btn" data-name="手机号码" onclick="modifyUserInfo(this)">修改</a>
+                    </li>
+                    <li>
+                        <label>用户类型：</label>
+                        <span>普通用户（渠道商）</span>
+                    </li>
+                    <li>
+                        <label>上级代理ID：</label>
+                        <span>12133232</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main_nav">
+        <a href="javascript:;" class="logo">
+            <img src="images/logo.png" alt="">
+        </a>
+        <ul class="main_sidenav">
+            <li class="sidenav_act">
+                <a href="javascript:;">
+                    <span class="m_icon navicon_01"></span>数据统计</a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <span class="m_icon navicon_02"></span>MAC数据仓库</a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <span class="m_icon navicon_03"></span>数据转化</a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <span class="m_icon navicon_04"></span>个人中心</a>
+            </li>
+        </ul>
+    </div>
+    <!-- <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script> -->
+    <script src="js/jquery-1.8.0.min.js"></script>
+    <script src="dist/echarts/echarts.min.js"></script>
+    <script src="dist/echarts/macarons.js"></script>
+    <!-- <script src="dist/layer/layer.js"></script> -->
+    <script src="dist/layui/layui.all.js"></script>
+    <script>
+        (function(o){
+            var a = 1;
+            console.log(a)
+        })(window)
+        let tempExport
+        $(function () {
+            layui.use('table', function () {
+                var table = layui.table;
+                //第一个实例
+                table.render({
+                    elem: '#demo'
+                    , height: 312
+                    , url: '' //数据接口
+                    , page: true //开启分页
+                    , cols: [[ //表头
+                        { field: 'id', title: 'ID',fixed: 'left' }
+                        , { field: 'username', title: '用户名' }
+                        , { field: 'sex', title: '性别' }
+                        , { field: 'city', title: '城市' }
+                    ]]
+                });
+
+            });
+            setEcharts("jdlv", {
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b}: {c} ({d}%)"
+                },
+                legend: {
+                    orient: 'vertical',
+                    x: 'left',
+                    data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎']
+                },
+                series: [
+                    {
+                        name: '访问来源',
+                        type: 'pie',
+                        radius: ['50%', '70%'],
+                        avoidLabelOverlap: false,
+                        label: {
+                            normal: {
+                                show: false,
+                                position: 'center'
+                            },
+                            emphasis: {
+                                show: true,
+                                textStyle: {
+                                    fontSize: '30',
+                                    fontWeight: 'bold'
+                                }
+                            }
+                        },
+                        labelLine: {
+                            normal: {
+                                show: false
+                            }
+                        },
+                        data: [
+                            { value: 335, name: '直接访问' },
+                            { value: 310, name: '邮件营销' },
+                            { value: 234, name: '联盟广告' },
+                            { value: 135, name: '视频广告' },
+                            { value: 1548, name: '搜索引擎' }
+                        ]
+                    }
+                ]
+            })
+            setEcharts("zllv", {
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b}: {c} ({d}%)"
+                },
+                legend: {
+                    orient: 'vertical',
+                    x: 'left',
+                    data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎']
+                },
+                series: [
+                    {
+                        name: '访问来源',
+                        type: 'pie',
+                        radius: ['50%', '70%'],
+                        avoidLabelOverlap: false,
+                        label: {
+                            normal: {
+                                show: false,
+                                position: 'center'
+                            },
+                            emphasis: {
+                                show: true,
+                                textStyle: {
+                                    fontSize: '30',
+                                    fontWeight: 'bold'
+                                }
+                            }
+                        },
+                        labelLine: {
+                            normal: {
+                                show: false
+                            }
+                        },
+                        data: [
+                            { value: 335, name: '直接访问' },
+                            { value: 310, name: '邮件营销' },
+                            { value: 234, name: '联盟广告' },
+                            { value: 135, name: '视频广告' },
+                            { value: 1548, name: '搜索引擎' }
+                        ]
+                    }
+                ]
+            })
+            setEcharts("htlv", {
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b}: {c} ({d}%)"
+                },
+                legend: {
+                    orient: 'vertical',
+                    x: 'left',
+                    data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎']
+                },
+                series: [
+                    {
+                        name: '访问来源',
+                        type: 'pie',
+                        radius: ['50%', '70%'],
+                        avoidLabelOverlap: false,
+                        label: {
+                            normal: {
+                                show: false,
+                                position: 'center'
+                            },
+                            emphasis: {
+                                show: true,
+                                textStyle: {
+                                    fontSize: '30',
+                                    fontWeight: 'bold'
+                                }
+                            }
+                        },
+                        labelLine: {
+                            normal: {
+                                show: false
+                            }
+                        },
+                        data: [
+                            { value: 335, name: '直接访问' },
+                            { value: 310, name: '邮件营销' },
+                            { value: 234, name: '联盟广告' },
+                            { value: 135, name: '视频广告' },
+                            { value: 1548, name: '搜索引擎' }
+                        ]
+                    }
+                ]
+            })
+            setEcharts("telbrand", {
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b}: {c} ({d}%)"
+                },
+                legend: {
+                    orient: 'vertical',
+                    x: 'left',
+                    data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎']
+                },
+                series: [
+                    {
+                        name: '访问来源',
+                        type: 'pie',
+                        radius: ['50%', '70%'],
+                        avoidLabelOverlap: false,
+                        label: {
+                            normal: {
+                                show: false,
+                                position: 'center'
+                            },
+                            emphasis: {
+                                show: true,
+                                textStyle: {
+                                    fontSize: '30',
+                                    fontWeight: 'bold'
+                                }
+                            }
+                        },
+                        labelLine: {
+                            normal: {
+                                show: false
+                            }
+                        },
+                        data: [
+                            { value: 335, name: '直接访问' },
+                            { value: 310, name: '邮件营销' },
+                            { value: 234, name: '联盟广告' },
+                            { value: 135, name: '视频广告' },
+                            { value: 1548, name: '搜索引擎' }
+                        ]
+                    }
+                ]
+            })
+            setEcharts("dataLine", {
+                tooltip: {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data: ['最高气温', '最低气温']
+                },
+                toolbox: {
+                    show: true,
+                    feature: {
+                        dataZoom: {
+                            yAxisIndex: 'none'
+                        },
+                        dataView: { readOnly: false },
+                        magicType: { type: ['line', 'bar'] },
+                        restore: {},
+                        saveAsImage: {}
+                    }
+                },
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+                },
+                yAxis: {
+                    type: 'value',
+                    axisLabel: {
+                        formatter: '{value} °C'
+                    }
+                },
+                series: [
+                    {
+                        name: '最高气温',
+                        type: 'line',
+                        data: [11, 11, 15, 13, 12, 13, 10],
+                        markPoint: {
+                            data: [
+                                { type: 'max', name: '最大值' },
+                                { type: 'min', name: '最小值' }
+                            ]
+                        },
+                        markLine: {
+                            data: [
+                                { type: 'average', name: '平均值' }
+                            ]
+                        }
+                    },
+                    {
+                        name: '最低气温',
+                        type: 'line',
+                        data: [1, -2, 2, 5, 3, 2, 0],
+                        markPoint: {
+                            data: [
+                                { name: '周最低', value: -2, xAxis: 1, yAxis: -1.5 }
+                            ]
+                        },
+                        markLine: {
+                            data: [
+                                { type: 'average', name: '平均值' },
+                                [{
+                                    symbol: 'none',
+                                    x: '90%',
+                                    yAxis: 'max'
+                                }, {
+                                    symbol: 'circle',
+                                    label: {
+                                        normal: {
+                                            position: 'start',
+                                            formatter: '最大值'
+                                        }
+                                    },
+                                    type: 'max',
+                                    name: '最高点'
+                                }]
+                            ]
+                        }
+                    }
+                ]
+            })
+        })
+        $(".main_sidenav > li").on('click', function () {
+            // layer.confirm('is not?', { icon: 1, title: '提示' }, function (index) {
+            //     //do something
+
+            //     layer.close(index);
+            // });
+            // layer.load(2);
+            //此处演示关闭
+            setTimeout(function () {
+                layer.closeAll('loading');
+            }, 2000);
+            var ind = $(this).index()
+            $(this).addClass("sidenav_act").siblings().removeClass("sidenav_act")
+            $(".main_page > div").eq(ind).show().siblings().hide()
+        })
+        function setEcharts(t, o) {
+            var myChart = echarts.init(document.getElementById(t))
+            myChart.setOption(o);
+            window.onresize = myChart.resize;
+        }
+        function modifyUserInfo(t) {
+            var t = $(t).attr("data-name")
+            layer.prompt({ title: '修改' + t, formType: 0 }, function (val, index) {
+                layer.close(index);
+                console.log(val, index)
+                layer.msg('修改' + t + '成功', { icon: 1 });
+                layer.msg('修改' + t + '失败', { icon: 2 });
+            });
+        }
+        function addExport(t) {
+            let val = $(t).prev("input").val(),
+                parent = $(t).parent("li"),
+                newSpan = '<span class="export_type_btn exports">' + val + ' <a href="javascript:;" class="m_icon export_del"  onclick="delExport(this)"></a></span>';
+            if (tempExport == val) {
+                layer.msg('标签名字不可重复', { icon: 2 });
+                return false
+            }
+            tempExport = val
+            if (val == '' || val == null) {
+                layer.msg('请输入标签名字', { icon: 2 });
+                return false
+            }
+            parent.append(newSpan)
+        }
+        function delExport(t) {
+            layer.msg('确定要删除此标签吗？', {
+                time: 0 //不自动关闭
+                , btn: ['确定', '取消']
+                , yes: function (index) {
+                    layer.close(index);
+                    $(t).parent().remove()
+                }
+            });
+        }
+        function jumpUrl(t){
+            let u = $(t).attr("data-url")
+            window.location.href = u
+        }
+    </script>
+</body>
+
+</html>

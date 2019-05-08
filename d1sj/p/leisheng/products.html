@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+    <!-- 包含头部信息用于适应不同设备 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 包含 bootstrap 样式表 -->
+    <link rel="stylesheet" href="dist/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="dist/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+    </style>
+</head>
+
+<body>
+    <div class="product">
+        <div class="common_bg" style="height: 800px;background-image: url(images/product_banner.jpg);"></div>
+        <div class="page page1">
+            <div class="container">
+                <div class="intro">
+                    <h2>全球领先的视频LED</h2>
+                    <p>LEDSEE雷盛集多年深入行业研究、多名技术专家论证，确保产品的工艺先进、质量可靠、技术领先。为我中华 民族和平崛起于世界，强盛于全球科技之林，辉煌于科技产品之列，将为国家提供保证质量性能稳定、技术先进的全彩LED显示屏，并且以“优质优价”为广大国内外客户提供良好的产品和服务。
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="page page2">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-sm-3 prod_nav cur">
+                        <a href="javascript:;">LED球泡灯</a>
+                    </div>
+                    <div class="col-sm-3 prod_nav">
+                        <a href="javascript:;">LED日光灯</a>
+                    </div>
+                    <div class="col-sm-3 prod_nav">
+                        <a href="javascript:;">LED射灯</a>
+                    </div>
+                    <div class="col-sm-3 prod_nav">
+                        <a href="javascript:;">LED筒灯</a>
+                    </div>
+                    <div class="col-sm-3 prod_nav">
+                        <a href="javascript:;">LED天花灯</a>
+                    </div>
+                    <div class="col-sm-3 prod_nav">
+                        <a href="javascript:;">LED路灯</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row prod_con">
+                    <div class="col-sm-6 items">
+                        <img src="images/product_pic_01.jpg" alt="" class="center-block">
+                        <p class="text-center ellipsis">LEDSEE雷盛（LS-E27-QP5.5-L）LED球泡灯</p>
+                    </div>
+                    <div class="col-sm-6 items">
+                        <img src="images/product_pic_02.jpg" alt="" class="center-block">
+                        <p class="text-center ellipsis">LEDSEE雷盛（LS-E27-QP5.5-L）LED球泡灯</p>
+                    </div>
+                </div>
+                <div class="row prod_con">
+                    <div class="col-sm-4 items">
+                        <img src="images/product_pic_01.jpg" alt="" class="center-block">
+                        <p class="text-center ellipsis">222</p>
+                    </div>
+                    <div class="col-sm-4 items">
+                        <img src="images/product_pic_02.jpg" alt="" class="center-block">
+                        <p class="text-center ellipsis">2222</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+    <!-- 可选: 包含 jQuery 库 -->
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <!-- 可选: 合并了 Bootstrap JavaScript 插件 -->
+    <script src="https://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="dist/swiper/js/swiper.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        $(".prod_nav").on("click", function () {
+            $(this).addClass("cur").siblings().removeClass("cur")
+            $(".prod_con").eq($(this).index()).show().siblings().hide()
+        })
+    </script>
+</body>
+
+</html>

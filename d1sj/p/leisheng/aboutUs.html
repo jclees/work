@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+    <!-- 包含头部信息用于适应不同设备 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 包含 bootstrap 样式表 -->
+    <link rel="stylesheet" href="dist/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="dist/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+    </style>
+</head>
+
+<body>
+    <div class="close "></div>
+    <div class="about">
+        <div class="common_bg" style="height: 950px;background-image: url(images/about_banner.jpg);"></div>
+        <div class="page page1">
+            <div class="common_tit text-center">
+                <h2>企业简介</h2>
+                <span>OUR PROFILE</span>
+                <div class="line" style="left: 50%;margin-left: -25px;"></div>
+            </div>
+            <div class="container">
+                <div class="intro" style="height: 290px;overflow: hidden;">
+                    <p> “LEDSEE雷盛”是北京新体验数码科技有限公司集多年深入行业研究、多名技术专家论证，确保产品的工艺先进、质量可靠、技术领先，争取在光电显示领域树立一个新的丰碑而设立的产品品牌。</p>
+                    <p>“LEDSEE雷盛”是北京新体验数码科技有限公司在国家商标局注册的合法品牌，为我中华民族和平崛起于世界，强盛于全球科技之林，辉煌于科技产品之列，将为国家提供保证质量、性能稳定、技术先进的全彩LED显示屏，并且以“优质优价”为广大国内外客户提供良好的产品和服务。</p>
+                    <p> 北京新体验数码科技有限公司，是一家2003年创立于北京中关村的高新技术企业，公司自创建以来，始终坚持“诚信、尊重、高效、”的企业文化，已通过了ISO9000-2000质量认证，一直以推动民族IT产业发展为已任，业务广泛涉及到计算机软硬件产品的研发、设计、推广和服务多个领域，旗下的“LEDSEE雷盛”LED显示屏产品以其独创设计、领先技术、专业服务、应用创新在获得业界和广大客户认可的同时，公司也得到坚实、稳定、迅速的发展。</p>
+                </div>
+                <div class="text-center">
+                    <a href="javascript:;" class="more_btn" onclick="openMore(this)">展开更多简介</a>
+                </div>
+            </div>
+        </div>
+        <div class="common_bg" style="height: 385px;background-image: url(images/about_pic_01.jpg);"></div>
+        <div class="page page2">
+            <div class="common_tit text-center">
+                <h2>企业成果</h2>
+                <span>OUR RESULTS</span>
+                <div class="line" style="left: 50%;margin-left: -25px;"></div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4 books">
+                        <img src="images/about_pic_02.jpg" alt="" class="center-block">
+                        <p class="text-center ellipsis">质量管理体系认证证书</p>
+                    </div>
+                    <div class="col-sm-4 books">
+                        <img src="images/about_pic_03.jpg" alt="" class="center-block">
+                        <p class="text-center ellipsis">Quality management system certification</p>
+                    </div>
+                    <div class="col-sm-4 books">
+                        <img src="images/about_pic_04.jpg" alt="" class="center-block">
+                        <p class="text-center ellipsis">中国光学电子行业证书</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 books">
+                        <img src="images/about_pic_05.jpg" alt="" class="center-block">
+                        <p class="text-center ellipsis">高新技术企业认定证书</p>
+                    </div>
+                    <div class="col-sm-4 books">
+                        <img src="images/about_pic_06.jpg" alt="" class="center-block">
+                        <p class="text-center ellipsis">荣誉证书-诚信单位</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page page4">
+            <div class="common_tit text-center">
+                <h2 id="aa" data-text="服务热线222">服务热线</h2>
+                <span>SERVICE HOTLINE</span>
+                <div class="line" style="left: 50%;margin-left: -25px;"></div>
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+    <!-- 可选: 包含 jQuery 库 -->
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <!-- 可选: 合并了 Bootstrap JavaScript 插件 -->
+    <script src="https://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="dist/swiper/js/swiper.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        ; (function () {
+            var $$ = function (id) {
+                return document.getElementById(id)
+            }
+            console.log($$("aa").innerText = "改变了哦")
+            console.log($$("aa").getAttribute('data-text'))
+            $$("aa").setAttribute('data-text', '12312312')
+        })()
+    
+        function openMore(t) {
+            var intro = document.getElementsByClassName("intro")[0]
+            if (intro.style.height == "auto") {
+                intro.style.height = "290px"
+                t.innerHTML = "展开更多简介"
+                return
+            }
+            t.innerHTML = "收起"
+            intro.style.height = "auto"
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>赛事回顾</title>
+    <!-- 包含头部信息用于适应不同设备 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 包含 bootstrap 样式表 -->
+    <link rel="stylesheet" href="dist/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="dist/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+    
+    .swiper-container {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .swiper-slide {
+      background-size: cover;
+      background-position: center;
+    }
+    .gallery-top {
+      height: 510px;
+      width: 80%;
+    }
+    .gallery-thumbs {
+      height: 20%;
+      box-sizing: border-box;
+      padding: 10px 0;
+    }
+    .gallery-thumbs .swiper-slide {
+      width: 25%;
+      height: 110px;
+      opacity: 0.4;
+    }
+    .gallery-thumbs .swiper-slide-thumb-active {
+      opacity: 1;
+    }
+    @media (max-width: 768px) {
+        .gallery-top {
+            height: 180px;
+        }
+        .gallery-thumbs .swiper-slide {
+            height: 55px;
+        }
+        .swiper-button-next, .swiper-button-prev{
+            background-size: 13px 44px;
+        }
+    }
+
+    </style>
+</head>
+
+<body>
+    <div class="past">
+        <!-- <div class="dasai_banner sub">
+            </div> -->
+            <img src="images/past_banner.png" alt="" class="auto_img hidden-xs">
+            <img src="images/past_banner_xs.png" alt="" class="auto_img visible-xs">
+        <div class="container">
+
+            <div class="text-center common_tit2">
+                <h2>2016年环球赛</h2>
+            </div>
+
+             <!-- Swiper -->
+            <div class="swiper-container gallery-top">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background-image:url(images/index_types_01.png)"></div>
+                    <div class="swiper-slide" style="background-image:url(images/index_types_02.png)"></div>
+                    <div class="swiper-slide" style="background-image:url(images/index_types_03.png)"></div>
+                    <div class="swiper-slide" style="background-image:url(images/index_types_04.png)"></div>
+                    <div class="swiper-slide" style="background-image:url(images/index_types_05.png)"></div>
+                    <div class="swiper-slide" style="background-image:url(images/index_types_06.png)"></div>
+                    <div class="swiper-slide" style="background-image:url(images/index_types_03.png)"></div>
+                    <div class="swiper-slide" style="background-image:url(images/index_types_02.png)"></div>
+                    <div class="swiper-slide" style="background-image:url(images/index_types_01.png)"></div>
+                    <div class="swiper-slide" style="background-image:url(images/index_types_05.png)"></div>
+                </div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next swiper-button-white"></div>
+                <div class="swiper-button-prev swiper-button-white"></div>
+            </div>
+            <div class="swiper-container gallery-thumbs">
+                <div class="swiper-wrapper">
+                        <div class="swiper-slide" style="background-image:url(images/index_types_01.png)"></div>
+                        <div class="swiper-slide" style="background-image:url(images/index_types_02.png)"></div>
+                        <div class="swiper-slide" style="background-image:url(images/index_types_03.png)"></div>
+                        <div class="swiper-slide" style="background-image:url(images/index_types_04.png)"></div>
+                        <div class="swiper-slide" style="background-image:url(images/index_types_05.png)"></div>
+                        <div class="swiper-slide" style="background-image:url(images/index_types_06.png)"></div>
+                        <div class="swiper-slide" style="background-image:url(images/index_types_03.png)"></div>
+                        <div class="swiper-slide" style="background-image:url(images/index_types_02.png)"></div>
+                        <div class="swiper-slide" style="background-image:url(images/index_types_01.png)"></div>
+                        <div class="swiper-slide" style="background-image:url(images/index_types_05.png)"></div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                    <p class="past_intro">此为舞蹈介绍，环球舞蹈大赛本着"公平、公正、公开"的原则，面向全国舞蹈工作室的广大舞蹈爱好者，为我们的明日之星搭建自我展示的平台。通过参与环球舞蹈大赛，展示仙女和王子们的舞蹈成果，提高每一位参赛者的自信心及团队凝聚力，丰富家庭精神生活，并且提高广大舞蹈工作室的国际知名度。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+    <!-- 可选: 包含 jQuery 库 -->
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <!-- 可选: 合并了 Bootstrap JavaScript 插件 -->
+    <script src="https://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="dist/swiper/js/swiper.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+       var galleryThumbs = new Swiper('.gallery-thumbs', {
+      spaceBetween: 10,
+      slidesPerView: 4,
+      loop: true,
+      freeMode: true,
+      loopedSlides: 5, //looped slides should be the same
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+    });
+    var galleryTop = new Swiper('.gallery-top', {
+      spaceBetween: 10,
+      loop:true,
+      loopedSlides: 5, //looped slides should be the same
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      thumbs: {
+        swiper: galleryThumbs,
+      },
+    });
+
+
+
+    </script>
+</body>
+
+</html>

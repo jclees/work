@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>登录</title>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <style>
+    </style>
+</head>
+<div class="login_main">
+    <div class="login_con clearfix">
+        <div class="login_con_left fl">
+            <img src="images/login_banner.png" alt="">
+        </div>
+        <div class="login_con_right fr">
+            <h2>彩贝精准营销后台</h2>
+            <h3>一款让数据可视化的精准平台</h3>
+            <form action="">
+                <div class="from_items">
+                    <div class="item_inp">
+                        <span class="m_icon login_icon_tel"></span>
+                        <input type="text" name="phone" placeholder="请输入管理员手机号" id="">
+                    </div>
+                    <div class="item_inp">
+                        <span class="m_icon login_icon_psd"></span>
+                        <input type="password" name="password" placeholder="请输入登录密码" id="">
+                    </div>
+                    <div class="item_inp_radio">
+                        <input type='checkbox' name='' id='rememberMe'  />
+                        <label for='rememberMe'>记住用户名</label>
+                    </div>
+                    <a href="javascript:;" class="login_btn">登录</a>
+                </div>
+            </form>
+            <div class="copyright">Copyright&copy;2018 第一时间 All Rights Reserved</div>
+        </div>
+    </div>
+</div>
+
+<body>
+
+    <!-- <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script> -->
+    <script src="js/jquery-1.8.0.min.js"></script>
+    <script>
+        jQuery.prototype.serializeObject = function () {
+            var obj = new Object();
+            $.each(this.serializeArray(), function (index, param) {
+                if (!(param.name in obj)) {
+                    obj[param.name] = param.value;
+                }
+            });
+            return obj;
+        };
+
+        $(".login_btn").on("click", function () {
+            $(this).text("登录中...")
+            var param = jQuery("form").serializeObject()
+            $('#rememberMe').attr('checked') ? param.rememberMe = 1 : param.rememberMe = 2
+            console.log(param)
+        })
+    </script>
+</body>
+
+</html>
