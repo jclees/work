@@ -1,0 +1,86 @@
+<view class="order_nav">
+  <view class="{{topbarTab==1?'active':''}}" data-id='1' bindtap='swichtopbarTab'>我是卖家</view>
+  <view class="{{topbarTab==2?'active':''}}" data-id='2' bindtap="swichtopbarTab">我是买家</view>
+</view>
+<view wx:if="{{topbarTab==1}}">
+  <view class="tab-h">
+    <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">
+      <view>全部</view>
+      <view class="nums">{{bookShareData.count.count1}}</view>
+    </view>
+    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">
+      <view>待发货</view>
+      <view class="nums">{{bookShareData.count.count2}}</view>
+    </view>
+    <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">
+      <view>已完成</view>
+      <view class="nums">{{bookShareData.count.count3}}</view>
+    </view>
+  </view>
+  <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+    <swiper-item wx:for="{{[0,1,2]}}" wx:key="">
+      <scroll-view scroll-y="true" class="scoll-h">
+        <view class="null_data" wx:if="{{bookShareData.lists.length<=0}}">
+          <image src="{{img_url}}nullgxiang.png" mode='widthFix'></image>
+          <view>你还没发布绘本哦，赶快去发布吧</view>
+        </view>
+        <block wx:for="{{bookShareData.lists}}" wx:key="">
+          <view class="item-ans">
+            <view class="item-ans-top" data-id="{{item.id}}" bindtap='jumpProductDetails'>
+              <image src='{{item.img}}' mode='aspectFit' class="item-ans-top-img"></image>
+              <view class='item-ans-top-con'>
+                <view></view>
+                <view>《{{item.name}}》</view>
+                <view>
+                  <image src='{{img_url}}icon_babycoin.png' mode='widthFix'></image>
+                  <view class="coins_nums">{{item.price}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>
+<view wx:if="{{topbarTab==2}}">
+  <view class="tab-h">
+    <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">
+      <view>全部</view>
+      <view class="nums">{{bookShareData.count.count1}}</view>
+    </view>
+    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">
+      <view>待收货</view>
+      <view class="nums">{{bookShareData.count.count2}}</view>
+    </view>
+    <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">
+      <view>已收货</view>
+      <view class="nums">{{bookShareData.count.count3}}</view>
+    </view>
+  </view>
+  <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+    <swiper-item wx:for="{{[0,1,2]}}" wx:key="">
+      <scroll-view scroll-y="true" class="scoll-h">
+        <view class="null_data" wx:if="{{bookShareData.lists.length<=0}}">
+          <image src="{{img_url}}nullgxiang.png" mode='widthFix'></image>
+          <view>你还没发布绘本哦，赶快去发布吧</view>
+        </view>
+        <block wx:for="{{bookShareData.lists}}" wx:key="">
+          <view class="item-ans">
+            <view class="item-ans-top" data-id="{{item.id}}" bindtap='jumpProductDetails'>
+              <image src='{{item.img}}' mode='aspectFit' class="item-ans-top-img"></image>
+              <view class='item-ans-top-con'>
+                <view></view>
+                <view>《{{item.name}}》</view>
+                <view>
+                  <image src='{{img_url}}icon_babycoin.png' mode='widthFix'></image>
+                  <view class="coins_nums">{{item.price}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

@@ -1,0 +1,686 @@
+/**app.wxss**/
+@import 'animate.wxss';
+.side_btn{
+  position: fixed;
+  bottom: 30rpx;
+  left: 30rpx;
+}
+.side_btn .side_pop image{
+  width: 116rpx;
+}
+.btn-send {
+  padding:60rpx 40rpx;
+}
+.btn-send button {
+  width: 100%;
+  background: #4285f4;
+  border: 1px solid rgba(5, 5, 5, 0.08);
+  border-radius: 100px;
+  line-height: 90rpx;
+  font-size: 36rpx;
+  padding: 0;
+  color: #fff;
+}
+
+.nulldata_wrap {
+  padding: 10% 0;
+}
+
+.nulldata_wrap image {
+  width: 432rpx;
+  margin: 0 auto;
+  display: block;
+}
+
+.nulldata_wrap .msg {
+  font-size: 28rpx;
+  color: #b7b7b7;
+  text-align: center;
+}
+
+.loadTxt {
+  font-size: 24rpx;
+  color: #262626;
+  display: flex;
+  align-items: center;
+  margin-top: 10rpx;
+}
+
+.loadTxt image {
+  width: 16rpx;
+  margin-left: 8rpx;
+}
+
+.pop_music {
+  position: fixed;
+  bottom: 40rpx;
+  right: 40rpx;
+  line-height: 0;
+}
+
+.pop_music > image {
+  width: 116rpx;
+}
+
+.pop_music > image.x {
+  animation: headRotate 6s linear infinite;
+}
+
+.huishou {
+  bottom: 160rpx;
+}
+.gohome {
+  bottom: 280rpx;
+}
+.huishou > image {
+  width: 116rpx;
+}
+
+/* 头像旋转效果  */
+
+@keyframes headRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.btn_shadow {
+  box-shadow: 5rpx 6rpx 20rpx #ec4643;
+}
+
+button.act, view.act {
+  background: #ec4643 !important;
+}
+
+.animated {
+  -webkit-animation-duration: 3s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.mult_line_ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.ballon {
+  -webkit-animation-name: scaleDraw; /*关键帧名称*/
+  -webkit-animation-timing-function: ease-in-out; /*动画的速度曲线*/
+  -webkit-animation-iteration-count: infinite; /*动画播放的次数*/
+  -webkit-animation-duration: 1s; /*动画所花费的时间*/
+}
+
+.bounce_pointer {
+  -webkit-animation-name: bouncePointer; /*关键帧名称*/
+  -webkit-animation-timing-function: ease-in-out; /*动画的速度曲线*/
+  -webkit-animation-iteration-count: infinite; /*动画播放的次数*/
+  -webkit-animation-duration: 0.5s; /*动画所花费的时间*/
+}
+
+.pointer_bg {
+  -webkit-animation-name: pointerBg; /*关键帧名称*/
+  -webkit-animation-timing-function: ease-in-out; /*动画的速度曲线*/
+  -webkit-animation-iteration-count: infinite; /*动画播放的次数*/
+  -webkit-animation-duration: 0.5s; /*动画所花费的时间*/
+}
+
+@keyframes scaleDraw {
+  /*定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称*/
+
+  0% {
+    transform: scale(1); /*开始为原始大小*/
+  }
+
+  25% {
+    transform: scale(1.1); /*放大1.1倍*/
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  75% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes bouncePointer {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(0, 10rpx);
+  }
+
+  50% {
+    transform: translate(0, 20rpx);
+  }
+
+  100% {
+    transform: translate(0, 0rpx);
+  }
+}
+
+@keyframes pointerBg {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+page {
+  background: #fff;
+  min-height: 100%;
+}
+
+page {
+  width: 100%;
+  height: 100%;
+}
+
+image {
+  height: auto;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  font-family: "苹方";
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+/* 清除浮动 */
+
+.clearfix::before, .clearfix:after {
+  line-height: 0;
+  content: '';
+  height: 0;
+  display: block;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+button {
+  background: transparent;
+  padding: 0;
+}
+
+/*  nav  */
+
+.nav-box {
+  width: 100%;
+  height: 104rpx;
+}
+
+.nav {
+  width: 100%;
+  height: 104rpx;
+  border-top: 1px solid #ededed;
+  display: flex;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background: #fff;
+  font-size: 0;
+}
+
+.nav .nav-navigator {
+  flex: 1;
+  text-align: center;
+  font-size: 0;
+  padding-top: 18rpx;
+}
+
+.nav .nav-navigator.active {
+  color: #ff6663;
+}
+
+.nav .nav-navigator image {
+  width: 42rpx;
+}
+
+.nav .nav-navigator text {
+  display: block;
+  width: 100%;
+  font-size: 24rpx;
+  margin-top: 2rpx;
+}
+
+.nav-fabiao {
+  padding: 16rpx 0;
+}
+
+.nav-fabiao button {
+  width: 72rpx;
+  height: 72rpx;
+  padding: 0;
+}
+
+.nav-fabiao button image {
+  width: 100%;
+}
+
+/*  invite-group 邀请进群  */
+
+.invite-group {
+  width: 100%;
+  display: flex;
+  padding: 40rpx 30rpx;
+  margin-top: 20rpx;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.invite-group > view {
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  align-self: flex-start;
+}
+
+.invite-group view.group-photo {
+  width: 180rpx;
+  padding: 10rpx;
+  background: rgba(0, 0, 0, 0.3);
+  font-size: 0;
+  border-radius: 10rpx;
+}
+
+.invite-group view.group-photo image {
+  width: 100%;
+}
+
+.group-r {
+  padding-left: 20rpx;
+  flex: 1;
+  overflow: hidden;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.invite-group view.group-r > text {
+  font-size: 30rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.invite-group view.group-r button {
+  width: 240rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  margin: 25rpx 0 0;
+  background: #ff6663;
+  color: #fff;
+  border-radius: 35rpx;
+  font-size: 32rpx;
+}
+
+.invite-group view.group-r .bounce_pointer {
+  width: 40rpx;
+  position: absolute;
+  left: 210rpx;
+  bottom: 20rpx;
+  z-index: 1;
+}
+
+.invite-group view.group-r .pointer_bg {
+  width: 24rpx;
+  position: absolute;
+  left: 210rpx;
+  bottom: 50rpx;
+}
+
+button::after {
+  border: 0 none;
+}
+
+.invite-group view.group-r label {
+  display: block;
+  font-size: 24rpx;
+  margin-top: 10rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.invite-group view.group-r label > text {
+  color: #3b9cd1;
+}
+
+/*  签到  */
+
+.check-ins {
+  position: fixed;
+  top: 720rpx;
+  right: 0;
+  background: #ffd24d;
+  padding: 0 20rpx;
+  font-size: 0;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 200rpx 0 0 200rpx;
+}
+
+.check-ins image {
+  width: 32rpx;
+  position: relative;
+  vertical-align: top;
+  top: 50%;
+  transform: translate(0, -50%);
+  margin-right: 10rpx;
+}
+
+.check-ins text {
+  font-size: 28rpx;
+}
+
+/* 弹出 */
+
+.pop-box {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.pop-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.pop-main {
+  width: 560rpx;
+  padding: 20rpx;
+  background: #fff;
+  position: fixed;
+  top: calc(50% + 60rpx);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20rpx;
+}
+
+.pop-title {
+  font-size: 34rpx;
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.pop-title image {
+  width: 42rpx;
+}
+
+.pop_tit_icon {
+  width: 174rpx;
+  position: relative;
+  margin: -87rpx auto 70rpx;
+  display: block;
+}
+
+.pop-content {
+  margin: 20rpx 0 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pop-check-ins {
+  width: 106rpx;
+  font-size: 0;
+  text-align: center;
+  background: #eaeef1;
+  margin: 10rpx;
+  border-radius: 10rpx;
+  padding: 10rpx 0;
+  box-sizing: border-box;
+}
+
+.pop-check-ins.opt {
+  background: #ff6663 !important;
+}
+
+.pop-check-ins text {
+  display: block;
+  font-size: 24rpx;
+}
+
+.pop-check-ins.opt text {
+  color: #fff;
+}
+
+.pop-check-ins.today {
+  border: 1px solid #ff6663;
+  background: #fff;
+}
+
+.pop-check-ins image {
+  width: 82rpx;
+  margin-bottom: 10rpx;
+}
+
+.continuous-check-ins {
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.continuous-check-ins text {
+  color: #ff6663;
+}
+
+.btn-pop {
+  padding: 20rpx 100rpx;
+}
+
+.btn-pop button {
+  background: #ff6663;
+  font-size: 30rpx;
+  color: #fff;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+}
+
+.btn-close {
+  text-align: center;
+  position: absolute;
+  bottom: -128rpx;
+  left: 0;
+  width: 100%;
+}
+
+.btn-close button {
+  width: 88rpx;
+  height: 88rpx;
+  padding: 0;
+}
+
+.btn-close button image {
+  width: 88rpx;
+}
+
+.pop-text-img {
+  color: #333;
+  font-size: 0;
+}
+
+.pop-text-img text {
+  /* display: block; */
+  font-size: 28rpx;
+  margin-bottom: 10rpx;
+  text-align: justify;
+  text-align-last: left;
+}
+
+.pop-text-img image {
+  width: 100%;
+}
+
+.coin-dui {
+  padding: 0 30rpx;
+}
+
+.coin-dui view {
+  font-size: 32rpx;
+  display: flex;
+  height: 70rpx;
+  line-height: 70rpx;
+  margin: 40rpx 0;
+}
+
+.coin-dui input {
+  height: 70rpx;
+  line-height: 70rpx;
+  border: 1px solid #dfdfdf;
+  padding: 0 10rpx;
+  border-radius: 10rpx;
+  color: #000;
+}
+
+.coin-num input {
+  width: 100rpx;
+  margin: 0 10rpx;
+  text-align: center;
+}
+
+/* 荐力弹窗 */
+
+.pop-jianli {
+  padding: 40rpx;
+}
+
+.pop-jianli1 {
+  display: flex;
+  align-items: stretch;
+}
+
+.pop-jianli1.zong > text {
+  font-size: 48rpx;
+}
+
+.pop-jianli1 > view {
+  flex: 1;
+  padding-top: 10rpx;
+  padding-left: 20rpx;
+}
+
+.pop-jianli1 > view > view {
+  width: 100%;
+  overflow: hidden;
+}
+
+.pop-jianli1.zong  > view > view {
+  height: 24rpx;
+  border-radius: 12rpx;
+}
+
+.pop-jianli1.zong  > view text {
+  font-size: 36rpx;
+  color: #3a3a3a;
+}
+
+.pop-jianli1.zi  > view > view {
+  height: 20rpx;
+  border-radius: 10rpx;
+}
+
+.pop-jianli1.zi {
+  margin-top: 30rpx;
+  padding: 0 40rpx;
+}
+
+.pop-jianli1.zi text {
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.pop-jianli1.zi zi-title {
+  font-size: 28rpx;
+}
+
+.pop-jianli1.zi .zi-zhi {
+  font-size: 24rpx;
+  color: #3a3a3a;
+}
+
+.pop-jianli1.zi .zi-progress {
+  height: 18rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin: 21rpx 20rpx;
+  padding: 0;
+}
+
+.picker_box {
+  padding: 30rpx 30rpx 0rpx;
+}
+
+.picker_box picker text {
+  font-size: 26rpx;
+  display: inline-block;
+}
+
+.picker_box picker .sel {
+  color: #666;
+  display: inline-block;
+  border: 1px solid #d2d2d2;
+  border-radius: 8rpx;
+  padding: 0 20rpx;
+}
+
+.picker_box picker .sel image {
+  width: 24rpx;
+  margin-left: 20rpx;
+  vertical-align: middle;
+}

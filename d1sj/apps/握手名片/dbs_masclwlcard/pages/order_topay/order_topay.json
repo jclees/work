@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "确认订单",
+    "usingComponents": {
+        "head": "/dbs_masclwlcard/components/head/head"
+    }
+}

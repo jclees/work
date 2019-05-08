@@ -1,0 +1,176 @@
+page {
+  background: #fff;
+}
+
+.mine-userinfo-box {
+  padding: 50rpx 0 40rpx 30rpx;
+  font-size: 0;
+  border-bottom: 1px solid rgba(179, 179, 179, 0.82);
+  position: relative;
+}
+
+.mine-user {
+  display: flex;
+  align-items: flex-end;
+}
+
+.mine-user image {
+  background: #d8d8d8;
+  height: 130rpx;
+  border-radius: 100%;
+  width: 130rpx;
+}
+
+.mine-user image.vip {
+  background: #d8d8d8;
+  width: 32rpx;
+  height: auto;
+  margin-right: 20rpx;
+  margin-left: -26rpx;
+}
+
+.mine-user> view {
+  font-size: 34rpx;
+  color: #1a1a1a;
+  padding-top: 5rpx;
+}
+
+.mine-userinfo {
+  display: flex;
+  color: #fff;
+  flex-wrap: wrap;
+  margin-top: 20rpx;
+}
+
+.mine-userinfo view {
+  width: 50%;
+  font-size: 30rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  box-sizing: border-box;
+  padding-left: 50rpx;
+}
+
+.mine-userinfo view image {
+  width: 32rpx;
+  vertical-align: top;
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.mine-userinfo-box .balan_coin {
+  position: absolute;
+  right: 52rpx;
+  background: #fff;
+  border: 1px solid #ffbf00;
+  box-shadow: 0 1px 2px 0 rgba(147, 147, 147, 0.50);
+  border-radius: 100px;
+  height: 64rpx;
+  line-height: 64rpx;
+  font-size: 34rpx;
+  color: #1a1a1a;
+  display: flex;
+  padding: 0 40rpx;
+  align-items: center;
+}
+
+.mine-userinfo-box .balan_coin image {
+  width: 28rpx;
+  margin-right: 20rpx;
+}
+
+.hot_vip {
+  padding: 66rpx 30rpx 84rpx;
+}
+
+.hot_vip .hot_vip_tit {
+  font-size: 34rpx;
+  color: #333;
+  margin-bottom: 30rpx;
+}
+
+.hot_vip .hot_vip_card {
+  background-image: linear-gradient(90deg, #ffd24c 0%, #ffbf00 100%);
+  box-shadow: 1px 2px 4px 0 rgba(162, 122, 4, 0.80);
+  border-radius: 24rpx;
+  height: 176rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hot_vip .hot_vip_card > view:nth-child(1) {
+  font-size: 70rpx;
+  color: #fff;
+  margin-top: -10rpx;
+}
+
+.hot_vip .hot_vip_card > view:nth-child(2) {
+  font-size: 50rpx;
+  color: #1a1a1a;
+  display: flex;
+  align-items: center;
+}
+
+.hot_vip .hot_vip_card > view:nth-child(2) image {
+  width: 40rpx;
+  margin-left: 10rpx;
+}
+
+.hot_vip .hot_vip_card >button {
+  background: #000;
+  border-radius: 9px 0 0 9px;
+  height: 36rpx;
+  line-height: 36rpx;
+  color: #fff;
+  font-size: 24rpx;
+  padding: 0 16rpx;
+  align-self: flex-end;
+  margin-bottom: 24rpx;
+}
+
+.hot_piece {
+  padding: 0 50rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hot_piece > button {
+  background: #fff;
+  border: 1px solid rgba(198, 198, 198, 0.46);
+  box-shadow: 0 1px 1px 0 rgba(198, 198, 198, 0.46);
+  border-radius: 8rpx;
+  width: 28.888%;
+  margin: 0 40rpx 40rpx 0;
+}
+
+.hot_piece > button:nth-child(3n) {
+  margin: 0 0 40rpx 0;
+}
+
+.hot_piece > button > view:nth-child(1) {
+  display: flex;
+  align-items: center;
+  font-size: 34rpx;
+  color: #ff3933;
+  line-height: 70rpx;
+  justify-content: center;
+}
+
+.hot_piece > button > view:nth-child(1) image {
+  width: 30rpx;
+  margin-right: 10rpx;
+}
+
+.hot_piece > button > view:nth-child(2) {
+  text-align: center;
+  font-size: 24rpx;
+  color: #1a1a1a;
+  height: 40rpx;
+  line-height: 40rpx;
+  margin-bottom: 10rpx;
+}
+
+.hot_piece > button.cur {
+  background: #ffbf00;
+}

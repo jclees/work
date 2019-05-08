@@ -1,0 +1,18 @@
+
+<!-- nav  -->
+<view class='nav-box'></view>
+<view class='nav'>
+  <navigator url="../../pages/index/index?title=redirect" open-type="redirect" class="nav-navigator{{navActive == 1?' active':''}}" hover-class='none' id="1">
+    <image src="{{img_url}}icon-home{{navActive == 1?'-opt':''}}.png" mode='widthFix'></image>
+    <text>首页</text>
+  </navigator>
+  <navigator url="../../pages/publish/publish?title=navigate" open-type='navigate' hover-class='none' class='nav-fabiao' wx:if="{{showNav}}">
+    <button>
+      <image mode='widthFix' src='{{img_url}}icon-fabiao.png'></image>
+    </button>
+  </navigator>
+  <navigator url="../../pages/mine/mine?title=redirect" open-type="redirect" class="nav-navigator{{navActive == 2?' active':''}}" hover-class='none' id="2">
+    <image src="{{img_url}}icon-mine{{navActive == 2?'-opt':''}}.png" mode='widthFix'></image>
+    <text>我的</text>
+  </navigator>
+</view>

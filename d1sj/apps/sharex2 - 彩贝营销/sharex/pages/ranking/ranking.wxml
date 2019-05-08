@@ -1,0 +1,83 @@
+<!--pages/person/person.wxml-->
+<view class="container">
+  <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+    <view class="wxapp-toast-content">
+      <view class="wxapp-toast-content-text"> {{toastText}} </view>
+    </view>
+  </view>
+  <view class="index">
+    <image src="/imgs/ranking_bg.png"></image>
+    <view class="index_box">
+      <view class="index_box_tit">
+        <view style="color:#fee455;padding-bottom:20rpx;">升级达人，享二层收益：</view>
+        <view class="clearfix prize">
+        <view class="fl">
+          <text>好友进入,获一层收益。好友告知他人,他人进入，再获二层收益。（5位好友进入，即可成为达人）</text>
+        </view>
+        </view>
+      </view>
+      <view class="index_box_con">
+        <view class="index_box_con_tit">达人排行榜<text>（前{{list.limit}}名）</text></view>
+        <!-- 有记录 -->
+        <scroll-view scroll-y="true">
+
+           <view class="index_box_con_info me">
+              <image src='/imgs/rk_mebg.png' class="rk_mebg"></image>
+            <view class="index_box_con_info_per">
+             <view class="index_box_con_info_per_rk" wx:if="{{list.me.sort == 1}}"><image src='/imgs/rk_01.png'></image></view> 
+              <view class="index_box_con_info_per_rk" wx:if="{{list.me.sort == 2}}"><image src='/imgs/rk_02.png'></image></view> 
+              <view class="index_box_con_info_per_rk" wx:if="{{list.me.sort == 3}}"><image src='/imgs/rk_03.png'></image></view> 
+              <view class="index_box_con_info_per_rk" wx:if="{{list.me.sort>= 4}}">{{list.me.sort}}</view> 
+              <view class="index_box_con_info_per_img">
+                <image src="{{list.me.avatar}}"></image>
+              </view>
+              <view class="index_box_con_info_per_name">
+                <view>{{list.me.nickname}}</view>
+              </view>
+              <view class="index_box_con_info_per_right1">
+                <text>分享人数：<text class="">{{list.me.shareNum}}人</text></text>
+              </view>
+            </view>
+          </view>
+
+          <view class="index_box_con_info" wx:if="{{list.list.length!==0}}" wx:for="{{list.list}}" wx:for-item="item" wx:key="{{item.id}}">
+            <view class="index_box_con_info_per">
+              <view class="index_box_con_info_per_rk main" wx:if="{{item.sort == 1}}"><image src='/imgs/rk_01.png'></image></view> 
+              <view class="index_box_con_info_per_rk main" wx:if="{{item.sort == 2}}"><image src='/imgs/rk_02.png'></image></view> 
+              <view class="index_box_con_info_per_rk main" wx:if="{{item.sort == 3}}"><image src='/imgs/rk_03.png'></image></view> 
+              <view class="index_box_con_info_per_rk main" wx:if="{{item.sort>= 4}}">{{item.sort}}</view>
+              <view class="index_box_con_info_per_img">
+                <image src="{{item.avatar}}"></image>
+              </view>
+              <view class="index_box_con_info_per_name">
+                <view>{{item.nickname}}</view>
+              </view>
+              <view class="index_box_con_info_per_right1">
+                <text>分享人数：<text class="main">{{item.shareNum}}人</text></text>
+              </view>
+            </view>
+          </view>
+
+        </scroll-view>
+
+        <!-- 没有记录 -->
+        <view class="index_box_con_info1" wx:if="{{list.length===3}}">
+          <view class="index_box_con_info_img">
+            <image src="{{imgUrl}}order.png"></image>
+          </view>
+          <view class="index_box_con_info_text">
+            <text>暂无记录</text>
+            <text>分享给好友,你也能获得GNX!</text>
+          </view>
+          <view class="index_box_text" bindtap="openPop">
+            <image src="{{imgUrl}}wenti1.png"></image>
+            <text>升级小咖享8倍收益</text>
+          </view>
+        </view>
+      </view>
+      <form name='pushMsgFm' report-submit="true" bindsubmit='getFormId'>
+        <button class="send_quninfo" open-type='share' form-type="submit">继续分享</button>
+      </form>
+    </view>
+  </view>
+</view>

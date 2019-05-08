@@ -1,0 +1,54 @@
+<!--pages/question/question.wxml-->
+<view class="container">
+  <view class="question">
+    <image src="{{img_url}}question_bgc.png"></image>
+    <view class="question_box">
+      <view class="question_box_tit">
+        <text>{{bigclass}}</text>
+        <text></text>
+        <text>{{smallclass}}</text>
+      </view>
+      <view class="question_box_text">
+        <textarea placeholder="题干内容" 
+          value="{{title}}"
+          disabled="true"
+          placeholder-style="color: #283a92;" />
+      </view>
+      <view class="question_box_con">
+        <view class="question_box_con_per">
+           <image src="{{img_url}}{{answer[0]==right?'right.png':'error.png'}}"></image> 
+         <!-- <image src="{{img_url}}right.png"></image> -->
+          <input placeholder="正确答案" 
+                value="{{answer[0]}}"
+                disabled ="true" 
+                placeholder-style="color: #fff; font-family: '苹方';"  />
+        </view>
+        <view class="question_box_con_per">
+          <image src="{{img_url}}{{answer[1]==right?'right.png':'error.png'}}"></image> 
+          <!-- <image src="{{img_url}}error.png"></image> -->
+          <input placeholder="错误答案" 
+           value="{{answer[1]}}"  
+           disabled ="true" 
+           placeholder-style="color: #fff; font-family: '苹方';" />
+        </view>
+        <view class="question_box_con_per">
+            <image src="{{img_url}}{{answer[2]==right?'right.png':'error.png'}}"></image> 
+          <input placeholder="错误答案" 
+           value="{{answer[2]}}"
+             disabled ="true" 
+            placeholder-style="color: #fff; font-family: '苹方';"  />
+        </view>
+        <view class="question_box_con_per">
+            <image src="{{img_url}}{{answer[3]==right?'right.png':'error.png'}}"></image> 
+          <input placeholder="错误答案"
+           value="{{answer[3]}}" 
+             disabled ="true" 
+             placeholder-style="color: #fff; font-family: '苹方';" />
+        </view>
+      </view>
+      <view class="question_box_button">
+        <image src="{{img_url}}shenhe.png"></image>
+      </view>
+    </view>
+  </view>
+</view>

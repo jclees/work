@@ -1,0 +1,155 @@
+/* mine.wxss */
+.huishou {
+  bottom: 40rpx;
+}
+.mine-userinfo-box {
+  padding: 48rpx 56rpx;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.mine-user {
+  display: flex;
+  align-items: flex-end;
+}
+
+.mine-user image {
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.04), 2px 0 4px 0 rgba(0, 0, 0, 0.04);
+  border-radius: 100px;
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 36rpx;
+}
+
+.mine-user> .mine-name {
+  font-size: 36rpx;
+  color: #1a1a1a;
+}
+
+.mine-user> .mine-name > view:last-of-type {
+  font-size: 28rpx;
+  color: #393939;
+  margin-top: 10rpx;
+}
+
+.mine-userinfo {
+  display: flex;
+  color: #fff;
+  flex-wrap: wrap;
+  margin-top: 20rpx;
+}
+
+.mine-userinfo view {
+  width: 50%;
+  font-size: 30rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  box-sizing: border-box;
+  padding-left: 50rpx;
+}
+
+.mine-userinfo view image {
+  width: 32rpx;
+  vertical-align: top;
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.mine-coin-box {
+  position: relative;
+  margin-top: -60rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 0 1px 0 rgba(210, 210, 210, 0.50);
+  padding: 36rpx 40rpx 44rpx;
+}
+
+.mine-coin-box .coins {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.mine-coin-box .coins > image:nth-child(1) {
+  width: 50rpx;
+}
+
+.mine-coin-box .coins > .coins_nums {
+  font-size: 32rpx;
+  color: #000;
+}
+
+.mine-coin-box .coins > .coins_nums >view:nth-child(2) {
+  font-size: 24rpx;
+  padding-top: 10rpx;
+}
+
+.mine-coin-box .coins > button {
+  background: #ff8d0d;
+  box-shadow: 0 1px 1px 0 #774a17;
+  border-radius: 200rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 28rpx;
+  color: #fff;
+  padding: 0 28rpx;
+  margin: 30rpx 0 0 0;
+}
+
+.mine_nav >view {
+  background: #fff;
+  margin-top: 30rpx;
+  padding: 0 40rpx;
+}
+
+.mine_nav >view button {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  height: 88rpx;
+  line-height: 88rpx;
+  justify-content: space-between;
+  border-radius: 0;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.mine_nav >view navigator:last-of-type button {
+  border: none;
+}
+
+.mine_nav >view button text {
+  font-size: 28rpx;
+  color: #1a1a1a;
+}
+
+.mine_nav >view button .min_icon {
+  display: flex;
+  align-items: center;
+}
+
+.mine_nav >view button .min_icon image {
+  width: 12rpx;
+  margin-left: 40rpx;
+}
+
+.mine_nav >view button .min_icon view.doc {
+  background: #ff3933;
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+}
+
+.mine_nav >view button .min_icon view.txt {
+  background: #ff3933;
+  height: 36rpx;
+  min-width: 36rpx;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 36rpx;
+  color: #fff;
+  border-radius: 100px;
+  
+}

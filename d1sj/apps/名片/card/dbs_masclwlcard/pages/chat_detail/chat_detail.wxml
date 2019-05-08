@@ -1,0 +1,38 @@
+<view class="main">
+    <scroll-view class="scroll_view" scrollIntoView="{{toView}}" scrollY="true">
+        <view class="message" id="uid_{{item.id}}" wx:for="{{allContentList}}" wx:key="{{index}}">
+            <view class="self" wx:if="{{item.is_my}}">
+                <image class="avatar" src="{{card_detail.card.avatarUrl}}"></image>
+                <view class="msg">
+                    <view>
+                        <view class="template">
+                            <text class="new_txt_my">{{item.is_my.text}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view wx:if="{{item.is_ai}}">
+                <image class="avatar" src="{{card_detail.card.card_logo}}"></image>
+                <view class="msg">
+                    <view>
+                        <view class="template">
+                            <text wx:if="{{item.text}}">{{item.text}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="room_bar">
+        <view class="button_bar" wx:if="{{card_detail.card.card_tel!=''}}">
+            <text>我想</text>
+            <view bindtap="_callPhone" data-phone="{{card_detail.card.card_tel}}" wx:if="{{card_detail.card.card_tel!=''}}">拨打电话</view>
+        </view>
+        <form reportSubmit bindsubmit="from_send">
+            <view class="f-row">
+                <input adjustPosition="false" bindinput="bindKeyInput" class="f news" confirmType="done" cursorSpacing="20" type="text" value="{{inputValue}}"></input>
+                <button class="send_btn" formType="submit">发送</button>
+            </view>
+        </form>
+    </view>
+</view>

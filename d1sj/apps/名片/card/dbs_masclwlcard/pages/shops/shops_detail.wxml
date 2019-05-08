@@ -1,0 +1,108 @@
+<loading hidden="{{dataLoaded}}">加载中...</loading>
+<view class="dist_mask" wx:if="{{dist_mask}}"></view>
+<view class="circle_box" wx:if="{{showUser}}">
+    <view class="friends_item clearfix">
+        <navigator hoverClass="none" url="/dbs_masclwlcard/pages/tab/tab?card_id={{card.card_id}}">
+            <view class="head_logo">
+                <image src="{{card.card_logo}}"></image>
+            </view>
+            <view class="right_content">
+                <view class="name_share">
+                    <view class="name" style="line-height: {{card.card_name?'45rpx':'90rpx'}}">
+                        {{card.card_name}}
+                    </view>
+                    <view class="job" wx:if="{{card.role_name}}">
+                        {{card.role_name}}
+                    </view>
+                </view>
+                <view class="card_btn">
+                    <view class="btn_view">
+                        TA的名片
+                    </view>
+                    <image src="../../images/ico-right-arrow.png"></image>
+                </view>
+            </view>
+        </navigator>
+    </view>
+</view>
+<view class="head">
+    <view class="swiper-box">
+        <swiper autoplay circular indicatorDots class="img_box" duration="{{500}}" indicatorActiveColor="#FF3D33" indicatorColor="rgba(17,17,17,0.1)" interval="{{3000}}">
+            <swiper-item wx:for="{{shops.top_pic}}" wx:key="index">
+                <image mode="aspectFill" src="{{item}}"></image>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="pro_name">
+        <view class="name_pro_pro">
+            <view class="c_name_pro"></view>
+            <view class="pro_price">
+                <text class="pro_price2">¥{{shops.price}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="pro_detail_title">商品详情</view>
+<scroll-view>
+    <image bindtap="priveimage" data-index="{{index}}" lazyLoad="{{true}}" mode="widthFix" src="{{item}}" wx:for="{{shops.cp_bs_img}}" wx:key="index"></image>
+</scroll-view>
+<view style="height:100rpx;background: #fff"></view>
+<view class="footer">
+    <view class="shopFrist">
+        <navigator hoverClass="none" openType="reLaunch" url="/dbs_masclwlcard/pages/tab/tab?card_id={{card.id}}&nav_footer_active=1">
+            <form reportSubmit bindsubmit="from_send">
+                <button formType="submit"></button>
+            </form>
+            <image src="../../images/card/02_x.png"></image>
+            <view class="shop_text">商城首页</view>
+        </navigator>
+    </view>
+    <view bindtap="goChat" class="shopFrist" wx:if="{{shops.onlinePayment!==2}}">
+        <form reportSubmit bindsubmit="from_send">
+            <button formType="submit"></button>
+        </form>
+        <image src="../../images/card/msg2.png"></image>
+        <view class="shop_text">咨询</view>
+    </view>
+    <view bindtap="to_pay" class="pub_foot bgc2" data-options="buy">
+        <form reportSubmit bindsubmit="from_send">
+            <button formType="submit"></button>
+        </form>
+      立即购买</view>
+</view>
+<view catchtouchmove="noFunction" class="choose_pro" wx:if="{{toPay}}">
+    <view class="choose_box">
+        <view bindtap="close_pay" class="closed_btn">
+            <image src="../../images/detail_icon_close_n.png"></image>
+        </view>
+        <view class="choose_price">
+            <text class="pro_price2">¥{{M_price}}
+            </text>
+        </view>
+        <view class="choose_style">{{productSpecificationTip}}</view>
+        <view class="choose_box_bottom" wx:if="{{shops.spec&&shops.spec.spec_content&&shops.spec.spec_content.length>0}}">
+            <view class="choose_title">商品规格</view>
+            <scroll-view scrollY class="style_list clearfix">
+                <text bindtap="spec" class="{{item.selected?'selected':''}}" data-index="{{index}}" wx:for="{{shops.spec.new_spec}}" wx:key="index">{{item.spec_content}}</text>
+            </scroll-view>
+        </view>
+        <view class="choose_num">
+            <view class="num_left">
+                <view class="num_title">购买数量</view>
+                <view class="num">(库存:{{shops.shops_num}}件)</view>
+            </view>
+            <view class="num_right clearfix">
+                <view class="num_change_box">
+                    <view bindtap="reduce" class="left_reduce {{selected_num==1?'no_reduce':'can_reduce'}}"></view>
+                    <view class="selected_num">{{selected_num}}</view>
+                    <view bindtap="plus" class="left_reduce {{selected_num==skdshopsStock?'no_plus':'can_plus'}}"></view>
+                </view>
+            </view>
+        </view>
+        <view bindtap="to_detail_pay" class="pay_btn {{shop.selectedPro(shops.skus)?'selected_btn':''}}">
+      确定
+    </view>
+    </view>
+</view>
+<import src="../../temp/authorize/index.wxml"></import>
+<template is="authorize" data="{{isAuthorize:isAuthorize}}"></template>

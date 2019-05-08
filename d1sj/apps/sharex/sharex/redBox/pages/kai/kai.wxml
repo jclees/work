@@ -1,0 +1,54 @@
+<!--pages/kai/kai.wxml-->
+<view class="container">
+  <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+    <view class="wxapp-toast-content">
+      <view class="wxapp-toast-content-text"> {{toastText}} </view>
+    </view>
+  </view>
+  <view class="index">
+    <image src="../../imgs/bgc1.png"></image>
+    <view class="index_box">
+      <view clsas="index_box_tit">
+        <view class="index_box_tit_text" style="font-size: 38rpx;">恭喜你!</view>
+        <view class="index_box_tit_img">
+          <image src="{{user.userInfo.avatarUrl}}"></image>
+        </view>
+        <view class="index_box_tit_text">
+          <text>您的口袋拥有{{money}}枚SEXC</text>
+          <text>价值{{text}}元人民币</text>
+        </view>
+      </view>
+      <view class="index_box_look" bindtap="look">
+        <text>查看SEXC</text>
+      </view>
+       <button class="index_box_button" open-type="share">
+        <image src="../../imgs/share.png"></image>
+      </button> 
+      <view class="index_box_footer" bindtap="openPop">
+        <image src="../../imgs/wenti.png"></image>
+        <text>分享喜悦规则</text>
+      </view>
+    </view>
+  </view>
+  <!-- 分享弹出框 -->
+  <view class="pop" wx:if="{{pop}}">
+      <view class="cover" bindtap="closePop"></view>
+      <view class="pop_box">
+         <image src="../../imgs/pop_bgc.png"></image>
+        <view class="pop_box_info">
+           <view class="pop_box_info_tit">
+            <image src="../../imgs/share_tit.png"></image>
+          </view>
+           <view class="pop_box_info_close" bindtap="closePop">
+            <image src="../../imgs/close.png"></image>
+          </view>
+          <view class="pop_box_info_con">
+            <text>{{art.share_intro}}</text>
+          </view>
+          <view class="pop_box_info_button" bindtap="closePop">
+            <image src="../../imgs/confirm.png"></image> 
+          </view>  
+        </view> 
+      </view>
+    </view>
+</view>

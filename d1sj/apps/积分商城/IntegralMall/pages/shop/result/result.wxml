@@ -1,0 +1,39 @@
+<!--pages/shop/result/result.wxml-->
+<view class="container">
+  <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+    <view class="wxapp-toast-content">
+      <view class="wxapp-toast-content-text"> {{toastText}} </view>
+    </view>
+  </view>
+  <view class="address_tit">
+    <form>
+      <view class="fl form_left">
+         <icon type="search" size="16" /> 
+        <input placeholder-class='search' value="{{searchKey}}" bindconfirm="search" bindinput='changeInp' confirm-type="search" placeholder='输入商品名称'></input>
+      </view>
+      <view class="fr form_right">
+        <button bindtap='search'>搜索</button>
+      </view>
+    </form>
+  </view>
+  <view class="result_con">
+    <view class="index_info_con">
+        <view class="index_info_con_per" wx:for="{{shopList}}" wx:for-item="item" wx:key="{{item.image}}" bindtap="detail" data-item="{{item}}">
+          <view class="index_info_con_per_top">
+            <image src="{{item.image}}" mode='aspectFill'></image>
+          </view>
+          <view class="index_info_con_per_text">
+            <view class="index_info_con_per_text_name">{{item.name}}</view>
+            <view class="index_info_con_per_text_price">
+              <view class="fl index_info_con_per_text_price_left">
+                ¥{{item.specs.price}}＋{{item.specs.integral}}积分
+              </view>
+              <view class="fr index_info_con_per_text_price_right">
+                ¥{{item.oldprice}}
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+  </view>
+</view>

@@ -1,0 +1,224 @@
+<!-- 早读音频播放区  -->
+<view class='audio-box'>
+  <view class='slider-box'>
+    <image mode='widthFix' src='{{musicData.musicImg}}' class="banner"></image>
+    <view class="play-video">
+      <image mode='widthFix' src='{{img_url}}icon-play-video.png' class='icon_play'></image>
+      <!-- <image mode='widthFix' src='{{img_url}}icon-pause-video.png' class='icon_pause'></image> -->
+    </view>
+
+    <!-- <slider max='{{duration}}' value='{{isMovingSlider?currentTimeSlider:currentTime}}' block-size="12" activeColor='#fa3a27' bindchanging="listenerSlidering" bindchange="listenerSlider"></slider> -->
+  </view>
+  <view class='curriculum-tit'>
+    <view>
+      <text>学而时习之，不亦说乎，监督岗</text>
+      <view class='curriculum-info'>
+        <label>
+          <image mode='widthFix' src='{{img_url}}icon-play-little.png'></image>
+          <text>李某人/李某人</text>
+        </label>
+        <text>共20集</text>
+      </view>
+    </view>
+    <view class="open_posters" bindtap='jumpPosters'>
+      <image mode='widthFix' src='{{img_url}}icon_hbao02.png'></image>
+    </view>
+  </view>
+  <view class="ms_djs_wrap">
+    <view class="bm_num">
+      <view class="x_rmb">￥
+        <text class="cool">0</text>.0</view>
+      <view class="bm_num_rmb">
+        <view class="old_rmb">￥129</view>
+        <view class="bm_numtxt">1023人已参加</view>
+      </view>
+    </view>
+    <view class="ms_djs" wx:if="{{total_micro_second != 0}}">
+      <view class='p_tit'>{{msDjsName}}</view>
+      <view class="djs">
+        <view class="ms_days">{{ms_days}}天</view>
+        <view class="sfm_box">
+          <view class="ms_hr">{{ms_hr}}</view>
+          <view>:</view>
+          <view class="ms_min">{{ms_min}}</view>
+          <view>:</view>
+          <view class="ms_sec">{{ms_sec}}</view>
+          <view>:</view>
+          <view class="ms_micro_sec">{{ms_micro_sec}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--  点击进群  -->
+<view class='invite-group'>
+  <view class='group-photo'>
+    <image src='{{img_url}}img-1.png' mode='widthFix'></image>
+  </view>
+  <view class='group-r'>
+    <text>老师邀请你加入官方学习群</text>
+    <button open-type="contact" hover-class='act' class="btn_shadow">点击加群</button>
+    <label>回复
+      <text>"1"</text> 获得进群二维码
+    </label>
+    <image mode='widthFix' src='{{img_url}}pointer.png' class='bounce_pointer'></image>
+    <image mode='widthFix' src='{{img_url}}pointer_bg.png' class='pointer_bg'></image>
+  </view>
+</view>
+
+<!-- 邀请人数奖励  -->
+<view class='invite-rewards'>
+  <view class='invite-user'>
+    <image mode='widthFix' src='{{img_url}}photo.jpg' class='user-photo'></image>
+    <view class='icon-star'>
+      <image mode='widthFix' src='{{img_url}}icon-star-opt.png'></image>
+      <image mode='widthFix' src='{{img_url}}icon-star-opt.png'></image>
+      <image mode='widthFix' src='{{img_url}}icon-star-opt.png'></image>
+      <image mode='widthFix' src='{{img_url}}icon-star.png'></image>
+    </view>
+    <button class='btn-share' hover-class='none'>
+      <image mode='widthFix' src='{{img_url}}icon-invitation.png'></image>
+    </button>
+  </view>
+  <view class='rewards'>
+    <view class='rewards-user'>
+      <image mode='widthFix' src='{{img_url}}photo.jpg'></image>
+      <image mode='widthFix' src='{{img_url}}photo.jpg'></image>
+      <image mode='widthFix' src='{{img_url}}photo.jpg'></image>
+    </view>
+    <text>已经有3位好友和你一起学，奖励你三颗星</text>
+  </view>
+</view>
+
+<!-- 课程简介 -->
+<view class='tab'>
+  <text class="{{tab == 1 ? 'active' : ''}}" bindtap='tab1' data-id='1'>课程简介</text>
+  <text class="{{tab == 1 ? '' : 'active'}}" bindtap='tab1' data-id='2'>课程列表</text>
+</view>
+
+<view class="tab-list">
+  <view class='kecheng' wx:if="{{tab == 1}}">
+    <text class="intro_txt"> 课程每周一、三、五更新~</text>
+    <view class="intro_img">
+      <image mode='widthFix' src='{{img_url}}banner-img1.png'></image>
+      <image mode='widthFix' src='{{img_url}}banner-img1.png'></image>
+      <image mode='widthFix' src='{{img_url}}banner-img1.png'></image>
+    </view>
+  </view>
+  <view class='kecheng' wx:if="{{tab == 2}}">
+    <view class='kc_list' hover-class='act'>
+      <view class="kc_info">
+        <view>第一课：xxxxxxxx</view>
+        <view>08月08日 433次学习</view>
+      </view>
+      <view class="st_btn">试听</view>
+    </view>
+    <view class='kc_list'>
+      <view class="kc_info">
+        <view>第一课：xxxxxxxx</view>
+        <view>08月08日 433次学习</view>
+      </view>
+      <view>
+        <view class="rmb_nums">￥10</view>
+        <view class="st_btn">0元拼读</view>
+      </view>
+    </view>
+    <view class='kc_list'>
+      <view class="kc_info">
+        <view>第一课：xxxxxxxx</view>
+        <view>08月08日 433次学习</view>
+      </view>
+      <view class="rmb_nums">￥10</view>
+    </view>
+  </view>
+</view>
+
+<!-- 浮动按钮 -->
+<view class="buy_kc_box"></view>
+<view class="buy_kcbtn">
+  <view hover-class='act'>
+    <view>129元</view>
+    <view>购买专栏</view>
+  </view>
+  <view hover-class='act' data-id="kchenshare" bindtap='popLock'>
+    <view class="ballon">邀请5人免费学(已邀请2人)</view>
+  </view>
+  <!-- <button hover-class="act">立即学习（129元）</button> -->
+</view>
+<!-- 拼课程成功 -->
+<view class="fixed_psucc" wx:if="{{psucsSatus}}">
+  <view class="psucc_img">
+    <image src='{{img_url}}icon-coin-10.png' mode='aspectFill'></image>
+  </view>
+  <view class="psucc_name">李某人</view>
+  <view class="psucc_date">10小时前领取成功</view>
+</view>
+<!-- 邀请好友拼课程弹窗 -->
+<view class="share_pkewrap" wx:if="{{pop1}}" catchtouchmove="myCatchTouch">
+  <view class="cover" bindtap='popLock'></view>
+  <view class='pke_cont'>
+    <view class="pke_tit">邀请好友助力免费领</view>
+    <view class="ms_djs" wx:if="{{total_micro_second != 0}}">
+      <view class="djs">
+        <view class="ms_days">{{ms_days}}天</view>
+        <view class="sfm_box">
+          <view class="ms_hr">{{ms_hr}}</view>
+          <view>:</view>
+          <view class="ms_min">{{ms_min}}</view>
+          <view>:</view>
+          <view class="ms_sec">{{ms_sec}}</view>
+          <view>:</view>
+          <view class="ms_micro_sec">{{ms_micro_sec}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="pk_rennums">
+      <view>
+        <image src='{{img_url}}icon-coin-9.png' mode='aspectFill'></image>
+      </view>
+      <view>
+        <image src='{{img_url}}icon-coin-6.png' mode='aspectFill'></image>
+      </view>
+      <view>
+        <image src='{{img_url}}icon-coin-1.png' mode='aspectFill'></image>
+      </view>
+      <view>
+        <image src='{{img_url}}icon-coin-2.png' mode='aspectFill'></image>
+      </view>
+      <view>
+        <image src='{{img_url}}icon_shareadd.png' mode='aspectFill'></image>
+      </view>
+    </view>
+    <view class="must_rennums">再邀请3人助力即可获得</view>
+    <view class="share_types">
+      <button hover-class='none' open-type='share'>
+        <view class="img_box">
+          <image src='{{img_url}}icon_wx.png' mode='aspectFill'></image>
+        </view>
+        <view class="share_types_txt">微信</view>
+      </button>
+      <button hover-class='none' bindtap='shareWxpyq'>
+        <view class="img_box">
+          <image src='{{img_url}}icon_wxpyq.png' mode='aspectFill'></image>
+        </view>
+        <view class="share_types_txt">朋友圈</view>
+      </button>
+    </view>
+  </view>
+</view>
+<!-- 好友助力成功弹框 -->
+<view class='pop-box' wx:if="{{pop2}}">
+  <view class='pop-bg' bindtap='popLock'></view>
+  <view class='pop-main'>
+      <image src='{{img_url}}zhul_like.png' class="pop_tit_icon" mode='widthFix'></image>
+    <view class='pop-content'>
+      <view class='pop-text-img'>
+        <text>你已成功<text style='color:#ff6763;'>李某某</text>为助力</text>
+      </view>
+    </view>
+    <view class="btn-pop">
+      <button hover-class='none' bindtap='popLock'>我也要免费领</button>
+    </view>
+  </view>
+</view>

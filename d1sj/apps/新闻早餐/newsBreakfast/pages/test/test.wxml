@@ -1,0 +1,15 @@
+<header background-color="#111" color="#fff" fixed>链江湖</header>
+<!-- 
+<view class='detail_img'>
+  <view class='view_img' wx:for="{{imglist}}" wx:for-item="image">
+    <image src='{{image}}' data-src="{{image}}" bindtap="previewImage"></image>
+  </view>
+  <view style='clear:both;'></view>
+</view> -->
+<view wx:for="{{items}}" class="box">
+      <view>{{item.name}}</view>
+      <view>{{item.con}}</view>
+      <view class="imgbox  {{item.images?'animated fadeIn':'cool'}}" >
+      <image src='{{item.images}}' class='news_list_img' mode='widthFix'></image>
+      </view>      
+</view>

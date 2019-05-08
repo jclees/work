@@ -1,0 +1,51 @@
+<!--index.wxml-->
+<import src="../../pages/task/index/index.wxml" />
+<import src="../../pages/shoppingCart/index/index.wxml" />
+<import src="../../pages/shop/index/index.wxml" />
+<import src="../../pages/person/index/index.wxml" />
+<import src="/templates/authorize/index.wxml"></import>
+<template is="authorize" data="{{isAuthorize:isAuthorize}}"></template>
+
+<view class="container" style='background:#{{currentTab==2?"f5f6f8":"fff"}};'>
+  <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+    <view class="wxapp-toast-content">
+      <view class="wxapp-toast-content-text"> {{toastText}} </view>
+    </view>
+  </view>
+  <!-- <view class="index_tab">
+    <view class="index_tab_per {{currentTab==1?'current':''}}" bindtap='swichNav' data-current="1">商城</view>
+    <view class="index_tab_per {{currentTab==2?'current':''}}" bindtap='swichNav' data-current="2">个人</view>
+    <view class="index_tab_per {{currentTab==3?'current':''}}" bindtap='swichNav' data-current="3">赚积分</view>
+  </view> -->
+
+  
+  <view class="index_con">
+    <view class="index_info_box" wx:if='{{currentTab==1}}'>
+      <template is="shop_index" data="{{navList,show,imgUrls,shopList,classifyList,indicatorDots,autoplay,interval,duration,circular,currentNav,secondClass}}" />
+    </view>
+    <view class="index_info_box" wx:if='{{currentTab==2}}'>
+      <template is="cart_index" data="{{cartLists,cartAllsel,editStatus,moneyTotal,scoreTotal}}" />
+    </view>
+    <view class="index_info_box" wx:if='{{currentTab==3}}'>
+      <template is="person_index" data="{{orderList,collectList,gradeDetail,image}}" />
+    </view>
+  </view>
+
+  <view class='nav-box' style="height:{{currentTab == 2?'204rpx':''}};"></view>
+  <view class='nav'>
+    <view class="nav-navigator nav-index {{currentTab == 1?' cur':''}}" hover-class='none' bindtap='swichNav' data-current="1">
+      <image src="/imgs/icon-home{{currentTab == 1?'-opt':''}}.png" mode='widthFix' style="width:47rpx;"></image>
+      <text>首页</text>
+    </view>
+    <view class="nav-navigator nav-index {{currentTab == 2?' cur':''}}" hover-class='none' bindtap='swichNav' data-current="2">
+      <image src="/imgs/icon-cart{{currentTab == 2?'-opt':''}}.png" mode='widthFix' style="width:52rpx;"></image>
+      <text>购物车</text>
+    </view>
+    <view class="nav-navigator nav-index {{currentTab == 3?' cur':''}}" hover-class='none' bindtap='swichNav' data-current="3">
+      <image src="/imgs/icon-mine{{currentTab == 3?'-opt':''}}.png" mode='widthFix' style="width:44rpx;"></image>
+      <text>我的</text>
+    </view>
+  </view>
+
+
+</view>

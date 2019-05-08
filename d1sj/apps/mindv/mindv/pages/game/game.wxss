@@ -1,0 +1,443 @@
+/* pages/game/game.wxss */
+
+
+
+.bg-radius {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200rpx;
+  overflow: hidden;
+}
+
+.bg-radius view {
+  width: 1500rpx;
+  height: 1500rpx;
+  background: #fed257;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  left: -50%;
+}
+
+.game_box {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding-top: 314rpx;
+}
+
+/* .game_box>image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+} */
+
+.game_box_info {
+  position: fixed;
+  top: 50rpx;
+  left: 30rpx;
+  right: 30rpx;
+  height: 270rpx;
+  z-index: 200;
+}
+
+.game_box_tit {
+  position: relative;
+}
+
+.game_box_tit>image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.game-box-title-box {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: #fff;
+  padding-top: 26rpx;
+}
+
+.game-box-title {
+  font-size: 56rpx;
+  font-weight: 700;
+}
+
+.game_box_tit_bgc {
+  position: relative;
+  z-index: 100;
+  margin: 10rpx;
+  height: 20rpx;
+}
+
+.game_box_tit_bgc>image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.game_box_tit_text {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  font-size: 24rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+}
+
+.game_box_tit_info {
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+  padding: 0 20rpx;
+  margin-top: 20rpx;
+}
+
+.game_box_tit_info_left {
+  width: 200rpx;
+  flex: 7;
+  text-align: left;
+}
+
+.game_box_tit_info_left>view {
+  padding: 0 20rpx 0 15rpx;
+  background: rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  height: 62rpx;
+  line-height: 62rpx;
+  border-radius: 62rpx;
+}
+
+.game_box_tit_info_left image {
+  width: 42rpx;
+  height: 42rpx;
+  float: left;
+  margin: 10rpx 10rpx 0 0;
+}
+
+.game_box_tit_info_right {
+  height: 62rpx;
+  position: relative;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 42rpx;
+  flex: 5;
+}
+
+.game_box_tit_info_right>image {
+  width: 42rpx;
+  height: 42rpx;
+}
+
+.game_box_tit_info_right_per {
+  width: 42rpx;
+  height: 42rpx;
+  display: inline-block;
+  position: relative;
+  margin: 10rpx 5rpx 0;
+}
+
+.game_box_tit_info_right_per:last-child {
+  margin-right: 0;
+}
+
+.game_box_tit_info_right_per image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.game_box_con {
+  position: relative;
+  padding: 0 44rpx 20rpx;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.game_box_con scroll-view {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/*  隐藏滚动条  */
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.game_box_con_per {
+  height: 175rpx;
+  margin-bottom: 5rpx;
+  position: relative;
+  z-index: 4;
+  background: linear-gradient(to right, #31a3f3, #5a44df);
+  border-radius: 10rpx;
+}
+
+.game_box_con_per>image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.game_box_con_per_left {
+  position: relative;
+  z-index: 9;
+}
+
+.game_box_con_per_left_left {
+  float: left;
+  width: 105rpx;
+  height: 105rpx;
+  /* border: 7rpx solid #fff; */
+  border-radius: 50%;
+  margin-top: 36rpx;
+  margin-left: 14rpx;
+}
+
+.game_box_con_per_left_left image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  /* border-radius: 50%; */
+}
+
+.game_box_con_per_left_right {
+  height: 100%;
+  overflow: hidden;
+}
+
+.game_box_con_per_left_right_top {
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 36rpx;
+  color: #fff;
+  border-bottom: 2rpx solid #fff;
+  padding: 0 30rpx 0 26rpx;
+  margin-top: 18rpx;
+}
+
+.game_box_con_per_left_right_bottom {
+  height: 50rpx;
+  line-height: 50rpx;
+  padding-left: 26rpx;
+  color: #ffe293;
+  font-size: 30rpx;
+}
+
+.game_box_con_per_right {
+  position: relative;
+  z-index: 6;
+  padding-right: 14rpx;
+}
+
+.game_box_con_per_right_top {
+  margin-top: 20rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+}
+
+.game_box_con_per_right_top image {
+  width: 32rpx;
+  height: 32rpx;
+  float: right;
+}
+
+.game_box_con_per_right_top text {
+  color: #fff;
+  float: right;
+  margin-left: 6rpx;
+}
+
+.game_box_con_per_right_bottom {
+  height: 42rpx;
+  width: auto;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 8rpx 14rpx;
+  border-radius: 42rpx;
+  margin-top: 46rpx;
+  text-align: center;
+}
+
+.game_box_con_per_right_bottom image {
+  width: 36rpx;
+  height: 36rpx;
+  display: inline-block;
+  margin: 0 1rpx;
+}
+.game_box_con_per_right_bottom > view{
+  display: inline-block;
+}
+
+/* 弹出框的样式 */
+
+.pop {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 201;
+}
+
+.cover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 101;
+}
+
+.pop_box {
+  position: relative;
+  z-index: 102;
+  background-color: #fff;
+  margin: 270rpx 126rpx 0;
+  border-radius: 10rpx;
+  padding-top: 110rpx;
+  padding-bottom: 25rpx;
+}
+
+.pop_box_icon {
+  width: 170rpx;
+  height: 170rpx;
+  position: absolute;
+  top: -85rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.pop_box_icon image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.pop_box_close {
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+}
+
+.pop_box_close image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.pop_box_text {
+  width: 100%;
+  height: 76rpx;
+  line-height: 76rpx;
+  background-color: #4370cb;
+  text-align: center;
+  color: #fff;
+  font-size: 45rpx;
+  font-weight: 700;
+}
+
+.pop_box_des {
+  margin: 103rpx 48rpx 0;
+  font-size: 38rpx;
+  font-weight: 700;
+}
+
+.pop_box_num {
+  margin-top: 105rpx;
+  text-align: center;
+  color: #8ab5ea;
+}
+
+.pop_box_button {
+  margin: 20rpx auto 0;
+  width: 314rpx;
+  height: 106rpx;
+}
+
+.pop_box_button image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+
+.lock {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+  background: rgba(255, 255, 255, 0.5);
+  display: block;
+  text-align: center;
+}
+
+.lock image {
+  width: 83rpx;
+  margin-top: 30rpx;
+}
+
+.lock-dot {
+  position: relative;
+  top: 70rpx;
+  left: 50%;
+  width: 30rpx;
+  height: 30rpx;
+  background: #fff;
+  transform: translate(-50%, 0);
+  border-radius: 50%;
+  box-shadow: 0 0 6rpx #f98954;
+  z-index: 100;
+}
+
+.lock-dot::before {
+  content: "";
+  position: absolute;
+  top: -50rpx;
+  left: 50%;
+  width: 30rpx;
+  height: 30rpx;
+  background: #fff;
+  transform: translate(-50%, 0);
+  border-radius: 50%;
+  box-shadow: 0 0 6rpx #f98954;
+  z-index: 100;
+}
+
+.lock-dot::after {
+  content: "";
+  position: absolute;
+  top: 50rpx;
+  left: 50%;
+  width: 30rpx;
+  height: 30rpx;
+  background: #fff;
+  transform: translate(-50%, 0);
+  border-radius: 50%;
+  box-shadow: 0 0 6rpx #f98954;
+  z-index: 100;
+}

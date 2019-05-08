@@ -1,0 +1,31 @@
+<!--pages/ryshop/ryshop.wxml-->
+<view class="warp_page" style="background-image:url({{tupian}}shop_bg04.jpg)">
+  <view class="small-flex lshead-flex">
+      <view class="small-flex__item"><view class="x_text">段位</view></view>
+      <view class="small-flex__item"><view class="x_text">奖励</view></view>
+      <view class="small-flex__item"><view class="x_text">头像框</view></view>
+  </view>
+  <view class="list-box">
+
+    <block wx:for="{{list}}">  
+      <view class="small-flex lsbody-flex">
+          <view class="small-flex__item" ><view class="ry-name">{{item.name}}   </view></view>
+          <view class="small-flex__item">
+          <view class="ry-jiang">
+            <view class="small-flex">
+              <view class="small-flex__item"><image src="{{image}}{{item.logo}}" /></view>
+              <view class="text_flex__item"><view>{{item.box_name}}</view><view>X{{item.num}}</view></view>
+            </view>
+          </view>
+          </view>
+          <view class="small-flex__item">
+            <view class="ry-photo" style="background-image:url({{image}}{{item.user_grad_logo}})">
+            </view>
+          </view>
+      </view>
+    </block>
+
+  </view>
+</view>
+
+

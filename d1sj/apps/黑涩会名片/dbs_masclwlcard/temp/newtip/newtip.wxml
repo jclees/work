@@ -1,0 +1,23 @@
+<template name="newtip">
+    <!-- <view bindtap="_jumpToChat" class="msgtip">
+        <view class="avatar">
+            <image src="{{cardAvatar}}"></image>
+        </view>
+        <view class="msgContent">您有新的消息</view>
+        <view class="num">1</view>
+    </view> -->
+    <view bindtap="jump_url" data-url="/dbs_masclwlcard/pages/create_card2/create_card" class="msgtip fadeIn">
+        <view class="avatar">
+            <image src="{{card_detail.card_logo}}"></image>
+        </view>
+        <view class="msgContent">{{card_detail.card_name}}推荐您使用握手名片</view>
+        <view class="go_addcard"><button>创建我的名片</button></view>
+    </view>
+    <!-- <view bindtap="_jumpToChat" class="msgtip fadeOut" wx:if="{{msgStatus==2}}">
+        <view class="avatar">
+            <image src="{{cardAvatar}}"></image>
+        </view>
+        <view class="msgContent">您有新的消息</view>
+        <view class="num">{{offline}}</view>
+    </view> -->
+</template>

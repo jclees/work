@@ -1,0 +1,150 @@
+page {
+  background: #f7f7f7;
+}
+
+.hd {
+  padding: 40rpx 0 56rpx;
+  text-align: center;
+  font-size: 34rpx;
+  background: #fff;
+  color: #4d4d4d;
+  font-weight: 700;
+}
+
+.hd image {
+  background: #d8d8d8;
+  width: 142rpx;
+  height: 142rpx;
+  border-radius: 100%;
+  margin: 0 auto 10rpx;
+}
+
+.form_data {
+  padding: 0rpx 40rpx;
+  background: #fff;
+  border-top: 20rpx solid #f7f7f7;
+}
+
+.form_data .form_item {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #1a1a1a;
+  min-height: 108rpx;
+  /* line-height: 108rpx; */
+  border-bottom: 1px solid #efefef;
+}
+
+.form_data .form_item label {
+  width: 180rpx;
+  color: #a6a6a6;
+  flex-shrink: 0;
+}
+
+.form_data .form_item input {
+  flex: 1;
+}
+
+.form_data .form_item button {
+  border: 1px solid #4378e6;
+  border-radius: 100px;
+  width: 158rpx;
+  height: 61rpx;
+  line-height: 61rpx;
+  font-size: 24rpx;
+  color: #4378e6;
+}
+
+.form_data .tips {
+  text-align: center;
+  font-size: 26rpx;
+  color: #a6a6a6;
+  padding: 80rpx 0 60rpx;
+}
+
+.hetong_list .item {
+  padding: 34rpx 40rpx;
+  background: #fff;
+  font-size: 24rpx;
+  color: #a6a6a6;
+  line-height: normal;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-top: 20rpx solid #f7f7f7;
+  text-align: left;
+}
+
+.hetong_list .item .lt .tit {
+  text-align: left;
+  font-size: 28rpx;
+  color: #1a1a1a;
+  margin-bottom: 10rpx;
+}
+
+.hetong_list .item .lt .cool {
+  background: #ebebeb;
+  border-radius: 4rpx;
+  padding: 2rpx 6rpx;
+  display: inline-block;
+  font-size: 22rpx;
+  color: #737373;
+  margin-right: 10rpx;
+}
+
+.tab-h {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-top: 1px solid #f7f7f7;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.tab-item {
+  text-align: center;
+  font-size: 30rpx;
+  color: #4d4d4d;
+}
+
+.tab-item .nums {
+  font-size: 24rpx;
+  padding: 20rpx 0;
+}
+
+.tab-item.active {
+  position: relative;
+}
+
+.tab-item.active:after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #4378e6;
+  position: absolute;
+  bottom: 0rpx;
+  left: 0;
+}
+
+.tab-item.active::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 10rpx solid transparent;
+  border-right: 10rpx solid transparent;
+  border-bottom: 8rpx solid #4378e6;
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  margin-left: -5rpx;
+}
+
+.scoll-h {
+  height: 100%;
+}

@@ -1,0 +1,41 @@
+<!--pages/ryshop/ryshop.wxml-->
+<view class="warp_page" style="background-image:url({{tupian}}shop_bg04.jpg);background-color:#40346b;">
+
+  <view class="leida">
+      <!-- <image src="/image/notest.jpg" /> -->
+      <canvas canvas-id="radarCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
+  </view>
+
+  <view class="center_tip">
+    <view class="text-white">虽然文科不太好</view>
+    <view class="text-yellow">但是生活阅历相当丰富</view>
+  </view>
+  <!--
+  <view class="small-flex fenxiang-flex">
+    <view class="small-flex__item">
+      <view class='small_bon' style="margin-top:30rpx;width:260rpx;">
+          <view class='small_bon-gold' style="width:260rpx; padding:24rpx 0;">
+            <image src="{{tupian}}feng_icon01.png" class="feng_icon" />
+            <text>分享给好友</text>
+          </view>
+      </view>
+    </view>
+    <view class="small-flex__item">
+      <view class='small_bon' style="margin-top:30rpx;width:260rpx;">
+          <view class='small_bon-gold' style="width:260rpx; padding:24rpx 0;">
+            <image src="{{tupian}}feng_icon02.png" class="feng_icon" />
+            <text>保存到相册</text>
+          </view>
+      </view>
+    </view>
+  </view>
+  
+  <view class='small_bon' style="margin-top:30rpx;width:350rpx;">
+      <view class='small_bon-gold' style="width:350rpx; padding:24rpx 0;">
+        <text>继续游戏</text>
+      </view>
+  </view>-->
+  <view class="btn_tip-tit">还有更多有趣的题目等你来挑战</view>
+</view>
+
+

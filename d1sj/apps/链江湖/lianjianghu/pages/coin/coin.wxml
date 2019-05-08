@@ -1,0 +1,41 @@
+<!-- coin -->
+<view class='coin-box'>
+  <view class='coin' wx:for="{{coinListData}}" wx:key="" data-index="{{index}}" bindtap='getCoinPop' data-id='1'>
+    <image mode='widthFix' src='{{item.label}}'></image>
+    <view>{{item.name}}</view>
+    <text>{{item.currency_value}}SS</text>
+  </view>
+</view>
+<!-- nav -->
+<view>
+  <include src="/pages/module/nav/nav.wxml" />
+</view>
+<!-- 弹框 -->
+<view class='pop-box' wx:if="{{pop1}}">
+  <view class='pop-bg' bindtap='popLock'></view>
+  <view class='pop-main'>
+    <view class='pop-title'>兑换</view>
+    <view class='coin-dui'>
+      <view class='coin-num'>
+        兑换数量
+        <input type='digit' bindinput="bindKeyInput" placeholder='0'></input>
+        个({{coinPopData.currency_value}}ss/个)
+      </view>
+      <view class='coin-consume'>
+        消耗平台币 {{inputValue*coinPopData.currency_value}}ss
+      </view>
+      <view class='coin-address'>
+        地址：
+        <input type='text' placeholder='请输入{{coinListData[ind].name}}地址或imtoken地址' bindinput='bindChangeInput' style="flex:1;font-size: 24rpx;"></input>
+      </view>
+    </view>
+    <view class="btn-pop">
+      <button hover-class='none' bindtap='savaData'>立刻兑换</button>
+    </view>
+    <view class='btn-close'>
+      <button hover-class='none' bindtap='popLock'>
+        <image mode='widthFix' src='{{img_url}}icon-close.png'></image>
+      </button>
+    </view>
+  </view>
+</view>

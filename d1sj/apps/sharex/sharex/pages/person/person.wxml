@@ -1,0 +1,85 @@
+<!--pages/person/person.wxml-->
+<view class="container">
+  <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+    <view class="wxapp-toast-content">
+      <view class="wxapp-toast-content-text"> {{toastText}} </view>
+    </view>
+  </view>
+  <view class="index">
+    <image src="../../imgs/person_bgc.png"></image>
+    <view class="index_box">
+      <view class="index_box_tit">
+        <view class="index_box_tit_img">
+          <image src="{{user.userInfo.avatarUrl}}"></image>
+          <view class='btn-level' bindtap="openPop">
+            <image src='../../imgs/level.png' mode='widthFix'></image>
+            <text>升级小咖享8倍收益</text>
+          </view>
+        </view>
+        <view class="index_box_tit_text">
+          <text>GNX:{{money}}枚</text>
+          <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+            <image src="../../imgs/tixian.png"></image>
+          </button>
+        </view>
+      </view>
+      <view class="index_box_con">
+        <!-- 有记录 -->
+        <view class="index_box_con_info" wx:if="{{list.length!==0}}" wx:for="{{list}}" wx:for-item="item" wx:key="{{item.id}}">
+          <view class="index_box_con_info_per">
+            <view class="index_box_con_info_per_img">
+              <image src="{{item.avatar}}"></image>
+            </view>
+            <view class="index_box_con_info_per_name">{{item.name}}</view>
+            <view class="index_box_con_info_per_time">{{item.created_at}}</view>
+            <view class="index_box_con_info_per_right" wx:if="{{item.type==1}}">
+              <view class="index_box_con_info_per_right_top">友:{{item.friend}}枚</view>
+              <view class="index_box_con_info_per_right_bottom">佣:{{item.maid}}枚</view>
+            </view>
+            <view class="index_box_con_info_per_right1" wx:if="{{item.type==2}}">
+              <text>提现{{item.balance}}枚</text>
+            </view>
+          </view>
+        </view>
+        <!-- 没有记录 -->
+        <view class="index_box_con_info1" wx:if="{{list.length===0}}">
+          <view class="index_box_con_info_img">
+            <image src="../../imgs/order.png"></image>
+          </view>
+          <view class="index_box_con_info_text">
+            <text>暂无记录</text>
+            <text>分享给好友,你也能获得GNX!</text>
+          </view>
+          <view class="index_box_text" bindtap="openPop">
+            <image src="../../imgs/wenti1.png"></image>
+            <text>升级小咖享8倍收益</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 说明弹出框 -->
+  <view class="pop" wx:if="{{rule}}">
+    <view class="cover" bindtap="closePop"></view>
+    <view class="pop_box">
+      <image src="../../imgs/pop_bgc.png"></image>
+      <view class="pop_box_info">
+        <view class="pop_box_info_tit">
+          <text>升级小咖享8倍收益</text>
+        </view>
+        <view class="pop_box_info_close" bindtap="closePop">
+          <image src="../../imgs/close.png"></image>
+        </view>
+        <view class="pop_box_info_con">
+          <text>要求：</text>
+          <view>币圈好友5名,5个百人币圈微信群</view>
+          <view class='last'>满足以上要求，可申请币圈小咖，申请成功后，每次分享可获得8倍收益！申请操作如图：</view>
+          <image src='../../imgs/apply.png' mode='widthFix'></image>
+        </view>
+        <button class="pop_box_info_button" open-type='contact'>
+          <image src="../../imgs/shenqing.png"></image>
+        </button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,109 @@
+page {
+  background: #f5f5f5;
+  color: #333;
+  font-size: 32rpx;
+}
+
+.order {
+  padding: 0 16rpx;
+}
+
+.order > view {
+  margin: 16rpx 0 0;
+  background: #fff;
+}
+.order > view:last-of-type{
+  margin-bottom: 60rpx;
+}
+
+.hd {
+  display: flex;
+  align-items: center;
+  height: 128rpx;
+  border-bottom: 1px solid #e5e5d5;
+  padding-right: 30rpx;
+}
+
+.hd .lt {
+  font-size: 36rpx;
+  color: #f54f45;
+  padding-left: 30rpx;
+}
+
+.hd .lt.state_1 {
+  color: #333;
+  background: #ebebeb;
+  padding: 12rpx 30rpx;
+  border-radius: 0 100px 100px 0;
+}
+
+.hd .lt.state_2 {
+  color: #fff;
+  padding: 12rpx 30rpx;
+  border-radius: 0 100px 100px 0;
+  background: #4285f4;
+}
+
+.hd .rt {
+  margin-left: auto;
+}
+
+.con {
+  padding: 30rpx;
+}
+
+.con > view {
+  padding-bottom: 14rpx;
+  display: flex;
+  align-items: center;
+}
+
+.con > view:last-of-type {
+  padding: 0;
+}
+
+.con > view.no_c {
+  align-items: flex-start;
+}
+
+.con > view .lt {
+  width: 160rpx;
+  flex-shrink: 0;
+}
+
+.con > view .rt {
+  color: #666;
+}
+
+.bt {
+  border-top: 1px solid #e5e5d5;
+  padding: 20rpx 30rpx;
+}
+
+.bt form {
+  float: right;
+}
+
+.bt button {
+  font-size: 32rpx;
+  color: #666;
+  padding: 12rpx 24rpx;
+  border: 1px solid #999;
+  border-radius: 8rpx;
+  margin-left: 40rpx;
+  line-height: initial;
+}
+
+.bt button.cur {
+  color: #4285f4;
+  border: 1px solid #4285f4;
+}
+
+.bt form.cur {
+  width: 100%;
+}
+
+.bt form.cur button {
+  color: #4285f4;
+  border: 0 none;
+}

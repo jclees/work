@@ -1,0 +1,273 @@
+/**timu.wxss**/
+.timu_cg {
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   position: absolute;
+}
+.timu_top_left {
+  float: left;
+  position: relative;
+}
+.timu_top_right {
+  float: right;
+}
+.timu_mi {
+  float: left;
+  margin-right: 10rpx;
+  width: 106rpx;
+  height: 106rpx;
+}
+.timu_top_right .timu_mi{
+  margin-right: 0;
+  margin-left: 10rpx;
+}
+.timu_mi image {
+   width: 106rpx;
+  height: 106rpx;
+}
+.timu_mi_l {
+  color: #fff;
+  font-size: 26rpx;
+  padding-top: 28rpx;
+}
+.timu_mi_r {
+  color: #ffca28;
+  font-size: 24rpx;
+}
+.tex_right {
+  text-align: right;
+}
+.timu_top {
+  padding-top: 25rpx;
+}
+.pk {
+  position: absolute;
+  width: 94%;
+  height: auto;
+  text-align: center;
+  top:55rpx;
+}
+.pk image {
+  width: 74rpx;
+  height: 43rpx;
+}
+.un {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.tiz_left {
+  font-size: 22rpx;
+}
+.tiz_left text{
+  font-size: 60rpx;
+  color: #ffca28;
+  font-weight: bold;
+  line-height: 60rpx;
+}
+.tiz_right {
+  float: right;
+  padding-right: 15rpx;
+  font-size: 22rpx;
+  padding-top: 10rpx;
+}
+.tiz_right text {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #f76473;
+}
+.shul {
+  font-size: 26rpx;
+}
+.shul_left {
+  float: left;
+  background: #2d264d;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-radius: 0 25rpx 25rpx 0;
+  padding-left: 3%;
+  padding-right: 25rpx;
+}
+.shul_right {
+  float: right;
+  background: #2d264d;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-radius:25rpx 0 0 25rpx;
+  padding-left: 25rpx;
+  padding-right: 4%;
+}
+.tiaoz_cg {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  text-align: center;
+}
+.tiaoz_cg image {
+  width: 100%;
+  height: 405rpx;
+}
+
+.tiaoz_xun{
+  margin: 0 auto;
+  text-align:  center;
+  background: #3f2651;
+  width: 510rpx;
+  line-height: 0rpx;
+  overflow: hidden;
+  padding: 10rpx 0;
+  border-radius: 50rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.tiaoz_xun_re {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 7rpx;
+}
+.tiaoz_xun_re image {
+  width: 48rpx;
+  height: 48rpx;
+}
+.tiaoz_xun_left {
+  display: inline-block;
+  text-align: center;
+  padding-right: 15rpx;
+  margin-right: 15rpx;
+  border-right: 1px solid #564a6a;
+}
+.tiaoz_xun_right  {
+  display: inline-block;
+  width: 49%;
+  text-align: center;
+}
+.yinbi image {
+  width: 40rpx!important;
+  height: 40rpx!important;
+}
+.jixu {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  text-align: center;
+}
+
+.jixu_ad {
+  width: 500rpx;
+  height: 100rpx;
+  margin: 0 auto;
+  border-radius: 50rpx;
+}
+.jixu_cj {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#3dc3fe), to(#398dfc));
+}
+.jixu_ad {
+  margin-bottom: 15rpx;
+}
+.jilm {
+  width: 100%;
+  text-align: center;
+  font-size: 26rpx;
+}
+.jilm image {
+  width: 26rpx;
+  height: 26rpx;
+  vertical-align: middle;
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+}
+.tousu {
+  position:  absolute;
+  bottom: 0;
+  width: 100%;
+}
+.tousu_a {
+  width: 235rpx;
+  height: 70rpx;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 70rpx;
+  font-size: 26rpx;
+  border-bottom: 0;
+}
+.tousu_a image {
+  width: 31rpx;
+  height: 30rpx;
+  vertical-align: middle;
+  margin-right: 14rpx;
+}
+
+.ope {
+  position: absolute;
+  z-index: 0;
+  top:80rpx;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  animation: rotationx 20s linear infinite;
+}
+.ope image {
+  width: 680rpx;
+  height: 680rpx;
+}
+
+@-webkit-keyframes rotationx{
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+.yanc2 {
+    animation:bounceT 1s .2s ease both;
+    animation-delay:0s;
+}
+@keyframes bounceT {
+0% {
+opacity:0;
+-webkit-transform:scale(2)
+}
+50% {
+opacity:1;
+-webkit-transform:scale(1)
+}
+70% {
+-webkit-transform:scale(1)
+}
+100% {
+-webkit-transform:scale(1)
+}
+}
+
+
+
+.kmqq {
+  width: 510rpx;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
+  border-radius: 35rpx;
+}
+.imm {
+  width: 100%;
+  height: auto;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#fbc816), to(#f87101));
+  border-radius: 30rpx;
+  padding: 35rpx 0;
+  text-align: center;
+  font-size: 30rpx;
+}
+.imyu {
+  width: 100%;
+  height: auto;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#3dc3fe), to(#398afc));
+  border-radius: 30rpx;
+  padding: 35rpx 0;
+  text-align: center;
+  font-size: 30rpx;
+}
+.cg_timu_dt_w  {
+  margin-bottom: 15rpx;
+}
+
+
+

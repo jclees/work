@@ -1,0 +1,184 @@
+<!-- 新老用户  -->
+<!-- 温馨提示弹出框  -->
+
+<view class="pop1" wx:if="{{pop2}}">
+  <view class="cover1"></view>
+  <view class="pop_box1">
+    <image src="{{imgUrl}}tishi_bgc.png"></image>
+    <view class="pop_box_info1">
+      <view class="pop_box_tit1">
+        <image src="{{imgUrl}}tishi_tit.png"></image>
+      </view>
+      <view class="pop_box_con1">
+        <text>原《BST牛》用户请输入短信或小程序模板消息中的身份验证码,进行身份确认,匹配后同步原数据,（含剩余未提现金额）!</text>
+        <input placeholder="身份验证码" type="number" confirm-type="done" confirm-type="done" bindinput="inputYzcode" class="inp_idcode" placeholder-style="color:#c7c7c7;"></input>
+      </view>
+      <view class="clearfix pop_box_con_btns">
+        <view class="pop_box_button1 fl" id="1" bindtap="oldOrNewUser">
+          原有用户
+        </view>
+        <button class="pop_box_button1 fl" id="2" bindtap='oldOrNewUser' hover-class="none">
+          新用户
+        </button>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 账户异常 -->
+<view class="pop1" wx:if="{{pop3}}">
+  <view class="cover1"></view>
+  <view class="pop_box1">
+    <image src="{{imgUrl}}tishi_bgc.png"></image>
+    <view class="pop_box_info1">
+      <view class="pop_box_tit1">
+        <image src="{{imgUrl}}tishi_tit.png"></image>
+      </view>
+      <view class="pop_box_con1" style="padding-bottom:60rpx;">
+        <text>因操作错误，系统判定为非币圈用户，或存在大量非法分享用户，已被暂时屏蔽功能，如有疑问请加客服微信：小咖客服</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 活动状态 是否开始结束  -->
+<view class='hd_status' wx:if="{{hdStatus}}">
+  <view class="hd_msg_img">
+    <image src="{{imgUrl}}hd_msg_img.png"></image>
+  </view>
+  <view class="hd_msg_tit">
+    <view>温馨提示</view>
+  </view>
+  <view class="hd_msg_con">
+    <text>{{intro}}</text>
+  </view>
+  <button class="hd_msg_btn" bindtap="closeHd">我知道了</button>
+</view>
+<!-- 骗审弹出框 -->
+<view class="pop" wx:if="{{kaifa}}" style="z-index:999;">
+  <view class="pop_boxk">
+    <view class="pop_boxk_info">
+      <!--图文列表-->
+
+      <view class="news_lsit">
+
+        <view>
+          <navigator class="clearfix news_con" url="/pages/news/news?stauas=1">
+            <view class="fl news_left">
+              <view class="news_left_tit">汽修案例：瑞风M5真空助力器报P1556 故障码</view>
+              <view class="news_left_date">2018-5-15</view>
+            </view>
+            <view class="fr news_right">
+              <image src='{{imgUrl}}news_01.jpg'></image>
+            </view>
+          </navigator>
+        </view>
+
+        <view>
+          <navigator class="clearfix news_con" url="/pages/news/news?stauas=2">
+            <view class="fl news_left">
+              <view class="news_left_tit">真空助力器的一生，是助攻的一生</view>
+              <view class="news_left_date">2018-5-06</view>
+            </view>
+            <view class="fr news_right">
+              <image src='{{imgUrl}}news_02.jpg'></image>
+            </view>
+          </navigator>
+        </view>
+
+        <view>
+          <navigator class="clearfix news_con" url="/pages/news/news?stauas=3">
+            <view class="fl news_left">
+              <view class="news_left_tit">【配件百科】真空助力器</view>
+              <view class="news_left_date">2018-4-20</view>
+            </view>
+            <view class="fr news_right">
+              <image src='{{imgUrl}}news_03.jpg'></image>
+            </view>
+          </navigator>
+        </view>
+
+        <view>
+          <navigator class="clearfix news_con" url="/pages/news/news?stauas=4">
+            <view class="fl news_left">
+              <view class="news_left_tit">开车时易犯的几个损车陋习</view>
+              <view class="news_left_date">2018-4-14</view>
+            </view>
+            <view class="fr news_right">
+              <image src='{{imgUrl}}news_04.jpg'></image>
+            </view>
+          </navigator>
+        </view>
+
+        <view>
+          <navigator class="clearfix news_con" url="/pages/news/news?stauas=5">
+            <view class="fl news_left">
+              <view class="news_left_tit">【DIY】教你自己动手换助力油</view>
+              <view class="news_left_date">2018-4-01</view>
+            </view>
+            <view class="fr news_right">
+              <image src='{{imgUrl}}news_05.jpg'></image>
+            </view>
+          </navigator>
+        </view>
+
+        <view>
+          <navigator class="clearfix news_con" url="/pages/news/news?stauas=6">
+            <view class="fl news_left">
+              <view class="news_left_tit">汽车转向助力油不容忽视</view>
+              <view class="news_left_date">2018-3-20</view>
+            </view>
+            <view class="fr news_right">
+              <image src='{{imgUrl}}news_06.jpg'></image>
+            </view>
+          </navigator>
+        </view>
+
+      </view>
+
+    </view>
+  </view>
+</view>
+<!--index.wxml-->
+<view class="container">
+  <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+    <view class="wxapp-toast-content">
+      <view class="wxapp-toast-content-text"> {{toastText}} </view>
+    </view>
+  </view>
+  <view class="index">
+    <image src="/imgs/bgc.png"></image>
+    <view class="index_box">
+      <form name='pushMsgFm' report-submit="true" bindsubmit='open'>
+        <button class="index_box_button" open-type="getUserInfo" form-type="submit">
+          <image src="{{imgUrl}}button.png"></image>
+        </button>
+      </form>
+      <view class="index_box_text">恭喜你获得1个BST红包</view>
+      <view class="index_box_footer" bindtap="openPop">
+        <image src="{{imgUrl}}wenti3.png"></image>
+        <text>BST介绍</text>
+      </view>
+    </view>
+  </view>
+  <!-- 说明弹出框 -->
+  <view class="pop" wx:if="{{pop}}">
+    <view class="cover" bindtap="closePop"></view>
+    <view class="pop_box">
+      <image src="{{imgUrl}}pop_bgc.png"></image>
+      <view class="pop_box_info">
+        <view class="pop_box_info_tit">
+          <view>关于BST</view>
+        </view>
+        <view class="pop_box_info_close" bindtap="closePop">
+          <image src="{{imgUrl}}close2.png"></image>
+        </view>
+        <view class="pop_box_info_con">
+          <text>{{art.currency_intro}}</text>
+        </view>
+        <!-- <view class="pop_box_info_button" bindtap="closePop">
+          <image src="{{imgUrl}}confirm.png"></image>
+        </view> -->
+      </view>
+    </view>
+  </view>
+</view>

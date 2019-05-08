@@ -1,0 +1,185 @@
+<view class='hd'>
+  <view class='let'>
+    <navigator hover-class='none' url='/pages/mine/mine'>
+      <image src='{{userInfo.avatarUrl}}' mode='widthFix'></image>
+    </navigator>
+    <view class='txt'>{{memberInfo.name}}</view>
+  </view>
+  <view class="rig">
+    <image src='/images/icon_01.png' mode='widthFix'></image>
+    <view>工资列表</view>
+  </view>
+</view>
+<view class='main'>
+  <scroll-view scroll-x="true" class="navbar">
+    <!-- <text data-idx="{{index}}" class="item active" wx:key="" data-id="1" bindtap="navbarTap">全部</text> -->
+    <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="" data-id="{{item.id}}" bindtap="navbarTap">{{item.name}}</text>
+  </scroll-view>
+  <scroll-view scroll-y="true" class='navcon' style="height:{{winHeight}}rpx">
+    <form report-submit bindsubmit="openDetail" data-wage_id="{{item.id}}" wx:for="{{wagesData}}" wx:key="">
+      <button form-type='submit'>
+        <view>
+          <view style='text-align: left;display:flex;align-items:center;'>
+            <view>{{item.moon}}</view>
+            <block>
+              <view class='cool' wx:if="{{item.status == 0}}">未确认</view>
+              <view class='cool' wx:if="{{item.status == 1}}">已确认</view>
+              <view class='cool act' wx:if="{{item.status == 2}}">修改中</view>
+            </block>
+          </view>
+          <view class='status'>
+            <view class='name'>{{item.manager}}</view>
+          </view>
+        </view>
+        <view class='money'>
+          ￥{{item.wageSum}}
+          <view class='rig_arrow'></view>
+        </view>
+      </button>
+    </form>
+    <!-- <form report-submit bindsubmit="openDetail">
+      <button form-type='submit'>
+        <view>
+          <view style='text-align: left;display:flex;align-items:center;'>
+            <view>2019-05-01</view>
+            <block>
+              <view class='cool'>未确认</view>
+            </block>
+          </view>
+          <view class='status'>
+            <view class='name'>北京第一时间科技有限公司</view>
+          </view>
+        </view>
+        <view class='money'>
+          ￥98777
+          <view class='rig_arrow'></view>
+        </view>
+      </button>
+    </form> -->
+    <!-- <button data-id="1" bindtap='popLock'>
+      <view>
+        <view>2018/09/12 09:43:12</view>
+        <view class='status'>
+          <view class='name ellipsis'>撒打算按时按时撒啊</view>
+          <view class='cool'>已确认</view>
+        </view>
+      </view>
+      <view class='money'>
+        ¥ 6500.00
+        <view class='rig_arrow'></view>
+      </view>
+    </button> -->
+  </scroll-view>
+</view>
+<view class='gongzi_detail' wx:if="{{pop1}}">
+  <view class='cover'></view>
+  <view class='gongzi_con'>
+    <view class='detail_hd'>
+      <image class='pop_close' src='/images/pop_close.png' mode='widthFix' bindtap='popLock'></image>
+      <view class='date'>{{detailData.moon}}</view>
+      <view class='money'>
+        <view class='cool'>¥ {{detailData.wageSum}}</view>
+        <view>税前薪资(元)</view>
+      </view>
+    </view>
+    <!-- <image class='line' mode='widthFix' src='/images/round.png'></image> -->
+    <view class='line'>
+      <view class='round_box'>
+        <image class='round let' mode='widthFix' src='/images/round.png'></image>
+        <image class='round rig' mode='widthFix' src='/images/round.png'></image>
+      </view>
+      <view class='dashed'>
+        <view></view>
+      </view>
+    </view>
+    <!-- <view class='line'>
+      <view class='round let'></view>
+      <view class='round rig'></view>
+      <view class='dashed'></view>
+    </view> -->
+    <view class='detail_info {{detailData.status == 1 ?"cur":""}}'>
+      <view class='tit'>薪资明细</view>
+      <scroll-view scroll-y="true" class='lists' style='height:{{winHeight-420}}rpx;'>
+        <view class='items' wx:for="{{detailData.content}}" wx:key="">
+          <label>{{item.title}}</label>
+          <view>{{item.cont}}</view>
+        </view>
+        <!-- <view class='items'>
+          <label>电话</label>
+          <view>{{detailData.phone}}</view>
+        </view>
+        <view class='items'>
+          <label>身份证号</label>
+          <view>{{detailData.idcard}}</view>
+        </view>
+        <view class='items'>
+          <label>工资卡号</label>
+          <view>{{detailData.card}}</view>
+        </view>
+        <view class='items'>
+          <label>基本工资</label>
+          <view>{{detailData.baseWage}}</view>
+        </view>
+        <view class='items'>
+          <label>请假扣款</label>
+          <view>{{detailData.leave}}</view>
+        </view> -->
+      </scroll-view>
+      <!-- <view class='lists'>
+       
+      </view> -->
+    </view>
+    <!-- <view class='line bot'>
+      <view class='round let'></view>
+      <view class='round rig'></view>
+      <view class='dashed'></view>
+    </view> -->
+    <block wx:if='{{detailData.status != 1}}'>
+      <view class='line'>
+        <view class='round_box'>
+          <image class='round let' mode='widthFix' src='/images/round.png'></image>
+          <image class='round rig' mode='widthFix' src='/images/round.png'></image>
+        </view>
+        <view class='dashed'>
+          <view></view>
+        </view>
+      </view>
+      <view class='detail_btns'>
+        <form report-submit bindsubmit='openError'>
+          <button form-type='submit'>一键报错</button>
+        </form>
+        <form report-submit bindsubmit='savaData' data-cur_id="0">
+          <button form-type='submit'>确认工资单</button>
+        </form>
+      </view>
+    </block>
+  </view>
+</view>
+<view class='wenti_pop' wx:if="{{pop2}}">
+  <view class='cover'></view>
+  <view class='wenti_con'>
+    <view>
+      <image class='pop_close' src='/images/pop_close.png' mode='widthFix' bindtap='closeError'></image>
+      <view class='tit'>
+        请输入您遇到的问题
+      </view>
+      <textarea placeholder='请输入您遇到的问题' bindinput='bindInp'></textarea>
+      <view class='wenti_btns'>
+        <form report-submit bindsubmit='closeError'>
+          <button form-type='submit'>取消</button>
+        </form>
+        <form report-submit bindsubmit='savaData' data-cur_id="1">
+          <button form-type='submit'>确认</button>
+        </form>
+      </view>
+    </view>
+  </view>
+</view>
+<import src="/pages/module/authorize/index.wxml"></import>
+<template is="authorize" data="{{isAuthorize:isAuthorize}}"></template>
+<view class='dataLoading' wx:if='{{dataLoaded}}'>
+  <view class='loading_box'>
+    <image src='/images/dataLoading.gif' mode='widthFix'></image>
+    <view>加载中...</view>
+  </view>
+</view>

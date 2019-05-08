@@ -1,0 +1,57 @@
+
+/*  nav  */
+
+.nav-box {
+  width: 100%;
+  height: 104rpx;
+}
+
+.nav {
+  width: 100%;
+  height: 104rpx;
+  border-top: 1px solid #ededed;
+  display: flex;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background: #fff;
+  font-size: 0;
+}
+
+.nav .nav-navigator {
+  flex: 1;
+  text-align: center;
+  font-size: 0;
+  padding-top: 18rpx;
+}
+
+.nav .nav-navigator.active {
+  color: #ff6663;
+}
+
+.nav .nav-navigator image {
+  width: 42rpx;
+}
+
+.nav .nav-navigator text {
+  display: block;
+  width: 100%;
+  font-size: 24rpx;
+  margin-top: 2rpx;
+}
+
+.nav-fabiao {
+  padding: 16rpx 0;
+}
+
+.nav-fabiao button {
+  width: 72rpx;
+  height: 72rpx;
+  padding: 0;
+}
+
+.nav-fabiao button image {
+  width: 100%;
+}

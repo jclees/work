@@ -1,0 +1,14 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/kai/kai",
+    "pages/person/person",
+    "pages/money/money"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "潜力币红包小程序",
+    "navigationBarTextStyle":"white"
+  }
+}

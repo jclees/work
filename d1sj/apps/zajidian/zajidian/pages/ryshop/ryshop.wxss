@@ -1,0 +1,257 @@
+/* pages/ryshop/ryshop.wxss */
+/* fuzhi  */
+.tc{
+  text-align: center;
+}
+.no_bor{
+  border-color:transparent !important;
+}
+.small-flex{
+   display: flex;
+   align-items: center;
+}
+.small-flex__item{
+  flex:1;
+}
+.small-girds{
+  position: relative;
+  overflow: hidden;
+  /* margin:0 -10px; */
+}
+.small-gird{
+  position: relative;
+  float: left;
+  width: 33.33333333%;
+  box-sizing: border-box;
+  color:black;
+  border-right:1px solid #eee;
+  border-bottom:1px solid #eee;
+}
+
+/* fuzhi  */
+
+page{
+  font-family: PingFang SC,Hiragino Sans GB,Microsoft YaHei;
+  font-size: 30rpx;
+  background: #322c5b;
+}
+
+.banner_box{
+  margin:0 22rpx;
+  padding:25rpx 45rpx;
+  background: -webkit-linear-gradient(-45deg, #fb5301, #ff9703);
+  border-radius:20rpx;
+}
+
+.banner_tip{
+  color:#fff003;
+  font-size:26rpx;
+}
+.banner_tit{
+  font-size:45rpx;
+  font-weight: bold;
+}
+.banner_tip image{
+  width:28rpx;
+  height:28rpx;
+  vertical-align: middle;
+  margin-right:5rpx;
+}
+.banner_tip text{
+  vertical-align: middle;
+  font-weight: bold;
+}
+.money_num{
+  background:#fd8f4e;
+  font-size:28rpx;
+  font-weight: bold;
+  display:inline-block;
+  padding:2rpx 20rpx;
+  border-radius:40rpx;
+  margin:8rpx 0;
+}
+.banner-img{
+  width:270rpx;
+  height:200rpx;
+}
+
+.tool_box{
+  border-radius:20rpx;
+  background:#fff;
+  margin:22rpx;
+  overflow: hidden; 
+}
+.tool_nb{
+  text-align: center;
+  padding:30rpx 0;
+}
+.m-title{
+  color:#322c5b;
+  font-size:26rpx;
+  font-weight: bold;
+}
+.tool-icon image{
+  width:109rpx;
+  height:109rpx;
+  vertical-align: middle;
+  margin:6rpx 0 ;
+}
+.tool-mon text{
+  background:#fc3a00;
+  color:#fff;
+  font-size:26rpx;
+  display:inline-block;
+  min-width:94rpx;
+  border-radius:20rpx;
+  line-height: normal;
+}
+.warp_page{
+  position:absolute;
+  height:100%;
+  width:100%;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size:100%;
+}
+
+.small_bon {
+  width: 510rpx;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
+  border-radius: 24rpx;
+  padding:6rpx;
+  background:#47426c;
+}
+.small_bon-gold {
+  width: 100%;
+  height: auto;
+  background: -webkit-linear-gradient(top, #fbbf16, #f98607);
+  border-radius: 20rpx;
+  padding: 16rpx 0;
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.gold_icon{
+  width:64rpx;
+  height:64rpx;
+  vertical-align: middle;
+}
+.small_bon-gold text{
+  vertical-align: middle;
+}
+.btn_tip-tit{
+  text-align: center;
+  color:#7986d7;
+  font-size:26rpx;
+  padding:16rpx 0;
+}
+.btn_tip-tit image{
+  width:34rpx;
+  height:34rpx;
+  vertical-align: middle;
+}
+
+.iphone_box{
+  height:800rpx;
+  text-align: center;
+}
+.iphone_img{
+  padding:160rpx 0 20rpx;
+}
+.iphone_img image{
+  width:302rpx;
+  height:302rpx;
+}
+.x_title{
+  font-size:28rpx;
+  color:#fff;
+  padding:10rpx 0;
+}
+
+.small-model{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:rgba(1,1,1,0.6);
+}
+.model_close{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
+.model_box{
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+  width:436rpx;
+  margin:0 auto;
+  left:0;
+  right:0;
+  background:#fff;
+  border-radius:20rpx;
+  box-shadow: 0px 0px 0px 8px rgba(255,255,255,0.1);
+}
+.img_logo{
+  width:109rpx;
+  height:109rpx;
+  margin:-55rpx auto 0;
+  padding:20rpx;
+  background:#fff;
+  border-radius:50%;
+  box-shadow: 0px 0px 0px 6px rgba(255,255,255,0.1);
+}
+.img_logo image{
+  vertical-align: middle;
+  /* border-radius:50%; */
+}
+.img_name{
+  text-align: center;
+  color:#322c5b;
+  font-size:34rpx;
+  font-weight: bold;
+  margin:-10rpx 20rpx 0;
+  padding-bottom:20rpx;
+  border-bottom:1px solid #eee;
+}
+
+.model_tip{
+  text-align: center;
+  padding:40rpx 0;
+}
+.model_tip-text{
+  font-size:28rpx;
+  font-weight: bold;
+  color:#322c5b;
+  line-height: 1.6;
+}
+.model_num{
+  text-align: center;
+  color:#7986d7;
+  font-size:26rpx;
+  padding:10rpx 0;
+}
+
+.ry-red_btn{
+  background:#ff5858;
+  color:#fff;
+  text-align: center;
+  border-radius: 0 0 18rpx 18rpx;
+  padding:20rpx 0;
+  font-weight: bold;
+  font-size:30rpx;
+}
+.model_close-icon{
+  position:absolute;
+  right:20rpx;
+  top:20rpx;
+}
+.model_close-icon image{
+  width:30rpx;
+  height:30rpx;
+}

@@ -1,0 +1,28 @@
+@import '/pages/shop/shop';
+.index_wrap {
+  padding: 0 24rpx;
+}
+
+.circle {
+  margin-top: 20rpx;
+  background: #fff;
+  padding: 0;
+}
+
+.circle-head .photo {
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.04), 2px 0 4px 0 rgba(0, 0, 0, 0.04);
+  border-radius: 8rpx;
+  width: 82rpx;
+  height: 82rpx;
+  overflow: hidden;
+  margin-right: 20rpx;
+}
+.circle-head .name{
+  width: 400rpx;
+}
+
+.imgduo-width {
+  width: 227rpx;
+  height: 227rpx;
+}

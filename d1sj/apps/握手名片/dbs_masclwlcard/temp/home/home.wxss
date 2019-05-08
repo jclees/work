@@ -1,0 +1,487 @@
+page {
+  background: #f6f6f6;
+}
+
+.mine_user {
+  width: 100%;
+  position: relative;
+  padding: 20rpx 20rpx 28rpx 20rpx;
+}
+
+.mine_user .mine_user_bg {
+  background: #2e2e30;
+  width: 100%;
+  height: 222rpx;
+  z-index: -1;
+  border-radius: 0 0 60rpx 60rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.mine_user .mine_user_main {
+  background: #fff;
+  border-radius: 10rpx;
+  width: 100%;
+  overflow: hidden;
+}
+
+.mine_user_main .mine_user_hd {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 30rpx 10rpx 10rpx 10rpx;
+}
+
+.mine_user_main .mine_user_hd .mine_user_hd_img {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 100%;
+  background: #efefef;
+  box-shadow: 0 5rpx 5rpx rgba(0, 0, 0, 0.1);
+}
+
+.mine_user_main .mine_user_hd .mine_user_info {
+  margin-left: 20rpx;
+}
+
+.mine_user_main .mine_user_hd .mine_user_info > view:nth-child(1) {
+  display: flex;
+  align-items: center;
+  font-size: 38rpx;
+  font-weight: 700;
+  margin-bottom: 10rpx;
+}
+
+.mine_user_main .mine_user_hd .mine_user_info .vip {
+  width: 92rpx;
+  margin-left: 20rpx;
+}
+.mine_user_main .mine_user_hd .mine_user_info .kol{
+  width: 39rpx;
+  margin-left: 10rpx;
+  margin-top: 12rpx;
+}
+.mine_user_main .mine_user_hd .mine_user_info > view:nth-child(2) {
+  font-size: 26rpx;
+}
+
+.mine_user_main .mine_user_hd .mine_user_info > view:nth-child(2) {
+  font-size: 26rpx;
+}
+
+.mine_user_main .mine_user_hd .buy_vip {
+  border: 1px solid #7e5321;
+  border-radius: 100rpx;
+  color: #7e5321;
+  font-size: 30rpx;
+  /* height: 60rpx;
+  line-height: 60rpx; */
+  padding: 10rpx 20rpx;
+  box-shadow: 0 5rpx 5rpx rgba(0, 0, 0, 0.1);
+}
+
+.mine_user_main .mine_user_bd {
+  width: 100%;
+  position: relative;
+  padding: 10rpx 0;
+  margin: 20rpx 0;
+}
+
+.mine_user_main .mine_user_bd .btns {
+  width: 100%;
+  display: flex;
+  padding: 0 40rpx;
+  justify-content:space-around;
+  /* justify-content: space-evenly; */
+}
+
+.mine_user_main .mine_user_bd .btns >view {
+  border: 1px solid #b2b2b2;
+  border-radius: 100rpx;
+  color: #737373;
+  font-size: 30rpx;
+  /* height: 56rpx;
+  line-height: 56rpx; */
+  padding: 8rpx 35rpx;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 5rpx 5rpx rgba(0, 0, 0, 0.1);
+}
+
+.mine_user_main .mine_user_bd .btn_line {
+  /* position: absolute;
+  left: 50%;
+  top: 0; */
+  /* height: 80rpx; */
+  width: 1px;
+  display: block;
+  /* margin-left: -0.5px; */
+  background: #b2b2b2;
+}
+
+.mine_user_main .mine_user_bd >image {
+  position: absolute;
+  bottom: -20rpx;
+  right: 0rpx;
+  width: 40rpx;
+  height: auto;
+  padding: 20rpx;
+}
+
+.mine_user .mine_user_main.act_vip {
+  background: #dab881;
+}
+
+.mine_user .mine_user_main.act_vip {
+  background: #dab881;
+}
+
+.mine_user_main.act_vip .mine_user_hd .mine_user_info {
+  color: #fff;
+}
+
+.mine_user_main.act_vip .mine_user_hd .buy_vip {
+  border: 1px solid #7b501e;
+  color: #7b501e;
+}
+
+.mine_user_main.act_vip .mine_user_bd .btns >view {
+  border: 1px solid #7b501e;
+  color: #7b501e;
+}
+
+.mine_user_main.act_vip .mine_user_bd .btn_line {
+  background: #7b501e;
+}
+
+.mine_wrap .mine_list {
+  overflow: hidden;
+}
+.comp_txt{
+  font-size: 32rpx;
+  color: #ccc;
+  text-align: center;
+  padding: 40rpx 0 0 0;
+}
+.mine_wrap .mine_list .items {
+  margin-top: 28rpx;
+  background: #fff;
+  position: relative;
+  padding: 0 20rpx;
+}
+
+.mine_wrap .mine_list .items:first-of-type {
+  margin-top: 0;
+}
+
+.mine_wrap .mine_list .item_tit {
+  font-size: 32rpx;
+  color: #999;
+  position: absolute;
+  left: 35rpx;
+  top: 50%;
+  transform: translate(0,-50%);
+  width: 60rpx;
+  padding: 5rpx 0 10rpx 0;
+  text-align: center;
+  border: 1px solid #e9e9e9;
+  border-radius:0 0 100rpx 100rpx;
+  box-shadow: 0 3rpx 2rpx rgba(0, 0, 0, 0.06);
+}
+
+.mine_wrap .mine_list .item_con{
+  padding-left: 70rpx;
+}
+.mine_wrap .mine_list .item_con > view {
+  width: 33.33%;
+  float: left;
+  margin: 25rpx 0;
+}
+
+.mine_wrap .mine_list .item_con image {
+  width: 52rpx;
+  margin: 0 auto 10rpx;
+}
+
+.mine_wrap .mine_list .item_con view {
+  font-size: 30rpx;
+  color: #353535;
+  text-align: center;
+}
+
+/* 
+.section {
+    background-color: #fff;
+    margin-bottom: 20rpx;
+}
+
+.user {
+    display: flex;
+    align-content: center;
+    padding: 40rpx;
+    background: #1aad19;
+}
+
+.user__img {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    background-color: #eee;
+}
+
+.user__name {
+    font-size: 36rpx;
+    color: #fff;
+}
+
+.orderSection {
+}
+
+.barItem.barItem_orderTitle {
+    height: 75rpx;
+}
+
+.contant {
+    border-top: 2rpx solid #eee;
+    border-bottom: 2rpx solid #eee;
+    padding: 0 28rpx;
+    background-color: #fff;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+}
+
+.order-title {
+    height: 70rpx;
+    line-height: 70rpx;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-title text {
+    color: #666;
+    font-size: 14px;
+}
+
+.myItemWrap {
+    margin-top: 20rpx;
+}
+
+.cart-wrap,.addr-wrap,.coupon-wrap {
+    width: 100%;
+    height: 90rpx;
+    line-height: 90rpx;
+    background-color: #fff;
+    padding: 10rpx 28rpx;
+    border-bottom: 2rpx solid #eee;
+}
+
+.membership-wrap {
+    width: 100%;
+    height: 90rpx;
+    line-height: 90rpx;
+    background-color: #fff;
+    padding: 10rpx 28rpx;
+}
+
+.cart {
+    font-size: 30rpx;
+    color: #666;
+    position: relative;
+}
+
+.orderTypes {
+    display: flex;
+}
+
+.orderTypes__item {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-wrap {
+    display: flex;
+    flex: 1;
+    margin: 18rpx 0 22rpx;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-wrap image {
+    display: inline-block;
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.order-types .icon {
+    width: 44rpx;
+    height: 44rpx;
+    margin-bottom: 14rpx;
+}
+
+.order-status {
+    padding-top: 20rpx;
+    font-size: 24rpx;
+    color: #666;
+    line-height: 1;
+}
+
+.phone-content {
+    background-color: #fff;
+    border-top: 2rpx solid #eee;
+    border-bottom: 2rpx solid #eee;
+    padding: 20rpx 40rpx 60rpx;
+    margin-top: 20rpx;
+}
+
+.input-wrap {
+    border-bottom: 1rpx solid #d7d7d7;
+    margin-bottom: 0;
+    display: flex;
+}
+
+.input-wrap label {
+    color: #666;
+    display: block;
+    width: 106rpx;
+    padding: 0;
+    height: 88rpx;
+    line-height: 88rpx;
+    font-size: 32rpx;
+}
+
+.input-wrap input {
+    display: block;
+    flex: 1;
+    padding-left: 10rpx;
+    text-align: left;
+    font-size: 32rpx;
+    background-color: transparent;
+    height: 88rpx;
+    line-height: 88rpx;
+}
+
+.yzm {
+    display: flex;
+    margin-bottom: 40rpx;
+}
+
+.yzm .input-wrap {
+    margin-right: 0;
+    border-right: 1rpx solid #d7d7d7;
+    flex: 1;
+}
+
+.yzm .button {
+    padding: 28rpx 0;
+    line-height: 1;
+    border-bottom: 1rpx solid #d7d7d7;
+    margin: 0;
+    text-align: center;
+    width: 220rpx;
+}
+
+.yzm .yzm-text {
+    color: #999;
+}
+
+.coupon-num {
+    position: absolute;
+    right: 20px;
+    top: 0;
+    font-family: Arial,Helvetica,sans-serif;
+    letter-spacing: 2px;
+}
+
+.membership-wrap_collect {
+    margin-top: 20rpx;
+}
+
+.couponNum {
+    font-size: 30rpx;
+    color: #3d3d3d;
+}
+
+.barList {
+    background-color: #fff;
+    margin-bottom: 20rpx;
+}
+
+.barItem,button.nobutton.barItem {
+    height: 88rpx;
+    display: flex;
+    align-items: center;
+    padding-right: 20rpx;
+    border-bottom: 1rpx solid #eee;
+}
+
+.barItem.barItem_noMLeft {
+    margin-left: 0;
+}
+
+.barItem.barItem_noBorder {
+    border-bottom: 0;
+}
+
+.barList_sm .barItem {
+    height: 70rpx;
+}
+
+.barItem:last-child {
+    border-bottom: 0;
+}
+
+.barItem__icon {
+    width: 32rpx;
+    height: 32rpx;
+    margin: 0 20rpx;
+}
+
+.barItem__info {
+    flex: 1;
+    font-size: 28rpx;
+    display: flex;
+    align-items: center;
+}
+
+.barItem__info__hd {
+    width: 150rpx;
+    margin-right: 60rpx;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.barItem__info__bd {
+    flex: 1;
+}
+
+.barItem__info__bd_right {
+    text-align: right;
+}
+
+.barItem__arrowIcon {
+    width: 24rpx;
+    height: 24rpx;
+    margin-left: 20rpx;
+}
+.userinfo {
+    border: 1px solid #fff;
+    font-size: 22rpx;
+    color: #fff;
+    margin-top: 16rpx;
+    padding: 0 8rpx;
+    border-radius: 30rpx;
+    background: transparent;
+    line-height: 46rpx;
+    width: 120rpx;
+    margin-left: 0;
+}
+
+.user_info {
+    margin-left: 20rpx;
+} */

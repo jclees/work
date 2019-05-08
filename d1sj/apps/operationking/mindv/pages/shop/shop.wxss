@@ -1,0 +1,319 @@
+/**index.wxss**/
+
+page {
+  background: #fed257;
+}
+
+.container {
+  padding: 30rpx 30rpx 250rpx 30rpx;
+}
+
+/*  商店  */
+
+.shop-box {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 15rpx;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.shop-gift {
+  width: 100%;
+  font-size: 0;
+}
+
+.shop-gift image {
+  width: 100%;
+}
+
+.shop-treasurebox {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shop-treasurebox>view {
+  width: 33.3333%;
+  text-align: center;
+  color: #fff;
+  padding: 40rpx 25rpx 0;
+  box-sizing: border-box;
+}
+
+.shop-treasurebox>view view {
+  padding: 8rpx 0;
+  font-size: 0;
+}
+
+.shop-treasurebox>view view text {
+  border-radius: 20rpx;
+  min-width: 90rpx;
+  padding: 0 30rpx;
+  display: inline-block;
+}
+
+.shop-treasurebox>view view:first-child text {
+  background: #647df3;
+  font-size: 20rpx;
+  height: 26rpx;
+  line-height: 26rpx;
+}
+
+.shop-treasurebox>view view:last-child text {
+  background: #fa6d50;
+  font-size: 26rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+}
+
+.shop-treasurebox>view view image {
+  width: 106rpx;
+  height: 106rpx;
+}
+
+/*  免费王者币按钮  */
+
+.btn-freegold {
+  position: absolute;
+  bottom: 30rpx;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #d08224;
+}
+
+.btn-freegold button {
+  width: 440rpx;
+  height: 110rpx;
+  line-height: 110rpx;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #fc7a51, #f54b4e);
+  font-size: 46rpx;
+  color: #fff;
+  border-radius: 20rpx;
+  margin-bottom: 30rpx;
+}
+
+.btn-freegold button.button-hover {
+  background: linear-gradient(to bottom, #f54b4e, #fc7a51, #fc7a51);
+}
+
+.btn-freegold button image {
+  width: 56rpx;
+  height: 56rpx;
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+
+/*  弹出商品详情  */
+
+.pop-box {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.pop-box-bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.pop-main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 20rpx;
+  width: 500rpx;
+  padding-bottom: 60rpx;
+}
+
+.btn-close {
+  position: absolute;
+  top: 16rpx;
+  right: 16rpx;
+}
+
+.btn-close image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.icon-titpng {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 150rpx;
+  height: 150rpx;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  border: 8rpx solid #fff;
+  border-radius: 50%;
+  box-sizing: content-box;
+}
+
+.icon-titpng image {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.pop-main-tit {
+  text-align: center;
+  margin-top: 100rpx;
+  width: 100%;
+  height: 70rpx;
+  background: #647df3;
+  color: #fff;
+  font-size: 52rpx;
+}
+
+.pop-main-text {
+  padding: 40rpx 60rpx;
+  font-size: 36rpx;
+  text-align: justify;
+  text-align-last: left;
+  margin: 10rpx 0 10rpx;
+  color: #000;
+}
+
+.btn-buy button {
+  width: 300rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #fff;
+  background: linear-gradient(to bottom, #48e061, #21bc35);
+  border-radius: 20rpx;
+  font-size: 36rpx;
+  box-shadow: 0 3rpx 3rpx rgba(0, 0, 0, 0.2);
+}
+
+.btn-buy .button-hover {
+  background: linear-gradient(to bottom, #21bc35, #48e061);
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+
+
+
+
+
+/*  金币弹出提醒  */
+.pop-share-gold {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.pop-share-gold-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 101;
+}
+
+.pop-share-gold-main-box {
+  position: absolute;
+  width: 550rpx;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 102;
+  box-sizing: border-box;
+  padding: 6rpx;
+  border-radius: 30rpx;
+  background: -webkit-linear-gradient(to bottom, #2bfb61, #2a92d3);
+  background: linear-gradient(to bottom, #2bfb61, #2a92d3);
+}
+
+.pop-share-gold-main {
+  position: relative;
+  width: 100%;
+  padding: 150rpx 20rpx 50rpx;
+  background: #fff;
+  border-radius: 30rpx;
+  box-sizing: border-box;
+}
+
+.pop-share-gold-main .icon-share-gold {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400rpx;
+}
+
+.pop-share-gold-main>view {
+  color: #000;
+  font-size: 36rpx;
+  text-align: center;
+}
+
+.btn-share {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 50rpx 80rpx 0;
+}
+
+.btn-share button {
+  margin-top: 30rpx;
+  font-size: 34rpx;
+  color: #fff;
+  border-radius: 18rpx;
+}
+
+.btn-share button:first-child {
+  background: -webkit-linear-gradient(to top, #5e54f2, #6a9ef4);
+  background: linear-gradient(to top, #5e54f2, #6a9ef4);
+}
+
+.btn-share button:first-child:hover {
+  background: -webkit-linear-gradient(to bototm, #5e54f2, #6a9ef4);
+  background: linear-gradient(to bottom, #5e54f2, #6a9ef4);
+}
+
+.btn-share button:last-child {
+  background: -webkit-linear-gradient(to top, #21bc35, #48e061);
+  background: linear-gradient(to top, #21bc35, #48e061);
+}
+
+.btn-share button:last-child:hover {
+  background: -webkit-linear-gradient(to bottom, #21bc35, #48e061);
+  background: linear-gradient(to bottom, #21bc35, #48e061);
+}
+
+
+.pop-intersperse{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 103;
+  padding: 100rpx 60rpx 0;
+  
+}
+.pop-intersperse image{
+  width: 100%;
+}

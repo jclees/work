@@ -1,0 +1,70 @@
+<template name="official_web">
+    <scroll-view scrollY style="height:{{winHeight}}px;background:#f7f7f7">
+        <view>
+            <view class="c_top_img">
+                <swiper autoplay circular>
+                    <swiper-item wx:for="{{main.adv}}" wx:key="index">
+                        <image src="{{item.images}}"></image>
+                    </swiper-item>
+                </swiper>
+            </view>
+            <view class="nav" style="margin-top:10rpx; margin-bottom: 10rpx;" wx:if="{{main.nav.length!=0}}">
+                <block wx:for="{{main.nav}}" wx:key="index">
+                    <view class="blockItem" wx:if="{{item.linkType=='miniProgram'}}">
+                        <navigator appId="{{item.appid}}" openType="navigate" path="{{item.path}}" target="miniProgram" version="release">
+                            <image class="blockItem__img" mode="aspectFit" src="{{item.images}}" wx:if="{{item.img!=''}}"></image>
+                            <view class="blockItem__text" wx:if="{{item.title!=''}}">{{item.title}}</view>
+                        </navigator>
+                    </view>
+                    <view bindtap="_jump" class="blockItem" data-url="/dbs_masclwlcard/pages/web_view/web_view?dyId={{item.newid}}" wx:if="{{item.linkType=='new'}}">
+                        <image class="blockItem__img" mode="aspectFit" src="{{item.images}}" wx:if="{{item.images!=''}}"></image>
+                        <view class="blockItem__text" wx:if="{{item.title!=''}}">{{item.title}}</view>
+                    </view>
+                    <view bindtap="open_map" class="blockItem" data-addr="{{main.card.company_addr}}" data-lat="{{main.card.lat}}" data-lng="{{main.card.lng}}" data-name="{{main.card.company_name}}" wx:if="{{item.linkType=='openaddress'}}">
+                        <image class="blockItem__img" mode="aspectFit" src="{{item.images}}" wx:if="{{item.images!=''}}"></image>
+                        <view class="blockItem__text" wx:if="{{item.title!=''}}">{{item.title}}</view>
+                    </view>
+                </block>
+            </view>
+            <view style="background: #fff;margin-top: 20rpx;word-break: break-all; font-size: 0" wx:if="{{main.j_photo.length>0}}">
+                <image mode="widthFix" src="{{item}}" wx:for="{{main.j_photo}}" wx:key="index"></image>
+            </view>
+            <view class="c_video_box" wx:if="{{main.web.video}}">
+                <image bindtap="play_video" class="play_pulse" data-video_url="{{main.web.video}}" src="../../images/company_video_play_icon.png"></image>
+                <image class="fengmian" src="{{main.web.images}}"></image>
+            </view>
+            <view class="c_model_title" wx:if="{{main.news.length!=0}}">
+                    最新活动
+                </view>
+            <view class="c_dynamic_box">
+                <view bindtap="go_dynamic" class="c_dynamic_list clearfix" data-dynamic_id="{{item.id}}" wx:for="{{main.news}}" wx:key="index">
+                    <view class="c_dynamic_img">
+                        <image mode="aspectFill" src="{{item.head_img}}?x-oss-process=image/resize,w_300"></image>
+                    </view>
+                    <view class="c_dynamic_text">
+                        <view class="c_dynamic_title">{{item.title}}
+                                </view>
+                        <view class="c_dynamic_time">
+                                    {{item.time}}
+                                </view>
+                    </view>
+                </view>
+            </view>
+            <block wx:if="{{main.card.company_tel}}">
+                <view class="c_model_title">
+                   联系电话
+                </view>
+                <view class="about_us">
+                    <view bindtap="call_phone" class="about_us_button" data-tel="{{main.card.company_tel}}">
+                        {{main.card.company_tel}}
+                    </view>
+                </view>
+            </block>
+        </view>
+        <view bindtap="open_sm_box" class="bottom_text">
+            <text data-company_name="{{main.card.company_name}}" data-company_tel="{{main.card.company_tel}}">{{main.card.company_name}}技术支持</text>
+        </view>
+        <view style="height:60px;background:transparent;"></view>
+        <view style="height:40px;background:transparent;" wx:if="{{main.isIphoneX}}"></view>
+    </scroll-view>
+</template>

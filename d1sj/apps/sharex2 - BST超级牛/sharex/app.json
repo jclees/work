@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/test/test",
+    "pages/money/money",
+    "pages/ranking/ranking",
+    "pages/kai/kai",
+    "pages/person/person",
+    "pages/news/news",
+    "pages/sideIcon/sideIcon"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "Genaro",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#000",
+    "disableScroll": true
+  }
+}

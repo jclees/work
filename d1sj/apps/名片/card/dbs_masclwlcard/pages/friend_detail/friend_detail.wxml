@@ -1,0 +1,36 @@
+<import src="../../templates/wxParse.wxml"></import>
+<view class="circle_box" wx:if="{{friend.card_id}}">
+    <view class="friends_item clearfix">
+        <navigator hoverClass="none" url="/dbs_masclwlcard/pages/tab/tab?card_id={{friend.card_id}}">
+            <view class="head_logo">
+                <image src="{{friend.card.card_logo}}"></image>
+            </view>
+            <view class="right_content">
+                <view class="name_share">
+                    <view class="name" style="line-height: {{friend.card.card_name?'45rpx':'90rpx'}}">
+                        {{friend.card.card_name}}
+                    </view>
+                    <view class="job" wx:if="{{friend.card.role_name}}">
+                        {{friend.card.role_name}}
+                    </view>
+                </view>
+                <view class="card_btn">
+                    <view class="btn_view">
+                        TA的名片
+                    </view>
+                    <image src="../../images/ico-right-arrow.png"></image>
+                </view>
+            </view>
+        </navigator>
+    </view>
+</view>
+<view class="wrap">
+    <view class="act__title" style="padding:50rpx"></view>
+    <view class="act__title">{{friend.title}}</view>
+    <view class="act_date">{{friend.time}}</view>
+    <view class="act__detail">
+        <view class="act__detail__content wxParseContainer">
+            <template is="wxParse" data="{{wxParseData:article.nodes}}"></template>
+        </view>
+    </view>
+</view>

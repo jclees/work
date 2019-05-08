@@ -1,0 +1,103 @@
+<view class='contact_main'>
+  <form bindsubmit="savaData" report-submit="true">
+    <view class='pop-content'>
+      <view>
+        <label>公司banner(图片大小建议720px*324px)：</label>
+      </view>
+      <view class="uoload_imgs">
+        <view class="imgs_box" wx:for="{{banner}}" wx:key="">
+          <image src='{{banner[0]}}' mode='aspectFit' wx:if="{{banner.length > 0}}" data-url="{{banner[0]}}" data-index="0" data-id="1" bindtap="openPic"></image>
+          <view class='del_img' bindtap='delPic' data-w="{{index}}" data-id="1" >
+            <image src='/dbs_masclwlcard/images/icon_del_img.png' mode='widthFix'></image>
+          </view>
+        </view>
+        <view class="choose_box" data-which="1" bindtap='bindchoose' hidden="{{banner.length > 0}}">
+          <image src='/dbs_masclwlcard/images/choose_icon.png' mode='widthFix'></image>
+        </view>
+      </view>
+    </view>
+    <view class='pop-content'>
+      <view>
+        <label>公司电话</label>
+        <input placeholder='请输入公司电话' placeholder-style='color:bfbfbf;' name="phone" type='text' value='{{dataList.phone}}'></input>
+      </view>
+    </view>
+    <view class='pop-content'>
+      <view>
+        <label>内容图片：</label>
+      </view>
+      <view class="uoload_imgs">
+        <view class="imgs_box" wx:for="{{image}}" wx:key="">
+          <image src='{{item}}' mode='aspectFit' data-url="{{item}}" data-index="{{index}}" data-id="2" bindtap="openPic"></image>
+          <view class='del_img' bindtap='delPic' data-w="{{index}}" data-id="2">
+            <image src='/dbs_masclwlcard/images/icon_del_img.png' mode='widthFix'></image>
+          </view>
+        </view>
+        <view class="choose_box" data-which="2" bindtap='bindchoose' hidden="{{image.length >= 6}}">
+          <image src='/dbs_masclwlcard/images/choose_icon.png' mode='widthFix'></image>
+        </view>
+      </view>
+    </view>
+    <view style="padding:0 30rpx;">
+      <button formType="submit" class="submit_btn">{{submitTxt}}</button>
+    </view>
+  </form>
+</view>
+<view class="layer" wx:if="{{layer}}" bindtap='closePic'>
+  <view class="cover"></view>
+  <view class="con">
+    <image src='{{preview}}' mode="widthFix"></image>
+    <view bindtap='delPic' class="txt">删除</view>
+  </view>
+</view>
+
+<!--裁剪图片浮层-->
+<view class='fixed-upimg' wx:if="{{imageFixed}}">
+  <view class="wx-content-info">
+    <!-- <view class="wx-content-info" wx:if="{{imageSrc}}"> -->
+    <view wx:if="{{isShowImg}}" class="wx-corpper" style="width:{{cropperInitW}}rpx;height:{{cropperInitH}}rpx;background:#000">
+      <view bindtap='upLoad' class="wx-corpper-content" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx;left:{{cropperL}}rpx;top:{{cropperT}}rpx">
+        <image src="{{imageSrc}}" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx"></image>
+        <view class="wx-corpper-crop-box" bindtouchstart="contentStartMove" bindtouchmove="contentMoveing" style="width:{{cutW}}rpx;height:{{cutH}}rpx;left:{{cutL}}rpx;top:{{cutT}}rpx">
+          <view class="wx-cropper-view-box">
+            <!-- <view class="wx-cropper-viewer">
+            <image src="{{imageSrc}}" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx;left:{{cropperL - cutL}}rpx;top:{{cropperT - cutT}}rpx"></image>
+          </view> -->
+            <view class="wx-cropper-dashed-h"></view>
+            <view class="wx-cropper-dashed-v"></view>
+            <view class="wx-cropper-line-t" data-drag="top" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-line-r" data-drag="right" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-line-b" data-drag="bottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-line-l" data-drag="left" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-t" data-drag="top" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-tr" data-drag="topTight"></view>
+            <view class="wx-cropper-point point-r" data-drag="right" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-rb" data-drag="rightBottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-b" data-drag="bottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-bl" data-drag="bottomLeft"></view>
+            <view class="wx-cropper-point point-l" data-drag="left" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-lt" data-drag="leftTop"></view>
+          </view>
+        </view>
+      </view>
+      <!-- <view class="wx-cropper-drag-box"></view> -->
+    </view>
+    <canvas canvas-id="myCanvas" style="position:absolute;border: 1px solid red; width:{{imageW}}rpx;height:{{imageH}}rpx;top:-9999px;left:-9999px;"></canvas>
+    <view class='wx-corpper-bthcon'>
+      <form bindsubmit='getImageInfo' reportSubmit="true">
+        <button hover-class='none' formType="submit"> 确认提交 </button>
+      </form>
+      <form bindsubmit='closeUpImg' reportSubmit="true">
+        <button hover-class='none' formType="submit" class="cancel"> 取消 </button>
+      </form>
+      <form>
+      </form>
+    </view>
+  </view>
+</view>
+<view class="weal_tips">
+  <view>会员福利：</view>
+  <view class="txt">
+    <view>5人以上企业可申请免费为您制作名片官网。点击<button hover-class='none' open-type='contact'>立即申请</button></view>
+  </view>
+</view>

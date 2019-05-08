@@ -1,0 +1,24 @@
+<!--pages/person/score/score.wxml-->
+<view class="container">
+  <view class="score_tit">
+    <view class="score_tit_img">
+      <image src="../../../imgs/score_tit.png"></image>
+    </view>
+    <view class="score_tit_button">{{scoreNum}}</view>
+    <view class="score_tit_text">
+      积分可以兑换奖品，累计积分可以提高会员等级
+    </view>
+  </view>
+  <view class="score_con">
+    <view class="score_con_tit">积分明细</view>
+    <view class="score_con_info">
+      <view class="score_con_info_per clearfix" wx:for="{{scoreList}}" wx:for-item="item" wx:key="{{item.type}}">
+        <view class="score_con_info_per_left fl">
+          <view class="score_con_info_per_left_top">{{item.type}}</view>
+          <view class="score_con_info_per_left_bottom" style='color: #8f8f8f;'>{{item.time}}</view>
+        </view>
+        <view class="score_con_info_per_right fr">{{item.num <=0 ?item.num :"+"+item.num}}</view>
+      </view>
+    </view>
+  </view>
+</view>

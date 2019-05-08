@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/layer/layer",
+    "pages/money/money"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "Genaro",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#000",
+    "disableScroll": true
+  }
+}

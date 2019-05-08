@@ -1,0 +1,218 @@
+<!-- <loading hidden="{{dataLoaded}}">加载中...</loading> -->
+<import src="../../temp/newstip/index.wxml"></import>
+<view class="temp_box" style="">
+  <template is="newstip" data="{{noReadMsgData:noReadMsgData}}" wx:if="{{noReadMsgData}}"></template>
+</view>
+<import src="../../temp/newtip/newtip.wxml"></import>
+<view class="temp_box" style="">
+  <template is="newtip" data="{{card_detail:card_detail}}" wx:if="{{nav_footer_active != 3 && is_nullmember_id && isPopCard}}"></template>
+</view>
+<view bindtap="hideShopMask" catchtouchmove="true" class="mask" wx:if="{{shopMask}}"></view>
+<import src="../../temp/card/index.wxml"></import>
+<!-- <import src="../../temp/circle_friends/circle_friends.wxml"></import> -->
+<import src="../../temp/official_web/official_web.wxml"></import>
+<import src="../../temp/shops/shops.wxml"></import>
+<import src="../../temp/home/home.wxml"></import>
+<import src="../../temp/product_noshopping/product_noshopping.wxml"></import>
+<view hidden="{{!dataLoaded}}">
+  <view class="shopPoster" wx:if="{{shopMask==true&&showChoose}}" catchtouchmove="myCatchTouch">
+    <view class="poster-icon">
+      <view bindtap="hideShopMask" class="poster-icon-left">
+        <button class="icon-bg1" openType="share">
+          <image src="../../images/share_wechat_btn_n.png"></image>
+        </button>
+        <view class="poster-text">微信好友</view>
+      </view>
+      <view bindtap="showposter" class="poster-icon-right">
+        <image class="icon-bg1" src="../../images/share_poster_btn_n.png"></image>
+        <view class="poster-text">生成海报</view>
+      </view>
+    </view>
+    <view bindtap="hideShopMask" catchtouchmove="true" class="poster-cancel">取消</view>
+  </view>
+  <view class="pop" wx:if="{{pop1}}" catchtouchmove="myCatchTouch">
+    <view class="pop_cover" bindtap='popLock'></view>
+    <view class='pop_con bottom'>
+      <view class="pay_con">
+        <radio-group class="" bindchange="radioChange">
+          <view class="items" wx:for="{{vipLists}}" wx:key="">
+            <view>{{item.num}}个月</view>
+            <view class="cool">￥{{item.money}}</view>
+            <label class="sel_time">
+              <radio value="{{item.id}}" checked="{{item.checked}}" />
+            </label>
+          </view>
+        </radio-group>
+        <!-- <view class="items">
+          <view>3个月</view>
+          <view class="cool">￥45</view>
+          <radio-group class="sel_time" bindchange="radioChange">
+            <label class="radio" wx:for="{{items}}">
+              <radio value="{{item.name}}" checked="{{item.checked}}" />
+            </label>
+          </radio-group>
+        </view>
+        <view class="items">
+          <view>12个月</view>
+          <view class="cool">￥180</view>
+          <radio-group class="sel_time" bindchange="radioChange">
+            <label class="radio" wx:for="{{items}}">
+              <radio value="{{item.name}}" checked="{{item.checked}}" />
+            </label>
+          </radio-group>
+        </view> -->
+        <button hover-class='none' class='pop_btn' bindtap='payment'>立即购买</button>
+      </view>
+    </view>
+  </view>
+  <view class="pop" wx:if="{{pop2}}" catchtouchmove="myCatchTouch">
+    <view class="pop_cover" bindtap='popLock'></view>
+    <view class='pop_con bottom'>
+      <view class="takermb_con">
+        <view class="takermb_tit">可提现金额</view>
+        <view class="takermb_nums">￥
+          <text class='cool'>{{earning}}</text>
+        </view>
+        <view class='takermb_tips'>可提现金额
+          <text class='cool'> ¥{{earning}} </text>，手续费1%</view>
+      </view>
+      <button hover-class='none' class='pop_btn' bindtap='tXian'>立即提现</button>
+    </view>
+  </view>
+  <view class="pop" wx:if="{{pop3}}" catchtouchmove="myCatchTouch">
+    <view class="pop_cover" bindtap='popLock'></view>
+    <view class='pop_con center'>
+      <view class='pop_tit'>
+        <view>提示</view>
+        <image src='/dbs_masclwlcard/images/icon_pop_close.png' mode='widthFix' bindtap='popLock'></image>
+      </view>
+      <view class="pop_main">
+        <view class="pop_main_txt">
+          <image src='/dbs_masclwlcard/images/icon_pop.png' mode='widthFix'></image>
+          <view>请前往PC端修改</view>
+          <view style="padding-top:20rpx;">https://icard.weixingzpt.com</view>
+        </view>
+      </view>
+      <view style="text-align: center;">
+        <button hover-class='none' class='pop_btn center' bindtap='card_options' data-copy="copy" data-option="copy" data-target="https://icard.weixingzpt.com">复制网址</button>
+      </view>
+    </view>
+  </view>
+  <view class="pop" wx:if="{{pop4}}" catchtouchmove="myCatchTouch">
+    <view class="pop_cover" bindtap='popLock'></view>
+    <view class='pop_con center' style='width:90%;'>
+      <view class='pop_tit'>
+        <view style='font-size:24rpx;'>最近浏览的朋友：</view>
+        <image style='visibility:hidden;' src='/dbs_masclwlcard/images/icon_pop_close.png' mode='widthFix' bindtap='popLock'></image>
+      </view>
+      <view class="pop_main">
+        <scroll-view scroll-y class="friend_look clearfix" bindscrolltolower="loadMoreCustom">
+          <view class='item' wx:for="{{card_allmembr}}" wx:key="">
+            <image src='{{item.avatar}}' mode='widthFix' data-w="{{index}}" data-zhuce="{{item.is_zhuce}}" bindtap='openJumpPop'></image>
+            <view class="ellipsis">{{item.nickname}}</view>
+            <view class="time">{{item.date}}</view>
+          </view>
+          <view class="cool_loding" >
+            <view wx:if="{{coolLoading}}">
+              <image mode='widthFix' src='/dbs_masclwlcard/images/loading.gif'></image>加载中...</view>
+            <view wx:if="{{allDataing}}" class='all_data'>————— 我也是有底线的 —————</view>
+            <!-- <view wx:if="{{nullData}}" class='null_data'>暂时没有数据</view> -->
+          </view>
+        </scroll-view>
+      </view>
+      <view style="text-align: center;">
+        <button hover-class='none' class='pop_btn center' bindtap='popLock' style='margin-top:30rpx;margin-bottom:20rpx;'>我知道了</button>
+      </view>
+    </view>
+  </view>
+  <view class="pop" wx:if="{{pop5}}" catchtouchmove="myCatchTouch">
+    <view class="pop_cover" bindtap='hideJumpPop'></view>
+    <view class='pop_con center'>
+      <view class='pop_tit'>
+        <view>提示</view>
+        <image src='/dbs_masclwlcard/images/icon_pop_close.png' mode='widthFix' bindtap='hideJumpPop'></image>
+      </view>
+      <view class="pop_main">
+        <view class="pop_main_txt">
+          <image src='/dbs_masclwlcard/images/icon_pop.png' mode='widthFix'></image>
+          <view>是否发起互动</view>
+        </view>
+      </view>
+      <view class='pop_many_btn'>
+        <form bindsubmit='jump_parentcard' reportSubmit="true" wx:if="{{zhuce == 1}}">
+          <button hover-class='none' class='cancel' formType="submit">
+            <view>查看名片</view>
+          </button>
+        </form>
+        <form bindsubmit='goChat' reportSubmit="true">
+          <button hover-class='none' formType="submit">
+            发起对话
+          </button>
+        </form>
+      </view>
+    </view>
+  </view>
+  <view class="footer" style="height:110rpx;">
+    <view bindtap="change_footer_name" class="{{index==nav_footer_active?'active':''}} " data-name="{{index}}" wx:for="{{nav_footer}}" wx:key="index">
+      <form reportSubmit bindsubmit="from_send">
+        <image class="nav_footer_icon" src="{{index==nav_footer_active?item.selectIcon:item.icon}}"></image>
+        <view class="nav_text">{{item.name}}</view>
+        <button data-id="{{index}}" formType="submit"></button>
+      </form>
+    </view>
+  </view>
+  <view class="temp_box" style="display:{{nav_footer_active==0?'block':'none'}};">
+    <template is="card" data="{{users:user,card_detail:card_detail,winHeight:M,cardStatus:cardStatus,isPopCard:isPopCard,nav_footer:nav_footer,nav_footer_active:nav_footer_active,currenttab:currenttab,user_flag:user_flag,card_allmembr:card_allmembr,card_allmembr_total:card_allmembr_total,is_like:is_like}}"></template>
+  </view>
+  <view class="temp_box" style="display:{{nav_footer_active==3?'block':'none'}};">
+    <template is="home" data="{{card_detail2:card_detail2,users:user,vipGard:vipGard,winHeight:M,earning:earning,user_flag:user_flag}}"></template>
+  </view>
+  <!--     
+    <view class="temp_box" style="display:{{nav_footer_active==2?'block':'none'}};">
+        <template is="circle_friends" data="{{dynamic_list:card_detail.dynamic_list,company:card_detail.card,card_detail:card_detail,winHeight:M,currentIndex:currentIndex,showKeyboard:showKeyboard,card_id:card_detail.id}}"></template>
+    </view> -->
+  <view class="temp_box" style="display:{{nav_footer_active==2?'block':'none'}};">
+    <template is="official_web" data="{{main:card_detail,netWorkData:netWorkData,news:news,user_flag:user_flag,winHeight:M}}"></template>
+  </view>
+  <view class="temp_box" data-a="shopping" style="display:{{nav_footer_active==1?'block':'none'}};">
+    <template is="shops" data="{{user_flag:user_flag,business:card_detail,shops:shops,shops2:shops2,cates:cates,winHeight:M,card_id:card_detail.id,currentTab:currentTab}}"></template>
+  </view>
+  <!-- <view class="temp_box" data-a="product" style="display:{{nav_footer_active==1&&card_detail.card.open_shop==0?'block':'none'}};">
+        <template is="product_noshopping" data="{{business:card_detail.product,winHeight:M,card_id:card_detail.id}}"></template>
+    </view> -->
+  <!-- <view class="tip_wechat" wx:if="{{!GetCustomMobile}}">
+        <form bindsubmit="from_send" reportSubmit="true">
+            <button formType="submit"></button>
+        </form>
+        <view class="redpoint" wx:if="{{offline}}">{{offline}}</view>
+        <view class="msg">
+            <image src="../../images/card/msg2.png"></image>
+        </view>
+        <button bindgetphonenumber="gochatDetailAndGetPhoneNumber" class="tip_wechat_getPhoneNumber" openType="getPhoneNumber" plain="true"></button>
+    </view> -->
+  <view class="tip_wechat coll_cardj" hidden="{{user_flag==1 || nav_footer_active != 0}}">
+    <navigator hover-class='none' url='/dbs_masclwlcard/pages/load/load'>
+      <view class="msg">
+        <image src="../../images/card/icon_cardj_act.png" mode='widthFix'></image>
+      </view>
+    </navigator>
+  </view>
+  <view class="tip_wechat coll_cardj" bindtap="collectCard" hidden="{{user_flag==0  || nav_footer_active != 0}}">
+    <view class="msg">
+      <image src="../../images/card/icon_cardj{{is_collect == 1?'_act':''}}.png" mode='widthFix'></image>
+    </view>
+  </view>
+  <view class="tip_wechat" hidden="{{user_flag==0 || nav_footer_active == 3}}" bindtap="goChat">
+    <!-- <view class="redpoint" wx:if="{{offline}}">{{offline}}</view> -->
+    <view class="msg">
+      <image src="../../images/card/msgside.png" mode='widthFix'></image>
+    </view>
+  </view>
+  <!-- <view class="tip_wechat" style='left:0;' bindtap='jumpCreateCard'>
+         <view class="msg"style='left:0;'>
+            <image src="../../images/common_icon_add.png"></image>
+        </view>
+    </view> -->
+</view>
+<import src="../../temp/authorize/index.wxml"></import>
+<template is="authorize" data="{{isAuthorize:isAuthorize}}"></template>

@@ -1,0 +1,142 @@
+<!-- 早读音频播放区  -->
+<view class='audio-box'>
+  <view class='slider-box'>
+    <image mode='widthFix' src='{{musicData.musicImg}}'></image>
+    <slider max='{{duration}}' value='{{isMovingSlider?currentTimeSlider:currentTime}}' block-size="12" activeColor='#fa3a27' bindchanging="listenerSlidering" bindchange="listenerSlider"></slider>
+  </view>
+  <view class='album-time'>
+    <text class='left'>{{isMovingSlider?currentTimeSliderFormat:currentTimeFormat}}</text>
+    <text class='right'>{{durationFormat}}</text>
+  </view>
+  <view class='btn-album'>
+    <button bindtap='beforeAudio' hover-class='none'>
+      <image mode='widthFix' src='{{img_url}}icon-last.png'></image>
+    </button>
+    <button bindtap='play' hover-class='none'>
+      <image mode='widthFix' src="{{img_url}}{{isPlay?'icon-play':'icon-pause'}}.png"></image>
+    </button>
+    <button bindtap='nextAudio' hover-class='none'>
+      <image mode='widthFix' src='{{img_url}}icon-next.png'></image>
+    </button>
+    <image src='{{img_url}}icon_hbao.png' class='open_posters' mode='widthFix' bindtap='jumpPosters'></image>
+  </view>
+</view>
+
+<!--  点击进群  -->
+<view class='invite-group'>
+  <view class='group-photo'>
+    <image src='{{img_url}}img-1.png' mode='widthFix'></image>
+  </view>
+  <view class='group-r'>
+    <text>老师邀请你加入官方学习群</text>
+    <button open-type="contact" class="btn_shadow" hover-class='act'>点击进群</button>
+    <label>回复
+      <text>"1"</text> 获得进群二维码
+    </label>
+    <image mode='widthFix' src='{{img_url}}pointer.png' class='bounce_pointer'></image>
+    <image mode='widthFix' src='{{img_url}}pointer_bg.png' class='pointer_bg'></image>
+  </view>
+</view>
+
+<!-- 邀请人数奖励  -->
+<view class='invite-rewards'>
+  <view class='invite-user'>
+    <image mode='widthFix' src='{{img_url}}photo.jpg' class='user-photo'></image>
+    <view class='icon-star'>
+      <image mode='widthFix' src='{{img_url}}icon-star-opt.png'></image>
+      <image mode='widthFix' src='{{img_url}}icon-star-opt.png'></image>
+      <image mode='widthFix' src='{{img_url}}icon-star-opt.png'></image>
+      <image mode='widthFix' src='{{img_url}}icon-star.png'></image>
+    </view>
+    <button class='btn-share' hover-class='none'>
+      <image mode='widthFix' src='{{img_url}}icon-invitation.png'></image>
+    </button>
+  </view>
+  <view class='rewards'>
+    <view class='rewards-user'>
+      <image mode='widthFix' src='{{img_url}}photo.jpg'></image>
+      <image mode='widthFix' src='{{img_url}}photo.jpg'></image>
+      <image mode='widthFix' src='{{img_url}}photo.jpg'></image>
+    </view>
+    <text>已经有3位好友和你一起学，奖励你三颗星</text>
+  </view>
+</view>
+
+<!-- 推荐试听  -->
+<view class='audition'>
+  <view class='audition-title'>推荐试听</view>
+  <scroll-view scroll-x scroll-left="0" class='scroll-content'>
+    <view class="" wx:for="{{music}}" wx:key="" data-id="{{item.musicID}}" class='content' bindtap="cutAudio">
+      <view class='music-img-box'>
+        <image mode='widthFix' src='{{item.musicImg}}' class='music-img'></image>
+      </view>
+      <view class='music-name'>
+        <image mode='widthFix' src='{{img_url}}icon-play-little.png'></image>
+        <text>{{item.musicName}}</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<!-- 课程列表 -->
+<view class='curriculum-box'>
+  <view class='curriculum' wx:for="{{curriculum}}" wx:key="" data-id="pin" bindtap='jumpKcDetails'>
+    <image class='curriculum-img' mode='widthFix' src='{{item.img}}'></image>
+    <view class='curriculum-tit'>
+      <view>
+        <text>{{item.title}}</text>
+        <view class='curriculum-info'>
+          <label>
+            <image mode='widthFix' src='{{img_url}}icon-play-little.png'></image>
+            <text>{{item.total}}</text>
+          </label>
+          <text>共{{item.jishu}}集</text>
+          <view>
+            <text style="color:#666;">33</text>人在学习</view>
+        </view>
+      </view>
+      <view>
+        <view class="rmb_nums">￥99</view>
+        <view class="st_btn btn_shadow" hover-class='act'>0元拼课</view>
+      </view>
+    </view>
+  </view>
+  <view class='curriculum' wx:for="{{curriculum}}" wx:key="" data-id="try" bindtap='jumpKcDetails'>
+    <image class='curriculum-img' mode='widthFix' src='{{item.img}}'></image>
+    <view class='curriculum-tit'>
+      <view>
+        <text>{{item.title}}</text>
+        <view class='curriculum-info'>
+          <label>
+            <image mode='widthFix' src='{{img_url}}icon-play-little.png'></image>
+            <text>{{item.total}}</text>
+          </label>
+          <text>共{{item.jishu}}集</text>
+          <view>
+            <text style="color:#666;">33</text>人在学习</view>
+        </view>
+      </view>
+      <view>
+        <view class="rmb_nums big_rmb_nums">￥99</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- nav  -->
+<view class='nav-box'></view>
+<view class='nav'>
+  <navigator url="../../pages/index/index?title=redirect" open-type="redirect" class="nav-navigator{{navActive == 1?' active':''}}" hover-class='none' id="1">
+    <image src="{{img_url}}icon-home{{navActive == 1?'-opt':''}}.png" mode='widthFix'></image>
+    <text>首页</text>
+  </navigator>
+  <navigator url="../../pages/publish/publish?title=navigate" open-type='navigate' hover-class='none' class='nav-fabiao'>
+    <button>
+      <image mode='widthFix' src='{{img_url}}icon-fabiao.png'></image>
+    </button>
+  </navigator>
+  <navigator url="../../pages/mine/mine?title=redirect" open-type="redirect" class="nav-navigator{{navActive == 2?' active':''}}" hover-class='none' id="2">
+    <image src="{{img_url}}icon-mine{{navActive == 2?'-opt':''}}.png" mode='widthFix'></image>
+    <text>我的</text>
+  </navigator>
+</view>

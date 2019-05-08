@@ -1,0 +1,29 @@
+<view class="container">
+    <view class="order-success">
+        <text class="buy-success">购买成功</text>
+    </view>
+    <view class="line"></view>
+    <view class="order-info">
+        <view>
+            <view class="order-info-line">
+                <label class=".order-info-money">订单编号：</label>
+                <text class=".order-info-num">{{orderNo}}</text>
+            </view>
+            <view class="order-info-line">
+                <label class=".order-info-money">实付金额：</label>
+                <text class=".order-info-num">¥{{price}}</text>
+            </view>
+            <view class="order-info-line">
+                <label class=".order-info-money">收货信息：</label>
+                <text class=".order-info-num">{{userName}} {{telNumber}}</text>
+            </view>
+        </view>
+        <view class="address-container">
+            <view class="address">{{address}}</view>
+        </view>
+    </view>
+    <view class="operation">
+        <text catchtap="goToOrderDetail" class="operation-check-order">查看订单</text>
+        <text catchtap="goToTab" class="operation-more">更多商品</text>
+    </view>
+</view>

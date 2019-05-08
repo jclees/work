@@ -1,0 +1,117 @@
+<!--index.wxml-->
+<view class='paiw'>
+   <view class='paiw_top max'>
+      <view class='paiw_left'>
+         <view class='paiw_left_top'>
+            <view class='paiw_left_top_left'>{{grad.activity.title}}</view>
+            <view class='paiw_left_top_right'>赛季</view>
+         </view>
+         <view class='paiw_left_tiem'>{{grad.activity.start_time}}-{{grad.activity.end_time}}</view>
+         <!--<view class='paiw_left_ym'>
+            <view class='paiw_i'><image src='{{tupian}}paiwei_03.png'></image></view>
+            <view class='paiw_i'><image src='{{tupian}}paiwei_05.png'></image></view>
+            <view class='paiw_i'><image src='{{tupian}}paiwei_07.png'></image></view>
+            <view class='paiw_i'><image src='{{tupian}}paiwei_09.png'></image></view>
+            <view class='paiw_i mvy'><image src='{{tupian}}paiwei_11.png'></image></view>
+         </view>
+         -->
+      </view>
+      <view class='paiw_right'><image src='{{grad_logo}}{{grad.activity.poster_pic}}'></image></view>
+      <navigator url='/pages/rydengji/rydengji'>
+      <view class='paiw_right_pos'><image src='{{tupian}}paiwei2_03.png'></image></view>
+      </navigator>
+   </view>
+   <view class='xins max'>
+      <view wx:for="{{grad.grad_list}}" wx:key="*this">
+        <view class='omg'>
+          <block wx:if="{{item.id>grad.user_level.grad_id}}">
+            <view class='suo'><image src='{{tupian}}paiwei5_03.png'></image></view>
+          </block>
+          <block wx:if="{{item.id>5}}">
+            <view class='yin xins_3'>
+              <view class='xins_yp3' data-grad_num="{{item.id}}" data-consume_point="{{item.consume_point}}" bindtap="gradPk">
+                <view class='xins_left'>
+                    <view class='xins_left_left'><view class='xins_ys3'>
+                      <image src='{{grad_logo}}{{item.grad_logo}}'></image></view>
+                    </view>
+                    <view class='xins_left_right'>
+                      <view class='xins_d'>{{item.name}}</view>
+                      <view>奖金：{{item.reward_point}}</view>
+                    </view>
+                  </view>
+                  <view class='xins_right'>
+                    <view class='xins_right_top'><text>{{item.consume_point}}</text><image src='{{tupian}}7_08.png'></image></view>
+                      <view class='xins_right_bottom'>
+                        <view class='xins_right_wq3'>
+                          <view class='xins_xr' wx:for="{{item.stars}}" wx:key="unique" wx:for-index="k" wx:for-item="items">
+                            <block wx:if="{{item.id<grad.user_level.grad_id}}">
+                              <image src='{{tupian}}paiwei4_010.png'></image>
+                            </block>
+                            <block wx:elif="{{item.id==grad.user_level.grad_id}}">
+                              <image wx:if="{{k<=grad.user_level.nopass_stars}}" src='{{tupian}}paiwei4_07.png'></image>
+                              <image wx:else src='{{tupian}}paiwei4_09.png'></image>
+                            </block>
+                            <block wx:else>
+                              <image src='{{tupian}}paiwei4_07.png'></image>
+                            </block>
+                          </view>
+                        </view>
+                    </view>
+                  </view>
+                </view>
+            </view>
+          </block>
+          <block wx:else>
+            <view class='yin xins_{{index+1}}'>
+              <view class='xins_yp{{index+1}}' data-grad_num="{{item.id}}" data-consume_point="{{item.consume_point}}" bindtap="gradPk">
+                <view class='xins_left'>
+                    <view class='xins_left_left'><view class='xins_ys{{index+1}}'>
+                      <image src='{{grad_logo}}{{item.grad_logo}}'></image></view>
+                    </view>
+                    <view class='xins_left_right'>
+                      <view class='xins_d'>{{item.name}}</view>
+                      <view>奖金：{{item.reward_point}}</view>
+                    </view>
+                  </view>
+                  <view class='xins_right'>
+                    <view class='xins_right_top'><text>{{item.consume_point}}</text><image src='{{tupian}}7_08.png'></image></view>
+                      <view class='xins_right_bottom'>
+                        <view class='xins_right_wq{{index+1}}'>
+                          <view class='xins_xr' wx:for="{{item.stars}}" wx:key="unique" wx:for-index="k" wx:for-item="items">
+                            <block wx:if="{{item.id<grad.user_level.grad_id}}">
+                              <image src='{{tupian}}paiwei4_010.png'></image>
+                            </block>
+                            <block wx:elif="{{item.id==grad.user_level.grad_id}}">
+                              <image wx:if="{{k<=grad.user_level.nopass_stars}}" src='{{tupian}}paiwei4_07.png'></image>
+                              <image wx:else src='{{tupian}}paiwei4_09.png'></image>
+                            </block>
+                            <block wx:else>
+                              <image src='{{tupian}}paiwei4_07.png'></image>
+                            </block>
+                          </view>
+                        </view>
+                    </view>
+                  </view>
+                </view>
+            </view>
+          </block>
+        </view>
+      </view> 
+   </view> 
+   <view class='genduo'>升级后解锁更多...</view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

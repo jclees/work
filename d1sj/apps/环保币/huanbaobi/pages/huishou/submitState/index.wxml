@@ -1,0 +1,16 @@
+<view class='state_wrap'>
+  <icon type="success" size="186rpx" color='#4285f4' />
+  <view class='txt'>提交成功</view>
+  <view class='msg'>提交预约成功，我们会尽快为您安排上门回收人员，请耐心等待</view>
+  <navigator open-type="redirect" url="/pages/huishou/index/index" hover-class='none'>
+    <form bindsubmit='getFormId' report-submit>
+      <view class='btn-send'>
+        <button form-type='submit' hover-class='none'>
+          返回
+        </button>
+      </view>
+    </form>
+  </navigator>
+</view>
+<!-- 回收按钮 -->
+<include src="/pages/module/huishouBtn/index.wxml" />

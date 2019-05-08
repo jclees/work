@@ -1,0 +1,97 @@
+<!--pages/person/person.wxml-->
+<view class="container">
+  <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+    <view class="wxapp-toast-content">
+      <view class="wxapp-toast-content-text"> {{toastText}} </view>
+    </view>
+  </view>
+  <view class="person_con">
+    <view class="person_bgc"></view>
+    <view class="person_info">
+      <image src="{{img_url}}bg-person.png"></image>
+      <view class="person_info_img">
+        <image src="{{person.avatar}}"></image>
+      </view>
+      <view class="person-share-icon" bindtap="jumpShare">
+        <image src="{{img_url}}icon-qrcode.png"></image>
+      </view>
+      <view class="person_info_text">{{person.nickname}}</view>
+      <view class="person_info_pro clearfix">
+        <view class="index_tit_info_button_left fl">
+          <view class="index_tit_info_button_left_text">LV.{{person.grade}}</view>
+          <view class="index_tit_info_button_left_pro">
+            <progress percent="{{person.graderate}}" color="#fc7636" backgroundColor='#fff' stroke-width="20" />
+          </view>
+        </view>
+      </view>
+      <view class="person_info_tu">
+        <view class='bg-canvas'>
+          <image src='{{img_url}}bg-user-circular.png' mode='widthFix'></image>
+        </view>
+        <canvas canvas-id="radarCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
+        <!-- <canvas canvas-id="firstCanvas" /> -->
+        <!-- <image src="{{img_url}}tu.png"></image> -->
+      </view>
+      <view class="person_info_con">
+        <view class="person_info_con_per">
+          <view class="person_info_con_left">
+            <text>用户ID:</text>
+            <text>{{person.id}}</text>
+          </view>
+          <view class="person_info_con_right">
+            <text>段位:</text>
+            <text>{{person.qualifying}}</text>
+          </view>
+        </view>
+        <view class="person_info_con_per">
+          <view class="person_info_con_left">
+            <text>胜率:</text>
+            <text>{{person.winrate}}</text>
+          </view>
+          <view class="person_info_con_right">
+            <text>总场次:</text>
+            <text>{{person.total_screenings || 0}}</text>
+          </view>
+        </view>
+        <view class="person_info_con_per">
+          <view class="person_info_con_left">
+            <text>经验:</text>
+            <text>{{person.experience}}</text>
+          </view>
+          <view class="person_info_con_right">
+            <text>胜场:</text>
+            <text>{{person.victory_screenings || 0}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <button class="person_button" open-type="share">
+    <image src="{{img_url}}person_button.png"></image>
+    <view class="person_button_top">
+      <!-- 分享到其他群 继续看排行 -->
+    </view>
+    <view class="person_button_bottom">
+      <view class="person-share">分享到其他群，继续看排行</view>
+      <text>分享到微信,可获得{{shareGold}}金币</text>
+      <image src="{{img_url}}icon-gold.png" mode='widthFix'></image>
+    </view>
+  </button>
+
+  <!-- <view class='pop-share-gold' wx:if="{{popShareGold}}" bindtap='closeShareGold'>
+    <view class='pop-share-gold-bg' bindtap='closeShareGold'></view>
+    <view class='pop-intersperse'>
+      <image src='{{img_url}}intersperse.png' mode='widthFix'></image>
+    </view>
+    <view class='pop-share-gold-main-box'>
+      <view class='pop-share-gold-main'>
+        <image class='icon-share-gold' src='{{img_url}}icon-share-gold.png' mode='widthFix'></image>
+        <view>邀请成功，奖励{{shareGold}}金币</view>
+        <view class='btn-share'>
+          <button bindtap='closeShareGold' open-type='share'>继续邀请</button>
+          <button bindtap='paiwei1'>参加排位赛</button>
+        </view>
+      </view>
+    </view>
+  </view> -->
+</view>

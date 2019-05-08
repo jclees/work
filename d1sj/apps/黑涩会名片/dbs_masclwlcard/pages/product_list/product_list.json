@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "产品列表",
+    "usingComponents": {
+        "head": "/dbs_masclwlcard/components/head/head",
+        "android": "/dbs_masclwlcard/components/android_callmodal/android_callmodal"
+    }
+}

@@ -1,0 +1,38 @@
+<view class="container">
+  <form bindsubmit="savaData">
+    <view class="yj_wrap">
+      <view class="yj_wrap_con">
+        <view class="yj_con_tit">意见与建议</view>
+        <view class="yj_wrap_textarea">
+          <textarea wx:if="{{textareaShow}}" name="cont" value="{{textareaCon}}" bindinput="textareaInp" placeholder='请填写10个字以上的问题描述以便我们提供 更好的帮助'>
+          </textarea>
+        </view>
+        <view class="yj_con_tit">相关截图(选填)</view>
+        <view class="pics">
+          <image wx:for="{{pics}}" wx:key="id" src='{{pics[index]}}' mode="aspectFill" data-url="{{pics[index]}}" data-index="{{index}}" bindtap='openPic'></image>
+          <image wx:if="{{pics.length != 2}}" src="/images/choose_icon.png" mode="widthFix" bindtap="choose"></image>
+        </view>
+      </view>
+    </view>
+    <view class="yj_con_tit inp">输入有效的联系方式以便我们联系你(选填)</view>
+    <view class="yj_wrap">
+      <view class="yj_wrap_con">
+        <view class='yj_con_inp clearfix'>
+          <view class='fl'>联系方式</view>
+          <input class='fl' name="phone" type='text' placeholder='手机号'></input>
+        </view>
+      </view>
+    </view>
+    <view class="yj_con_btn">
+      <button type="primary" class="up_btn" formType="submit">提交</button>
+    </view>
+  </form>
+</view>
+
+<view class="layer" wx:if="{{layer}}" bindtap='closePic'>
+  <view class="cover"></view>
+  <view class="con">
+    <image src='{{preview}}' mode="widthFix"></image>
+    <view bindtap='delPic' class="txt">删除</view>
+  </view>
+</view>

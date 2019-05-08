@@ -1,0 +1,66 @@
+<view class="pop1" wx:if="{{pop2}}">
+  <view class="cover1" bindtap='closePop2'></view>
+  <view class="pop_box1">
+    <!-- <image src="{{imgUrl}}tishi_bgc.png"></image> -->
+    <view class="pop_box_info1">
+      <view class="pop_box_tit1">
+        <image src="{{imgUrl}}tishi_tit.png"></image>
+      </view>
+      <view class="pop_box_con1">
+        <text>请确认任务已完成，两次虚假提交将取消提现资格！任务入口，见上方提现按钮</text>
+      </view>
+      <view class="clearfix pop_box_con_btns">
+        <view class="pop_box_button1 fl" id="1" bindtap="closePop2">
+          取消
+        </view>
+        <button class="pop_box_button1 fl" id="2" bindtap='savaData' hover-class="none">
+          确定
+        </button>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="container">
+  <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+    <view class="wxapp-toast-content">
+      <view class="wxapp-toast-content-text"> {{toastText}} </view>
+    </view>
+  </view>
+  <view class="index">
+    <image src="{{imgUrl}}person_bgc.png"></image>
+    <view class="index_box">
+      <view class="index_box_img">
+        <image src="{{user.userInfo.avatarUrl}}"></image>
+      </view>
+      <view class="index_box_num">
+        <view>可提：{{balance}}元</view>
+        <view class="tx_btn" bindtap='money'>提现</view>
+        <view>待审：{{nobalance}}元</view>
+      </view>
+      <view class="index_box_num">
+      </view>
+      <view class='j-instructions'>
+        <view>首次提现需完成任务： <text bindtap='jumpRwdet' style='disoplay:block; text-decoration: underline;'>点击去完成任务</text></view>
+        <text>
+        1、提现说明：现金会在一个工作日内审核发放，请耐心等待。
+2、待审核金额，指好友未完成初次提现，好友提现后，对应推广奖励即可即时提现。
+        </text>
+        <view class='jiaocheng clearfix'>
+          <button wx:if="{{status == 2}}">
+            已完成审核
+          </button>
+          <button bindtap="openPop2" wx:else>
+            已完成任务，请求审核
+          </button>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 温馨提示弹出框 -->
+  <view class="pop1" wx:if="{{pop}}" bindtap="closePop1">
+    <view class="cover1"></view>
+    <view class="pop_box1">
+      <image src="{{imgUrl}}foucs_on_genaro.png" mode='widthFix'></image>
+    </view>
+  </view>
+</view>

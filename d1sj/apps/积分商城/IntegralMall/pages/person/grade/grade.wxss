@@ -1,0 +1,75 @@
+/* pages/person/grade/grade.wxss */
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: #f6f6f6;
+}
+.grade_tit {
+  width: 100%;
+  height: 284rpx;
+  background-color: #febd2d;
+  padding-top: 16rpx;
+  color: #000;
+}
+.grade_tit_img {
+  width: 135rpx;
+  height: 110rpx;
+  margin: 0 auto;
+}
+.grade_tit_img image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.grade_tit_button {
+  width: 124rpx;
+  height: 50rpx;
+  background-color: #fff;
+  text-align: center;
+  line-height: 50rpx;
+  border-radius: 25rpx;
+  margin: 26rpx auto 0;
+}
+.grade_tit_text {
+  margin-top: 34rpx;
+  padding: 0 30rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  text-align: center;
+}
+.grade_con {
+  padding: 30rpx 0 0 53rpx;
+}
+.grade_con_info_per {
+  margin-top: 55rpx;
+}
+.grade_con_info_per_left {
+  float: left;
+  width: 130rpx;
+  height: 130rpx;
+  margin-right: 30rpx;
+}
+.grade_con_info_per_left image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.grade_con_info_per_right {
+  height: 100%;
+  overflow: hidden;
+  padding: 25rpx 0;
+}
+.grade_con_info_per_right text {
+  display: block;
+}
+.grade_con_button {
+  margin: 130rpx auto 0;
+  width: 220rpx;
+  height: 70rpx;
+  text-align: center;
+  line-height: 70rpx;
+  background-color: #f8494c;
+  color: #fff;
+  border-radius: 10rpx;
+}

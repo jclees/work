@@ -1,0 +1,170 @@
+<!--mine.wxml-->
+
+<!--  userinfo  -->
+<view class='mine-userinfo-box'>
+  <view class='mine-user'>
+    <image mode='widthFix' src='{{personData.avatar}}'></image>
+    <view>{{personData.nickname}}</view>
+  </view>
+  <view class='mine-userinfo'>
+    <view>等级：{{personData.level}}</view>
+    <view bindtap='popLock' data-id='3'>荐力：{{personData.ability}}
+      <image mode='widthFix' src='{{img_url}}icon-warning.png'></image>
+    </view>
+    <view>徽章：</view>
+    <view>SS：{{personData.candy}}枚</view>
+  </view>
+</view>
+
+<!--  mine-nav  -->
+<view class='mine-nav-box'>
+  <view class='mine-nav'>
+    <text bindtap='popLock' data-id='1'>推荐规则</text>
+    <text bindtap='popLock' data-id='2'>社区盟约</text>
+  </view>
+  <view class='mine-menu-box'>
+    <navigator class='mine-menu' url="/pages/community/community?title=navigate" hover-class="none">
+      <image mode='widthFix' src='{{img_url}}icon-group.png'></image>
+      <text>社群</text>
+    </navigator>
+    <navigator class='mine-menu' url="/pages/message/message?title=navigate" hover-class="none">
+      <image mode='widthFix' src='{{img_url}}icon-news.png'></image>
+      <text>消息</text>
+    </navigator>
+    <view class='mine-menu' hover-class="none" bindtap='jumpTang'>
+      <image mode='widthFix' src='{{img_url}}icon-candy.png'></image>
+      <text>糖果</text>
+    </view>
+    <navigator class='mine-menu' url="/pages/coin/coin?title=navigate" hover-class="none">
+      <image mode='widthFix' src='{{img_url}}icon-coin.png'></image>
+      <text>兑币</text>
+    </navigator>
+    <navigator class='mine-menu' url="/pages/newsBreakfast/newsBreakfast?title=navigate" hover-class="none">
+      <image mode='widthFix' src='{{img_url}}icon-news-breakfast.png'></image>
+      <text>新闻早餐</text>
+    </navigator>
+    <navigator class='mine-menu' url="/pages/curriculum/curriculum?title=navigate" hover-class="none">
+      <image mode='widthFix' src='{{img_url}}icon-my-curriculum.png'></image>
+      <text>我的课程</text>
+    </navigator>
+
+    <navigator class='mine-menu' url="/pages/likes/likes?title=navigate" hover-class="none">
+      <image mode='widthFix' src='{{img_url}}icon-setup.png'></image>
+      <text>偏好设置</text>
+    </navigator>
+
+    <button class='mine-menu' hover-class="none" bindtap='popLock' data-id='4'>
+      <image mode='widthFix' src='{{img_url}}icon-talk.png'></image>
+      <text>对话作者</text>
+    </button>
+  </view>
+  <view class='copyright'>@技术支持by第一时间</view>
+</view>
+
+<!-- nav -->
+<view>
+  <include src="/pages/module/nav/nav.wxml" />
+</view>
+
+
+<!-- 推荐规则 -->
+<view class='pop-box' wx:if="{{pop1}}">
+  <view class='pop-bg' bindtap='popLock'></view>
+  <view class='pop-main'>
+    <view class='pop-title'>推荐规则</view>
+    <view class='pop-content'>
+      <view class='pop-text-img'>
+        <text>{{popData.commendation_rules}}</text>
+      </view>
+    </view>
+    <view class="btn-pop">
+      <button hover-class='none' bindtap='popLock'>知道了</button>
+    </view>
+  </view>
+</view>
+<!-- 社区盟约 -->
+<view class='pop-box' wx:if="{{pop2}}">
+  <view class='pop-bg' bindtap='popLock'></view>
+  <view class='pop-main'>
+    <view class='pop-title'>社区盟约</view>
+    <view class='pop-content'>
+      <view class='pop-text-img'>
+        <text>{{popData.community}}</text>
+      </view>
+    </view>
+    <view class="btn-pop">
+      <button hover-class='none' bindtap='popLock'>知道了</button>
+    </view>
+  </view>
+</view>
+<!-- 荐力 -->
+<view class='pop-box' wx:if="{{pop3}}">
+  <view class='pop-bg' bindtap='popLock'></view>
+  <view class='pop-main'>
+    <view class='pop-jianli'>
+      <view class='pop-jianli1 zong'>
+        <text>荐力值</text>
+        <view>
+          <view>
+            <progress percent="{{personData.ability}}" stroke-width="20" activeColor='#ffa821' />
+          </view>
+          <text>10/100</text>
+        </view>
+      </view>
+
+      <view class='pop-jianli1 zi'>
+        <text class='zi-title'>能力值</text>
+        <view class="zi-progress">
+          <progress percent="{{personData.ability}}" stroke-width="20" activeColor="#24ccaa" />
+        </view>
+        <text class='zi-zhi'>10/100</text>
+      </view>
+      <view class='pop-jianli1 zi'>
+        <text class='zi-title'>贡献值</text>
+        <view class="zi-progress">
+          <progress percent="{{personData.contribution}}" stroke-width="20" activeColor="#f3462a" />
+        </view>
+        <text class='zi-zhi'>10/100</text>
+      </view>
+      <view class='pop-jianli1 zi'>
+        <text class='zi-title'>学习值</text>
+        <view class="zi-progress">
+          <progress percent="{{personData.study}}" stroke-width="20" activeColor="#2bacfb" />
+        </view>
+        <text class='zi-zhi'>10/100</text>
+      </view>
+      <view class='pop-jianli1 zi'>
+        <text class='zi-title'>人脉值</text>
+        <view class="zi-progress">
+          <progress percent="{{personData.connection}}" stroke-width="20" activeColor="#fb5053" />
+        </view>
+        <text class='zi-zhi'>10/100</text>
+      </view>
+
+    </view>
+    <view class="btn-pop">
+      <button hover-class='none' bindtap='popLock'>我知道了</button>
+    </view>
+    <view class='btn-close'>
+      <button hover-class='none' bindtap='popLock'>
+        <image mode='widthFix' src='{{img_url}}icon-close.png'></image>
+      </button>
+    </view>
+  </view>
+</view>
+<!-- 对话作者 -->
+<view class='pop-box' wx:if="{{pop4}}">
+  <view class='pop-bg' bindtap='popLock'></view>
+  <view class='pop-main'>
+    <view class='pop-title'>对话作者</view>
+    <view class='pop-content'>
+      <view class='pop-text-img'>
+        <text>{{popData.author_intro}}</text>
+        <image mode='widthFix' src='{{popData.author_img}}'></image>
+      </view>
+    </view>
+    <view class="btn-pop">
+      <button hover-class='none' bindtap='popLock' open-type='contact'>知道了</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,113 @@
+<!--pages/shop/orderDetail/orderDetail.wxml-->
+<view class="container">
+  <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+    <view class="wxapp-toast-content">
+      <view class="wxapp-toast-content-text"> {{toastText}} </view>
+    </view>
+  </view>
+  <view class="detail_tit">
+    <view class="detail_tit_box">
+      <icon type="success" size="20" />
+      <text>支付成功</text>
+    </view>
+  </view>
+  <view class="order_info">
+    <view class="order_info_tit">订单信息</view>
+    <view class="order_info_con clearfix">
+      <view class="order_info_con_left">
+        <image src="{{detail.img}}" mode='aspectFill'></image>
+      </view>
+      <view class="order_info_con_right">
+        <view class="order_info_con_right_name">
+          <view class="fl order_info_con_right_name_left">{{detail.product_name}}</view>
+          <view class="fr order_info_con_right_name_right">×{{detail.number}}</view>
+        </view>
+        <view class="order_info_con_right_style">
+          {{detail.specifications}}
+        </view>
+        <view class="order_info_con_right_price">
+          <text>¥{{detail.specs}}积分</text>
+          <text>¥{{detail.original_price}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="order_remarks clearfix">
+    <view class="order_dev_box">
+      <view class="fl">
+        配送:
+      </view>
+      <view class="fr">
+        ¥{{detail.distribution_fee}}
+      </view>
+    </view>
+    <view class="order_remarks_box clearfix" wx:if="{{detail.remarks}}">
+      <view class="fl order_remarks_box_left">
+        备注:
+      </view>
+      <view class="fr order_remarks_box_right">
+        {{detail.remarks}}
+      </view>
+    </view>
+  </view>
+  <view class="order_total clearfix">
+    <view class="fl order_total_left">
+      合计:
+    </view>
+    <view class="fr order_total_right">
+      <text> ¥{{detail.total}}</text>
+      <text>积分</text>
+    </view>
+  </view>
+  <view class="order_add" wx:if="{{detail.type==1}}">
+    <view class="order_add_tit">
+      配送地址
+    </view>
+    <view class="order_add_con">
+      <view class="order_add_con_top">
+        <text>姓名:{{detail.name}}</text>
+        <text>电话:{{detail.phone}}</text>
+      </view>
+      <view class="order_add_con_bottom">
+        地址:{{detail.address}}
+      </view>
+    </view>
+  </view>
+  <view class="order_button" wx:if="{{detail.type==0}}" bindtap="openPop">核销</view>
+  <view style='height:88rpx;'></view>
+  <view class="order_tab">
+    <view class="order_tab_per fl">
+      <navigator url='/pages/index/index' open-type="reLaunch" hover-class='none'>
+        <view class="order_tab_per_top">
+          <image src="../../../imgs/index.png"></image>
+        </view>
+      </navigator>
+      <view class="order_tab_per_bottom">
+        首页
+      </view>
+    </view>
+    <view class="order_tab_per fr" bindtap='tel'>
+      <view class="order_tab_per_top">
+        <image src="../../../imgs/kefu.png"></image>
+      </view>
+      <view class="order_tab_per_bottom">
+        客服
+      </view>
+    </view>
+  </view>
+  <!-- 输入核销码 -->
+  <view class="pop" wx:if="{{confirm}}">
+    <view class="cover" bindtap="closePop"></view>
+    <view class="pop_box">
+      <view class="pop_box_tit">输入核销码</view>
+      <view class="pop_box_close" bindtap="closePop">
+        <image src="../../../imgs/close.png"></image>
+      </view>
+      <view class="pop_box_input">
+        <input placeholder='请输入核销码' bindinput='inputPass' placeholder-class='input'></input>
+      </view>
+      <view class="pop_box_des">取货时,店员提供核销码</view>
+      <view class="pop_box_button" bindtap="clerk">核销</view>
+    </view>
+  </view>
+</view>

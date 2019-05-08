@@ -1,0 +1,31 @@
+.video_group {
+  width: 100%;
+}
+
+.video_group .video {
+  width: 100%;
+}
+
+.video_group .video_cover {
+  position: relative;
+  width: 100%;
+}
+
+.video_group .video_cover .cover_img {
+  width: 100%;
+}
+.video_group .video_cover .cover_img image {
+  width: 100%;
+}
+.video_group .video_cover .play-video {
+  width: 100rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+.video_group .video_cover .play-video image {
+  width: 100rpx;
+}

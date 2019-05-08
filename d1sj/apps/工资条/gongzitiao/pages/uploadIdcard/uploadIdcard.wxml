@@ -1,0 +1,37 @@
+<block wx:if="{{!shenheStatus}}">
+  <view class='up_idcard'>
+    <view class='tips'>
+      <view>请用于身份审核</view>
+      <view>上传照片时请保证边框完整，照片清晰，亮度均衡。</view>
+    </view>
+    <view class='up_idcard_main'>
+      <view class='tit'>手持身份证照片：</view>
+      <view class='exp'>
+        <image mode='widthFix' src='/images/test_idcard.png'></image>
+        <view>示意图</view>
+      </view>
+      <form report-submit bindsubmit='bindchoose'>
+        <button class='up_btn' hover-class='none' form-type='submit'>
+          <block>
+            <view wx:if="{{upimgs.length == 0}}">
+              <image mode='widthFix' src='/images/deft_img.png'></image>
+              <view>点击上传</view>
+            </view>
+            <image src='{{upimgs[0]}}' mode='widthFix' style='width:80%;margin:0 auto;' wx:else></image>
+          </block>
+        </button>
+      </form>
+      <form report-submit bindsubmit='savaData'>
+        <button class='sava_btn' form-type='submit'>
+          提交审核
+        </button>
+      </form>
+    </view>
+  </view>
+</block>
+<block wx:else>
+  <view class='shenheing'>
+    <image src='/images/shenheing_bg.png' mode='widthFix'></image>
+    <view class='tips'>手持照片审核中，请耐心等待</view>
+  </view>
+</block>

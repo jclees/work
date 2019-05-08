@@ -1,0 +1,77 @@
+
+<block>
+  <include src="../layer/layer.wxml" />
+</block>
+
+ <view>
+  <view class="container">
+    <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+      <view class="wxapp-toast-content">
+        <view class="wxapp-toast-content-text"> {{toastText}} </view>
+      </view>
+    </view>
+    <view class="index">
+      <image src="/imgs/bg.png"></image>
+      <view class="index_box">
+        <view class="index_box_img">
+          <image src="/imgs/title.png"></image>
+        </view>
+        <view class="index_box_add clearfix">
+          <view class='fl'>imtoken：</view>
+          <input class="fl" bindinput="inputAdd" placeholder='请输入imtoken账户' placeholder-class='input'></input>
+        </view>
+        <button class="index_box_btn" open-type="getUserInfo" bindgetuserinfo="savaData" lang="zh_CN">
+          <image src="/imgs/btn_bg.png"></image>
+        </button>
+      </view>
+    </view>
+    <!-- 温馨提示弹出框 -->
+    <view class="pop1" wx:if="{{pop}}">
+      <view class="cover1"></view>
+      <view class="pop_box1">
+        <image src="{{imgUrl}}tishi_bgc.png"></image>
+        <view class="pop_box_info1">
+          <view class="pop_box_tit1">
+            <image src="{{imgUrl}}tishi_tit.png"></image>
+          </view>
+          <view class="pop_box_con1">
+            <text>{{shareStatus ? '请通过群分享链接进入小程序！' : 'BST小程序需要获取您的手机号！'}}</text>
+            <text></text>
+          </view>
+          <button wx:if="{{!shareStatus}}" class="pop_box_info_button" open-type="getPhoneNumber" bindgetphonenumber="getUserInfo">
+            确认授权
+          </button>
+        </view>
+      </view>
+    </view>
+    <!-- 温馨提示弹出框 -->
+    <view class="pop1" wx:if="{{pop2}}">
+      <view class="cover1" bindtap="closePop1"></view>
+      <view class="pop_box1">
+        <image src="{{imgUrl}}tishi_bgc.png"></image>
+        <view class="pop_box_info1">
+          <view class="pop_box_tit1">
+            <image src="{{imgUrl}}tishi_tit.png"></image>
+          </view>
+          <view class="pop_box_close1" bindtap="closePop1">
+            <image src="{{imgUrl}}close1.png"></image>
+          </view>
+          <view class="pop_box_con1">
+            <text>BST小程序需要获取您的头像昵称等资料！</text>
+          </view>
+          <button class="pop_box_info_button">
+            确认授权
+          </button>
+          <!-- <view class="clearfix pop_box_con_btns">
+            <view class="pop_box_button1 fl" bindtap="money">
+              确认提交
+            </view>
+             <button class="pop_box_button1 fl" open-type='contact' hover-class="none">
+              注册教程
+            </button> 
+          </view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+</view> 

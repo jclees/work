@@ -1,0 +1,44 @@
+/**index.wxss**/
+
+page {
+  background: #fff;
+}
+/* 引导页 */
+swiper {
+  /*这个是绝对布局*/
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.swiper-image {
+  height: 100%;
+  width: 100%;
+  /*透明度*/
+  opacity: 0.9;
+}
+
+ .button-img {
+  /*这个是绝对布局*/
+
+    height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+} 
+.skip_btn{
+  border-radius: 100px;
+  z-index: 2;
+  font-size: 26rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  padding: 0 20rpx;
+  color:#666;
+  position: fixed;
+  right: 40rpx;
+  top: 60rpx;
+  border: 1px solid #666;
+}
+
+

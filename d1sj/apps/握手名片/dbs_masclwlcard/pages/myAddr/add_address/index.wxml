@@ -1,0 +1,44 @@
+<view class="container">
+    <form bindsubmit="add_address">
+        <view class="base-cells-box">
+            <view class="cell-item cell-item-input">
+                <view class="cell-left-label">
+                    <view class="cell-label">联系人</view>
+                </view>
+                <view class="cell-right-input">
+                    <input class="cell-input" name="userName" placeholder="联系人" value="{{userName}}"></input>
+                </view>
+            </view>
+            <view class="cell-item cell-item-input">
+                <view class="cell-left-label">
+                    <view class="cell-label">手机号码</view>
+                </view>
+                <view class="cell-right-input">
+                    <input class="cell-input" maxlength="11" name="telNumber" placeholder="手机号码" type="number" value="{{telNumber}}"></input>
+                </view>
+            </view>
+            <view class="cell-item cell-item-input">
+                <view class="cell-left-label">
+                    <view class="cell-label">选择地区</view>
+                </view>
+                <view class="cell-right-input">
+                    <picker bindchange="bindRegionChange" class="picker-address" mode="region" name="region" value="{{region}}">
+                        <input disabled class="cell-input" placeholder="省市区/县信息" wx:if="{{region.length===0}}"></input>
+                        <input disabled class="cell-input" placeholder="省市区/县信息" value="{{region[0]}} {{region[1]}} {{region[2]}}" wx:else></input>
+                    </picker>
+                </view>
+            </view>
+            <view class="cell-item cell-item-input">
+                <view class="cell-left-label">
+                    <view class="cell-label">详细地址</view>
+                </view>
+                <view class="cell-right-input">
+                    <input class="cell-input" name="detailInfo" placeholder="街道门牌信息" value="{{detailInfo}}"></input>
+                </view>
+            </view>
+        </view>
+        <view class="button-box">
+            <button class="button-primary" disabled="{{loading?true:false}}" formType="submit" loading="{{loading}}">保存</button>
+        </view>
+    </form>
+</view>

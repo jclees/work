@@ -1,0 +1,247 @@
+.container {
+    background: #fff;
+    border-top: 1rpx solid #e5e5e5;
+}
+
+.place-holder {
+    height: 188rpx;
+    background: #edeef2;
+}
+
+.order-address {
+    display: flex;
+    align-items: center;
+    padding: 30rpx 0;
+    margin: 0 30rpx;
+    background: #fff;
+    border-bottom: 1rpx solid #e5e5e5;
+}
+
+.no-order-address {
+    height: 125rpx;
+    display: flex;
+    align-items: center;
+    background: #fff;
+}
+
+.no-address-text {
+    font-size: 34rpx;
+    color: #111;
+    letter-spacing: 0;
+    line-height: 34rpx;
+    flex: 1;
+}
+
+.no-address-left-icon {
+    width: 44rpx;
+    height: 44rpx;
+    padding: 0 23rpx 0 32rpx;
+}
+
+.receiver-container {
+    flex: 1;
+}
+
+.receiver-mobile {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-address-receiver,.order-address-mobile {
+    font-size: 34rpx;
+    color: #111;
+    letter-spacing: 0;
+    line-height: 34rpx;
+}
+
+.order-addrress-detail {
+    padding-top: 14rpx;
+    padding: 14rpx 0 0;
+}
+
+.address-text {
+    opacity: 0.8;
+    font-size: 30rpx;
+    color: #111;
+    letter-spacing: 0;
+    line-height: 40rpx;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+
+.address-left-icon {
+    width: 44rpx;
+    height: 44rpx;
+    padding-right: 20rpx;
+}
+
+.address-right-icon {
+    flex: 0 0 44rpx;
+    height: 44rpx;
+    padding-left: 20rpx;
+}
+
+.no-address-right-icon {
+    flex: 0 0 44rpx;
+    height: 44rpx;
+    padding: 0 24rpx 0 16rpx;
+}
+
+.order-info {
+    padding: 30rpx 30rpx 0;
+    background: #fff;
+}
+
+.order-info-line {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 28rpx 0;
+}
+
+.order-info-money {
+    font-size: 34rpx;
+    color: #5d5d5d;
+    letter-spacing: 0;
+    line-height: 34rpx;
+    display: flex;
+}
+
+.order-info-who {
+    color: #ff3d33;
+}
+
+.order-info-num {
+    font-size: 28rpx;
+    color: #8a8a8f;
+    letter-spacing: 0;
+    line-height: 28rpx;
+}
+
+.order-info-total {
+    display: flex;
+    justify-content: space-between;
+    padding: 12rpx 0 40rpx;
+}
+
+.order-info-fee {
+    font-size: 36rpx;
+    color: #111;
+    letter-spacing: 0;
+    line-height: 36rpx;
+}
+
+.order-info-total-num {
+    font-size: 36rpx;
+    color: #ff3d33;
+    letter-spacing: 0;
+    line-height: 36rpx;
+    font-weight: bold;
+}
+
+.order-pay {
+    display: flex;
+    height: 98rpx;
+}
+
+.bottom-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    z-index: 99;
+}
+
+.order-pay-real {
+    flex: 0 0 500rpx;
+    align-items: center;
+    padding-right: 30rpx;
+    justify-content: flex-end;
+    display: flex;
+}
+
+.shopping-cart-market-price {
+    opacity: 0.6;
+    font-size: 26rpx;
+    color: #8a8a8f;
+    letter-spacing: 0;
+    line-height: 26rpx;
+    text-decoration: line-through;
+}
+
+.real-num {
+    font-size: 44rpx;
+    color: #ff3d33;
+    letter-spacing: 0;
+    line-height: 42rpx;
+}
+
+.real-money {
+    font-size: 32rpx;
+    color: #111;
+    letter-spacing: 0;
+    line-height: 32rpx;
+}
+
+.order-pay-immediately,.order-pay-no {
+    flex: 0 0 250rpx;
+    background: #ff3d33;
+    font-size: 32rpx;
+    color: #fff;
+    letter-spacing: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.order-pay-no {
+    background: #a9a9a9;
+}
+
+.shopping-cart-slide {
+    padding: 30rpx 30rpx 0;
+    height: 232rpx;
+}
+
+.shopping-cart-num-container {
+    flex: 0 0 178rpx;
+    height: 50rpx;
+}
+
+.shopping-cart-minus,.shopping-cart-no-minus,.shopping-cart-add,.shopping-cart-no-add {
+    flex: 0 0 50rpx;
+    line-height: 50rpx;
+    height: 50rpx;
+}
+
+.shopping-cart-minus,.shopping-cart-no-minus {
+    border-radius: 8rpx 0 0 8rpx;
+    background-size: 28rpx 2rpx;
+    background-position: 11rpx 22rpx;
+}
+
+.shopping-cart-no-minus {
+    border: 1rpx solid #949494;
+    border-right: none;
+}
+
+.shopping-cart-num {
+    flex: 0 0 78rpx;
+    font-size: 30rpx;
+    line-height: 50rpx;
+    height: 50rpx;
+}
+
+.shopping-cart-add,.shopping-cart-no-add {
+    border-radius: 0 8rpx 8rpx 0;
+    background-size: 28rpx 28rpx;
+    background-position: 11rpx 9rpx;
+}
+
+.shopping-cart-no-add {
+    border: 1rpx solid #949494;
+    border-left: none;
+}

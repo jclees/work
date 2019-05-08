@@ -1,0 +1,74 @@
+<loading hidden="{{dataLoaded}}">加载中...</loading>
+<import src="../../temp/newstip/index.wxml"></import>
+<view class="temp_box" style="">
+    <template is="newstip" data="{{cardAvatar:card_detail.card_logo,offline:offline,msgStatus:msgStatus}}"></template>
+</view>
+<view bindtap="hideShopMask" catchtouchmove="true" class="mask" wx:if="{{shopMask}}"></view>
+<import src="../../temp/card/index.wxml"></import>
+<import src="../../temp/circle_friends/circle_friends.wxml"></import>
+<import src="../../temp/official_web/official_web.wxml"></import>
+<import src="../../temp/shops/shops.wxml"></import>
+<import src="../../temp/product_noshopping/product_noshopping.wxml"></import>
+<view hidden="{{!dataLoaded}}">
+    <view class="shopPoster" wx:if="{{shopMask==true&&showChoose}}">
+        <view class="poster-icon">
+            <view bindtap="hideShopMask" class="poster-icon-left">
+                <button class="icon-bg1" openType="share">
+                    <image src="../../images/share_wechat_btn_n.png"></image>
+                </button>
+                <view class="poster-text">微信好友</view>
+            </view>
+            <view bindtap="showposter" class="poster-icon-right">
+                <image class="icon-bg1" src="../../images/share_poster_btn_n.png"></image>
+                <view class="poster-text">生成海报</view>
+            </view>
+        </view>
+        <view bindtap="hideShopMask" catchtouchmove="true" class="poster-cancel">取消</view>
+    </view>
+    <view class="footer" style="height:110rpx;">
+        <view bindtap="change_footer_name" class="{{index==nav_footer_active?'active':''}} " data-name="{{index}}" wx:for="{{nav_footer}}" wx:key="index">
+            <form reportSubmit bindsubmit="from_send">
+                <image class="nav_footer_icon" src="{{index==nav_footer_active?item.selectIcon:item.icon}}"></image>
+                <view class="nav_text">{{item.name}}</view>
+                <button data-id="{{index}}" formType="submit"></button>
+            </form>
+        </view>
+    </view>
+    <view class="temp_box" style="display:{{nav_footer_active==0?'block':'none'}};">
+        <template is="card" data="{{card_detail:card_detail,winHeight:business.winHeight,cardStatus:cardStatus,isPopCard:isPopCard,nav_footer:nav_footer,nav_footer_active:nav_footer_active,currenttab:currenttab}}"></template>
+    </view>
+    <view class="temp_box" style="display:{{nav_footer_active==2?'block':'none'}};">
+        <template is="circle_friends" data="{{dynamic_list:card_detail.dynamic_list,company:card_detail.card,card_detail:card_detail,winHeight:dynamic_list.winHeight,currentIndex:currentIndex,showKeyboard:showKeyboard,card_id:card_detail.id}}"></template>
+    </view>
+    <view class="temp_box" style="display:{{nav_footer_active==3?'block':'none'}};">
+        <template is="official_web" data="{{main:card_detail,winHeight:business.winHeight}}"></template>
+    </view>
+    <view class="temp_box" data-a="shopping" style="display:{{nav_footer_active==1&&card_detail.card.open_shop==1?'block':'none'}};">
+        <template is="shops" data="{{business:card_detail,shops:shops,winHeight:business.winHeight,card_id:card_detail.id}}"></template>
+    </view>
+    <view class="temp_box" data-a="product" style="display:{{nav_footer_active==1&&card_detail.card.open_shop==0?'block':'none'}};">
+        <template is="product_noshopping" data="{{business:card_detail.product,winHeight:business.winHeight,card_id:card_detail.id}}"></template>
+    </view>
+    <view class="tip_wechat" wx:if="{{!GetCustomMobile}}">
+        <form bindsubmit="from_send" reportSubmit="true">
+            <button formType="submit"></button>
+        </form>
+        <view class="redpoint" wx:if="{{offline}}">{{offline}}</view>
+        <view class="msg">
+            <image src="../../images/card/msg2.png"></image>
+        </view>
+        <button bindgetphonenumber="gochatDetailAndGetPhoneNumber" class="tip_wechat_getPhoneNumber" openType="getPhoneNumber" plain="true"></button>
+    </view>
+    <view class="tip_wechat" wx:if="{{GetCustomMobile}}">
+        <form bindsubmit="from_send" reportSubmit="true">
+            <button formType="submit"></button>
+        </form>
+        <view class="redpoint" wx:if="{{offline}}">{{offline}}</view>
+        <view class="msg">
+            <image src="../../images/card/msg2.png"></image>
+        </view>
+        <button bindtap="goChat" class="tip_wechat_getPhoneNumber" plain="true"></button>
+    </view>
+</view>
+<import src="../../temp/authorize/index.wxml"></import>
+<template is="authorize" data="{{isAuthorize:isAuthorize}}"></template>

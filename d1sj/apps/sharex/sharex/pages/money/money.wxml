@@ -1,0 +1,76 @@
+<!--pages/money/money.wxml-->
+<view class="container">
+  <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+    <view class="wxapp-toast-content">
+      <view class="wxapp-toast-content-text"> {{toastText}} </view>
+    </view>
+  </view>
+  <view class="index">
+    <image src="../../imgs/person_bgc.png"></image>
+    <view class="index_box">
+      <view class="index_box_img">
+        <image src="{{user.userInfo.avatarUrl}}"></image>
+      </view>
+      <view class="index_box_num">提现数量:{{money}}枚GNX</view>
+      <view class="index_box_add">
+        <text>Cybex账户:</text>
+        <input bindinput="inputAdd" placeholder='请输入Cybex账户' placeholder-class='input'></input>
+      </view>
+      <view class="index_box_button" bindtap="openPop1">
+        <image src="../../imgs/money_button.png"></image>
+      </view>
+      <view class='j-instructions'>
+        <text>cybex交易所账户注册说明：</text>
+        <view>注册网址：https://dex.cybex.io/</view>
+        <view>点击下方按钮，在客服消息中输入：注册</view>
+        <view class='jiaocheng'><button open-type='contact'>点击前往客服消息</button></view>
+      </view>
+      <view class="index_box_text" bindtap="openPop">
+        <image src="../../imgs/wenti2.png"></image>
+        <text>提现说明</text>
+      </view>
+    </view>
+  </view>
+  <!-- 说明弹出框 -->
+  <view class="pop" wx:if="{{rule}}">
+    <view class="cover" bindtap="closePop"></view>
+    <view class="pop_box">
+      <image src="../../imgs/pop_bgc.png"></image>
+      <view class="pop_box_info">
+        <view class="pop_box_info_tit">
+          <image src="../../imgs/rulu_tit.png"></image>
+        </view>
+        <view class="pop_box_info_close" bindtap="closePop">
+          <image src="../../imgs/close1.png"></image>
+        </view>
+        <view class="pop_box_info_con">
+          <text>{{art.withdraw_intro}}</text>
+        </view>
+        <view class="pop_box_info_button" bindtap="closePop">
+          <image src="../../imgs/confirm.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 温馨提示弹出框 -->
+  <view class="pop1" wx:if="{{pop}}">
+    <view class="cover1" bindtap="closePop1"></view>
+    <view class="pop_box1">
+      <image src="../../imgs/tishi_bgc.png"></image>
+      <view class="pop_box_info1">
+        <view class="pop_box_tit1">
+          <image src="../../imgs/tishi_tit.png"></image>
+        </view>
+        <view class="pop_box_close1" bindtap="closePop1">
+          <image src="../../imgs/close1.png"></image>
+        </view>
+        <view class="pop_box_con1">
+          您是否确认提交,请再次确认cybex交易所账户正确,提交后将不能退回。
+        </view>
+        <view class="pop_box_button1" bindtap="money">
+          <image src="../../imgs/submit.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

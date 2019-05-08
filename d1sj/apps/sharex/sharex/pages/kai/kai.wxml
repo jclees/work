@@ -1,0 +1,69 @@
+<!--pages/kai/kai.wxml-->
+<wxs module="filters" src="../../addmul.wxs"></wxs>
+<view class="container">
+  <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+    <view class="wxapp-toast-content">
+      <view class="wxapp-toast-content-text"> {{toastText}} </view>
+    </view>
+  </view>
+  <view class="index">
+    <image src="../../imgs/bgc1.png"></image>
+    <view class="index_box">
+      <view clsas="index_box_tit">
+        <view class="index_box_tit_text" style="font-size: 38rpx;">恭喜你!</view>
+        <view class="index_box_tit_img">
+          <image src="{{user.userInfo.avatarUrl}}"></image>
+        </view>
+        <view class="index_box_tit_text">
+          <text>您的口袋拥有{{filters.toFix(money - 0.01 + 0.01)}}枚GNX</text>
+          <text>价值{{filters.toFix((money - 0.01 + 0.01)*4)}}元人民币</text>
+        </view>
+      </view>
+      <view class="index_box_look" bindtap="look">
+        <text>查看我的GNX财富</text>
+      </view>
+      <form name='pushMsgFm' report-submit="true" bindsubmit='getFormId'>
+        <button class="index_box_button" open-type='share' form-type="submit">
+          <image src="../../imgs/share.png"></image>
+        </button>
+      </form>
+
+      <view class="index_box_footer" bindtap="openPop1">
+        <image src="../../imgs/wenti3.png"></image>
+        <text>分享收益翻倍秘籍</text>
+      </view>
+    </view>
+  </view>
+  <!-- 分享弹出框 -->
+  <view class="pop" wx:if="{{pop}}">
+    <view class="cover" bindtap="closePop"></view>
+    <view class="pop_box">
+      <image src="../../imgs/pop_bgc.png"></image>
+      <view class="pop_box_info">
+        <view class="pop_box_info_tit">
+          <image src="../../imgs/share_tit.png"></image>
+        </view>
+        <view class="pop_box_info_close" bindtap="closePop">
+          <image src="../../imgs/close.png"></image>
+        </view>
+        <view class="pop_box_info_con">
+          <text>{{art.share_intro}}</text>
+        </view>
+        <view class="pop_box_info_button" bindtap="closePop">
+          <image src="../../imgs/confirm.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="pop" wx:if="{{pop1}}">
+    <view class="cover" bindtap="closePop1"></view>
+    <view class="pop_box">
+      <image src="../../imgs/foucs_on_genaro.png" mode='widthFix'></image>
+      <view class="pop_box_info">
+        <view class="pop_box_info_close" bindtap="closePop1">
+          <image src="../../imgs/close2.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

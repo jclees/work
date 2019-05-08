@@ -1,0 +1,81 @@
+/* pages/factory/factory.wxss */
+.gcq_we {
+  position: absolute;
+  bottom: 0;
+}
+.gcq_we  image {
+  width: 750rpx;
+  height: 366rpx;
+}
+.gcq_wed {
+  position: absolute;
+  z-index: 1;
+  top:60rpx;
+}
+.gcq_top {
+  position: relative;
+  height: 360rpx;
+  width: 94%;
+  margin: 0 auto;
+}
+.gcq_wed {
+  width: 100%;
+  height: auto;
+  font-size: 30rpx;
+  float: left;
+}
+.gcq_wed_er {
+  font-size: 50rpx;
+  font-weight: bold;
+}
+.gcq_wed_er text {
+  color: #ffca28;
+}
+.gcd_left {
+  float: left;
+  padding-top: 50rpx;
+  padding-left: 16rpx;
+}
+.gcq_right {
+  float: right;
+  padding-right: 40rpx;
+}
+.gcq_right image {
+  width: 270rpx;
+  height: 268rpx;
+}
+.sent {
+  width: 94%;
+  height: auto;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.sent_qw {
+  width: 100%;
+  height: 260rpx;
+  background: #ffffff;
+  border-radius: 15rpx;
+}
+.sent_qw_yd {
+  width: 33%;
+  height: 260rpx;
+  float: left;
+  text-align: center;
+  border-right: 1px solid #f0f0f0;
+  color: #322c5b;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.sent_qw_yd:last-child{
+  border-right: 0;
+}
+.sent_qw_top image {
+  width: 91rpx;
+  height: 91rpx;
+}
+.sent_qw_top {
+  padding-top: 60rpx;
+  padding-bottom: 10rpx;
+}
+
+

@@ -1,0 +1,23 @@
+<view class='share_tips_main'>
+  <view class='userimg_intro'>
+    <image mode='widthFix' src='{{userInfo.avatarUrl}}'></image>
+    <view class="userimg_intro_txt">
+      <view>免费领取绘本</view>
+      <view>只用成长值兑换不花钱</view>
+    </view>
+  </view>
+  <view class="pd_img">
+    <image mode='aspectFit' src='{{bookInfoData.img}}'></image>
+    <view>{{bookInfoData.name}}</view>
+  </view>
+  <view class="share_tips">
+    <view class="share_tips_tit">分享须知</view>
+    <view class="share_tips_intro">
+      <view>1：分享同小区宝妈
+        <text class="cool">+ 10</text>成长值</view>
+      <view>2：分享不同小区宝妈
+        <text class="cool">+ 5</text>成长值</view>
+    </view>
+    <button open-type='share'>立刻分享</button>
+  </view>
+</view>

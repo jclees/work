@@ -1,0 +1,275 @@
+.section {
+    background-color: #fff;
+    margin-bottom: 20rpx;
+}
+
+.user {
+    display: flex;
+    align-content: center;
+    padding: 40rpx;
+    background: #e53947;
+}
+
+.user__img {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    background-color: #eee;
+}
+
+.user__name {
+    font-size: 36rpx;
+    color: #fff;
+}
+
+.orderSection {
+}
+
+.barItem.barItem_orderTitle {
+    height: 75rpx;
+}
+
+.contant {
+    border-top: 2rpx solid #eee;
+    border-bottom: 2rpx solid #eee;
+    padding: 0 28rpx;
+    background-color: #fff;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+}
+
+.order-title {
+    height: 70rpx;
+    line-height: 70rpx;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-title text {
+    color: #666;
+    font-size: 14px;
+}
+
+.myItemWrap {
+    margin-top: 20rpx;
+}
+
+.cart-wrap,.addr-wrap,.coupon-wrap {
+    width: 100%;
+    height: 90rpx;
+    line-height: 90rpx;
+    background-color: #fff;
+    padding: 10rpx 28rpx;
+    border-bottom: 2rpx solid #eee;
+}
+
+.membership-wrap {
+    width: 100%;
+    height: 90rpx;
+    line-height: 90rpx;
+    background-color: #fff;
+    padding: 10rpx 28rpx;
+}
+
+.cart {
+    font-size: 30rpx;
+    color: #666;
+    position: relative;
+}
+
+.orderTypes {
+    display: flex;
+}
+
+.orderTypes__item {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-wrap {
+    display: flex;
+    flex: 1;
+    margin: 18rpx 0 22rpx;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-wrap image {
+    display: inline-block;
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.order-types .icon {
+    width: 44rpx;
+    height: 44rpx;
+    margin-bottom: 14rpx;
+}
+
+.order-status {
+    padding-top: 20rpx;
+    font-size: 24rpx;
+    color: #666;
+    line-height: 1;
+}
+
+.phone-content {
+    background-color: #fff;
+    border-top: 2rpx solid #eee;
+    border-bottom: 2rpx solid #eee;
+    padding: 20rpx 40rpx 60rpx;
+    margin-top: 20rpx;
+}
+
+.input-wrap {
+    border-bottom: 1rpx solid #d7d7d7;
+    margin-bottom: 0;
+    display: flex;
+}
+
+.input-wrap label {
+    color: #666;
+    display: block;
+    width: 106rpx;
+    padding: 0;
+    height: 88rpx;
+    line-height: 88rpx;
+    font-size: 32rpx;
+}
+
+.input-wrap input {
+    display: block;
+    flex: 1;
+    padding-left: 10rpx;
+    text-align: left;
+    font-size: 32rpx;
+    background-color: transparent;
+    height: 88rpx;
+    line-height: 88rpx;
+}
+
+.yzm {
+    display: flex;
+    margin-bottom: 40rpx;
+}
+
+.yzm .input-wrap {
+    margin-right: 0;
+    border-right: 1rpx solid #d7d7d7;
+    flex: 1;
+}
+
+.yzm .button {
+    padding: 28rpx 0;
+    line-height: 1;
+    border-bottom: 1rpx solid #d7d7d7;
+    margin: 0;
+    text-align: center;
+    width: 220rpx;
+}
+
+.yzm .yzm-text {
+    color: #999;
+}
+
+.coupon-num {
+    position: absolute;
+    right: 20px;
+    top: 0;
+    font-family: Arial,Helvetica,sans-serif;
+    letter-spacing: 2px;
+}
+
+.membership-wrap_collect {
+    margin-top: 20rpx;
+}
+
+.couponNum {
+    font-size: 30rpx;
+    color: #3d3d3d;
+}
+
+.barList {
+    background-color: #fff;
+    margin-bottom: 20rpx;
+}
+
+.barItem,button.nobutton.barItem {
+    height: 88rpx;
+    display: flex;
+    align-items: center;
+    padding-right: 20rpx;
+    border-bottom: 1rpx solid #eee;
+}
+
+.barItem.barItem_noMLeft {
+    margin-left: 0;
+}
+
+.barItem.barItem_noBorder {
+    border-bottom: 0;
+}
+
+.barList_sm .barItem {
+    height: 70rpx;
+}
+
+.barItem:last-child {
+    border-bottom: 0;
+}
+
+.barItem__icon {
+    width: 32rpx;
+    height: 32rpx;
+    margin: 0 20rpx;
+}
+
+.barItem__info {
+    flex: 1;
+    font-size: 28rpx;
+    display: flex;
+    align-items: center;
+}
+
+.barItem__info__hd {
+    width: 150rpx;
+    margin-right: 60rpx;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.barItem__info__bd {
+    flex: 1;
+}
+
+.barItem__info__bd_right {
+    text-align: right;
+}
+
+.barItem__arrowIcon {
+    width: 24rpx;
+    height: 24rpx;
+    margin-left: 20rpx;
+}
+
+.userinfo {
+    border: 1px solid #fff;
+    font-size: 22rpx;
+    color: #fff;
+    margin-top: 16rpx;
+    padding: 0 8rpx;
+    border-radius: 30rpx;
+    background: transparent;
+    line-height: 46rpx;
+    width: 120rpx;
+    margin-left: 0;
+}
+
+.user_info {
+    margin-left: 20rpx;
+}

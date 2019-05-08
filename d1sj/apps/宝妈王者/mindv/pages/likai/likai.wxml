@@ -1,0 +1,32 @@
+<!--pages/likai/likai.wxml-->
+<view class='olw'>
+  <view class='pipei'>
+    <view class='lik'>
+      <view class='huoj'>
+        <image src='{{tupian}}9_09.png'></image>
+      </view>
+      <view class='feiji'>
+        <image src='{{tupian}}9_11.png'></image>
+      </view>
+    </view>
+    <view class='lik_we'>
+      <view class='textd' wx:if="{{home_type == 1}}">房间已满人</view>
+      <view class='textd' wx:elif="{{home_type == 2}}">房间正在对战中</view>
+      <view class='textd' wx:else>房间已失效</view>
+      <view>您可以返回首页或去参加排位赛模式</view>
+    </view>
+    <view class='kmqq'>
+      <!--<view class='timu_dt_w yin'>
+             <view class='imm'>发起好友对战</view>
+           </view>
+         -->
+      <view class='timu_dt_w yin' bindtap="paiwei">
+        <view class='imyu'>参加排位赛</view>
+      </view>
+      <view class='timu_dt_w yin' bindtap="index">
+        <view class='imyu'>返回首页</view>
+      </view>
+    </view>
+
+  </view>
+</view>

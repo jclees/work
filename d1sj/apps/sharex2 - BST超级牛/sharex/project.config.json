@@ -1,0 +1,60 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.0.8",
+	"appid": "wxd64d22dccacec43a",
+	"projectname": "BST%E8%B6%85%E7%BA%A7%E7%89%9B%E8%A2%AB%E5%B0%81",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "kai",
+					"pathName": "pages/kai/kai",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "person",
+					"pathName": "pages/person/person",
+					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "money",
+					"pathName": "pages/money/money",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": "attention=yes"
+				}
+			]
+		}
+	}
+}

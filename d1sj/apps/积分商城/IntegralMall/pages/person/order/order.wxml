@@ -1,0 +1,35 @@
+<!--pages/person/order/order.wxml-->
+<view class="container">
+  <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+    <view class="wxapp-toast-content">
+      <view class="wxapp-toast-content-text"> {{toastText}} </view>
+    </view>
+  </view>
+  <view class="order_box">
+    <view class="order_box_info">
+      <view class="order_box_info_per clearfix" wx:for="{{orderList.lists}}" wx:for-item="item" wx:key="{{item.img}}">
+        <navigator url='/pages/person/orderDetail/orderDetail?order_id={{item.id}}'>
+          <view class="order_box_info_per_left">
+            <image src="{{item.img}}" mode='aspectFill'></image>
+          </view>
+          <view class="order_box_info_per_right">
+            <view class="order_box_info_per_right_left fl">
+              <view class="order_box_info_per_right_left_name">{{item.name}}</view>
+              <view class="order_box_info_per_right_left_price">
+              ¥{{item.money}}
+                <text>{{item.integral}}积分</text>
+              </view>
+            </view>
+            <view class="order_box_info_per_right_right fr">
+              {{item.status_text}}
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+    <!-- <view class="order_box_cbutton">
+      <text>加载更多</text>
+      <image src="../../../imgs/back.png"></image>
+    </view> -->
+  </view>
+</view>

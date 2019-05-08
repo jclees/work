@@ -1,0 +1,15 @@
+<head wx:if="{{false}}">
+    <view class="head" wx:if="{{newwechat*1==1}}">
+        <view class="status" style="background:{{statusBcg}};height:{{statusBarHeight}}px"></view>
+        <view class="nav clearfix">
+            <view class="nav_title" style="background:{{navBcg}};color:{{navcolor}}">{{navTitle}}</view>
+            <view bindtap="goback" class="nav_goback" wx:if="{{hasgoback&&optionsnav}}">
+                <image src="../../imagesv1/goback.png" style="height:40rpx;"></image>
+            </view>
+            <view bindtap="_goback" class="nav_goback" wx:if="{{hasgoback&&!optionsnav}}">
+                <image src="../../imagesv1/card_list.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="newapi" style="height:{{statusBarHeight+41}}px;" wx:if="{{newwechat*1==1}}"></view>
+</head>

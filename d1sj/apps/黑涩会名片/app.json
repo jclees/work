@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "dbs_masclwlcard/pages/tab/tab",
+    "dbs_masclwlcard/pages/test/test",
+    "dbs_masclwlcard/pages/create_card2/create_card",
+    "dbs_masclwlcard/pages/myOrder/myOrder",
+    "dbs_masclwlcard/pages/create_product/create_product",
+    "dbs_masclwlcard/pages/create_network/create_network",
+    "dbs_masclwlcard/pages/create_banner/index",
+    "dbs_masclwlcard/pages/product_list/product_list",
+    "dbs_masclwlcard/pages/create_card/create_card",
+    "dbs_masclwlcard/pages/myLeida/xingwei/index",
+    "dbs_masclwlcard/pages/chat_detail/chat_detail",
+    "dbs_masclwlcard/pages/myLeida/kehu/index",
+    "dbs_masclwlcard/pages/myLeida/tongji/index",
+    "dbs_masclwlcard/pages/myAddr/add_address/index",
+    "dbs_masclwlcard/pages/order_topay/order_topay",
+    "dbs_masclwlcard/pages/order_complete/order_complete",
+    "dbs_masclwlcard/pages/load/load",
+    "dbs_masclwlcard/pages/intro/intro",
+    "dbs_masclwlcard/pages/profit_details/profit_details",
+    "dbs_masclwlcard/pages/myAddr/my_address/index",
+    "dbs_masclwlcard/pages/myAddr/edit_address/index",
+    "dbs_masclwlcard/pages/product_type/product_type",
+    "dbs_masclwlcard/pages/poster/index",
+    "dbs_masclwlcard/pages/web_view/web_view",
+    "dbs_masclwlcard/pages/webview/webview",
+    "dbs_masclwlcard/pages/shops/shops_detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

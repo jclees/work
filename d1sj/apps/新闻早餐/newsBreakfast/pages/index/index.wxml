@@ -1,0 +1,167 @@
+<!--index.wxml-->
+<view class="container" style='display:none'>
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+</view>
+<!--  banner  -->
+<view class="swiper-container">
+  <swiper class='swiper' indicator-dots="{{indicatorDots}}" autoplay="{{true}}" circular="{{true}}" bindchange='swiperChange'>
+    <block wx:for="{{bannerUrls}}" wx:key="unique">
+      <swiper-item >
+        <image src="{{item.img}}" class="slide-image" mode='widthFix' />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!--  自定义dots  -->
+  <view class="dots">
+    <block wx:for="{{bannerUrls}}" wx:key="unique">
+      <view class="dot{{index === swiperCurrent ? ' active' : ''}}"></view>
+    </block>
+  </view>
+</view>
+
+<!-- 圈子分享  -->
+<view class='circle-box'>
+  <view class='circle' wx:for="{{wenzData}}" wx:key="" wx:for-index="idx">
+    <view class='circle-photo'>
+      <image src="{{item.avatar}}" mode='widthFix'></image>
+    </view>
+    <view class='circle-centent'>
+      <view class='circle-head'>
+        <view class='circle-user'>
+          <view>
+            <text>{{item.nickname}}</text>
+            <label>{{item.agoTime}}</label>
+          </view>
+          <view>
+            <label wx:for='item.myWho' wx:key="" wx:fot-item="myWho">{{myWho.name}}</label>
+          </view>
+        </view>
+        <view class='circle-operation'>
+          <button hover-class='none' data-id="3" bindtap='openHfmsg' data-curindex="{{idx}}">
+            <image src='{{img_url}}icon-addwechat.png' mode='widthFix'></image>
+            <text>微信</text>
+          </button>
+        </view>
+      </view>
+      <view class='circle-jottings'>
+        <text>{{item.content}}</text>
+        <view class="circle-img" wx:if="{{item.picture.length > 0}}">
+          <image wx:for="{{item.picture}}" wx:for-item="items" wx:key="" src='{{items}}' data-src="{{items}}" data-curindex="{{idx}}" bindtap="previewImage" mode="{{item.picture.length > 1? 'aspectFill': 'widthFix'}}" class="{{item.picture.length > 1? 'imgduo-width': 'imgyi-width'}}"></image>
+        </view>
+        <view class='circle-links' wx:if="{{item.links.length > 0}}" wx:for="{{item.links}}" wx:for-item="items" wx:key="">
+          <image src='{{items.img}}' mode='aspectFill'></image>
+          <text>{{items.text}}</text>
+        </view>
+      </view>
+      <view class='circle-footer-operation'>
+        <button hover-class='none' open-type="share">
+          <image mode='widthFix' src='{{img_url}}icon-relay.png'></image>
+          <text>转发得币</text>
+        </button>
+        <button hover-class='none' bindtap='addShequn'>
+          <image mode='widthFix' src='{{img_url}}icon-join.png'></image>
+          <text>加入社群</text>
+        </button>
+        <button hover-class='none' class="{{item.likerStatus == 1 ? 'active':''}}" data-curindex="{{idx}}" data-zxid="{{item.information_id}}" bindtap='like'>
+          <image mode='widthFix' src="{{img_url}}{{item.likerStatus == 1 ? 'icon-praise-opt':'icon-praise'}}.png"></image>
+          <label>
+            <text>{{item.likerNum}}</text>
+          </label>
+        </button>
+      </view>
+    </view>
+  </view>
+</view>
+<!--  签到  -->
+<view class='check-ins' data-id="1" bindtap='popLock'>
+  <image mode='widthFix' src='{{img_url}}icon-check-ins.png'></image>
+  <text>签到</text>
+</view>
+<!-- 弹层 -->
+<!-- 签到弹层 -->
+<view class='pop-box' wx:if="{{pop1}}" catchtouchmove="myCatchTouch">
+  <view class='pop-bg' bindtap='popLock'></view>
+  <view class='pop-main'>
+    <view class='pop-title'>签到领星星
+      <image mode='widthFix' src='{{img_url}}icon-star4.png'></image>
+    </view>
+    <view class='pop-content'>
+    <!--  -->
+      <view class="pop-check-ins {{item.is_sign == 1?' opt ':''}}{{item.is_today?' today':''}}" wx:for="{{signData.weeklist}}" wx:key="">
+        <image mode='widthFix' src="{{img_url}}icon-succeed.png" wx:if="{{item.is_sign == 1}}"></image>
+        <image mode='widthFix' src="{{img_url}}icon-star1.png" wx:else></image>
+        <text>第{{item.week}}天</text>
+      </view>
+    </view>
+    <view class='continuous-check-ins'>连续签到
+      <text>{{signData.signNum}}</text> 天</view>
+    <view class="btn-pop">
+      <button hover-class='act' bindtap='savaSign'>领取</button>
+    </view>
+    <view class='btn-close'>
+      <button hover-class='none' bindtap='popLock'>
+        <image mode='widthFix' src='{{img_url}}icon-close.png'></image>
+      </button>
+    </view>
+  </view>
+</view>
+<!-- 消息弹层 -->
+<view class='pop-box' wx:if="{{pop2}}">
+  <view class='pop-bg' bindtap='popLock'></view>
+  <view class='pop-main'>
+    <view class='pop-title'>对话作者</view>
+    <view class='pop-content'>
+      <view class='pop-text-img'>
+        <text>{{shequnIntro.pullgroup_intro}}</text>
+        <image mode='widthFix' src='{{shequnIntro.pullgroup_img}}'></image>
+      </view>
+    </view>
+    <view class="btn-pop">
+      <button hover-class='none' bindtap='popLock'>知道了</button>
+    </view>
+  </view>
+</view>
+
+<!-- +大佬微信 -->
+
+<view class='pop-box' wx:if="{{pop3}}" catchtouchmove="myCatchTouch">
+  <view class='pop-bg' bindtap='popLock'></view>
+  <view class="addwx-wrap">
+    <view>
+      <!-- <input type='text' placeholder='您现在权限仅供留言（80）'  maxlength="80" focus></input> -->
+      <textarea placeholder='您现在权限仅供留言（80）' fixed="{{true}}" maxlength="80" auto-focus='true' bindinput="bindTextChange"></textarea>
+    </view>
+    <view class="max-nums"></view>
+    <view>
+      <button hover-class='none' class="send-btn" bindtap='addWx'>
+        <text>发送</text>
+        <image mode='widthFix' src='{{img_url}}icon_send.png'></image>
+      </button>
+    </view>
+  </view>
+</view>
+
+<!-- 授权 -->
+<view class='pop-box' wx:if="{{pop4}}" catchtouchmove="myCatchTouch">
+  <view class='pop-bg'></view>
+  <view class='pop-main' style='padding:20rpx 80rpx 40rpx;box-sizing: border-box;'>
+    <view class='pop-title'>微信授权</view>
+    <view class='pop-content'>
+      <view class='pop-text-img'>
+        <text>链江湖小程序需要获取您的头像昵称等资料</text>
+        <image mode='widthFix' src='https://jclees.github.io/images/icon-sq.png' style='width:105rpx;margin:20rpx auto 0;display:block;'></image>
+      </view>
+    </view>
+    <button type="primary" bindgetuserinfo="getUserInfo" lang="zh_CN" open-type="getUserInfo"> 立即授权 </button>
+  </view>
+</view>
+<!-- nav -->
+<view>
+  <include src="/pages/module/nav/nav.wxml" />
+</view>

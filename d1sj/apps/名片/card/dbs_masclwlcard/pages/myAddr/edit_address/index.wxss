@@ -1,0 +1,39 @@
+.form-group {
+    display: flex;
+    height: 87rpx;
+    background: #fff;
+    border-bottom: 2rpx solid #E5E5E5;
+    padding: 0 4%;
+}
+
+.form-group label {
+    font-size: 34rpx;
+    color: #5D5D5D;
+    line-height: 87rpx;
+    width: 170rpx;
+}
+
+.form-group input {
+    font-size: 32rpx;
+    color: #111111;
+    line-height: 87rpx;
+    align-self: center;
+}
+
+.picker {
+    margin-top: 17rpx;
+    font-size: 32rpx;
+    color: #111111;
+}
+
+.sure-add {
+    position: fixed;
+    bottom: 0;
+    height: 98rpx;
+    width: 100%;
+    background: #1AAD19;
+    text-align: center;
+    line-height: 98rpx;
+    font-size: 32rpx;
+    color: #FFFFFF;
+}

@@ -1,0 +1,108 @@
+<view class='nulldata_wrap' wx:if="{{dataStatus}}">
+  <image src='/images/null_data.png' mode='widthFix'></image>
+  <view class='msg'>暂无数据</view>
+</view>
+<view class='order' wx:for="{{lists}}" wx:key="" wx:if="{{who==2}}">
+  <view>
+    <view class='hd'>
+      <view class='lt state_2' wx:if="{{item.status ==1 }}">等待确认</view>
+      <view class='lt state_2' wx:elif="{{item.status ==2 }}">等待上门</view>
+      <view class='lt state_1' wx:elif="{{item.status ==3 }}">已回收</view>
+      <view class='lt state_1' wx:elif="{{item.status ==4 }}">已取消</view>
+      <view class='rt'>{{item.created_at}}</view>
+    </view>
+    <view class='con'>
+      <view>
+        <view class='lt'>联系人</view>
+        <view class='rt'>{{item.contact_name}}</view>
+      </view>
+      <view>
+        <view class='lt'>联系电话</view>
+        <view class='rt'>{{item.contact_phone}}</view>
+      </view>
+      <view>
+        <view class='lt'>预约时间</view>
+        <view class='rt'>{{item.visited_at}}</view>
+      </view>
+      <view class='no_c'>
+        <view class='lt'>回收地址</view>
+        <view class='rt'>{{item.address}}</view>
+      </view>
+      <view>
+        <view class='lt'>废品类型</view>
+        <view class='rt'>
+          <text wx:for="{{item.order_item}}" wx:key="" wx:for-item="subItem" wx:for-index="idx">{{subItem.goods_name}}：{{subItem.goods_num}}{{subItem.unit}}<text>{{idx == item.order_item.length-1 ?'':'，'}}</text></text>
+        </view>
+      </view>
+      <view wx:if="{{item.remark != null}}">
+        <view class='lt'>订单备注</view>
+        <view class='rt'>{{item.remark}}</view>
+      </view>
+    </view>
+    <view class='bt clearfix' wx:if="{{item.status == 1 || item.status == 2}}">
+      <form bindsubmit='savaData' report-submit data-id="{{item.id}}" data-status="4" data-txt="取消订单">
+        <button form-type='submit' hover-class='none'>
+          取消订单
+        </button>
+      </form>
+    </view>
+  </view>
+</view>
+<view class='order' wx:for="{{lists}}" wx:key="" wx:if="{{who==1}}">
+  <view>
+    <view class='hd'>
+      <view class='lt' wx:if="{{item.status ==1 }}">最新消息</view>
+      <view class='lt state_2' wx:elif="{{item.status ==2 }}">等待上门</view>
+      <view class='lt state_1' wx:elif="{{item.status ==3 }}">已回收</view>
+      <view class='lt state_1' wx:elif="{{item.status ==4 }}">已取消</view>
+      <view class='rt'>{{item.created_at}}</view>
+    </view>
+    <view class='con'>
+      <view>
+        <view class='lt'>联系人</view>
+        <view class='rt'>{{item.contact_name}}</view>
+      </view>
+      <view>
+        <view class='lt'>联系电话</view>
+        <view class='rt'>{{item.contact_phone}}</view>
+      </view>
+      <view>
+        <view class='lt'>预约时间</view>
+        <view class='rt'>{{item.visited_at}}</view>
+      </view>
+      <view class='no_c'>
+        <view class='lt'>回收地址</view>
+        <view class='rt'>{{item.address}}</view>
+      </view>
+      <view>
+        <view class='lt'>废品类型</view>
+        <view class='rt'>
+          <text wx:for="{{item.order_item}}" wx:key="" wx:for-item="subItem">{{subItem.goods_name}}：{{subItem.goods_num}}{{subItem.unit}}{{item.order_item.length <= 1?'':'，'}}</text>
+        </view>
+      </view>
+      <view wx:if="{{item.remark != null}}">
+        <view class='lt'>订单备注</view>
+        <view class='rt'>{{item.remark}}</view>
+      </view>
+    </view>
+    <view class='bt clearfix' wx:if="{{item.status == 1 || item.status == 2}}">
+      <form bindsubmit='savaData' report-submit data-id="{{item.id}}" data-status="3" data-txt="确认上门" wx:if="{{item.status == 2}}">
+        <button form-type='submit' hover-class='none' class='cur'>
+          确认上门
+        </button>
+      </form>
+      <form bindsubmit='savaData' report-submit data-id="{{item.id}}" data-status="2" data-txt="接单" wx:if="{{item.status == 1}}">
+        <button form-type='submit' hover-class='none' class='cur'>
+          确认接单
+        </button>
+      </form>
+      <form bindsubmit='savaData' report-submit data-id="{{item.id}}" data-status="4" data-txt="取消订单">
+        <button form-type='submit' hover-class='none'>
+          取消订单
+        </button>
+      </form>
+    </view>
+  </view>
+</view>
+<!-- 回收按钮 -->
+<include src="/pages/module/huishouBtn/index.wxml" />

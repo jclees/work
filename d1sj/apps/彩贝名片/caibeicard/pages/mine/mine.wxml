@@ -1,0 +1,161 @@
+<!--mine.wxml-->
+
+<!--  userinfo  -->
+<view class='mine-userinfo-box'>
+  <view class='mine-user'>
+    <image mode='widthFix' src='{{personData.avatar}}'></image>
+    <view>{{personData.nickname}}</view>
+  </view>
+</view>
+
+<!--  mine-nav  -->
+<view class='mine-coin-box'>
+  <view class="coins">
+    <image src='{{img_url}}icon_babycoin.png' mode='widthFix'></image>
+    <view class="coins_nums">
+      <view>您拥有成长值{{personData.balance}}</view>
+      <view>只为成长，倡导不花钱</view>
+    </view>
+    <button bindtap='jumpCharge'>充成长值</button>
+  </view>
+</view>
+<view class="mine_nav">
+  <!-- <view>
+    <button>
+      <text>免费领绘本</text>
+      <view class="min_icon">
+        <image src='{{img_url}}icon_mine_more.png' mode='widthFix'></image>
+      </view>
+    </button>
+  </view> -->
+  <view>
+    <button bindtap='jumpMyshare'>
+      <text>我的共享</text>
+      <view class="min_icon">
+        <image src='{{img_url}}icon_mine_more.png' mode='widthFix'></image>
+      </view>
+    </button>
+    <button bindtap='jumpMyorder'>
+      <text>我的订单</text>
+      <view class="min_icon">
+        <!-- <view></view> -->
+        <image src='{{img_url}}icon_mine_more.png' mode='widthFix'></image>
+      </view>
+    </button>
+  </view>
+  <view>
+    <button data-id="2" bindtap='popLock'>
+      <text>我的小区</text>
+      <view class="min_icon">
+        <image src='{{img_url}}icon_mine_more.png' mode='widthFix'></image>
+      </view>
+    </button>
+    <button bindtap='jumpMyAddress'>
+      <text>附近取货点</text>
+      <view class="min_icon">
+        <image src='{{img_url}}icon_mine_more.png' mode='widthFix'></image>
+      </view>
+    </button>
+  </view>
+  <view>
+   <button data-id="3" bindtap='popLock'>
+      <text>修改信息</text>
+      <view class="min_icon">
+        <image src='{{img_url}}icon_mine_more.png' mode='widthFix'></image>
+      </view>
+    </button>
+    <button open-type='contact'>
+      <text>联系客服</text>
+      <view class="min_icon">
+        <image src='{{img_url}}icon_mine_more.png' mode='widthFix'></image>
+      </view>
+    </button>
+  </view>
+</view>
+<!-- nav -->
+<view>
+  <include src="/pages/module/nav/nav.wxml" />
+</view>
+<!-- 没有取货点 -->
+<view class='pop-box pop-box2' wx:if="{{pop1}}">
+  <view class='pop-bg' bindtap='popLock'></view>
+  <view class='pop-main'>
+    <image class="pop-close" src='{{img_url}}icn_pop_close.png' mode='widthFix' bindtap='popLock'></image>
+    <view class="pop-title">
+      <view>附近没有取货点</view>
+    </view>
+    <view class='pop-content'>
+      <view class='pop-text-img'>
+        <text>拨打电话，申请成为取货点</text>
+      </view>
+    </view>
+    <view class="btn-pop">
+      <button hover-class='none' bindtap='calling' style="color:#ffbf00;">立即申请</button>
+    </view>
+  </view>
+</view>
+<!-- 我的小区 -->
+<view class='pop-box pop-box2' wx:if="{{pop2}}">
+  <view class='pop-bg'></view>
+  <view class='pop-main'>
+    <image class="pop-close" src='{{img_url}}icn_pop_close.png' mode='widthFix' bindtap='popLock'></image>
+    <view class="pop-title">
+      <view>我的小区二维码</view>
+    </view>
+    <view class='pop-content'>
+      <view class='pop-text-img'>
+        <image src='{{xqQrcodeData.qrcode}}' mode='widthFix'></image>
+        <text>加客服备注小区名称，拉您入群</text>
+      </view>
+    </view>
+    <view class="btn-pop">
+      <button hover-class='none' bindtap='shareWxpyq' style="color:#ffbf00;">保存二维码</button>
+    </view>
+  </view>
+</view>
+<!-- 授权 -->
+<view class='pop-box' wx:if="{{pop3}}" catchtouchmove="myCatchTouch">
+  <view class='pop-bg' bindtap='popLock'></view>
+  <view class='pop-main contact_main' style="width:85%;border-radius:0;background:#febe2d;padding:0 10rpx 10rpx;">
+    <view class='pop-title'>
+      <text>修改个人信息</text>
+    </view>
+    <image class="pop-close" src='{{img_url}}icn_pop_close.png' mode='widthFix' bindtap='popLock'></image>
+    <form bindsubmit="submitRegData" report-submit="true">
+      <view class='pop-content'>
+      <view>
+          <label>姓名：</label>
+          <input placeholder='请输入名字' name="consignee" value='{{personData.consignee}}'></input>
+        </view>
+        <view>
+          <label>电话：</label>
+          <input placeholder='请输入电话' name="phone" type='number' value='{{personData.phone}}'></input>
+        </view>
+        <view>
+          <label>详细地址：</label>
+          <picker mode="region" bindchange="bindPickerChange" value="{{region}}" custom-item="{{customItem}}" name="p_c_a" data-id="0">
+            <view class="picker">
+              {{region[0]}}-{{region[1]}}-{{region[2]}}
+            </view>
+            <view class="sel_icon"></view>
+          </picker>
+        </view>
+        <view>
+          <label>居住小区：</label>
+          <input placeholder='请输入居住小区' name="place" value='{{personData.place}}'></input>
+        </view>
+        <view>
+          <label>宝宝年龄：</label>
+          <picker bindchange="bindPickerChange" value="index" data-id="1" range="{{navbarsub}}" range-key="age" name="age_id">
+            <view class='picker'>
+              {{navbarsub[index].age}}岁
+            </view>
+            <view class="sel_icon"></view>
+          </picker>
+          <!-- <input placeholder='请选择宝宝年龄' name="age"></input> -->
+        </view>
+        <button formType="submit" class="submit_btn">确定修改</button>
+      </view>
+    </form>
+  </view>
+</view>

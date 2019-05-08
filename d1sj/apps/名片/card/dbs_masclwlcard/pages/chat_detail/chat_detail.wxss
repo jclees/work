@@ -1,0 +1,347 @@
+page {
+    background: #ebebeb;
+}
+
+.main {
+    width: 100%;
+    height: 50%;
+}
+
+.scroll_view,.scroll_view_change {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 180rpx;
+}
+
+.scroll_view_change {
+    bottom: 220px;
+}
+
+.message {
+    width: 100%;
+    height: auto;
+    padding: 10px 15px;
+}
+
+.time {
+    margin: 7px 0;
+    text-align: center;
+}
+
+.time text {
+    display: inline-block;
+    padding: 8rpx 20rpx;
+    font-size: 24rpx;
+    color: #fff;
+    line-height: 24rpx;
+    border-radius: 4rpx;
+    background-color: #cecece;
+}
+
+.user text {
+    margin: auto auto 4px 0;
+    font-size: 12px;
+    color: #dcdcdc;
+    display: block;
+}
+
+.avatar {
+    width: 32px;
+    height: 30px;
+    margin: 0 10px 0 0;
+    border-radius: 8rpx;
+    float: left;
+}
+
+.msg {
+    display: inline-block;
+    position: relative;
+    padding: 12rpx 20rpx;
+    max-width: calc(85% - 40px);
+    font-size: 28rpx;
+    overflow: hidden;
+    text-align: left;
+    word-break: break-all;
+    background-color: #fff;
+    border-radius: 8rpx;
+}
+
+.msg text {
+    line-height: 1.5;
+}
+
+.self {
+    text-align: right;
+}
+
+.self .avatar {
+    float: right;
+    margin: 0 0 0 10px;
+}
+
+.self .user {
+    margin: auto 2px 4px auto;
+    font-size: 12px;
+    color: #dcdcdc;
+}
+
+.self .msg {
+    background-color: #b2e281;
+}
+
+.self .msg :before {
+    right: inherit;
+    left: 100%;
+    border-right-color: transparent;
+    border-left-color: #b2e281;
+}
+
+.room_bar {
+    width: 100%;
+    border-top: 1px solid #e1e1e1;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    background-color: #f5f5f6;
+    padding: 20rpx 20rpx 20rpx;
+}
+
+.send_btn {
+    width: 160rpx;
+    height: 76rpx;
+    line-height: 76rpx;
+    font-size: 32rpx;
+    color: #fff;
+    padding: 0;
+    background-color: #3479f5;
+    text-align: center;
+    margin-left: 10rpx;
+    border-radius: 8rpx;
+}
+
+.audio {
+    width: 4.5%;
+    height: 40%;
+    border: 1px solid rgb(135,152,164);
+    border-radius: 50px;
+    padding: 3px 4px;
+    margin-left: 10px;
+}
+
+.room_bar form {
+    width: 100%;
+    padding: 0;
+    display: block;
+}
+
+.news {
+    height: 80rpx;
+    border: 1px solid #e1e1e1;
+    border-radius: 8rpx;
+    font-size: 32rpx;
+    padding-left: 8rpx;
+    flex: 1;
+    background: #fff;
+}
+
+.emoj {
+    width: 6.8%;
+    height: 60%;
+    margin-right: 10px;
+}
+
+.other_func {
+    width: 100%;
+    height: 30px;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.other_func image {
+    width: 21px;
+    height: 20px;
+}
+
+.emoji_list {
+    margin-top: 30px;
+    width: 100%;
+    height: 145px;
+    background-color: #dddddd;
+    padding-top: 10px;
+    padding-left: 3%;
+    display: none;
+}
+
+.showEmoji {
+    width: 100%;
+    padding: 20rpx 20rpx;
+    display: block;
+}
+
+.emoji_list image,.showEmoji image {
+    width: 26px;
+    height: 26px;
+    margin: 5px 2%;
+}
+
+.emoji {
+    width: 26px;
+    height: 26px;
+    margin: 0 0;
+}
+
+.emoji_item {
+    display: flex;
+    justify-content: space-around;
+    margin-right: 20px;
+}
+
+.template {
+    display: inline;
+}
+
+.template text {
+    font-size: 32rpx;
+}
+
+.open_emoji,.send_image,.open_camera,.v-record {
+    width: 60rpx;
+    height: 60rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10rpx;
+}
+
+.open_emoji image,.send_image image,.open_camera image {
+    width: 56rpx;
+    height: 56rpx;
+}
+
+.v-record {
+    margin-right: 15px;
+}
+
+.v-record .icon-record {
+    width: 9px;
+    height: 20px;
+}
+
+.icon-play {
+    width: 25px;
+    height: 25px;
+    margin: 0 10px;
+}
+
+.icon-mic {
+    width: 13px;
+    height: 25px;
+}
+
+.modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-record .modal-body {
+    width: 164px;
+    height: 164px;
+    background-color: rgba(135,152,164,0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.modal-record .desc {
+    color: rgb(112,126,137);
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.modal-record .dot {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.f-row {
+    display: flex;
+    align-items: center;
+}
+
+.button_bar {
+    display: flex;
+    color: #777;
+    align-items: center;
+    margin-bottom: 20rpx;
+}
+
+.button_bar view {
+    border-radius: 40rpx;
+    border: 1px solid #eee;
+    font-size: 24rpx;
+    padding: 0 20rpx;
+    line-height: 56rpx;
+    height: 56rpx;
+    margin-left: 30rpx;
+    background: #fff;
+}
+
+.weixin_pop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 540rpx;
+    background: #fff;
+    box-shadow: 1px 6px 10px #e1e1e1;
+    margin-left: -270rpx;
+    border-radius: 10rpx;
+    padding: 50rpx 20rpx;
+    text-align: center;
+}
+
+.weixin_pop .btn_copy {
+    width: 280rpx;
+    margin: 60rpx auto 0;
+    border: 1px solid #62b900;
+    border-radius: 6rpx;
+    font-size: 32rpx;
+    padding: 8rpx 0;
+    color: #62b900;
+}
+
+.weixin_pop .btn_copy.dis {
+    background: #f1f1f1;
+    border: 1px solid #ddd;
+    color: #999;
+}
+
+.weixin_pop .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32rpx;
+    color: #333;
+    font-weight: 500;
+}

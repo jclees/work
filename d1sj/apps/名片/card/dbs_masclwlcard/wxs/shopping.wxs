@@ -1,0 +1,28 @@
+function changeMarketPrice(price) {
+    return (price == 0 || !price ? 0 : price / 100)
+};
+
+function chageSalePrice(price, sale) {
+    return (price == 0 || !price ? 0 : Math.round(Math.round(price * (sale || 100)) / 100) / 100)
+};
+
+function changedetailInfo(string) {
+    return (string ? string.split(",") : [])
+};
+
+function productStock(num) {
+    return (num > 0 ? 1 : 0)
+};
+
+function selectedPro(arr) {
+    return (arr && (arr.length > 0) ? arr.some(((function(item) {
+        return (item.selected)
+    }))) : false)
+};
+module.exports = (({
+    changeMarketPrice: changeMarketPrice,
+    chageSalePrice: chageSalePrice,
+    changedetailInfo: changedetailInfo,
+    productStock: productStock,
+    selectedPro: selectedPro,
+}));

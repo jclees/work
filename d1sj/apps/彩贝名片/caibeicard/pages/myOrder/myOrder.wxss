@@ -1,0 +1,23 @@
+@import '/pages/myShare/myShare.wxss';
+
+.order_nav {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  font-size: 28rpx;
+  color: #000;
+  height: 56rpx;
+  padding:20rpx 18rpx;
+  line-height: 56rpx;
+  justify-content: center;
+}
+.order_nav >view{
+  padding:0 18rpx;
+  border: 1px solid #ffbf00;
+}
+.order_nav >view:last-of-type{
+  border-left:0 none;
+}
+.order_nav >view.active {
+  background: #ffbf00;
+}

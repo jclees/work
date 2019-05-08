@@ -1,0 +1,51 @@
+<!-- <loading hidden="{{dataLoaded}}">加载中...</loading> -->
+<view class="container">
+    <view catchtap="addaddress" class="order-address" hidden="{{!hasAddress}}">
+        <image class="address-left-icon" src="../../images/order_icon_location_n.png"></image>
+        <view class="receiver-container">
+            <view class="receiver-mobile">
+                <text class="order-address-receiver">收货人：{{userName}}</text>
+                <text class="order-address-mobile">{{mobile}}</text>
+            </view>
+            <view class="order-addrress-detail">
+                <text class="address-text">收货地址：{{address}}</text>
+            </view>
+        </view>
+        <image class="address-right-icon" src="../../images/order_icon_more_n.png"></image>
+    </view>
+    <view catchtap="addaddress" class="no-order-address" hidden="{{hasAddress}}">
+        <image class="no-address-left-icon" src="../../images/order_icon_location_n.png"></image>
+        <text class="no-address-text">还没有收货地址，立即添加</text>
+        <image class="no-address-right-icon" src="../../images/order_icon_more_n.png"></image>
+    </view>
+    <view class="order-info">
+        <view class="order-info-line">
+            <text class="order-info-money">商品名称</text>
+            <text class="order-info-num">{{detail.shop_name}}</text>
+        </view>
+        <view class="order-info-line">
+            <text class="order-info-money">商品金额</text>
+            <text class="order-info-num">¥{{detail.o_price}}</text>
+        </view>
+        <view class="order-info-line">
+            <text class="order-info-money">商品数量</text>
+            <text class="order-info-num">{{detail.shops_num}}</text>
+        </view>
+        <view class="order-info-total">
+            <text class="order-info-fee">订单总计</text>
+            <text class="order-info-total-num">¥{{detail.total_price}}</text>
+        </view>
+    </view>
+    <view class="line"></view>
+    <view class="place-holder"></view>
+    <view class="bottom-container">
+        <view class="line"></view>
+        <view class="order-pay">
+            <view class="order-pay-real">
+                <text class="real-money">实付金额：</text>
+                <text class="real-num">¥{{detail.total_price}}</text>
+            </view>
+            <text catchtap="payment" class="{{savaStatus?'order-pay-immediately':'order-pay-no'}}">立即支付</text>
+        </view>
+    </view>
+</view>

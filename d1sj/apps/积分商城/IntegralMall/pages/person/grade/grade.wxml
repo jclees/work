@@ -1,0 +1,38 @@
+<!--pages/person/grade/grade.wxml-->
+<view class="container">
+  <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+    <view class="wxapp-toast-content">
+      <view class="wxapp-toast-content-text"> {{toastText}} </view>
+    </view>
+  </view>
+    <view class="grade_tit">
+      <view class="grade_tit_img">
+        <image src="../../../imgs/grade_tit.png"></image>
+      </view>
+      <view class="grade_tit_button">
+        VIP{{gradeDetail.grade}}
+      </view>
+      <view class="grade_tit_text">
+        当前累计积分 {{gradeDetail.alyintegral}},累计积分达{{gradeDetail.nextneed}}升级VIP{{gradeDetail.nextgrade}}
+      </view>
+    </view>
+    <view class="grade_con">
+      <view class="grade_con_tit">
+        等级特权
+      </view>
+      <view class="grade_con_info">
+        <view class="grade_con_info_per" wx:for="{{gradeList}}" wx:for-item="item" wx:key="{{item.title}}">
+          <view class="grade_con_info_per_left">
+            <image src="{{item.image}}"></image>
+          </view>
+          <view class="grade_con_info_per_right">
+            <text>要求:累计积分≥{{item.need}}</text>
+            <text>特权:{{item.privilege}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="grade_con_button">
+        等级说明
+      </view>
+    </view>
+</view>

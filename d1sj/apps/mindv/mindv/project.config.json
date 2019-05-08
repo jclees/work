@@ -1,0 +1,136 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.7.4",
+	"appid": "wx5934a4e0707fb887",
+	"projectname": "%E5%BE%88%E4%B9%85%E4%BB%A5%E5%89%8D-%E7%BA%BF%E4%B8%8A%E7%89%88%E6%9C%AC",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "进入房间",
+					"pathName": "pages/wait/wait",
+					"query": "uid=7&homeId=23",
+					"scene": "1007"
+				},
+				{
+					"id": -1,
+					"name": "game",
+					"pathName": "pages/game/game",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "PK",
+					"pathName": "pages/pk/pk",
+					"query": "id=1",
+					"scene": "1001"
+				},
+				{
+					"id": 3,
+					"name": "挑战PK赛",
+					"pathName": "pages/tzspk/tzspk",
+					"query": "uid=1&pid=1&answer_id=201",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "排行榜",
+					"pathName": "pages/ranking/ranking",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": 5,
+					"name": "邀请好友对战",
+					"pathName": "pages/wait/wait",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "失败",
+					"pathName": "pages/fight/fight",
+					"query": "uid=8&homeId=3711",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "商店",
+					"pathName": "pages/shop/shop",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/person/person",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "分享",
+					"pathName": "pages/share/share",
+					"query": ""
+				},
+				{
+					"id": 10,
+					"name": "题干内容",
+					"pathName": "pages/question/question",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "专场赛",
+					"pathName": "pages/cashmatch/cashmatch",
+					"query": ""
+				},
+				{
+					"id": 12,
+					"name": "mate",
+					"pathName": "pages/mate/mate",
+					"query": ""
+				},
+				{
+					"id": 13,
+					"name": "被邀请进来首页",
+					"pathName": "pages/index/index",
+					"query": "room_id=ofiL90K-0tZQvjWmclD7oGj9mf5Q&to_client_id=ofiL90K-0tZQvjWmclD7oGj9mf5Q&uid=10&is_fpk=1&home_id=13500",
+					"scene": "1001"
+				},
+				{
+					"id": 14,
+					"name": "好友对战",
+					"pathName": "pages/index/index",
+					"query": "is_fpk=1&uid=11&home_id=333",
+					"scene": "1001"
+				}
+			]
+		}
+	}
+}

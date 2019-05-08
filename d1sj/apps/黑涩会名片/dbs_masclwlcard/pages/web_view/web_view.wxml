@@ -1,0 +1,6 @@
+<import src="../../templates/wxParse.wxml"></import>
+<view class="bg_f">
+    <view class="content_box">
+        <template is="wxParse" data="{{wxParseData:content.nodes}}"></template>
+    </view>
+</view>

@@ -1,0 +1,196 @@
+/* pages/shop/pay/pay.wxss */
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: #f6f6f6;
+  padding-top: 20rpx;
+}
+.pay_tit {
+  position: relative;
+  height: 150rpx;
+  background-color: #fff;
+}
+.pay_tit_box {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 56rpx;
+}
+.pay_tit_box image {
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+.pay_tit_box text {
+  vertical-align: middle;
+  color: #737373;
+}
+.pay_info {
+  padding: 25rpx 30rpx;
+  height: 100rpx;
+  background-color: #fff;
+}
+.pay_info_top_right image {
+    width: 32rpx;
+    height: 32rpx;
+    display: block;
+}
+.pay_info_bottom {
+  margin-top: 30rpx;
+}
+.pay_info_bottom_left {
+  width: 90%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.pay_info_bottom_right image {
+  width: 28rpx;
+  height: 34rpx;
+}
+.order_info {
+  margin-top: 20rpx;
+  background-color: #fff;
+  padding: 25rpx 30rpx 0;
+}
+.order_info_tit{
+  display: flex;
+  align-items: center;
+}
+.order_info_tit > image{
+  margin-right: 10rpx;
+}
+.order_info_con {
+  padding-top: 30rpx;
+  padding-bottom: 40rpx;
+  border-bottom:1rpx solid #f6f6f6;
+
+}
+.order_info_con_left {
+  float: left;
+  width: 182rpx;
+  height: 182rpx;
+  margin-right: 35rpx;
+  background-color: red;
+}
+.order_info_con_left image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.order_info_con_right {
+  overflow: hidden;
+  height: 100%;
+  padding-top: 25rpx;
+}
+.order_info_con_right_name_left {
+  width: 85%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.order_info_con_right_name_right {
+  width: 15%;
+}
+.order_info_con_right_style {
+  padding-top: 30rpx;
+  margin-top: 30rpx;
+  color: #737373;
+}
+.order_info_con_right_price {
+  margin-top: 20rpx;
+  
+}
+.order_info_con_right_price text:first-child {
+  color: #ef3338;
+  margin-right: 35rpx;
+}
+.order_info_con_right_price text:last-child {
+  color: #a3a3a3;
+  text-decoration: line-through;
+}
+.order_remarks {
+  margin-top: 20rpx;
+  background-color: #fff;
+  padding: 0 30rpx;
+}
+.order_dev_box {
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1rpx solid #f6f6f6;
+}
+.order_remarks_box {
+  height: auto;
+  padding: 25rpx 0;
+}
+.order_remarks_box_left {
+  width: 10%;
+}
+.order_remarks_box_right {
+  width: 90%;
+  padding-bottom: 25rpx;
+  text-align: right;
+  color: #a3a3a3;
+}
+.input {
+  font-family: "苹方";
+}
+.order_total {
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #fff;
+  padding: 0 30rpx;
+ border-bottom:1rpx solid #f6f6f6;
+}
+.order_total_right {
+  color: #ef3338;
+  text-align: right;
+}
+.order_total_right text:first-child {
+  font-size: 36rpx;
+}
+.order_add {
+  margin-top: 10rpx;
+}
+.order_add_tit {
+  padding: 0 30rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+}
+.order_add_con {
+  background-color: #fff;
+  padding: 35rpx 30rpx;
+  color: #9d9d9d;
+}
+.order_add_con_top text:first-child {
+  margin-right: 56rpx;
+}
+.order_add_con_bottom {
+  margin-top: 20rpx;
+}
+.pay_tab {
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  background-color: #fff;
+  border-top: 1rpx solid #e0e0e0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+.pay_tab_button {
+  width: 263rpx;
+  height: 100%;
+  text-align: center;
+  line-height: 88rpx;
+  background-color: #febd2d;
+  color: #fff;
+}
+.pay_tab_text text:first-child {
+  margin-right: 28rpx;
+}
+.pay_tab_text text:last-child {
+  margin-right: 10rpx;
+  color: #f8494c;
+}

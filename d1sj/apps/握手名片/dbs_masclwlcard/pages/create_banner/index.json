@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "商城设置",
+    "usingComponents": {
+        "head": "/dbs_masclwlcard/components/head/head",
+        "android": "/dbs_masclwlcard/components/android_callmodal/android_callmodal"
+    }
+}

@@ -1,0 +1,41 @@
+<!--pages/ryshop/ryshop.wxml-->
+<view class="warp_page" style="background-image:url({{tupian}}shop_bg02.png)">
+
+  <view class="select_box">
+    <view class="small-girds">
+      <view class="small-gird" wx:for="{{list}}" wx:key="id" wx:for-index="index">
+        <view class="tool_nb" bindtap='smallModel' id="{{item.id}}" data-index="{{index}}" data-title="{{item.name}}">
+            <view class="tool-icon"><image src="{{siteUrl}}{{item.logo}}" /></view>
+          <view class="tool-mon">{{item.name}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="btn_tip-tit">
+      注意：出题时严禁涉及色情低俗、违法犯罪、反动恐怖等话题，如涉及政治、民族、宗教、国家领土极其他法律问题，请自行承担后果。    </view>
+  </view>
+
+  
+</view>
+
+
+<view class="small-model" hidden='{{smallmodel}}'>
+  <view class="model_close" bindtap='modelClose'></view>
+  <view class="model_box">
+      <view class="model_close-icon" bindtap='modelClose'>><image src="{{tupian}}close.png" /></view>
+      <view class="img_logo">
+        <view class="blue_bg"><image src="{{siteUrl}}{{itemType.logo}}" /></view>
+      </view>
+      <view class="img_name">{{title}}</view>
+      <view class="small-girds model_girds">
+          <view class="small-gird" bindtap="addTimu" data-title="{{title}}" data-stitle="{{item.name}}" data-id="{{item.id}}" wx:for="{{lists}}">
+            <view class="class_box">
+              <view class="class_img"><image src="{{siteUrl}}{{item.logo}}" /></view>
+              <view class="m-title">{{item.name}}</view>
+            </view>
+          </view>
+      </view>
+     
+  </view>
+</view> 
+

@@ -1,0 +1,100 @@
+.msgtip {
+  background: #fff;
+  position: fixed;
+  display: flex;
+  top: -170rpx;
+  height: 120rpx;
+  left: 20rpx;
+  right: 20rpx;
+  border-radius: 10rpx;
+  z-index: 9999;
+  align-items: center;
+  padding: 0 40rpx 0 20rpx;
+  box-shadow: 0 1px 20rpx 0 rgba(7, 17, 27, 0.2);
+}
+
+.msgtip .avatar {
+  width: 64rpx;
+  height: 64rpx;
+  margin-right: 20rpx;
+}
+
+.msgtip .avatar image {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 100%;
+}
+
+.msgtip .msgContent {
+  flex: 1;
+  font-size: 28rpx;
+}
+
+.msgtip .num {
+  border-radius: 50%;
+  background: red;
+  color: #fff;
+  height: 34rpx;
+  width: 34rpx;
+  font-size: 22rpx;
+  text-align: center;
+  line-height: 34rpx;
+}
+
+.msgtip.fadeIn {
+  animation: fadeIn 0.4s linear forwards;
+}
+
+.msgtip.fadeOut {
+  animation: fadeOut 0.2s linear forwards;
+}
+
+.go_addcard button {
+  color: #1aad19;
+  border: 1px solid #1aad19;
+  font-size: 24rpx;
+  line-height: 50rpx;
+  height: 50rpx;
+  padding: 0 10rpx;
+  background: transparent;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    top: -170rpx;
+  }
+
+  to {
+    top: 20rpx;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    top: -170rpx;
+  }
+
+  to {
+    top: 20rpx;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    top: 20rpx;
+  }
+
+  to {
+    top: -170rpx;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    top: 20rpx;
+  }
+
+  to {
+    top: -170rpx;
+  }
+}

@@ -1,0 +1,100 @@
+/**newsBreakfast.wxss**/
+
+/*  推荐试听  */
+page{
+  background: #fff;
+}
+.posters_box{
+  padding-top: 50rpx;
+}
+.posters_box > image{
+  width: 590rpx;
+  margin: 0 auto;
+  display: block;
+}
+.posters_box > view{
+  display: flex;
+  font-size: 28rpx;
+  color: #666;
+  justify-content: center;
+  padding-top: 10rpx;
+}
+.posters_box > view image{
+  width: 18rpx;
+  margin-right: 10rpx;
+  margin-left:160rpx;
+}
+.audition {
+  background: #fff;
+  border-top:1px solid #979797;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.audition-title {
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 30rpx;
+  font-size: 30rpx;
+}
+
+.audition .scroll-content {
+  display: flex;
+  white-space: nowrap;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-top:1px solid #979797;
+}
+
+.scroll-content .content {
+  font-size: 0;
+  position: relative;
+  display: inline-block;
+  margin: 30rpx 0 30rpx 40rpx;
+}
+.scroll-content .content:last-child {
+  margin: 30rpx 40rpx 30rpx 40rpx;
+}
+
+.music-img-box {
+  width: 120rpx;
+  height: 120rpx;
+  overflow: hidden;
+}
+
+.music-img {
+  width: 100%;
+  height: 100%;
+}
+
+.music-name {
+  height: 30rpx;
+  line-height: 30rpx;
+  margin-top: 10rpx;
+  position: relative;
+  width: 320rpx;
+}
+
+.music-name image {
+  width: 14rpx;
+  margin-right: 5rpx;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.music-name text {
+  font-size: 28rpx;
+  padding-left: 20rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+.check-ins{
+  background: #ff6663;
+  color: #fff;
+  top: 190rpx;
+}

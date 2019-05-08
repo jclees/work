@@ -1,0 +1,84 @@
+page{
+  background: #fff;
+}
+button::after {
+  border: 0;
+} 
+.layer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.layer .layer_cover{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, .4);
+}
+.layer .layer_main{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 999;
+  width: 72%;
+}
+.layer .layer_main .layer_main_cover{
+  border-radius: 30rpx;
+  background: #fff;
+  width: 100%;
+  padding: 40rpx;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 99;
+}
+.layer .layer_main .layer_main_cover .layer_main_cover_bgpic{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+.layer .layer_main .layer_title{
+  font-size: 38rpx;
+  text-align: center;
+}
+.layer .layer_main .layer_content{
+  font-size: 32rpx;
+  line-height: 48rpx;
+  margin-top: 40rpx;
+}
+.layer .layer_main .layer_btn_group{
+  margin-top: 40rpx;
+}
+.layer .layer_main .layer_btn_group button{
+  font-size: 36rpx;
+  background: #ff6663;
+  color: #fff;
+  border: 2rpx solid #f25754;
+  padding: 0;
+  width: 80%;
+}
+.layer .layer_close{
+  border:6rpx solid #fff;
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 200rpx;
+  position: relative;
+  margin: 60rpx auto;
+  z-index: 999;
+}
+.layer .layer_close::after{
+  content: '×';
+  font-size: 90rpx;
+  color: #fff;
+  position: absolute;
+  left: 10rpx;
+  top: -20rpx;
+}

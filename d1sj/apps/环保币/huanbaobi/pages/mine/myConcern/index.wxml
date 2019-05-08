@@ -1,0 +1,87 @@
+<view>
+  <view class="tab-h">
+    <form report-submit class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindsubmit="swichNav">
+      <button hover-class='none' form-type='submit'>
+        我的粉丝
+      </button>
+    </form>
+    <form report-submit class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindsubmit="swichNav">
+      <button hover-class='none' form-type='submit'>
+        公益企业
+      </button>
+    </form>
+    <form report-submit class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindsubmit="swichNav">
+      <button hover-class='none' form-type='submit'>
+        公益达人
+      </button>
+    </form>
+  </view>
+
+  <swiper current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+    <swiper-item wx:for="[1,2,3]" wx:key="">
+      <scroll-view scroll-y="true" style='height:100%;'>
+
+        <view class='nulldata_wrap' wx:if="{{lists.length <= 0}}">
+          <image src='/images/null_data.png' mode='widthFix'></image>
+          <view class='msg'>暂无数据</view>
+        </view>
+
+        <view class="tab-content" wx:for="{{lists}}" wx:key="">
+          <view class='lt'>
+            <image src='{{item.avatar}}' class="{{currentTab == 1?'qy':''}}" mode='aspectFill'></image>
+          </view>
+          <view class='rt'>
+            <view style='max-width:320rpx;'>
+              <view class='txt ellipsis'>{{item.name}}</view>
+            </view>
+            <form report-submit bindsubmit='guanzhu' data-idx="{{index}}" data-id="{{item.member_id}}" data-business_id="{{currentTab == 1?'1':'0'}}">
+              <button form-type='submit' class='guz_btn {{item.status == 1?"in":""}}' hover-class='none'>{{item.status == 1?"取消关注":"+ 关注"}}</button>
+            </form>
+          </view>
+        </view>
+
+
+      </scroll-view>
+    </swiper-item>
+    <!-- <swiper-item>
+      <scroll-view scroll-y="true" style='height:100%;'>
+
+        <view class="tab-content" wx:for="{{lists}}" wx:key="">
+          <view class='lt'>
+            <image src='{{item.avatar}}' mode='aspectFill'></image>
+          </view>
+          <view class='rt'>
+            <text>{{item.name}}</text>
+            <form report-submit bindsubmit='guanzhu' data-id="{{item.member_id}}" data-business_id="1">
+              <button form-type='submit' class='guz_btn {{item.status == 1?"in":""}}' hover-class='none'>{{item.status == 1?"取消关注":"+ 关注"}}</button>
+            </form>
+          </view>
+        </view>
+
+
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true" style='height:100%;'>
+
+        <view class="tab-content" wx:for="{{lists}}" wx:key="">
+          <view class='lt'>
+            <image src='{{item.avatar}}' mode='aspectFill'></image>
+          </view>
+          <view class='rt'>
+            <text>{{item.name}}</text>
+            <form report-submit bindsubmit='guanzhu' data-id="{{item.member_id}}" data-idx="{{index}}" data-business_id="0">
+              <button form-type='submit' class='guz_btn {{item.status == 1?"in":""}}' hover-class='none'>{{item.status == 1?"取消关注":"+ 关注"}}</button>
+            </form>
+          </view>
+        </view>
+
+
+      </scroll-view>
+    </swiper-item> -->
+
+
+  </swiper>
+</view>
+<!-- 回收按钮 -->
+<include src="/pages/module/huishouBtn/index.wxml" />

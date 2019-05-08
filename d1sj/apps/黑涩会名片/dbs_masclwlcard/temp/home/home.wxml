@@ -1,0 +1,126 @@
+<template name="home">
+  <scroll-view scrollY id="scroll" style="height:{{winHeight}}px;">
+    <view class='mine_wrap'>
+      <!-- <view class='mine_user'>
+        <image class="user_bg" mode="aspectFill" src="/dbs_masclwlcard/images/user_bg.png"></image>
+        <view class='user_main'>
+          <view class='user_info'>
+            <image class="user_img" mode="aspectFill" src="{{card_detail2.card_logo?card_detail2.card_logo:users.avatarUrl}}"></image>
+            <view class="user_name">{{card_detail2.card_name ? card_detail2.card_name:users.nickName}}</view>
+          </view>
+          <view class="user_btns">
+            <view data-id="1" bindtap='popLock'>购买VIP</view>
+            <view>
+              <view data-id="2" bindtap='popLock'>提现</view>
+              <image class="" mode="widthFix" src="/dbs_masclwlcard/images/icon_tips.png" bindtap='jump_url' data-url="/dbs_masclwlcard/pages/profit_details/profit_details"></image>
+            </view>
+          </view>
+        </view>
+      </view> -->
+      <view class='mine_user'>
+        <view class='mine_user_bg'>
+        </view>
+        <view class="mine_user_main {{vipGard.is_vip == 1 ?'act_vip':''}}">
+          <view class="mine_user_hd">
+            <image bindtap='jump_url' data-url="/dbs_masclwlcard/pages/tab/tab" data-typ="1" class="mine_user_hd_img" mode="aspectFill" src="{{card_detail2.card_logo?card_detail2.card_logo:users.avatarUrl}}"></image>
+            <view class="mine_user_info">
+              <view>
+                <view>{{card_detail2.card_name ? card_detail2.card_name:users.nickName}}</view>
+                <block>
+                  <image class="vip" mode="widthFix" src="/dbs_masclwlcard/images/mine/vip_{{vipGard.vip_level}}.png" wx:if="{{vipGard.is_vip == 1}}"></image>
+                  <image class="vip" mode="widthFix" src="/dbs_masclwlcard/images/mine/vip_0.png" wx:else></image>
+                </block>
+
+                <image class="kol" mode="widthFix" src="/dbs_masclwlcard/images/mine/m_{{vipGard.stock_type}}.png" wx:if="{{vipGard.stock_type != 0}}"></image>
+                <image class="kol" mode="widthFix" src="/dbs_masclwlcard/images/mine/k_{{vipGard.kol_level}}.png" wx:if="{{vipGard.kol_level != 0}}"></image>
+
+              </view>
+              <view>{{vipGard.is_vip == 1?"握手VIP："+vipGard.vip_out_date:'开通会员享特权'}}</view>
+            </view>
+            <view class="buy_vip" data-id="1" bindtap='buyVipPop'>{{vipGard.is_vip == 1?'续费会员':'开通会员'}}</view>
+          </view>
+          <view class='mine_user_bd'>
+            <view class="btns">
+              <view bindtap='tXianPop'>{{earning === "0.00" || !earning?"提现":"可提现:"+earning}}</view>
+              <text class="btn_line"></text>
+              <view bindtap='jump_url' data-url="/dbs_masclwlcard/pages/profit_details/profit_details">明细</view>
+            </view>
+            <image mode="widthFix" src="/dbs_masclwlcard/images/mine/intro{{vipGard.is_vip == 1?'_act':''}}.png" bindtap='jump_url' data-url="/dbs_masclwlcard/pages/intro/intro"></image>
+          </view>
+        </view>
+      </view>
+      <view class='mine_list'>
+        <view class="items">
+          <view class='item_tit'>名片</view>
+          <view class="item_con clearfix">
+            <view bindtap='jump_url' data-url="/dbs_masclwlcard/pages/create_card/create_card?type=1">
+              <image src='/dbs_masclwlcard/images/mine/icon_mine01.png' mode='widthFix'></image>
+              <view>名片修改</view>
+            </view>
+            <view bindtap='jump_url' data-url="/dbs_masclwlcard/pages/tab/tab" data-typ="1">
+              <image src='/dbs_masclwlcard/images/mine/icon_mine02.png' mode='widthFix'></image>
+              <view>进入我的名片</view>
+            </view>
+            <view bindtap='jump_url' data-url="/dbs_masclwlcard/pages/load/load">
+              <image src='/dbs_masclwlcard/images/mine/icon_mine03.png' mode='widthFix'></image>
+              <view>我的名片夹</view>
+            </view>
+          </view>
+        </view>
+        <view class="items">
+          <view class='item_tit'>产品</view>
+          <view class="item_con clearfix">
+            <view bindtap='jump_url' data-url="/dbs_masclwlcard/pages/create_banner/index">
+              <image src='/dbs_masclwlcard/images/mine/icon_mine04.png' mode='widthFix'></image>
+              <view>商城设置</view>
+            </view>
+            <view bindtap='jump_url' data-url="/dbs_masclwlcard/pages/product_list/product_list">
+              <image src='/dbs_masclwlcard/images/mine/icon_mine05.png' mode='widthFix'></image>
+              <view>商品管理</view>
+            </view>
+            <view bindtap='jump_url' data-url="/dbs_masclwlcard/pages/myOrder/myOrder">
+              <image src='/dbs_masclwlcard/images/mine/icon_mine06.png' mode='widthFix'></image>
+              <view>订单管理</view>
+            </view>
+          </view>
+        </view>
+        <view class="items">
+          <view class='item_tit'>内容</view>
+          <view class="item_con clearfix">
+            <view bindtap='jump_url' data-url="/dbs_masclwlcard/pages/create_network/create_network">
+              <image src='/dbs_masclwlcard/images/mine/icon_mine07.png' mode='widthFix'></image>
+              <view>官网管理</view>
+            </view>
+            <view data-id="3" bindtap='popLock'>
+              <image src='/dbs_masclwlcard/images/mine/icon_mine08.png' mode='widthFix'></image>
+              <view>最新动态</view>
+            </view>
+          </view>
+        </view>
+        <view class="items">
+          <view class='item_tit'>雷达</view>
+          <view class="item_con clearfix">
+            <view bindtap='jump_url' data-url="/dbs_masclwlcard/pages/myLeida/tongji/index">
+              <image src='/dbs_masclwlcard/images/mine/icon_mine09.png' mode='widthFix'></image>
+              <view>统计</view>
+            </view>
+            <view bindtap='jump_url' data-url="/dbs_masclwlcard/pages/myLeida/kehu/index">
+              <image src='/dbs_masclwlcard/images/mine/icon_mine10.png' mode='widthFix'></image>
+              <view>客户</view>
+            </view>
+            <view bindtap='jump_url' data-url="/dbs_masclwlcard/pages/myLeida/xingwei/index?c=666">
+              <image src='/dbs_masclwlcard/images/mine/icon_mine11.png' mode='widthFix'></image>
+              <view>行为</view>
+            </view>
+          </view>
+        </view>
+        <view class='comp_txt'>
+          <text decode>© 北京第一时间网络科技有限公司</text>
+        </view>
+      </view>
+    </view>
+    <view style="height:60px;background:transparent;"></view>
+  </scroll-view>
+
+  <!-- <loading hidden="{{dataLoaded}}">加载中...</loading> -->
+</template>

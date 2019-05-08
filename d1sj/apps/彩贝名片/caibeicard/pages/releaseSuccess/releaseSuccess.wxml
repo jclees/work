@@ -1,0 +1,32 @@
+<view class="pd_img" data-id="2" bindtap='backPage'>
+  <image mode='aspectFit' src='{{sellProductData.img}}'></image>
+  <view>查看绘本详情</view>
+</view>
+<view class="submit_tips">
+  <view>提交成功</view>
+  <text>提交绘本成功，点击邀请好友，得成长值~
+  </text>
+</view>
+<view class="share_types">
+  <button hover-class='none' data-id="0" bindtap='backPage'>
+    <view class="img_box">
+      <image src='{{img_url}}icon_fb_backindex.png' mode='widthFix'></image>
+    </view>
+    <view class="share_types_txt">返回首页</view>
+  </button>
+  <button hover-class='none' data-id="1" bindtap='backPage'>
+    <view class="img_box">
+      <image src='{{img_url}}icon_fb_add.png' mode='widthFix'></image>
+    </view>
+    <view class="share_types_txt">继续发布</view>
+  </button>
+  <button hover-class='none' open-type='share'>
+    <view class="img_box">
+      <image src='{{img_url}}icon_fb_share.png' mode='widthFix'></image>
+    </view>
+    <view class="share_types_txt">邀请好友得成长值</view>
+  </button>
+  <view class="coin_tips" style=''>
+      分享可获成长值
+    </view>
+</view>

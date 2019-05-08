@@ -1,0 +1,59 @@
+<!-- 引导页 -->
+<view wx:if="{{clearSkip}}" bindtap='skipGuide' class="skip_btn">跳过{{skip}}</view>
+<swiper current="{{guideInde}}" indicator-dots="true" indicator-color="#e6e6e6" indicator-active-color="#b5b5b5">
+  <block wx:for="{{imgs}}" wx:key="">
+    <swiper-item class="swiper-items">
+     <button class="button-img" bindgetuserinfo="getUserInfo" lang="zh_CN" open-type="getUserInfo" wx:if="{{index == imgs.length - 1}}"><image class="swiper-image" src="{{item}}" mode='aspectFit'></image></button>
+      <image class="swiper-image" src="{{item}}" mode='aspectFit' wx:else></image>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 授权 -->
+<view class='pop-box' wx:if="{{pop4}}" catchtouchmove="myCatchTouch">
+  <view class='pop-bg'></view>
+  <view class='pop-main contact_main'>
+    <view class='pop-title'>
+      <text>完善个人信息 共享绘本之旅</text>
+    </view>
+    <form bindsubmit="submitRegData" report-submit="true">
+      <view class='pop-content'>
+        <view>
+          <label>姓名：</label>
+          <input placeholder='请输入名字' name="consignee"></input>
+        </view>
+        <view>
+          <label>电话：</label>
+          <input placeholder='请输入电话' name="phone" type='number'></input>
+        </view>
+        <view>
+          <label>详细地址：</label>
+          <picker mode="region" bindchange="bindPickerChange" value="{{region}}" custom-item="{{customItem}}" name="p_c_a" data-id="0">
+            <view class="picker">
+              {{region[0]}}-{{region[1]}}-{{region[2]}}
+            </view>
+            <view class="sel_icon"></view>
+          </picker>
+          <!-- <input placeholder='省、市、区'></input> -->
+        </view>
+        <!-- <view>
+          <input placeholder='请填写详细地址' name="address"></input>
+        </view> -->
+        <view>
+          <label>居住小区：</label>
+          <input placeholder='请输入居住小区' name="place"></input>
+        </view>
+        <view>
+          <label>宝宝年龄：</label>
+          <picker bindchange="bindPickerChange" value="index" data-id="1" range="{{navbarsub}}" range-key="age" name="age_id">
+            <view class='picker'>
+              {{navbarsub[index].age}}岁
+            </view>
+            <view class="sel_icon"></view>
+          </picker>
+          <!-- <input placeholder='请选择宝宝年龄' name="age"></input> -->
+        </view>
+        <button formType="submit" class="submit_btn">立即开启</button>
+      </view>
+    </form>
+  </view>
+</view>

@@ -1,0 +1,16 @@
+<view class="layer" wx:if="{{layer.layerShow}}">
+  <view class="layer_cover" bindtap="close"></view>
+  <view class="layer_main">
+    <view class="layer_main_cover">
+       <image src="{{layerBgPic}}" class="layer_main_cover_bgpic" wx:if='{{layerBgPicStatus}}'></image> 
+      <view class="layer_title">温馨提示</view>
+      <view class="layer_content">
+        <text>{{layer.layerContentTxt}}</text>
+      </view>
+      <view class="layer_btn_group" wx:if="{{layer.layerBtnStatus}}">
+        <button bindtap="close">{{layer.layerBtntTxt}}</button>
+      </view>
+    </view>
+    <view class="layer_close" wx:if="{{layer.layerClose}}"></view>
+  </view>
+</view>

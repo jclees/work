@@ -1,0 +1,72 @@
+page {
+  background: #fff;
+}
+
+.up_idcard .tips {
+  background: #f7f7f7;
+  padding: 30rpx 0 20rpx 40rpx;
+  font-size: 26rpx;
+  color: #4d4d4d;
+}
+
+.up_idcard_main {
+  padding: 0 40rpx;
+  font-size: 26rpx;
+  color: #a6a6a6;
+}
+
+.up_idcard_main .tit {
+  font-size: 30rpx;
+  color: #1a1a1a;
+}
+
+.up_idcard_main .tit {
+  font-size: 30rpx;
+  color: #1a1a1a;
+  margin: 50rpx 0 30rpx 0;
+}
+
+.up_idcard_main .exp image {
+  width: 124rpx;
+}
+
+.up_idcard_main .up_btn {
+  font-size: 24rpx;
+  color: #a6a6a6;
+  line-height: normal;
+  border: 1px solid #979797;
+  border-radius: 16rpx;
+  min-height: 381.8rpx;
+  margin-top: 30rpx;
+}
+
+.up_idcard_main .up_btn > image {
+  width: 100%;
+  height: 381.8rpx;
+}
+
+.up_idcard_main .up_btn > view image {
+  width: 84rpx;
+  margin-bottom: 10rpx;
+  margin-top: 120rpx;
+}
+
+.sava_btn {
+  background: #4378e6;
+  border-radius: 100px;
+  color: #fff;
+  margin: 90rpx 0 90rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+
+.shenheing > image {
+  width: 100%;
+}
+
+.shenheing .tips {
+  text-align: center;
+  margin: 110rpx auto;
+  font-size: 28rpx;
+  color: #666;
+}

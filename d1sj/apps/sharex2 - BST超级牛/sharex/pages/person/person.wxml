@@ -1,0 +1,145 @@
+<!--pages/person/person.wxml-->
+<view class="container">
+  <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+    <view class="wxapp-toast-content">
+      <view class="wxapp-toast-content-text"> {{toastText}} </view>
+    </view>
+  </view>
+  <view class="index">
+    <image src="{{imgUrl}}person_bgc.png"></image>
+    <view class="index_box">
+      <view class="index_box_tit">
+        <view class="index_box_tit_img">
+          <image src="{{user.userInfo.avatarUrl}}"></image>
+          <view class='btn-level' bindtap="{{userType == 2 ?'openRanking':'openPop'}}">
+            <image src='{{imgUrl}}level.png' mode='widthFix'></image>
+            <text>{{userType == 2 ?'小咖排行榜':'4倍分享收益'}}</text>
+          </view>
+        </view>
+        <view class="index_box_tit_text">
+          <text>总收益:{{money}}枚</text>
+          <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+            <image src="{{imgUrl}}tixian.png"></image>
+          </button>
+        </view>
+      </view>
+      <view class="index_box_con">
+        <view class="index_box_con_tit">新明细记录 <text style="font-size:24rpx;">(原有明细需好友重新进入新小程序)</text></view>
+        <!-- 有记录 -->
+        <scroll-view scroll-y="true">
+          <view class="index_box_con_info" wx:if="{{list.length!==0}}" wx:for="{{list}}" wx:for-item="item" wx:key="{{item.id}}">
+            <view class="index_box_con_info_per">
+              <view class="index_box_con_info_per_img">
+                <image src="{{item.avatar}}"></image>
+              </view>
+              <view class="index_box_con_info_per_name">
+                <view>{{item.name}}</view>
+                <view>{{item.created_at}}</view>
+              </view>
+              <view class="index_box_con_info_per_right1" wx:if="{{item.type==1}}">
+                <text decode="true">友：{{item.friend}}枚&nbsp;&nbsp;&nbsp;</text>
+                <text>佣：{{item.maid}}枚</text>
+              </view>
+              <view class="index_box_con_info_per_right1" wx:if="{{item.type==2}}">
+                <text>提现{{item.balance}}枚</text>
+              </view>
+              <view class="index_box_con_info_per_right1" wx:if="{{item.type==3}}">
+                <text>拆红包获得{{item.balance}}枚</text>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+
+
+        <!-- 没有记录 -->
+        <view class="index_box_con_info1" wx:if="{{list.length===0}}">
+          <view class="index_box_con_info_img">
+            <image src="{{imgUrl}}order.png"></image>
+          </view>
+          <view class="index_box_con_info_text">
+            <text>暂无记录</text>
+            <text>分享给好友,你也能获得GNX!</text>
+          </view>
+          <view class="index_box_text" bindtap="openPop">
+            <image src="{{imgUrl}}wenti1.png"></image>
+            <text>升级小咖享8倍收益</text>
+          </view>
+        </view>
+      </view>
+      <view class="send_quninfo" bindtap="openPop3">申请加入小咖群</view>
+    </view>
+  </view>
+  
+  <!-- 说明弹出框 -->
+  <view class="pop" wx:if="{{rule}}">
+    <view class="cover" bindtap="closePop"></view>
+    <view class="pop_box">
+      <image src="{{imgUrl}}pop_bgc.png"></image>
+      <view class="pop_box_info">
+        <view class="pop_box_info_tit">
+          <text>{{xkPopData.title1}}</text>
+        </view>
+        <view class="pop_box_info_close" bindtap="closePop">
+          <image src="{{imgUrl}}close2.png"></image>
+        </view>
+        <view class="pop_box_info_con">
+          <image src='{{xkPopData.xk_con}}'></image>
+          <!-- <text>要求：</text>
+          <view>币圈好友5名,5个百人币圈微信群</view>
+          <view class='last'>满足以上要求，可申请币圈小咖，申请成功后，每次分享可获得8倍收益！申请操作如图：</view>
+          <image src='{{imgUrl}}apply.png' mode='widthFix'></image> -->
+        </view>
+        <button class="pop_box_info_button" open-type='contact'>
+          <image src="{{imgUrl}}shenqing.png"></image>
+        </button>
+        <view class="hf_txt">{{xkPopData.huifu1}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 说明弹出框2 -->
+  <view class="pop" wx:if="{{rule2}}">
+    <view class="cover" bindtap="closePop2"></view>
+    <view class="pop_box">
+      <image src="{{imgUrl}}pop_bgc.png"></image>
+      <view class="pop_box_info">
+        <view class="pop_box_info_tit">
+          <text>{{xkPopData.title2}}</text>
+        </view>
+        <view class="pop_box_info_close" bindtap="closePop2">
+          <image src="{{imgUrl}}close2.png"></image>
+        </view>
+        <view class="pop_box_info_con">
+          <image src='{{xkPopData.xk_con2}}'></image>
+        </view>
+        <button class="pop_box_info_button" open-type='contact'>
+          <image src="{{imgUrl}}shenqing.png"></image>
+        </button>
+        <view class="hf_txt">{{xkPopData.huifu2}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 说明弹出框3 -->
+  <view class="pop" wx:if="{{rule3}}">
+    <view class="cover" bindtap="closePop3"></view>
+    <view class="pop_box">
+      <image src="{{imgUrl}}pop_bgc.png"></image>
+      <view class="pop_box_info">
+        <view class="pop_box_info_tit">
+          <text>{{xkPopData.title3}}</text>
+        </view>
+        <view class="pop_box_info_close" bindtap="closePop3">
+          <image src="{{imgUrl}}close2.png"></image>
+        </view>
+        <view class="pop_box_info_con">
+          <image src='{{xkPopData.xk_con3}}'></image>
+        </view>
+        <button class="pop_box_info_button" open-type='contact'>
+          <image src="{{imgUrl}}shenqing.png"></image>
+        </button>
+        <view class="hf_txt">{{xkPopData.huifu3}}</view>
+      </view>
+    </view>
+  </view>
+</view>

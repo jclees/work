@@ -1,0 +1,63 @@
+page {
+  background: #f6f6f6;
+}
+.null_data {
+  padding-top: 200rpx;
+  font-size: 32rpx;
+  color: #666;
+  text-align: center;
+}
+
+.null_data image {
+  width: 432rpx;
+}
+
+.con_main {
+  font-size: 26rpx;
+  color: #1a1a1a;
+}
+
+.con_main .con_bot {
+  background: #fff;
+}
+.con_main .con_bot .items{
+  border-bottom:1px solid #f8f8f8;
+}
+.con_main .con_bot .items:first-of-type{
+  border-top:1px solid #f8f8f8;
+}
+
+.con_main .con_bot .items > .items_main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx 40rpx;
+}
+.con_main .con_bot .items > .items_main .time {
+  font-size: 22rpx;
+  color: #b3b3b3;
+}
+
+.con_main .con_bot .items > .items_main > view {
+  display: flex;
+  align-items: center;
+}
+
+.con_main .con_bot .items > .items_main > view image {
+  width: 96rpx;
+  margin: 0 40rpx 0 0;
+  border-radius: 100%;
+  background: #efefef;
+  flex-shrink: 0;
+}
+
+.con_main .con_bot .items > .items_main > image {
+  width: 32rpx;
+}
+.con_main .con_bot .items > .items_sub {
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1px solid #efefef;
+}

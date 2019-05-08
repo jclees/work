@@ -1,0 +1,34 @@
+/* pages/coin/coin.wxss */
+
+page {
+  background: #fff;
+}
+
+.coin-box {
+  padding: 25rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.coin {
+  width: 33.33%;
+  padding: 20rpx 10rpx;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 0;
+}
+
+.coin image {
+  width: 50%;
+}
+
+.coin view {
+  font-size: 32rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.coin text {
+  font-size: 28rpx;
+  color: #ff8533; 
+}

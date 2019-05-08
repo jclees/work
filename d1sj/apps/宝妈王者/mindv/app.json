@@ -1,0 +1,26 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/question/question",
+    "pages/ranking/ranking",
+    "pages/game/game",
+    "pages/fight/fight",
+    "pages/topic/topic",
+    "pages/answer/answer",
+    "pages/person/person",
+    "pages/share/share",
+    "pages/status/status",
+    "pages/noPass/noPass",
+    "pages/shop/shop",
+    "pages/cashmatch/cashmatch",
+    "pages/duizhan/duizhan",
+    "pages/likai/likai"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fed257",
+    "navigationBarTitleText": "妈咪王者",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#fed257"
+  }
+}

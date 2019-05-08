@@ -1,0 +1,95 @@
+/* pages/community/community.wxss */
+
+page {
+  background: #fff;
+}
+
+.likes-box {
+  padding: 30rpx 30rpx 0rpx;
+}
+.likes-box view {
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+}
+
+.likes-box checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 50rpx;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.likes-box checkbox-group label {
+  width: 50%;
+  font-size: 0;
+  margin-top: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.likes-box checkbox-group label text {
+  font-size: 28rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-left: 10rpx;
+}
+
+.likes-box checkbox-group label checkbox {
+  box-sizing: border-box;
+}
+
+.qita {
+  width: 100%;
+  margin-top: 20rpx;
+  display: flex;
+  font-size: 0;
+}
+
+.qita text {
+  font-size: 28rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.qita input {
+  width: 200rpx;
+  border-bottom: 1px solid #979797;
+  font-size: 28rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.btn-submit {
+  padding: 0 180rpx;
+  margin: 70rpx 0 20rpx;
+}
+
+.btn-submit button {
+  background: #ff6663;
+  color: #fff;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-radius: 45rpx;
+  font-size: 34rpx;
+}
+
+.pos {
+  padding: 0 25rpx;
+  display: inline-block;
+  height: 60rpx;
+  line-height: 1.4;
+  border-radius: 30rpx;
+  background: #f3f5f8;
+  margin-top: 10rpx;
+  position: relative;
+}
+
+.pos image {
+  width: 18rpx;
+}
+
+.pos text {
+  font-size: 28rpx;
+  margin-left: 10rpx;
+}

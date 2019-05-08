@@ -1,0 +1,114 @@
+page {
+  background: #fafafa;
+}
+
+.one_card .card_show {
+  padding: 48rpx 28rpx;
+}
+
+.one_card .card_show > view {
+  padding: 40rpx;
+  background: #fff;
+  border-radius: 15rpx;
+  box-shadow: 0 0 30rpx rgba(0, 0, 0, 0.1);
+  font-size: 26rpx;
+  color: #959595;
+}
+
+.card_show .card_top {
+  display: flex;
+  align-items: center;
+}
+
+.card_show .card_top .use_img {
+  position: relative;
+}
+
+.card_show .card_top .use_img image:nth-child(1) {
+  width: 130rpx;
+  height: 130rpx;
+  background: #efefef;
+}
+
+.card_show .card_top .use_img image:nth-child(2) {
+  width: 38rpx;
+  position: absolute;
+  left: 50%;
+  bottom: 10rpx;
+  margin-left: -19rpx;
+}
+
+.card_show .card_top .use_info {
+  margin-left: 30rpx;
+}
+
+.card_show .card_top .use_info > view {
+  padding-bottom: 15rpx;
+}
+
+.card_show .card_top .use_info > view:nth-child(1) {
+  font-size: 40rpx;
+  color: #000;
+}
+
+.card_show .card_bot {
+  padding-top: 60rpx;
+  display: flex;
+  align-items: center;
+}
+
+.card_show .card_bot > image {
+  width: 30rpx;
+  margin-right: 25rpx;
+}
+
+.form_info {
+}
+
+.form_info .items {
+  padding: 0 36rpx;
+  margin-bottom: 20rpx;
+  border-bottom: 1px solid #ececec;
+  background: #fff;
+}
+
+.form_info .items > view {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ececec;
+  font-size: 32rpx;
+}
+
+.form_info .items > view:last-of-type {
+  border: 0 none;
+}
+
+.form_info .items label {
+  width: 160rpx;
+}
+
+.form_info .items label text {
+  color: #f23c3c;
+}
+
+.form_info .items input {
+  height: 95rpx;
+  line-height: 95rpx;
+  flex: 1;
+}
+
+.sava_btn {
+  padding: 40rpx;
+}
+
+.auout_cardtxt {
+  text-align: center;
+
+}
+.auout_cardtxt >text{
+  font-size: 28rpx;
+  color: #999;
+  border-bottom: 1px solid #999;
+  padding-bottom: 1rpx;
+  display: inline-block;
+}

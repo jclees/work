@@ -1,0 +1,843 @@
+page {
+  background: #edeef2;
+}
+
+view, cover-view {
+  box-sizing: border-box;
+}
+button{
+  background: transparent;
+  /* line-height: normal; */
+}
+button::after {
+  border: 0 none;
+}
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.mult_line_ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.clearfix:before, .clearfix:after {
+  height: 0;
+  width: 0;
+  clear: both;
+  content: "";
+  margin: 0;
+  padding: 0;
+  display: block;
+  visibility: hidden;
+}
+
+.go_config_btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  padding: 0;
+  background: transparent;
+  line-height: inherit;
+  border-radius: 0;
+  font-size: 32rpx;
+  color: #737373;
+}
+
+.go_config_btn .btn_txt {
+  color: #1aad19;
+  text-align: center;
+  font-size: 24rpx;
+  width: 100%;
+  text-decoration: underline;
+}
+
+.go_config_btn .btn {
+  border-radius: 8rpx;
+  font-size: 26rpx;
+  color: #1aad19;
+  border: 1px solid #1aad19;
+  padding: 6rpx 20rpx 8rpx 20rpx;
+  margin-left: 20rpx;
+}
+
+.weal_tips {
+  font-size: 24rpx;
+  padding: 40rpx 30rpx;
+  color: #3c3c3c;
+}
+
+.weal_tips .txt {
+  color: #949494;
+  padding-top: 10rpx;
+}
+
+.weal_tips .txt button {
+  font-size: 24rpx;
+  line-height: 0;
+  color: #0367fe;
+  display: inline;
+  padding: 0;
+  margin: 0;
+}
+
+.null_data {
+  padding-top: 200rpx;
+  font-size: 32rpx;
+  color: #737373;
+  text-align: center;
+}
+
+.null_data image {
+  width: 432rpx;
+}
+
+.scroll_box {
+  transition: all 0.5s ease-in-out;
+}
+
+image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.no_data {
+  text-align: center;
+  font-size: 40rpx;
+  color: #888;
+  padding: 40rpx;
+}
+
+.t_chat_tip {
+  width: 80rpx;
+  height: 80rpx;
+  position: fixed;
+  bottom: 40rpx;
+  right: 40rpx;
+  z-index: 1000000;
+}
+
+.t_chat_tip image {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.t_chat_num {
+  font-size: 24rpx;
+  height: 30rpx;
+  min-width: 30rpx;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  right: 0;
+  background: red;
+  color: #fff;
+  border-radius: 15rpx;
+}
+
+view[data-style="center"] {
+  text-align: center;
+}
+
+view[data-style="right"] {
+  text-align: right;
+}
+
+.t_chat_num {
+  font-size: 24rpx;
+  height: 30rpx;
+  min-width: 30rpx;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  right: 0;
+  background: red;
+  color: #fff;
+  border-radius: 15rpx;
+}
+
+.tip_authorize {
+  position: fixed;
+  z-index: 99999999;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.authorize {
+  background: rgba(255, 255, 255, 1);
+  border-radius: 8rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 378rpx;
+  width: 600rpx;
+}
+
+.error_img {
+  height: 150rpx;
+  width: 150rpx;
+  margin: 15rpx auto 0;
+}
+
+.tip_text {
+  margin-top: 30rpx;
+  font-size: 36rpx;
+  color: #353535;
+  text-align: center;
+}
+
+.tip_text text {
+  line-height: 1.5;
+}
+
+.setauthorize {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 94rpx;
+}
+
+.buttom_view {
+  text-align: center;
+  line-height: 94rpx;
+  font-size: 36rpx;
+  color: #1aad19;
+  background: #f7f7f7;
+}
+
+.button_button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  z-index: 1000;
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes bounceInDown {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0, 25px, 0);
+  }
+
+  75% {
+    transform: translate3d(0, -10px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, 5px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes bounceInDown {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0, 25px, 0);
+  }
+
+  75% {
+    transform: translate3d(0, -10px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, 5px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.bounceInDown {
+  animation-name: bounceInDown;
+}
+
+@-webkit-keyframes bounceInLeft {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translate3d(-3000px, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(25px, 0, 0);
+  }
+
+  75% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  90% {
+    transform: translate3d(5px, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes bounceInLeft {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translate3d(-3000px, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(25px, 0, 0);
+  }
+
+  75% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  90% {
+    transform: translate3d(5px, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.login_title_text {
+  padding: 56rpx 0 30rpx 0;
+  font-size: 40rpx;
+  color: #c5c5c0;
+  line-height: 1;
+  text-align: center;
+  font-weight: bolder;
+  background: #f7f7f7;
+}
+
+.login_tip_text {
+  font-size: 30rpx;
+  color: #999;
+  text-align: center;
+  line-height: 60rpx;
+}
+
+.bounceInLeft {
+  animation-name: bounceInLeft;
+}
+
+.pop {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10001;
+  left: 0;
+  top: 0;
+}
+
+.pop .pop_cover {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.pop .one_img {
+  width: 86%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pop .pop_con {
+  position: fixed;
+  width: 100%;
+  background: #fff;
+}
+
+.pop .pop_con.bottom {
+  bottom: 0;
+  left: 0;
+  /* animation: popBottom all 1s ease; */
+}
+
+@keyframes popBottom {
+  0% {
+    bottom: -100%;
+  }
+
+  100% {
+    bottom: 0;
+  }
+}
+
+.pop .pop_con.center {
+  top: 50%;
+  left: 50%;
+  width: 75%;
+  border-radius: 20rpx;
+  transform: translate(-50%, -50%);
+}
+
+.pop .pop_con .pop_tit {
+  font-size: 36rpx;
+  color: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f4f4f4;
+  padding: 0 0 0 30rpx;
+}
+
+.pop .pop_con .pop_main {
+  font-size: 30rpx;
+  color: #333;
+  margin-top: 40rpx;
+}
+
+.pop .pop_con .pop_main .pop_main_txt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pop .pop_con .pop_main .pop_main_txt > image {
+  width: 50rpx;
+  margin-right: 10rpx;
+}
+
+.pop .pop_con .pop_tit image {
+  width: 30rpx;
+  padding: 30rpx;
+}
+
+.pop .pop_con .pop_many_btn {
+  display: flex;
+  padding: 0 40rpx;
+  justify-content: space-around;
+  /* justify-content: space-evenly; */
+  align-items: center;
+}
+
+.pop .pop_con .pop_many_btn button {
+  border-radius: 8rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  padding: 0 44rpx;
+  width: auto;
+  font-size: 32rpx;
+  margin: 60rpx 0 30rpx 0;
+  color: #fff;
+  background: #1caa1b;
+}
+.pop .pop_con .pop_many_btn button.cancel {
+  color: #1caa1b;
+  background: transparent;
+  border:1px solid #1caa1b;
+}
+
+.pop .pop_con .pop_btn {
+  background: #1caa1b;
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color: #fff;
+  margin-top: 60rpx;
+  border-radius: 0;
+}
+
+.pop .pop_con .pop_btn.center {
+  border-radius: 16rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: inline-block;
+  padding: 0 70rpx;
+  width: auto;
+  margin-bottom: 40rpx;
+}
+@import "dbs_masclwlcard/temp/introduce/index.wxss";
+@import "dbs_masclwlcard/temp/shops/shops.wxss";
+@import "dbs_masclwlcard/temp/newtip/newtip.wxss";
+@import "dbs_masclwlcard/temp/newstip/index.wxss";
+
+/* 裁剪图片css */
+
+.fixed-upimg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  background-color: #fff;
+}
+
+.wx-content-info {
+  position: fixed;
+  top: 130rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.wx-corpper {
+  position: relative;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  box-sizing: border-box;
+}
+
+.wx-corpper-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.wx-corpper-content image {
+  display: block;
+  width: 100%;
+  min-width: 0 !important;
+  max-width: none !important;
+  height: 100%;
+  min-height: 0 !important;
+  max-height: none !important;
+  image-orientation: 0deg !important;
+  margin: 0 auto;
+}
+.wx-corpper-bthcon{
+  position:fixed;
+  bottom:120rpx;
+  left: 0;
+  width: 100%;
+  padding: 0 100rpx;
+}
+.wx-corpper-bthcon button{
+  background: #1aad19;
+  padding: 12rpx 60rpx 14rpx 60rpx;
+  margin: 0;
+  font-size:30rpx;
+  color: #fff;
+  float: right;
+  line-height: normal;
+}
+.wx-corpper-bthcon button.cancel{
+  background: transparent;
+  border: 1px solid #1aad19;
+  color: #1aad19;
+  float: left;
+}
+
+/* 移动图片效果 */
+
+.wx-cropper-drag-box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  cursor: move;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+/* 内部的信息 */
+
+.wx-corpper-crop-box {
+  position: absolute;
+  width: 500rpx;
+  height: 500rpx;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 2;
+}
+
+.wx-corpper-crop-box .wx-cropper-view-box {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  outline: 1px solid #69f;
+  outline-color: rgba(102, 153, 255, 0.75);
+}
+
+/* 横向虚线 */
+
+.wx-cropper-dashed-h {
+  position: absolute;
+  top: 33.33333333%;
+  left: 0;
+  width: 100%;
+  height: 33.33333333%;
+  border-top: 1px dashed rgba(255, 255, 255, 0.5);
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
+}
+
+/* 纵向虚线 */
+
+.wx-cropper-dashed-v {
+  position: absolute;
+  left: 33.33333333%;
+  top: 0;
+  width: 33.33333333%;
+  height: 100%;
+  border-left: 1px dashed rgba(255, 255, 255, 0.5);
+  border-right: 1px dashed rgba(255, 255, 255, 0.5);
+}
+
+/* 四个方向的线  为了之后的拖动事件*/
+
+.wx-cropper-line-t {
+  position: absolute;
+  display: block;
+  width: 100%;
+  background-color: #69f;
+  top: 0;
+  left: 0;
+  height: 1px;
+  opacity: 0.1;
+  cursor: n-resize;
+}
+
+.wx-cropper-line-t::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0rpx;
+  width: 100%;
+  -webkit-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0);
+  bottom: 0;
+  height: 41rpx;
+  background: transparent;
+  z-index: 11;
+}
+
+.wx-cropper-line-r {
+  position: absolute;
+  display: block;
+  background-color: #69f;
+  top: 0;
+  right: 0px;
+  width: 1px;
+  opacity: 0.1;
+  height: 100%;
+  cursor: e-resize;
+}
+
+.wx-cropper-line-r::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 41rpx;
+  -webkit-transform: translate3d(-50%, 0, 0);
+  transform: translate3d(-50%, 0, 0);
+  bottom: 0;
+  height: 100%;
+  background: transparent;
+  z-index: 11;
+}
+
+.wx-cropper-line-b {
+  position: absolute;
+  display: block;
+  width: 100%;
+  background-color: #69f;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  opacity: 0.1;
+  cursor: s-resize;
+}
+
+.wx-cropper-line-b::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0rpx;
+  width: 100%;
+  -webkit-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0);
+  bottom: 0;
+  height: 41rpx;
+  background: transparent;
+  z-index: 11;
+}
+
+.wx-cropper-line-l {
+  position: absolute;
+  display: block;
+  background-color: #69f;
+  top: 0;
+  left: 0;
+  width: 1px;
+  opacity: 0.1;
+  height: 100%;
+  cursor: w-resize;
+}
+
+.wx-cropper-line-l::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 41rpx;
+  -webkit-transform: translate3d(-50%, 0, 0);
+  transform: translate3d(-50%, 0, 0);
+  bottom: 0;
+  height: 100%;
+  background: transparent;
+  z-index: 11;
+}
+
+.wx-cropper-point {
+  width: 5px;
+  height: 5px;
+  background-color: #69f;
+  opacity: 0.75;
+  position: absolute;
+  z-index: 3;
+}
+
+.point-t {
+  top: -3px;
+  left: 50%;
+  margin-left: -3px;
+  cursor: n-resize;
+}
+
+.point-tr {
+  top: -3px;
+  left: 100%;
+  margin-left: -3px;
+  cursor: n-resize;
+}
+
+.point-r {
+  top: 50%;
+  left: 100%;
+  margin-left: -3px;
+  margin-top: -3px;
+  cursor: n-resize;
+}
+
+.point-rb {
+  left: 100%;
+  top: 100%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  cursor: n-resize;
+  width: 60rpx;
+  height: 60rpx;
+  background-color: #69f;
+  position: absolute;
+  z-index: 1112;
+  opacity: 1;
+}
+
+.point-b {
+  left: 50%;
+  top: 100%;
+  margin-left: -3px;
+  margin-top: -3px;
+  cursor: n-resize;
+}
+
+.point-bl {
+  left: 0%;
+  top: 100%;
+  margin-left: -3px;
+  margin-top: -3px;
+  cursor: n-resize;
+}
+
+.point-l {
+  left: 0%;
+  top: 50%;
+  margin-left: -3px;
+  margin-top: -3px;
+  cursor: n-resize;
+}
+
+.point-lt {
+  left: 0%;
+  top: 0%;
+  margin-left: -3px;
+  margin-top: -3px;
+  cursor: n-resize;
+}
+
+/* 裁剪框预览内容 */
+
+.wx-cropper-viewer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.wx-cropper-viewer image {
+  position: absolute;
+  z-index: 2;
+}
+
+/* 裁剪图片css end */

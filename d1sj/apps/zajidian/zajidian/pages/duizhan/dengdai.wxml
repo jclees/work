@@ -1,0 +1,84 @@
+
+
+<view class='pipei_top'>
+    <view>等待好友加入...</view>
+</view>
+<view class='saol'>
+    <view class='touxiang'>
+        <image src='{{tupian}}8_089.png'></image>
+    </view>
+    <view class='saom_y'>
+        <view class='saom_n'><image src='{{tupian}}5_27.png'></image></view>
+    </view>
+    
+    <view class='omdr'></view>
+    <view class='saol_dg'>
+        <view class='saol_ox2'><image src='{{tupian}}5_24.png'></image></view>
+        <view class='em saol_oy2'><image src='{{tupian}}5_15.png'></image></view>
+        <view class='saol_ow2'><image src='{{tupian}}5_08.png'></image></view>
+    </view>
+    <view class='saol_wj'>
+        <view class='saol_wj_left'><image src='{{tupian}}5_12.png'></image></view>
+        <view class='saol_wj_right'><image src='{{tupian}}5_20.png'></image></view>
+    </view>
+     <view class='saol_dg'>
+      <view class='renyua' wx:if="{{from_client_info.display_name || user_info.display_name}}">
+          <view class='renyua_wq'><image src='{{from_client_info.avatar?from_client_info.avatar:user_info.avatar}}'></image></view>
+          <view class='renmin'>{{from_client_info.display_name?from_client_info.display_name:user_info.display_name}}</view>
+          <view class='renmin_r'>Lv.{{from_client_info.level?from_client_info.level:user_info.level}}</view>
+      </view>
+      <view class='renyua' wx:else>
+          <view class='renyua_wq'>
+             <view class='daijia'><image src='{{tupian}}8_09.jpg'></image></view>
+          </view>
+          <view class='renmin'>待加入</view>
+      </view>
+      
+      <view class='renyua_right' wx:if="{{to_client_info.display_name}}">
+          <view class='renyua_wq'>
+             <view class='daijia'><image src='{{to_client_info.avatar}}'></image></view>
+          </view>
+          <view class='renmin'>{{to_client_info.display_name}}</view>
+          <view class='renmin_r'>Lv.{{to_client_info.level}}</view>
+      </view>
+      <view class='renyua_right' wx:else>
+          <view class='renyua_wq'>
+             <view class='daijia'><image src='{{tupian}}8_09.jpg'></image></view>
+          </view>
+          <view class='renmin'>待加入</view>
+      </view>
+
+     </view>
+</view>
+<view class='jmw'>围观群众{{wgnum}}人</view>
+<view class='kmqq'>
+   <view class=' yin' wx:if="{{fpk_status==1 && is_sponsor}}">
+     <view class='imm' bindtap="bindFriendsPk" data-fpk_status="{{fpk_status}}" data-is_sponsor="{{is_sponsor}}"  data-is_entry="{{entry_id?entry_id:0}}">开始对战</view>
+   </view>
+   <view class='opacity yin' wx:elif="{{fpk_status!=1 && is_sponsor}}">
+     <view class='imm' bindtap="bindFriendsPk">开始对战</view>
+   </view>
+   <view class=' yin'  wx:elif="{{fpk_status==1 && !is_sponsor}}">
+     <view class='imm' bindtap="bindFriendsCs" data-fpk_status="{{fpk_status}}" wx:if="{{pkBtn==1}}">进入参赛</view>
+     <view class='imm' bindtap="bindFriendsWg" data-fpk_status="{{fpk_status}}" wx:elif="{{pkBtn==2}}">进入围观</view>
+     <view class='imm'  wx:else>围观状态</view>
+   </view>
+   <view class='wq_km'>
+     <view class='wq_om {{is_sponsor?"":"show_class"}}'>
+        <view class=' yin'>
+          <view class='give' bindtap="bindLeaveGroup">放弃比赛</view>
+        </view>
+     </view>
+     <view class='wq_om' wx:if="{{is_sponsor}}">
+        <view class=' yin'>
+          <button class='Invitation' open-type="share">继续邀请</button>
+        </view>
+     </view>
+
+
+     
+
+   </view>
+</view>
+
+

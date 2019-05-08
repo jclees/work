@@ -1,0 +1,131 @@
+<view class="item-ans">
+  <view class="item-ans-top">
+    <image src='{{orderInfoData.img}}' mode='aspectFit' class="item-ans-top-img"></image>
+    <view class='item-ans-top-con'>
+      <view>{{orderInfoData.name}}</view>
+      <view>
+        <view>由</view>
+        <image src='{{orderInfoData.get_type.avatar}}' mode='aspectFit'></image>
+        <view>{{orderInfoData.get_type.nickname}}</view>
+        <view>共享</view>
+      </view>
+      <view class="piece_share">
+        <view class="user_intro">
+          <view class="img_wrap">
+            <image src='{{item.avatar}}' mode='aspectFit' class="b_icon" wx:for="{{orderInfoData.read.lists}}" wx:key='' wx:if="{{index < 3}}"></image>
+          </view>
+          <view class="intro">
+            <text>{{orderInfoData.read.lists[0].nickname}}...</text>
+            <text>等{{orderInfoData.read.num}}人阅读过这本书</text>
+          </view>
+        </view>
+      </view>
+      <!-- <view>
+        <image src='{{img_url}}icon_babycoin.png' mode='widthFix'></image>
+        <view class="coins_nums">{{orderInfoData.price}}</view>
+      </view> -->
+    </view>
+  </view>
+</view>
+<view class="piece_eval">
+  <text style='font-size:26rpx;color:#999;text-align:center;' wx:if="{{orderInfoData.recommends.length<=0}}">暂时没有得到宝妈的建议</text>
+  <view class="" wx:for="{{orderInfoData.recommends}}" wx:key=''>
+    <image src='{{item.avatar}}' mode='widthFix' class="b_icon"></image>
+    <text>{{item.recommend}}</text>
+  </view>
+</view>
+<view class="intro_detail">
+  <view wx:if="{{orderInfoData.status==1}}">
+    <text class='cool'>下单时间：</text>{{orderInfoData.order_created_at}}</view>
+  <view wx:if="{{orderInfoData.status==2}}">
+    <text class='cool'>成交时间：</text>{{orderInfoData.order_end_at}}</view>
+  <view>
+    <text class='cool'>分类标签：</text>{{orderInfoData.types}}</view>
+  <view class="contacts">
+    <view>
+      <text class='cool'>取货方式：</text>{{orderInfoData.get_type.get_type == 1?'同小区宝妈':''}}</view>
+    <view wx:if="{{orderInfoData.get_type.get_type == 1}}">
+      <view class="contact_item">
+        <view class="contact_item_r">
+          <view bindtap="popLock" data-id="1" style="width:150rpx;">小区二维码</view>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{orderInfoData.get_type.get_type == 2}}">
+      <view class="contact_item">
+        <view class="contact_item_l">
+          <view>{{orderInfoData.get_type.address}}</view>
+        </view>
+        <view class='contact_item_r' bindtap='seeAddress'>
+          <image src='{{img_url}}icon_location02.png' mode='widthFix' style='width:34rpx;'></image>
+        </view>
+        <view class="contact_item_r">
+          <view bindtap="popLock" data-id="1" style="width:150rpx;">小区二维码</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="contacts">
+    <view>
+      <text class='cool'>买家信息：</text></view>
+    <view>
+      <view class="contact_item">
+        <view class="contact_item_l">
+          <image src='{{orderInfoData.get_user.avatar}}' mode='widthFix'></image>
+          <view>{{orderInfoData.get_user.nickname}}</view>
+        </view>
+        <view class="contact_item_r">
+          <view bindtap="copyTBL" data-txt="{{orderInfoData.get_user.nickname}}" data-msg="复制成功,可在小区群中@{{orderInfoData.get_user.nickname}},约定取书时间">复制</view>
+        </view>
+        <view class='contact_item_r' bindtap='calling' data-phone="{{orderInfoData.get_user.phone}}">
+          <image src='{{img_url}}icon_tel.png' mode='widthFix'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="contacts">
+    <view>
+      <text class='cool'>卖家信息：</text></view>
+    <view>
+      <view class="contact_item">
+        <view class="contact_item_l">
+          <image src='{{orderInfoData.get_type.avatar}}' mode='widthFix'></image>
+          <view>{{orderInfoData.get_type.nickname}}</view>
+        </view>
+        <view class="contact_item_r">
+          <view bindtap="copyTBL" data-txt="{{orderInfoData.get_type.nickname}}" data-msg="复制成功,可在小区群中@{{orderInfoData.get_type.nickname}},约定取书时间">复制</view>
+        </view>
+        <view class='contact_item_r' bindtap='calling' data-phone="{{orderInfoData.get_type.phone}}">
+          <image src='{{img_url}}icon_tel.png' mode='widthFix'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='pd_staus clearfix' wx:if="{{orderInfoData.status==1}}">
+  <!-- <button hover-class='none'>已上架</button> -->
+  <button class="pd_staus_btn" hover-class='none' bindtap='cancelOrder'>取消订单</button>
+</view>
+<!-- 我的小区 -->
+<view class='pop-box pop-box2' wx:if="{{pop1}}">
+  <view class='pop-bg'></view>
+  <view class='pop-main'>
+    <image class="pop-close" src='{{img_url}}icn_pop_close.png' mode='widthFix' bindtap='popLock'></image>
+    <view class="pop-title">
+      <view>小区二维码</view>
+    </view>
+    <view class='pop-content'>
+      <view class='pop-text-img'>
+        <image src='{{orderInfoData.qrcode}}' mode='widthFix'></image>
+        <text>加客服备注小区名称，拉您入群</text>
+      </view>
+    </view>
+    <view class="btn-pop">
+      <button hover-class='none' bindtap='shareWxpyq' data-aa="" style="color:#ffbf00;">保存二维码</button>
+    </view>
+  </view>
+</view>
+<view class="back_index" bindtap='backPage'>
+  <image src='{{img_url}}icon_back.png' mode='widthFix'></image>
+  <view>回首页继续逛逛</view>
+</view>

@@ -1,0 +1,376 @@
+<!-- 分享小于20人 非小咖  -->
+<view wx:if="{{userType != 2 && shareNum < 20}}">
+  <!-- <view wx:if="{{status1}}">   -->
+  <view class="container">
+    <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+      <view class="wxapp-toast-content">
+        <view class="wxapp-toast-content-text"> {{toastText}} </view>
+      </view>
+    </view>
+    <view class="index">
+      <image src="{{imgUrl}}person_bgc.png"></image>
+      <view class="index_box">
+        <view class="index_box_img">
+          <image src="{{user.userInfo.avatarUrl}}"></image>
+        </view>
+        <view class="index_box_num">可提现{{money}}枚</view>
+        <view class="index_box_add">
+          <input bindinput="inputAdd" placeholder='请输入imtoken钱包地址' placeholder-class='input'></input>
+        </view>
+        <view class='j-instructions'>
+          <text>您的当前身份为普通用户，“升级小咖”后可享受4倍分享收益，提现至imtoken钱包请务必核对钱包地址是否正确。
+          活动结束后会根据您提交的imtoken地址统一打币。</text>
+          <view class='jiaocheng clearfix'>
+            <button bindtap="openPop" class='fl'>升级小咖</button>
+            <button bindtap="openPop1" id="1" class='fr'>提现至imtoken</button>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 说明弹出框 -->
+    <view class="pop" wx:if="{{rule}}">
+      <view class="cover" bindtap="closePop"></view>
+      <view class="pop_box">
+        <image src="{{imgUrl}}pop_bgc.png"></image>
+        <view class="pop_box_info">
+          <view class="pop_box_info_tit">
+            <view>升级小咖</view>
+          </view>
+          <view class="pop_box_info_close" bindtap="closePop">
+            <image src="{{imgUrl}}close2.png"></image>
+          </view>
+          <view class="pop_box_info_con">
+            <text>点击升级小咖按钮，在客服对话窗口中发送“小咖”进行升级。</text>
+          </view>
+          <button class="pop_box_info_button" open-type='contact'>
+            升级小咖
+          </button>
+        </view>
+      </view>
+    </view>
+    <!-- 温馨提示弹出框 -->
+    <view class="pop1" wx:if="{{pop}}">
+      <view class="cover1" bindtap="closePop1"></view>
+      <view class="pop_box1">
+        <image src="{{imgUrl}}tishi_bgc.png"></image>
+        <view class="pop_box_info1">
+          <view class="pop_box_tit1">
+            <image src="{{imgUrl}}tishi_tit.png"></image>
+          </view>
+          <view class="pop_box_close1" bindtap="closePop1">
+            <image src="{{imgUrl}}close1.png"></image>
+          </view>
+          <view class="pop_box_con1">
+            <text>请确认您输入的imtoken钱包地址正确无误，提交后将无法修改！</text>
+          </view>
+          <button class="pop_box_info_button" bindtap="money">
+            确认提交
+          </button>
+          <!-- <view class="clearfix pop_box_con_btns">
+            <view class="pop_box_button1 fl" bindtap="money">
+              确认提交
+            </view>
+             <button class="pop_box_button1 fl" open-type='contact' hover-class="none">
+              注册教程
+            </button> 
+          </view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 分享小于20人 小咖  -->
+<view wx:if="{{userType == 2 && shareNum < 20}}">
+  <!-- <view wx:if="{{status2}}">   -->
+  <view class="container">
+    <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+      <view class="wxapp-toast-content">
+        <view class="wxapp-toast-content-text"> {{toastText}} </view>
+      </view>
+    </view>
+    <view class="index">
+      <image src="{{imgUrl}}person_bgc.png"></image>
+      <view class="index_box">
+        <view class="index_box_img">
+          <image src="{{user.userInfo.avatarUrl}}"></image>
+        </view>
+        <view class="index_box_num">提现数量：{{money}}枚</view>
+        <view class="index_box_add">
+          <input bindinput="inputAdd" placeholder='请输入imtoken钱包地址' placeholder-class='input'></input>
+        </view>
+        <view class='j-instructions'>
+          <text>提现至imtoken钱包请务必核对钱包地址是否正确，填错将导致货币丢失，无法找回。
+          活动结束后会根据您提交的imtoken地址统一打币。</text>
+          <view class='jiaocheng clearfix'>
+            <button bindtap="openPop1" id="1">提现至imtoken</button>
+            <!-- <button bindtap="openPop1" id="2" class='fr'>提现至交易所</button> -->
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 说明弹出框 -->
+    <view class="pop" wx:if="{{rule}}">
+      <view class="cover" bindtap="closePop"></view>
+      <view class="pop_box">
+        <image src="{{imgUrl}}pop_bgc.png"></image>
+        <view class="pop_box_info">
+          <view class="pop_box_info_tit">
+            <view>{{tixData.withdraw_title}}</view>
+          </view>
+          <view class="pop_box_info_close" bindtap="closePop">
+            <image src="{{imgUrl}}close2.png"></image>
+          </view>
+          <view class="pop_box_info_con">
+            <text>{{tixData.withdraw_intro}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 温馨提示弹出框 -->
+    <view class="pop1" wx:if="{{pop}}">
+      <view class="cover1" bindtap="closePop1"></view>
+      <view class="pop_box1">
+        <image src="{{imgUrl}}tishi_bgc.png"></image>
+        <view class="pop_box_info1">
+          <view class="pop_box_tit1">
+            <image src="{{imgUrl}}tishi_tit.png"></image>
+          </view>
+          <view class="pop_box_close1" bindtap="closePop1">
+            <image src="{{imgUrl}}close1.png"></image>
+          </view>
+          <view class="pop_box_con1">
+            <text>请确认您输入的imtoken钱包地址正确无误，提交后将无法修改！</text>
+          </view>
+          <button class="pop_box_info_button" bindtap="money">
+            确认提交
+          </button>
+          <!-- <view class="clearfix pop_box_con_btns">
+            <view class="pop_box_button1 fl" bindtap="money">
+              确认提交
+            </view>
+            <button class="pop_box_button1 fl" open-type='contact' hover-class="none">
+              注册教程
+            </button>
+          </view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 分享大于20人 非小咖  -->
+<view wx:if="{{userType != 2 && shareNum > 20}}">
+  <!-- <view wx:if="{{status3}}">   -->
+  <view class="container">
+    <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+      <view class="wxapp-toast-content">
+        <view class="wxapp-toast-content-text"> {{toastText}} </view>
+      </view>
+    </view>
+    <view class="index">
+      <image src="{{imgUrl}}person_bgc.png"></image>
+      <view class="index_box">
+        <view class="index_box_img">
+          <image src="{{user.userInfo.avatarUrl}}"></image>
+          <button class="index_box_seezhid" bindtap='openPop'>查看兑换制度</button>
+        </view>
+        <view class="index_box_num">可提现{{money}}枚</view>
+        <view class="index_box_add">
+          <input bindinput="inputAdd" placeholder='请输入imtoken钱包地址' placeholder-class='input'></input>
+        </view>
+        <view class='j-instructions'>
+          <text>您的当前身份为普通用户，“升级小咖”后可享受4倍分享收益，活动结束后会根据您提交的imtoken地址统一打币。请务必核对钱包地址是否正确。</text>
+          <view class='jiaocheng clearfix'>
+            <button bindtap="openPop1" id="1" class='fl'>提现至imtoken</button>
+            <button bindtap="openPop2" class='fr'>升级小咖</button>
+          </view>
+          <!-- <view class='jiaocheng last'>
+            <button bindtap="openPop2">升级小咖，兑换现金</button>
+          </view> -->
+        </view>
+      </view>
+    </view>
+    <!-- 说明弹出框 -->
+    <view class="pop" wx:if="{{rule}}">
+      <view class="cover" bindtap="closePop"></view>
+      <view class="pop_box">
+        <image src="{{imgUrl}}pop_bgc.png"></image>
+        <view class="pop_box_info">
+          <view class="pop_box_info_tit">
+            <view>兑换现金规则</view>
+          </view>
+          <view class="pop_box_info_close" bindtap="closePop">
+            <image src="{{imgUrl}}close2.png"></image>
+          </view>
+          <view class="pop_box_info_con">
+            <text>一级小咖：分享好友人数小于20人，可兑换现金 0 元。
+二级小咖：分享好友人数大于等于20小于35人，可兑换现金 20元。
+三级小咖：分享好友人数大于等于35小于50人，可兑换现金50元。
+四级小咖：分享好友人数大于等于50小于100人，可兑换现金100元。
+五级小咖：分享好友人数大于等于100人，可兑换现金200元。</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 说明弹出框 -->
+    <view class="pop" wx:if="{{rule2}}">
+      <view class="cover" bindtap="closePop2"></view>
+      <view class="pop_box">
+        <image src="{{imgUrl}}pop_bgc.png"></image>
+        <view class="pop_box_info">
+          <view class="pop_box_info_tit">
+            <view>兑换现金</view>
+          </view>
+          <view class="pop_box_info_close" bindtap="closePop2">
+            <image src="{{imgUrl}}close2.png"></image>
+          </view>
+          <view class="pop_box_info_con">
+            <text>点击升级小咖按钮，在客服对话窗口中发送“小咖”进行升级。</text>
+          </view>
+          <button class="pop_box_info_button" open-type='contact'>
+            升级小咖
+          </button>
+        </view>
+      </view>
+    </view>
+    <!-- 温馨提示弹出框 -->
+    <view class="pop1" wx:if="{{pop}}">
+      <view class="cover1" bindtap="closePop1"></view>
+      <view class="pop_box1">
+        <image src="{{imgUrl}}tishi_bgc.png"></image>
+        <view class="pop_box_info1">
+          <view class="pop_box_tit1">
+            <image src="{{imgUrl}}tishi_tit.png"></image>
+          </view>
+          <view class="pop_box_close1" bindtap="closePop1">
+            <image src="{{imgUrl}}close1.png"></image>
+          </view>
+          <view class="pop_box_con1">
+            <text>请确认您输入的imtoken钱包地址正确无误，提交后将无法修改！</text>
+          </view>
+          <button class="pop_box_info_button" bindtap="money">
+            确认提交
+          </button>
+          <!-- <view class="clearfix pop_box_con_btns">
+            <view class="pop_box_button1 fl" bindtap="money">
+              确认提交
+            </view>
+            <button class="pop_box_button1 fl" open-type='contact' hover-class="none">
+              注册教程
+            </button> 
+          </view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 分享大于20人 小咖  -->
+ <view wx:if="{{userType == 2 && shareNum > 20}}">   
+<!-- <view wx:if="{{status4}}"> -->
+  <view class="container">
+    <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+      <view class="wxapp-toast-content">
+        <view class="wxapp-toast-content-text"> {{toastText}} </view>
+      </view>
+    </view>
+    <view class="index">
+      <image src="{{imgUrl}}person_bgc.png"></image>
+      <view class="index_box">
+        <view class="index_box_img">
+          <image src="{{user.userInfo.avatarUrl}}"></image>
+          <button class="index_box_seezhid" bindtap='openPop'>查看兑换制度</button>
+        </view>
+        <view class="index_box_num">可提现{{money}}枚，该等级可兑换{{filters.toFix((money - 0.01 + 0.01)*0.1517)}}现金</view>
+        <view class="index_box_add">
+          <input bindinput="inputAdd" placeholder='请输入imtoken钱包地址' placeholder-class='input'></input>
+        </view>
+        <view class='j-instructions'>
+          <text>您已达到兑换现金等级，兑换现金将在活动结束后统一进行【用领到的BST打到指定地址进行回购】。每位小咖可兑换现金上限200元。
+活动结束后会根据您提交的imtoken地址统一打币。在输入框内填写对应地址，填错将导致货币流失，无法找回。</text>
+          <view class='jiaocheng clearfix' style="padding-top:0;">
+            <button bindtap="openPop1" id="1" class='fl'>提现至imtoken</button>
+            <button bindtap="openPop2" class='fr'>兑换现金</button>
+          </view>
+          <!-- <view class='jiaocheng last'>
+            <button bindtap="openPop2">兑换现金</button>
+          </view> -->
+        </view>
+      </view>
+    </view>
+    <!-- 说明弹出框 -->
+    <view class="pop" wx:if="{{rule}}">
+      <view class="cover" bindtap="closePop"></view>
+      <view class="pop_box">
+        <image src="{{imgUrl}}pop_bgc.png"></image>
+        <view class="pop_box_info">
+          <view class="pop_box_info_tit">
+            <view>兑换现金规则</view>
+          </view>
+          <view class="pop_box_info_close" bindtap="closePop">
+            <image src="{{imgUrl}}close2.png"></image>
+          </view>
+          <view class="pop_box_info_con">
+            <text>一级小咖：分享好友人数小于20人，可兑换现金 0 元。
+二级小咖：分享好友人数大于等于20小于35人，可兑换现金 20元。
+三级小咖：分享好友人数大于等于35小于50人，可兑换现金50元。
+四级小咖：分享好友人数大于等于50小于100人，可兑换现金100元。
+五级小咖：分享好友人数大于等于100人，可兑换现金200元。</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 说明弹出框 -->
+    <view class="pop" wx:if="{{rule2}}">
+      <view class="cover" bindtap="closePop2"></view>
+      <view class="pop_box">
+        <image src="{{imgUrl}}pop_bgc.png"></image>
+        <view class="pop_box_info">
+          <view class="pop_box_info_tit">
+            <view>兑换现金</view>
+          </view>
+          <view class="pop_box_info_close" bindtap="closePop2">
+            <image src="{{imgUrl}}close2.png"></image>
+          </view>
+          <view class="pop_box_info_con">
+            <text>1、需将收到的BST打币到指定钱包地址，由客服人员根据转币截图为您兑换现金。
+2、回购数量参考“兑换规则”，上限为现金200元。
+3、兑换现金将在活动结束后统一进行。</text>
+            <text style="font-weight:700;color:#cc3025;">4、点击现金兑换按钮后，在客服对话窗口输入“兑换”</text>
+          </view>
+          <button class="pop_box_info_button" open-type='contact'>
+            现金兑换
+          </button>
+        </view>
+      </view>
+    </view>
+    <!-- 温馨提示弹出框 -->
+    <view class="pop1" wx:if="{{pop}}">
+      <view class="cover1" bindtap="closePop1"></view>
+      <view class="pop_box1">
+        <image src="{{imgUrl}}tishi_bgc.png"></image>
+        <view class="pop_box_info1">
+          <view class="pop_box_tit1">
+            <image src="{{imgUrl}}tishi_tit.png"></image>
+          </view>
+          <view class="pop_box_close1" bindtap="closePop1">
+            <image src="{{imgUrl}}close1.png"></image>
+          </view>
+          <view class="pop_box_con1">
+            <text>请确认您输入的imtoken钱包地址正确无误，提交后将无法修改！</text>
+          </view>
+          <button class="pop_box_info_button" bindtap="money">
+            确认提交
+          </button>
+          <!-- <view class="clearfix pop_box_con_btns">
+            <view class="pop_box_button1 fl" bindtap="money">
+              确认提交
+            </view>
+             <button class="pop_box_button1 fl" open-type='contact' hover-class="none">
+              注册教程
+            </button> 
+          </view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,30 @@
+{
+  "pages": [
+
+    "pages/shouye/shouye",
+    "pages/paiwei/paiwei",
+    "pages/ryshop/ryshop",
+    "pages/rydengji/rydengji",
+    "pages/rycenter/rycenter",
+    "pages/paihang/paihang",
+    "pages/likai/likai",
+    "pages/factory/factory",
+    "pages/rychuti/rychuti",
+    "pages/rychutis/rychutis",
+    "pages/duizhan/duizhan"
+  ],
+  "window": {
+    
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#3f346a",
+    "navigationBarTitleText": "答题小程序",
+    "navigationBarTextStyle":"#fff",
+    "enablePullDownRefresh": false
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+
+  "debug": true
+}

@@ -1,0 +1,176 @@
+.color_red {
+  color: #f54f45 !important;
+}
+
+.color_blue {
+  color: #4285f4 !important;
+}
+
+.hd, .bd {
+  padding: 40rpx 30rpx;
+}
+
+.hd {
+  border-top: 1px solid #ebebeb;
+  border-bottom: 10rpx solid #ebebeb;
+}
+
+.tit {
+  font-size: 32rpx;
+  color: #000;
+  margin-bottom: 50rpx;
+}
+
+.hd .items {
+  display: flex;
+  height: 140rpx;
+  margin-top: 60rpx;
+}
+
+.hd .items > image {
+  width: 140rpx;
+  height: 140rpx;
+  border: 1px solid #ebebeb;
+  border-radius: 8rpx;
+  background: #f9f9f9;
+  flex-shrink: 0;
+  margin-right: 30rpx;
+}
+
+.hd .items .fun {
+  flex: 1;
+}
+
+.hd .items .fun .top {
+  display: flex;
+  align-items: center;
+  font-size: 34rpx;
+  color: #333;
+}
+
+.hd .items .fun .top button {
+  line-height: 0;
+}
+
+.hd .items .fun .top .forms {
+  border: 1px solid #979797;
+  border-radius: 6rpx;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.hd .items .fun .top form {
+  padding: 16rpx 20rpx;
+}
+
+.hd .items .fun .top input {
+  width: 140rpx;
+  text-align: center;
+  color: #000;
+  font-size: 40rpx;
+}
+
+.hd .items .fun .top view.txt {
+  font-size: 22rpx;
+  color: #999;
+}
+
+.hd .items .fun .top button {
+  width: 44rpx;
+  height: 44rpx;
+  background: #4285f4;
+  border-radius: 100rpx;
+  color: #fff;
+  position: relative;
+}
+
+.hd .items .fun .top button::before {
+  content: "";
+  background: #fff;
+  width: 18rpx;
+  height: 4rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hd .items .fun .top button.last::after {
+  content: "";
+  background: #fff;
+  width: 4rpx;
+  height: 18rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hd .items .fun .coin {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 26rpx;
+  color: #ccc;
+  margin-top: 32rpx;
+}
+
+.hd .items .fun .coin.in {
+  color: #676767;
+}
+
+.other {
+  display: flex;
+  align-items: center;
+  color: #1a1a1a;
+  font-size: 32rpx;
+  margin-top: 60rpx;
+}
+
+.other input {
+  font-size: 28rpx;
+  color: #888;
+  border-bottom: 1px solid #1a1a1a;
+  margin-left: 20rpx;
+}
+
+.bd .tot {
+  font-size: 28rpx;
+  color: #333;
+  margin: 40rpx 0;
+}
+
+.bd .tips {
+  font-size: 24rpx;
+  color: #888;
+}
+
+.bd .items {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.bd .items form {
+  width: 50%;
+}
+
+.bd .items button {
+  display: flex;
+  align-items: center;
+}
+
+.bd .items button > view:first-of-type {
+  width: 44rpx;
+  height: 44rpx;
+  border: 1px solid #d0d0d0;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  margin-right: 28rpx;
+}
+
+.bd .items button > view .icon_box {
+  margin: 0 auto;
+}

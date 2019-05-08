@@ -1,0 +1,67 @@
+<view class='hd'>
+  <image src='{{userInfo.avatarUrl}}' mode='aspectFill'></image>
+  <view>{{memberInfo.name}}</view>
+</view>
+<view>
+  <view class="tab-h">
+    <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">
+      <view>我的信息</view>
+    </view>
+    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">
+      <view>我的合同</view>
+    </view>
+  </view>
+  <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+    <swiper-item style="background:#fff;">
+      <scroll-view scroll-y="true" class="scoll-h" style="background:#fff;">
+        <view class='form_data' style="background:#fff;">
+          <view class='form_item'>
+            <label>姓名:</label>
+            <input value='{{mineData.name}}' disabled="true"></input>
+          </view>
+          <view class='form_item'>
+            <label>身份证:</label>
+            <input value='{{mineData.icard}}' disabled="true"></input>
+          </view>
+          <!-- <view class='form_item'>
+            <label>银行卡:</label>
+            <input value='{{mineData.card_name}}' disabled="true"></input>
+          </view>
+          <view class='form_item'>
+            <label>银行卡号:</label>
+            <input value='{{mineData.card_account}}' disabled="true"></input>
+          </view> -->
+          <view class='form_item'>
+            <label>手机号:</label>
+            <input value='{{mineData.phone}}' disabled="true"></input>
+          </view>
+          <view class='form_item'>
+            <label>服务公司:</label>
+            <view style='padding:20rpx 0;'>
+              <!-- <text wx:for="{{mineData.managers}}" wx:key="" wx:for-item="subitem" wx:for-index="idx">{{subitem}}{{index}}</text> -->
+              <text>{{mineData.managers}}</text>
+            </view>
+          </view>
+          <view class='tips'>更换银行卡信息，请联系客服{{mineData.service_phone}}</view>
+        </view>
+
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h">
+        <view class='hetong_list' wx:for="{{pactData}}" wx:key="">
+          <form report-submit bindsubmit='_jump' data-url="{{item.pact_url}}">
+            <button class='item' form-type='submit'>
+              <view class='lt'>
+                <view class='tit'>{{item.pact_name}}</view>
+                <view>
+                  <view class='cool'>人力公司</view>{{item.company_name}}</view>
+              </view>
+              <view class='rt'>{{item.time}}</view>
+            </button>
+          </form>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

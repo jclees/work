@@ -1,0 +1,78 @@
+@import '../ryshop/ryshop.wxss';
+
+
+.select_box{
+  padding:20rpx;
+}
+.select_box .tool_nb{
+  background:-webkit-linear-gradient(top,#1c76fe,#3ca4fe);
+  border-radius:20rpx;
+  box-shadow:0 0 0 6rpx rgba(255,255,255,.1)
+}
+.select_box .tool-mon{
+  color:#fff;
+  font-size:28rpx;
+}
+.select_box .small-gird{
+  border:none;
+  padding:20rpx;
+}
+.select_box .tool-icon{
+  padding:20rpx 0 30rpx;
+}
+.select_box .tool-icon image{
+  width:68rpx;
+  height:68rpx;
+}
+.select_box .btn_tip-tit{
+  padding: 20rpx;
+  font-size:24rpx;
+  text-align: left;
+}
+
+.model_box{
+  width:574rpx;
+}
+.img_logo{
+  padding:12rpx;
+  height:130rpx;
+  width:130rpx;
+  margin-bottom:10rpx;
+}
+.blue_bg{
+  background:-webkit-linear-gradient(top,#1c76fe,#3ca4fe);
+  height:100%;
+  width:100%;
+  line-height: 130rpx;
+  border-radius:50%;
+  text-align: center;
+}
+.blue_bg image{
+  width:68rpx;
+  height:68rpx;
+  vertical-align: middle;
+}
+
+.model_girds{
+  padding:10rpx;
+}
+.model_girds .small-gird{
+  border:none;
+  padding:20rpx;
+}
+.class_box{
+  text-align:center;
+}
+.class_img{
+  background:-webkit-linear-gradient(top,#1c76fe,#3ca4fe);
+  width:90rpx;
+  height:90rpx;
+  line-height: 90rpx;
+  border-radius:50%;
+  margin:0 auto 10rpx;
+}
+.class_img image{
+  width:42rpx;
+  height:42rpx;
+  vertical-align:middle;
+}

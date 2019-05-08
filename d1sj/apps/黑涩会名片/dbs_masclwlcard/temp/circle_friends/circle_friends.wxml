@@ -1,0 +1,104 @@
+<template name="circle_friends">
+    <scroll-view scrollY id="scroll" style="height:{{winHeight}}px;background:#fff">
+        <view class="dynamic_list" wx:if="{{dynamic_list&&dynamic_list.length>0}}">
+            <view class="actItem" wx:for="{{dynamic_list}}" wx:key="id">
+                <view class="left" wx:if="{{item.is_card>0}}">
+                    <image src="{{card_detail.card_logo}}"></image>
+                </view>
+                <view class="left" wx:else>
+                    <image src="{{company.company_logo}}"></image>
+                </view>
+                <view class="right" wx:if="{{item.is_card>0}}">
+                    <button class="nobutton forward" data-id="{{item.id}}" data-img="{{item.thumbs[0]||item.card_avatar}}" data-name="{{item.card_name}}" openType="share">转发</button>
+                    <view class="c-name">{{card_detail.card_name}}</view>
+                    <view class="content_user">{{item.content_card}}</view>
+                    <view class="imgList">
+                        <image bindtap="previewImg" data-url="{{itemName}}" data-urls="{{item.all_imgarr}}" mode="aspectFill" src="{{itemName}}" wx:for="{{item.all_imgarr}}" wx:for-item="itemName" wx:key="id"></image>
+                    </view>
+                    <view style="font-size: 24rpx;color: #999; margin: 20rpx 0;">{{item.dateline}}</view>
+                    <view class="{{item.ups.length>0||item.replies.length>0?'comment':'comment2'}}">
+                        <view class="pl-comment">
+                            <view class="pl-comment-body dz_btn {{currentIndex!==''&&currentIndex===index?'dz_btnShow':''}}">
+                                <view bindtap="clickZan" class="btn" data-id="{{item.id}}">
+                                    <image src="/dbs_masclwlcard/images/card/heart_icon.png"></image>
+                                    <text wx:if="{{item.isup==0}}">点赞</text>
+                                    <text wx:if="{{item.isup==1}}">取消</text>
+                                </view>
+                                <view bindtap="_showKeyboard" class="btn" data-id="{{item.id}}">
+                                    <image src="/dbs_masclwlcard/images/card/com_icon.png"></image>
+                                    <text>评论</text>
+                                </view>
+                            </view>
+                            <view bindtap="showComments" class="pl-comment-right" data-index="{{index}}">
+                                <image src="/dbs_masclwlcard/images/card/PL.png"></image>
+                            </view>
+                        </view>
+                        <view class="talkMod" wx:if="{{item.ups.length>0}}">
+                            <view class="heart">
+                                <image src="/dbs_masclwlcard/images/card/zan_b.png"></image>
+                            </view>
+                            <view class="nickname" wx:for="{{item.ups}}" wx:key="myzanid">{{item.nickname}},</view>
+                        </view>
+                        <view style="border-bottom: 1px solid #e6e6e6;height:2px;margin: 10rpx 0" wx:if="{{item.ups.length>0&&item.replies.length>0}}"></view>
+                        <view class="zanMod" wx:if="{{item.replies.length>0}}">
+                            <view wx:for="{{item.replies}}" wx:key="myplid">
+                                <text>{{item.nickname}}</text>: {{item.content}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="right" wx:else>
+                    <button class="nobutton forward" data-id="{{item.id}}" data-img="{{item.thumb}}" data-name="{{item.card_name}}" openType="share">转发</button>
+                    <view class="c-name">{{company.company_name}}<text class="gs">公司</text>
+                    </view>
+                    <view bindtap="_jump" class="content" data-url="/dbs_masclwlcard/pages/friend_detail/friend_detail?friend_id={{item.id}}&card_id={{card_id}}">
+                        <image class="actItem__img" src="{{item.head_img}}"></image>
+                        <view class="actItem__title">{{item.title}}</view>
+                    </view>
+                    <view bindtap="_jump" data-url="/dbs_masclwlcard/pages/friend_detail/friend_detail?friend_id={{item.id}}&card_id={{card_id}}" style="font-size: 28rpx;color: #0061b2; margin: 20rpx;">查看详情</view>
+                    <view style="font-size: 24rpx;color: #999; margin: 20rpx;">{{item.dateline}}</view>
+                    <view class="{{item.ups.length>0||item.replies.length>0?'comment':'comment2'}}">
+                        <view class="pl-comment">
+                            <view class="pl-comment-body dz_btn {{currentIndex!==''&&currentIndex===index?'dz_btnShow':''}}">
+                                <view bindtap="clickZan" class="btn" data-id="{{item.id}}">
+                                    <image src="/dbs_masclwlcard/images/card/heart_icon.png"></image>
+                                    <text wx:if="{{item.isup==0}}">点赞</text>
+                                    <text wx:if="{{item.isup==1}}">取消</text>
+                                </view>
+                                <view bindtap="_showKeyboard" class="btn" data-id="{{item.id}}">
+                                    <image src="/dbs_masclwlcard/images/card/com_icon.png"></image>
+                                    <text>评论</text>
+                                </view>
+                            </view>
+                            <view bindtap="showComments" class="pl-comment-right" data-index="{{index}}">
+                                <image src="/dbs_masclwlcard/images/card/PL.png"></image>
+                            </view>
+                        </view>
+                        <view class="talkMod" wx:if="{{item.ups.length>0}}">
+                            <view class="heart">
+                                <image src="/dbs_masclwlcard/images/card/zan_b.png"></image>
+                            </view>
+                            <view class="nickname" wx:for="{{item.ups}}" wx:key="myzanid">{{item.nickname}},</view>
+                        </view>
+                        <view style="border-bottom: 1px solid #e6e6e6;height:2px;margin: 10rpx 0" wx:if="{{item.ups.length>0&&item.replies.length>0}}"></view>
+                        <view class="zanMod" wx:if="{{item.replies.length>0}}">
+                            <view wx:for="{{item.replies}}" wx:key="myplid">
+                                <text>{{item.nickname}}</text>: {{item.content}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="nodata" wx:else>
+            <view>
+                <text>暂无动态</text>
+            </view>
+        </view>
+        <view style="height:60px;background:transparent;"></view>
+    </scroll-view>
+    <view class="keyboard" wx:if="{{showKeyboard==1}}">
+        <input focus bindblur="bindKeyBlur" bindinput="bindKeyInput" class="input" cursorSpacing="20" placeholder="评论" placeholderStyle="color:#888" type="text"></input>
+        <button bindtap="_send" class="send">发送</button>
+    </view>
+</template>
+<wxs module="card_change" src="../../wxs/cardv1.wxs" />
+<wxs module="shop" src="../../wxs/shopping.wxs" />

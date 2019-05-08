@@ -1,0 +1,63 @@
+/* templates/task_list/task_list.wxss */
+.task_list {
+  margin:0 30rpx 30rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding: 20rpx 0;
+}
+.task_list_per {
+  height: 110rpx;
+  line-height: 110rpx;
+  font-size: 30rpx;
+  padding: 0 25rpx;
+}
+.task_list_per_name {
+    width: 170rpx;
+    height: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    float: left;
+}
+.task_list_per_score {
+  float: left;
+  width: 130rpx;
+  height: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.task_list_per_time {
+  float: left;
+}
+.task_list_per_button {
+  float: right;
+  width: 125rpx;
+  height: 48rpx;
+  margin-top: 30rpx;
+  
+}
+.task_list_per_button button {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 48rpx;
+  color: #fff;
+  border-radius: 10rpx;
+  background-color: #ccc;
+}
+.common button {
+  background-color: #f8494c !important; 
+  border: 1rpx solid #f8494c !important; 
+}
+.current button {
+   background-color: #a6a6a6 !important; 
+   border: 1rpx solid #a6a6a6 !important;  
+}  
+.task_list_per_button button::before {
+  border: 1rpx solid transparent !important;
+}

@@ -1,0 +1,100 @@
+page {
+  background: #fff;
+}
+
+.pd_img {
+  background: #fff;
+  box-shadow: 0 1px 4px 0 rgba(201, 203, 208, 0.50);
+  border-radius: 8rpx;
+  width: 420rpx;
+  margin: 40rpx auto 60rpx;
+  overflow: hidden;
+}
+
+.pd_img image {
+  width: 400rpx;
+  height: 380rpx;
+}
+
+.pd_img view {
+  background: rgba(1, 1, 1, 0.30);
+  height: 64rpx;
+  line-height: 64rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #fff;
+}
+
+.submit_tips {
+  font-size: 34rpx;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+.submit_tips text {
+  font-size: 28rpx;
+  color: #666;
+  padding: 20rpx 0 120rpx 0;
+  display: inline-block;
+}
+
+.share_types {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.share_types > button {
+  margin: 0 76rpx 0 0;
+  padding: 0;
+}
+
+.share_types > button:last-of-type {
+  margin: 0;
+}
+
+.share_types > button .img_box {
+  width: 120rpx;
+  box-sizing: border-box;
+  margin: 0 auto -30rpx;
+}
+
+.share_types > button .img_box image {
+  width: 120rpx;
+}
+
+.share_types > button .share_types_txt {
+  text-align: center;
+  font-size: 24rpx;
+  color: #000;
+}
+
+.coin_tips {
+  position: absolute;
+  top: -60rpx;
+  right: 10rpx;
+  background: #ff3933;
+  border-radius: 8rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 24rpx;
+  color: #fff;
+  padding: 0 10rpx;
+}
+
+.coin_tips::after {
+  content: '';
+  position: absolute;
+  left: 30rpx;
+  bottom: -10rpx;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  font-size: 0; /*是因为, 虽然宽高度为0, 但在IE6下会具有默认的 */
+  line-height: 0; /* 字体大小和行高, 导致盒子呈现被撑开的长矩形 */
+  border-width: 20rpx;
+  border-style: dashed dashed dashed solid;
+  border-color: transparent transparent transparent #ff3933;
+  z-index: -1;
+}

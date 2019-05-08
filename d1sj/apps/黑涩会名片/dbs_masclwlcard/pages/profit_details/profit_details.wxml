@@ -1,0 +1,27 @@
+<view class='lists'>
+  <view class='items' wx:for="{{moneylogData}}" wx:key="">
+    <view>
+      <view>{{item.message}}</view>
+      <view>
+        <view>{{item.created_at}}</view>
+        <image src='{{item.avatar}}' mode='aspectFill' wx:if="{{item.avatar != null}}"></image>
+      </view>
+    </view>
+    <view wx:if="{{item.is_positive == 1}}" class="act">+{{item.money}}</view>
+    <view wx:elif="{{item.is_positive == 2}}" class="act">{{item.money}}</view>
+    <view wx:else>-{{item.money}}</view>
+  </view>
+  <view class='null_data' wx:if="{{moneylogData <=0}}">
+    <view>暂无收益明细</view>
+  </view>
+  <!-- <view class='items'>
+    <view>
+      <view>奖励红包</view>
+      <view>
+        <view>2018-12-2</view>
+        <image src='/dbs_masclwlcard/images/mine/icon_mine08.png' mode='aspectFill'></image>
+      </view>
+    </view>
+    <view class="act">+17</view>
+  </view> -->
+</view>

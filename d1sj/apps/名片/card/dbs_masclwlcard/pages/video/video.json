@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "视频",
+    "usingComponents": {
+        "head": "/dbs_masclwlcard/components/head/head"
+    }
+}

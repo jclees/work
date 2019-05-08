@@ -1,0 +1,62 @@
+<view class='likes-box'>
+  <view>我是谁</view>
+  <checkbox-group bindchange="checkboxChange" data-id='0'>
+    <label class="checkbox" wx:for="{{communityData.mynote}}" wx:key="">
+      <checkbox value="{{item.my_id}}" checked="{{item.choice == 1?'checked':''}}" />
+      <text class=''>{{item.name}}</text>
+    </label>
+    <view class='qita'>
+      <text>其他：</text>
+      <input type='text' data-id="0" bindinput='bindInputChange'></input>
+    </view>
+  </checkbox-group>
+</view>
+<view class='likes-box'>
+  <view>我想找谁</view>
+  <checkbox-group bindchange="checkboxChange" data-id='1'>
+    <label class="checkbox" wx:for="{{communityData.findnote}}" wx:key="">
+      <checkbox value="{{item.find_id}}" checked="{{item.choice == 1?'checked':''}}" />
+      <text class=''>{{item.name}}</text>
+    </label>
+    <view class='qita'>
+      <text>其他：</text>
+      <input type='text' data-id="1" bindinput='bindInputChange'></input>
+    </view>
+  </checkbox-group>
+</view>
+<view class='picker_box'>
+  <picker class="picker" bindchange="bindPickerChange" value="index" range="{{communityData.level}}" range-key="name">
+    <text>我的区块链知识水平（点击选择）：</text>
+    <view class='sel'>
+      <text>{{communityData.level[index].name}}</text>
+      <image src='{{img_url}}icon-xiala.png' mode='widthFix'></image>
+    </view>
+  </picker>
+</view>
+<view class='likes-box'>
+  <view class='pos' bindtap='position'>
+    <text>位置获取：</text>
+    <image mode='widthFix' src="{{img_url}}icon-dingwei.png" wx:if="{{address.name == undefined || address.name == ''}}"></image>
+    <image mode='widthFix' src="{{img_url}}icon-dingwei-opt.png" wx:else></image>
+    <text>{{(address.name == undefined || address.name == '') ?'点击定位': address.name}}</text>
+  </view>
+</view>
+<view class='btn-submit'>
+  <button type="default" bindtap="savaData" hover-class="none"> 提交 </button>
+</view>
+<!-- 拉群介绍 -->
+<view class='pop-box' wx:if="{{pop1}}">
+  <view class='pop-bg' bindtap='popLock'></view>
+  <view class='pop-main'>
+    <view class='pop-title'>拉群介绍</view>
+    <view class='pop-content'>
+      <view class='pop-text-img'>
+        <text>{{popData.intro}}</text>
+        <image mode='widthFix' src='{{popData.img}}'></image>
+      </view>
+    </view>
+    <view class="btn-pop">
+      <button hover-class='none' open-type='contact'>知道了</button>
+    </view>
+  </view>
+</view>

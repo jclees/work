@@ -1,0 +1,14 @@
+<view class='message-box' wx:for="{{msgData}}" wx:key="">
+  <view class='message'>
+    <view class='message-photo'>
+      <image src='{{item.avatar}}' mode='widthFix'></image>
+    </view>
+    <view class='message-info'>
+      <view class='message-name'>
+        <text>{{item.nickname}}</text>
+        <text>{{item.created_at}}</text>
+      </view>
+      <view data-value="{{item.unfold}}" data-index="{{index}}" bindtap='unfold' class="message-centent{{item.unfold?'':' active'}}">{{item.intro}}</view>
+    </view>
+  </view>
+</view>

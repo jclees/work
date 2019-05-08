@@ -1,0 +1,29 @@
+<head navTitle="名片列表" newwechat="0"></head>
+<loading hidden="{{dataLoaded}}">加载中...</loading>
+<view class="page">
+    <view class="cardist">
+        <block wx:for="{{friend_list.info}}" wx:key="index">
+            <view style="margin:40rpx 0;color: #b6b6b7;font-size: 28rpx; text-align: center;font-weight: 300">{{item.tips}}</view>
+            <view class="card">
+                <view bindtap="go_tab" class="avatar" data-card_id="{{item.id}}">
+                    <image src="{{item.card_logo}}"></image>
+                </view>
+                <view bindtap="go_tab" class="name" data-card_id="{{item.id}}">
+						{{item.card_name}}
+                    </view>
+                <view bindtap="go_tab" class="position" data-card_id="{{item.id}}">{{item.role_name}}</view>
+                <view bindtap="go_tab" class="company" data-card_id="{{item.id}}">{{friend_list.company_name}}</view>
+                <view bindtap="go_tab" class="mobile" data-card_id="{{item.id}}">
+                    <image src="/dbs_masclwlcard/images/card/tel3.png"></image>
+                    <text wx:if="{{item.card_tel}}">{{item.card_tel}}</text>
+                    <text style="font-size: 24rpx;color: #ddd" wx:else>未填写</text>
+                </view>
+                <view bindtap="go_tab" class="email" data-card_id="{{item.id}}">
+                    <image src="/dbs_masclwlcard/images/card/email.png"></image>
+                    <text wx:if="{{item.email}}">{{item.email}}</text>
+                    <text style="font-size: 24rpx;color: #ddd" wx:else>未填写</text>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

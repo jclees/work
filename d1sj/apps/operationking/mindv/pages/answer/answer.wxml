@@ -1,0 +1,22 @@
+<!-- pages/answer/answer.wxml -->
+<view class="container">
+  <view class="answer">
+    <image src="{{img_url}}answer_bg.png"></image>
+    <view class="answer_box">
+      <view class="answer_box_per" bindtap="answer">
+        <image src="{{img_url}}per1.png"></image>
+        <view class="answer_box_per_text">
+          <text>我要出题</text>
+          <text>出题数量:{{allNum}}</text>
+        </view>
+      </view>
+      <view class="answer_box_per" bindtap="title">
+        <image src="{{img_url}}per2.png"></image>
+        <view class="answer_box_per_text">
+          <text>我的题目</text>
+          <text>过审数量:{{checkNum}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

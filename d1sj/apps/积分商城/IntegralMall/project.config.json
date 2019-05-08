@@ -1,0 +1,79 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.5.1",
+	"appid": "wx3f6b4b81df501da3",
+	"projectname": "%E7%A7%AF%E5%88%86%E5%95%86%E5%9F%8E-%E7%BA%BF%E4%B8%8A%E7%89%88%E6%9C%AC",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 5,
+			"list": [
+				{
+					"id": 0,
+					"name": "产品详情",
+					"pathName": "pages/shop/shopDetail/shopDetail",
+					"query": "id=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "购物车支付页面",
+					"pathName": "pages/shoppingCart/pay/pay",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "积分列表",
+					"pathName": "pages/person/order/order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单列表详情",
+					"pathName": "pages/person/orderDetail/orderDetail",
+					"query": "order_id=119",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "测试页面",
+					"pathName": "pages/test/test",
+					"query": "id=9",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的收藏",
+					"pathName": "pages/person/collect/collect",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

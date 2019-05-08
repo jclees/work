@@ -1,0 +1,21 @@
+<view class="chat_box">
+    <view class="chat_list clearfix" data-list_id="{{item.card_id}}" data-list_index="{{index}}" wx:for="{{card_list}}" wx:key="index">
+        <view class="right_box clearfix">
+            <view bindtap="go_chat" class="right_left" data-card_id="{{item.card_id}}" data-head_img="{{item.card_logo}}" data-identify="{{item.identify}}" data-index="{{index}}">
+                <view class="user_img">
+                    <image binderror="noHeadimg" data-index="{{index}}" src="{{item.card_logo}}"></image>
+                    <view class="noread" wx:if="{{item.chat_count>0}}">
+                            {{item.chat_count}}
+                        </view>
+                </view>
+                <view class="right_left_list right_left_list_name">
+                    <view class="right_left_list_name_left">{{item.card_name}}</view>
+                    <view class="right_left_list_name_time">{{item.time}}</view>
+                </view>
+                <view class="right_left_list right_left_list_job">
+                        {{item.msg?item.msg:'暂无聊天'}}
+                    </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,110 @@
+<view class="pop" wx:if="{{pop1}}" catchtouchmove="myCatchTouch">
+  <view class="pop_cover"></view>
+  <image mode='widthFix' src='{{img_url}}about_card.png' class="one_img" bindtap='popLock'></image>
+</view>
+<form bindsubmit="savaData" report-submit="true">
+  <view class="one_card">
+    <view class='card_show'>
+      <view>
+        <view class="card_top">
+          <view class="use_img" bindtap='bindchoose' data-which='1'>
+            <image src='{{card_logo<=0 ?user.avatarUrl:card_logo}}' mode='aspectFill' class="prevBox"></image>
+            <image src='/dbs_masclwlcard/images/card/one_card_up.png' mode='widthFix'></image>
+          </view>
+          <view class="use_info">
+            <view>{{!u_name? user.nickName : u_name}}</view>
+            <view>{{!u_job? '当前职位' : u_job}}</view>
+            <view>{{!u_comp? '公司名称' : u_comp}}</view>
+          </view>
+        </view>
+        <view class="card_bot">
+          <image src='/dbs_masclwlcard/images/card/tel3.png' mode='widthFix'></image>
+          <view>{{!u_tel? '我的联系电话' : u_tel}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='form_info'>
+      <view class='items'>
+        <view>
+          <label>姓名
+            <text>*</text>
+          </label>
+          <input placeholder='请输入姓名' name="card_name" placeholder-style='color:#a9a9a9;' bindinput='bindChangeInp' data-w="1"></input>
+        </view>
+        <view>
+          <label>电话
+            <text>*</text>
+          </label>
+          <input placeholder='手机号码' name="card_tel" type='number' placeholder-style='color:#a9a9a9;' bindinput='bindChangeInp' data-w="2"></input>
+        </view>
+      </view>
+      <view class='items'>
+        <view>
+          <label>公司
+            <text>*</text>
+          </label>
+          <input placeholder='请输入公司名称' name="company_name" placeholder-style='color:#a9a9a9;' bindinput='bindChangeInp' data-w="3"></input>
+        </view>
+        <view>
+          <label>职务
+            <text>*</text>
+          </label>
+          <input placeholder='请输入职务' name="role_name" placeholder-style='color:#a9a9a9;' bindinput='bindChangeInp' data-w="4"></input>
+        </view>
+      </view>
+    </view>
+    <view class="sava_btn">
+      <button type='primary' formType="submit">{{submitTxt}}</button>
+    </view>
+    <view class='auout_cardtxt' data-id="1" bindtap='popLock'>
+      <text>关于握手名片</text>
+    </view>
+  </view>
+</form>
+
+<!--裁剪图片浮层-->
+<view class='fixed-upimg' wx:if="{{imageFixed}}">
+  <view class="wx-content-info">
+    <!-- <view class="wx-content-info" wx:if="{{imageSrc}}"> -->
+    <view wx:if="{{isShowImg}}" class="wx-corpper" style="width:{{cropperInitW}}rpx;height:{{cropperInitH}}rpx;background:#000">
+      <view bindtap='upLoad' class="wx-corpper-content" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx;left:{{cropperL}}rpx;top:{{cropperT}}rpx">
+        <image src="{{imageSrc}}" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx"></image>
+        <view class="wx-corpper-crop-box" bindtouchstart="contentStartMove" bindtouchmove="contentMoveing" style="width:{{cutW}}rpx;height:{{cutH}}rpx;left:{{cutL}}rpx;top:{{cutT}}rpx">
+          <view class="wx-cropper-view-box">
+            <!-- <view class="wx-cropper-viewer">
+            <image src="{{imageSrc}}" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx;left:{{cropperL - cutL}}rpx;top:{{cropperT - cutT}}rpx"></image>
+          </view> -->
+            <view class="wx-cropper-dashed-h"></view>
+            <view class="wx-cropper-dashed-v"></view>
+            <view class="wx-cropper-line-t" data-drag="top" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-line-r" data-drag="right" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-line-b" data-drag="bottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-line-l" data-drag="left" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-t" data-drag="top" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-tr" data-drag="topTight"></view>
+            <view class="wx-cropper-point point-r" data-drag="right" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-rb" data-drag="rightBottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-b" data-drag="bottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-bl" data-drag="bottomLeft"></view>
+            <view class="wx-cropper-point point-l" data-drag="left" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-lt" data-drag="leftTop"></view>
+          </view>
+        </view>
+      </view>
+      <!-- <view class="wx-cropper-drag-box"></view> -->
+    </view>
+    <canvas canvas-id="myCanvas" style="position:absolute;border: 1px solid red; width:{{imageW}}rpx;height:{{imageH}}rpx;top:-9999px;left:-9999px;"></canvas>
+    <view class='wx-corpper-bthcon'>
+      <form bindsubmit='getImageInfo' reportSubmit="true">
+        <button hover-class='none' formType="submit"> 确认提交 </button>
+      </form>
+      <form bindsubmit='closeUpImg' reportSubmit="true">
+        <button hover-class='none' formType="submit" class="cancel"> 取消 </button>
+      </form>
+      <form>
+      </form>
+    </view>
+  </view>
+</view>
+<import src="../../temp/authorize/index.wxml"></import>
+<template is="authorize" data="{{isAuthorize:isAuthorize}}"></template>

@@ -1,0 +1,32 @@
+<!--pages/person/order/order.wxml-->
+<view class="container">
+  <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+    <view class="wxapp-toast-content">
+      <view class="wxapp-toast-content-text"> {{toastText}} </view>
+    </view>
+  </view>
+  <view class="order_box">
+    <view class="order_box_info">
+      <view class="order_box_info_per clearfix" wx:for="{{collectList}}" wx:for-item="item" wx:key="{{item.img}}" data-item="{{item}}" bindtap="collect" data-index="{{index}}">
+        <view class="order_box_info_per_left">
+          <image src="{{item.img}}"></image>
+        </view>
+        <view class="order_box_info_per_right">
+          <view class="order_box_info_per_right_left fl">
+            <view class="order_box_info_per_right_left_name">{{item.name}}</view>
+            <view class="order_box_info_per_right_left_price">¥{{item.specs}}
+              <text>积分</text>
+            </view>
+          </view>
+          <view class="order_box_info_per_right_right fr">
+              <image src=" {{item.collect}}"></image>  
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="order_box_button">
+      <text>加载更多</text>
+      <image src="../../../imgs/back.png"></image>
+    </view>
+  </view>
+</view>

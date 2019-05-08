@@ -1,0 +1,707 @@
+/**newsBreakfast.wxss**/
+
+/* 拼课程 */
+
+.ms_djs_wrap {
+  display: flex;
+}
+
+.ms_djs_wrap .bm_num {
+  display: flex;
+  height: 115rpx;
+  flex: 1;
+  color: #fff;
+  font-size: 32rpx;
+  align-items: center;
+  background-image: linear-gradient(90deg, #ff6763, #ff8956);
+}
+
+.ms_djs_wrap .bm_num .x_rmb {
+  padding: 0 40rpx 0 30rpx;
+}
+
+.ms_djs_wrap .bm_num .x_rmb .cool {
+  font-size: 48rpx;
+}
+
+.ms_djs_wrap .bm_num .bm_num_rmb .old_rmb {
+  font-size: 28rpx;
+  text-decoration: line-through;
+}
+
+.ms_djs_wrap .ms_djs {
+  font-size: 20rpx;
+  padding:0 20rpx;
+  border-top: 1px solid #efefef;
+}
+.ms_djs_wrap .djs{
+  display: flex;
+  align-items: center;
+}
+.ms_djs_wrap .p_tit {
+  text-align: center;
+  font-size: 26rpx;
+  color: #333;
+  padding: 10rpx 0;
+  box-sizing: border-box;
+}
+
+.ms_djs_wrap .ms_djs .ms_days {
+  color: #ff6663;
+  padding-right: 10rpx;
+  font-weight: 700;
+}
+
+.ms_djs_wrap .ms_djs .sfm_box {
+  display: flex;
+}
+
+.ms_djs_wrap .ms_djs .sfm_box > view {
+  background: #ff6663;
+  color: #fff;
+}
+
+.ms_djs_wrap .ms_djs .sfm_box > view:nth-child(odd) {
+  width: 36rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  text-align: center;
+}
+
+.ms_djs_wrap .ms_djs .sfm_box > view:nth-child(even) {
+  background: transparent;
+  color: #ff6663;
+  padding: 0 8rpx;
+}
+
+.audio-box {
+  position: relative;
+  background: #fff;
+}
+
+.slider-box {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.slider-box .banner {
+  width: 100%;
+  height: 520rpx;
+}
+.slider-box .play-video{
+  width: 100rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+.slider-box .play-video image{
+  width: 100rpx;
+}
+
+.slider-box slider {
+  width: 100%;
+  position: relative;
+  margin-top: -17rpx;
+  margin: -17rpx 0;
+}
+
+.album-time {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 50rpx;
+  font-size: 28rpx;
+  color: #949494;
+}
+
+.btn-album {
+  display: flex;
+  padding: 0 120rpx 30rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #d8d8d8;
+  position: relative;
+}
+
+.btn-album button {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  padding: 0;
+}
+
+.btn-album button image {
+  position: relative;
+  width: 100rpx;
+  /* top: 50%;
+  transform: translate(0, -50%); */
+  vertical-align: text-bottom;
+}
+
+.btn-album button:nth-child(2n-1) image {
+  width: 32rpx;
+}
+
+.invite-rewards {
+  margin-top: 20rpx;
+  padding: 20rpx 30rpx;
+  background: #fff;
+}
+
+.invite-user {
+  display: flex;
+  height: 120rpx;
+  align-items: center;
+}
+
+.invite-user view {
+  flex: 1;
+}
+
+.user-photo {
+  width: 120rpx;
+  border-radius: 50%;
+  border: 1px solid #ebebeb;
+}
+
+.icon-star {
+  padding: 0 20rpx;
+}
+
+.icon-star image {
+  width: 40rpx;
+}
+
+.btn-share {
+  width: 58rpx;
+  padding: 0;
+  font-size: 0;
+  margin: 0;
+}
+
+.btn-share image {
+  width: 100%;
+}
+
+/* 邀请人数奖励  */
+
+.rewards {
+  display: flex;
+  justify-content: space-between;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-top: 10rpx;
+}
+
+.rewards text {
+  font-size: 24rpx;
+}
+
+.rewards-user image {
+  width: 48rpx;
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+  margin-left: -10%;
+  border-radius: 50%;
+  border: 1px solid #ebebeb;
+}
+
+.rewards-user image:first-child {
+  margin-left: 0;
+}
+
+/*  推荐试听  */
+
+.audition {
+  margin-top: 20rpx;
+  padding-bottom: 50rpx;
+  background: #fff;
+}
+
+.audition-title {
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 30rpx;
+  font-size: 30rpx;
+}
+
+.audition .scroll-content {
+  display: flex;
+  white-space: nowrap;
+  position: relative;
+}
+
+.scroll-content .content {
+  margin-right: 10rpx;
+  font-size: 0;
+  position: relative;
+  width: 316rpx;
+  display: inline-block;
+}
+
+.scroll-content .content:first-child {
+  margin-left: 30rpx;
+}
+
+.scroll-content .content:last-child {
+  margin-right: 30rpx;
+}
+
+.music-img-box {
+  width: 320rpx;
+  height: 210rpx;
+  overflow: hidden;
+}
+
+.music-img {
+  width: 320rpx;
+  vertical-align: top;
+}
+
+.music-name {
+  height: 30rpx;
+  line-height: 30rpx;
+  margin-top: 10rpx;
+  position: relative;
+  width: 320rpx;
+}
+
+.music-name image {
+  width: 14rpx;
+  margin-right: 5rpx;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.music-name text {
+  font-size: 28rpx;
+  padding-left: 20rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+/* 课程列表 */
+.curriculum-box {
+  background: white;
+}
+
+.curriculum {
+  margin-bottom: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.curriculum-img {
+  width: 100%;
+}
+
+.curriculum-tit {
+  padding: 20rpx 40rpx 20rpx 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.curriculum-tit >view:first-of-type {
+  flex: 1;
+}
+
+.curriculum-tit >view > text {
+  font-size: 30rpx;
+}
+
+.curriculum-tit .st_btn {
+  border-radius: 6rpx;
+  color: #fff;
+  font-size: 24rpx;
+  height: 50rpx;
+  background: #ff6663;
+  line-height: 50rpx;
+  padding: 0 10rpx;
+  margin-top: 10rpx;
+}
+
+.curriculum-tit .rmb_nums {
+  color: #ffd24d;
+  font-size: 28rpx;
+  text-align: right;
+}
+
+.curriculum-tit .rmb_nums.big_rmb_nums {
+  font-size: 42rpx;
+}
+.curriculum-tit .open_posters{
+  width: 44rpx;
+}
+.curriculum-tit .open_posters image{
+  width: 44rpx;
+}
+.curriculum-info {
+  color: #aaa;
+  font-size: 24rpx;
+}
+
+.curriculum-info image {
+  width: 18rpx;
+}
+
+.curriculum-info label {
+  margin-right: 20rpx;
+}
+
+
+/* 课程简介 */
+
+.tab {
+  display: flex;
+  background: white;
+  border-bottom: 1px solid #e5e5e5;
+  margin-top: 20rpx;
+}
+
+.tab-list {
+  background: #fff;
+}
+
+.tab text {
+  flex: 1;
+  text-align: center;
+  font-size: 36rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  position: relative;
+}
+
+.tab text.active {
+  color: #ff6663;
+}
+
+.tab text.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  width: 100%;
+  height: 6rpx;
+  background: #ff6663;
+  transform: translate(-50%, 0);
+  animation: tab-border-bottom 1s linear;
+}
+
+@keyframes tab-border-bottom {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.kecheng {
+  padding: 40rpx;
+}
+
+.kecheng .intro_txt {
+  font-size: 32rpx;
+  color: #333;
+  margin-bottom: 20rpx;
+  display: inline-block;
+}
+
+.kecheng .intro_img {
+  width: 100%;
+}
+
+.kecheng .intro_img image {
+  width: 100%;
+  display: block;
+}
+
+.kecheng .kc_list {
+  display: flex;
+  align-items: flex-end;
+  border-bottom: 1px solid #efefef;
+  padding: 30rpx 0;
+}
+
+.kecheng .kc_list > .kc_info {
+  flex: 1;
+  color: #333;
+  font-size: 32rpx;
+}
+
+.kecheng .kc_list > .kc_info >view:last-of-type {
+  font-size: 24rpx;
+  color: #999;
+  padding: 10rpx 0 0 0;
+}
+
+.kecheng .kc_list .st_btn {
+  border: 1px solid #ff6663;
+  color: #ff6663;
+  font-size: 24rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  border-radius: 0;
+  padding: 0 10rpx;
+  margin-top: 10rpx;
+}
+
+.kecheng .kc_list .rmb_nums {
+  color: #ffd24d;
+  font-size: 28rpx;
+  text-align: right;
+}
+
+.kecheng .kc_list .kc_lock {
+  width: 60rpx;
+}
+
+.buy_kcbtn {
+  background: #fff;
+  display: flex;
+  width: 100%;
+  padding: 20rpx 40rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+.buy_kcbtn > view {
+  color: #fff;
+  background: #ff6663;
+  height: 100rpx;
+  line-height: 100rpx;
+  position: relative;
+  text-align: center;
+  box-shadow: 5rpx 6rpx 20rpx #ec4643;
+}
+
+.buy_kcbtn > view:nth-child(1) >view {
+  line-height: 36rpx;
+  font-size: 24rpx;
+}
+
+.buy_kcbtn > view:nth-child(1) >view:nth-child(1) {
+  padding-top: 20rpx;
+}
+
+.buy_kcbtn > view:nth-child(1) {
+  background: #ff9f9c;
+  border-radius: 100rpx 0 0 100rpx;
+  padding: 0 40rpx;
+}
+
+/* 
+.buy_kcbtn > view:nth-child(1):after{
+  position:absolute;
+  content:'';
+  width:10px;
+  height:100%;
+  top:3px;
+  z-index: 10;
+  right:-1px;
+  filter: blur(5px);
+  background: rgb(255, 235, 235);
+}
+.buy_kcbtn > view:nth-child(2):after{
+  position:absolute;
+  content:'';
+  width:10px;
+  height:100%;
+  z-index: 10;
+  top:0;
+  left:-1px;
+  filter: blur(5px);
+  background: rgb(255, 235, 235);
+} */
+
+.buy_kcbtn > view:nth-child(2) {
+  border-radius: 0 100rpx 100rpx 0;
+  flex: 1;
+  padding-bottom: 1px;
+}
+
+.buy_kcbtn > view.act {
+  background: #ec4643;
+}
+
+.buy_kcbtn > view:nth-child(1).act {
+  background: #f08d89;
+}
+
+.buy_kcbtn button {
+  background: #ff6663;
+  border-radius: 100rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff;
+  font-size: 32rpx;
+  width: 100%;
+}
+
+.buy_kc_box {
+  width: 100%;
+  height: 140rpx;
+}
+.fixed_psucc{
+  position: fixed;
+  top: 165rpx;
+  left: 40rpx;
+  background: rgba(0, 0, 0, .6);
+  color: #fff;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  border-radius: 200rpx;
+  padding: 10rpx;
+}
+.fixed_psucc .psucc_img{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 200rpx;
+  overflow: hidden;
+}
+.fixed_psucc .psucc_img image{
+  width: 100%;
+  height: 100%;
+}
+.fixed_psucc .psucc_name{
+  padding: 0 12rpx;
+}
+.fixed_psucc .psucc_date{
+  padding:0 14rpx;
+}
+/* 拼课助力弹框 */
+.share_pkewrap{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+}
+.share_pkewrap .cover{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .6);
+}
+.share_pkewrap .pke_cont{
+  background: #fff;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: #333;
+  font-size: 28rpx;
+  text-align: center; 
+  padding:60rpx 0;
+}
+.share_pkewrap .pke_cont .pke_tit{
+  font-size: 32rpx;
+  color: #000;
+}
+.share_pkewrap .pke_cont .ms_djs {
+  font-size: 38rpx;
+  padding:40rpx 0 60rpx 0;
+}
+.share_pkewrap .pke_cont .djs{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+.share_pkewrap .pke_cont .must_rennums{
+  padding:10rpx 0 40rpx 0;
+}
+.share_pkewrap .pke_cont .p_tit {
+  text-align: center;
+  font-size: 26rpx;
+  color: #363636;
+  padding: 10rpx 0;
+  box-sizing: border-box;
+}
+
+.share_pkewrap .pke_cont .ms_djs .ms_days {
+  color: #ff6663;
+  padding-right: 20rpx;
+  font-weight: 700;
+}
+
+.share_pkewrap .pke_cont .ms_djs .sfm_box {
+  display: flex;
+}
+
+.share_pkewrap .pke_cont .ms_djs .sfm_box > view {
+  background: #ff6663;
+  color: #fff;
+}
+
+.share_pkewrap .pke_cont .ms_djs .sfm_box > view:nth-child(odd) {
+  width: 70rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+}
+
+.share_pkewrap .pke_cont .ms_djs .sfm_box > view:nth-child(even) {
+  background: transparent;
+  color: #ff6663;
+  padding: 0 15rpx;
+}
+.share_pkewrap .pke_cont .pk_rennums{
+  display: flex;
+  justify-content:center;
+}
+.share_pkewrap .pke_cont .pk_rennums > view{
+  width: 100rpx;
+  height: 100rpx;
+  overflow: hidden;
+  border-radius: 200rpx;
+  background: #f2f2f2;
+  margin-right: 10rpx;
+}
+.share_pkewrap .pke_cont .pk_rennums > view:last-of-type{
+  margin-right: 0;
+}
+.share_pkewrap .pke_cont .pk_rennums > view image{
+  width: 100%;
+  height: 100%;
+}
+
+.share_pkewrap .pke_cont .share_types{
+  display: flex;
+  justify-content:center;
+}
+.share_pkewrap .pke_cont .share_types > button{
+  margin:0 160rpx 0 0;
+  padding: 0;
+}
+.share_pkewrap .pke_cont .share_types > button:last-of-type{
+  margin: 0;
+}
+.share_pkewrap .pke_cont .share_types > button .img_box{
+  width: 156rpx;
+  height: 156rpx;
+  overflow: hidden;
+  border-radius: 200rpx;
+  box-sizing: border-box;
+  background: #f2f2f2;
+}
+.share_pkewrap .pke_cont .share_types > button .img_box image{
+  width: 100%;
+  height: 100%;
+}
+.share_pkewrap .pke_cont .share_types > button .share_types_txt{
+  text-align: center;
+  padding-top: 10rpx;
+}

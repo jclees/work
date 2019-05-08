@@ -1,0 +1,39 @@
+page {
+  background: #fff;
+}
+
+.lists {
+  padding: 0 20rpx;
+}
+
+.lists .items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30rpx;
+  color: #000;
+  border-bottom: 1px solid #f8f8f8;
+  padding: 25rpx 10rpx;
+}
+
+.lists .items > view:nth-child(1) > view:nth-child(2) {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #666;
+  padding-top: 10rpx;
+}
+
+.lists .items > view:nth-child(1) > view:nth-child(2) >image {
+  width: 35rpx;
+  height: 35rpx;
+  border-radius: 100rpx;
+  background: #efefef;
+  margin-left: 40rpx;
+}
+.lists .items > view:nth-child(2){
+  font-size: 32rpx;
+}
+.lists .items > view:nth-child(2).act {
+  color: #33b332;
+}

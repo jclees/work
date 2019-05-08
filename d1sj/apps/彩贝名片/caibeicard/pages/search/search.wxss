@@ -1,0 +1,75 @@
+@import '/pages/index/index.wxss';
+
+page {
+  background: #fff;
+}
+
+.search_wrap {
+  display: flex;
+  align-items: center;
+  background: #fff;
+}
+
+.search_wrap .search {
+  background: #f5f5f5;
+  box-shadow: initial;
+  flex: 1;
+}
+
+.search_wrap .search_btn {
+  font-size: 34rpx;
+  color: #0a0a0a;
+  margin-left: 30rpx;
+}
+
+.search_wrap .search image:last-of-type {
+  width: 42rpx;
+}
+.main_product .pd_wrap{
+  background: #fafafa;
+  padding-top: 280rpx;
+}
+.history_wrap{
+  margin-top: 90rpx;
+}
+.history {
+  margin: 0 30rpx;
+  padding-top: 34rpx;
+}
+
+.history > view {
+  display: flex;
+  align-items: center;
+}
+
+.history > view:nth-child(1) {
+  font-size: 28rpx;
+  justify-content: space-between;
+  color: #000;
+}
+
+.history > view:nth-child(1) image {
+  width: 40rpx;
+}
+
+.history > view:nth-child(2) {
+  flex-wrap: wrap;
+  margin-top: 5rpx;
+}
+
+.history > view:nth-child(2) >view {
+  font-size: 24rpx;
+  color: #666;
+  border-radius: 200rpx;
+  height: 52rpx;
+  line-height: 52rpx;
+  padding: 0 20rpx;
+  background: #f8f8f8;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+}
+
+.history > view:nth-child(2) > view .cur {
+  font-size: 24rpx;
+  color: #000;
+}

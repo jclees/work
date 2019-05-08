@@ -1,0 +1,52 @@
+<!--pages/topic/topic.wxml-->
+<view class="container">
+  <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+    <view class="wxapp-toast-content">
+      <view class="wxapp-toast-content-text"> {{toastText}} </view>
+    </view>
+  </view>
+  <view class="topic">
+    <image src="{{img_url}}answer_bg.png"></image>
+    <view class="topic_box">
+      <view class="topic_box_per" wx:for="{{list}}" wx:for-item="item" wx:key="{{item.id}}" data-item="{{item}}" bindtap="openPop">
+        <image src="{{item.image}}"></image>
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+    <view class="topic_text">
+      出题是严禁涉及色情低俗,违法犯罪,反动恐怖等话题,如涉及政治,民族,宗教,国家领土及其他法律问题, 请自行承担后果。
+    </view>
+  </view>
+  <!-- 文科弹出框 -->
+  <view class="pop" wx:if="{{pop}}">
+    <view class="cover" bindtap="closePop"></view>
+    <view class="pop_box">
+      <view class="pop_box_img">
+        <image src="{{answer.image}}"></image>
+      </view>
+      <view class="pop_box_close" bindtap="closePop">
+        <image src="{{img_url}}close.png"></image>
+      </view>
+      <view class="pop_box_tit">
+        {{answer.name}}
+      </view>
+      <view class="pop_box_con">
+        <view class="pop_box_con_per" wx:for="{{answer.son}}" wx:for-item="per" wx:key="{{per.id}}" bindtap="ans"  data-index="{{index}}">
+          <view class="pop_box_con_per_box">
+            <image src="{{img_url}}ans_bgc.png"></image>
+            <view class="pop_box_con_per_box_text">{{per.name}}</view>
+            <view class="pop_box_con_per_box_img">  
+              <image src="{{per.image}}"></image>
+            </view>
+          </view>
+          <view class="pop_box_con_per_cover" wx:if="{{per.cover==true}}">
+             <image src="{{img_url}}cover.png"></image> 
+          </view>
+        </view>
+      </view>
+      <view class="pop_box_button" wx:if="{{show}}" bindtap="step">
+        <image src="{{img_url}}step.png"></image>
+      </view>
+    </view>
+  </view>
+</view>

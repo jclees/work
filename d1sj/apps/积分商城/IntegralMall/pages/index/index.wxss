@@ -1,0 +1,99 @@
+@import '../../pages/task/index/index.wxss';
+@import '../../pages/shop/index/index.wxss';
+@import '../../pages/person/index/index.wxss';
+@import '../../pages/shoppingCart/index/index.wxss';
+/**index.wxss**/
+.index_tab {
+  font-size: 32rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%; 
+  height: 100rpx;
+  background-color: #fff;
+  border-top: 1rpx solid #dfdfdf;
+}
+.index_tab_per {
+  width: 33.33%;
+  height: 100%;
+  line-height: 100rpx;
+  float: left; 
+  text-align: center;
+  color: #666666;
+  box-sizing: border-box;
+}
+.index_tab_per:first-child {
+  position: absolute;
+  left: 30rpx;
+}
+.index_tab_per:nth-child(2){
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.index_tab_per:last-child {
+  position: absolute;
+  right: 30rpx;
+}
+.current {
+  border-bottom: 4rpx solid #febd2d;
+  color: #febd2d;
+}
+
+
+/* tabs */
+
+.nav-box {
+  width: 100%;
+  height: 104rpx;
+}
+
+.nav {
+  width: 100%;
+  height: 104rpx;
+  border-top: 1px solid #ededed;
+  display: flex;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background: #fff;
+  font-size: 0;
+}
+
+.nav .nav-navigator {
+  flex: 1;
+  text-align: center;
+  font-size: 0;
+  padding-top: 18rpx;
+}
+
+.nav .nav-navigator.cur {
+  color: #febd2d;
+}
+
+.nav .nav-navigator image {
+  width: 42rpx;
+}
+
+.nav .nav-navigator text {
+  display: block;
+  width: 100%;
+  font-size: 24rpx;
+  margin-top: 2rpx;
+}
+
+.nav-fabiao {
+  padding: 16rpx 0;
+}
+
+.nav-fabiao button {
+  width: 72rpx;
+  height: 72rpx;
+  padding: 0;
+}
+
+.nav-fabiao button image {
+  width: 100%;
+}

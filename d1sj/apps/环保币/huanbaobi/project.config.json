@@ -1,0 +1,142 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.6.6",
+	"appid": "wx583b7937bf0d81d3",
+	"projectname": "%E7%8E%AF%E4%BF%9D%E5%B8%81-%E7%BA%BF%E4%B8%8A%E7%89%88%E6%9C%AC",
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 13,
+			"list": [
+				{
+					"id": 8,
+					"name": "文章详情",
+					"pathName": "pages/detail/detail",
+					"query": "article_id=22",
+					"scene": null
+				},
+				{
+					"id": 9,
+					"name": "发表",
+					"pathName": "pages/publish/publish",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的评论",
+					"pathName": "pages/myComment/index",
+					"query": "is_who=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商家列表",
+					"pathName": "pages/shopList/shopList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "test",
+					"pathName": "pages/test/test",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 14,
+					"name": "回收",
+					"pathName": "pages/huishou/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "私信列表",
+					"pathName": "pages/mine/mySixin/index",
+					"query": "isSxin=1",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "对话",
+					"pathName": "pages/chatDetail/index",
+					"query": "be_member_id=35",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "回收类型页",
+					"pathName": "pages/huishou/types/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 9,
+					"name": "我的订单",
+					"pathName": "pages/mine/myOrder/index",
+					"query": "who=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "对方的朋友圈",
+					"pathName": "pages/otherCircle/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 11,
+					"name": "回收类型页",
+					"pathName": "pages/mine/myOrder/index",
+					"query": "who=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "回收类型页",
+					"pathName": "pages/publish/publish",
+					"query": "who=2",
+					"scene": null
+				},
+				{
+					"id": 13,
+					"name": "我的发圈",
+					"pathName": "pages/mine/myComment/index",
+					"query": "is_who=2",
+					"scene": null
+				}
+			]
+		}
+	}
+}

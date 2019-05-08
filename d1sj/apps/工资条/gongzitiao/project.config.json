@@ -1,0 +1,110 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.3.2",
+	"appid": "wx14794317059afc36",
+	"projectname": "%E5%B7%A5%E8%B5%84%E6%9D%A1-%E7%BA%BF%E4%B8%8A%E7%89%88%E6%9C%AC",
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 7,
+			"list": [
+				{
+					"id": -1,
+					"name": "新闻早餐",
+					"pathName": "pages/newsBreakfast/newsBreakfast",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/mine/mine",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "喜欢设置",
+					"pathName": "pages/likes/likes",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "消息",
+					"pathName": "pages/message/message",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "发表",
+					"pathName": "pages/publish/publish",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "社群",
+					"pathName": "pages/community/community",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "兑币",
+					"pathName": "pages/coin/coin",
+					"query": ""
+				},
+				{
+					"id": 7,
+					"name": "绘本详情",
+					"pathName": "pages/productDetails/productDetails",
+					"query": "scene=parent_id%3D2%26book_id%3D1"
+				},
+				{
+					"id": 8,
+					"name": "分享得币",
+					"pathName": "pages/index/index",
+					"query": "parent_id=2"
+				},
+				{
+					"id": -1,
+					"name": "新闻早餐",
+					"pathName": "pages/index/index",
+					"query": "parent_id=1"
+				},
+				{
+					"id": -1,
+					"name": "订单详情",
+					"pathName": "pages/orderDetails/orderDetails",
+					"query": "order_id=2"
+				}
+			]
+		}
+	}
+}

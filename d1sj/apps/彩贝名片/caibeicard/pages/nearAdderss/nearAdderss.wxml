@@ -1,0 +1,13 @@
+<view class="near_address">
+  <view wx:for="{{nearListData}}" wx:key="">
+    <view class="address_intro">
+      <view>{{item.name}}</view>
+      <view>{{item.nickname}} {{item.phone}}</view>
+    </view>
+    <view class="copy_btn" bindtap='copyTBL' data-txt="{{item.nickname}}" data-msg="复制成功,可在小区群中@{{item.nickname}},约定取书时间">复制</view>
+  </view>
+</view>
+<view class='get_address'>
+  <image src='{{img_url}}icon_location.png' mode='widthFix'></image>
+  <view bindtap='jumpMap'>获取附近位置</view>
+</view>

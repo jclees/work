@@ -1,0 +1,262 @@
+<view>
+  <view class="shopPoster" wx:if="{{shopMask==true&&showChoose}}">
+    <view class="poster-icon">
+      <view bindtap="hideShopMask" class="poster-icon-left">
+        <button class="icon-bg1" openType="share">
+          <image src="../../images/share_wechat_btn_n.png"></image>
+        </button>
+        <view class="poster-text">微信好友</view>
+      </view>
+      <view bindtap="showposter" class="poster-icon-right">
+        <image class="icon-bg1" src="../../images/share_poster_btn_n.png"></image>
+        <view class="poster-text">生成海报</view>
+      </view>
+    </view>
+    <view bindtap="hideShopMask" catchtouchmove="true" class="poster-cancel">取消</view>
+  </view>
+  <view class="pop" wx:if="{{pop1}}" catchtouchmove="myCatchTouch">
+    <view class="pop_cover" bindtap='popLock'></view>
+    <view class='pop_con bottom'>
+      <view class="pay_con">
+        <radio-group class="" bindchange="radioChange">
+          <view class="items" wx:for="{{items}}">
+            <view>{{item.name}}个月</view>
+            <view class="cool">￥{{item.value}}</view>
+            <label class="sel_time">
+              <radio value="{{item.name}}" checked="{{item.checked}}" />
+            </label>
+          </view>
+        </radio-group>
+        <!-- <view class="items">
+          <view>3个月</view>
+          <view class="cool">￥45</view>
+          <radio-group class="sel_time" bindchange="radioChange">
+            <label class="radio" wx:for="{{items}}">
+              <radio value="{{item.name}}" checked="{{item.checked}}" />
+            </label>
+          </radio-group>
+        </view>
+        <view class="items">
+          <view>12个月</view>
+          <view class="cool">￥180</view>
+          <radio-group class="sel_time" bindchange="radioChange">
+            <label class="radio" wx:for="{{items}}">
+              <radio value="{{item.name}}" checked="{{item.checked}}" />
+            </label>
+          </radio-group>
+        </view> -->
+        <button hover-class='none' class='pop_btn'>立即购买</button>
+      </view>
+    </view>
+  </view>
+  <view class="pop" wx:if="{{pop2}}" catchtouchmove="myCatchTouch">
+    <view class="pop_cover" bindtap='popLock'></view>
+    <view class='pop_con bottom'>
+      <view class="takermb_con">
+        <view class="takermb_tit">可提现金额</view>
+        <view class="takermb_nums">￥
+          <text class='cool'>20</text>
+        </view>
+        <view class='takermb_tips'>可提现金额
+          <text class='cool'> ¥20 </text>，手续费2%</view>
+      </view>
+      <button hover-class='none' class='pop_btn'>立即提现</button>
+    </view>
+  </view>
+  <view class="pop" wx:if="{{pop3}}" catchtouchmove="myCatchTouch">
+    <view class="pop_cover" bindtap='popLock'></view>
+    <view class='pop_con center'>
+      <view class='pop_tit'>
+        <view>提示</view>
+        <image src='/dbs_masclwlcard/images/mine/icon_mine08.png' mode='widthFix' bindtap='popLock'></image>
+      </view>
+      <view class="pop_main">
+        <view class="pop_main_txt">
+          <image src='/dbs_masclwlcard/images/mine/icon_mine08.png' mode='widthFix'></image>
+          <view>请前往PC端修改</view>
+        </view>
+      </view>
+      <view style="text-align: center;">
+        <button hover-class='none' class='pop_btn center' bindtap='popLock'>我知道了</button>
+      </view>
+    </view>
+  </view>
+  <view class="footer" style="height:110rpx;">
+    <view bindtap="change_footer_name" class="{{index==nav_footer_active?'active':''}} " data-name="{{index}}" wx:for="{{nav_footer}}" wx:key="index">
+      <form reportSubmit bindsubmit="from_send">
+        <image class="nav_footer_icon" src="{{index==nav_footer_active?item.selectIcon:item.icon}}"></image>
+        <view class="nav_text">{{item.name}}</view>
+        <button data-id="{{index}}" formType="submit"></button>
+      </form>
+    </view>
+  </view>
+  <view class="temp_box">
+     <view class="card_all_box">
+            <view bindtap="collectCard" wx:if="{{user_flag==1}}">
+                <form reportSubmit bindsubmit="from_send">
+                    <button class="card_list_low" formType="submit">
+                        <!-- <image src="../../images/card/zan_b.png"></image>收藏 -->
+                        收藏该名片
+                    </button>
+                </form>
+            </view>
+            <view class="one_pic">
+                <view class="one_sm_box">
+                    <view class="one_img">
+                        <image src="{{card_detail.card_logo}}"></image>
+                    </view>
+                    <view class="card_msg2">
+                        <view class="card_msg_box">
+                            <view class="msg_box">
+                                <view class="{{card_detail.hide_property==0&&card_detail.card_tel?'name_job':'one_notel'}}">
+                                    <text class="one_card_name">{{card_detail.card_name}}</text>
+                                    <text bindtap="lookrole" class="one_role_name">{{card_detail.role_name}}</text>
+                                    <image class="role_right" src="../../imagesv1/card_right.png" wx:if="{{card_detail.role_name.length>7}}"></image>
+                                </view>
+                                <view bindtap="card_options" class="one_tel" data-option="call" data-target="{{card_detail.hide_property==0&&card_detail.card_tel?card_detail.card_tel:''}}" wx:if="{{card_detail.hide_property==0&&card_detail.card_tel}}">{{card_detail.hide_property==0&&card_detail.card_tel?card_detail.card_tel:''}}</view>
+                            </view>
+                            <view class="com_logo" style="margin-top:{{card_detail.hide_property==0&&card_detail.card_tel?8:0}}rpx">
+                                <image src="{{card_detail.company_logo}}"></image>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view bindtap="_changeCardStatus" class="changeCard">
+            <block wx:if="{{!cardStatus}}">
+				展开全部名片信息<image class="icon_arrow" src="/dbs_masclwlcard/images/card/icon_down.png"></image>
+            </block>
+            <block wx:else>
+				收起以下名片信息<image class="icon_arrow rotate180" src="/dbs_masclwlcard/images/card/icon_down.png"></image>
+            </block>
+        </view>
+        <view class="card_d_box {{cardStatus?'open_card':'closed_card'}}" wx:if="{{cardStatus}}">
+            <view class="card_sm_box">
+                <view class="sm_box_item" wx:if="{{card_detail.card_tel}}">
+                    <view class="sm_item_left">电话</view>
+                    <view class="sm_item_right">
+                        <view class="detail_l online">{{card_detail.card_tel?card_detail.card_tel:''}}</view>
+                        <view bindtap="card_options" class="detail_r" data-option="call" data-target="{{card_detail.card_tel?card_detail.card_tel:''}}">
+                            <form reportSubmit bindsubmit="from_send">
+                                <button class="card_op_btn" formType="submit" style="padding-left:0rpx;padding-right:0rpx;">拨打</button>
+                            </form>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="sm_box_item" wx:if="{{card_detail.weixinid}}">
+                <view class="sm_item_left">微信</view>
+                <view class="sm_item_right">
+                    <view class="detail_l online">{{card_detail.weixinid}}</view>
+                    <view bindtap="card_options" class="detail_r" data-copy="wxid" data-option="copy" data-target="{{card_detail.weixinid}}">
+                        <form reportSubmit bindsubmit="from_send">
+                            <button class="card_op_btn" formType="submit" style="padding-left:0rpx;padding-right:0rpx;">复制</button>
+                        </form>
+                    </view>
+                </view>
+            </view>
+            <view class="sm_box_item" wx:if="{{card_detail.email}}">
+                <view class="sm_item_left">邮箱</view>
+                <view class="sm_item_right">
+                    <view class="detail_l online">{{card_detail.email}}</view>
+                    <view bindtap="card_options" class="detail_r" data-copy="email" data-option="copy" data-target="{{card_detail.email}}">
+                        <form reportSubmit bindsubmit="from_send">
+                            <button class="card_op_btn" formType="submit" style="padding-left:0rpx;padding-right:0rpx;">复制</button>
+                        </form>
+                    </view>
+                </view>
+            </view>
+            <view class="sm_box_item">
+                <view class="sm_item_left">公司</view>
+                <view class="sm_item_right">
+                    <view class="detail_l online">{{card_detail.company_name}}</view>
+                    <view bindtap="card_options" class="detail_r" data-copy="company" data-option="copy" data-target="{{card_detail.company_name}}">
+                        <form reportSubmit bindsubmit="from_send">
+                            <button class="card_op_btn" formType="submit" style="padding-left:0rpx;padding-right:0rpx;">复制</button>
+                        </form>
+                    </view>
+                </view>
+            </view>
+            <view class="sm_box_item" wx:if="{{card_detail.address||card_detail.detailed_address}}">
+                <view class="sm_item_left">地址</view>
+                <view class="sm_item_right">
+                    <view class="detail_l">{{(card_detail.address||'')+(card_detail.detailed_address||'')}}</view>
+                    <view bindtap="card_options" class="detail_r" data-copy="addr" data-option="copy" data-target="{{(card_detail.address||'')+(card_detail.detailed_address||'')}}">
+                        <form reportSubmit bindsubmit="from_send">
+                            <button class="card_op_btn" formType="submit" style="padding-left:0rpx;padding-right:0rpx;">复制</button>
+                        </form>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="card_options">
+            <view bindtap="showShopPoster" class="options my_options" style="color:#fff;background:#1AAD19;border-color:rgba(5,5,5,0.08);">分享名片
+				
+            </view>
+            <view class="center"></view>
+            <view bindtap="addPhoneContact" class="options my_options" style="color:#fff;background:#1AAD19;border-color:rgba(5,5,5,0.08);">保存手机通讯录
+					
+            </view>
+        </view>
+        <view class="like_box">
+            <view class="left_card">
+                <view class="look_box clearfix">
+                    <image src="{{item.avatarUrl}}" wx:if="{{index<8}}" wx:for="{{card_detail.card_allmembr.lists}}" wx:key="index"></image>
+                </view>
+                <view class="look_num">{{card_detail.card_allmembr.totle}}人浏览</view>
+            </view>
+            <view bindtap="like" class="like_btn">
+                <image src="/dbs_masclwlcard/images/card/zan.png" wx:if="{{card_detail.is_like=='0'}}"></image>
+                <image src="/dbs_masclwlcard/images/card/zan_hover.png" wx:if="{{card_detail.is_like=='1'}}"></image>
+                <view class="like_num">靠谱
+					<text style="color:#333;">{{card_detail.zan_num}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="card_signature" id="card_signature " wx:if="{{card_detail.card_instr}}">
+            <view class="model_title">我的个人简介
+		  </view>
+            <view class="signature clearfix">
+                <view class="signature_left">
+                    <view class="signature_text" wx:if="{{card_detail.card_instr}}">
+                        <text>{{card_detail.card_instr}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="info-mod" style="word-break: break-all; font-size: 0" wx:if="{{card_detail.photo&&card_detail.photo.length>0}}">
+            <view class="title">照片墙</view>
+            <image mode="widthFix" src="{{item.url}}" wx:for="{{card_detail.photo}}" wx:key="index"></image>
+        </view>
+        <view class="popCard" hidden="{{isPopCard}}">
+            <view bindtap="_closePopCard" class="mask"></view>
+            <view class="content">
+                <view class="top">
+                    <image src="{{card_detail.card_logo}}"></image>
+                    <view class="text">
+                        <text>
+                        这是我的名片，请惠存 
+                        电话:{{card_detail.card_tel}} 
+                        公司:{{card_detail.company_name}} 
+                        地址:{{card_detail.detailed_address}} 
+                  </text>
+                    </view>
+                </view>
+                <view bindtap="addPhoneContact" class="btn-primary" style="text-align: center; border-radius: 10rpx;">存入手机通讯录</view>
+                <view bindtap="_closePopCard" class="btn-kankan">看看再说</view>
+            </view>
+        </view>
+        <view class="endTips"></view>
+        <view style="height:60px;background:transparent;"></view>
+  </view>
+  <view class="tip_wechat" wx:if="{{user_flag==1}}">
+    <view class="redpoint" wx:if="{{offline}}">{{offline}}</view>
+    <view class="msg">
+      <image src="../../images/card/msg2.png"></image>
+    </view>
+    <form bindsubmit="goChat" reportSubmit="true">
+      <button formType="submit" class="tip_wechat_getPhoneNumber" plain="true"></button>
+    </form>
+  </view>
+</view>

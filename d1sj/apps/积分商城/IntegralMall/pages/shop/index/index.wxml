@@ -1,0 +1,88 @@
+<!--pages/shop/index/index.wxml-->
+<template name="shop_index">
+  <!-- <view class="shop_tit">
+    <navigator hover-class="none" url="../../pages/shop/address/address" class="shop_tit_left fl">
+      <image src="/imgs/weizhi.png" mode='widthFix'></image>
+      <text>北清路哈哈哈哈哈</text>
+    </navigator>
+    <navigator hover-class="none" url="../../pages/shop/search/search" class="shop_tit_right fr">
+      <image src="/imgs/search.png" mode='widthFix'></image>
+      <text>搜索</text>
+    </navigator>
+  </view> -->
+  <scroll-view scroll-x="true" class="index_nav">
+    <text class="index_nav_right_per {{currentNav==index?'current':''}}" wx:for="{{navList}}" wx:for-item="item" wx:key="{{item.name}}" data-index="{{index}}" data-item="{{item}}" bindtap="switchClass">{{item.name}}</text>
+    <!-- <text class="index_nav_right_per current" bindtap="switchClass">老师</text>
+    <text class="index_nav_right_per" bindtap="switchClass">2333</text>
+    <text class="index_nav_right_per" bindtap="switchClass">2333</text>
+    <text class="index_nav_right_per" bindtap="switchClass">2333</text>
+    <text class="index_nav_right_per" bindtap="switchClass">2333</text>
+    <text class="index_nav_right_per" bindtap="switchClass">2333</text>
+    <text class="index_nav_right_per" bindtap="switchClass">2333</text>
+    <text class="index_nav_right_per" bindtap="switchClass">2333</text>
+    <text class="index_nav_right_per" bindtap="switchClass">2333</text>
+    <text class="index_nav_right_per" bindtap="switchClass">2333</text>
+    <text class="index_nav_right_per" bindtap="switchClass">2333</text> -->
+  </scroll-view>
+  <view class="index_banner" wx:if="{{currentNav===0}}">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="#febd2d">
+      <block wx:for="{{imgUrls}}" wx:for-item="item" wx:key="{{item.name}}">
+        <swiper-item>
+          <image src="{{item.img}}" class="slide-image" mode='aspectFill' />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view wx:if="{{currentNav!==0}}">
+    <view class="index_classify">
+      <text class="index_classify_per {{secondClass==index?'active':''}}" wx:for="{{classifyList}}" wx:for-item="item" wx:key="{{item.name}}" data-item="{{item}}" data-index="{{index}}" bindtap="getSecond">{{item.name}}</text>
+    </view>
+  </view>
+  <!-- <view >
+      <view class="index_classify">
+        <text class="index_classify_per active"bindtap="getSecond">233</text>
+        <text class="index_classify_per "bindtap="getSecond">233</text>
+        <text class="index_classify_per "bindtap="getSecond">233</text>
+        <text class="index_classify_per "bindtap="getSecond">233</text>
+        <text class="index_classify_per "bindtap="getSecond">233</text>
+        <text class="index_classify_per "bindtap="getSecond">233</text>
+      </view>
+    </view>  -->
+  <view class="index_info">
+    <view class="index_info_tit">
+      <image src="/imgs/shop_tit.png" mode='widthFix'></image>
+    </view>
+    <view class="index_info_con clearfix">
+      <view class="index_info_con_per" wx:for="{{shopList}}" wx:for-item="item" wx:key="{{item.name}}" data-item="{{item}}" bindtap="jumpDetail">
+        <view class="index_info_con_per_top clearfix">
+          <image src="{{item.image}}" mode='aspectFill'></image>
+        </view>
+        <view class="index_info_con_per_text">
+          <view class="index_info_con_per_text_name">{{item.name}}</view>
+          <view class="index_info_con_per_text_price clearfix">
+            <view class="index_info_con_per_text_price_left">
+              <text wx:if="{{item.prices.money!=0}}">¥{{item.prices.money}}＋</text>{{item.prices.score}}积分
+            </view>
+            <!-- <view class="index_info_con_per_text_price_right">
+                ¥{{item.original_price}}
+              </view> -->
+          </view>
+          <view class="index_info_con_per_text_status clearfix">
+
+            <view class="index_info_con_per_text_status_right fl" style='text-decoration:line-through;'>
+              ¥{{item.original_price}}
+            </view>
+            <view class="index_info_con_per_text_status_left fr">
+              {{item.self==0?'自营':'附近精选'}}
+            </view>
+
+            <!-- <view class="index_info_con_per_text_status_right fr">
+                1.3km
+              </view> -->
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view style="width: 100%; height: 100rpx;"></view>
+</template>

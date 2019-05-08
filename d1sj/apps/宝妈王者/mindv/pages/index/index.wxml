@@ -1,0 +1,115 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+    <view class="wxapp-toast-content">
+      <view class="wxapp-toast-content-text"> {{toastText}} </view>
+    </view>
+  </view>
+
+
+  <view class='authorization-box' wx:if="{{!hasUserInfo && canIUse}}">
+    <view class='authorization-main'>
+      <view class='icon_logo'>
+        <image src='{{img_url}}icon_logo1.png' mode='widthFix'></image>
+      </view>
+      <view>妈咪王者</view>
+      <view class='authorization-tip'>
+        <text>温馨提示：</text>登录后才可以答题哦
+      </view>
+
+      <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" lang='zh_CN'>
+        <image src='{{img_url}}icon-wxlogo1.png' mode='widthFix'></image>微信授权登录</button>
+    </view>
+  </view>
+  <!--  首页用户信息  -->
+  <view class="index-head">
+    <!--  用户头像  -->
+    <view class="index-head-portrait" bindtap="jumpPerson">
+      <image src="{{image}}" mode="widthFix"></image>
+    </view>
+    <!--  用户名称 用户金币 用户等级  -->
+    <view class="index-head-user">
+      <view>
+        <text class='index-head-username'>{{name}}</text>
+        <view class="icon-gold">
+          <image src="{{img_url}}icon-gold.png" mode="widthFix"></image>
+          <text class="index-head-gold">{{gold}}</text>
+        </view>
+      </view>
+      <view class="index-head-lv">
+        <text class="">LV.{{grade}}</text>
+        <view>
+          <progress class='aaa' percent="{{graderate}}" color="#fc7636" backgroundColor="#fff" stroke-width="20" active />
+        </view>
+        <text class='experience'>{{experience}}</text>
+      </view>
+    </view>
+
+    <!--  用户分享点击  -->
+    <view class="index-head-share" bindtap="jumpShare">
+      <image src="{{img_url}}icon-qrcode.png"></image>
+    </view>
+  </view>
+  <!--  活动(现金赛) 排位赛 排行榜 商店 好友对战  -->
+  <view class="index-nav-box">
+    <view class="index-nav">
+      <image class="bg-index" src="{{img_url}}bg-index.png" mode="widthFix"></image>
+      <view>
+        <view class='index-nav-activity' bindtap="cashmatch">
+          <label>{{takeNum}}</label>
+          <image src="{{img_url}}nav-cash.png" mode="widthFix"></image>
+        </view>
+        <view class="index-nav-flex">
+          <view bindtap="jumpBay">
+            <image src="{{img_url}}nav-qualifier.png" mode="widthFix" class="qualifier-shadow"></image>
+          </view>
+          <view bindtap="jumpList">
+            <image src="{{img_url}}nav-rank.png" mode="widthFix" class="rank-shadow"></image>
+          </view>
+          <view bindtap="shop">
+            <image src="{{img_url}}nav-shoping.png" mode="widthFix" class="shoping-shadow"></image>
+          </view>
+          <view>
+            <!-- <button class="btn-friendpk" open-type="share">
+              <image src="{{img_url}}nav-friendpk.png" mode="widthFix" class="friendpk-shadow"></image>
+            </button>  -->
+            <button class="btn-friendpk" open-type="share">
+              <image src="{{img_url}}nav-friendpk.png" mode="widthFix" class="friendpk-shadow"></image>
+            </button>
+            <!-- <image src="{{img_url}}nav-friendpk.png" mode="widthFix" class="friendpk-shadow" bindtap="friendsPk" wx:else></image>   -->
+          </view>
+        </view>
+        <view class="btn-addcitycom">
+          <!-- open-type="contact" -->
+          <button bindtap='openYunYing'>
+            <image src="{{img_url}}btn-addcitycom.png" mode="widthFix"></image>
+          </button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='pop-share-gold' wx:if="{{yunying}}">
+    <view class='pop-share-gold-bg' bindtap='closeYunYing'></view>
+    <view class='pop-intersperse'>
+      <image src='{{img_url}}intersperse.png' mode='widthFix'></image>
+    </view>
+    <view class='pop-share-gold-main-box'>
+      <view class='pop-share-gold-main'>
+        <view class='pop-btn-close' bindtap='closeYunYing'>
+          <image src='{{img_url}}icon-close.png' mode='widthFix'></image>
+        </view>
+        <view class='pop-yy-tit'>加入妈咪社群流程</view>
+        <view class='pop-yy-content'>
+          <text>在对话框中回复"加入"，点击图文链接，加入社群</text>
+          <image src='{{img_url}}img-jiaru.png' mode='widthFix' width="100%"></image>
+        </view>
+
+        <view class='btn-addyuny'>
+          <button open-type='contact'>加入妈咪社区</button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

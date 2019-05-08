@@ -1,0 +1,28 @@
+<view class='userimg_intro'>
+  <image mode='widthFix' src='{{userInfo.avatarUrl}}'></image>
+  <view class="userimg_intro_txt">
+    <view>你已完成共享绘本借阅</view>
+    <view><view>给绘本共享模式点赞</view><image mode='widthFix' src='{{img_url}}icon_like.png'></image></view>
+  </view>
+</view>
+<view class="pd_img">
+  <image mode='aspectFit' src='{{sellProductData.img}}'></image>
+  <view>{{sellProductData.title}}</view>
+</view>
+<view class="share_types">
+  <button hover-class='none' data-id="0" bindtap='backPage'>
+    <view class="img_box">
+      <image src='{{img_url}}icon_fb_backindex.png' mode='widthFix'></image>
+    </view>
+    <view class="share_types_txt">返回首页</view>
+  </button>
+  <button hover-class='none' data-id="1" bindtap='shareWxpyq'>
+    <view class="img_box">
+      <image src='{{img_url}}icon_fb_add.png' mode='widthFix'></image>
+    </view>
+    <view class="share_types_txt">保存图片并分享</view>
+  </button>
+  <view class="coin_tips" style='right:100rpx;'>
+      分享可得成长值
+    </view>
+</view>

@@ -1,0 +1,63 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="shop-box">
+    <view class="shop-gift" bindtap='pop'>
+      <image src="{{img_url}}shop-gift1.png" mode='widthFix'></image>
+    </view>
+    <view class="shop-treasurebox">
+      <view wx:key="{{index}}" data-key='{{index}}' wx:item="{{item}}" wx:index="" wx:for="{{list}}" bindtap="onChangeShowState">
+        <view>
+          <text>{{item.name}}</text>
+        </view>
+        <view>
+          <image src="{{item.icon}}" mode="widthFix "></image>
+        </view>
+        <view>
+          <text>￥{{item.price}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="btn-freegold ">
+    <button open-type="share" bindtap='onShareAppMessage'>
+      <image src='{{img_url}}icon-gold.png' mode='widthFix'></image>
+      <text>免费王者币</text>
+    </button>
+    <text>分享到微信，可获得{{shareGold}}金币</text>
+  </view>
+
+  <view class="pop-box {{showView?'hide':'show'}}">
+    <view class='pop-box-bg' bindtap="hide"></view>
+    <view class="pop-main">
+      <view class='btn-close' bindtap="hide">
+        <image src="{{img_url}}icon-close.png" mode='widthFix'></image>
+      </view>
+      <view class='icon-titpng'>
+        <image src="{{icon}}" mode="widthFix"></image>
+      </view>
+      <view class="pop-main-tit ">{{name}}</view>
+      <view class="pop-main-text ">{{desc}}</view>
+      <view class="btn-buy">
+        <button bindtap='pop'>￥{{price}}购买</button>
+      </view>
+    </view>
+  </view>
+
+  <view class='pop-share-gold' wx:if="{{popShareGold}}" bindtap='closeShareGold'>
+    <view class='pop-share-gold-bg' bindtap='closeShareGold'></view>
+    <view class='pop-intersperse'>
+      <image src='{{img_url}}intersperse.png' mode='widthFix'></image>
+    </view>
+    <view class='pop-share-gold-main-box'>
+      <view class='pop-share-gold-main'>
+        <image class='icon-share-gold' src='{{img_url}}icon-share-gold.png' mode='widthFix'></image>
+        <view>邀请成功，奖励{{shareGold}}金币</view>
+        <view class='btn-share'>
+          <button bindtap='closeShareGold' open-type='share'>继续邀请</button>
+          <button bindtap='paiwei1'>参加排位赛</button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,21 @@
+<!--pages/fight/fight.wxml-->
+<view class="container">
+  <view class="index">
+    <!-- <image src="{{url_img}}pk_bgc.png"></image> -->
+    <view class="index_box">
+      <view class="index_box_img">
+        <!-- <image src="{{url_img}}img.png"></image> -->
+      </view>
+      <view class="index_box_text">
+        <text>房间已失效或发起者已离开对战</text>
+        <text>你可以自己发起一场对战,或者参加排位赛模式</text>
+      </view>
+      <view bindtap='jumpGame' class="index_box_send">
+        发起好友对战
+      </view>
+      <view bindtap='jumpGame' class="index_box_canjia">
+        参加排位赛
+      </view>
+    </view>
+  </view>
+</view>

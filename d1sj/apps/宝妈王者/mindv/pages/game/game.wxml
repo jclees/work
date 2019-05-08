@@ -1,0 +1,214 @@
+<!--pages/game/game.wxml-->
+<view class="container">
+  <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+    <view class="wxapp-toast-content">
+      <view class="wxapp-toast-content-text"> {{toastText}} </view>
+    </view>
+  </view>
+  <view class="game_box">
+    <view class="bg-radius">
+      <view></view>
+    </view>
+    <view class="game_box_info">
+      <view class="game_box_tit">
+        <image src="{{img_url}}game-tit.png" mode='widthFix'></image>
+        <view class='game-box-title-box'>
+          <view class='game-box-title'>妈咪王者排位赛</view>
+          <view class="game_box_tit_text">
+            {{paiweiStart}}-{{paiweiEnd}}
+          </view>
+          <view class="game_box_tit_info">
+            <view class="game_box_tit_info_left">
+              <view>
+                <image src="{{img_url}}icon-gold.png"></image>
+                <text>{{gold}}</text>
+              </view>
+            </view>
+            <view class="game_box_tit_info_right">
+              <view class="game_box_tit_info_right_per" bindtap="openPop1">
+                <image src="{{img_url}}icon-1.png"></image>
+              </view>
+              <view class="game_box_tit_info_right_per" bindtap="openPop2">
+                <image src="{{img_url}}icon-2.png"></image>
+              </view>
+              <view class="game_box_tit_info_right_per" bindtap="openPop3">
+                <image src="{{img_url}}icon-3.png"></image>
+              </view>
+              <view class="game_box_tit_info_right_per" bindtap="openPop4">
+                <image src="{{img_url}}icon-4.png"></image>
+              </view>
+              <view class="game_box_tit_info_right_per" bindtap="openPop5">
+                <image src="{{img_url}}icon-5.png"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- <view class="game_box_tit_bgc">
+          <image src="{{img_url}}juxing_bgc.png"></image>
+    </view> -->
+
+    <view class="game_box_con">
+      <scroll-view scroll-y scroll-left="20rpx">
+        <view class="game_box_con_per" wx:for="{{list}}" wx:key="{{item.id}}" data-index="{{index}}" data-item="{{item}}" bindtap="jump">
+          <view class='lock' wx:if="{{item.is_lock === 1}}">
+            <image src='{{img_url}}icon-lock.png' mode='widthFix'></image>
+          </view>
+          <image src="{{img_url}}per_bgc.png"></image>
+          <view class="game_box_con_per_left fl">
+            <view class="game_box_con_per_left_left">
+              <image src="{{item.avatar}}"></image>
+            </view>
+            <view class="game_box_con_per_left_right">
+              <view class="game_box_con_per_left_right_top">{{item.name}}</view>
+              <view class="game_box_con_per_left_right_bottom">奖金：{{item.bonus}}</view>
+            </view>
+          </view>
+          <view class="game_box_con_per_right fr">
+            <view class="game_box_con_per_right_top clearfix">
+              <text>{{item.gold}}</text>
+              <image src="{{img_url}}icon-gold.png"></image>
+            </view>
+
+            <view class="game_box_con_per_right_bottom" wx:if="{{list.length - 1 === index && list[list.length - 1].is_lock !== 1}}">
+              <image src="{{img_url}}icon-stars-opt.png"></image>
+              <text> x {{item.havestar}} </text>
+            </view>
+            <view class="game_box_con_per_right_bottom" wx:elif="{{item.star > 7}}">
+              <image src="{{img_url}}icon-stars-opt.png"></image>
+              <text> x {{item.havestar}} </text>
+            </view>
+            <view class="game_box_con_per_right_bottom" wx:else>
+              <image wx:for="{{item.star - item.havestar}}" wx:for-item="items" wx:key="{{items.id}}" src="{{img_url}}icon-stars.png"></image>
+              <image wx:for="{{item.star < item.havestar?item.star:item.havestar}}" wx:for-item="items" wx:key="{{items.id}}" src="{{img_url}}icon-stars-opt.png"></image>
+            </view>
+
+
+          </view>
+        </view>
+        <view class='lock-dot' wx:if="{{list[list.length - 1].is_lock === 1}}"></view>
+      </scroll-view>
+    </view>
+  </view>
+  <!-- 第一个弹出框 -->
+  <view class="pop" wx:if="{{pop1}}">
+    <view class="cover" bindtap="closePop1"></view>
+    <view class="pop_box">
+      <view class="pop_box_icon">
+        <image src="{{img_url}}pop_icon1.png"></image>
+      </view>
+      <view class="pop_box_close" bindtap="closePop1">
+        <image src="{{img_url}}close.png"></image>
+      </view>
+      <view class="pop_box_text">
+        限次经验卡
+      </view>
+      <view class="pop_box_des">
+        使用后，下5场排位赛内获得的经验+30%
+      </view>
+      <view class="pop_box_num">
+        剩余次数:2
+      </view>
+      <view class="pop_box_button" bindtap='openPop'>
+        <image src="{{img_url}}use.png"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 第二个弹出框 -->
+  <view class="pop" wx:if="{{pop2}}">
+    <view class="cover" bindtap="closePop2"></view>
+    <view class="pop_box">
+      <view class="pop_box_icon">
+        <image src="{{img_url}}pop_icon2.png"></image>
+      </view>
+      <view class="pop_box_close" bindtap="closePop2">
+        <image src="{{img_url}}close.png"></image>
+      </view>
+      <view class="pop_box_text">
+        限时经验卡
+      </view>
+      <view class="pop_box_des">
+        使用后，1小时内排位赛获得的经验+5%
+      </view>
+      <view class="pop_box_num">
+        剩余次数:2
+      </view>
+      <view class="pop_box_button" bindtap='openPop'>
+        <image src="{{img_url}}use.png"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 第三个弹出框 -->
+  <view class="pop" wx:if="{{pop3}}">
+    <view class="cover" bindtap="closePop3"></view>
+    <view class="pop_box">
+      <view class="pop_box_icon">
+        <image src="{{img_url}}pop_icon3.png"></image>
+      </view>
+      <view class="pop_box_close" bindtap="closePop3">
+        <image src="{{img_url}}close.png"></image>
+      </view>
+      <view class="pop_box_text">
+        限次王者币卡
+      </view>
+      <view class="pop_box_des">
+        使用后，下五场排位赛胜利获得的金币+50%
+      </view>
+      <view class="pop_box_num">
+        剩余次数:2
+      </view>
+      <view class="pop_box_button" bindtap='openPop'>
+        <image src="{{img_url}}use.png"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 第四个弹出框 -->
+  <view class="pop" wx:if="{{pop4}}">
+    <view class="cover" bindtap="closePop4"></view>
+    <view class="pop_box">
+      <view class="pop_box_icon">
+        <image src="{{img_url}}pop_icon4.png"></image>
+      </view>
+      <view class="pop_box_close" bindtap="closePop4">
+        <image src="{{img_url}}close.png"></image>
+      </view>
+      <view class="pop_box_text">
+        限时王者币卡
+      </view>
+      <view class="pop_box_des">
+        使用后，1小时内排位赛胜利获得的金币+10%
+      </view>
+      <view class="pop_box_num">
+        剩余次数:2
+      </view>
+      <view class="pop_box_button" bindtap='openPop'>
+        <image src="{{img_url}}mai.png"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 第五个弹出框 -->
+  <view class="pop" wx:if="{{pop5}}">
+    <view class="cover" bindtap="closePop5"></view>
+    <view class="pop_box">
+      <view class="pop_box_icon">
+        <image src="{{img_url}}pop_icon5.png"></image>
+      </view>
+      <view class="pop_box_close" bindtap="closePop5">
+        <image src="{{img_url}}close.png"></image>
+      </view>
+      <view class="pop_box_text">
+        加分卡
+      </view>
+      <view class="pop_box_des">
+        使用后，下一场排位赛中的得分+10%
+      </view>
+      <view class="pop_box_num">
+        剩余次数:2
+      </view>
+      <view class="pop_box_button" bindtap='openPop'>
+        <image src="{{img_url}}mai.png"></image>
+      </view>
+    </view>
+  </view>
+</view>

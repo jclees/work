@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/index/index",
+    "pages/leavemsg/leavemsg",
+    "pages/person/person",
+    "pages/ranking/ranking",
+    "pages/cashmatch/cashmatch",
+    "pages/game/game",
+    "pages/duizhan/duizhan",
+    "pages/likai/likai"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1b1b1b",
+    "navigationBarTitleText": "狠人PK",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#1b1b1b"
+  },
+  "sitemapLocation": "sitemap.json"
+}

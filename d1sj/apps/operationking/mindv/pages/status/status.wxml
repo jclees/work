@@ -1,0 +1,119 @@
+<!--pages/status/status.wxml-->
+<view class="container">
+  <view class="index">
+    <image src="{{img_url}}question_bgc.png"></image>
+    <view class="index_box">
+      <view class="index_box_tit clearfix">
+        <view class="index_box_tit_per {{currentTab==0?'current':''}}"
+         data-current="0"
+         bindtap="swichNav">
+          <image src="{{img_url}}tab1.png"></image>
+          <text>审核中</text>
+        </view>
+        <view class="index_box_tit_per {{currentTab==1?'current':''}}" 
+        data-current="1"
+         bindtap="swichNav">
+          <image src="{{img_url}}tab2.png"></image>
+          <text>已通过</text>
+        </view>
+        <view class="index_box_tit_per {{currentTab==2?'current':''}}" 
+        data-current="2"
+         bindtap="swichNav">
+          <image src="{{img_url}}tab3.png"></image>
+          <text>未通过</text>
+        </view>
+      </view>
+      <view class="index_box_con">
+        <view class="index_box_con_per"
+         wx:if="{{currentTab==0}}">
+          <view class="index_box_con_per_tit">
+            <view class="index_box_con_per_tit_box"
+            bindtap="jumpQuestion">我要出题</view>
+          </view>
+          <view wx:for="{{auditList}}" 
+          wx:for-item="item"
+           wx:key="{{index}}" 
+          class="index_box_con_per_info" >
+            <view
+              bindtap="toNopass"
+                id="{{item.id}}"
+                data-bigclass="{{item.bigclass+  ','   +item.smallclass}}"
+                class="index_box_con_per_info_per">
+              <view    class="index_box_con_per_info_per_left">
+                <image 
+                  data-bigclass="{{item.bigclass+  ','   +item.smallclass}}"
+                 id="{{item.id}}"src="{{img_url}}time.png"></image>
+                <text  id="{{item.id}}">审核中</text>
+              </view>
+              <view 
+               id="{{item.id}}"
+                 data-bigclass="{{item.bigclass+  ','   +item.smallclass}}"
+               class="index_box_con_per_info_per_right">
+                <view 
+                 id="{{item.id}}"
+                   data-bigclass="{{item.bigclass+  ','   +item.smallclass}}"
+                 class="index_box_con_per_info_per_right_top">
+                  {{item.name}}
+                </view>
+                <view
+                 id="{{item.id}}"
+                   data-bigclass="{{item.bigclass+  ','   +item.smallclass}}"
+                 class="index_box_con_per_info_per_right_bottom">
+                  <text  id="{{item.id}}"
+                   data-bigclass="{{item.bigclass+  ','   +item.smallclass}}">{{item.bigclass}}</text>
+                  <text  id="{{item.id}}"
+                  data-bigclass="{{item.bigclass+  ','   +item.smallclass}}">{{item.smallclass}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="index_box_con_per" wx:if="{{currentTab==1}}">
+          <view class="index_box_con_per_no" 
+          wx:if="{{passList.length <= 0}}">您还没有题目被采纳</view>
+          <view class="index_box_con_per_info" 
+            wx:for="{{passList}}" 
+          wx:for-item="item" wx:key="{{index}}" >
+            <view class="index_box_con_per_info_per">
+              <view class="index_box_con_per_info_per_left">
+                <image src="{{img_url}}time.png"></image>
+                <text>已通过</text>
+              </view>
+              <view class="index_box_con_per_info_per_right">
+                <view class="index_box_con_per_info_per_right_top">
+                  {{item.name}}
+                </view>
+                <view class="index_box_con_per_info_per_right_bottom">
+                 <text>{{item.bigclass}}</text>
+                  <text>{{item.smallclass}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="index_box_con_per" wx:if="{{currentTab==2}}">
+          <view class="index_box_con_per_no" wx:if="{{noPassList.length<=0}}">没有数据</view>
+          <view class="index_box_con_per_info">
+            <view class="index_box_con_per_info_per" 
+            wx:for="{{noPassList}}" 
+          wx:for-item="item" wx:key="{{index}}">
+              <view class="index_box_con_per_info_per_left">
+                <image src="{{img_url}}time.png"></image>
+                <text>未通过</text>
+              </view>
+              <view class="index_box_con_per_info_per_right">
+                <view class="index_box_con_per_info_per_right_top">
+                  {{item.name}}
+                </view>
+                <view class="index_box_con_per_info_per_right_bottom">
+                  <text>{{item.bigclass}}</text>
+                  <text>{{item.smallclass}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

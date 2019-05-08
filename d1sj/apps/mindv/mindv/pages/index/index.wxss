@@ -1,0 +1,334 @@
+/**index.wxss**/
+button::after {
+  border: 0;
+}
+.mask-wrap {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  left: 0;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+}
+
+.mask-wrap .mask-con {
+  background: #fff;
+  width: 573rpx;
+  margin: 0 auto;
+  padding: 50rpx 76rpx;
+  box-sizing: border-box;
+  margin-top: 300rpx;
+  border-radius: 10rpx;
+}
+
+.mask-wrap .mask-title {
+  font-size: 36rpx;
+  color: #000;
+  margin-bottom: 50rpx;
+  text-align: center;
+}
+
+.mask-wrap .mask-txt {
+  font-size: 28rpx;
+  color: #989898;
+  line-height: 58rpx;
+}
+
+.mask-wrap .icon-sq {
+  width: 105rpx;
+  margin: 40rpx auto;
+}
+
+.mask-wrap .icon-sq image {
+  width: 100%;
+}
+
+.person_dep {
+  font-size: 24rpx;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 100rpx;
+  padding: 6rpx 14rpx;
+  display: inline-block;
+  color: #fff;
+  position: absolute;
+  right: 0;
+  top: 40rpx; 
+}
+
+.icon-kefu {
+  width: 194rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+  text-align: right;
+  position: fixed;
+  left: 50%;
+  bottom: 30rpx;
+  margin-left: -97rpx;
+  z-index: 0;
+  padding: 0;
+  font-size: 30rpx;
+  color: #fff;
+  border-radius: 100rpx;
+  padding-right: 22rpx;
+  box-sizing: border-box;
+  background-color:#2f3590;
+}
+
+.icon-kefu image {
+  width: 32rpx;
+  height: 32rpx;
+  position: absolute;
+  top: 14rpx;
+  left: 18rpx;
+}
+
+/*  index-head  */
+
+.index-head {
+  width: 750rpx;
+  padding: 40rpx 30rpx 10rpx;
+  display: -webkit-flex;
+  display: flex;
+  box-sizing: border-box;
+  border-radius: 0 0 20rpx 20rpx;
+  z-index: 10;
+  position: relative;
+}
+
+/*  用户头像  */
+
+.index-head-portrait {
+  padding: 20rpx;
+  width: 145rpx;
+  height: 145rpx;
+}
+
+.index-head-portrait image {
+  width: 145rpx;
+  height: 145rpx;
+  border-radius: 50%;
+}
+
+/*  用户信息  */
+
+.index-head-user {
+  flex: 1;
+  padding: 40rpx 20rpx;
+  position: relative;
+}
+
+.index-head-user text {
+  height: 46rpx;
+  line-height: 46rpx;
+  font-size: 36rpx;
+  color: #fff;
+}
+
+.index-head-user text.index-head-username {
+  width: 200rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  float: left;
+}
+
+/*  icon  */
+
+.icon-gold {
+  height: 46rpx;
+  line-height: 46rpx;
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.icon-gold image {
+  width: 46rpx;
+  height: 46rpx;
+  float: left;
+}
+
+.index-head-gold {
+  height: 46rpx;
+  line-height: 46rpx;
+  margin-left: 10rpx;
+}
+
+/*  用户分享  */
+
+.index-head-share {
+  width: 50rpx;
+  height: 50rpx;
+  padding: 40rpx 20rpx;
+}
+
+.index-head-share image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.index-head-lv {
+  height: 46rpx;
+  line-height: 46rpx;
+  display: -webkit-flex;
+  display: flex;
+  width: 80%;
+  margin-top: 18rpx;
+}
+
+.index-head-lv>text {
+  font-size: 26rpx;
+  height: 46rpx;
+  line-height: 46rpx;
+  padding-right: 10rpx;
+}
+
+.index-head-lv>view {
+  display: inline-block;
+  flex: 1;
+  height: 20rpx;
+  overflow: hidden;
+  border: 2rpx solid #33a77c;
+  border-radius: 10rpx;
+  margin-top: 13rpx;
+  box-sizing: border-box;
+}
+
+.index-nav-box {
+  position: relative;
+  padding: 0 15rpx;
+  box-sizing: border-box;
+  margin-top: -4rpx;
+  z-index: 9;
+}
+
+.index-nav {
+  width: 100%;
+  padding: 30rpx 0 10rpx;
+  box-sizing: border-box;
+  border-radius: 0 0 20rpx 20rpx;
+  position: relative;
+}
+
+.bg-index {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+}
+
+.index-nav > view {
+  position: relative;
+  z-index: 10;
+}
+
+.index-nav-activity {
+  position: relative;
+  padding: 10rpx 15rpx;
+}
+
+.index-nav-activity image {
+  width: 100%;
+  border-radius: 20rpx;
+  box-shadow: 0 4rpx 4rpx rgba(248, 97, 79, 0.5);
+}
+
+.index-nav-activity label {
+  position: absolute;
+  top: 84rpx;
+  right: 75rpx;
+  width: 110rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #fff;
+  font-size: 36rpx;
+  text-align: center;
+  overflow: hidden;
+  text-shadow: 0 4rpx 4rpx #f23432;
+  font-weight: 700;
+}
+
+.index-nav-flex {
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.index-nav-flex view {
+  width: 50%;
+  padding: 10rpx 15rpx;
+  box-sizing: border-box;
+}
+
+.index-nav-flex view image {
+  width: 100%;
+}
+
+.qualifier-shadow {
+  box-shadow: 0 4rpx 4rpx rgba(248, 97, 79, 0.5);
+}
+
+.rank-shadow {
+  box-shadow: 0 4rpx 4rpx rgba(248, 146, 86, 0.5);
+}
+
+.shoping-shadow {
+  box-shadow: 0 4rpx 4rpx rgba(100, 124, 243, 0.5);
+}
+
+.friendpk-shadow {
+  box-shadow: 0 4rpx 4rpx rgba(190, 50, 221, 0.5);
+}
+
+.btn-addcitycom {
+  text-align: center;
+  margin-top: 50rpx;
+  background: transparent;
+  border: 0 none;
+}
+
+.btn-addcitycom button {
+  background: transparent;
+}
+
+.btn-addcitycom image {
+  width: 60%;
+}
+
+.btn-friendpk {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  font-size: 0;
+  border-radius: 0;
+}
+.mask_msg{
+  width: 100%;
+  background: #2f3590;
+  position: relative;
+  z-index: 100000;
+}
+.mask_msg .mask_msg_title{
+  font-size: 36rpx;
+  text-align: center;
+  padding: 20rpx 0;
+}
+.mask_msg .mask_msg_close{
+  position: absolute;
+  right: 20rpx;
+  top: 0;
+  font-size: 60rpx;
+}
+.th-text {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  color: #fff;
+  display: block;
+  height: 100rpx;
+  line-height: 50rpx;
+  align-items: center;
+  max-height: 100rpx;
+  padding-bottom: 20rpx;
+}

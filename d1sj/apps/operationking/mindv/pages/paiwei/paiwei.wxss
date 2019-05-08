@@ -1,0 +1,336 @@
+/**index.wxss**/
+.mvy {
+  opacity: 0.4;
+}
+
+.paiw_top {
+  height: auto;
+  padding-top: 75rpx;
+}
+.paiw {
+  width: 100%;
+}
+.paiw_left {
+  float: left;
+  margin-left: 10rpx;
+}
+.paiw_left_top {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin-left: 10rpx;
+}
+.paiw_left_top_left {
+  float: left;
+  color: #ffca28;
+  font-size: 53rpx;
+  font-weight: bold;
+}
+.paiw_left_top_right {
+  float: left;
+  color:#fff;
+  font-size: 53rpx;
+  font-weight: bold;
+}
+.paiw_left_tiem {
+  font-size: 22rpx;
+  margin-left: 10rpx;
+}
+.paiw_left_ym {
+  background: #2d264e;
+  padding:1rpx;
+  border:3px solid #433b6b;
+  height: auto;
+  width: auto;
+  overflow: hidden;
+  border-radius: 50rpx;
+}
+.paiw_left_ym image {
+  width: 53rpx;
+  height: 53rpx;
+}
+.paiw_i {
+  float: left;
+  height: 53rpx;
+  margin-left: 5rpx;
+  margin-top: 1rpx;
+  margin-bottom: 1rpx;
+}
+.paiw_i:nth-child(1) {
+  margin-left: 0;
+}
+.paiw_right {
+  width: 340rpx;
+  height: 233rpx;
+  float: right;
+}
+.paiw_right image {
+  width: 340rpx;
+  height: 233rpx;
+}
+.paiw_right_pos {
+  position: absolute;
+  z-index: 9;
+  right: 18rpx;
+  top:35rpx;
+  width: 35rpx;
+  height: 35rpx;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 35rpx;
+}
+.xins {
+  height: auto;
+  overflow: hidden;
+  margin-top: 35rpx;
+}
+.xins_1 {
+  height: auto;
+  overflow: hidden;
+  height: 135rpx;
+}
+.xins_yp1 {
+  overflow: hidden;
+  border-radius: 25rpx;
+  padding:25rpx;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#1557a0), to(#1aa8c8));
+}
+.xins_left {
+  float: left;
+}
+.xins_left_left {
+  width: 78rpx;
+  height: 78rpx;
+  background: #fff;
+  background-color:rgba(255,255,255,0.2);
+  border-radius: 18rpx;
+  padding-top: 5rpx;
+  padding-left: 5rpx;
+  float: left;
+}
+.xins_ys1{
+  width: 76rpx;
+  height: 76rpx;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#1557a0), to(#1579a0));
+  border-radius: 18rpx;
+  text-align: center;
+  line-height: 76rpx;
+}
+.xins_ys1 image {
+  width: 40rpx;
+  height: 50rpx;
+  padding-top: 13rpx;
+}
+.xins_left_right {
+  float: left;
+  margin-left: 20rpx;
+  font-size: 22rpx;
+  padding-top: 6rpx;
+}
+.xins_d {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.xins_right {
+  float: right;
+}
+.xins_right_top {
+  height: 32rpx;
+  line-height: 32rpx;
+  text-align: right;
+}
+.xins_right_top image {
+  float: right;
+  width: 32rpx;
+  height: 32rpx;
+  padding-right: 5rpx;
+}
+.xins_right_top text {
+  float: right;
+  margin-right: 5rpx;
+}
+.xins_right_bottom {
+  background: #fff;
+  background-color:rgba(255,255,255,0.2);
+  border-radius: 20rpx;
+  padding:3rpx;
+  width: auto;
+  margin-top: 12rpx;
+}
+.xins_xr image {
+  width: 32rpx;
+  height: 28rpx;
+  padding-top: 7rpx;
+}
+.xins_right_wq1 {
+  overflow: hidden;
+  width: auto;
+  background: #000;
+  height: 43rpx;
+  background-color:#157ea0;
+  text-align: center;
+  border-radius: 20rpx;
+  padding: 0 12rpx;
+}
+.xins_xr {
+  display: inline-block;
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+  width: 32rpx;
+}
+.yin {
+  position: relative;
+}
+.omg {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  border-radius:25rpx;
+  margin-bottom: 15rpx; 
+}
+.suo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  text-align: center;
+  background: #000;
+  background-color:rgba(0,0,0,0.4);
+  
+}
+.suo image {
+  width: 45rpx;
+  height: 52rpx;
+  padding-top: 40rpx;
+}
+.genduo {
+  text-align: center;
+  color: #736f87;
+  padding-bottom: 30rpx;
+  font-size: 26rpx;
+}
+
+.xins_yp2 {
+  overflow: hidden;
+  border-radius: 25rpx;
+  padding:25rpx;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#1f5cd0), to(#578efc));
+}
+
+.xins_ys2{
+  width: 76rpx;
+  height: 76rpx;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#224fa9), to(#3a66bc));
+  border-radius: 18rpx;
+  text-align: center;
+  line-height: 76rpx;
+}
+.xins_ys2 image {
+  width: 40rpx;
+  height: 50rpx;
+  padding-top: 13rpx;
+}
+.xins_right_wq2 {
+  overflow: hidden;
+  width: auto;
+  background: #000;
+  height: 43rpx;
+  background-color:#3964ba;
+  text-align: center;
+  border-radius: 20rpx;
+  padding: 0 12rpx;
+}
+/**3**/
+.xins_yp3 {
+  overflow: hidden;
+  border-radius: 25rpx;
+  padding:25rpx;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#6a03d3), to(#9228fe));
+}
+
+.xins_ys3{
+  width: 76rpx;
+  height: 76rpx;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#5a06ae), to(#6d19c2));
+  border-radius: 18rpx;
+  text-align: center;
+  line-height: 76rpx;
+}
+.xins_ys3 image {
+  width: 40rpx;
+  height: 50rpx;
+  padding-top: 13rpx;
+}
+.xins_right_wq3 {
+  overflow: hidden;
+  width: auto;
+  background: #000;
+  height: 43rpx;
+  background-color:#721dc8;
+  text-align: center;
+  border-radius: 20rpx;
+  padding: 0 12rpx;
+}
+/**4**/
+.xins_yp4 {
+  overflow: hidden;
+  border-radius: 25rpx;
+  padding:25rpx;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#1c75fe), to(#3da5fe));
+}
+
+.xins_ys4{
+  width: 76rpx;
+  height: 76rpx;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#1c66cb), to(#2c7ecb));
+  border-radius: 18rpx;
+  text-align: center;
+  line-height: 76rpx;
+}
+.xins_ys4 image {
+  width: 40rpx;
+  height: 50rpx;
+  padding-top: 13rpx;
+}
+.xins_right_wq4 {
+  overflow: hidden;
+  width: auto;
+  background: #000;
+  height: 43rpx;
+  background-color:#2674cb;
+  text-align: center;
+  border-radius: 20rpx;
+  padding: 0 12rpx;
+}
+/**5**/
+.xins_yp5 {
+  overflow: hidden;
+  border-radius: 25rpx;
+  padding:25rpx;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#f86f00), to(#ffa21f));
+}
+
+.xins_ys5{
+  width: 76rpx;
+  height: 76rpx;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#c86206), to(#ffa21f));
+  border-radius: 18rpx;
+  text-align: center;
+  line-height: 76rpx;
+}
+.xins_ys5 image {
+  width: 40rpx;
+  height: 50rpx;
+  padding-top: 13rpx;
+}
+.xins_right_wq5 {
+  overflow: hidden;
+  width: auto;
+  background: #000;
+  height: 43rpx;
+  background-color:#ca710e;
+  text-align: center;
+  border-radius: 20rpx;
+  padding: 0 12rpx;
+}

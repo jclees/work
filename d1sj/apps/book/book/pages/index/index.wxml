@@ -1,0 +1,160 @@
+<!-- 授权弹框 -->
+<view class="mask-wrap" wx:if="{{maskStatus}}" catchtouchmove="myCatchTouch">
+  <view class="mask-con">
+    <view class="mask-title">微信授权</view>
+    <view class="mask-txt">XXX小程序需要获取您的头像昵称等资料</view>
+    <view class="icon-sq">
+      <image src="{{img_url}}icon-sq.png" mode="widthFix"></image>
+    </view>
+    <button type="primary" bindgetuserinfo="getUserInfo" lang="zh_CN" open-type="getUserInfo"> 立即授权 </button>
+  </view>
+</view>
+<!-- 每日签到 -->
+<view class="layer" wx:if="{{signStatus}}" catchtouchmove='myCatchTouch'>
+  <view class="layer_cover" bindtap="close"></view>
+  <view class="layer_main">
+    <view class="layer_main_cover">
+      <image src='{{img_url}}sign_bg.png' class="layer_main_cover_bgpic" mode="widthFix"></image>
+      <view class="layer_content">
+        <view class="total_day">已累计签到
+          <text class="day_num">8 </text>天</view>
+        <view class="sign_tip">签到多多，奖励多多</view>
+        <view class="sign_day_list">
+          <view class="has_day">
+            <view class="day_num">1</view>
+            <image src='{{img_url}}sign_gold.png' class="sign_gold" mode="widthFix"></image>
+            <image src='{{img_url}}sign_success.png' class="sign_success" mode="widthFix"></image>
+          </view>
+          <view class="out_day">
+            <view class="day_num">2</view>
+            <image src='{{img_url}}sign_gold.png' class="sign_gold" mode="widthFix"></image>
+            <view class="out_day_txt">漏签</view>
+          </view>
+          <view class="cur_day">
+            <view class="day_num">3</view>
+            <image src='{{img_url}}sign_gold.png' class="sign_gold" mode="widthFix"></image>
+          </view>
+          <view>
+            <view class="day_num">4</view>
+            <image src='{{img_url}}sign_gold.png' class="sign_gold" mode="widthFix"></image>
+          </view>
+          <view>
+            <view class="day_num">5</view>
+            <image src='{{img_url}}sign_gold.png' class="sign_gold" mode="widthFix"></image>
+          </view>
+          <view>
+            <view class="day_num">6</view>
+            <image src='{{img_url}}sign_gold.png' class="sign_gold" mode="widthFix"></image>
+          </view>
+          <view>
+            <view class="day_num">7</view>
+            <image src='{{img_url}}sign_gold.png' class="sign_gold" mode="widthFix"></image>
+          </view>
+        </view>
+        <view>累计签到送大礼</view>
+        <view class="total_day_list">
+          <view>
+            <view class="total_day_list_box">
+              <image src='{{img_url}}sign_quan.png' mode="widthFix" class="sign_quan"></image>
+              <view>100书券</view>
+            </view>
+            <view class="txt">已领取</view>
+          </view>
+          <view>
+            <view class="total_day_list_box">
+              <image src='{{img_url}}sign_curquan.png' mode="widthFix" class="sign_quan"></image>
+              <view>100书券</view>
+            </view>
+            <view class="txt">已领取</view>
+          </view>
+          <view>
+            <view class="total_day_list_box">
+              <image src='{{img_url}}sign_curquan.png' mode="widthFix" class="sign_quan"></image>
+              <view>100书券</view>
+            </view>
+            <view class="txt">已领取</view>
+          </view>
+          <view>
+            <view class="total_day_list_box">
+              <image src='{{img_url}}sign_curquan.png' mode="widthFix" class="sign_quan"></image>
+              <view>100书券</view>
+            </view>
+            <view class="txt">已领取</view>
+          </view>
+        </view>
+        <view class="layer_btn_group">
+          <button bindtap="">立即签到</button>
+        </view>
+      </view>
+    </view>
+    <image class="layer_close" src='{{img_url}}sign_close.png' mode="widthFix" bindtap='closeSign'></image>
+  </view>
+</view>
+<!-- 内容 -->
+<view class="main">
+  <scroll-view scroll-y>
+    <view class="main_book_intro">
+      <view class="book_cover">
+        <image src='{{img_url}}book_cover.png' mode='widthFix'></image>
+      </view>
+      <view class="book_name">暗界神使</view>
+      <view class="book_author">火红森林</view>
+      <view class="book_intro" bindtap='unfold'>
+        <text>{{intro}}</text>
+        <view class="icon_unfold" style="transform: rotateX({{iconUnfold}}deg);">
+          <image src='{{img_url}}icon_unfold.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class="main_piece clearfix">
+      <view class="fl" bindtap='openMl'>
+        <image src='{{img_url}}icon_ml.png' class="icon_ml" mode='widthFix'></image>
+        <view class="txt">查看目录</view>
+      </view>
+      <view class="fl" onclick="changFont(1)">
+        <image src='{{img_url}}icon_sign.png' class="icon_sign" mode='widthFix'></image>
+        <view class="txt">签到领书券</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<!-- 底部导航 -->
+<view class="main_nav">
+  <view class="nav_group clearfix">
+    <view class="fl">
+      <image src='{{img_url}}icon_msg.png' class="icon_myshuq" mode='widthFix'></image>
+      <view class="txt">我的书圈</view>
+    </view>
+    <view class="fl" bindtap='goReadingBook'>
+      <view class="txt">{{scrollTop ? '继续阅读' : '免费阅读'}}</view>
+    </view>
+    <view class="fl" onclick="changFont(1)">
+      <image src='{{img_url}}icon_user.png' class="icon_myinfo" mode='widthFix'></image>
+      <view class="txt">个人中心</view>
+    </view>
+  </view>
+</view>
+<!-- 目录 -->
+<view class="main_mlwrap" wx:if="{{showMl}}" catchtouchmove="myCatchTouch">
+  <view class="cover" bindtap='closeMl'></view>
+  <view class="ml_list animated {{showMl ? 'slideInLeft' : 'slideOutLeft'}}">
+    <scroll-view scroll-y bindscrolltolower="scrollBottom">
+      <view class="active">第一章：死亡游戏</view>
+      <view>第二章：死亡游戏</view>
+      <view>第二章：死亡游戏</view>
+      <view>第二章：死亡游戏</view>
+      <view>第二章：死亡游戏</view>
+      <view>第二章：死亡游戏</view>
+      <view>第二章：死亡游戏</view>
+      <view>第二章：死亡游戏</view>
+      <view>第三章：死亡游戏</view>
+      <view>第四章：死亡游戏</view>
+      <view>第五章：死亡游戏</view>
+      <view>第二章：死亡游戏</view>
+      <view>第二章：死亡游戏</view>
+      <view>第二章：死亡游戏</view>
+      <view>第二章：死亡游戏</view>
+    </scroll-view>
+  </view>
+
+</view>

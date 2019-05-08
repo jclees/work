@@ -1,0 +1,101 @@
+<template name="cart_index">
+  <view class='wrap'>
+    <view class='not_wrap' wx:if="{{cartLists.length <= 0}}">
+      <image src='/imgs/null_bg.png' mode='widthFix'></image>
+      <view class='not_tips'>购物车空空如也</view>
+      <view class='not_btn' bindtap='jumpIndex'>
+        <text>去逛逛</text>
+      </view>
+    </view>
+    <view class='prod_wrap' wx:else>
+      <view bindtap='edit' class='edit'>{{!editStatus?'编辑':'完成'}}</view>
+
+      <block wx:for="{{cartLists}}" wx:key="">
+        <view class='topbar'>
+
+          <view bindtap="allSelectShop" data-curidx="{{index}}" class='cool_checkbox'>
+            <image src='/imgs/cart_sel{{item.checked?"_opt":""}}.png' mode='widthFix' style='width:37rpx;'></image>
+            <image src='/imgs/cart_shop_icon.png' mode='widthFix' style='width:35rpx;'></image>
+            <view>
+              {{item.name}}
+            </view>
+          </view>
+
+
+          <!-- <checkbox-group bindchange="allSelectShop" data-curidx="{{index}}">
+            <label class="checkbox">
+              <checkbox style="transform: scale(0.9,0.9);" value="{{item.checked}}" checked="{{item.checked}}" /> {{item.name}}
+            </label>
+          </checkbox-group> -->
+        </view>
+        <view class='item' wx:for="{{item.list}}" wx:key="" wx:for-item="subitem" wx:for-index="subidx">
+          <view>
+            <!-- <checkbox-group bindchange="aloneSelect" data-shopidx="{{index}}" data-curidx="{{subidx}}">
+              <label class="checkbox">
+                <checkbox color='' style="transform: scale(0.9,0.9);" value="{{subitem.checked}}" checked="{{subitem.checked}}" />
+              </label>
+            </checkbox-group> -->
+
+            <view bindtap="aloneSelect" data-shopidx="{{index}}" data-curidx="{{subidx}}">
+              <image src='/imgs/cart_sel{{subitem.checked?"_opt":""}}.png' mode='widthFix' style='width:37rpx;'></image>
+            </view>
+
+          </view>
+          <view>
+            <image src='{{subitem.img}}' mode='aspectFill'></image>
+          </view>
+          <view>
+
+            <view class='hd'>
+              <view class='tit'>{{subitem.name}}</view>
+              <view class='types'>款式：{{subitem.spec}}</view>
+            </view>
+
+            <view class='bd'>
+
+              <view class='money'>
+                <text>￥</text>{{subitem.price.money}}元</view>
+              <view class='nums'>
+                <view bindtap='reduce' data-shopidx="{{index}}" data-curidx="{{subidx}}" style="color:{{subitem.num<=1?'#e2e2e2':''}};">-</view>
+                <view>{{subitem.num}}</view>
+                <view bindtap='add' data-shopidx="{{index}}" data-curidx="{{subidx}}">+
+                </view>
+              </view>
+            </view>
+
+          </view>
+          <!-- <view bindtap='remove' data-idx="{{index}}">删除</view> -->
+        </view>
+      </block>
+
+    </view>
+  </view>
+  <view class='fixed_nav' wx:if="{{cartLists.length > 0}}">
+    <view>
+      <!-- <checkbox-group bindchange="allSelect">
+        <label class="checkbox" wx:for="{{cartAllsel}}" wx:key="">
+          <checkbox style="transform: scale(0.9,0.9);" value="{{item.checked}}" checked="{{item.checked}}" /> {{item.value}}
+        </label>
+      </checkbox-group> -->
+
+      <view bindtap="allSelect" data-shopidx="{{index}}" data-curidx="{{subidx}}" class='cool_checkbox'>
+        <image src='/imgs/cart_sel{{cartAllsel[0].checked?"_opt":""}}.png' mode='widthFix' style='width:37rpx;'></image>
+        <view style='padding-left:20rpx;'>{{cartAllsel[0].value}}</view>
+      </view>
+
+    </view>
+    <block wx:if="{{!editStatus}}">
+      <view>
+        <view class='total'>总计：
+          <text>￥{{moneyTotal}}元+{{scoreTotal}}积分</text>
+        </view>
+        <view>不计邮费</view>
+      </view>
+      <view bindtap='jumpCartPay'>去结算</view>
+    </block>
+    <block wx:else>
+      <view class="collection" bindtap='like'>移入收藏</view>
+      <view bindtap='remove'>删除所选</view>
+    </block>
+  </view>
+</template>

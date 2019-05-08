@@ -1,0 +1,11 @@
+<android>
+    <view class="an_box" wx:if="{{callphone}}">
+        <view class="an_sm_box">
+            <view class="an_am_top">{{phonenum}}</view>
+            <view class="an_am_bottom">
+                <view bindtap="_quitcall" class="an_am_bottom_l">取消</view>
+                <view bindtap="_call" class="an_am_bottom_r">呼叫</view>
+            </view>
+        </view>
+    </view>
+</android>

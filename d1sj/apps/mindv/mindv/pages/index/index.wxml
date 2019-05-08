@@ -1,0 +1,95 @@
+ <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+    <view class="wxapp-toast-content">
+      <view class="wxapp-toast-content-text"> {{toastText}} </view>
+    </view>
+  </view>
+<!-- 授权弹框 -->
+<view class="mask-wrap" wx:if="{{maskStatus}}" catchtouchmove="myCatchTouch">
+  <view class="mask-con">
+    <view class="mask-title">微信授权</view>
+    <view wx:if="{{isSuccYz == 1}}">
+      <view class="mask-txt">请前往验证是否是本公司员工</view>
+    </view>
+    <view class="mask-txt" wx:else>狠人PK小程序需要获取您的头像昵称等资料</view>
+    <view class="icon-sq">
+      <image src="{{img_url}}icon-sq.png" mode="widthFix"></image>
+    </view>
+    <button type="primary" bindtap="goLogin" wx:if="{{isSuccYz == 1}}"> 立即前往 </button>
+    <button type="primary" bindgetuserinfo="getUserInfo" lang="zh_CN" open-type="getUserInfo" wx:else> 立即授权 </button>
+  </view>
+</view>
+
+<!-- 小道消息  -->
+<button bindtap='openxdMsg' class="icon-kefu">
+    <image src="/images/msg_icon.png" mode="widthFix" class="animated tada infinite"></image>  
+    小道消息
+</button> 
+<!--index.wxml-->
+<view class="container">
+  <!--  首页用户信息  -->
+  <view class="index-head">
+    <!--  用户头像  -->
+    <view class="index-head-portrait" bindtap="jumpPerson">
+      <image src="{{image}}" mode="widthFix"></image>
+    </view>
+    <!--  用户名称 用户金币 用户等级  -->
+    <view class="index-head-user">
+      <view>
+        <text class='index-head-username'>{{name}}</text>
+        <view class="icon-gold">
+          <image src="{{img_url}}icon-gold.png" mode="widthFix"></image>
+          <text class="index-head-gold">{{gold}}</text>
+        </view>
+        <view class="person_dep">{{store}}</view>
+      </view>
+      <view class="index-head-lv">
+        <text class="">LV.{{grade}}</text>
+        <view>
+          <progress percent="{{rate}}" activeColor="#39a979" backgroundColor="#fff" radius="10" stroke-width="20" active />
+        </view>
+      </view>
+    </view>
+    <!--  用户分享点击  -->
+    <!-- <view class="index-head-share" bindtap="jumpShare">
+      <image src="{{img_url}}icon-qrcode.png"></image>
+    </view> -->
+  </view>
+  <!--  活动(现金赛) 排位赛 排行榜 商店 好友对战  -->
+  <view class="index-nav-box">
+    <view class="index-nav">
+      <!-- <image class="bg-index" src="{{img_url}}bg-index.png" mode="widthFix"></image> -->
+      <view>
+        <!-- <view class='index-nav-activity' bindtap="cashmatch">
+          <label>{{takeNum}}</label>
+          <image src="{{img_url}}nav-cash.png" mode="widthFix"></image>
+        </view> -->
+        <view class="index-nav-flex">
+          <view bindtap="jumpBay">
+            <image src="{{img_url}}index-skills.png" mode="widthFix" class=""></image>
+          </view>
+          <view bindtap="cashmatch">
+            <image src="{{img_url}}index-synth.png" mode="widthFix" class=""></image>
+          </view>
+          <view>
+            <button class="btn-friendpk" open-type="share">
+              <image src="{{img_url}}index-friend.png" mode="widthFix" class=""></image>
+            </button>
+          </view>
+          <view bindtap="jumpList">
+            <image src="{{img_url}}index-paiwei.png" mode="widthFix" class=""></image>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view style="padding:0 10rpx;">
+      <view class="mask_msg" wx:if="{{xdMsgStatus}}">
+        <view class="mask_msg_close" bindtap="xdMsgClose">×</view>
+        <view class='mask_msg_title'>小道消息</view>
+        <view selectable="true" scroll-y="true">
+          <text class="th-text" disabled='true' style="overflow-y:auto;overflow-x:scroll;" selectable="true">{{tip?tip:''}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

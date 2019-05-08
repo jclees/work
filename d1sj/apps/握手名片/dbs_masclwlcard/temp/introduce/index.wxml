@@ -1,0 +1,203 @@
+<template name="introduce">
+    <view catchtouchmove="forbidmove" class="tip_authorize  {{isIntroduction?'bounceInDown animated':''}}" wx:if="{{isIntroduction}}">
+        <view class="introduction_box_center {{card_detail.card.template_type==1||!card_detail.card.template_type?'introduction_box_center_maxheight':''}} {{card_detail.card.template_type==6?'introduction_box_center_three_height':''}}">
+            <view class="introduction_box_head">
+                <view class="introduction_box_introduce">这是我的名片，请惠存</view>
+                <view class="introduction_box_head_img">
+                    <image binderror="image_error" data-index="{{index}}" src="{{card_detail.card.simple.card_logo}}"></image>
+                </view>
+            </view>
+            <view class="introduction_box_content {{card_detail.card.template_type==1||!card_detail.card.template_type?'introduction_box_content_B':''}} {{card_detail.card.template_type==6?'introduction_box_content_A':''}}">
+                <view class="introduction_box_userinfo">
+                    <view class="one_pic" wx:if="{{card_detail.card.template_type==6}}">
+                        <view class="one_sm_box">
+                            <view class="three_img">
+                                <view class="left_big_img">
+                                    <image src="{{card_detail.card.logo_list[0]}}"></image>
+                                </view>
+                                <view class="right_big_img">
+                                    <image src="{{card_detail.card.logo_list[1]}}"></image>
+                                    <view></view>
+                                    <image src="{{card_detail.card.logo_list[2]}}"></image>
+                                </view>
+                            </view>
+                            <view class="card_msg2">
+                                <view class="card_msg_box">
+                                    <view class="msg_box">
+                                        <view class="{{card_detail.card.simple.hide_property==0&&card_detail.card.simple.card_tel?'name_job':'one_notel'}}">
+                                            <text class="one_card_name">{{card_change.longStringSplit(card_detail.card.simple.card_name,6)}}</text>
+                                            <text bindtap="lookrole" class="one_role_name">{{card_change.longStringSplit(card_detail.card.simple.role_name,8)}}</text>
+                                            <image class="role_right" src="../../imagesv1/card_right.png" wx:if="{{card_detail.card.simple.role_name.length>7}}"></image>
+                                        </view>
+                                        <view bindtap="card_options" class="one_tel" data-option="call" data-target="{{card_detail.card.simple.hide_property==0&&card_detail.card.simple.card_tel?card_detail.card.simple.card_tel:''}}" wx:if="{{card_detail.card.simple.hide_property==0&&card_detail.card.simple.card_tel}}">{{card_detail.card.simple.hide_property==0&&card_detail.card.simple.card_tel?card_change.changetelstyle(card_detail.card.simple.card_tel):''}}</view>
+                                    </view>
+                                    <view class="com_logo" style="margin-top:{{card_detail.card.simple.hide_property==0&&card_detail.card.simple.card_tel?8:0}}rpx">
+                                        <image src="{{card_detail.card.company_logo}}"></image>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="one_pic" wx:if="{{card_detail.card.template_type==1||!card_detail.card.template_type}}">
+                        <view class="one_sm_box">
+                            <view class="one_img">
+                                <image src="{{card_detail.card.simple.card_logo}}"></image>
+                            </view>
+                            <view class="new_card_msg_box">
+                                <view class="card_msg_box">
+                                    <view class="msg_box">
+                                        <view class="{{card_detail.card.simple.hide_property==0&&card_detail.card.simple.card_tel?'name_job':'one_notel'}}">
+                                            <text class="one_card_name">{{card_change.longStringSplit(card_detail.card.simple.card_name,6)}}</text>
+                                            <text bindtap="lookrole" class="one_role_name">{{card_change.longStringSplit(card_detail.card.simple.role_name,8)}}</text>
+                                            <image class="role_right" src="../../imagesv1/right_arrow.png" style="height: 18rpx;width: 18rpx" wx:if="{{card_detail.card.simple.role_name.length>7}}"></image>
+                                        </view>
+                                        <view bindtap="card_options" class="one_tel" data-option="call" data-target="{{card_detail.card.simple.hide_property==0&&card_detail.card.simple.card_tel?card_detail.card.simple.card_tel:''}}" wx:if="{{card_detail.card.simple.hide_property==0&&card_detail.card.simple.card_tel}}">{{card_detail.card.simple.hide_property==0&&card_detail.card.simple.card_tel?card_change.changetelstyle(card_detail.card.simple.card_tel):''}}</view>
+                                    </view>
+                                    <view class="com_logo" style="margin-top:{{card_detail.card.simple.hide_property==0&&card_detail.card.simple.card_tel?8:0}}rpx">
+                                        <image src="{{card_detail.card.company_logo}}"></image>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="b_box" wx:if="{{card_detail.card.template_type==5}}">
+                        <view class="b_sm_box">
+                            <image class="b_sm_bg_img" src="https://img.jikni.com/w3.png"></image>
+                            <view class="h_sm_box">
+                                <view class="w2_com_name">
+                                    <image src="{{card_detail.card.company_logo}}"></image>{{card_detail.card.company_profile||card_detail.card.company_name}}
+                  </view>
+                                <view class="w2_head_img">
+                                    <view class="w2_sm_box">
+                                        <image src="{{card_detail.card.simple.card_logo}}"></image>
+                                    </view>
+                                </view>
+                                <view class="w2_card_detail">
+                                    <view class="w2_card_name">
+                                        <text>{{card_change.longStringSplit(card_detail.card.simple.card_name,6)}}</text>
+                                    </view>
+                                    <view bindtap="lookrole" class="w2_role_name">
+                                        <text>{{card_change.longStringSplit(card_detail.card.simple.role_name,10)}}</text>
+                                    </view>
+                                </view>
+                                <view class="w2_other_detail">
+                                    <view class="w2_em_tel">
+                                        <view bindtap="card_options" class="w2_em" data-option="call" data-target="{{card_detail.card.simple.hide_property==0&&card_detail.card.simple.card_tel?card_detail.card.simple.card_tel:''}}" wx:if="{{card_detail.card.simple.hide_property==0&&card_detail.card.simple.card_tel}}">
+                                            <image src="../../imagesv1/type5_tel.png" wx:if="{{card_detail.card.simple.hide_property==0&&card_detail.card.simple.card_tel}}"></image>{{card_detail.card.simple.hide_property==0&&card_detail.card.simple.card_tel?card_detail.card.simple.card_tel:''}}
+                      </view>
+                                        <view class="w2_tel">
+                                            <image src="../../imagesv1/type5_email.png" style="margin-right: 12rpx;transform: translateY(-2rpx);" wx:if="{{card_detail.card.simple.email}}"></image>{{card_detail.card.simple.email}}
+                      </view>
+                                    </view>
+                                    <view class="w2_addr">
+                                        <image src="../../imagesv1/type5_addr.png" wx:if="{{card_detail.card.address||card_detail.card.detailed_address||card_detail.card.company_addr}}"></image>{{(card_detail.card.address||'')+(card_detail.card.detailed_address||'')||card_detail.card.company_addr}}
+                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="card_box" wx:if="{{card_detail.card.template_type==2}}">
+                        <view class="card_img">
+                            <image class="card_head" src="{{card_detail.card.simple.card_logo}}"></image>
+                            <image class="card_bg_head" src="{{card_detail.config.bgimg}}"></image>
+                            <view class="card_text_box">
+                                <view class="card_com_div">
+                                    <image src="{{card_detail.card.company_logo}}"></image>{{card_detail.card.company_profile||card_detail.card.company_name}}
+                  </view>
+                                <view class="card_name">{{card_detail.card.simple.card_name}}</view>
+                                <view class="card_job">{{card_detail.card.simple.role_name}}</view>
+                                <view class="card_detail">
+                                    <view class="card_msg">
+                                        <text bindtap="card_options" class="card_d_text" data-option="call" data-target="{{card_detail.card.simple.hide_property==0&&card_detail.card.simple.card_tel?card_detail.card.simple.card_tel:''}}" wx:if="{{card_detail.card.simple.hide_property==0&&card_detail.card.simple.card_tel}}">{{card_detail.card.simple.hide_property==0&&card_detail.card.simple.card_tel?card_detail.card.simple.card_tel:''}}</text>
+                                        <image class="card_d_img" src="../../imagesv1/type2_tel.png" wx:if="{{card_detail.card.simple.hide_property==0&&card_detail.card.simple.card_tel}}"></image>
+                                    </view>
+                                    <view class="card_msg">
+                                        <text class="card_d_text">{{card_detail.card.simple.email}}</text>
+                                        <image class="card_d_img" src="../../imagesv1/type2_email.png" wx:if="{{card_detail.card.simple.email}}"></image>
+                                    </view>
+                                    <view class="card_msg addr">
+                                        <text class="card_d_add">
+                                            <text class="card_addr">{{(card_detail.card.address||'')+(card_detail.card.detailed_address||'')||card_detail.card.company_addr}}</text>
+                                        </text>
+                                        <image class="card_d_img" src="../../imagesv1/type2_addr.png" wx:if="{{card_detail.card.address||card_detail.card.detailed_address||card_detail.card.company_addr}}"></image>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="b_box" wx:if="{{card_detail.card.template_type==3}}">
+                        <view class="b_sm_box">
+                            <image class="b_sm_bg_img" src="http://img.jikni.com/w2.png"></image>
+                            <view class="b_head_img">
+                                <image class="b_head_img_logo" src="{{card_detail.card.simple.card_logo}}"></image>
+                            </view>
+                            <view class="b_c_d_box">
+                                <view class="b_com_box">
+                                    <image src="{{card_detail.card.company_logo}}"></image>{{card_detail.card.company_profile||card_detail.card.company_logo}}
+                  </view>
+                                <view class="b_card_name">{{card_detail.card.simple.card_name}}</view>
+                                <view class="b_card_job">{{card_detail.card.simple.role_name}}</view>
+                                <view class="b_bottom_box">
+                                    <view class="b_tel">
+                                        <image src="../../imagesv1/tel_b.png" wx:if="{{card_detail.card.simple.hide_property==0&&card_detail.card.simple.card_tel}}"></image>
+                                        <view bindtap="card_options" class="b_text" data-option="call" data-target="{{card_detail.card.simple.hide_property==0&&card_detail.card.simple.card_tel?card_detail.card.simple.card_tel:''}}" wx:if="{{card_detail.card.simple.hide_property==0&&card_detail.card.simple.card_tel}}">{{card_detail.card.simple.hide_property==0&&card_detail.card.simple.card_tel?card_detail.card.simple.card_tel:''}}</view>
+                                    </view>
+                                    <view class="b_tel">
+                                        <image src="../../imagesv1/email_b.png" wx:if="{{card_detail.card.simple.email}}"></image>
+                                        <view class="b_text">{{card_detail.card.simple.email}}</view>
+                                    </view>
+                                    <view class="b_tel">
+                                        <image src="../../imagesv1/addr_b.png" wx:if="{{card_detail.card.address||card_detail.card.detailed_address||card_detail.card.company_addr}}"></image>
+                                        <view class="b_text">{{(card_detail.card.address||'')+(card_detail.card.detailed_address||'')||card_detail.card.company_addr}}</view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="b_box" wx:if="{{card_detail.card.template_type==4}}">
+                        <view class="b_sm_box">
+                            <image class="b_sm_bg_img" src="http://img.jikni.com/h1.png"></image>
+                            <view class="h_sm_box">
+                                <view class="h_com">
+                                    <image class="h_logo" src="{{card_detail.card.company_logo}}"></image>
+                    {{card_detail.card.company_profile||card_detail.card.company_name}}
+                  </view>
+                                <view class="clearfix h_head">
+                                    <view class="h_bead_box">
+                                        <image src="{{card_detail.card.simple.card_logo}}"></image>
+                                    </view>
+                                    <view class="h_card_detail">
+                                        <view class="h_card_name">{{card_detail.card.simple.card_name}}</view>
+                                        <view class="h_card_job">{{card_detail.card.simple.role_name}}</view>
+                                    </view>
+                                </view>
+                                <view class="h_b_detail">
+                                    <view class="h_de_list">
+                                        <image class="h_de_img" src="../../imagesv1/tel_h.png" wx:if="{{card_detail.card.simple.hide_property==0&&card_detail.card.simple.card_tel}}"></image>
+                                        <view bindtap="card_options" class="h_de_text" data-option="call" data-target="{{card_detail.card.simple.hide_property==0&&card_detail.card.simple.card_tel?card_detail.card.simple.card_tel:''}}" wx:if="{{card_detail.card.simple.hide_property==0&&card_detail.card.simple.card_tel}}">{{card_detail.card.simple.hide_property==0&&card_detail.card.simple.card_tel?card_detail.card.simple.card_tel:''}}</view>
+                                    </view>
+                                    <view class="h_de_list">
+                                        <image class="h_de_img" src="../../imagesv1/email_h.png" wx:if="{{card_detail.card.simple.email}}"></image>
+                                        <view class="h_de_text">{{card_detail.card.simple.email}}</view>
+                                    </view>
+                                    <view class="h_de_list">
+                                        <image class="h_de_img" src="../../imagesv1/addr_h.png" wx:if="{{card_detail.card.address||card_detail.card.detailed_address||card_detail.card.company_addr}}"></image>
+                                        <view class="h_de_text">{{(card_detail.card.address||'')+(card_detail.card.detailed_address||'')||card_detail.card.company_addr}}</view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="introduction_box_phone">
+                    <button bindtap="addPhoneContact" size="default" type="primary">存入手机通讯录</button>
+                </view>
+                <view bindtap="closeIntroduction" class="introduction_box_redirect">
+                    <view>看看再说  <image class="more_right_arrow" src="../../imagesv1/right_arrow2.png"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+<wxs module="card_change" src="../../wxs/cardv1.wxs" />

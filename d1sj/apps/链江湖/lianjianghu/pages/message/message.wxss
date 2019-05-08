@@ -1,0 +1,68 @@
+/* pages/message/message.wxss */
+
+.message-box {
+  padding-left: 20rpx;
+  background: #fff;
+}
+
+.message {
+  padding: 20rpx 20rpx 20rpx 0;
+  border-bottom: 1px solid #e9e9e9;
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.message-photo {
+  width: 80rpx;
+  height: 80rpx;
+  display: block;
+}
+
+.message-photo image {
+  width: 100%;
+}
+
+.message-info {
+  flex: 1;
+  margin-left: 20rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.message-name {
+  display: flex;
+}
+
+.message-name text {
+  display: block;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.message-name text:first-child {
+  flex: 1;
+  font-size: 34rpx;
+}
+
+.message-name text:last-child {
+  width: 200rpx;
+  font-size: 28rpx;
+  text-align: right;
+  color: #8a8a8a;
+}
+
+.message-centent {
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color: #8a8a8a;
+  text-align: justify;
+  text-align-last: left;
+  display: block;
+}
+
+.message-centent.active {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

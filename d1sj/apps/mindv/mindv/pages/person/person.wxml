@@ -1,0 +1,52 @@
+<!--pages/person/person.wxml-->
+<view class="container">
+  <view class="person_topbar">
+    <view class="topbar_top clearfix">
+      <view class="fl topbar_top_imgbox">
+        <image src='{{avatar}}'></image>
+      </view>
+      <view class="fl">
+        <view class="person_name">{{nickname}}</view>
+        <view class="person_dw">{{person.qualifying}}</view>
+      </view>
+      <view class="fl">
+        <view class="person_dep">{{person.store}}</view>
+        <view class="person_lv">
+          <text>LV.{{person.grade}}</text>
+          <view class='progress'>
+            <progress percent="{{person.rate}}" activeColor="#39a979" backgroundColor="#fff" stroke-width="50" active/>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="topbar_bott clearfix">
+      <view class='fl'>
+        <view>总场次</view>
+        <text>{{person.count1.one.total}}</text>
+      </view>
+      <view class='fl'>
+        <view>胜场数</view>
+        <text>{{person.count1.one.win}}</text>
+      </view>
+      <view class='fl'>
+        <view>答题数</view>
+        <text>{{person.count1.one.tiNum}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="person_list">
+    <view class="person_list_tit">擅长 类别</view>
+    <view wx:for="{{person.count2.one}}">
+      <view class="progress_box">
+        <text class="{{item.rate == 0.00 ? 'black' :''}}" >{{item.name}}</text>
+        <view class="progress">
+          <progress percent="{{item.rate}}" activeColor="#39a979" backgroundColor="#fff" stroke-width="50" active />
+        </view>
+      </view>
+    </view>
+  </view> -->
+  <view class="person_btns">
+    <button open-type="share">分享到群，可获得{{shareGold}}<image src="{{img_url}}icon-gold.png" mode="widthFix" class="icon_gold"></image></button>
+    <!-- <view class="text">分享到群，可获得{{shareGold}}金币</view> -->
+  </view>
+</view>

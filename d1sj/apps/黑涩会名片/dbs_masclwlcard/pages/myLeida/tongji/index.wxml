@@ -1,0 +1,88 @@
+<view class="tab-h">
+  <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">
+    <view>昨日</view>
+  </view>
+  <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">
+    <view>近7天</view>
+  </view>
+  <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">
+    <view>近30天</view>
+  </view>
+  <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">
+    <view>汇总</view>
+  </view>
+</view>
+<swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+  <swiper-item wx:for="{{[0,1,2,3]}}" wx:key="">
+    <scroll-view scroll-y="true" class="scoll-h">
+      <view class="null_data" wx:if="{{bookShareData.lists.length<=0}}">
+        <image src="{{img_url}}nullgxiang.png" mode='widthFix'></image>
+        <view>你还没发布绘本哦，赶快去发布吧</view>
+      </view>
+      <view class='con_main'>
+        <view class='con_top'>
+          <view class="items" bindtap='jump_url' data-url="/dbs_masclwlcard/pages/myLeida/xingwei/index?t=1&c={{currentTab}}">
+            <image src='/dbs_masclwlcard/images/mine/icon_ld_01.png' mode='widthFix'></image>
+            <view class='see_info'>
+              <view>查看商品</view>
+              <view>{{tongjiList.product}}</view>
+            </view>
+          </view>
+          <view class="items" bindtap='jump_url' data-url="/dbs_masclwlcard/pages/myLeida/xingwei/index?t=2&c={{currentTab}}">
+            <image src='/dbs_masclwlcard/images/mine/icon_ld_02.png' mode='widthFix'></image>
+            <view class='see_info'>
+              <view>查看官网</view>
+              <view>{{tongjiList.network}}</view>
+            </view>
+          </view>
+          <view class="items" bindtap='jump_url' data-url="/dbs_masclwlcard/pages/myLeida/xingwei/index?t=3&c={{currentTab}}">
+            <image src='/dbs_masclwlcard/images/mine/icon_ld_03.png' mode='widthFix'></image>
+            <view class='see_info'>
+              <view>复制微信</view>
+              <view>{{tongjiList.wechat}}</view>
+            </view>
+          </view>
+          <view class="items" bindtap='jump_url' data-url="/dbs_masclwlcard/pages/myLeida/xingwei/index?t=11&c={{currentTab}}">
+            <image src='/dbs_masclwlcard/images/mine/icon_ld_04.png' mode='widthFix'></image>
+            <view class='see_info'>
+              <view>转发名片</view>
+              <view>{{tongjiList.share_icard}}</view>
+            </view>
+          </view>
+        </view>
+        <view class='con_bot'>
+          <view class="items" bindtap='jump_url' data-url="/dbs_masclwlcard/pages/myLeida/xingwei/index?t=4&c={{currentTab}}">
+            <image src='/dbs_masclwlcard/images/mine/icon_ld_05.png' mode='widthFix'></image>
+            <view>查看名片</view>
+            <view class="nums">{{tongjiList.icard}}</view>
+          </view>
+          <view class="items" bindtap='jump_url' data-url="/dbs_masclwlcard/pages/myLeida/xingwei/index?t=14&c={{currentTab}}">
+            <image src='/dbs_masclwlcard/images/mine/icon_ld_06.png' mode='widthFix'></image>
+            <view>产品购买</view>
+            <view class="nums">{{tongjiList.payment}}</view>
+          </view>
+          <view class="items" bindtap='jump_url' data-url="/dbs_masclwlcard/pages/myLeida/xingwei/index?t=10&c={{currentTab}}">
+            <image src='/dbs_masclwlcard/images/mine/icon_ld_07.png' mode='widthFix'></image>
+            <view>咨询产品</view>
+            <view class="nums">{{tongjiList.buy}}</view>
+          </view>
+          <view class="items" bindtap='jump_url' data-url="/dbs_masclwlcard/pages/myLeida/xingwei/index?t=9&c={{currentTab}}">
+            <image src='/dbs_masclwlcard/images/mine/icon_ld_09.png' mode='widthFix'></image>
+            <view>觉得靠谱</view>
+            <view class="nums">{{tongjiList.prise}}</view>
+          </view>
+          <view class="items" bindtap='jump_url' data-url="/dbs_masclwlcard/pages/myLeida/xingwei/index?t=5&c={{currentTab}}">
+            <image src='/dbs_masclwlcard/images/mine/icon_ld_08.png' mode='widthFix'></image>
+            <view>保存电话</view>
+            <view class="nums">{{tongjiList.phone}}</view>
+          </view>
+          <view class="items" bindtap='jump_url' data-url="/dbs_masclwlcard/pages/myLeida/xingwei/index?t=13&c={{currentTab}}">
+            <image src='/dbs_masclwlcard/images/mine/icon_ld_10.png' mode='widthFix'></image>
+            <view>拨打电话</view>
+            <view class="nums">{{tongjiList.call_phone}}</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+</swiper>

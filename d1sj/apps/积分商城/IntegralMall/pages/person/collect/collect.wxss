@@ -1,0 +1,66 @@
+/* pages/person/order/order.wxss */
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: #f6f6f6;
+}
+.order_box_info_per {
+  padding: 20rpx 30rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #f6f6f6;
+}
+.order_box_info_per_left {
+  float: left;
+  width: 155rpx;
+  height: 155rpx;
+  background-color: red;
+  margin-right: 30rpx;
+}
+.order_box_info_per_left image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.order_box_info_per_right {
+  height: 100%;
+  overflow: hidden;
+}
+.order_box_info_per_right_left {
+  width: 80%;
+  padding-top: 28rpx;
+}
+.order_box_info_per_right_left_name {
+  width: 100%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.order_box_info_per_right_right {
+  height: 100%;
+  line-height: 160rpx;
+  color: #737373;
+}
+.order_box_info_per_right_right image {
+  width: 40rpx;
+  height: 35rpx;
+}
+.order_box_info_per_right_left_price {
+  margin-top: 30rpx;
+  color: #ef3338;
+  font-size: 36rpx;
+}
+.order_box_info_per_right_left_price text {
+  font-size: 30rpx;
+}
+.order_box_button {
+  height: 88rpx;
+  line-height: 88rpx;
+  background-color: #fff;
+  padding-left: 300rpx;
+}
+.order_box_button image {
+  width: 20rpx;
+  height: 12rpx;
+  margin-left: 18rpx;
+}
+

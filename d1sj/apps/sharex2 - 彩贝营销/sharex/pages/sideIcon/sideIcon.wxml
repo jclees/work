@@ -1,0 +1,1 @@
+<view class="gz_side" bindtap="openPop1"><image src='/imgs/gzMsg.png'></image></view>

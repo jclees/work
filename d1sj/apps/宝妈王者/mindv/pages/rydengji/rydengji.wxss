@@ -1,0 +1,54 @@
+/* pages/ryshop/ryshop.wxss */
+@import '../ryshop/ryshop.wxss';
+
+.lshead-flex{
+  text-align: center;
+  padding:20rpx;
+}
+
+.x_text{
+  font-size:34rpx;
+  font-weight:bold;
+}
+.lsbody-flex{
+  background:#fff;
+  color:#342d5d;
+  text-align: center;
+  margin:18rpx 34rpx;
+  align-items: center;
+  border-radius:20rpx 0 20rpx 0;
+  box-shadow: 0 0 0 6rpx rgba(255,255,255,.1);
+}
+.ry-name{
+  font-size:30rpx;
+  font-weight: bold;
+  border-right:1px solid #eee;
+}
+.ry-jiang{
+  border-right:1px solid #eee;
+}
+.ry-jiang image{
+  width:80rpx;
+  height:80rpx;
+  vertical-align:middle;
+}
+.text_flex__item{
+  font-size:22rpx;
+  padding-right:20rpx;
+  text-align: right;
+}
+.ry-photo{
+  background-repeat: no-repeat;
+  background-size:110rpx 110rpx;
+  background-position:center;
+  width:120rpx;
+  height:120rpx;
+  line-height: 120rpx;
+  margin:auto;
+}
+.ry-photo image{
+  width:60rpx;
+  height:60rpx;
+  vertical-align: middle;
+  border-radius:50%;
+}

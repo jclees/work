@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view class="class_first" bindtouchstart="touchStart" bindtouchend="touchEnd">
+  滑动切换页面
+</view>

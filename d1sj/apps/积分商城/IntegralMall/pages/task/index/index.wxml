@@ -1,0 +1,24 @@
+<!--pages/task/index/index.wxml-->
+<template name="task_index">
+<view class="index_tit clearfix">
+    <navigator hover-class="none" url="../../pages/task/today-tesk/today-tesk" class="index_tit_left fl">
+      <image src="/imgs/todayIcon.png"></image>
+      <text>今日任务({{todayScore.aly}}/{{todayScore.total}}分)</text>
+    </navigator>
+    <navigator hover-class="none" url="../../pages/task/must-task/must-task" class="index_tit_right fr">
+      <image src="/imgs/mustIcon.png"></image>
+      <text>必做任务({{mustScore.aly}}/{{mustScore.total}}分)</text>
+    </navigator>
+  </view>
+  <view class="index_info" style="padding: 0 0 100rpx;">
+    <navigator class="index_info_per" wx:for="{{timeList}}" wx:for-item="item" wx:key="{{item.id}}" data-item="{{item}}" hover-class="none" url="../../pages/task/time-task/time-task?id={{item.id}}">
+      <view class="index_info_per_tit">
+        <image src="{{item.banner}}"></image>
+      </view>
+      <view class="index_info_per_text">
+        <text>{{item.starttime}}-{{item.endtime}}</text>
+        <!-- <text>据开始还有1:32:13</text> -->
+      </view>
+    </navigator>
+  </view>
+  </template>

@@ -1,0 +1,145 @@
+.base-cells-title {
+    margin-top: 0.77em;
+    margin-bottom: 0.3em;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    color: #888;
+    font-size: 28rpx;
+}
+
+.base-cells-box {
+    background-color: #fff;
+    font-size: 34rpx;
+    line-height: 1.4;
+}
+
+.base-cells-box .cell-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 20rpx 30rpx;
+    color: inherit;
+}
+
+.base-cells-box .cell-item::before {
+    content: '';
+    position: absolute;
+    left: 30rpx;
+    top: 0;
+    right: 0;
+    height: 2rpx;
+    border-top: 1rpx solid #e6e6e9;
+}
+
+.base-cells-box .cell-item:first-child::before {
+    display: none;
+}
+
+.base-cells-box .cell-img {
+    width: 28rpx;
+    height: 32rpx;
+    margin-right: 20rpx;
+}
+
+.base-cells-box .cell-img .icon {
+    width: 28rpx;
+    height: 32rpx;
+}
+
+.base-cells-box .cell-left {
+    flex: 1;
+    color: #5d5d5d;
+    font-size: 34rpx;
+}
+
+.base-cells-box .cell-right {
+    position: relative;
+    text-align: right;
+    color: #979797;
+    font-size: 28rpx;
+}
+
+.base-cells-box .cell-access {
+    padding-right: 26rpx;
+}
+
+.base-cells-box .cell-access::after {
+    content: '';
+    display: inline-block;
+    height: 12rpx;
+    width: 12rpx;
+    border-width: 4rpx 4rpx 0 0;
+    border-color: #c8c8cd;
+    border-style: solid;
+    transform: matrix(0.71,0.71,-.71,0.71,0,0);
+    position: absolute;
+    top: 50%;
+    margin-top: -8rpx;
+    right: 4rpx;
+}
+
+.base-cells-box .cell-item-input {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.base-cells-box .cell-item-input .cell-label {
+    width: 210rpx;
+    color: #5d5d5d;
+    font-size: 34rpx;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.base-cells-box .cell-item-input .cell-right-input {
+    flex: 1;
+}
+
+.base-cells-box .cell-item-input .picker-address {
+    position: relative;
+}
+
+.base-cells-box .cell-item-input .picker-address .cell-input {
+    padding-right: 44rpx;
+}
+
+.base-cells-box .cell-item-input .picker-address .address-icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 44rpx;
+    height: 44rpx;
+    transform: translateY(-50%);
+}
+
+.base-cells-box .cell-item-input .cell-input {
+    height: 88rpx;
+    line-height: 88rpx;
+    font-size: 32rpx;
+    color: #111;
+}
+
+button[form-type=submit] {
+    opacity: initial;
+    position: relative;
+}
+
+.button-box {
+    margin: 80rpx 115rpx;
+}
+
+.button-primary {
+    height: 80rpx;
+    line-height: 80rpx;
+    color: #fff;
+    background-color: #ff3d33;
+}
+
+button[disabled]:not([type]) {
+    background-color: #ff3d33;
+    color: rgba(255,255,255,0.6);
+}
+
+form {
+    position: initial;
+}

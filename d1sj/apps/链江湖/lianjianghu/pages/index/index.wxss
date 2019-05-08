@@ -1,0 +1,325 @@
+/**index.wxss**/
+
+/*  swiper  */
+
+.slide-image {
+  width: 100%;
+}
+
+.swiper-container {
+  position: relative;
+}
+
+.swiper-container .swiper {
+  height: 420rpx;
+}
+
+.swiper-container .swiper .img {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-container .dots {
+  position: absolute;
+  left: 20rpx;
+  right: 0;
+  bottom: 20rpx;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.swiper-container .dots .dot {
+  margin: 0 8rpx;
+  width: 14rpx;
+  height: 14rpx;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8rpx;
+  transition: all 0.6s;
+}
+
+.swiper-container .dots .dot.active {
+  background: #fff;
+}
+
+/*  index-nav  */
+
+.index-nav {
+  width: 100%;
+  display: flex;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+  justify-content: space-between;
+  background: #fff;
+}
+
+.index-nav>navigator {
+  text-align: center;
+  flex: 1;
+  margin: 0 20rpx;
+  height: 150rpx;
+  line-height: 150rpx;
+  border: 1px solid #e2e2e2;
+  font-size: 0;
+  border-radius: 6rpx;
+}
+
+.index-nav>navigator image {
+  position: relative;
+  width: 72rpx;
+  vertical-align: top;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.index-nav>navigator text {
+  font-size: 30rpx;
+  margin-left: 20rpx;
+}
+
+.circle {
+  margin-top: 20rpx;
+  padding: 20rpx;
+  background: #fff;
+  display: flex;
+}
+
+.circle-photo {
+  width: 86rpx;
+  height: 86rpx;
+  font-size: 0;
+}
+
+.circle-photo image {
+  width: 100%;
+}
+
+.circle-centent {
+  flex: 1;
+  margin-left: 20rpx;
+}
+
+.circle-head {
+  height: 86rpx;
+}
+
+.circle-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.circle-head > view {
+  font-size: 0;
+}
+
+.circle-user > view {
+  height: 43rpx;
+}
+
+.circle-user view text {
+  font-size: 32rpx;
+  margin-right: 20rpx;
+  vertical-align: middle;
+}
+
+.circle-user view label {
+  color: #b4b4b4;
+  margin-right: 10rpx;
+  border: 1rpx solid #b4b4b4;
+  border-radius: 100px;
+  padding:0 10rpx;
+  font-size: 18rpx;
+  vertical-align: middle;
+}
+
+.circle-operation {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.circle-operation button {
+  padding: 0 30rpx;
+  font-size: 0;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 30rpx;
+  position: relative;
+  margin: 0;
+  background: #f6f6f6;
+}
+
+.circle-operation button image {
+  width: 18rpx;
+  vertical-align: top;
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.circle-operation button text {
+  font-size: 28rpx;
+  color: #ff6663;
+  margin-left: 10rpx;
+}
+
+.circle-operation button.btn-more image {
+  width: 34rpx;
+}
+
+.circle-operation button.btn-more {
+  text-align: right;
+}
+
+.circle-jottings {
+  font-size: 0;
+}
+
+.circle-jottings text {
+  font-size: 28rpx;
+  text-align: justify;
+  text-align-last: left;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.circle-img {
+  margin-top: 10rpx;
+  display: flex;
+  flex-wrap: wrap;
+  align-items:stretch;
+}
+.imgyi-width {
+  width: 380rpx;
+  margin-top: 10rpx;
+  vertical-align: top;
+}
+
+.imgduo-width {
+  width: 200rpx;
+  height:200rpx;
+  margin-top: 10rpx;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+
+.circle-links {
+  font-size: 24rpx;
+}
+
+.circle-links {
+  margin-top: 10rpx;
+  padding: 10rpx;
+  background: #f3f3f5;
+  display: flex;
+  font-size: 0;
+}
+
+.circle-links image {
+  width: 86rpx;
+  height: 86rpx;
+}
+
+.circle-links text {
+  flex: 1;
+  font-size: 28rpx;
+  text-align: justify;
+  text-align-last: left;
+  margin: 8rpx 0 8rpx 10rpx;
+  height: 70rpx;
+  line-height: 35rpx;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.circle-footer-operation {
+  display: flex;
+  font-size: 0;
+  margin-top: 20rpx;
+  justify-content: space-between;
+}
+
+.circle-footer-operation button {
+  height: 60rpx;
+  line-height: 60rpx;
+  position: relative;
+  font-size: 24rpx;
+  background: transparent;
+  padding: 0;
+}
+.circle-footer-operation button.active{
+  color: #ff6663;
+}
+
+.circle-footer-operation button image {
+  width: 32rpx;
+  vertical-align: top;
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+  margin-right: 5rpx;
+}
+
+.circle-footer-operation label.active {
+  color: #ff6663;
+}
+
+.addwx-wrap {
+  border: 2rpx solid #ddd;
+  border-radius: 10rpx;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  width: 90%;
+  transform: translate(-50%, 0);
+}
+
+.addwx-wrap > view {
+  width: 100%;
+  color: #939398;
+}
+
+.addwx-wrap textarea {
+  font-size: 32rpx;
+  padding: 35rpx 35rpx 0 35rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.addwx-wrap .max-nums {
+  border-bottom: 2rpx solid #c9c9c9;
+  box-sizing: border-box;
+}
+
+.addwx-wrap .send-btn {
+  color: #939398;
+  padding: 0 30rpx;
+  font-size: 0;
+  height: 88rpx;
+  line-height: 88rpx;
+  position: relative;
+  margin: 0;
+  background: #fff;
+  float: right;
+}
+
+.addwx-wrap .send-btn image {
+  width: 16rpx;
+  vertical-align: top;
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.addwx-wrap .send-btn text {
+  font-size: 28rpx;
+  color: #999;
+  margin-left: 10rpx;
+  margin-right: 20rpx;
+}

@@ -1,0 +1,145 @@
+<form bindsubmit="savaData" report-submit="true">
+  <view class='contact_main'>
+    <!-- <view class='mine_user'>
+      <image class="user_bg" mode="widthFix" src="/dbs_masclwlcard/images/user_bg.png"></image>
+      <view class='user_main'>
+        <image class="user_img" mode="aspectFill" src="/dbs_masclwlcard/images/icon_card_edit04.png"></image>
+        <view class="user_name">名片修改</view>
+      </view>
+    </view> -->
+    <view class='mine_list'>
+      <view class="items">
+        <view class="item_con clearfix">
+          <view class='from_info'>
+            <view class='img_box'>
+              <view class='img_prev'>
+                <image src='{{card_logo[0]}}' mode='aspectFit' data-index="0" data-which="1" bindtap="bindchoose"></image>
+                <view class="upload_tips" wx:if="{{card_logo<=0}}" data-index="0" data-which="1" bindtap="bindchoose">个人照片
+                  <text class="cool">600*600</text>
+                </view>
+              </view>
+            </view>
+            <view class="inp_box">
+              <input placeholder='您的姓名(*必填)' placeholder-style='color:#bfbfbf;' name="card_name" type='text' value='{{regData.card_name}}'></input>
+              <input placeholder='您的职位(*必填)' placeholder-style='color:#bfbfbf;' name="role_name" type='text' value='{{regData.role_name}}'></input>
+            </view>
+          </view>
+          <view class='more_from_info'>
+            <view class='more_from_info_items'>
+              <view class='more_from_info_tit'>
+                <image class="user_bg" mode="aspectFill" src="/dbs_masclwlcard/images/icon_card_edit01.png"></image>
+                <view>电话号码</view>
+              </view>
+              <input placeholder='请输入电话号码(*必填)' placeholder-style='color:#bfbfbf;' name="card_tel" type='number' value='{{regData.card_tel}}'></input>
+            </view>
+            <view class='more_from_info_items'>
+              <view class='more_from_info_tit'>
+                <image class="user_bg" mode="aspectFill" src="/dbs_masclwlcard/images/icon_card_edit02.png"></image>
+                <view>微信号</view>
+              </view>
+              <input placeholder='请输入微信号' placeholder-style='color:#bfbfbf;' name="weixinid" type='text' value='{{regData.weixinid}}'></input>
+            </view>
+            <view class='more_from_info_items'>
+              <view class='more_from_info_tit'>
+                <image class="user_bg" mode="aspectFill" src="/dbs_masclwlcard/images/icon_card_edit03.png"></image>
+                <view>邮箱</view>
+              </view>
+              <input placeholder='请输入邮箱' placeholder-style='color:#bfbfbf;' name="email" type='text' value='{{regData.email}}'></input>
+            </view>
+          </view>
+        </view>
+        <!-- <view class='cut_bg'>
+          <image src="/dbs_masclwlcard/images/cut_item.png" mode='widthFix'></image>
+          <image src="/dbs_masclwlcard/images/cut_item.png" mode='widthFix'></image>
+        </view> -->
+      </view>
+      <view class="items">
+        <view class="item_con clearfix">
+          <view class='from_info'>
+            <view class='img_box'>
+              <view class='img_prev'>
+                <image src='{{company_logo[0]}}' mode='aspectFit' data-index="0" data-which="2" bindtap="bindchoose"></image>
+                <view class="upload_tips" wx:if="{{company_logo<=0}}" data-index="0" data-which="2" bindtap="bindchoose">公司logo
+                  <text class="cool">200*200</text>
+                </view>
+              </view>
+            </view>
+            <view class="inp_box">
+              <input placeholder='公司名称(*必填)' name="company_name" placeholder-style='color:#bfbfbf;' type='text' value='{{regData.company_name}}'></input>
+              <input placeholder='公司电话' placeholder-style='color:#bfbfbf;' name="phone" type='text' value='{{regData.phone}}'></input>
+              <input placeholder='公司地址' placeholder-style='color:#bfbfbf;' name="detailed_address" value='{{regData.detailed_address}}'></input>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='item_tit'>我的简介</view>
+      <view class="items items_two">
+        <textarea wx:if="{{textareaShow}}" maxlength="500" placeholder='我的过往经历，我能提供什么服务，我有什么资源，我需要什么协助等...' placeholder-style='color:#bfbfbf;' name="card_instr" value='{{card_instr}}' bindinput='textareaInp'></textarea>
+      </view>
+      <view class='item_tit'>我的照片墙</view>
+      <view class="items items_two">
+        <view class='from_img_box'>
+          <view class="imgs_box" wx:for="{{photo}}" wx:key="">
+            <image src='{{item}}' mode='widthFix' data-url="{{item}}" data-index="{{index}}" data-id="1" bindtap="openPic"></image>
+            <view class='del_img' bindtap='delPic' data-id="2" data-w="{{index}}">
+              <image src='/dbs_masclwlcard/images/new/layer_close.png' mode='widthFix'></image>
+            </view>
+          </view>
+          <view class="choose_box" data-which="3" bindtap="bindchoose">
+            <image class="user_bg" mode="widthFix" src="/dbs_masclwlcard/images/card/one_card_up2.png"></image>
+            <view>立即上传</view>
+          </view>
+
+        </view>
+      </view>
+      <view class="sava_btn">
+        <button formType="submit" class="sava_btn">{{submitTxt}}</button>
+      </view>
+    </view>
+  </view>
+</form>
+<!--裁剪图片浮层-->
+<!-- <view class='fixed-upimg' wx:if="{{true}}" catchtouchmove='myCatchTouch'> -->
+<view class='fixed-upimg' wx:if="{{imageFixed}}" catchtouchmove='myCatchTouch'>
+  <view class="wx-content-info">
+    <!-- <view class="wx-content-info" wx:if="{{imageSrc}}"> -->
+    <view wx:if="{{isShowImg}}" class="wx-corpper" style="width:{{cropperInitW}}rpx;height:{{cropperInitH}}rpx;background:#000">
+      <view bindtap='upLoad' class="wx-corpper-content" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx;left:{{cropperL}}rpx;top:{{cropperT}}rpx">
+        <image src="{{imageSrc}}" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx"></image>
+        <view class="wx-corpper-crop-box" bindtouchstart="contentStartMove" bindtouchmove="contentMoveing" style="width:{{cutW}}rpx;height:{{cutH}}rpx;left:{{cutL}}rpx;top:{{cutT}}rpx">
+          <view class="wx-cropper-view-box">
+            <!-- <view class="wx-cropper-viewer">
+            <image src="{{imageSrc}}" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx;left:{{cropperL - cutL}}rpx;top:{{cropperT - cutT}}rpx"></image>
+          </view> -->
+            <view class="wx-cropper-dashed-h"></view>
+            <view class="wx-cropper-dashed-v"></view>
+            <view class="wx-cropper-line-t" data-drag="top" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-line-r" data-drag="right" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-line-b" data-drag="bottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-line-l" data-drag="left" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-t" data-drag="top" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-tr" data-drag="topTight"></view>
+            <view class="wx-cropper-point point-r" data-drag="right" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-rb" data-drag="rightBottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-b" data-drag="bottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-bl" data-drag="bottomLeft"></view>
+            <view class="wx-cropper-point point-l" data-drag="left" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-lt" data-drag="leftTop"></view>
+          </view>
+        </view>
+      </view>
+      <!-- <view class="wx-cropper-drag-box"></view> -->
+    </view>
+    <canvas canvas-id="myCanvas" style="position:absolute;border: 1px solid red; width:{{imageW}}rpx;height:{{imageH}}rpx;top:-9999px;left:-9999px;"></canvas>
+    <view class='wx-corpper-bthcon'>
+      <form bindsubmit='getImageInfo' reportSubmit="true">
+        <button hover-class='none' formType="submit"> 确认提交 </button>
+      </form>
+      <form bindsubmit='closeUpImg' reportSubmit="true">
+        <button hover-class='none' formType="submit" class="cancel"> 取消 </button>
+      </form>
+      <form>
+      </form>
+    </view>
+  </view>
+</view>

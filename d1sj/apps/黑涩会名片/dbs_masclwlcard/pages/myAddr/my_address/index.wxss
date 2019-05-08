@@ -1,0 +1,97 @@
+.container {
+    font-size: 32rpx;
+    line-height: 1.4;
+    color: #333;
+}
+
+.address-list {
+    padding-bottom: 98rpx;
+    border-top: 1rpx solid #E5E5E5;
+}
+
+.address-list .item {
+    background-color: #fff;
+    padding: 0 30rpx;
+    margin-bottom: 20rpx;
+}
+
+.address-list .name {
+    margin-bottom: 14rpx;
+}
+
+.address-list .info {
+    border-bottom: 1rpx solid #f1f1f1;
+    padding: 30rpx 0;
+}
+
+.address-list .toolbar {
+    font-size: 30rpx;
+    height: 92rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.address-list .toolbar .default {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.address-list .toolbar .default .icon {
+    width: 38rpx;
+    height: 38rpx;
+    border: 1rpx solid #bcbcbc;
+    border-radius: 50%;
+}
+
+.address-list .toolbar .default .text {
+    margin-left: 20rpx;
+}
+
+.address-list .toolbar .action-bar {
+    height: 100%;
+    display: flex;
+}
+
+.address-list .toolbar .action-bar view {
+    margin-left: 24rpx;
+    display: flex;
+    align-items: center;
+}
+
+.address-list .toolbar .action-bar view text {
+    margin-left: 14rpx;
+}
+
+.bottom-add {
+    position: fixed;
+    height: 98rpx;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    background-color: #fff;
+    font-size: 32rpx;
+    border-top: 1rpx solid #E5E5E5;
+}
+
+.bottom-add .item {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom-add .shou {
+    color: #8a8a8f;
+}
+
+.bottom-add .wechat {
+    background-color: #ff3d33;
+    color: #fff;
+}
+
+.bottom-add text {
+    margin-left: 10rpx;
+}

@@ -1,0 +1,16 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/test/test",
+    "pages/person/person",
+    "pages/news/news",
+    "pages/kai/kai",
+    "pages/money/money"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "Genaro",
+    "navigationBarTextStyle":"white"
+  }
+}

@@ -1,0 +1,79 @@
+<view class='kmg'>
+  <view class='ope'>
+    <image src='{{tupian}}9_10.png'></image>
+  </view>
+  <view class='timu_top max'>
+    <view class='timu_top_left'>
+      <view class='un'>
+        <view class='renyua_wq timu_mi'>
+          <image src='{{avatar}}'></image>
+        </view>
+        <view class='timu_mi'>
+          <view class='timu_mi_l'>{{nickname}}</view>
+          <view class='timu_mi_r'>Lv.{{from_client_info.level}}</view>
+        </view>
+      </view>
+      <view class='tiz_left'>
+        <text>{{user_info1.score?user_info1.score:0}}</text>分</view>
+    </view>
+    <view class='timu_top_right'>
+      <view class='un'>
+        <view class='timu_mi tex_right'>
+          <view class='timu_mi_l'>{{to_client_info.display_name}}</view>
+          <view class='timu_mi_r'>Lv.{{to_client_info.level}}</view>
+        </view>
+        <view class='renyua_wq timu_mi'>
+          <image src='{{to_client_info.avatar}}'></image>
+        </view>
+      </view>
+      <view class='tiz_right'>
+        <text>{{user_info2.score?user_info2.score:0}}</text>分</view>
+    </view>
+    <view class='pk'>
+      <image src='{{tupian}}tiaoz1_10.png'></image>
+    </view>
+  </view>
+  <!-- <view class='shul'>
+    <view class='shul_left'>连续答对{{user_info1.continu_right_num?user_info1.continu_right_num:0}}题</view>
+    <view class='shul_right'>连续答对{{user_info2.continu_right_num?user_info2.continu_right_num:0}}题</view>
+  </view> -->
+  <view class='tiaoz_cg yanc2'>
+    <image src='{{tupian}}tiaoz_14.png'></image>
+  </view>
+  <view class='tiaoz_shibai '>
+    <view class='sb_tiaoz_xun_left' wx:if="{{is_fpk != 1}}">
+      <view class='tiaoz_xun_re '>
+        <image src='{{tupian}}7_08.png'></image>
+      </view>
+      <view class='tiaoz_xun_re'>+{{result.addGold}}</view>
+    </view>
+    <view class='sb_tiaoz_xun_right'>
+      <view class='tiaoz_xun_re '>
+        <image src='{{tupian}}tiaoz2_19.png'></image>
+      </view>
+      <view class='tiaoz_xun_re'>+{{result.addExp}}</view>
+    </view>
+  </view>
+
+</view>
+<view class='jixu'>
+  <view class='kmqq'>
+    <view class='cg_timu_dt_w yin' bindtap="paiwei">
+      <view class='imm'>继续挑战</view>
+    </view>
+    <view class='cg_timu_dt_w yin'>
+      <button class='Invitation imyu' data-type="1" id="success" open-type="share">炫耀战绩</button>
+    </view>
+  </view>
+</view>
+<view class='jilm'>
+  <text>分享到微信群可获得</text>
+  <image src='{{tupian}}7_08.png'></image>
+  <text>{{shareGold}}</text>
+</view>
+<view class='tousu' bindtap="report">
+  <view class='tousu_a'>
+    <image src='/images/ly_icon.png' class="animated tada infinite"></image>
+    <text>狠人留言</text>
+  </view>
+</view>

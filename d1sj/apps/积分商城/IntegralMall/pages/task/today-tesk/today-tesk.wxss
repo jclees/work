@@ -1,0 +1,8 @@
+/* pages/today-tesk/today-tesk.wxss */
+@import '../../../templates/task_tit/task_tit.wxss';
+@import '../../../templates/task_list/task_list.wxss';
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: #f7f7f7;
+}

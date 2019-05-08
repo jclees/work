@@ -1,0 +1,24 @@
+.state_wrap {
+  text-align: center;
+}
+
+.state_wrap icon {
+  margin: 100rpx 0 50rpx;
+}
+
+.state_wrap .txt {
+  font-size: 40rpx;
+  color: #000;
+}
+
+.state_wrap .msg {
+  font-size: 28rpx;
+  color: #888;
+  padding: 30rpx 70rpx 0;
+}
+
+.btn-send button {
+  background: #f8f8f8;
+  border: 1px solid rgba(5, 5, 5, 0.08);
+  color: #000;
+}

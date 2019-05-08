@@ -1,0 +1,101 @@
+<!--pages/game/game.wxml-->
+<view class="container">
+  <!-- <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+    <view class="wxapp-toast-content">
+      <view class="wxapp-toast-content-text"> {{toastText}} </view> 
+    </view>
+  </view> -->
+  <view class="game_box">
+    <image src="{{img_url}}game-tit.png" mode='widthFix'></image>
+
+    <!-- <image src="{{img_url}}game_bgc.png"></image> -->
+    <view class="game_box_info">
+      <view class="game_box_tit">
+        <view class="ranking-tit">排行榜</view>
+        <view class="game_box_tit_text">
+          <view class="game_tab clearfix">
+            <view class="{{active===0?'active':''}}">
+              <text data-type="0" bindtap="showList">综合排行</text>
+            </view>
+            <view class="{{active===1?'active':''}}">
+              <text data-type="1" bindtap="showList">技能排行</text>
+            </view>
+            <view class="{{active===2?'active':''}}">
+              <text data-type="2" bindtap="showList">门店排行</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- <view class="bg-rank-head"></view> -->
+    </view>
+
+    <view class="game_box_con">
+      <scroll-view scroll-y>
+        <view class='bg-not-rank' wx:if="{{flag == 0}}">
+          <view class='not-friend'>
+            <view>暂无综合排行</view>
+            <view>
+            </view>
+          </view>
+        </view>
+        <view class='bg-not-rank' wx:if="{{flag == 1}}">
+          <view class='not-friend'>
+            <view>暂无技能排行</view>
+          </view>
+        </view>
+        <view class='bg-not-rank' wx:if="{{flag == 2}}">
+          <view class='not-friend'>
+            <view>暂无门店排行</view>
+          </view>
+        </view>
+        <view class="game-list">
+          <view class="game_box_con_per" wx:key="{{index}}" wx:item="{{item}}" wx:for="{{list}}">
+            <view>
+              <view class='me' wx:if="{{item.id == member_id}}">
+                <view class="item-num">
+                  <text>{{index+1}}</text>
+                </view>
+              </view>
+              <view wx:else>
+                <view class="item-num">
+                  <view class="ranking-img" wx:if="{{index+1 == 1}}">
+                    <image src='{{img_url}}ranking-1.png' mode="widthFix"></image>
+                  </view>
+                  <view class="ranking-img" wx:if="{{index+1 == 2}}">
+                    <image src='{{img_url}}ranking-2.png' mode="widthFix"></image>
+                  </view>
+                  <view class="ranking-img" wx:if="{{index+1 == 3}}">
+                    <image src='{{img_url}}ranking-3.png' mode="widthFix"></image>
+                  </view>
+                  <text wx:if="{{index+1 >= 4}}">{{index+1}}</text>
+                </view>
+              </view>
+
+              <!-- <image src="{{img_url}}per_bgc.png"></image> -->
+              <view class="game_box_con_per_left">
+                <view class="game_box_con_per_left_left">
+                  <image src="{{item.avatar}}"></image>
+                </view>
+                <view class="game_box_con_per_left_right">
+                  <view class="game_box_con_per_left_right_top">
+                    <view class="ranking-text fr">{{item.name}}</view>
+                    <view class="fl" style='width:212rpx;overflow:hidden;text-overflow:ellipsis;white-space:nowrap'>{{item.nickname}}</view>
+                  </view>
+                  <view class="game_box_con_per_left_right_bottom">
+                    <view>{{item.from?item.from:""}}</view>
+                    <!-- <image src="{{img_url}}bj-duan.png"></image> -->
+                  </view>
+                </view>
+                <view class="game_box_start clearfix">
+                  <image class="fl" src="{{img_url}}icon-stars-opt.png"></image>
+                  <text class="fl"> {{item.star || 0}}</text>
+                </view>
+              </view>
+              
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

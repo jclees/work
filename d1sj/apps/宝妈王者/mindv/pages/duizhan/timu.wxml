@@ -1,0 +1,117 @@
+<!--dati start-->
+<view class='timu timu_cg'>
+  <view class='shul dadui'>
+    <view wx:if="{{is_right_num1}}">
+      <view class='shul_left' wx:if="{{user_info1.continu_right_num == 2}}">连续答对{{user_info1.continu_right_num?user_info1.continu_right_num:0}}题</view>
+      <view class='shul_left' wx:elif="{{user_info1.continu_right_num == 3}}">连续答对{{user_info1.continu_right_num?user_info1.continu_right_num:0}}题</view>
+      <view class='shul_left' wx:elif="{{user_info1.continu_right_num == 4}}">连续答对{{user_info1.continu_right_num?user_info1.continu_right_num:0}}题</view>
+      <view class='shul_left' wx:elif="{{user_info1.continu_right_num == 5}}">连续答对{{user_info1.continu_right_num?user_info1.continu_right_num:0}}题</view>
+    </view>
+    <view wx:if="{{is_right_num2}}">
+      <view class='shul_right' wx:if="{{user_info2.continu_right_num == 2}}">连续答对{{user_info2.continu_right_num?user_info2.continu_right_num:0}}题</view>
+      <view class='shul_right' wx:elif="{{user_info2.continu_right_num == 3}}">连续答对{{user_info2.continu_right_num?user_info2.continu_right_num:0}}题</view>
+      <view class='shul_right' wx:elif="{{user_info2.continu_right_num == 4}}">连续答对{{user_info2.continu_right_num?user_info2.continu_right_num:0}}题</view>
+      <view class='shul_right' wx:elif="{{user_info2.continu_right_num == 3}}">连续答对{{user_info2.continu_right_num?user_info2.continu_right_num:0}}题</view>
+    </view>
+  </view>
+  <view class='oew'>
+    <view class='timu_top max'>
+      <view class='timu_top_left'>
+        <!--  表情  -->
+        <!-- <view class='timu_qt'>
+          <image src='{{tupian}}duiz1_10.png' bindtap="emotionBtn"></image>
+        </view> -->
+        <view class='renyua_wq timu_mi'>
+          <image src='{{from_client_info.avatar}}'></image>
+        </view>
+        <view class='timu_mi'>
+          <view class='timu_mi_l'>{{from_client_info.display_name}}</view>
+          <view class='timu_mi_r'>Lv.{{from_client_info.level}}</view>
+        </view>
+      </view>
+      <view class='timu_top_right'>
+        <view class='timu_mi tex_right'>
+          <view class='timu_mi_l'>{{to_client_info.display_name}}</view>
+          <view class='timu_mi_r'>Lv.{{to_client_info.level}}</view>
+        </view>
+        <view class='renyua_wq timu_mi'>
+          <image src='{{to_client_info.avatar}}'></image>
+        </view>
+      </view>
+      <view class='times'>
+        <view class='yuq'>
+          <view class='juz'>
+            <canvas class="progress_bg" canvas-id="canvasProgressbg"> </canvas>
+            <canvas class="progress_canvas" canvas-id="canvasProgress"> </canvas>
+          </view>
+        </view>
+        <view class='times_re'>
+          <text>{{seconds}}</text>s</view>
+      </view>
+    </view>
+
+    <view class='max'>
+      <view class='timu_km'>
+        <view class='timu_op'>
+          <view class='timu_op_top'>第{{curr_subject_index+1}}题({{subject.name}})</view>
+          <view class='timu_op_kmg'>{{subject.title}}</view>
+        </view>
+        <view class='timu_sl'>{{curr_subject_index+1}}/5题</view>
+      </view>
+    </view>
+    <view class='timukai'>
+      <view class='timukai_left'>
+        <view class='timu_j'>{{user_info1.score?user_info1.score:0}}</view>
+        <view class='timu_om'>
+          <view class='wqd'>
+            <view class='timulg' style="height:{{user_info1.s_height}}"></view>
+          </view>
+        </view>
+      </view>
+      <view class='timukai_right'>
+        <view class='timu_j'>{{user_info2.score?user_info2.score:0}}</view>
+        <view class='timu_om'>
+          <view class='wqd'>
+            <view class='timulg' style="height:{{user_info2.s_height}}"></view>
+          </view>
+        </view>
+      </view>
+      <view class='timukai_center'>
+        <view class='timukai_center_top  bigh' wx:if="{{is_last_subject}}">
+          <image src='{{tupian}}45_10.png'></image>
+        </view>
+        <view class='timukai_center_top  bigh' style="width:284rpx;height:35rpx;" wx:else></view>
+        <view class='timukai_dt'>
+
+          <view wx:for="{{subject.answer}}" wx:for-item="v" data-question_id="{{subject.id}}" data-answer_id="{{v.id}}" data-right="{{v.is_right}}" wx:key="v.id" bindtap="selAnswer">
+
+            <view class='timu_dt_w yin' wx:if="{{(!user_info1.messages.content.answer_val && user_info1.messages.content.answer_id==v.id && user_info1.messages.content.question_id==subject.id) || (!user_info2.messages.content.answer_val && user_info2.messages.content.answer_id==v.id && user_info2.messages.content.question_id==subject.id && user_info2.showAnswer)}}">
+              <view class='timu_jy timu_cuo'>{{v.name}}
+
+                <image src='{{tupian}}duiz5_14.png' wx:if="{{(!user_info1.messages.content.answer_val && user_info1.messages.content.answer_id==v.id && user_info1.messages.content.question_id==subject.id)}}" class="timu_cuo_image"></image>
+                <image src='{{tupian}}duiz5_14.png' wx:if="{{(!user_info2.messages.content.answer_val && user_info2.messages.content.answer_id==v.id && user_info2.messages.content.question_id==subject.id && user_info2.showAnswer)}}" class="timu_cuo2_image"></image>
+
+              </view>
+            </view>
+
+            <view class='timu_dt_w yin' wx:elif="{{(publish_is_right && v.is_right)||(user_info1.messages.content.answer_val && user_info1.messages.content.answer_id==v.id && user_info1.messages.content.question_id==subject.id) || (user_info2.messages.content.answer_val && user_info2.messages.content.answer_id==v.id && user_info2.messages.content.question_id==subject.id && user_info2.showAnswer)}}">
+              <view class='timu_jy timu_dadui'>{{v.name}}
+                <!--<block wx:if="{{(publish_is_right && v.is_right)}}"></block>-->
+
+                <image src='{{tupian}}duiz5_10.png' wx:if="{{(user_info1.messages.content.answer_val && user_info1.messages.content.answer_id==v.id && user_info1.messages.content.question_id==subject.id)}}" class="timu_cuo_image"></image>
+                <image src='{{tupian}}duiz5_10.png' wx:if="{{(user_info2.messages.content.answer_val && user_info2.messages.content.answer_id==v.id && user_info2.messages.content.question_id==subject.id && user_info2.showAnswer)}}" class="timu_cuo2_image"></image>
+
+              </view>
+            </view>
+
+            <view class='timu_dt_w yin' wx:else>
+              <view class='timu_jy'>{{v.name}}</view>
+            </view>
+          </view>
+
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!--dati end-->

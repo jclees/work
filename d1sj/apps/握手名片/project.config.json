@@ -1,0 +1,80 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.3.0",
+	"appid": "wxbe6b37cdbde0655b",
+	"projectname": "%E6%8F%A1%E6%89%8B%E5%90%8D%E7%89%87-%E7%BA%BF%E4%B8%8A%E7%89%88%E6%9C%AC",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 1,
+			"list": [
+				{
+					"id": 0,
+					"name": "分享进入",
+					"pathName": "dbs_masclwlcard/pages/tab/tab",
+					"query": "parent_id=439"
+				},
+				{
+					"id": 1,
+					"name": "在线聊天",
+					"pathName": "dbs_masclwlcard/pages/chat_detail/chat_detail",
+					"query": "parent_id=439"
+				},
+				{
+					"id": 4,
+					"name": "编辑名片",
+					"pathName": "dbs_masclwlcard/pages/create_card/create_card",
+					"query": "types=1"
+				},
+				{
+					"id": 7,
+					"name": "添加商品",
+					"pathName": "dbs_masclwlcard/pages/create_product/create_product",
+					"query": "type=1"
+				},
+				{
+					"id": 9,
+					"name": "订单管理",
+					"pathName": "dbs_masclwlcard/pages/myOrder/myOrder",
+					"query": ""
+				},
+				{
+					"id": 5,
+					"name": "商品详情",
+					"pathName": "dbs_masclwlcard/pages/shops/shops_detail",
+					"query": "scene=parent_id%3D2%26shops_id%3D16"
+				}
+			]
+		}
+	}
+}

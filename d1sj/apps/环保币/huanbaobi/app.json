@@ -1,0 +1,67 @@
+{
+    "pages": [
+    "pages/index/index",
+    "pages/circle/circle",
+    "pages/test/test",
+    "pages/mine/myOrder/index",
+    "pages/module/huishouBtn/index",
+    "pages/shop/shop",
+    "pages/huishou/submitState/index",
+    "pages/huishou/types/index",
+    "pages/huishou/index/index",
+    "pages/chatDetail/index",
+    "pages/mine/index/index",
+    "pages/mine/mySixin/index",
+    "pages/mine/myConcern/index",
+    "pages/mine/myComment/index",
+    "pages/search/search",
+    "pages/shopList/shopList",
+    "pages/otherCircle/index",
+    "pages/publish/publish",
+    "pages/detail/detail"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "white",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "青山派",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#333",
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "selectedIconPath": "images/icon-home-opt.png",
+        "iconPath": "images/icon-home.png",
+        "pagePath": "pages/index/index",
+        "text": "推荐"
+      },
+      {
+        "selectedIconPath": "images/icon-shop-opt.png",
+        "iconPath": "images/icon-shop.png",
+        "pagePath": "pages/shop/shop",
+        "text": "公益企业"
+      },
+      {
+        "selectedIconPath": "images/icon-circle-opt.png",
+        "iconPath": "images/icon-circle.png",
+        "pagePath": "pages/circle/circle",
+        "text": "环保圈"
+      },
+      {
+        "selectedIconPath": "images/icon-mine-opt.png",
+        "iconPath": "images/icon-mine.png",
+        "pagePath": "pages/mine/index/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

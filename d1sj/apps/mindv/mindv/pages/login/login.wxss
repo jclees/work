@@ -1,0 +1,65 @@
+page {
+  background: #fff;
+  font-size: 38rpx;
+}
+.hide{
+ display: none;
+}
+.show{
+ display: block;
+}
+
+.base_btn {
+  font-size: 32rpx;
+  border: none;
+  background: #fff;
+}
+
+.login_tit {
+  font-size: 50rpx;
+  text-align: center;
+  padding: 100rpx 0;
+  color: #000000;
+}
+
+.inp_group {
+  padding: 0 35rpx;
+}
+
+.inp_group > view.inp {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1px solid #c7c7c7;
+  margin-bottom: 25rpx;
+}
+.inp_group > view.inp_tel{
+  position: relative;
+}
+.inp_group > view.inp input{
+  width: 70%;
+  height: 100rpx;
+  line-height: 100rpx;
+  color:#666;
+}
+.inp_group > view .yzcode_btn{
+  position: absolute;
+  height: 100rpx;
+  line-height: 100rpx;
+  right: 0;
+  top: 0;
+  color: #27ac28;
+  z-index: 99;
+}
+.save_btn{
+  margin: 60rpx 0 70rpx 0;
+}
+.comp_login{
+  font-size: 28rpx;
+  color: #27ac28;
+  text-align: center;
+  margin: 0 auto;
+}
+button::after{
+border: none;
+}

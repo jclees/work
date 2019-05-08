@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/money/money",
+    "pages/webview/webview",
+    "pages/ranking/ranking",
+    "pages/person/person",
+    "pages/kai/kai",
+    "pages/test/test",
+    "pages/news/news",
+    "pages/sideIcon/sideIcon"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "彩贝营销",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#000",
+    "disableScroll": true
+  }
+}

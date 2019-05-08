@@ -1,0 +1,87 @@
+<view class="main">
+  <scroll-view class="scroll_view" scroll-into-view="{{toView}}" scrollY="true">
+    <view class="message" hidden='{{!parentInfo.card_tel}}'>
+      <view>
+        <image class="avatar" src="{{parentInfo.card_logo}}"></image>
+        <view class="msg_new">
+          <view>
+            <view class="template">
+              <view>
+                <text>您好:</text>
+              </view>
+              <view class="clearfix">
+                <view class="addtext">通过我的名片你还可以:</view>
+                <navigator openType="reLaunch" url="/dbs_masclwlcard/pages/tab/tab?nav_footer_active=0&parent_id={{parent_id}}">
+                  <view class="opf">
+                    <image class="left_img" src="../../images/Groupd.png"></image>
+                    进入我的名片
+                    <image class="right_img" src="../../images/Grouprightarr.png"></image>
+                  </view>
+                </navigator>
+                <navigator openType="reLaunch" url="/dbs_masclwlcard/pages/tab/tab?nav_footer_active=2&parent_id={{parent_id}}">
+                  <view class="opf">
+                    <image class="left_img" src="../../images/Groupc.png"></image>
+                    查看我们公司官网
+                    <image class="right_img" src="../../images/Grouprightarr.png"></image>
+                  </view>
+                </navigator>
+                <navigator openType="reLaunch" url="/dbs_masclwlcard/pages/tab/tab?nav_footer_active=1&parent_id={{parent_id}}">
+                  <view class="opf">
+                    <image class="left_img" src="../../images/Groupa.png"></image>
+                    查看我们公司产品
+                    <image class="right_img" src="../../images/Grouprightarr.png"></image>
+                  </view>
+                </navigator>
+                <view bindtap="_callPhone" class="opf" data-phone="{{parentInfo.card_tel}}">
+                  <image class="left_img" src="../../images/call1.png" style="height:32rpx;width:32rpx;top:20rpx"></image>
+                  拨打我的电话
+                  <image class="right_img" src="../../images/Grouprightarr.png"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="message" id="uid_{{index}}" wx:for="{{allContentList}}" wx:key="{{index}}">
+      <view class="self" wx:if="{{item.is_my}}">
+        <image class="avatar" src="{{memberInfo.card_logo?memberInfo.card_logo:user.avatarUrl}}"></image>
+        <view class="msg">
+          <image mode='widthFix' src='/dbs_masclwlcard/images/loading.gif' class='sending' wx:if="{{item.sendStatus}}"></image>
+          <view>
+            <view class="template">
+              <text class="new_txt_my">{{item.is_my.text}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{item.is_ai}}">
+        <image class="avatar" src="{{item.card_logo}}"></image>
+        <view class="msg">
+          <view>
+            <view class="template">
+              <text wx:if="{{item.text}}">{{item.text}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="room_bar">
+    <view class="button_bar" hidden='{{!parentInfo.card_tel}}'>
+      <text style="font-size:26rpx;">我想</text>
+      <navigator openType="reLaunch" url="/dbs_masclwlcard/pages/tab/tab?nav_footer_active=0&parent_id={{parent_id}}">
+        <view bindtap="">去名片首页</view>
+      </navigator>
+      <view bindtap="_callPhone" data-phone="{{parentInfo.card_tel}}">拨打电话</view>
+      <view bindtap="card_options" class="detail_r" data-copy="wxid" data-option="copy" data-target="{{parentInfo.weixinid}}" wx:if="{{parentInfo.weixinid != null}}">复制微信</view>
+      <!-- <view bindtap="collectCard">保存名片</view> -->
+    </view>
+    <form reportSubmit bindsubmit="from_send">
+      <view class="f-row">
+        <input adjustPosition="false" bindinput="bindKeyInput" class="f news" confirmType="done" cursorSpacing="20" type="text" value="{{inputValue}}" bindconfirm="from_send" confirm-type="send"></input>
+        <button class="send_btn" formType="submit">发送</button>
+      </view>
+    </form>
+  </view>
+</view>

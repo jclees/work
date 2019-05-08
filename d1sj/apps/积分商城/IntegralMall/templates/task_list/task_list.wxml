@@ -1,0 +1,15 @@
+<!--templates/task_list/task_list.wxml-->
+<template name="task_list">
+   <view class="task_list">
+    <view class="task_list_per" wx:for="{{todaylist}}" wx:for-item="item" wx:key="item.name">
+      <view class="task_list_per_name">{{item.name}}</view>
+      <view class="task_list_per_score">{{item.integral}}</view>
+      <view class="task_list_per_time" wx:if="{{item.start}}">{{item.start}}-{{item.end}}</view>
+      <view class="task_list_per_button {{item.isdone==0?'common':current}}" >
+        <form>
+           <button hover-class="none">{{item.isdone==0?'去完成':item.isdone==1?'已完成':item.isdone==2?'未到时间':'已过期'}}</button>
+        </form>
+      </view>
+    </view>
+   </view>
+</template>

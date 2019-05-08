@@ -1,0 +1,73 @@
+<template name="shops">
+    <scroll-view scrollY bindscrolltolower="get_moreshop" style="height:{{winHeight}}px;background:#f7f7f7">
+        <view class="top_operate_initial">
+            <view bindtap="go_user" class="order-image-container {{business.userRedPoint?'order_btn_tip':''}}">
+                <image class="order-image" src="../../images/card/my.png" style="width: 33rpx;height:38rpx;"></image>
+            </view>
+        </view>
+        <view class="company-info">
+            <swiper autoplay circular class="swiper" style="height:300rpx">
+                <swiper-item>
+                    <view class="c-b-i-container">
+                        <view class="img-cover"></view>
+                        <image class="company-background-image" src="{{business.card.shop_bg}}"></image>
+                    </view>
+                </swiper-item>
+            </swiper>
+            <view class="company-detail">
+                <view class="company-icon">
+                    <view class="icon-top-container">
+                        <view class="icon-top">
+                            <image src="{{business.card.company_logo}}"></image>
+                        </view>
+                    </view>
+                </view>
+                <view class="company-text">
+                    <view class="company_name">{{business.card.company_name+'商城'}}</view>
+                    <view bindtap="alertcompany" class="bottom_company_name">
+                        <image src="../../images/renz.png"></image>
+                        <view>认证企业</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="dbl_pro_box">
+            <view class="dbl_sub dbl_left">
+                <view class="sm_box" wx:for="{{shops.left_list}}" wx:key="index">
+                    <navigator hoverClass="none" url="/dbs_masclwlcard/pages/shops/shops_detail?&shops_id={{item.id}}&card_id={{business.id}}">
+                        <view class="dbl_deltail_box">
+                            <view class="detail_pic">
+                                <image mode="aspectFill" src="{{item.gimg}}"></image>
+                            </view>
+                            <view style="width:100%;height:2rpx;background-color: #ebebeb;"></view>
+                            <view class="bottom_detail">
+                                <view class="title_detail">{{item.shop_name}}</view>
+                                <view class="sale_price">¥{{item.price}}</view>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+            </view>
+            <view class="dbl_sub  dbl_right">
+                <view class="sm_box" wx:for="{{shops.right_list}}" wx:key="index">
+                    <navigator hoverClass="none" url="/dbs_masclwlcard/pages/shops/shops_detail?&shops_id={{item.id}}&card_id={{business.id}}">
+                        <view class="dbl_deltail_box">
+                            <view class="detail_pic">
+                                <image src="{{item.gimg}}"></image>
+                            </view>
+                            <view style="width:100%;height:1rpx;background-color: #ebebeb"></view>
+                            <view class="bottom_detail">
+                                <view class="title_detail">{{item.shop_name}}</view>
+                                <view class="sale_price">¥{{item.price}}</view>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+            </view>
+        </view>
+        <view class="no_data" wx:if="{{shops.list.length<1}}">暂无商品</view>
+        <view class="nomoredata" wx:if="{{shops.list.length>0&&shops.pro_no_more}}">我也是有底线的..</view>
+        <view style="height:60px;background:transparent;"></view>
+        <view style="height:120rpx; background:#f7f7f7;" wx:if="{{shops.list.length>0}}"></view>
+    </scroll-view>
+</template>

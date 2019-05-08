@@ -1,0 +1,63 @@
+<head navTitle="名片列表" newwechat="0"></head>
+
+<!-- <loading hidden="{{dataLoaded}}">加载中...</loading> -->
+<!-- <view class="demo_line_05">——<text>小小分隔线</text>——</view> -->
+<view class="page">
+  <!-- <view class='null_data' wx:if="{{cardList.list.length <= 0}}">
+    <view>暂时没有朋友的名片..</view>
+  </view> -->
+  <view class="cardist">
+    <form reportSubmit bindsubmit="send_form" data-card_id="{{item.card_id}}" wx:for="{{cardList}}" wx:key="index">
+      <!-- <view style="margin:40rpx 0;color: #b6b6b7;font-size: 28rpx; text-align: center;font-weight: 300">来自{{item.source_name}}</view> -->
+      <button class="card" formType="submit">
+        <view class="avatar" data-card_id="{{item.card_id}}">
+          <image src="{{item.card_logo}}" mode='aspectFill'></image>
+        </view>
+        <view class="name" data-card_id="{{item.card_id}}">
+          {{item.card_name}}
+        </view>
+        <view class="position">{{item.role_name}}</view>
+        <view class="company">{{item.company_name}}</view>
+        <view class="mobile">
+          <image src="/dbs_masclwlcard/images/card/tel3.png"></image>
+          <text wx:if="{{item.card_tel}}">{{item.card_tel}}</text>
+          <text style="font-size: 24rpx;color: #ddd" wx:else>未填写</text>
+        </view>
+        <view class="email">
+          <image src="/dbs_masclwlcard/images/card/email.png"></image>
+          <text wx:if="{{item.email}}">{{item.email}}</text>
+          <text style="font-size: 24rpx;color: #ddd" wx:else>未填写</text>
+        </view>
+      </button>
+    </form>
+  </view>
+<view class="demo_line_05">——<text>小小分隔线</text>——</view>
+  <view class="cardist">
+    <form reportSubmit bindsubmit="send_form" data-card_id="{{item.card_id}}" wx:for="{{test_cardList}}" wx:key="index">
+      <!-- <view style="margin:40rpx 0;color: #b6b6b7;font-size: 28rpx; text-align: center;font-weight: 300">来自{{item.source_name}}</view> -->
+      <button class="card" formType="submit">
+        <view class="avatar" data-card_id="{{item.card_id}}">
+          <image src="{{item.card_logo}}" mode='aspectFill'></image>
+        </view>
+        <view class="cool">握手名片发起人</view>
+        <view class="name" data-card_id="{{item.card_id}}">
+          {{item.card_name}} 
+        </view>
+        <view class="position">{{item.role_name}}</view>
+        <view class="company">{{item.company_name}}</view>
+        <view class="mobile">
+          <image src="/dbs_masclwlcard/images/card/tel3.png"></image>
+          <text wx:if="{{item.card_tel}}">{{item.card_tel}}</text>
+          <text style="font-size: 24rpx;color: #ddd" wx:else>未填写</text>
+        </view>
+        <view class="email">
+          <image src="/dbs_masclwlcard/images/card/email.png"></image>
+          <text wx:if="{{item.email}}">{{item.email}}</text>
+          <text style="font-size: 24rpx;color: #ddd" wx:else>未填写</text>
+        </view>
+      </button>
+    </form>
+  </view>
+</view>
+<import src="../../temp/authorize/index.wxml"></import>
+<template is="authorize" data="{{isAuthorize:isAuthorize}}"></template>

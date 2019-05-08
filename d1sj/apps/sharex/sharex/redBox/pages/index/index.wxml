@@ -1,0 +1,42 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+    <view class="wxapp-toast-content">
+      <view class="wxapp-toast-content-text"> {{toastText}} </view>
+    </view>
+  </view>
+  <view class="index">
+    <image src="{{info.img}}"></image>
+    <view class="index_box">
+      <button class="index_box_button" bindtap="open">
+        <image src="../../imgs/button.png"></image> 
+      </button>
+      <view class="index_box_text">恭喜你获得1个SEXC红包</view>
+      <view class="index_box_footer" bindtap="openPop">
+        <image src="../../imgs/wenti.png"></image>
+        <text>SEXC</text>
+      </view>
+    </view>
+  </view>
+  <!-- 说明弹出框 -->
+  <view class="pop" wx:if="{{pop}}">
+    <view class="cover" bindtap="closePop"></view>
+    <view class="pop_box">
+      <image src="../../imgs/pop_bgc.png"></image>
+      <view class="pop_box_info">
+        <view class="pop_box_info_tit">
+          <image src="../../imgs/pop_tit.png"></image>
+        </view>
+        <view class="pop_box_info_close" bindtap="closePop">
+          <image src="../../imgs/close.png"></image>
+        </view>
+        <view class="pop_box_info_con">
+          <text>{{art.currency_intro}}</text>
+        </view>
+        <view class="pop_box_info_button" bindtap="closePop">
+          <image src="../../imgs/confirm.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

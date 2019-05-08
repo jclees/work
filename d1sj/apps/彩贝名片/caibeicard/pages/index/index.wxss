@@ -1,0 +1,381 @@
+/**index.wxss**/
+
+page {
+  width: #fafafa;
+}
+
+.fixed {
+  position: fixed;
+  top: 88rpx;
+  left: 0;
+  z-index: 1;
+}
+
+.fixed2 {
+  position: fixed;
+  top: 170rpx;
+  left: 0;
+}
+
+/*  swiper  */
+
+.slide-image {
+  width: 100%;
+}
+
+.swiper-container {
+  position: relative;
+}
+
+.swiper-container .swiper {
+  height: 420rpx;
+}
+
+.swiper-container .swiper .img {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-container .dots {
+  position: absolute;
+  left: 20rpx;
+  right: 0;
+  bottom: 20rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-container .dots .dot {
+  margin: 0 8rpx;
+  width: 14rpx;
+  height: 14rpx;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8rpx;
+  transition: all 0.6s;
+}
+
+.swiper-container .dots .dot.active {
+  background: #fff;
+}
+
+.search_wrap {
+  width: 100%;
+  /* background: #ffbf00; */
+  padding: 10rpx 30rpx;
+  box-sizing: border-box;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.search_wrap.cur {
+  background: #fff;
+}
+
+.search_wrap.cur .search {
+  background: #f5f5f5;
+}
+
+.search_wrap .search {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 200rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  box-shadow: 0 0 5rpx rgba(0, 0, 0, 0.1);
+}
+
+.search_wrap .search image {
+  width: 46rpx;
+  margin: 0 30rpx 0 20rpx;
+}
+
+.search_wrap .search input {
+  height: 70rpx;
+  line-height: 70rpx;
+  flex: 1;
+  font-size: 24rpx;
+}
+
+.main_product .navbar {
+  display: flex;
+  white-space: nowrap;
+  background: #fff !important;
+  font-size: 32rpx;
+  color: #4d4d4d;
+  border-bottom: 1px solid #ebebeb;
+  height: 82rpx;
+  line-height: 82rpx;
+}
+
+.main_product .navbar .item {
+  position: relative;
+  text-align: center;
+  margin: 0 30rpx;
+  display: inline-block;
+  height: 100%;
+}
+
+.main_product .navbar .item.active:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 8rpx;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background: #ffbf00;
+  transform: translate(-50%, 0);
+  animation: tab-border-bottom 1s linear;
+}
+
+.main_product .navbar_sub {
+  font-size: 24rpx;
+  border: 0 none;
+}
+
+.main_product .navbar_sub .item.active:after {
+  bottom: 6rpx;
+}
+
+@keyframes tab-border-bottom {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.main_product .pd_wrap {
+  padding: 20rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.main_product .pd_wrap.cur {
+  margin: 256rpx 0 0 0;
+}
+
+.main_product .pd_wrap > view {
+  width: 345rpx;
+  margin: 0 20rpx 20rpx 0;
+  background: #fff;
+  border-radius: 20rpx;
+  color: #666;
+  float: left;
+}
+
+.main_product .pd_wrap > view:nth-child(even) {
+  margin: 0 0 20rpx 0;
+}
+
+.main_product .pd_wrap .pd_top {
+  position: relative;
+  height: 300rpx;
+}
+
+.main_product .pd_wrap .pd_top_img {
+  width: 300rpx;
+  height: 300rpx;
+  margin: 0 auto;
+  display: block;
+}
+
+.main_product .pd_wrap .pd_top .pd_top_fbr {
+  position: absolute;
+  width: 100%;
+  height: 50rpx;
+  background: rgba(0, 0, 0, 0.2);
+  line-height: 50rpx;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 24rpx;
+}
+
+.main_product .pd_wrap .pd_top .pd_top_fbr .pd_top_fbr_img {
+  border-radius: 200rpx;
+  height: 44rpx;
+  width: 44rpx;
+  margin: 0 10rpx;
+}
+
+.main_product .pd_wrap .pd_bot {
+  padding: 20rpx 0 20rpx 30rpx;
+  color: #4d4d4d;
+  font-size: 28rpx;
+}
+
+.main_product .pd_wrap .pd_bot >view:first-of-type {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.main_product .pd_wrap .pd_bot .pd_bot_jfnum {
+  display: flex;
+  font-size: 24rpx;
+  margin-top: 20rpx;
+  align-items: center;
+}
+
+.main_product .pd_wrap .pd_bot .pd_bot_jfnum .b_icon {
+  width: 20rpx;
+  margin-right: 10rpx;
+}
+
+.main_product .pd_wrap .pd_bot .pd_bot_jfnum .cool {
+  color: #ffbf00;
+}
+
+.up_btn {
+  position: fixed;
+  bottom: 120rpx;
+  right: 0;
+  width: 50rpx;
+  z-index: 100;
+}
+
+.up_btn image {
+  width: 50rpx;
+}
+
+.contact_main {
+  width: 85%;
+  border-radius: 0;
+  background: #febe2d;
+  padding: 0 10rpx 10rpx;
+}
+
+.contact_main .pop-title {
+  text-align: center;
+}
+
+.contact_main .pop-title text {
+  position: relative;
+  top: -30rpx;
+  background: #febe2d;
+  border: 4px solid #000;
+  font-size: 36rpx;
+  color: #000;
+  line-height: 70rpx;
+  padding: 0 40rpx;
+  height: 70rpx;
+  display: inline-block;
+}
+
+.contact_main .pop-content {
+  background: #fff;
+  margin: 0;
+  display: block;
+  padding: 30rpx 30rpx 50rpx;
+}
+
+.contact_main .pop-content > view {
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  color: #000;
+  border-bottom: 2px solid #febe2d;
+  display: flex;
+}
+
+.contact_main .pop-content > view label {
+  margin-left: 10rpx;
+}
+
+.contact_main .pop-content > view input,
+.contact_main .pop-content > view picker {
+  height: 80rpx;
+  line-height: 80rpx;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+}
+
+.contact_main .pop-content > view .sel_icon {
+  width: 0;
+  height: 0;
+  border-right: 18rpx solid transparent;
+  border-left: 18rpx solid transparent;
+  border-top: 30rpx solid #a7a7a7;
+  position: absolute;
+  right: 20rpx;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.contact_main .submit_btn {
+  font-size: 36rpx;
+  color: #000;
+  border: 2px solid #000;
+  background: #febe2d;
+  border-radius: 100px;
+  line-height: 70rpx;
+  width: 320rpx;
+  margin: 50rpx auto 0;
+  overflow: auto;
+}
+
+.null_data {
+  padding-top: 50rpx;
+  font-size: 32rpx;
+  color: #666;
+  text-align: center;
+}
+
+.null_data image {
+  width: 432rpx;
+}
+
+.index_guide {
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  left: 0;
+}
+.index_guide1 {
+  bottom: 0;
+}
+.index_guide2 {
+  top: 200rpx;
+}
+.index_guide3 {
+  top: 440rpx;
+}
+.index_guide4 {
+  top: 0;
+}
+
+.index_guide_btn {
+  position: absolute;
+  bottom: 77rpx;
+  right: 56rpx;
+  z-index: 11;
+  width: 220rpx;
+  height: 130rpx;
+}
+
+.index_guide_btn2 {
+  bottom: 304rpx;
+  right: 268rpx;
+}
+
+.index_guide_btn3 {
+  bottom: 178rpx;
+  right: 88rpx;
+}
+
+.index_guide_btn4 {
+  bottom: 306rpx;
+  right: 268rpx;
+}

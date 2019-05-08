@@ -1,0 +1,129 @@
+page {
+  background: #fafafa;
+}
+
+.tab-h {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.tab-item {
+  text-align: center;
+  font-size: 28rpx;
+  color: #1a1a1a;
+}
+
+.tab-item .nums {
+  font-size: 24rpx;
+  padding: 20rpx 0;
+}
+
+.tab-item.active {
+  color: #ffbf00;
+  position: relative;
+}
+
+.tab-item.active:after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: #ffbf00;
+  position: absolute;
+  bottom: 6rpx;
+  left: 5rpx;
+  border-radius: 16rpx;
+}
+
+.item-ans {
+  background: #fff;
+  box-shadow: 0 0 0 0 rgba(210, 210, 210, 0.50);
+  border-radius: 8rpx;
+  margin: 20rpx;
+}
+
+.item-ans .item-ans-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20rpx 30rpx;
+}
+
+.item-ans .item-ans-top .item-ans-top-img {
+  width: 160rpx;
+  height: 160rpx
+}
+
+.item-ans .item-ans-top .item-ans-top-con {
+  font-size: 26rpx;
+  color: #1a1a1a;
+  width: 340rpx;
+}
+
+.item-ans .item-ans-top .item-ans-top-con > view:nth-child(1) {
+  font-size: 26rpx;
+  color: #1a1a1a;
+  margin-bottom: 20rpx;
+}
+
+.item-ans .item-ans-top .item-ans-top-con > view:nth-child(2) {
+  font-size: 24rpx;
+  color: #4d4d4d;
+  margin-bottom: 10rpx;
+}
+
+.item-ans .item-ans-top .item-ans-top-con > view:nth-child(3) {
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color: #ff3933;
+}
+
+.item-ans .item-ans-top .item-ans-top-con > view:nth-child(3) image {
+  width: 20rpx;
+  margin-right: 10rpx;
+}
+
+.item-ans .item-ans-top .item-ans-top-con>view {
+}
+
+.item-ans .item-ans-top .item-ans-top-rig {
+  font-size: 24rpx;
+  color: #b3b3b3;
+}
+
+.item-ans .item-ans-bto {
+  border-top: 1px solid #f6f6f6;
+  padding: 10rpx 60rpx 10rpx 0;
+}
+
+.item-ans .item-ans-bto >view {
+  height: 44rpx;
+  line-height: 44rpx;
+  background: #ff8d0d;
+  border-radius: 8rpx;
+  font-size: 24rpx;
+  color: #fff;
+  float: right;
+  padding: 0 28rpx;
+}
+
+.scoll-h {
+  height: 100%;
+}
+
+.null_data {
+  padding-top: 200rpx;
+  font-size: 32rpx;
+  color: #666;
+  text-align: center;
+}
+
+.null_data image {
+  width: 432rpx;
+}

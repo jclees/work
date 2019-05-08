@@ -1,0 +1,68 @@
+<view class="search_wrap in">
+  <view class="search">
+    <image src='/images/icon_search.png' mode='widthFix'></image>
+    <input type='text' placeholder='{{tempInpVal}}' value='{{searchSucc?inputValue:""}}' placeholder-style='color:#b2b2b2;' focus bindconfirm="bindInpconfirm" confirm-type="search" bindinput='bindInpChange'></input>
+    <image src='/images/icon_empty.png' mode='widthFix' bindtap='emptyInp' wx:if="{{searchSucc}}"></image>
+  </view>
+  <view class="search_btn" bindtap='backPage'>取消</view>
+</view>
+<view class="up_btn" bindtap='goTop' hidden='{{!floorstatus}}'>
+  <image src='/images/icon_uptop.png' mode='widthFix'></image>
+</view>
+<view style='height:100rpx;'></view>
+
+<view class='nulldata_wrap' wx:if="{{wenzData.length <= 0}}">
+  <image src='/images/null_data.png' mode='widthFix'></image>
+  <view class='msg'>暂无数据</view>
+</view>
+
+<view class='con_lists'>
+  <block wx:for="{{wenzData}}" wx:key="">
+    <navigator open-type="reLaunch" url="/pages/shop/shop?business_id={{item.id}}">
+      <view class='item'>
+        <image src='{{item.avatar_url}}' mode='aspectFill' lazy-load></image>
+        <view>
+          <view class='rt_tit'>
+            <view class='ellipsis'>{{item.name}}</view>
+          </view>
+          <view class='rt_phone'>
+            电话：{{item.phone}}
+          </view>
+          <view class='rt_time'>
+            <view class='address'>
+              <image src='/images/icon_address.png' mode='widthFix'></image>
+              <view>{{item.address}}</view>
+            </view>
+            <!-- <view>2km</view> -->
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+</view>
+
+<view class="history_wrap" wx:if="{{!searchSucc}}">
+  <!-- 最近搜索 -->
+  <view class="history" wx:if="{{historySearchData.length>0}}">
+    <view>
+      <view>最近搜索</view>
+      <image src='/images/icon_del.png' mode='widthFix' bindtap='delHistorySearch'></image>
+    </view>
+    <view>
+      <view wx:for="{{historySearchData}}" wx:key="" bindtap='bindInpconfirm' data-key="{{item.keyword}}">{{item.keyword}}</view>
+      <!-- <view class="cur">噜噜噜噜噜噜噜噜噜</view> -->
+    </view>
+  </view>
+  <!-- 探索发现 -->
+  <view class="history" wx:if="{{hotSearchData.length>0}}">
+    <view>
+      <view>探索发现</view>
+    </view>
+    <view>
+      <view wx:for="{{hotSearchData}}" wx:key="" bindtap='bindInpconfirm' data-key="{{item.keyword}}">{{item.keyword}}</view>
+      <!-- <view class="cur">1元话费</view> -->
+    </view>
+  </view>
+</view>
+<!-- 回收按钮 -->
+<include src="/pages/module/huishouBtn/index.wxml" />

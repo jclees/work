@@ -1,0 +1,172 @@
+@import "dark.wxss";
+page {
+  background: #f8f8f9;
+}
+
+.main_mlwrap {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  color: #000;
+}
+
+.main_mlwrap .cover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.main_mlwrap .ml_list {
+  background: #fff;
+  z-index: 11;
+  width: 80%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.main_mlwrap .ml_list scroll-view {
+  width: 100%;
+  height: 100%;
+}
+
+.main_mlwrap .ml_list view {
+  padding: 30rpx 0;
+  border-bottom: 2rpx solid #eaeaea;
+  margin: 0 30rpx;
+}
+
+.main_mlwrap .ml_list view.active {
+  color: #2ea2fc;
+}
+
+.book_con {
+  width: 100%;
+  height: 100%;
+  color: #000;
+  box-sizing: border-box;
+  font-size: 38rpx;
+  padding: 0 40rpx;
+}
+.book_con scroll-view{
+  width: 100%;
+  height: 100%;
+}
+
+.book_con .book_tit {
+  font-size: 50rpx;
+  padding-top: 50rpx;
+}
+.book_con .footer_chapter{
+  width: 100%;
+}
+.book_con .footer_chapter > view{
+  width: 30%;
+  font-size: 32rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  text-align: center;
+  margin: 5% 5% 5% 0;
+}
+.book_con .footer_chapter > view:last-of-type{
+  margin: 5% 0 5% 0;
+}
+.set_wrap {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.set_wrap .cover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.set_wrap .set_con {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  background: #fff;
+  border-top: 2rpx solid #efefef;
+}
+
+.set_wrap .set_chapter {
+  width: 100%;
+  font-size: 32rpx;
+}
+
+.set_wrap .set_chapter > view {
+  width: 30%;
+  height: 150rpx;
+  line-height: 150rpx;
+}
+
+.set_wrap .set_chapter > view:nth-child(2) {
+  width: 40%;
+  font-size: 26rpx;
+  color: #7f7f7f;
+}
+
+.set_wrap .nav_group {
+  width: 100%;
+}
+
+.set_wrap .nav_group > view {
+  width: 30%;
+  box-sizing: border-box;
+}
+
+.set_wrap .nav_group > view:nth-child(2) {
+  width: 40%;
+  font-size: 20rpx;
+}
+
+.set_wrap .nav_group > view:nth-child(2) .font_size {
+  width: 60%;
+  margin: 0 auto 8rpx;
+}
+
+.set_wrap .nav_group > view:nth-child(2) .font_size > view {
+  border-radius: 30rpx;
+  border: 2rpx solid #000;
+  padding: 4rpx 14rpx;
+}
+
+.set_wrap .nav_group > view:nth-child(2) .font_size > view:nth-child(1) {
+  padding: 4rpx 16rpx;
+}
+
+.set_wrap .nav_group > view .txt {
+  font-size: 20rpx;
+  color: #2a313c;
+  padding-bottom: 10rpx;
+}
+
+.set_wrap .nav_group > view .icon_ml {
+  margin: 0 auto 0;
+  width: 32rpx;
+}
+
+.set_wrap .nav_group > view .icon_night {
+  margin: 0 auto 0;
+  width: 35rpx;
+}

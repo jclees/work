@@ -1,0 +1,72 @@
+@import '../ryshop/ryshop.wxss';
+@import '../duizhan/timu.wxss';
+
+
+.timu_jy{
+  background:#2a2647;
+  color:#a5a4ad;
+}
+input.small-input{
+  font-family: PingFang SC,Hiragino Sans GB,Microsoft YaHei;
+  height: 98rpx;
+  font-size: 26rpx;
+  color: #fff;
+}
+textarea.textarea{
+  height:120rpx;
+  width:100%;
+  font-size:30rpx;
+  color:#fff;
+}
+.fengge{
+  display:inline-block;
+  color:#999;
+  padding:0 20rpx;
+}
+.timukaid {
+  height: auto;
+  width:94%;
+  margin:0 auto;
+  margin-top:20rpx;
+}
+.timukai_dto input {
+  width: 500rpx;
+  height: 95rpx;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+.timukai_dto {
+  width: 100%;
+  height: auto;
+  -webkit-animation-name: Open;	
+	animation-duration: 1s;
+  box-sizing: border-box;
+  overflow: hidden!important;	
+}
+
+.olm {
+  width:100%;
+  height:auto;
+  background:-webkit-linear-gradient(top, #fbbf16, #f98607);
+  border-radius:20rpx;
+  padding:12rpx 0;
+  text-align:center;
+  font-size:30rpx;
+  font-weight:bold;
+  color: #fff!important;
+}
+
+
+@keyframes Open {
+	0% {
+			width: 0%;
+      margin: 0 auto;
+	}
+	100% {
+	   	width: 100%;
+      margin: 0 auto;
+	}			
+}
+
+
+

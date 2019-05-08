@@ -1,0 +1,150 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.7.0",
+	"appid": "wxabe5f0227ade15da",
+	"projectname": "222222",
+	"svr": "",
+	"client": "",
+	"qcloudRoot": "",
+	"miniprogramRoot": "",
+	"pluginRoot": "",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 7,
+			"list": [
+				{
+					"id": 0,
+					"name": "12",
+					"pathName": "pages/wangluoz/wangluoz",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "商店",
+					"pathName": "pages/ryshop/ryshop",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我要出题",
+					"pathName": "pages/rychuti/rychuti",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "道具盒子",
+					"pathName": "pages/rybox/rybox",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我要出题目",
+					"pathName": "pages/rychutis/rychutis",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/rycenter/rycenter",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "等级列表",
+					"pathName": "pages/rydengji/rydengji",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/shouye/shouye",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "等待好友加入",
+					"pathName": "pages/dengdai/dengdai",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "离开",
+					"pathName": "pages/likai/likai",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "排位赛",
+					"pathName": "pages/paiwei/paiwei",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "失败",
+					"pathName": "pages/shibai/shibai",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "挑战成功",
+					"pathName": "pages/tiaozhan/tiaozhan",
+					"query": ""
+				},
+				{
+					"id": 13,
+					"name": "题目",
+					"pathName": "pages/timu/timu",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "题目工厂",
+					"pathName": "pages/factory/factory",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "网络中断",
+					"pathName": "pages/wangluoz/wangluoz",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "排行榜",
+					"pathName": "pages/paihang/paihang",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "知识等级",
+					"pathName": "pages/upgrade/upgrade",
+					"query": ""
+				}
+			]
+		}
+	}
+}

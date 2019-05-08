@@ -1,0 +1,87 @@
+<!--pages/ryshop/ryshop.wxml-->
+<view class="warp_page" style="background-image:url({{tupian}}shop_bg.png)">
+<!-- if_iphone -->
+<!-- 如果是iPhone 显示不能购买页面  -->
+<view class="if_iphone" hidden='{{if_iphone}}'>
+  <view class="iphone_box">
+    <view class="iphone_img">
+      <image src="{{tupian}}icon-iphone.png" />
+    </view>
+    <view class="banner_tit">根据苹果政策</view>
+    <view class="x_title">IOS设备暂不开放购买支付功能</view>
+  </view>
+</view>
+<!-- if_iphone -->
+<view class="if_iphone" hidden='{{!if_iphone}}'>
+
+  <view class="banner_box">
+    <view class="small-flex">
+      <view class="small-flex__item">
+        <view class="banner_tit">新手大礼包</view>
+        <view class="banner_tip"><image src="{{tupian}}timer.png" /><text>限时抢购</text></view>
+        <text class="money_num">￥1.00</text>
+      </view>
+      <view class="small-flex__item">
+        <view class="tc"><image src="{{tupian}}banner-img.png" class="banner-img" /></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="tool_box">
+    <view class="small-girds">
+      <view class="small-gird">
+        <view class="tool_nb">
+          <view class="m-title">少量金币</view>
+          <view class="tool-icon"><image src="{{tupian}}ry-icon01.png" /></view>
+          <view class="tool-mon"><text>￥6</text></view>
+        </view>
+      </view>
+      <view class="small-gird">
+        <view class="tool_nb">
+          <view class="m-title">大量金币</view>
+          <view class="tool-icon"><image src="{{tupian}}ry-icon02.png" /></view>
+          <view class="tool-mon"><text>￥48</text></view>
+        </view>
+      </view>
+      <view class="small-gird">
+        <view class="tool_nb">
+          <view class="m-title">金币宝箱</view>
+          <view class="tool-icon"><image src="{{tupian}}ry-icon03.png" /></view>
+          <view class="tool-mon"><text>￥98</text></view>
+        </view>
+      </view>
+      <view class="small-gird">
+        <view class="tool_nb">
+          <view class="m-title">小宝箱x4</view>
+          <view class="tool-icon"><image src="{{tupian}}ry-icon04.png" /></view>
+          <view class="tool-mon"><text>￥8</text></view>
+        </view>
+      </view>
+      <view class="small-gird">
+        <view class="tool_nb">
+          <view class="m-title">中宝箱x4</view>
+          <view class="tool-icon"><image src="{{tupian}}ry-icon05.png" /></view>
+          <view class="tool-mon"><text>￥16</text></view>
+        </view>
+      </view>
+      <view class="small-gird">
+        <view class="tool_nb">
+          <view class="m-title">大宝箱x4</view>
+          <view class="tool-icon"><image src="{{tupian}}ry-icon06.png" /></view>
+          <view class="tool-mon"><text>￥36</text></view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<!-- if_iphone -->
+  <view class='small_bon' style="margin-top:30rpx;">
+      <view class='small_bon-gold'>
+        <image src="{{tupian}}gold_icon.png" class="gold_icon" />
+        <text>免费领取金币</text>
+      </view>
+  </view>
+  <view class="btn_tip-tit"><text>分享到微信群可获得</text><image src="{{tupian}}gold_icon.png" /><text>90</text></view>
+</view>

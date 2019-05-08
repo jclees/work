@@ -1,0 +1,183 @@
+<!--pages/person/index/index.wxml-->
+<template name="person_index">
+  <view class="person_tit">
+    <view class="person_tit_img">
+      <image src="{{image}}"></image>
+    </view>
+    <view class="person_tit_button clearfix">
+      <view class="person_tit_button_left fl">
+        <!-- <navigator hover-class="none" class="person_index_button"> -->
+        <navigator hover-class="none" url="../../pages/person/grade/grade" class="person_index_button">
+          <image src="/imgs/person_icon1.png"></image>
+          <text>VIP{{gradeDetail.grade}}</text>
+        </navigator>
+      </view>
+      <view class="person_tit_button_right fr">
+        <navigator hover-class="none" url="../../pages/person/score/score" class="person_index_button">
+          <image src="/imgs/person_icon2.png"></image>
+          <text>{{gradeDetail.integral}}</text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+
+  <!-- <view class="person_info">
+    <view class="person_info_order">
+      <view class="person_info_order_tit">
+        我的订单
+      </view>
+      <view class="person_info_order_con">
+        <view class="person_info_order_con_box">
+          <view class="person_info_order_con_box_per" wx:for="{{orderList}}" wx:for-item="item" wx:key="{{item.name}}" wx:if="{{orderList.length<=2}}">
+            <view class="person_info_order_con_box_left">
+              <image src="{{item.img}}"></image>
+            </view>
+            <view class="person_info_order_con_box_right clearfix">
+              <view class="person_info_order_con_box_right_left fl">
+                <view class="person_info_order_con_box_right_left_top">{{item.name}}</view>
+                <view class="person_info_order_con_box_right_left_bottom">
+                  <text>￥{{item.specs}}</text>
+                  <text>积分</text>
+                </view>
+              </view>
+              <view class="person_info_order_con_box_right_right fr">
+                {{item.status==1?'已支付':item.status==2?'配送中':'已完成'}}
+              </view>
+            </view>
+          </view>
+        </view>
+        <navigator hover-class="none" url="../../pages/person/order/order" class="person_info_order_con_more" wx:if="{{orderList.length>=2}}">
+          <text>查看更多</text>
+          <image src="/imgs/sanjiao.png"></image>
+        </navigator>
+      </view>
+    </view>
+    <view class="person_info_order">
+      <view class="person_info_order_tit">
+        我的收藏
+      </view>
+      <view class="person_info_order_con">
+        <view class="person_info_order_con_box">
+          <view class="person_info_order_con_box_per clearfix" wx:for="{{collectList}}" wx:for-item="item" wx:key="{{item.name}}" wx:if="{{collectList.length>=2}}">
+            <view class="person_info_order_con_box_left">
+              <image src="{{item.img}}"></image>
+            </view>
+            <view class="person_info_order_con_box_right clearfix">
+              <view class="person_info_order_con_box_right_left fl">
+                <view class="person_info_order_con_box_right_left_top">
+                  {{item.name}}
+                </view>
+                <view class="person_info_order_con_box_right_left_bottom">
+                  <text>￥{{item.specs}}</text>
+                  <text>积分</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <navigator hover-class="none" url="../../pages/person/collect/collect" class="person_info_order_con_more" wx:if="{{collectList.length>=2}}">
+          <text>查看更多</text>
+          <image src="/imgs/sanjiao.png"></image>
+        </navigator>
+      </view>
+    </view>
+  </view> -->
+  <!-- <view class="person_info">
+    <view class="person_info_order">
+      <view class="person_info_order_tit">
+        我的订单
+      </view>
+      <view class="person_info_order_con">
+        <view class="person_info_order_con_box">
+          <view class="person_info_order_con_box_per">
+            <view class="person_info_order_con_box_left">
+              <image src="/imgs/person_icon2.png"></image>
+            </view>
+            <view class="person_info_order_con_box_right clearfix">
+              <view class="person_info_order_con_box_right_left fl">
+                <view class="person_info_order_con_box_right_left_top">12312312</view>
+                <view class="person_info_order_con_box_right_left_bottom">
+                  <text>￥123123</text>
+                  <text>积分</text>
+                </view>
+              </view>
+              <view class="person_info_order_con_box_right_right fr">
+                {{item.status==1?'已支付':item.status==2?'配送中':'已完成'}}
+              </view>
+            </view>
+          </view>
+        </view>
+        <navigator hover-class="none" url="../../pages/person/order/order" class="person_info_order_con_more" wx:if="{{orderList.length>=2}}">
+          <text>查看更多</text>
+          <image src="/imgs/sanjiao.png"></image>
+        </navigator>
+      </view>
+    </view>
+    <view class="person_info_order">
+      <view class="person_info_order_tit">
+        我的收藏
+      </view>
+      <view class="person_info_order_con">
+        <view class="person_info_order_con_box">
+          <view class="person_info_order_con_box_per clearfix" wx:for="{{collectList}}" wx:for-item="item" wx:key="{{item.name}}" wx:if="{{collectList.length>=2}}">
+            <view class="person_info_order_con_box_left">
+              <image src="{{item.img}}"></image>
+            </view>
+            <view class="person_info_order_con_box_right clearfix">
+              <view class="person_info_order_con_box_right_left fl">
+                <view class="person_info_order_con_box_right_left_top">
+                  {{item.name}}
+                </view>
+                <view class="person_info_order_con_box_right_left_bottom">
+                  <text>￥{{item.specs}}</text>
+                  <text>积分</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <navigator hover-class="none" url="../../pages/person/collect/collect" class="person_info_order_con_more" wx:if="{{collectList.length>=2}}">
+          <text>查看更多</text>
+          <image src="/imgs/sanjiao.png"></image>
+        </navigator>
+      </view>
+    </view>
+  </view> -->
+
+
+
+  <view class="mine_nav">
+    <view>
+      <button bindtap='jumpUrl' data-url="/pages/person/order/order">
+        <view class='min_l'>
+          <image src='/imgs/mine_icon_01.png' mode='widthFix' style="width:30rpx;"></image>
+          <text>我的订单</text>
+        </view>
+        <view class="min_icon">
+          <image src='/imgs/sanjiao.png' mode='widthFix'></image>
+        </view>
+      </button>
+      <!-- <button bindtap='jumpUrl' data-url="/pages/person/collect/collect">
+        <view class='min_l'>
+          <image src='/imgs/mine_icon_02.png' mode='widthFix' style="width:34rpx;"></image>
+          <text>我的收藏</text>
+        </view>
+        <view class="min_icon">
+          <image src='/imgs/sanjiao.png' mode='widthFix'></image>
+        </view>
+      </button> -->
+    </view>
+    <view>
+      <button bindtap='jumpUrl'>
+        <view class='min_l'>
+          <image src='/imgs/mine_icon_03.png' mode='widthFix' style="width:34rpx;"></image>
+          <text>赚积分</text>
+        </view>
+        <view class="min_icon">
+          <text>暂未开放</text>
+          <image src='/imgs/sanjiao.png' mode='widthFix'></image>
+        </view>
+      </button>
+    </view>
+  </view>
+</template>

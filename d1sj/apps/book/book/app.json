@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/readingbook/readingbook",
+    "pages/leavemsg/leavemsg",
+    "pages/person/person"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1b1b1b",
+    "navigationBarTitleText": "暗界神使",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#fff"
+  }
+}

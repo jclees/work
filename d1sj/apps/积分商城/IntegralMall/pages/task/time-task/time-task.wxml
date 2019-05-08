@@ -1,0 +1,29 @@
+<!--pages/time-task/time-task.wxml-->
+<import src="../../../templates/task_list/task_list.wxml" />
+<view class="container">
+  <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+    <view class="wxapp-toast-content">
+      <view class="wxapp-toast-content-text"> {{toastText}} </view>
+    </view>
+  </view>
+  <view class="time-task-tit">
+    <view class="task_tit">
+      <view class='task_tit_left fl'>
+        <image src="{{todayInfo.image}}"></image>
+      </view>
+      <view class='task_tit_right oh'>
+        <view class="task_tit_right_top" style='margin-top: 40rpx;'>
+          <text>{{todayInfo.starttime}}-{{todayInfo.endtime}}场</text>
+          <text>提醒:{{num}}人</text>
+        </view>
+        <view class='task_tit_right_top_bottom'>
+          <form>
+            <button hover-class="none" bindtap="remind">提醒</button>
+            <button hover-class="none">分享</button>
+          </form>
+        </view>
+      </view>
+    </view>
+  </view>
+  <template is="task_list" data="{{todaylist}}" />
+</view>

@@ -1,0 +1,6 @@
+<head bind:goback="_goback" hasgoback="{{true}}" navTitle="视频"></head>
+<view class="section tc">
+    <view class="video_box">
+        <video controls autoplay="{{true}}" src="{{src}}"></video>
+    </view>
+</view>

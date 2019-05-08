@@ -1,0 +1,49 @@
+<view>
+  <view class="tab-h">
+    <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">
+      <view>全部</view>
+      <view class="nums">{{bookShareData.count.count1}}</view>
+    </view>
+    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">
+      <view>已上架</view>
+      <view class="nums">{{bookShareData.count.count2}}</view>
+    </view>
+    <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">
+      <view>已下架</view>
+      <view class="nums">{{bookShareData.count.count3}}</view>
+    </view>
+  </view>
+  <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+    <swiper-item wx:for="{{[0,1,2]}}" wx:key="">
+      <scroll-view scroll-y="true" class="scoll-h">
+        <view class="null_data" wx:if="{{bookShareData.lists.length<=0}}">
+          <image src="{{img_url}}nullgxiang.png" mode='widthFix'></image>
+          <view>你还没发布绘本哦，赶快去发布吧</view>
+        </view>
+        <block wx:for="{{bookShareData.lists}}" wx:key="">
+          <view class="item-ans">
+            <view class="item-ans-top" data-id="{{item.id}}" bindtap='jumpProductDetails'>
+              <image src='{{item.imgurl}}' mode='aspectFit' class="item-ans-top-img"></image>
+              <view class='item-ans-top-con'>
+                <view></view>
+                <view>《{{item.name}}》</view>
+                <view>
+                  <image src='{{img_url}}icon_babycoin.png' mode='widthFix'></image>
+                  <view class="coins_nums">{{item.price}}</view>
+                </view>
+              </view>
+              <view class='item-ans-top-rig'  wx:if="{{currentTab == 0}}">{{item.show_status == 1 ?'已上架':'已下架'}}</view>
+              <view class='item-ans-top-rig'  wx:else>{{item.show_date}}</view>
+            </view>
+            <view class="item-ans-bto clearfix" data-type="2" data-id="1" data- data-bookid="{{item.id}}" wx:if="{{currentTab == 1}}" bindtap='upJiaType'>
+              <view>下架</view>
+            </view>
+            <view class="item-ans-bto clearfix" data-type="1" data-id="2" data-bookid="{{item.id}}" wx:if="{{currentTab == 2}}" bindtap='upJiaType'>
+              <view>上架</view>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

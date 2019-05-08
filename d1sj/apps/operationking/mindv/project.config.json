@@ -1,0 +1,135 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.7.4",
+	"appid": "wxa8b52096ce875db7",
+	"projectname": "%E8%BF%90%E8%90%A5%E7%8E%8B%E8%80%85",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "进入房间",
+					"pathName": "pages/wait/wait",
+					"query": "uid=7&homeId=23",
+					"scene": "1007"
+				},
+				{
+					"id": -1,
+					"name": "game",
+					"pathName": "pages/game/game",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "PK",
+					"pathName": "pages/pk/pk",
+					"query": "id=1",
+					"scene": "1001"
+				},
+				{
+					"id": 3,
+					"name": "挑战PK赛",
+					"pathName": "pages/tzspk/tzspk",
+					"query": "uid=1&pid=1&answer_id=201",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "排行榜",
+					"pathName": "pages/ranking/ranking",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "失败",
+					"pathName": "pages/fight/fight",
+					"query": "uid=8&homeId=3711",
+					"scene": "1001"
+				},
+				{
+					"id": 7,
+					"name": "商店",
+					"pathName": "pages/shop/shop",
+					"query": "member_id=1",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/person/person",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "分享",
+					"pathName": "pages/share/share",
+					"query": ""
+				},
+				{
+					"id": 10,
+					"name": "题干内容",
+					"pathName": "pages/question/question",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "专场赛",
+					"pathName": "pages/cashmatch/cashmatch",
+					"query": ""
+				},
+				{
+					"id": 12,
+					"name": "mate",
+					"pathName": "pages/mate/mate",
+					"query": ""
+				},
+				{
+					"id": 13,
+					"name": "被邀请进来首页",
+					"pathName": "pages/index/index",
+					"query": "room_id=ofiL90K-0tZQvjWmclD7oGj9mf5Q&to_client_id=ofiL90K-0tZQvjWmclD7oGj9mf5Q&uid=10&is_fpk=1&home_id=13500",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "离开",
+					"pathName": "pages/likai/likai",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": 15,
+					"name": "等待好友加入",
+					"pathName": "pages/duizhan/duizhan",
+					"query": "room_id=ofiL90AAFvlPPEY3LJdde-UHhayU&to_client_id=ofiL90AAFvlPPEY3LJdde-UHhayU&is_fpk=1&home_id=17147",
+					"scene": "1001"
+				}
+			]
+		}
+	}
+}

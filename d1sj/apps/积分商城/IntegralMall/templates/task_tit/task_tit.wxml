@@ -1,0 +1,12 @@
+<!--templates/task_tit/task_tit.wxml-->
+<template name="task_tit" >
+  <view class="task_tit">
+    <view class='task_tit_left fl'>
+       <image src="{{todayInfo.imgSrc}}"></image> 
+    </view>
+    <view class='task_tit_right oh'>
+       <view class="task_tit_right_top">{{todayInfo.tit}}</view>
+       <view>{{todayInfo.aly}}-{{todayInfo.total}}</view>
+    </view>
+  </view>
+</template>

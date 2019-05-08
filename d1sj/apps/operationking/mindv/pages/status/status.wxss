@@ -1,0 +1,149 @@
+/* pages/status/status.wxss */
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.index {
+  width: 100%;
+  height: 100%;
+}
+
+.index>image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.index_box {
+  position: relative;
+  z-index: 2;
+  padding-top: 54rpx;
+}
+
+.index_box_tit {
+  margin: 0 60rpx;
+}
+
+.index_box_tit_per {
+  display: inline-block;
+  padding: 0 25rpx;
+}
+
+.index_box_tit_per:nth-child(2) {
+  border-right: 2rpx solid #8bb7f6;
+  border-left: 2rpx solid #8bb7f6;
+}
+
+.index_box_tit_per image {
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+}
+
+.index_box_tit_per text {
+  vertical-align: middle;
+  color: #8fbcfb;
+  font-size: 40rpx;
+}
+
+.current {
+  color: #fff;
+  border-bottom: 4rpx solid #fff;
+}
+
+.index_box_con {
+  margin-top: 30rpx;
+}
+
+.index_box_con_per_tit {
+  height: 140rpx;
+  padding-top: 40rpx;
+  background-color: #fff;
+  margin: 0 50rpx;
+  border-radius: 20rpx;
+}
+
+.index_box_con_per_tit_box {
+  width: 315rpx;
+  height: 104rpx;
+  background-color: #4d91df;
+  border-radius: 52rpx;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 104rpx;
+  color: #fff;
+  font-size: 50rpx;
+}
+
+.index_box_con_per_info_per {
+  /* height: 180rpx; */
+  background-color: #fff;
+  margin: 20rpx 50rpx 0;
+  border-radius: 20rpx;
+  padding: 10rpx 0;
+}
+
+.index_box_con_per_info_per_left {
+  float: left;
+  margin-left: 30rpx;
+  margin-right: 25rpx;
+  width: 100rpx;
+}
+
+.index_box_con_per_info_per_left image {
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 25rpx;
+  display: block;
+}
+
+.index_box_con_per_info_per_left text {
+  width: 100rpx;
+  display: block;
+  color: #f3a536;
+  text-align: center;
+}
+
+.index_box_con_per_info_per_right {
+  height: 100%;
+  overflow: hidden;
+}
+
+.index_box_con_per_info_per_right_top {
+  margin-top: 40rpx;
+  color: #8a8a8a;
+}
+
+.index_box_con_per_info_per_right_bottom {
+  margin-top: 20rpx;
+  margin-right: 40rpx;
+  float: right;
+}
+
+.index_box_con_per_info_per_right_bottom text:nth-child(1) {
+  color: #0f2587;
+  font-size: 50rpx;
+  border-right: 4rpx solid #0f2587;
+  padding-right: 5rpx;
+}
+
+.index_box_con_per_info_per_right_bottom text:nth-child(2) {
+  color: #a6c7f8;
+  font-size: 36rpx;
+  margin-left: 15rpx;
+}
+
+.index_box_con_per_no {
+  margin: 30rpx 50rpx 0;
+  height: 180rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  text-align: center;
+  line-height: 180rpx;
+  color: #4d91df;
+  font-size: 50rpx;
+}

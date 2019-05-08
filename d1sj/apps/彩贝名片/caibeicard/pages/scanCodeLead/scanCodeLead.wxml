@@ -1,0 +1,107 @@
+<view class="lead">
+  <view>
+    <image src='{{img_url}}useway_01.png' mode='widthFix'></image>
+    <view class="txt">
+      <text>扫码录入
+      绘本信息
+      </text>
+    </view>
+  </view>
+  <view>
+    <image src='{{img_url}}useway_02.png' mode='widthFix'></image>
+    <view class="txt">
+      <text>联系宝妈
+      or
+      附近取货
+      </text>
+      <view class="cool" data-id="0" bindtap='openIntro'>取货详情
+        <image src='/images/down_code.png' mode='widthFix' class="{{showIntro == 0?'ani':'ani2'}}"></image>
+      </view>
+    </view>
+    <view class="intro_txt {{showIntro == 0?'ani3':''}}">
+      <view>选择联系宝妈，您发布的绘本，用户下单之 后将会在取货方式显示您的头像及昵称，以 便用户快速联系，完成绘本共享
+      </view>
+      <view>选择附近取货点，将获得取货点管理员联系 方式，以及取货点所在位置，联系附近取货点
+      </view>
+      <view>管理员将发布的绘本及时送至取货点</view>
+    </view>
+  </view>
+  <view>
+    <image src='{{img_url}}useway_03.png' mode='widthFix'></image>
+    <view class="txt">
+      <text>扫码条码
+      确认收货
+      </text>
+      <view class="cool" data-id="1" bindtap='openIntro'>收件查询详情
+        <image src='/images/down_code.png' mode='widthFix' class="{{showIntro == 1?'ani':'ani2'}}"></image>
+      </view>
+    </view>
+    <view class="intro_txt {{showIntro == 1?'ani3':''}}">
+      <view>通过联系方式，联系到取货的宝妈或者附近取</view>
+      <view>货点管理员，线下扫描绘本条码，完成绘本共享</view>
+    </view>
+  </view>
+</view>
+<view class="bth_group">
+  <button hover-class='none' class="scancode_btn" data-id="0" bindtap='scanCode'>
+    扫描绘本条码
+  </button>
+  <view class='fillin_code' data-id="1" bindtap='popLock'>手动输入ISBN</view>
+</view>
+<!-- 手动输入码弹框 -->
+<view class='pop-box' wx:if="{{pop1}}">
+  <view class='pop-bg' bindtap='popLock'></view>
+  <view class='pop-main'>
+    <view class='pop-title'>手动输入条形码</view>
+    <view class='pop-content'>
+      <view class='pop-text-img'>
+        <text>13或10位ISBN条码，不含-符号
+        或d1sj开头的条码</text>
+        <image mode='widthFix' src='{{img_url}}icon_code.png'></image>
+      </view>
+      <input type='text' placeholder='在这输入' class="inp_code" bindinput='bindInpChange' placeholder-class='#a6a6a6'></input>
+    </view>
+    <view class="btn-pop">
+      <button hover-class='none' data-id="1" bindtap='scanCode'>确认</button>
+    </view>
+  </view>
+</view>
+<!-- 暂时绘本弹框 -->
+<view class='pop-box pop-box2' wx:if="{{pop2}}">
+  <view class='pop-bg'></view>
+  <view class='pop-main'>
+    <view class="pop-title">
+      <view>温馨提示</view>
+    </view>
+    <view class='pop-content'>
+      <view class='pop-text-img'>
+        <text>{{msg}}</text>
+      </view>
+    </view>
+    <view class="btn-pop">
+      <button hover-class='none' bindtap='popLock'>好的</button>
+    </view>
+  </view>
+</view>
+<!-- 取货弹窗 -->
+<view class='pop-box pop-box2' wx:if="{{pop3}}">
+  <view class='pop-bg'></view>
+  <view class='pop-main'>
+    <view class="pop-title">
+      <view>温馨提示</view>
+    </view>
+    <view class='pop-content'>
+      <view class='pop-text-img'>
+        <text>查收绘本无误请点击确认收货，如绘本损坏或其他原因无法接收，请在订单列表取消订单</text>
+      </view>
+    </view>
+    <view class="btn-pop">
+      <button hover-class='none' bindtap='popLock'>取消</button>
+      <form bindsubmit="confirmReceipt" report-submit="true">
+        <button hover-class='none' class="bot_btn" formType="submit">
+          确认收货
+        </button>
+      </form>
+    </view>
+  </view>
+</view>

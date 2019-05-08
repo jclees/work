@@ -1,0 +1,38 @@
+<!--pages/factory/factory.wxml-->
+<view class='gcq'>
+   <view class='gcq_top'>
+       <view class='gcq_wed'>
+          <view class='gcd_left'>
+            <view class='gcq_wed_er'><text>升级</text>知识等级</view>
+            <view>可提高答题的分数</view>
+          </view>
+          <view class='gcq_right'><image src='{{tupian}}27.png'></image></view>
+       </view>
+       <view class='gqc_er'><image src='{{tupian}}28_02.png'></image></view>
+   </view>
+   <view class='sent'>
+      <view class='yin'>
+        <view class='sent_qw'>
+          <navigator url='/pages/rychuti/rychuti'>
+            <view class='sent_qw_yd'>
+               <view class='sent_qw_top'><image src='{{tupian}}31_03.png'></image></view>
+               <view class='sent_qw_bottom'>我要出题</view>
+            </view>
+          </navigator>
+          <navigator url=''>
+            <view class='sent_qw_yd'>
+               <view class='sent_qw_top'><image src='{{tupian}}30_05.png'></image></view>
+               <view class='sent_qw_bottom'>我要审题</view>
+            </view>
+          </navigator>
+          <navigator url=''>
+            <view class='sent_qw_yd'>
+               <view class='sent_qw_top'><image src='{{tupian}}29_07.png'></image></view>
+               <view class='sent_qw_bottom'>我的题目</view>
+            </view>
+          </navigator>
+        </view>
+      </view>
+   </view>
+</view>
+ 

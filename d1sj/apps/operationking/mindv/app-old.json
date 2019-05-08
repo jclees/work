@@ -1,0 +1,27 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/question/question",  
+    "pages/tzspk/tzspk",
+    "pages/wait/wait",
+    "pages/ranking/ranking",
+    "pages/game/game",
+    "pages/mate/mate",
+    "pages/pk/pk",
+    "pages/pwpk/pwpk",
+    "pages/fight/fight",
+    "pages/topic/topic",
+    "pages/answer/answer",
+    "pages/person/person",
+    "pages/share/share",
+    "pages/status/status",
+    "pages/noPass/noPass"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#4452a3",
+    "navigationBarTitleText": "运营人挑战赛",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#4452a3"
+  }
+}

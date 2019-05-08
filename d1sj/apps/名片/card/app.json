@@ -1,0 +1,26 @@
+{
+    "pages": [
+        "dbs_masclwlcard/pages/load/load",
+        "dbs_masclwlcard/pages/tab/tab",
+        "dbs_masclwlcard/pages/video/video",
+        "dbs_masclwlcard/pages/web_view/web_view",
+        "dbs_masclwlcard/pages/chat_detail/chat_detail",
+        "dbs_masclwlcard/pages/product_detail2/product_detail2",
+        "dbs_masclwlcard/pages/shops/shops_detail",
+        "dbs_masclwlcard/pages/friend_detail/friend_detail",
+        "dbs_masclwlcard/pages/order_topay/order_topay",
+        "dbs_masclwlcard/pages/order_complete/order_complete",
+        "dbs_masclwlcard/pages/order_list/order_list",
+        "dbs_masclwlcard/pages/home/home",
+        "dbs_masclwlcard/pages/myAddr/my_address/index",
+        "dbs_masclwlcard/pages/myAddr/add_address/index",
+        "dbs_masclwlcard/pages/myAddr/edit_address/index",
+        "dbs_masclwlcard/pages/poster/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "",
+        "navigationBarTextStyle": "black"
+    }
+}

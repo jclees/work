@@ -1,0 +1,32 @@
+<view class='intro_top'>
+  <view wx:for="{{helpList}}" wx:key="">
+    <view class="tit" bindtap='showSubList' data-w="{{index}}">
+      <view>{{index+1}}、</view>
+      <view>
+        <view>{{item.title}}</view>
+      </view>
+      <view class='rig_arr {{item.subStauts?"act_arr":""}}'>
+        <image src='/dbs_masclwlcard/images/arrow-right.png' mode='widthFix'></image>
+      </view>
+    </view>
+    <view class='con' wx:if="{{item.subStauts}}">
+      <view class="cool"><text>{{item.content}}</text></view>
+      <!-- <image mode='widthFix' src='{{item.imgs}}'></image> -->
+    </view>
+  </view>
+</view>
+<view class="intro_bot">
+  <view class='more_btn' bindtap='openKol'>
+    <view>更多合作问题
+      <image mode='widthFix' src='/dbs_masclwlcard/images/kol_open.png' class='open {{kolStatus?"act_close":""}}'></image>
+    </view>
+  </view>
+  <view class="more_main" wx:if="{{kolStatus}}">
+    <view>我有很多朋友资源，是否可以申请成为分享达人？</view>
+    <view class="share_rule">{{ruleMsg}}</view>
+    <view class="apply_btn" bindtap='applyKol'>
+      <view>申请分享达人</view>
+    </view>
+    <view class="apply_tips">{{applyMsg}}</view>
+  </view>
+</view>

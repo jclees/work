@@ -1,0 +1,211 @@
+<view class="tip_wechat" wx:if="{{is_uplodicon}}">
+  <view class="msg" data-id="2" bindtap='popLock'>
+    <image src="../../images/icon_orderdw.png" mode='widthFix'></image>
+  </view>
+</view>
+<view class="tip_wechat go_mine" bindtap='goMine'>
+  <view class="msg">
+    <image src="../../images/card/03_x.png" mode='widthFix'></image>
+  </view>
+</view>
+<view class="pop" wx:if="{{pop1}}" catchtouchm ove="myCatchTouch">
+  <view class="pop_cover" bindtap='popLock'></view>
+  <view class='pop_con bottom'>
+    <view class="gaij_con">
+      <view class="item-ans">
+        <view class="item-ans-top">
+          <image src='{{orderList[ordIdx].show.url}}' mode='aspectFit' class="item-ans-top-img"></image>
+          <view class='item-ans-top-con'>
+            <view>{{orderList[ordIdx].title}}</view>
+            <view></view>
+            <view>
+              <view class="coins_nums">￥
+                <input value='{{orderList[ordIdx].money}}' placeholder='{{orderList[ordIdx].money}}' placeholder-style='color:#ff3933;' bindinput='changeInp' type="digit"></input>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <button hover-class='none' class='pop_btn' bindtap='savaPrice' data-id="{{orderList[ordIdx].order_id}}">确认改价</button>
+  </view>
+</view>
+<view class="pop" wx:if="{{pop2}}" catchtouchmove="myCatchTouch">
+  <view class="pop_cover" bindtap='popLock'></view>
+  <view class='pop_con center'>
+    <view class='pop_tit'>
+      <view>提示</view>
+      <image src='/dbs_masclwlcard/images/icon_pop_close.png' mode='widthFix' bindtap='popLock'></image>
+    </view>
+    <view class="pop_main">
+      <view class="pop_main_txt">
+        <image src='/dbs_masclwlcard/images/icon_pop.png' mode='widthFix'></image>
+        <view>请前往PC端修改</view>
+        <view style="padding-top:20rpx;">https://icard.weixingzpt.com</view>
+      </view>
+    </view>
+    <view style="text-align: center;">
+      <button hover-class='none' class='pop_btn center' bindtap='card_options' data-copy="copy" data-option="copy" data-target="https://icard.weixingzpt.com">复制网址</button>
+    </view>
+  </view>
+</view>
+
+<view class="pop" wx:if="{{pop3}}" catchtouchmove="myCatchTouch">
+  <view class="pop_cover" bindtap='hideJumpPop'></view>
+  <view class='pop_con center'>
+    <view class='pop_tit'>
+      <view>提示</view>
+      <image src='/dbs_masclwlcard/images/icon_pop_close.png' mode='widthFix' bindtap='hideJumpPop'></image>
+    </view>
+    <view class="pop_main">
+      <view class="pop_main_txt">
+        <image src='/dbs_masclwlcard/images/icon_pop.png' mode='widthFix'></image>
+        <view>是否发起互动</view>
+      </view>
+    </view>
+    <view class='pop_many_btn'>
+      <form bindsubmit='jump_parentcard' reportSubmit="true">
+        <button hover-class='none' class='cancel' formType="submit">
+          <view>查看名片</view>
+        </button>
+      </form>
+      <form bindsubmit='goChat' reportSubmit="true">
+        <button hover-class='none' formType="submit">
+          发起对话
+        </button>
+      </form>
+    </view>
+  </view>
+</view>
+<view class="order_nav">
+  <view>
+    <view class="{{topbarTab==1?'active':''}}" data-id='2' bindtap='swichtopbarTab'>我是卖家</view>
+    <view class="{{topbarTab==2?'active':''}}" data-id='1' bindtap="swichtopbarTab">我是买家</view>
+  </view>
+</view>
+<view wx:if="{{topbarTab==1}}">
+  <view class="tab-content">
+    <view class="null_data" wx:if="{{orderList.length<=0}}">
+      <!-- <image src="{{img_url}}nullgxiang.png" mode='widthFix'></image> -->
+      <view>暂无订单</view>
+    </view>
+    <block wx:for="{{orderList}}" wx:key="">
+      <view class="item-ans">
+        <view class="item-ans-top">
+          <image src='{{item.show.url}}' mode='aspectFit' class="item-ans-top-img"></image>
+          <view class='item-ans-top-con'>
+            <view>{{item.title}}</view>
+            <view></view>
+            <view>
+              <view class="coins_nums">￥{{item.money}}</view>
+            </view>
+          </view>
+        </view>
+        <view class='item_infos'>
+          <view>
+            <view class="info_tit">收货人</view>
+            <image src='{{item.buy_avatar}}' mode='aspectFit' class="item-ans-top-img" data-id="{{item.sell_member_id}}" bindtap='openJumpPop'></image>
+            <view>{{item.goods_nickname}}</view>
+            <view class="info_tel">{{item.goods_phone}}</view>
+            <view class="call_tel_tbtn"  bindtap='card_options' data-target="{{item.goods_phone}}" data-option="call" data-pid="{{item.sell_member_id}}">拨打</view>
+          </view>
+          <view>
+            <view class="info_tit">收货地址</view>
+            <view>
+              <view class="address_info">{{item.goods_address}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="item_nums">
+          <view>共{{item.number}}份 合计:{{item.money}}</view>
+        </view>
+        <view class="item-ans-bto clearfix">
+          <view wx:if="{{item.status == 0}}" data-idx="{{index}}" bindtap='changePrice'>改价</view>
+          <view class='be_buy' wx:else>已支付</view>
+          <view bindtap='copyTBL' data-txt="{{item.address}}">复制收货信息</view>
+          <view bindtap='copyTBL' data-txt="{{item.nickname}}">复制微信昵称</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<view wx:if="{{topbarTab==2}}">
+  <view class="tab-content">
+    <view class="null_data" wx:if="{{orderList.length<=0}}">
+      <!-- <image src="{{img_url}}nullgxiang.png" mode='widthFix'></image> -->
+      <view>暂无订单</view>
+    </view>
+    <block wx:for="{{orderList}}" wx:key="" wx:for-index="idx">
+      <view class="item-ans">
+        <view class="item-ans-top" bindtap='jumpProductDetails' data-pid="{{item.product_id}}">
+          <image src='{{item.show.url}}' mode='aspectFit' class="item-ans-top-img"></image>
+          <view class='item-ans-top-con'>
+            <view>{{item.title}}</view>
+            <view></view>
+            <view>
+              <view class="coins_nums">￥{{item.money}}</view>
+            </view>
+          </view>
+        </view>
+        <view class='item_infos'>
+          <view>
+            <view class="info_tit">商家</view>
+            <image src='{{item.sell_avatar}}' mode='aspectFit' class="item-ans-top-img" data-id="{{item.sell_member_id}}" bindtap='openJumpPop'></image>
+            <view>{{item.sell_nickname}}</view>
+            <view class="info_tel">{{item.sell_phone}}</view>
+            <view class="call_tel_tbtn"  bindtap='card_options' data-target="{{item.sell_phone}}" data-option="call">拨打</view>
+          </view>
+        </view>
+        <view class="item_nums">
+          <view>共{{item.number}}份 合计:{{item.money}}</view>
+        </view>
+        <view class="item-ans-bto clearfix">
+          <view wx:if="{{item.status == 0}}" data-oi="{{item.order_id}}" bindtap='payment'>支付</view>
+          <view class='be_buy' wx:else>已支付</view>
+          <view bindtap='goChat' data-id="{{item.sell_member_id}}">发起对话</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<!-- <view wx:if="{{topbarTab==2}}">
+  <view class="tab-h">
+    <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">
+      <view>全部</view>
+      <view class="nums">{{bookShareData.count.count1}}</view>
+    </view>
+    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">
+      <view>待收货</view>
+      <view class="nums">{{bookShareData.count.count2}}</view>
+    </view>
+    <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">
+      <view>已收货</view>
+      <view class="nums">{{bookShareData.count.count3}}</view>
+    </view>
+  </view>
+  <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+    <swiper-item wx:for="{{[0,1,2]}}" wx:key="">
+      <scroll-view scroll-y="true" class="scoll-h">
+        <view class="null_data" wx:if="{{bookShareData.lists.length<=0}}">
+          <image src="{{img_url}}nullgxiang.png" mode='widthFix'></image>
+          <view>你还没发布绘本哦，赶快去发布吧</view>
+        </view>
+        <block wx:for="{{bookShareData.lists}}" wx:key="">
+          <view class="item-ans">
+            <view class="item-ans-top" data-id="{{item.id}}" bindtap='jumpProductDetails'>
+              <image src='{{item.img}}' mode='aspectFit' class="item-ans-top-img"></image>
+              <view class='item-ans-top-con'>
+                <view></view>
+                <view>《{{item.name}}》</view>
+                <view>
+                  <image src='{{img_url}}icon_babycoin.png' mode='widthFix'></image>
+                  <view class="coins_nums">{{item.price}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view> -->

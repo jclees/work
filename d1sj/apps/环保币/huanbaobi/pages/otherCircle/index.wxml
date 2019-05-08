@@ -1,0 +1,145 @@
+<view style="color:#cfcfcf;font-size:28rpx;text-align:center;">——— 此页面正在维护中 ———</view>
+
+<view class='index_wrap'>
+  <!-- 圈子分享 -->
+  <view class='circle-box'>
+    <view class='nulldata_wrap' wx:if="{{dataStatus}}">
+      <image src='/images/null_data.png' mode='widthFix'></image>
+      <view class='msg'>暂无数据</view>
+    </view>
+    <block wx:for="{{wenzData}}" wx:key="" wx:for-index="idx">
+      <view style='{{item.comments.length != 0?"border-bottom:1px solid #e5e5e5;padding-bottom:30rpx ;":""}}'>
+        <view class='circle'>
+          <!-- <view class='circle' wx:for="{{wenzData}}" wx:key="" wx:for-index="idx"> -->
+          <view class='circle-head'>
+            <form report-submit bindsubmit='goOtherCircle' data-id="{{item.member_id}}" data-business_id="{{item.business_id}}">
+              <button form-type='submit' hover-class='none'>
+                <image class='photo' src="{{item.member_avatar}}" mode='aspectFill'></image>
+              </button>
+            </form>
+            <view>
+              <view class='name_box'>
+                <view class='name'>{{item.member_name}}
+                </view>
+              </view>
+              <view class='time'>{{item.public_at}}</view>
+            </view>
+            <view class='func' wx:if="{{item.is_delete != 1}}">
+              <form report-submit bindsubmit='guanzhu' data-id="{{item.member_id}}" data-business_id="{{item.business_id}}" data-idx="{{idx}}">
+                <button form-type='submit' class='guz_btn {{item.is_concern == 1?"in":""}}' hover-class='none'>{{item.is_concern == 1?" 取消关注 ":"+ 关注"}}</button>
+              </form>
+              <view>
+                <form report-submit bindsubmit='openFun' data-curindex="{{idx}}">
+                  <button form-type='submit' class='zhank' hover-class='none'>
+                    <image src='/images/icon_fun.png' mode='widthFix'></image>
+                  </button>
+                </form>
+                <view class='fun_item' wx:if="{{idx == popidx && pop3}}">
+                  <form report-submit bindsubmit='callTel' data-tel="{{item.phone}}" wx:if="{{item.business_id != 0}}">
+                    <button form-type='submit' class='' hover-class='none'>
+                      <view class='img_box'>
+                        <image src='/images/icon_fun_tel.png' mode='widthFix'></image>
+                      </view>
+                      <view>联系商家</view>
+                    </button>
+                  </form>
+                  <form report-submit bindsubmit='goChat' data-id="{{item.member_id}}" data-business_id="{{item.business_id}}" data-name="{{item.member_name}}">
+                    <button form-type='submit' class='last' hover-class='none'>
+                      <view class='img_box'>
+                        <image src='/images/icon_fun_xin.png' mode='widthFix' style="width:48rpx;"></image>
+                      </view>
+                      <view>{{item.business_id != 0?'私信商家':'发送私信'}}</view>
+                    </button>
+                  </form>
+                </view>
+              </view>
+
+            </view>
+            <view class='func' wx:else>
+              <view>
+                <form report-submit bindsubmit='openFun' data-curindex="{{idx}}">
+                  <button form-type='submit' class='zhank' hover-class='none'>
+                    <image src='/images/icon_fun.png' mode='widthFix'></image>
+                  </button>
+                </form>
+                <!-- <view class='fun_item' wx:if="{{idx == popidx && pop3}}">
+                  <form report-submit bindsubmit='delCircle' data-id="{{item.id}}" data-curidx="{{idx}}">
+                    <button form-type='submit' class='last' hover-class='none'>
+                      <view class='img_box'>
+                        <image src='/images/icon_fun_del.png' mode='widthFix' style='margin:0 0 0 8rpx;'></image>
+                      </view>
+                      <view>删除</view>
+                    </button>
+                  </form>
+                </view> -->
+              </view>
+
+            </view>
+          </view>
+          <view class='circle-centent'>
+            <view class='circle-jottings'>
+              <text class='{{showFull[idx].leng >= 200 && !showFull[idx].status ?"cool":""}}'>{{item.words}}</text>
+              <view class='full_txt' bindtap='openFulltxt' wx:if='{{showFull[idx].leng >= 200}}' data-curidx="{{idx}}">{{!showFull[idx].status?'全文':'收起'}}</view>
+              <view class="circle-img" wx:if="{{item.gdImages.length > 0}}">
+                <image wx:for="{{item.gdImages}}" wx:for-item="items" wx:for-index="subidx" wx:key="" src='{{items.url}}' data-subidx="{{subidx}}" data-curindex="{{idx}}" bindtap="previewImage" mode="{{item.gdImages.length > 1? 'aspectFill': 'widthFix'}}" class="{{item.gdImages.length > 1? 'imgduo-width': 'imgyi-width'}}"></image>
+              </view>
+            </view>
+            <view class='circle-footer-operation'>
+              <button hover-class='none' bindtap='openComment' data-curindex="{{idx}}">
+                <image mode='widthFix' src='/images/icon_comment.png'></image>
+              </button>
+              <button hover-class='none' open-type="share" data-sharetxt="{{item.words}}">
+                <image mode='widthFix' src='/images/icon-relay.png'></image>
+              </button>
+              <button hover-class='none' class="{{item.laud_status == 1 ? 'active':''}}" data-curindex="{{idx}}" data-zxid="{{item.id}}" bindtap='like'>
+                <image mode='widthFix' src="/images/{{item.laud_status == 1 ? 'icon-praise-opt':'icon-praise'}}.png"></image>
+                <label>
+                  <text>{{item.laud_count}}</text>
+                </label>
+              </button>
+            </view>
+          </view>
+
+          <view class='circle-comment' wx:if='{{item.comments.length != 0}}'>
+            <block wx:for="{{item.comments}}" wx:for-item="comments" wx:for-index="plidx" wx:key="">
+              <form bindsubmit='hfComment' data-curindex="{{idx}}" data-plidx="{{plidx}}">
+                <button form-type='submit' class='item'>
+
+                  <view class='txt' wx:if='{{comments.replay_member_name}}'>{{comments.member_name}}
+                    <text>回复 </text>{{comments.replay_member_name}}
+                    <text>{{comments.content}}</text>
+                  </view>
+                  <view class='txt' wx:else>{{comments.member_name}}:
+                    <text>{{comments.content}}</text>
+                  </view>
+
+                </button>
+              </form>
+            </block>
+            <view data-curindex="{{idx}}" data-page="2" bindtap='loadMore' wx:if='{{item.comments.length > 4 && !loadend[idx]}}' class="loadTxt">查看更多评论
+              <image mode='widthFix' src='/images/icon_load.png'></image>
+            </view>
+            <view class="loadTxt" wx:if="{{loadend[idx]}}" style="color:#ccc;">——— 已加载全部评论 ———</view>
+          </view>
+
+        </view>
+      </view>
+    </block>
+  </view>
+  <!-- 弹层 -->
+  <!-- 评论 -->
+  <view class='pop-box' wx:if="{{pop1}}" catchtouchmove="myCatchTouch">
+    <view class='pop-bg' bindtap='popLock'></view>
+    <view class="addwx-wrap">
+      <input type='text' placeholder='{{inpPlaceholder}}' maxlength="80" focus class='inp' bindinput='bindTextChange'></input>
+      <button hover-class='none' class="send-btn" bindtap='sendComment' style="{{textVal!=''&& savaStatus?'' :'color:rgba(255,255,255,.5);'}}">
+        发送
+      </button>
+    </view>
+  </view>
+  <view class='pop-box' wx:if="{{pop3}}">
+    <view class='pop-bg' bindtap='popLock' style='background: transparent;'></view>
+  </view>
+</view>
+<!-- 回收按钮 -->
+<include src="/pages/module/huishouBtn/index.wxml" />

@@ -1,0 +1,129 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+    <view class="wxapp-toast-content">
+      <view class="wxapp-toast-content-text"> {{toastText}} </view>
+    </view>
+  </view>
+  <view class="index">
+    <image src="../../imgs/bgc.png"></image>
+    <view class="index_box">
+      <form name='pushMsgFm' report-submit="true" bindsubmit='open'>
+        <button class="index_box_button" open-type="getUserInfo" form-type="submit">
+          <image src="../../imgs/button.png"></image>
+        </button>
+      </form>
+      <view class="index_box_text">恭喜你获得1个GNX红包</view>
+      <view class="index_box_footer" bindtap="openPop">
+        <image src="../../imgs/wenti3.png"></image>
+        <text>Genaro礼 介绍</text>
+      </view>
+    </view>
+  </view>
+  <!-- 说明弹出框 -->
+  <view class="pop" wx:if="{{pop}}">
+    <view class="cover" bindtap="closePop"></view>
+    <view class="pop_box">
+      <image src="../../imgs/pop_bgc.png"></image>
+      <view class="pop_box_info">
+        <view class="pop_box_info_tit">
+          <image src="../../imgs/pop_tit.png"></image>
+        </view>
+        <view class="pop_box_info_close" bindtap="closePop">
+          <image src="../../imgs/close.png"></image>
+        </view>
+        <view class="pop_box_info_con">
+          <text>{{art.currency_intro}}</text>
+        </view>
+        <view class="pop_box_info_button" bindtap="closePop">
+          <image src="../../imgs/confirm.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 说明弹出框 -->
+  <view class="pop" wx:if="{{kaifa}}">
+    <view class="pop_boxk">
+      <view class="pop_boxk_info">
+        <!--图文列表-->
+
+        <view class="news_lsit">
+
+          <view>
+            <navigator class="clearfix news_con" url="/pages/news/news?stauas=1">
+              <view class="fl news_left">
+                <view class="news_left_tit">张旭：科学战霾(真正的战霾英雄是三天吹一次的北风)</view>
+                <view class="news_left_date">2018-5-15</view>
+              </view>
+              <view class="fr news_right">
+                <image src='../../imgs/news_01.jpg'></image>
+              </view>
+            </navigator>
+          </view>
+
+          <view>
+            <navigator class="clearfix news_con" url="/pages/news/news?stauas=2">
+              <view class="fl news_left">
+                <view class="news_left_tit">“新风+净化系统”一文全知道</view>
+                <view class="news_left_date">2018-5-06</view>
+              </view>
+              <view class="fr news_right">
+                <image src='../../imgs/news_02.jpg'></image>
+              </view>
+            </navigator>
+          </view>
+
+          <view>
+            <navigator class="clearfix news_con" url="/pages/news/news?stauas=3">
+              <view class="fl news_left">
+                <view class="news_left_tit">风机盘管加新风系统设计原理及特点</view>
+                <view class="news_left_date">2018-4-20</view>
+              </view>
+              <view class="fr news_right">
+                <image src='../../imgs/news_03.jpg'></image>
+              </view>
+            </navigator>
+          </view>
+
+          <view>
+            <navigator class="clearfix news_con" url="/pages/news/news?stauas=4">
+              <view class="fl news_left">
+                <view class="news_left_tit">技术 | 新风系统安装在哪里最重要</view>
+                <view class="news_left_date">2018-4-14</view>
+              </view>
+              <view class="fr news_right">
+                <image src='../../imgs/news_04.jpg'></image>
+              </view>
+            </navigator>
+          </view>
+
+          <view>
+            <navigator class="clearfix news_con" url="/pages/news/news?stauas=5">
+              <view class="fl news_left">
+                <view class="news_left_tit">新风系统到底是个什么？</view>
+                <view class="news_left_date">2018-4-01</view>
+              </view>
+              <view class="fr news_right">
+                <image src='../../imgs/news_05.jpg'></image>
+              </view>
+            </navigator>
+          </view>
+
+          <view>
+            <navigator class="clearfix news_con" url="/pages/news/news?stauas=6">
+              <view class="fl news_left">
+                <view class="news_left_tit">新风系统中到底该用哪种颗粒物过滤技术？</view>
+                <view class="news_left_date">2018-3-20</view>
+              </view>
+              <view class="fr news_right">
+                <image src='../../imgs/news_06.jpg'></image>
+              </view>
+            </navigator>
+          </view>
+
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>

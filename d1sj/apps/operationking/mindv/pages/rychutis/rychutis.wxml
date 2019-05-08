@@ -1,0 +1,64 @@
+<!--pages/ryshop/ryshop.wxml-->
+<view class="warp_page" style="background-image:url({{tupian}}shop_bg02.png)">
+
+<form bindsubmit="formSubmit" id="{{list.id}}">  
+  <view class='oew' style="background-position:0 -60rpx;">
+    <view class='timu_top max' style="height:40rpx;"></view>
+    <view class='max'>
+      <view class='timu_km'>
+        <view class='timu_op'>
+            <view class='timu_op_top'>{{list.title}}<text class="fengge">|</text>{{list.stitle}}</view>
+            <textarea class="textarea" placeholder='请输入题干内容...' name="title" value="{{form_info}}"></textarea>
+        </view>
+        <!-- <view class='timu_sl'>1/5题</view> -->
+      </view>
+    </view>
+    <view class='timukaid'>
+       <view class='timukai_center'>
+          <view class='timukai_center_top'>请输入答案</view>
+          <view class='timukai_dto'>
+             <view class='timu_dt_w yin'>
+                 <view class='timu_jy timu_cuo'>
+                  <image src='{{tupian}}right.png' />
+                  <input type='text' class="small-input" placeholder='正确答案' name="answer_a" value="{{form_info}}"/>
+                 </view>
+             </view>
+             <view class='timu_dt_w yin'>
+                 <view class='timu_jy timu_cuo'>
+                    <image src='{{tupian}}wrong.png' />
+                    <input type='text' class="small-input" placeholder='错误答案' name="answer_b" value="{{form_info}}"/>
+                 </view>
+             </view>
+             <view class='timu_dt_w yin'>
+                 <view class='timu_jy timu_cuo'>
+                  <image src='{{tupian}}wrong.png' />
+                  <input type='text' class="small-input" placeholder='错误答案' name="answer_c" value="{{form_info}}"/>
+                 </view>
+             </view>
+             <view class='timu_dt_w yin'>
+                 <view class='timu_jy timu_cuo'>
+                  <image src='{{tupian}}wrong.png' />
+                  <input type='text' class="small-input" placeholder='错误答案' name="answer_d" value="{{form_info}}"/>
+                 </view>
+             </view>
+          </view>
+       </view>
+    </view>
+  </view>
+
+<view class='small_bon' style="margin-top:30rpx;">
+      <!-- <view class='small_bon-gold' style="padding:24rpx 0;"> -->
+        <!-- <image src="/image/gold_icon.png" class="gold_icon" /> -->
+          <!-- <text >提交</text>   --> 
+          <button formType='submit' style='background:-webkit-linear-gradient(top, #fbbf16, #f98607);height:80rpx;line-height:80rpx;font-size:30rpx;color:white'>提交</button>  
+
+      <!-- </view> -->                      
+  </view>
+</form>
+
+
+  
+</view>
+
+
+

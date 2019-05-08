@@ -1,0 +1,68 @@
+/* pages/person/score/score.wxss */
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: #f6f6f6;
+}
+.score_tit {
+  padding: 0 30rpx;
+  height: 284rpx;
+  padding-top: 16rpx;
+  background-color: #febd2d;
+  color: #000000;
+}
+.score_tit_img {
+  width: 142rpx;
+  height: 110rpx;
+  margin: 0 auto;
+}
+.score_tit_img image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.score_tit_button {
+  margin: 28rpx auto 0;
+  width: 122rpx;
+  height: 50rpx;
+  color: #000;
+  background-color: #fff;
+  border-radius: 25rpx;
+  text-align: center;
+  line-height: 50rpx;
+}
+.score_tit_text {
+  text-align: center;
+  margin-top: 35rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.score_con_tit {
+  padding: 0 30rpx;
+  height:88rpx;
+  line-height: 88rpx;
+}
+.score_con_info_per {
+  height: 120rpx;
+  padding: 0 30rpx;
+  background-color: #fff;
+  border-bottom: 2rpx solid #ebebeb;
+}
+.score_con_info_per_left {
+  width: 80%;
+  padding-top: 26rpx;
+}
+.score_con_info_per_left_top {
+  width: 100%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.score_con_info_per_left_bottom{
+  color: #8f8f8f;
+}
+
+.score_con_info_per_right {
+  line-height: 120rpx;
+}

@@ -1,0 +1,260 @@
+<!--pages/paihang/paihang.wxml-->
+<wxs module="util">
+  var sub = function(val) {
+    return val.substring(0, 9)
+  }
+  module.exports.sub = sub;
+</wxs>
+<view class='olj' style="background-image:url({{tupian}}57_02.jpg)">
+  <view class="mgh">
+    <view class="nav bc_white">
+      <view class="{{selected?'red':'default'}}" bindtap="selected">
+        <text>好友排行</text>
+      </view>
+      <view class="{{selected1?'red':'default'}}" bindtap="selected1">
+        <text>世界排行</text>
+      </view>
+    </view>
+    <view class="{{selected?'show':'hidden'}}">
+
+      <view class='paim'>
+        <view class='paim_top'>
+          <view class='paim2' wx:if="{{two}}">
+            <view class='toux2' style="background-image:url({{two.user_grad_logo}})">
+              <image class="radius" src='{{two.avatar}}'></image>
+              <view class='huang'>
+                <image src='{{tupian}}49_03.png'></image>
+              </view>
+            </view>
+            <view wx:if="{{two.user_name.length > 10}}">
+              <view class='name'>{{util.sub(two.user_name)}}</view>
+            </view>
+            <view wx:else>
+              <view class='name'>{{two.user_name}}</view>
+            </view>
+            <view class='yinb'>
+              <view class='yinb_om'>
+                <image src='{{tupian}}51_03.png'></image>
+              </view>
+              <view class='yinb_omr'>{{two.curr_grad_start}}</view>
+            </view>
+            <view class='lmg2'>
+              <image src='{{tupian}}55_06.png'></image>
+              <view class='lmg_text'>{{two.name}}</view>
+            </view>
+          </view>
+
+          <view class='paim1' wx:if="{{one}}">
+            <view class='toux1'>
+              <image class="radius" src='{{one.avatar}}'></image>
+              <view class='huang'>
+                <image src='{{tupian}}50_03.png'></image>
+              </view>
+            </view>
+            <view wx:if="{{one.user_name.length > 10}}">
+              <view class='name'>{{util.sub(one.user_name)}}</view>
+            </view>
+            <view wx:else>
+              <view class='name'>{{one.user_name}}</view>
+            </view>
+            <view class='yinb'>
+              <view class='yinb_om'>
+                <image src='{{tupian}}51_03.png'></image>
+              </view>
+              <view class='yinb_omr'>{{one.curr_grad_start}}</view>
+            </view>
+            <view class='lmg1'>
+              <image src='{{tupian}}54_03.png'></image>
+              <view class='lmg_text'>{{one.name}}</view>
+            </view>
+          </view>
+
+          <view wx:if="{{three}}">
+            <view class='paim3'>
+              <view class='toux3'>
+                <image class="radius" src='{{three.avatar}}'></image>
+                <view class='huang'>
+                  <image src='{{tupian}}51_10.png'></image>
+                </view>
+              </view>
+              <view wx:if="{{three.user_name.length > 10}}">
+                <view class='name'>{{util.sub(three.user_name)}}</view>
+              </view>
+              <view wx:else>
+                <view class='name'>{{three.user_name}}</view>
+              </view>
+              <view class='yinb'>
+                <view class='yinb_om'>
+                  <image src='{{tupian}}51_03.png'></image>
+                </view>
+                <view class='yinb_omr'>{{three.curr_grad_start}}</view>
+              </view>
+              <view class='lmg3'>
+                <image src='{{tupian}}52_09.png'></image>
+                <view class='lmg_text'>{{three.name}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class='lyw'>
+        <view class='ol' wx:for="{{list}}">
+          <view class='ol_left'>
+            <view class='ol_left_km'>{{index}}</view>
+            <view class='ol_left_toux'>
+              <image class="radius" src='{{item.avatar}}'></image>
+            </view>
+            <view class='ol_left_op'>
+              <view class='ol_left_km_dim'>{{util.sub(item.user_name)}}</view>
+              <view>{{item.city}}</view>
+            </view>
+          </view>
+          <view class='ol_right'>
+            <view class='ol_right_top'>{{item.name}}</view>
+            <view class='ol_right_er'>
+              <view class='ol_right_left'>
+                <image src='{{tupian}}55_03.png'></image>
+              </view>
+              <view class='ol_right_right'>{{item.curr_grad_start}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class='lm_bottom'>
+        <view class='lm_kue'>
+          <view class='lm_bottom_left'>
+            <view class='lm_bottom_tx'>
+              <image src='{{UserInfo.avatar}}'></image>
+            </view>
+            <view class='lm_bottom_qr'>我的段位:{{UserInfo.grad_name}}
+              <!-- <text>排名:248802</text> -->
+            </view>
+          </view>
+          <!-- <view class='lm_bottom_right'>上季英雄版</view> -->
+        </view>
+      </view>
+    </view>
+    <view class="{{selected1?'show':'hidden'}}">
+      <view class='paimo'>
+        <view class='paim_top'>
+          <view class='paim2' wx:if="{{two}}">
+            <view class='sjtoux2' style="background-image:url({{image}}{{two.user_grad_logo}})">
+              <image src='{{two.avatar}}'></image>
+            </view>
+            <view wx:if="{{two.user_name.length > 10}}">
+              <view class='name'>{{util.sub(two.user_name)}}</view>
+            </view>
+            <view wx:else>
+              <view class='name'>{{two.user_name}}</view>
+            </view>
+            <view class='yinb'>
+              <view class='yinb_om'>
+                <image src='{{tupian}}51_03.png'></image>
+              </view>
+              <view class='yinb_omr'>{{two.curr_grad_start}}</view>
+            </view>
+            <view class='lmg2'>
+              <image src='{{tupian}}55_06.png'></image>
+              <view class='lmg_text'>{{two.name}}</view>
+            </view>
+          </view>
+          <view class='paim1' wx:if="{{one}}">
+            <view class='sjtoux1' style="background-image:url({{image}}{{one.user_grad_logo}})">
+              <image src='{{one.avatar}}'></image>
+            </view>
+            <view wx:if="{{one.user_name.length > 10}}">
+              <view class='name'>{{util.sub(one.user_name)}}</view>
+            </view>
+            <view wx:else>
+              <view class='name'>{{one.user_name}}</view>
+            </view>
+            <view class='yinb'>
+              <view class='yinb_om'>
+                <image src='{{tupian}}51_03.png'></image>
+              </view>
+              <view class='yinb_omr'>{{one.curr_grad_start}}</view>
+            </view>
+            <view class='lmg1'>
+              <image src='{{tupian}}54_03.png'></image>
+              <view class='lmg_text'>{{one.name}}</view>
+            </view>
+          </view>
+          <view class='paim3' wx:if="{{three}}">
+            <view class='sjtoux3' style="background-image:url({{image}}{{three.user_grad_logo}})">
+              <image src='{{three.avatar}}'></image>
+            </view>
+            <view wx:if="{{three.user_name.length > 10}}">
+              <view class='name'>{{util.sub(three.user_name)}}</view>
+            </view>
+            <view wx:else>
+              <view class='name'>{{three.user_name}}</view>
+            </view>
+            <view class='yinb'>
+              <view class='yinb_om'>
+                <image src='{{tupian}}51_03.png'></image>
+              </view>
+              <view class='yinb_omr'>{{three.curr_grad_start}}</view>
+            </view>
+            <view class='lmg3'>
+              <image src='{{tupian}}52_09.png'></image>
+              <view class='lmg_text'>{{three.name}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='lyw'>
+        <view class='ollm' wx:for="{{list}}">
+          <view class='ol_left'>
+            <view class='ol_left_kmop'>{{index}}</view>
+            <view class='ol_left_touxh'>
+              <view class='olm'>
+                <image src='{{image}}{{item.user_grad_logo}}'></image>
+              </view>
+              <view class='okm'>
+                <image src='{{item.avatar}}'></image>
+              </view>
+            </view>
+            <view class='ol_left_oplk'>
+              <view class='ol_left_km_dim'>{{util.sub(item.user_name)}}</view>
+              <view>{{item.city}}</view>
+            </view>
+          </view>
+          <view class='ol_rightlp'>
+            <view class='ol_right_top'>{{item.name}}</view>
+            <view class='ol_right_er'>
+              <view class='ol_right_left'>
+                <image src='{{tupian}}55_03.png'></image>
+              </view>
+              <view class='ol_right_right'>{{item.curr_grad_start}}</view>
+            </view>
+          </view>
+        </view>
+
+      </view>
+      <view class='lm_bottom'>
+        <view class='lm_kue'>
+          <view class='lm_bottom_left'>
+            <view class='lm_bottom_tx'>
+              <image src='{{UserInfo.avatar}}'></image>
+            </view>
+            <view class='lm_bottom_qr' wx:if="{{mysort == ''}}">我的段位 : 暂未上榜</view>
+            <view class='lm_bottom_qr' wx:elif="{{mysort != ''}}">我的段位 : {{mysort.name}}
+              <text>排名:{{mysort.index}}</text>
+            </view>
+          </view>
+          <!-- <view class='lm_bottom_right'>上季英雄版</view> -->
+        </view>
+
+      </view>
+    </view>
+  </view>
+  <view class='old'>
+    <view class="star"></view>
+    <view class="star pink2"></view>
+    <view class="star pink3"></view>
+    <view class="star pink4"></view>
+    <view class="star pink5"></view>
+  </view>
+</view>

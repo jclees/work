@@ -1,0 +1,276 @@
+
+/**newsBreakfast.wxss**/
+
+.audio-box {
+  position: relative;
+  background: #fff;
+}
+
+.slider-box {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.slider-box image {
+  width: 100%;
+  height: 520rpx;
+}
+
+.slider-box slider {
+  width: 100%;
+  position: relative;
+  margin-top: -17rpx;
+  margin: -17rpx 0;
+}
+
+.album-time {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 50rpx;
+  font-size: 28rpx;
+  color: #949494;
+}
+
+.btn-album {
+  display: flex;
+  padding: 0 120rpx 30rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #d8d8d8;
+  position: relative;
+}
+
+.open_posters {
+  width: 44rpx;
+  position: absolute;
+  right: 74rpx;
+  top: 28rpx;
+}
+
+.btn-album button {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  padding: 0;
+}
+
+.btn-album button image {
+  position: relative;
+  width: 100rpx;
+  /* top: 50%;
+  transform: translate(0, -50%); */
+  vertical-align: text-bottom;
+}
+
+.btn-album button:nth-child(2n-1) image {
+  width: 32rpx;
+}
+
+.invite-rewards {
+  margin-top: 20rpx;
+  padding: 20rpx 30rpx;
+  background: #fff;
+}
+
+.invite-user {
+  display: flex;
+  height: 120rpx;
+  align-items: center;
+}
+
+.invite-user view {
+  flex: 1;
+}
+
+.user-photo {
+  width: 120rpx;
+  border-radius: 50%;
+  border: 1px solid #ebebeb;
+}
+
+.icon-star {
+  padding: 0 20rpx;
+}
+
+.icon-star image {
+  width: 40rpx;
+}
+
+.btn-share {
+  width: 58rpx;
+  padding: 0;
+  font-size: 0;
+  margin: 0;
+}
+
+.btn-share image {
+  width: 100%;
+}
+
+/* 邀请人数奖励  */
+
+.rewards {
+  display: flex;
+  justify-content: space-between;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-top: 10rpx;
+}
+
+.rewards text {
+  font-size: 24rpx;
+}
+
+.rewards-user image {
+  width: 48rpx;
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+  margin-left: -10%;
+  border-radius: 50%;
+  border: 1px solid #ebebeb;
+}
+
+.rewards-user image:first-child {
+  margin-left: 0;
+}
+
+/*  推荐试听  */
+
+.audition {
+  margin-top: 20rpx;
+  padding-bottom: 50rpx;
+  background: #fff;
+}
+
+.audition-title {
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 30rpx;
+  font-size: 30rpx;
+}
+
+.audition .scroll-content {
+  display: flex;
+  white-space: nowrap;
+  position: relative;
+}
+
+.scroll-content .content {
+  margin-right: 10rpx;
+  font-size: 0;
+  position: relative;
+  width: 316rpx;
+  display: inline-block;
+}
+
+.scroll-content .content:first-child {
+  margin-left: 30rpx;
+}
+
+.scroll-content .content:last-child {
+  margin-right: 30rpx;
+}
+
+.music-img-box {
+  width: 320rpx;
+  height: 210rpx;
+  overflow: hidden;
+}
+
+.music-img {
+  width: 320rpx;
+  vertical-align: top;
+}
+
+.music-name {
+  height: 30rpx;
+  line-height: 30rpx;
+  margin-top: 10rpx;
+  position: relative;
+  width: 320rpx;
+}
+
+.music-name image {
+  width: 14rpx;
+  margin-right: 5rpx;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.music-name text {
+  font-size: 28rpx;
+  padding-left: 20rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+/* 课程列表 */
+
+.curriculum-box {
+  background: white;
+}
+
+.curriculum {
+  margin-bottom: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.curriculum-img {
+  width: 100%;
+}
+
+.curriculum-tit {
+  padding: 0 20rpx;
+  display: flex;
+  align-items: flex-end;
+}
+
+.curriculum-tit >view:first-of-type {
+  flex: 1;
+}
+
+.curriculum-tit >view > text {
+  font-size: 30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.curriculum-tit .st_btn {
+  border-radius: 6rpx;
+  color: #fff;
+  font-size: 24rpx;
+  height: 50rpx;
+  background: #ff6663;
+  line-height: 50rpx;
+  padding: 0 10rpx;
+  margin-top: 10rpx;
+}
+
+.curriculum-tit .rmb_nums {
+  color: #ffd24d;
+  font-size: 28rpx;
+  text-align: right;
+}
+
+.curriculum-tit .rmb_nums.big_rmb_nums {
+  font-size: 42rpx;
+}
+
+.curriculum-info {
+  color: #aaa;
+  font-size: 24rpx;
+}
+
+.curriculum-info image {
+  width: 18rpx;
+}
+
+.curriculum-info label {
+  margin-right: 20rpx;
+}

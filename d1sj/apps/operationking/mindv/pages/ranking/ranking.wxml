@@ -1,0 +1,141 @@
+<!--pages/game/game.wxml-->
+<view class="container">
+  <!-- <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+    <view class="wxapp-toast-content">
+      <view class="wxapp-toast-content-text"> {{toastText}} </view> 
+    </view>
+  </view> -->
+  <view class="game_box">
+    <!-- <image src="{{img_url}}game_bgc.png"></image> -->
+    <view class="game_box_info">
+      <view class="game_box_tit">
+        <view class="game_box_tit_text">
+          <view class="game_tab clearfix">
+            <view class="{{active===1?'active':''}}">
+              <text data-type="1" bindtap="showList">好友排行</text>
+            </view>
+            <view class="{{active===0?'active':''}}">
+              <text data-type="0" bindtap="showList">世界排行</text>
+            </view>
+            <view class="{{active===2?'active':''}}">
+              <text data-type="2" bindtap="showList">区域榜</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- <view class="bg-rank-head"></view> -->
+    </view>
+    <view class="game_box_tit_bgc top">
+      <image src="{{img_url}}icon-ranking-top.png" mode='widthFix'></image>
+    </view>
+    <view class="game_box_tit_bgc bottom">
+      <image src="{{img_url}}icon-ranking-bottom.png"></image>
+    </view>
+
+    <view class="game_box_con">
+      <scroll-view scroll-y>
+        <view style='height:100%' wx:if="{{(active===1 && friendNum === 0) || active===2}}">
+          <view class='bg-not-rank' wx:if="{{active===1 && friendNum === 0}}">
+            <view class='not-friend'>
+              <view>暂无好友排行</view>
+              <view>首先点击好友对战，发送给好友进行PK就可以看到了</view>
+            </view>
+          </view>
+          <view class='bg-not-rank' wx:if="{{active===2}}">
+            <view class='not-region'>
+              <view>区域榜排行介绍（暂未开启）</view>
+              <view>
+                <text>根据玩家区域的战绩进行排行！</text>
+              </view>
+              <!-- <view>
+                <text>点击下方按钮 加入同城运营社群</text>
+              </view>  -->
+            </view>
+          </view>
+        </view>
+        <view class="game-list" wx:else>
+          <view class="game_box_con_per" wx:key="{{index}}" wx:item="{{item}}" wx:for="{{list}}">
+            <view>
+              <view class='me' wx:if="{{item.id == member_id}}">
+                <view class="item-num">
+                  <text>{{index+1}}</text>
+                </view>
+              </view>
+              <view wx:else>
+                <view class="item-num">
+                  <text>{{index+1}}</text>
+                </view>
+              </view>
+
+              <!-- <image src="{{img_url}}per_bgc.png"></image> -->
+              <view class="game_box_con_per_left">
+                <view class="game_box_con_per_left_left">
+                  <image src="{{item.avatar}}" mode='widthFix'></image>
+                  <image class='touxiangkuang' src="{{item.q_box}}" mode='widthFix'></image>
+                </view>
+                <view class="game_box_con_per_left_right">
+                  <view class="game_box_con_per_left_right_top">
+                    <view class="fl width-name">{{item.nickname}}</view>
+                    <view class="fr">{{item.from?"来自:"+item.from:""}}</view>
+                  </view>
+                  <view class="game_box_con_per_left_right_bottom">
+                    <view class="ranking-text">{{item.q_name}}</view>
+                    <!-- <image src="{{img_url}}bj-duan.png"></image> -->
+                  </view>
+                </view>
+                <view class="game_box_start clearfix">
+                  <image class="fl" src="{{img_url}}star.png"></image>
+                  <text class="fl"> {{item.starnum || 0}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+
+    <view class="ranking-footer">
+      <text>^_^ 比赛第一，友谊第二 ^_^</text>
+      <button class='btn-community-guid' bindtap='openYunYing'>
+        <image class='icon-community-guide' src="{{img_url}}icon-community-guide.png" mode="widthFix"></image>
+      </button>
+    </view>
+    <!-- <view class="game_bottom">
+       <view style='width:100%;height:51rpx;background:#4452a3;position:fixed;bottom:180rpx;border-top-left-radius: 15rpx;border-top-right-radius: 15rpx;'></view>
+      <view class="game_bottom-text">
+        <text style="color:#4452a3"> 排内为游戏好友，非微信好友。当前好友数5/50</text>
+         // <text></text>   
+        <view class="game_bottom-btn" style='bottom:20rpx;'>
+          <view class="game_bottom-text1">城市赛敬待开放</view>
+          <image src="{{img_url}}rankind-button.png"></image>
+        </view>
+      </view> 
+    </view> -->
+  </view>
+
+
+
+  <view class='pop-share-gold' wx:if="{{yunying}}">
+    <view class='pop-share-gold-bg' bindtap='closeYunYing'></view>
+    <view class='pop-intersperse'>
+      <image src='{{img_url}}intersperse.png' mode='widthFix'></image>
+    </view>
+    <view class='pop-share-gold-main-box'>
+      <view class='pop-share-gold-main'>
+        <view class='pop-btn-close' bindtap='closeYunYing'>
+          <image src='{{img_url}}icon-close.png' mode='widthFix'></image>
+        </view>
+        <view class='pop-yy-tit'>加入运营社群流程</view>
+        <view class='pop-yy-content'>
+          <text>在对话框中回复"加入"，点击图文链接，加入社群</text>
+          <image src='{{img_url}}img-jiaru.png' mode='widthFix' width="100%"></image>
+        </view>
+
+        <view class='btn-addyuny'>
+          <button open-type='contact'>加入运营社区</button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

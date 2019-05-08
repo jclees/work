@@ -1,0 +1,362 @@
+/* pages/person/person.wxss */
+
+page {
+  background: #f5f5fa;
+}
+
+.person_con {
+  width: 100%;
+  float: left;
+  margin-bottom: 93rpx;
+}
+
+.person_bgc {
+  width: 100%;
+  height: 74rpx;
+  background-color: #fed257;
+  position: absolute;
+  top: 0;
+}
+
+.person_info {
+  position: relative;
+  margin:14rpx 22rpx 93rpx 22rpx;
+  padding: 20rpx;
+}
+
+.person_info>image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  box-shadow: 0 3rpx 8rpx rgba(0, 0, 0, 0.2);
+  border-radius: 20rpx;
+}
+
+.person_info_img {
+  position: relative;
+  z-index: 2;
+  margin: 55rpx auto 0;
+  width: 122rpx;
+  height: 122rpx;
+  border-radius: 50%;
+  /* border: 10rpx solid #fff; */
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+}
+
+.person_info_img image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.person_info_text {
+  position: relative;
+  z-index: 2;
+  color: #000;
+  text-align: center;
+  margin-top: 10rpx;
+}
+
+.person_info_pro {
+  position: relative;
+  z-index: 2;
+  margin-top: 30rpx;
+}
+
+.index_tit_info_button_left {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.index_tit_info_button_left_text {
+  width: 100rpx;
+  color: #000;
+  float: left;
+}
+
+.index_tit_info_button_left_pro {
+  overflow: hidden;
+  width: 200rpx;
+  height: 20rpx;
+  border: 2px solid #fc7636;
+  border-radius: 20rpx;
+}
+
+.index_tit_info_button_left_text {
+  margin-top: -7rpx;
+  margin-left: 36rpx;
+  margin-right: -20rpx;
+}
+
+.person_info_tu {
+  position: relative;
+  z-index: 2;
+  margin: 70rpx auto 0;
+  width: 238px;
+  height: 238px;
+}
+
+.person_info_tu >canvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.person_info_tu>image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.person_info_con {
+  position: relative;
+  z-index: 2;
+  margin: 46rpx auto 0;
+}
+
+.person_info_con_per {
+  width: 542rpx;
+  height: 46rpx;
+  background-color: #fed257;
+  margin: 0 auto 16rpx;
+  border-radius: 28rpx;
+  box-sizing: border-box;
+}
+
+.person_info_con_left {
+  display: inline-block;
+  width: 270rpx;
+  height: 46rpx;
+  border-right: 2rpx solid #fff;
+}
+
+.person_info_con_left text:first-child {
+  color: #000;
+  margin-left: 16rpx;
+  font-size: 24rpx;
+  margin-right: 15rpx;
+}
+
+.person_info_con_left text:last-child {
+  color: #000;
+  font-size: 24rpx;
+}
+
+.person_info_con_right {
+  display: inline-block;
+  width: 270rpx;
+}
+
+.person_info_con_right text:first-child {
+  color: #000;
+  font-size: 24rpx;
+  margin-left: 44rpx;
+  margin-right: 15rpx;
+}
+
+.person_info_con_right text:last-child {
+  color: #000;
+  font-size: 24rpx;
+}
+
+.person_button {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 99;
+  background-color: transparent;
+  line-height: 0;
+  width: 100%;
+  height: 180rpx;
+}
+
+.person_button::after {
+  border: 1rpx solid transparent;
+}
+
+.person_button>image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  font-size: 30rpx;
+}
+
+.person_button_top {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: #fff;
+  margin-top: 88rpx;
+  font-size: 28rpx;
+}
+
+.person_button_bottom {
+  position: relative;
+  z-index: 3;
+}
+
+.person_button_bottom text {
+  color: #d08224;
+  font-size: 20rpx;
+}
+
+.person_button_bottom .person-share {
+  font-size: 30rpx;
+  color: #d08224;
+  height: 40rpx;
+  line-height: 30rpx;
+}
+
+.person_button_bottom image {
+  width: 28rpx;
+  height: 28rpx;
+  vertical-align: middle;
+  margin-left: 8rpx;
+}
+
+.person-share-icon {
+  position: absolute;
+  top: 45rpx;
+  right: 30rpx;
+  z-index: 10;
+}
+
+.person-share-icon image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.bg-canvas {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  z-index: 9;
+  border-radius: 50%;
+  transform: translate(-50%, 0);
+}
+
+.bg-canvas image {
+  width: 100%;
+}
+
+/*  金币弹出提醒  */
+
+.pop-share-gold {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.pop-share-gold-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 101;
+}
+
+.pop-share-gold-main-box {
+  position: absolute;
+  width: 550rpx;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 102;
+  box-sizing: border-box;
+  padding: 6rpx;
+  border-radius: 30rpx;
+  background: -webkit-linear-gradient(to bottom, #2bfb61, #2a92d3);
+  background: linear-gradient(to bottom, #2bfb61, #2a92d3);
+}
+
+.pop-share-gold-main {
+  position: relative;
+  width: 100%;
+  padding: 150rpx 20rpx 50rpx;
+  background: #fff;
+  border-radius: 30rpx;
+  box-sizing: border-box;
+}
+
+.pop-share-gold-main .icon-share-gold {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400rpx;
+}
+
+.pop-share-gold-main>view {
+  color: #000;
+  font-size: 36rpx;
+  text-align: center;
+}
+
+.btn-share {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 50rpx 80rpx 0;
+}
+
+.btn-share button {
+  margin-top: 30rpx;
+  font-size: 34rpx;
+  color: #fff;
+  border-radius: 18rpx;
+}
+
+.btn-share button:first-child {
+  background: -webkit-linear-gradient(to top, #5e54f2, #6a9ef4);
+  background: linear-gradient(to top, #5e54f2, #6a9ef4);
+}
+
+.btn-share button:first-child:hover {
+  background: -webkit-linear-gradient(to bototm, #5e54f2, #6a9ef4);
+  background: linear-gradient(to bottom, #5e54f2, #6a9ef4);
+}
+
+.btn-share button:last-child {
+  background: -webkit-linear-gradient(to top, #21bc35, #48e061);
+  background: linear-gradient(to top, #21bc35, #48e061);
+}
+
+.btn-share button:last-child:hover {
+  background: -webkit-linear-gradient(to bottom, #21bc35, #48e061);
+  background: linear-gradient(to bottom, #21bc35, #48e061);
+}
+
+.pop-intersperse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 103;
+  padding: 100rpx 60rpx 0;
+}
+
+.pop-intersperse image {
+  width: 100%;
+}

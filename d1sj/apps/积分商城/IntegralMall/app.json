@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/test/test",
+    "pages/person/orderDetail/orderDetail",
+    "pages/shop/orderDetail/orderDetail",
+    "pages/shop/search/search",
+    "pages/person/collect/collect",
+    "pages/shop/result/result",
+    "pages/shop/address/address",
+    "pages/shop/shopDetail/shopDetail",
+    "pages/shoppingCart/pay/pay",
+    "pages/shoppingCart/orderDetail/orderDetail",
+    "pages/shop/pay/pay",
+    "pages/shop/index/index",
+    "pages/person/order/order",
+    "pages/person/score/score",
+    "pages/person/grade/grade",
+    "pages/task/time-task/time-task",
+    "pages/task/must-task/must-task",
+    "pages/task/today-tesk/today-tesk",
+    "templates/authorize/index",
+    "templates/task_tit/task_tit",
+    "templates/task_list/task_list",
+    "pages/person/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#febd2d",
+    "navigationBarTitleText": "积分商城",
+    "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+<template name="newstip">
+    <view bindtap="goChat" data-pid="{{noReadMsgData.parent_id}}" style='z-index:99999;' class="msgtip fadeIn" wx:if="{{noReadMsgData.num!=0}}">
+        <view class="avatar">
+            <image src="{{noReadMsgData.avatar}}"></image>
+        </view>
+        <view class="msgContent">您有新的消息</view>
+        <view class="num">{{noReadMsgData.num}}</view>
+    </view>
+    <view bindtap="goChat" class="msgtip fadeIn" wx:if="{{msgStatus==1}}">
+        <view class="avatar">
+            <image src="{{cardAvatar}}"></image>
+        </view>
+        <view class="msgContent">您有新的消息</view>
+        <view class="num">{{offline}}</view>
+    </view>
+    <view bindtap="goChat" class="msgtip fadeOut" wx:if="{{msgStatus==2}}">
+        <view class="avatar">
+            <image src="{{cardAvatar}}"></image>
+        </view>
+        <view class="msgContent">您有新的消息</view>
+        <view class="num">{{offline}}</view>
+    </view>
+</template>

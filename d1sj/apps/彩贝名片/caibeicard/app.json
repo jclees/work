@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/my_card/my_card/index",
+    "pages/test/test",
+    "pages/productDetails/productDetails",
+    "pages/start/start",
+    "pages/shareGuide/shareGuide",
+    "pages/mine/mine",
+    "pages/search/search",
+    "pages/sellProduct/sellProduct",
+    "pages/orderDetails/orderDetails",
+    "pages/scanCodeLead/scanCodeLead",
+    "pages/takeProductSuccess/takeProductSuccess",    
+    "pages/nearAdderss/nearAdderss",
+    "pages/map/map",
+    "pages/charge/charge",
+    "pages/myOrder/myOrder",
+    "pages/myShare/myShare",
+    "pages/releaseSuccess/releaseSuccess",
+    "pages/module/nav/nav",
+    "pages/module/webview/webview"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "彩贝名片",
+    "backgroundTextStyle": "light"
+  }
+}

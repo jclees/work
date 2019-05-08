@@ -1,0 +1,121 @@
+<view class="tab-h">
+  <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">
+    <view>昨日</view>
+  </view>
+  <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">
+    <view>近7天</view>
+  </view>
+  <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">
+    <view>近30天</view>
+  </view>
+  <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">
+    <view>汇总</view>
+  </view>
+</view>
+<swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+  <swiper-item wx:for="{{[0,1,2,3]}}" wx:key="">
+    <scroll-view scroll-y="true" class="scoll-h" bindscrolltolower="loadMoreKehu">
+      <view class="null_data" wx:if="{{kehuList.length<=0}}">
+        <view>暂时没有数据</view>
+      </view>
+      <view class='con_main'>
+        <view class='con_bot'>
+          <view class='items' wx:for="{{kehuList}}" wx:key="" wx:for-index="ind">
+            <view class="items_main">
+              <view>
+                <image src='{{item.avatar}}' mode='widthFix' bindtap='openJumpPop' data-id="{{item.customer_id}}"></image>
+                <view bindtap="showSubList" data-w='{{ind}}' data-cid="{{item.customer_id}}">
+                  {{item.total}}</view>
+              </view>
+              <!-- {{iszk?'showSubList':''}} -->
+              <image src='/dbs_masclwlcard/images/card/icon_down.png' mode='widthFix' bindtap="showSubList" data-w='{{ind}}' data-cid="{{item.customer_id}}"></image>
+            </view>
+            <view class="items_sub" wx:if="{{item.subStauts}}">
+              <block>
+                <view class='sub_list' wx:for="{{item.msg}}" wx:key="" wx:for-item="sitem" wx:if="{{moreList.length<=0}}">
+                  <view>{{sitem.message}}</view>
+                  <view class="time">{{sitem.created_at}}</view>
+                </view>
+                <view class='sub_list' wx:for="{{moreList}}" wx:key="" wx:for-item="sitem" wx:if="{{moreList.length>0}}">
+                  <view>{{sitem.message}}</view>
+                  <view class="time">{{sitem.created_at}}</view>
+                </view>
+              </block>
+
+              <!-- 
+              <view class='sub_list' wx:for="{{moreList}}" wx:key="" wx:for-item="sitem" wx:else>
+                <view>{{sitem.msg}}</view>
+                <view class="time">{{sitem.created_at}}</view>
+              </view> -->
+
+              <view class="sub_fcn">
+                <view wx:if="{{dataNull || item.msg.length <= 0}}" style="color:#efefef;">——— 暂时没有更多互动 ———</view>
+                <block wx:else>
+                  <view bindtap='loadMore' data-cid="{{item.customer_id}}" data-w="{{ind}}">{{!loading?'查看更多互动':'加载中..'}}
+                    <image src='/dbs_masclwlcard/images/card/icon_down.png' mode='widthFix' wx:if="{{!loading}}"></image>
+                  </view>
+                </block>
+                <view bindtap='hideSubList' data-w='{{ind}}'>收起
+                  <image src='/dbs_masclwlcard/images/card/icon_down.png' mode='widthFix' class="takeup"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+          <!-- <view class='items'>
+            <view class="items_main" bindtap='showSubList' data-w='1'>
+              <view>
+                <image src='/dbs_masclwlcard/images/card/tel3.png' mode='widthFix'></image>某某某查看了</view>
+              <image src='/dbs_masclwlcard/images/card/tel3.png' mode='widthFix'></image>
+            </view>
+            <view class="items_sub" wx:if="{{subStauts}}">
+              <view class='sub_list'>
+                <view>武学锋首次查看你公司的官网，看来TA对公司感兴趣</view>
+                <view class="time">10:10</view>
+              </view>
+              <view class="sub_fcn">
+                <view>查看更多回复
+                  <image src='/dbs_masclwlcard/images/card/tel3.png' mode='widthFix'></image>
+                </view>
+                <view bindtap='hideSubList'>收起
+                  <image src='/dbs_masclwlcard/images/card/tel3.png' mode='widthFix'></image>
+                </view>
+              </view>
+            </view>
+          </view> -->
+
+        </view>
+      </view>
+
+      <block wx:for="" wx:key="">
+
+      </block>
+    </scroll-view>
+  </swiper-item>
+</swiper>
+<view class="pop" wx:if="{{pop1}}" catchtouchmove="myCatchTouch">
+  <view class="pop_cover" bindtap='hideJumpPop'></view>
+  <view class='pop_con center'>
+    <view class='pop_tit'>
+      <view>提示</view>
+      <image src='/dbs_masclwlcard/images/icon_pop_close.png' mode='widthFix' bindtap='hideJumpPop'></image>
+    </view>
+    <view class="pop_main">
+      <view class="pop_main_txt">
+        <image src='/dbs_masclwlcard/images/icon_pop.png' mode='widthFix'></image>
+        <view>是否发起互动</view>
+      </view>
+    </view>
+    <view class='pop_many_btn'>
+      <form bindsubmit='jump_parentcard' reportSubmit="true">
+        <button hover-class='none' class='cancel' formType="submit">
+          <view>查看名片</view>
+        </button>
+      </form>
+      <form bindsubmit='goChat' reportSubmit="true">
+        <button hover-class='none' formType="submit">
+          发起对话
+        </button>
+      </form>
+    </view>
+  </view>
+</view>

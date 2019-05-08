@@ -1,0 +1,45 @@
+<view class="item-ans">
+  <view class="item-ans-top" bindtap='jumpProductDetails'>
+    <image src='{{sellProductData.img}}' mode='aspectFit' class="item-ans-top-img"></image>
+    <view class='item-ans-top-con'>
+      <view>{{sellProductData.title}}：{{sellProductData.intro}}</view>
+      <view></view>
+      <view>
+        <image src='{{img_url}}icon_babycoin.png' mode='widthFix'></image>
+        <view class="coins_nums">{{sellProductData.price}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<textarea placeholder='说给其他宝妈的话(书写阅读建议可随机获得成长值哦)' class="msg_textrea" placeholder-class='#b3b3b3' bindinput='bindTextChange'></textarea>
+<view class="fl_label">
+  <view>分类标签：</view>
+  <view class="fl_label_item">
+    <picker class="picker" bindchange="bindPickerChange" value="{{index}}" range="{{typeData}}" range-key="name" data-id="0">
+      {{typeData[index].name}}
+    </picker>
+    <image src='{{img_url}}icon_arrow_down.png' mode='widthFix'></image>
+  </view>
+  <view class="fl_label_item">
+    <picker class="picker" bindchange="bindPickerChange" value="{{index2}}" range="{{ageData}}" range-key="age" data-id="1">
+      {{ageData[index2].age}}岁
+    </picker>
+    <image src='{{img_url}}icon_arrow_down.png' mode='widthFix'></image>
+  </view>
+</view>
+<view class="fb_contact">
+  <view class="fb_contact_tit">取货方式：</view>
+  <view class="contact_me">
+    <view style="color:{{pickerStatus?'#c1c1c1':''}};">联系我</view>
+    <switch bindchange="switchChange" color="#ff8d0d" />
+    <view class="fl_label_item {{pickerStatus?'active':''}}">
+      <picker class='picker' bindchange="bindPickerChange" value="{{index3}}" range="{{nearListData}}" data-id="2" range-key="name" name="name" disabled="{{!pickerStatus?'disabled':''}}">
+        {{nearListData[index3].name}}
+      </picker>
+      <image src="{{img_url}}icon_arrow_down{{!pickerStatus?'2':''}}.png" mode='widthFix'></image>
+    </view>
+  </view>
+</view>
+<view class="fb_btn" bindtap='savaData'>
+  发布
+</view>

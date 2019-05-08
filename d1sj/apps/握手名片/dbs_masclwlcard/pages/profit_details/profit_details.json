@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "收益明细",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark",
+    "usingComponents": {
+        "head": "/dbs_masclwlcard/components/head/head",
+        "android": "/dbs_masclwlcard/components/android_callmodal/android_callmodal"
+    }
+}

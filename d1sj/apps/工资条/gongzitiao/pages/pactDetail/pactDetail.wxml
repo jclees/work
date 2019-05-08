@@ -1,0 +1,9 @@
+<view class='pact_main'>
+  <view>
+    <view class='pact_txt_box'>
+      <scroll-view scroll-y class='pact_txt' style='height:{{winHeight}}rpx'>
+        <rich-text nodes="{{pactData.content}}" bindtap="tap"></rich-text>
+      </scroll-view>
+    </view>
+  </view>
+</view>

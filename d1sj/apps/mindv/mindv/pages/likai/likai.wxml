@@ -1,0 +1,24 @@
+<!--pages/likai/likai.wxml-->
+<view class='olw'>
+    <view class='pipei'>
+       <view class='lik'>
+         <view class='huoj'><image src='{{tupian}}9_09.png'></image></view>
+         <view class='feiji'><image src='{{tupian}}9_11.png'></image></view>
+       </view>
+       <view class='lik_we'>
+          <view class='textd'>房间已失效</view>
+          <view>您可以自己发起一场对战或去参加排位赛模式</view>
+       </view>
+       <view class='kmqq'>
+           <!--<view class='timu_dt_w yin'>
+             <view class='imm'>发起好友对战</view>
+           </view>
+         -->
+           <view class='timu_dt_w yin' bindtap="paiwei">
+             <view class='imyu'>参加其他比赛</view>
+           </view>
+       </view>
+      
+    </view>
+</view>
+

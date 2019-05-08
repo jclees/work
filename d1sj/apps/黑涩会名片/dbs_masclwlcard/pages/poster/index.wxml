@@ -1,0 +1,6 @@
+<!-- <loading hidden="{{dataLoaded}}">生成海报...</loading> -->
+<view class="poster-wrap">
+    <image src='{{posterUrl}}' mode='widthFix' class='posterImg'></image>
+    <!-- <canvas canvasId="myCanvas" class="type1" style="height:1000rpx"></canvas> -->
+    <view bindtap="savePosters" class="savePoster" style="bottom:60rpx">保存分享海报</view>
+</view>

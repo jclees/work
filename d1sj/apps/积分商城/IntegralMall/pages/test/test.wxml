@@ -1,0 +1,167 @@
+<!--pages/shop/shopDetail/shopDetail.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class="container">
+  <scroll-view class="scroll-view_H" scroll-y style="height: 100%">
+    <view class="detail_banner">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="#f8494c">
+        <block wx:for="{{detailList.images}}" wx:for-item="item" wx:key="{{item.name}}">
+          <swiper-item>
+            <image src="{{item}}" class="slide-image" mode='aspectFill' />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="shop_info clearfix">
+      <view class="shop_info_name clearfix">
+        <view class="shop_info_name_left fl">
+          {{detailList.name}}
+        </view>
+        <view class="shop_info_name_right fr">
+          <text wx:if="{{detailList.self!=0}}">附近精选</text>
+          <text wx:if="{{detailList.self==0}}">自营</text>
+        </view>
+      </view>
+      <view class="shop_info_des">
+        {{detailList.desc}}
+      </view>
+      <view class="shop_info_price">
+        <view class="shop_info_price_left fl">
+          <text>
+          <block wx:if="{{detailList.specs[0].content.money != 0}}">¥{{detailList.specs[0].content.money}}＋</block>{{detailList.specs[0].content.score}}积分
+          </text>
+          <text></text>
+          <text>¥{{detailList.original_price}}</text>
+        </view>
+        <view class="shop_info_price_right fr" wx:if="{{detailList.post==1}}">
+          配送费:¥{{detailList.postage}}
+        </view>
+        <view class="shop_info_price_right fr" wx:if="{{detailList.post!=1}}">
+          到店自取
+        </view>
+      </view>
+    </view>
+    <view class="detail_spec clearfix" bindtap="openPop">
+      <view class="detail_spec_left fl">
+        规格数量选择
+      </view>
+      <view class="detail_spec_right fr">
+        <image src="../../../imgs/sanjiao.png"></image>
+      </view>
+    </view>
+    <view class="order_detail">
+      <view class="order_detail_per">
+        <view class="order_detail_per_left fl">
+          商家: {{detailList.business.name}}
+        </view>
+        <view class="order_detail_per_right fr">
+          {{detailList.business.distance}}
+        </view>
+      </view>
+      <view class="order_detail_per">
+        <view class="order_detail_per_left fl">
+          电话: {{detailList.business.phone}}
+        </view>
+        <view class="order_detail_per_right fr">
+          <image src="../../../imgs/tel.png"></image>
+        </view>
+      </view>
+      <view class="order_detail_per">
+        <view class="order_detail_per_left fl">
+          地址: {{detailList.business.address}}
+        </view>
+        <view class="order_detail_per_right fr">
+          <image style="width: 30rpx; height: 36rpx;" src="../../../imgs/weizhi.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="shop_detail">
+      <view class="shop_detail_tit">商品详情</view>
+      <view class="shop_detail_con">
+        <!-- <rich-text nodes="{{detailList.detail}}"></rich-text> -->
+        <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<view class="index_nav clearifx">
+  <view class="index_nav_left fl">
+    <view class="index_nav_left_per">
+      <navigator url='/pages/index/index' open-type="reLaunch" hover-class='none'>
+        <image src="../../../imgs/index.png" mode='widthFix'></image>
+        <text>首页</text>
+      </navigator>
+    </view>
+    <view class="index_nav_left_per" bindtap="like">
+      <image src="{{detailList.likeImg}}" mode='widthFix' style='width:43rpx;'></image>
+      <text>关注</text>
+    </view>
+    <!-- <view class="index_nav_left_per">
+        <image src="../../../imgs/share.png"></image>
+        <text>分享</text>
+      </view> -->
+  </view>
+  <view class="index_nav_right fr" bindtap="pay">
+    立即购买
+  </view>
+    <view class="index_nav_right fr" bindtap="addCart" style='background:#333333;color:#fff;'>
+    加入购物车
+  </view>
+</view>
+<!-- 规格数量的弹出盒子 -->
+<view class="pop" wx:if="{{popShow}}">
+  <view class="cover" bindtap="closePop"></view>
+  <view class="pop_box">
+    <view class="pop_box_con clearfix">
+      <view class="pop_box_con_left">
+        <image src="{{detailList.images[0]}}" mode='aspectFill'></image>
+      </view>
+      <view class="pop_box_con_right">
+        <view class="pop_box_con_right_top clearfix">
+          <view class="pop_box_con_right_top_left fl">
+            <text wx:if="{{detailList.prices}}">
+              <block wx:if="{{detailList.prices.content.money*detailList.num!=0}}">¥{{detailList.prices.content.money*detailList.num}}、</block>{{detailList.prices.content.score*detailList.num}}积分
+            </text>
+            <text wx:else>
+              <block wx:if="{{detailList.specs[0].content.money*detailList.num!=0}}">¥{{detailList.specs[0].content.money*detailList.num}}＋</block>{{detailList.specs[0].content.score*detailList.num}}积分
+            </text>
+          </view>
+          <view class="pop_box_con_right_top_right fr" bindtap="closePop">
+            <image src="../../../imgs/close.png"></image>
+          </view>
+        </view>
+        <view class="pop_box_con_right_bottom" wx:if="{{detailList.prices}}">
+          已选:{{detailList.prices.title}} {{detailList.num}}个
+        </view>
+        <view class="pop_box_con_right_bottom" wx:else>
+          已选:{{detailList.specs[0].title}} {{detailList.num}}个
+        </view>
+      </view>
+    </view>
+    <view class="pop_box_style">
+      <!-- <view class="pop_box_style_top clearfix" wx:for="{{detailList.specs}}" wx:for-item="item" wx:key="{{item.title}}">
+          <view class="pop_box_style_top_left">{{item.title}}</view>
+          <view class="pop_box_style_top_right">
+            <text class="pop_box_style_top_right_per {{choose==index?'border':''}}" wx:for="{{item.content}}" wx:for-item="per" data-item="{{per}}" data-index="{{index}}" wx:key="{{per.name}}" bindtap="choose">{{per.name}}</text>
+          </view>
+        </view> -->
+
+      <view class="pop_box_style_top clearfix">
+        <view class="pop_box_style_top_left">款式</view>
+        <view class="pop_box_style_top_right" wx:for="{{detailList.specs}}" wx:for-item="item" wx:key="">
+          <text class="pop_box_style_top_right_per {{choose==index?'border':''}}" data-index="{{index}}" wx:key="" data-item="{{item}}" bindtap="choose">{{item.title}}</text>
+        </view>
+      </view>
+
+
+      <view class="pop_box_style_bottom clearifx">
+        <view class="pop_box_style_top_left">数量</view>
+        <view class="pop_box_style_bottom_right">
+          <text bindtap="red">-</text>
+          <text>{{detailList.num}}</text>
+          <text bindtap="add">+</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

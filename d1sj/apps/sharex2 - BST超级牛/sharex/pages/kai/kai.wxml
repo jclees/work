@@ -1,0 +1,133 @@
+<!-- 账户异常 -->
+<view class="pop1" wx:if="{{pop3}}">
+  <view class="cover1"></view>
+  <view class="pop_box1">
+    <image src="{{imgUrl}}tishi_bgc.png"></image>
+    <view class="pop_box_info1">
+      <view class="pop_box_tit1">
+        <image src="{{imgUrl}}tishi_tit.png"></image>
+      </view>
+      <view class="pop_box_con1" style="padding-bottom:60rpx;">
+        <text>因操作错误，系统判定为非币圈用户，或存在大量非法分享用户，已被暂时屏蔽功能，如有疑问请加客服微信：小咖客服</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 普通用户关注提醒  -->
+<view wx:if="{{userStatus}}"><include src="/pages/sideIcon/sideIcon.wxml" /></view>
+<!--pages/kai/kai.wxml-->
+<wxs module="filters" src="../../addmul.wxs"></wxs>
+<view class="container">
+  <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+    <view class="wxapp-toast-content">
+      <view class="wxapp-toast-content-text"> {{toastText}} </view>
+    </view>
+  </view>
+  <view class="index">
+    <image src="{{imgUrl}}bgc1.png"></image>
+    <view class="index_box">
+      <view clsas="index_box_tit">
+        <view class="index_box_tit_text" style="font-size: 38rpx;">恭喜你!</view>
+        <view class="index_box_tit_img">
+          <image src="{{user.userInfo.avatarUrl}}"></image>
+        </view>
+        <view class="index_box_tit_text">
+          <text>您的口袋拥有{{filters.toFix(money - 0.01 + 0.01)}}枚BST</text>
+          <text>价值{{filters.toFix((money - 0.01 + 0.01)*0.1517)}}元人民币</text>
+        </view>
+      </view>
+      <view class="index_box_look" bindtap="look">
+        <text>查看我的BST财富</text>
+      </view>
+      <form name='pushMsgFm' report-submit="true" bindsubmit='getFormId'>
+        <button class="index_box_button" open-type='share' form-type="submit">点击分享，获得更多</button>
+      </form>
+
+      <view class="index_box_footer clearfix">
+        <view bindtap="openPop2" class="fl">
+          <image src="{{imgUrl}}wenti3.png"></image>
+          <text>关于BST</text>
+        </view>
+        <view bindtap="{{userType == 2 ?'openPoster':'openPop3'}}" class="fr">
+          <image src="{{imgUrl}}wenti3.png"></image>
+          <text>{{userType == 2 ?'小咖专属海报':'4倍分享收益'}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 分享弹出框 -->
+  <view class="pop" wx:if="{{pop}}">
+    <view class="cover" bindtap="closePop"></view>
+    <view class="pop_box">
+      <image src="{{imgUrl}}pop_bgc.png"></image>
+      <view class="pop_box_info">
+        <view class="pop_box_info_tit">
+          <image src="{{imgUrl}}share_tit.png"></image>
+        </view>
+        <view class="pop_box_info_close" bindtap="closePop">
+          <image src="{{imgUrl}}close.png"></image>
+        </view>
+        <view class="pop_box_info_con">
+          <text>{{art.share_intro}}</text>
+        </view>
+        <view class="pop_box_info_button" bindtap="closePop">
+          <image src="{{imgUrl}}confirm.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="pop" wx:if="{{pop1}}">
+    <view class="cover" bindtap="closePop1"></view>
+    <view class="pop_box">
+      <image src="{{imgUrl}}foucs_on_genaro.png" mode='widthFix'></image>
+      <view class="pop_box_info">
+        <view class="pop_box_info_close" bindtap="closePop1" style="top:110rpx;">
+          <!-- <image src="{{imgUrl}}close2.png"></image> -->
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="pop" wx:if="{{pop2}}">
+    <view class="cover" bindtap="closePop2"></view>
+    <view class="pop_box">
+      <image src="{{imgUrl}}pop_bgc.png"></image>
+      <view class="pop_box_info">
+        <view class="pop_box_info_tit">
+          <view>关于BST</view>
+        </view>
+        <view class="pop_box_info_close" bindtap="closePop2">
+          <image src="{{imgUrl}}close2.png"></image>
+        </view>
+        <view class="pop_box_info_con">
+          <text>{{art.currency_intro}}</text>
+        </view>
+        <!-- <view class="pop_box_info_button" bindtap="closePop">
+          <image src="{{imgUrl}}confirm.png"></image>
+        </view> -->
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 小咖说明弹出框3 -->
+  <view class="pop xk" wx:if="{{rule3}}">
+    <view class="cover" bindtap="closePop3"></view>
+    <view class="pop_box">
+      <image src="{{imgUrl}}pop_bgc.png"></image>
+      <view class="pop_box_info">
+        <view class="pop_box_info_tit">
+          <text>{{xkPopData.title1}}</text>
+        </view>
+        <view class="pop_box_info_close" bindtap="closePop3">
+          <image src="{{imgUrl}}close2.png"></image>
+        </view>
+        <view class="pop_box_info_con">
+          <image src='{{xkPopData.xk_con}}'></image>
+        </view>
+        <button class="pop_box_info_button" open-type='contact'>
+          <image src="{{imgUrl}}shenqing.png"></image>
+        </button>
+        <view class="hf_txt">{{xkPopData.huifu1}}</view>
+      </view>
+    </view>
+  </view>

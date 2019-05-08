@@ -1,0 +1,96 @@
+<!--  banner  -->
+<view class="swiper-container">
+  <swiper class='swiper' indicator-dots="{{indicatorDots}}" autoplay="{{true}}" circular="{{true}}" bindchange='swiperChange'>
+    <block wx:for="{{bannerUrls}}" wx:key="">
+      <navigator open-type="navigate" url="/pages/detail/detail?article_id={{item.article_id}}">
+        <swiper-item>
+          <image src="{{item.image}}" class="slide-image" mode='aspectFill' />
+        </swiper-item>
+      </navigator>
+    </block>
+  </swiper>
+  <!--  自定义dots  -->
+  <view class="dots">
+    <block wx:for="{{bannerUrls}}" wx:key="">
+      <view class="dot{{index === swiperCurrent ? ' active' : ''}}"></view>
+    </block>
+  </view>
+</view>
+<view class='index_wrap'>
+  <view class='user_info'>
+    <image src='{{configData.avatar}}' mode='aspectFill'></image>
+    <view class='info_box'>
+      <view>
+        <view class='name'>{{configData.name}}</view>
+        <image src='/images/icon_renz_02.png' mode='widthFix'></image>
+      </view>
+      <view>
+        {{configData.desc}}
+      </view>
+    </view>
+  </view>
+  <view class='con_lists'>
+    <block wx:for="{{wenzData}}" wx:key="">
+      <navigator open-type="navigate" url="/pages/detail/detail?article_id={{item.article_id}}">
+        <view class='item'>
+          <image src='{{item.image}}' mode='aspectFill' lazy-load></image>
+          <view>
+            <view class='rt_tit'>
+              <view class='ellipsis'>{{item.title}}</view>
+            </view>
+            <view class='rt_time'>
+              <view>
+                <text decode>{{item.author}} &nbsp;&nbsp;{{item.time}}</text>
+              </view>
+              <view>{{item.scan_count}}次浏览</view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+  </view>
+</view>
+
+
+<!-- <navigator hover-class='none' open-type='navigate' url="/pages/huishou/index/index">
+  <form report-submit bindsubmit='getFormId'>
+    <button form-type='submit' hover-class='none'>
+      <view class='pop_music huishou'>
+        <image mode='widthFix' class='audio' src="/images/icon_huishou.png"></image>
+      </view>
+    </button>
+  </form>
+</navigator> -->
+<!-- 回收按钮 -->
+<include src="/pages/module/huishouBtn/index.wxml" />
+
+<form report-submit bindsubmit='onMusicTap'>
+  <button form-type='submit' hover-class='none'>
+    <view class='pop_music'>
+      <image mode='widthFix' class='audio {{isPlayingMusic?"x":""}}' src="{{isPlayingMusic?'/images/icon_pause.png':'/images/icon_play.png'}}"></image>
+      <audio src="{{configData.index_bgm}}" id="myAudio" controls="{{false}}" loop style='display:none;'></audio>
+    </view>
+  </button>
+</form>
+
+
+
+
+<!-- 授权 -->
+<view class='pop-box' wx:if="{{pop1}}" catchtouchmove="myCatchTouch">
+  <view class='pop-bg'></view>
+  <view class='pop-main' style='padding:20rpx 80rpx 40rpx;box-sizing: border-box;'>
+    <view class='pop-title'>微信授权</view>
+    <view class='pop-content'>
+      <view class='pop-text-img'>
+        <text>青山派小程序需要获取您的头像昵称等资料</text>
+        <image mode='widthFix' src='/images/icon-sq.png' style='width:105rpx;margin:20rpx auto 0;display:block;'></image>
+      </view>
+    </view>
+    <button type="primary" bindgetuserinfo="getUserInfo" lang="zh_CN" open-type="getUserInfo"> 立即授权 </button>
+  </view>
+</view>
+<!-- nav -->
+<!-- <view>
+  <include src="/pages/module/nav/nav.wxml" />
+</view> -->

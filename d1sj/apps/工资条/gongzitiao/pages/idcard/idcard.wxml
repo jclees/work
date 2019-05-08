@@ -1,0 +1,39 @@
+<view class='hd'>
+  <image src='/images/icon_02.png' mode='widthFix'></image>
+  <view>完成实名认证，体验更多功能</view>
+</view>
+<view class='form_data'>
+  <form report-submit bindsubmit='sendCode'>
+    <view class='form_item'>
+      <label>姓名:</label>
+      <input placeholder='请输入您的真实姓名' placeholder-style='color:#a6a6a6;' name="name"></input>
+    </view>
+    <view class='form_item'>
+      <label>身份证:</label>
+      <input type='idcard' placeholder='请输入您的身份证号码' placeholder-style='color:#a6a6a6;' name="icard"></input>
+    </view>
+    <!-- <view class='form_item'>
+      <label>银行名称:</label>
+      <input placeholder='请输入银行名称  如：农业银行' placeholder-style='color:#a6a6a6;' name="card_name"></input>
+    </view>
+    <view class='form_item'>
+      <label>银行卡号:</label>
+      <input type='text' placeholder='请输入您的银行号码' placeholder-style='color:#a6a6a6;' name="card_account"></input>
+    </view> -->
+    <view class='form_item'>
+      <label>手机号:</label>
+      <input type='text' placeholder='请输入您的手机号码' maxlength="11" placeholder-style='color:#a6a6a6;' name="phone" ></input>
+    </view>
+    <view class='form_item'>
+      <label></label>
+      <input type='text' placeholder='请输入验证码' bindinput='bindInpVal' placeholder-style='color:#a6a6a6;' name="smscode"></input>
+      <button form-type='submit' wx:if="{{is_show}}">获取验证码</button>
+      <button wx:else>重新发送{{last_time}}秒</button>
+    </view>
+  </form>
+
+  <form report-submit bindsubmit="savaData">
+    <button class='sava_btn' form-type='submit'>{{submitTxt}}</button>
+  </form>
+
+</view>

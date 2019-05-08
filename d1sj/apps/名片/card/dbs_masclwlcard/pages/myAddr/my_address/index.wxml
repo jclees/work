@@ -1,0 +1,43 @@
+<loading hidden="{{dataLoaded}}">加载中...</loading>
+<view class="container">
+    <view class="address-list">
+        <view class="item" wx:for="{{address_list}}" wx:key="index">
+            <view bindtap="chooseAddress" class="info" data-index="{{index}}">
+                <view class="name">{{item.userName}}，{{item.telNumber}}</view>
+                <view>收货地址：{{item.provinceName}}{{item.cityName}}{{item.countyName}}{{item.detailInfo}}</view>
+            </view>
+            <view class="toolbar">
+                <view bindtap="set_address" class="default" data-addressid="{{item.id}}">
+                    <block wx:if="{{item.is_status==='1'}}">
+                        <icon color="red" size="19" type="success"></icon>
+                        <text class="text">已设为默认</text>
+                    </block>
+                    <block wx:else>
+                        <view class="icon"></view>
+                        <text class="text">设为默认</text>
+                    </block>
+                </view>
+                <view class="action-bar">
+                    <view bindtap="edit_address" data-addressid="{{item.id}}" data-index="{{index}}">
+                        <image src="../../../images/mine/edit.png" style="width: 32rpx;height: 32rpx;"></image>
+                        <text>编辑</text>
+                    </view>
+                    <view bindtap="del_address" data-addressid="{{item.id}}">
+                        <image src="../../../images/mine/dele.png" style="width: 40rpx;height: 37rpx;"></image>
+                        <text>删除</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="bottom-add">
+        <navigator class="item shou" url="/dbs_masclwlcard/pages/myAddr/add_address/index">
+            <image src="../../../images/mine/add.png" style="width: 40rpx;height: 40rpx;"></image>
+            <text>手动添加</text>
+        </navigator>
+        <view bindtap="wechatAddress" class="item wechat">
+            <image src="../../../images/mine/wechat.png" style="width: 46rpx;height: 38rpx;"></image>
+            <text>微信添加</text>
+        </view>
+    </view>
+</view>

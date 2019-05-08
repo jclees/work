@@ -1,0 +1,48 @@
+<scroll-view scrollY bindscrolltolower="get_moreshop" style="background:#f6f6f6">
+  <!-- <view class="top_operate_initial">
+      <view bindtap="go_user" class="order-image-container {{business.userRedPoint?'order_btn_tip':''}}">
+        <image class="order-image" src="../../images/card/my.png" style="width: 33rpx;height:38rpx;"></image>
+      </view>
+    </view> -->
+    <navigator hoverClass="none" url="/dbs_masclwlcard/pages/create_product/create_product"><button class="add_product_btn">添加产品 +</button></navigator>
+  <view class="dbl_pro_box">
+    <view class="dbl_sub dbl_left">
+      <view class="sm_box" wx:for="{{shops}}" wx:key="index">
+        <view>
+          <view class="dbl_deltail_box">
+            <view class="detail_pic">
+              <image mode="aspectFill" src="{{item.show[0].url}}"></image>
+            </view>
+            <view style="width:100%;height:2rpx;background-color: #ebebeb;"></view>
+            <view class="bottom_detail">
+              <view class="title_detail">{{item.title}}</view>
+              <view class="sale_price">¥{{item.price}}</view>
+            </view>
+            <view class="bottom_btn">
+             <navigator hoverClass="none" url="/dbs_masclwlcard/pages/create_product/create_product?product_id={{item.id}}"><button>编辑</button></navigator>
+              <button class='del_btn' data-productid="{{item.id}}" bindtap='delProduct'>删除</button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- <view class="dbl_sub  dbl_right">
+                <view class="sm_box" wx:for="shops.right_list" wx:key="index">
+                    <navigator hoverClass="none" url="/dbs_masclwlcard/pages/shops/shops_detail?&shops_id={{item.id}}&card_id={{business.id}}">
+                        <view class="dbl_deltail_box">
+                            <view class="detail_pic">
+                                <image src="{{item.gimg}}"></image>
+                            </view>
+                            <view style="width:100%;height:1rpx;background-color: #ebebeb"></view>
+                            <view class="bottom_detail">
+                                <view class="title_detail">{{item.shop_name}}</view>
+                                <view class="sale_price">¥{{item.price}}</view>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+            </view> -->
+  </view>
+  <view class="no_data" wx:if="{{shops.length<1}}">暂无商品</view>
+  <view class="nomoredata" wx:if="{{shops.length>0}}">我也是有底线的..</view>
+</scroll-view>

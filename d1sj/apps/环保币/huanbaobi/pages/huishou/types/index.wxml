@@ -1,0 +1,64 @@
+<view class='hd'>
+  <view class='tit'>添加需要回收的类型</view>
+  <view class='items' wx:for="{{lists}}" wx:key="" wx:for-index="idx">
+    <image src='{{item.imgUrl}}' mode='aspectFill'></image>
+    <view class='fun'>
+      <view class='top'>
+        <view>{{item.name}}</view>
+        <view class='forms'>
+          <form report-submit bindsubmit='addOrRed' data-who="2" data-curidx="{{idx}}">
+            <button form-type='submit' style='opacity:{{item.num == 0? ".5":"1" }};'></button>
+          </form>
+          <input disabled placeholder='0' placeholder-style='color:#ccc;' value='{{item.num == 0? "":item.num }}'>1</input>
+          <view class='txt'>{{item.unit}}</view>
+          <form report-submit bindsubmit='addOrRed' data-who="1" data-curidx="{{idx}}">
+            <button form-type='submit' class='last'></button>
+          </form>
+        </view>
+      </view>
+      <view class='coin {{item.num == 0? "":"in" }}'>
+        <view>¥
+          <text class='{{item.num == 0? "":"color_red" }}'>{{item.money}}</text> 元</view>
+        <view>环保币
+          <text class='{{item.num == 0? "":"color_blue" }}'>{{item.coin}}</text> 个</view>
+        <view>环保积分
+          <text class='{{item.num == 0? "":"color_blue" }}'>{{item.jifen}}</text> 个</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='bd'>
+  <view class='tit'>选择上门支付方式</view>
+  <view class='items'>
+    <form report-submit bindsubmit='tapPay' data-id="{{item.id}}" data-curidx="{{index}}" wx:for="{{payItems}}" wx:key="">
+      <button form-type='submit' hover-class='none'>
+        <view>
+          <view wx:if="{{item.checked}}" class='icon_box'>
+            <icon type="success_no_circle" size="16"></icon>
+          </view>
+        </view>
+        <view>{{item.name}}</view>
+      </button>
+    </form>
+  </view>
+
+  <view class='tot' wx:if="{{payStatus == 2}}">预计环保币：
+    <text class='color_blue'>{{total}} 个</text>
+  </view>
+  <view class='tot' wx:elif="{{payStatus == 4}}">预计人民币：
+    <text class='color_red'>¥ {{total}}</text>
+  </view>
+  <view class='tot' wx:elif="{{payStatus == 3}}">预计环保分：
+    <text class='color_blue'>{{total}} 个</text>
+  </view>
+
+  <view class='tips' wx:if="{{payStatus != 1}}">tips：价格信息有较大出入，具体以现场回收人员测量为准，谢谢您的合作</view>
+  <view class='btn-send'>
+    <form report-submit bindsubmit='savaData'>
+      <button form-type='submit' hover-class='none'>
+        确定
+      </button>
+    </form>
+  </view>
+</view>

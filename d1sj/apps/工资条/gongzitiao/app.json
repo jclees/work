@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/readingPact/readingPact",
+    "pages/uploadIdcard/uploadIdcard",
+    "pages/idcard/idcard",
+    "pages/pactDetail/pactDetail",
+    "pages/module/webview/webview",
+    "pages/module/webview2/webview",
+    "pages/test/test"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "工资条",
+    "backgroundTextStyle": "light"
+  },
+  "sitemapLocation": "sitemap.json"
+}

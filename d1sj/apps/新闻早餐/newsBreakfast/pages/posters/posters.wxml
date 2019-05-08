@@ -1,0 +1,38 @@
+<view class="posters_box">
+  <image mode='widthFix' src='{{actImgSrc}}' data-src="{{actImgSrc}}" bindtap='previewImage'></image>
+  <view>
+    <image mode='widthFix' src='{{img_url}}icon_share.png'></image>
+    <view>点击保存图片或分享给朋友</view>
+  </view>
+</view>
+<view class='audition'>
+  <scroll-view scroll-x="{{true}}" class='scroll-content'>
+    <view class="" wx:for="{{music}}" wx:key="" data-id="{{item.musicID}}" data-src="{{item.musicImg}}" class='content' bindtap="switchImg">
+      <view class='music-img-box'>
+        <image mode='aspectFill' src='{{item.musicImg}}' class='music-img'></image>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+
+<!--  生成须知  -->
+<view class='check-ins' data-id="checkIns" bindtap='popLock'>
+  <image mode='widthFix' src='{{img_url}}icon_xuzhi.png'></image>
+  <text>生成须知</text>
+</view>
+<!-- 消息弹层 -->
+<view class='pop-box' wx:if="{{pop1}}">
+  <view class='pop-bg' bindtap='popLock'></view>
+  <view class='pop-main'>
+    <view class='pop-title'>生成须知</view>
+    <view class='pop-content'>
+      <view class='pop-text-img'>
+        <text>须知须知须知须知须知须知须知</text>
+      </view>
+    </view>
+    <view class="btn-pop">
+      <button hover-class='none' bindtap='popLock'>知道了</button>
+    </view>
+  </view>
+</view>

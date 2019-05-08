@@ -1,0 +1,23 @@
+<template name="newtip">
+    <view bindtap="_jumpToChat" class="msgtip">
+        <view class="avatar">
+            <image src="{{cardAvatar}}"></image>
+        </view>
+        <view class="msgContent">您有新的消息</view>
+        <view class="num">1</view>
+    </view>
+    <view bindtap="_jumpToChat" class="msgtip fadeIn" wx:if="{{msgStatus==1}}">
+        <view class="avatar">
+            <image src="{{cardAvatar}}"></image>
+        </view>
+        <view class="msgContent">您有新的消息</view>
+        <view class="num">{{offline}}</view>
+    </view>
+    <view bindtap="_jumpToChat" class="msgtip fadeOut" wx:if="{{msgStatus==2}}">
+        <view class="avatar">
+            <image src="{{cardAvatar}}"></image>
+        </view>
+        <view class="msgContent">您有新的消息</view>
+        <view class="num">{{offline}}</view>
+    </view>
+</template>

@@ -1,0 +1,107 @@
+.loading_box {
+    padding: 0 30rpx;
+    margin-top: 437rpx;
+}
+.demo_line_05{
+    letter-spacing: -1px;
+    color: #ddd;
+    width: 100%;
+    text-align: center;
+}
+.demo_line_05 text{
+    letter-spacing: 0;
+    color: #ddd;
+    margin:0 20px;
+    font-size: 24rpx;
+}
+.cool{
+  color: #999;
+  position: absolute;
+  right: 30rpx;
+  top: 10rpx;
+  font-size: 28rpx;
+}
+page {
+    padding-bottom: 40rpx;
+}
+
+.cardist {
+    margin: 30rpx;
+}
+
+.cardist .card {
+    position: relative;
+    padding: 40rpx 40rpx 40rpx 40rpx;
+    border-radius: 20rpx;
+    width: 100%;
+    background: #fff;
+    box-shadow: 1px 3px 10px #e1e1e1;
+    margin-bottom: 30rpx;
+}
+
+.cardist .card .avatar {
+    position: absolute;
+    right: 75rpx;
+    top: 110rpx;
+}
+
+.cardist .card .avatar image {
+    width: 170rpx;
+    height: 170rpx;
+    border-radius: 100%;
+}
+
+.cardist .card .name {
+    font-size: 48rpx;
+    color: #333;
+    margin-top: 10rpx;
+}
+
+.cardist .card .company {
+    font-size: 28rpx;
+    color: #919191;
+    margin-top: 4rpx;
+    margin-bottom: 20rpx;
+}
+
+.cardist .card .position {
+    font-size: 28rpx;
+    color: #444;
+    margin-top: 4rpx;
+}
+
+.cardist .card .name text {
+    font-size: 32rpx;
+    margin-left: 20rpx;
+    color: #919191;
+}
+
+.cardist .card .title {
+    color: #666;
+    font-size: 28rpx;
+    margin-bottom: 30rpx;
+}
+
+.cardist .card .email,.cardist .card .mobile {
+    color: #767676;
+    font-size: 32rpx;
+    display: flex;
+    align-items: center;
+    margin-top: 10rpx;
+}
+
+.cardist .card .email image,.cardist .card .mobile image {
+    width: 36rpx;
+    height: 36rpx;
+    margin-right: 20rpx;
+}
+
+.cardist .card .email text,.cardist .card .mobile text {
+    font-size: 30rpx;
+    font-weight: 300;
+}
+
+button {
+    text-align: left;
+    line-height: 1.8;
+}

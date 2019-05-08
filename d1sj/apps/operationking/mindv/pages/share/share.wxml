@@ -1,0 +1,61 @@
+<!--pages/share/share.wxml-->
+<view class="container">
+  <view class="share_box">
+    <!-- <image class='images'  src="{{image}}"></image> -->
+    <image src="{{img_url}}bg-share.png" mode='widthFix'></image>
+    <view class="share_box_info">
+      <view class="share_box_info_tu">
+        <!-- <canvas canvas-id="myCanvas" style="border: 1px solid;"/> -->
+        <view class="bg-canvas">
+          <image src='{{img_url}}bg-user-circular.png' mode='widthFix'></image>
+        </view>
+        <canvas canvas-id="radarCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
+        <!-- <view class="share_box_info_image">
+          <image src="{{userInfo.avatar}}"></image>
+        </view> -->
+        <!-- <image src="{{img_url}}share_tu.png">
+        </image> -->
+
+      </view>
+      <view class="share_box_info_text">
+        <!-- <image src="{{img_url}}share_tit.png"></image> -->
+        <view class="share_box_info_text_box">
+          <text>{{userInfo.top_sentence}}</text>
+          <text>{{userInfo.bottom_sentence}}</text>
+        </view>
+      </view>
+      <view class="share_box_info_button clearfix">
+        <button open-type="share">
+          <image src="{{img_url}}zhuanfa.png"></image>
+          <text>分享给好友</text>
+        </button>
+        <!-- <button bindtap="saveImg">
+          <image src="{{img_url}}baocun.png"></image>
+          <text>保存到相册</text>
+        </button> -->
+      </view>
+    </view>
+    <view class="footer">
+      <view class="share_box_info_continue" bindtap="jumpIndex">
+        <image src="{{img_url}}continue.png"></image>
+      </view>
+      <view class="share_box_info_des">更多有趣的题目等待你的挑战</view>
+    </view>
+  </view>
+  <!-- <view class='pop-share-gold' wx:if="{{popShareGold}}" bindtap='closeShareGold'>
+    <view class='pop-share-gold-bg' bindtap='closeShareGold'></view>
+    <view class='pop-intersperse'>
+      <image src='{{img_url}}intersperse.png' mode='widthFix'></image>
+    </view>
+    <view class='pop-share-gold-main-box'>
+      <view class='pop-share-gold-main'>
+        <image class='icon-share-gold' src='{{img_url}}icon-share-gold.png' mode='widthFix'></image>
+        <view>邀请成功，奖励{{shareGold}}金币</view>
+        <view class='btn-share'>
+          <button bindtap='closeShareGold' open-type='share'>继续邀请</button>
+          <button bindtap='paiwei1'>参加排位赛</button>
+        </view>
+      </view>
+    </view>
+  </view> -->
+</view>

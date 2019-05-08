@@ -1,0 +1,25 @@
+<view class='tab'>
+  <text class="{{tab == 1 ? 'active' : ''}}" bindtap='tab1' data-id='1'>最近学习</text>
+  <text class="{{tab == 1 ? '' : 'active'}}" bindtap='tab1' data-id='2'>已购课程</text>
+</view>
+
+<view>
+  <view class='kecheng' wx:for="{{kecheng}}" wx:key="" wx:if="{{tab == 1}}">
+    <image mode='widthFix' src='{{item.img}}'></image>
+    <view>
+      <view class='title'>{{item.title}}</view>
+      <view class='text'>{{item.text}} </view>
+    </view>
+  </view>
+  <view class='kecheng' wx:for="{{kecheng}}" wx:key="" wx:if="{{tab == 2}}">
+    <image mode='widthFix' src='{{item.img}}'></image>
+    <view>
+      <view class='title'>{{item.title}}</view>
+      <view class='text'></view>
+      <view class='time'>
+        <text>{{item.num}}次学习</text>
+        <text>{{item.time}}</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,90 @@
+<view class='mine-userinfo-box'>
+  <view class='mine-user'>
+    <image mode='widthFix' src='{{personData.avatarUrl}}'></image>
+    <view class='mine-name'>
+      <view>{{personData.nickName}}</view>
+      <view></view>
+    </view>
+  </view>
+</view>
+
+<view class="mine_nav">
+  <view>
+    <navigator hover-class='none' open-type='navigate' url="/pages/mine/myComment/index?is_who=1">
+      <form bindsubmit='getFormId' report-submit>
+        <button form-type='submit'>
+          <text>我的发圈</text>
+          <view class="min_icon">
+            <image src='/images/icon_mine_more.png' mode='widthFix'></image>
+          </view>
+        </button>
+      </form>
+    </navigator>
+    <navigator hover-class='none' open-type='navigate' url="/pages/mine/myComment/index?is_who=2">
+      <form bindsubmit='getFormId' report-submit>
+        <button form-type='submit'>
+          <text>我的评论</text>
+          <view class="min_icon">
+            <image src='/images/icon_mine_more.png' mode='widthFix'></image>
+          </view>
+        </button>
+      </form>
+    </navigator>
+    <navigator hover-class='none' open-type='navigate' url="/pages/mine/mySixin/index?isSxin=2">
+      <form bindsubmit='getFormId' report-submit>
+        <button form-type='submit'>
+          <text>我的动态</text>
+          <view class="min_icon">
+            <!-- <view class='txt' style="{{txt.length>1?'padding:0 15rpx;':''}}">{{txt}}</view> -->
+            <view class="doc" wx:if="{{unData.unlauds != 0 || unData.uncomment != 0}}"></view>
+            <image src='/images/icon_mine_more.png' mode='widthFix'></image>
+          </view>
+        </button>
+      </form>
+    </navigator>
+    <navigator hover-class='none' open-type='navigate' url="/pages/mine/mySixin/index?isSxin=1">
+      <form bindsubmit='getFormId' report-submit>
+        <button form-type='submit'>
+          <text>我的私信</text>
+          <view class="min_icon">
+            <view class='txt' style="{{unData.unreads>9?'padding:0 10rpx;':''}}" wx:if="{{unData.unreads != 0}}">{{unData.unreads}}</view>
+            <!-- <view class="doc"></view> -->
+            <image src='/images/icon_mine_more.png' mode='widthFix'></image>
+          </view>
+        </button>
+      </form>
+    </navigator>
+    <navigator hover-class='none' open-type='navigate' url="/pages/mine/myConcern/index">
+      <form bindsubmit='getFormId' report-submit>
+        <button form-type='submit'>
+          <text>我的关注</text>
+          <view class="min_icon">
+            <image src='/images/icon_mine_more.png' mode='widthFix'></image>
+          </view>
+        </button>
+      </form>
+    </navigator>
+     <navigator hover-class='none' open-type='navigate' url="/pages/mine/myOrder/index?who=2">
+      <form bindsubmit='getFormId' report-submit>
+        <button form-type='submit'>
+          <text>回收订单</text>
+          <view class="min_icon">
+            <image src='/images/icon_mine_more.png' mode='widthFix'></image>
+          </view>
+        </button>
+      </form>
+    </navigator>
+    <navigator hover-class='none' open-type='navigate' url="/pages/mine/myOrder/index?who=1" wx:if="{{types == 1}}">
+      <form bindsubmit='getFormId' report-submit>
+        <button form-type='submit'>
+          <text>回收任务</text>
+          <view class="min_icon">
+            <image src='/images/icon_mine_more.png' mode='widthFix'></image>
+          </view>
+        </button>
+      </form>
+    </navigator>
+  </view>
+</view>
+<!-- 回收按钮 -->
+<include src="/pages/module/huishouBtn/index.wxml" />

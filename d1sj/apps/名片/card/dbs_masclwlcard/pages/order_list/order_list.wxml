@@ -1,0 +1,41 @@
+<loading hidden="{{dataLoaded}}">加载中...</loading>
+<view class="wrap" hidden="{{!dataLoaded}}">
+    <scroll-view class="order-list" scrollY="true">
+        <block wx:if="{{list&&list.length>0}}">
+            <view class="order-item" wx:for="{{list}}" wx:key="id">
+                <view>
+                    <button class="nobutton" formType="submit">
+                        <view class="top-info">
+                            <view class="date">
+                                <text>下单时间：{{item.dateline}}</text>
+                            </view>
+                        </view>
+                        <view class="order-info">
+                            <view class="bg-img" style="background-image: url({{item.shops.g_img}})"></view>
+                            <view class="order-r">
+                                <view class="label-text">
+                                    <text class="price">{{item.shop_name}}</text>
+                                </view>
+                                <view class="label-text" wx:if="{{item.shop_name}}">
+                                    <text>{{item.shop_name}}</text>
+                                </view>
+                                <view class="label-text">
+                                    <text class="price">￥{{item.price}}</text>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="order-priceInfo">
+                            <text>共计{{item.shops_num}}件商品</text>
+										合计: ￥<text style="font-size: 32rpx;">{{item.all_price}}</text>
+                        </view>
+                    </button>
+                </view>
+            </view>
+        </block>
+        <view class="nodata" wx:else>
+            <view>
+                <text>您还没有相关订单哦！</text>
+            </view>
+        </view>
+    </scroll-view>
+</view>

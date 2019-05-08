@@ -1,0 +1,105 @@
+/* mine.wxss */
+.mine-userinfo-box {
+  padding: 100rpx 50rpx 100rpx;
+  background: #ff6663;
+  font-size: 0;
+}
+
+.mine-user {
+  text-align: center;
+}
+
+.mine-user image {
+  border-radius: 50%;
+  width: 120rpx;
+}
+
+.mine-user> view {
+  color: #fff;
+  font-size: 30rpx;
+  padding-top: 5rpx;
+}
+
+.mine-userinfo {
+  display: flex;
+  color: #fff;
+  flex-wrap: wrap;
+  margin-top: 20rpx;
+}
+
+.mine-userinfo view {
+  width: 50%;
+  font-size: 30rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  box-sizing: border-box;
+  padding-left: 50rpx;
+}
+
+.mine-userinfo view image {
+  width: 32rpx;
+  vertical-align: top;
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.mine-nav-box {
+  position: absolute;
+  top: 420rpx;
+  bottom: 125rpx;
+  left: 20rpx;
+  right: 20rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.3);
+}
+
+.mine-nav {
+  height: 104rpx;
+  line-height: 104rpx;
+  border-bottom: 1px solid #e9e9e9;
+  display: flex;
+}
+
+.mine-nav text {
+  text-align: center;
+  flex: 1;
+}
+
+.mine-menu-box {
+  display: flex;
+  padding: 40rpx 100rpx;
+  flex-wrap: wrap;
+}
+
+.mine-menu-box .mine-menu {
+  width: 50%;
+  text-align: left;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding-left: 40rpx;
+  box-sizing: border-box;
+}
+
+.mine-menu-box .mine-menu image {
+  width: 42rpx;
+  vertical-align: top;
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+  margin-right: 10rpx;
+}
+
+.mine-menu-box .mine-menu text {
+  font-size: 30rpx;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 20rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #ababab;
+  width: 100%;
+}

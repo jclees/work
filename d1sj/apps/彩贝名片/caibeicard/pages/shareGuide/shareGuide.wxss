@@ -1,0 +1,101 @@
+page {
+  background: #fafafa;
+  border-top: 2px dashed #ebebeb;
+}
+
+.share_tips_main {
+  position: absolute;
+  top: 30rpx;
+  bottom: 30rpx;
+  left: 30rpx;
+  right: 30rpx;
+  background: #fff;
+  box-shadow: 0 0 6px #dddddd;
+  padding: 0 40rpx;
+}
+
+.userimg_intro {
+  text-align: center;
+  font-size: 28rpx;
+  color: #000;
+}
+
+.userimg_intro > image {
+  width: 135rpx;
+  height: 135rpx;
+  background: #efefef;
+  border-radius: 100px;
+  box-shadow: 2px 0 4px 0 rgba(201, 203, 208, 1);
+  margin: 30rpx auto 0;
+  display: block;
+}
+
+.userimg_intro .userimg_intro_txt > view {
+  padding-top: 8rpx;
+}
+
+.userimg_intro .userimg_intro_txt > view:nth-child(1) {
+  padding-top: 20rpx;
+}
+
+.pd_img {
+  background: #fff;
+  width: 420rpx;
+  margin: 40rpx auto 60rpx;
+  overflow: hidden;
+}
+
+.pd_img image {
+  width: 400rpx;
+  height: 380rpx;
+  border: 1px solid #c6c6c6;
+  border-radius: 10rpx;
+}
+
+.pd_img view {
+  font-size: 28rpx;
+  color: #000;
+  text-align: center;
+}
+
+.share_tips {
+  text-align: center;
+  color: #000;
+  font-size: 26rpx;
+  border-top: 1px solid #d3d3d3;
+}
+
+.share_tips .share_tips_tit {
+  position: relative;
+  margin: -22rpx auto 40rpx;
+  background: #fff;
+  width: 165rpx;
+  font-size: 32rpx;
+}
+
+.share_tips .share_tips_intro {
+  text-align: left;
+  width: 400rpx;
+  margin: 0 auto;
+}
+
+.share_tips .share_tips_intro >view {
+  line-height: 50rpx;
+}
+
+.share_tips .share_tips_intro .cool {
+  color: #ff3933;
+}
+
+.share_tips > button {
+  background: #ffbf00;
+  box-shadow: 2px 2px 2px 0 #dbba5f;
+  border-radius: 200rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 32rpx;
+  color: #000;
+  padding: 0 80rpx;
+  margin: 60rpx 0 0 0;
+  display: inline-block;
+}

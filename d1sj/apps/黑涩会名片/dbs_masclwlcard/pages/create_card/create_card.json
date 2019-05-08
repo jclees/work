@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "名片修改",
+    "usingComponents": {
+        "head": "/dbs_masclwlcard/components/head/head",
+        "android": "/dbs_masclwlcard/components/android_callmodal/android_callmodal"
+    }
+}

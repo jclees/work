@@ -1,0 +1,168 @@
+/* pages/person/index/index.wxss */
+.person_tit {
+  width: 100%;
+  height: 300rpx;
+  padding-top: 50rpx;
+  background-color: #febd2d;
+}
+.person_tit_img {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 5rpx solid #fff;
+  box-sizing: border-box;
+}
+.person_tit_img image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.person_tit_button {
+  margin-top: 40rpx;
+}
+.person_tit_button_left {
+  padding-left: 163rpx;
+}
+.person_tit_button_right {
+  padding-right: 163rpx;
+}
+.person_index_button {
+  width: 180rpx;
+  height: 50rpx;
+  background-color: #fff;
+  border-radius: 25rpx;
+  line-height: 50rpx;
+}
+.person_index_button image {
+  width: 40rpx;
+  height: 32rpx;
+  margin-left: 24rpx;
+  margin-right: 18rpx;
+  vertical-align: middle;
+}
+
+.person_index_button text {
+  vertical-align: middle;
+}
+.person_info_order_tit {
+  padding: 0 30rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  background-color: #f6f6f6;
+}
+
+.person_info_order_con_box_per {
+  padding: 20rpx 30rpx;
+  height: 155rpx;
+  border-bottom: 1rpx solid #f6f6f6;
+}
+.person_info_order_con_box_left {
+  width: 156rpx;
+  height: 156rpx;
+  float: left;
+  margin-right: 30rpx;
+}
+.person_info_order_con_box_left image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.person_info_order_con_box_right {
+  height: 100%;
+  overflow: hidden;
+}
+.person_info_order_con_box_right_left {
+  width: 80%;
+  height: 100%;
+}
+.person_info_order_con_box_right_right {
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  line-height: 156rpx;
+}
+.person_info_order_con_box_right_left_top {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-top: 30rpx;
+}
+.person_info_order_con_box_right_left_bottom {
+  margin-top: 30rpx;
+  color: #ef3338;
+}
+.person_info_order_con_box_right_left_bottom text:first-child {
+  font-size: 40rpx;
+}
+.person_info_order_con_more {
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+.person_info_order_con_more text {
+  vertical-align: middle;
+  margin-right: 20rpx;
+  margin-left: 300rpx;
+}
+.person_info_order_con_more image {
+  width: 13rpx;
+  height: 21rpx;
+  vertical-align: middle;
+}
+
+
+
+
+.mine_nav >view {
+  background: #fff;
+  border:1px solid #f7f7f7;
+  margin-top: 30rpx;
+}
+
+.mine_nav >view button {
+  margin: 0;
+  padding: 0 30rpx;
+  display: flex;
+  align-items: center;
+  height: 102rpx;
+  line-height: 102rpx;
+  justify-content: space-between;
+  border-radius: 0;
+  border-bottom: 1px solid #f4f4f4;
+}
+.mine_nav >view button:last-of-type{
+  border: none;
+}
+.min_l{
+  display: flex;
+  align-items: center;
+}
+.min_l image{
+  margin-right: 30rpx;
+}
+.mine_nav >view button text {
+  font-size: 34rpx;
+  color: #000;
+}
+.mine_nav >view button .min_icon{
+  display: flex;
+  align-items: center;
+}
+.mine_nav >view button .min_icon image {
+  width: 12rpx;
+  margin-left: 20rpx;
+}
+
+.mine_nav >view button .min_icon view {
+  background: #ff3933;
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+}
+.mine_nav >view button .min_icon text{
+  color:#a3a3a3;
+  font-size: 24rpx;
+}

@@ -1,0 +1,124 @@
+<view class="pd_details">
+  <view class="piece_banner">
+    <view class="swiper-container">
+      <swiper class='swiper' indicator-dots="{{indicatorDots}}" autoplay="{{true}}" circular="{{true}}" bindchange='swiperChange'>
+        <block>
+          <swiper-item>
+            <image src="{{bookInfoData.img}}" class="slide-image" mode='aspectFit' />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <view class="piece_coin">
+    <image src='{{img_url}}icon_babycoin.png' mode='widthFix' class="b_icon"></image>
+    <view>{{bookInfoData.price}}</view>
+  </view>
+  <view class="piece_share">
+    <view class="user_intro">
+      <view class="img_wrap">
+        <image src='{{item.avatar}}' mode='widthFix' class="b_icon" wx:for="{{bookInfoData.read.lists}}" wx:key='' wx:if="{{index < 3}}"></image>
+      </view>
+      <view class="intro">
+        <text>{{bookInfoData.read.lists[0].nickname}}、{{bookInfoData.read.lists[1].nickname}}...</text>
+        <text>等{{bookInfoData.read.num}}人阅读过这本书</text>
+      </view>
+    </view>
+    <button bindtap='popLock' data-id="1" class="share_btn" hover-class='none'>
+      <image src='{{img_url}}icon_share.png' mode='widthFix' class="b_icon"></image>
+    </button>
+  </view>
+  <!-- <view class="piece_intro"  style='max-height: {{THeight}}rpx;overflow: hidden;'> -->
+  <view class="piece_intro">
+    <view class="tit">绘本介绍</view>
+    <text>{{bookInfoData.intro}}</text>
+    <!-- <view class="seeall_txt" bindtap='seeAllTxt' wx:if="{{THeight != 'auto'}}">查看全文</view> -->
+  </view>
+  <view class="piece_share recom">
+    <view class="user_intro">
+      <view class="intro">
+        <text>宝妈推荐</text>
+      </view>
+      <view class="img_wrap">
+        <block wx:for="{{bookInfoData.recommend}}" wx:key='' wx:if="{{index < 3}}">
+          <image src='{{item.avatar}}' mode='widthFix' class="b_icon"></image>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class="piece_eval">
+    <text style='font-size:26rpx;color:#999;text-align:center;' wx:if="{{bookInfoData.recommend.length<=0}}">暂时没有得到宝妈的建议</text>
+    <view class="" wx:for="{{bookInfoData.recommend}}" wx:key=''>
+      <image src='{{item.avatar}}' mode='widthFix' class="b_icon"></image>
+      <text>{{item.recommend}}</text>
+    </view>
+  </view>
+</view>
+<!-- 分享弹框 -->
+<view class='pop-box' wx:if="{{pop1}}" catchtouchmove="myCatchTouch">
+  <view class='pop-bg' bindtap='popLock'></view>
+  <view class="pop_botside">
+    <button bindtap='shareWxpyq'>朋友圈</button>
+    <button open-type='share'>微信好友</button>
+    <button bindtap='popLock'>取消</button>
+  </view>
+</view>
+<!-- 确认订单弹框 -->
+<view class='pop-box' wx:if="{{pop2}}" catchtouchmove="myCatchTouch">
+  <view class='pop-bg' bindtap='popLock'></view>
+  <view class="pop_botside pay">
+    <button hover-class='none'>
+      <view>需花掉成长值</view>
+      <view class="pop_botside_right">
+        <image src='{{img_url}}icon_babycoin.png' mode='widthFix' class="b_icon"></image>
+        <view>{{bookInfoData.price}}</view>
+      </view>
+    </button>
+    <button hover-class='none'>
+      <view>收货方式</view>
+      <view class="pop_botside_right">
+        <image src='{{bookInfoData.avatar}}' mode='widthFix' class="b_icon"></image>
+        <view class='seller_name'>{{bookInfoData.nickname}}</view>
+        <view bindtap='copyTBL' data-txt="{{bookInfoData.nickname}}" data-msg="复制成功,可在小区群中@{{bookInfoData.nickname}},约定取书时间" style="border-radius: 20rpx;border: 1px solid #e4e4e4;padding:0 20rpx; line-height:40rpx;">复制</view>
+      </view>
+    </button>
+    <button hover-class='none' class="intro">
+      <view>下单说明</view>
+      <text>{{bookInfoData.order_explain}}</text>
+    </button>
+    <view class="bot_btn_box"></view>
+  </view>
+  <form bindsubmit="savaData" report-submit="true">
+    <button class="bot_btn" formType="submit">
+      确认订单
+    </button>
+  </form>
+</view>
+<!-- 成长值不足 -->
+<view class='pop-box pop-box2' wx:if="{{pop3}}">
+  <view class='pop-bg'></view>
+  <view class='pop-main'>
+    <image class="pop-close" src='{{img_url}}icn_pop_close.png' mode='widthFix' bindtap='popLock'></image>
+    <view class="pop-title"><image mode='widthFix' src='{{img_url}}icon_babycoin.png'></image><view>您的成长值不足</view></view>
+    <view class='pop-content'>
+      <view class='pop-text-img'>
+        <text>您可以通过分享获得成长值
+        或直接充值</text>
+      </view>
+    </view>
+    <view class="btn-pop">
+      <button hover-class='none' bindtap='jumpSharePay'>充值</button>
+      <button hover-class='none' bindtap='jumpShareGuide'>分享</button>
+    </view>
+  </view>
+</view>
+<!-- 浮动按钮 -->
+<view class="bot_btn_box"></view>
+<button class="bot_btn" data-id="2" bindtap='popLock'>
+  我要了
+</button>
+<!-- 去首页 -->
+<view class="goindex_btn" bindtap='jumpIndex' wx:if="{{parent_id}}">
+  <image src='/images/icon-gohome.png' mode='widthFix'></image>
+  <view>返回首页</view>
+</view>

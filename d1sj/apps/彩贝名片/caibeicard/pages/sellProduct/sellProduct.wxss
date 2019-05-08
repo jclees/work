@@ -1,0 +1,167 @@
+page {
+  background: #fff;
+}
+
+.wx-switch-input {
+  background: #ff8d0d !important;
+}
+
+/*白色样式（false的样式）*/
+
+.wx-switch-input::before {
+  background: #ff8d0d !important;
+}
+
+.item-ans {
+  background: #fff;
+  box-shadow: 0 0 0 0 rgba(210, 210, 210, 0.50);
+  border-radius: 8rpx;
+  margin: 20rpx;
+}
+
+.item-ans .item-ans-top {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 30rpx;
+  box-shadow: 0 1px 4px 0 rgba(201, 203, 208, 0.50);
+  border-radius: 8rpx;
+}
+
+.item-ans .item-ans-top .item-ans-top-img {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.item-ans .item-ans-top .item-ans-top-con {
+  font-size: 26rpx;
+  color: #1a1a1a;
+  width: 340rpx;
+  margin-left: 40rpx;
+  flex: 1;
+}
+
+.item-ans .item-ans-top .item-ans-top-con > view:nth-child(1) {
+  font-size: 26rpx;
+  color: #1a1a1a;
+  margin-bottom: 20rpx;
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.item-ans .item-ans-top .item-ans-top-con > view:nth-child(2) {
+  font-size: 24rpx;
+  color: #4d4d4d;
+  margin-bottom: 10rpx;
+}
+
+.item-ans .item-ans-top .item-ans-top-con > view:nth-child(3) {
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color: #ff3933;
+}
+
+.item-ans .item-ans-top .item-ans-top-con > view:nth-child(3) image {
+  width: 20rpx;
+  margin-right: 10rpx;
+}
+
+.msg_textrea {
+  padding: 0 30rpx;
+  font-size: 26rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.fl_label {
+  padding: 20rpx 30rpx;
+  font-size: 28rpx;
+  color: #4d4d4d;
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 1px solid #f1f1f1;
+  border-bottom: 1px solid #f1f1f1;
+  display: flex;
+  align-items: center;
+}
+
+.fl_label .fl_label_item {
+  border: 1px solid #d2d2d2;
+  border-radius: 6rpx;
+  padding: 8rpx 20rpx;
+  display: flex;
+  align-items: center;
+  margin-left: 40rpx;
+}
+
+.fl_label .fl_label_item image {
+  width: 14rpx;
+  margin-left: 20rpx;
+}
+
+.contact {
+  padding: 20rpx 30rpx;
+  font-size: 28rpx;
+  color: #4d4d4d;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.fb_contact {
+  padding: 20rpx 30rpx;
+  font-size: 28rpx;
+  color: #4d4d4d;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.fb_contact .fb_contact_tit {
+  margin-bottom: 30rpx;
+}
+
+.fb_contact .contact_me {
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color: #000;
+}
+
+.fb_contact .contact_me switch {
+  margin-left: 20rpx;
+}
+
+.contact_me .fl_label_item {
+  border-radius: 6rpx;
+  margin-left: 20rpx;
+  color: #c1c1c1;
+  display: flex;
+  align-items: center;
+}
+
+.contact_me .fl_label_item.active {
+  color: #000;
+}
+
+.contact_me .fl_label_item image {
+  width: 14rpx;
+  margin-left: 10rpx;
+}
+
+.fb_btn {
+  margin: 220rpx 30rpx 0;
+  font-size: 34rpx;
+  box-sizing: border-box;
+  background: #ffbf00;
+  box-shadow: 0 0 2px 0 #e4b117;
+  border-radius: 4rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  color: #1a1a1a;
+}

@@ -1,0 +1,33 @@
+<view class='mine-userinfo-box'>
+  <view class='mine-user'>
+    <image mode='widthFix' src='{{personData.avatar}}'></image>
+    <image mode='widthFix' src='{{img_url}}icon_vip.png' class="vip"></image>
+    <view>{{personData.nickname}}</view>
+  </view>
+  <view class="balan_coin">
+    <image src='{{img_url}}icon_babycoin.png' mode='widthFix'></image>
+    <view class="coins_nums">
+      {{personData.balance}}
+    </view>
+  </view>
+</view>
+<view class="hot_vip" data-id="1" data-num="{{moniesData.vips[0].num}}" data-moneyid="{{moniesData.vips[0].id}}" bindtap='payment'>
+  <view class="hot_vip_tit">{{moniesData.vips[0].money}}元/月会员费<text style="font-size:24rpx;">(每月共享借阅2册绘本，免会员费)</text></view>
+  <view class="hot_vip_card">
+    <view>VIP</view>
+    <view>
+      <view class="coins_nums">{{moniesData.vips[0].money}}元/{{moniesData.vips[0].num}}</view>
+      <image src='{{img_url}}icon_babycoin.png' mode='widthFix'></image>
+    </view> 
+    <button>立即购买></button>
+  </view>
+</view>
+<view class="hot_piece">
+  <button hover-class='cur' wx:for='{{moniesData.lists}}' wx:key="" data-id="2" data-moneyid="{{item.id}}" data-num="{{item.num}}"  bindtap='payment'>
+    <view>
+      <image src='{{img_url}}icon_babycoin.png' mode='widthFix'></image>
+      <text>{{item.num}}</text>
+    </view>
+    <view>{{item.money}}元</view>
+  </button>
+</view>

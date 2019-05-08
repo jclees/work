@@ -1,0 +1,253 @@
+/* pages/shop/orderDetail/orderDetail.wxss */
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  background-color: #f6f6f6;
+  position: relative;
+}
+.detail_tit {
+  width: 100%;
+  height: 150rpx;
+  background-color: #fff;
+  position: relative;
+}
+.detail_tit_box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.detail_tit_box icon {
+  vertical-align: middle;
+  margin-right: 15rpx;
+}
+.detail_tit_box text {
+  vertical-align: middle;
+}
+.order_info {
+  margin-top: 20rpx;
+  background-color: #fff;
+  padding: 25rpx 30rpx 0;
+}
+.order_info_con {
+  padding-top: 30rpx;
+  padding-bottom: 40rpx;
+}
+.order_info_con_left {
+  float: left;
+  width: 182rpx;
+  height: 182rpx;
+  margin-right: 35rpx;
+  background-color: red;
+}
+.order_info_con_left image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.order_info_con_right {
+  overflow: hidden;
+  height: 100%;
+  padding-top: 25rpx;
+}
+.order_info_con_right_name_left {
+  width: 85%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.order_info_con_right_name_right {
+  width: 15%;
+}
+.order_info_con_right_style {
+  padding-top: 30rpx;
+  margin-top: 30rpx;
+  color: #737373;
+}
+.order_info_con_right_price {
+  margin-top: 20rpx;
+  
+}
+.order_info_con_right_price text:first-child {
+  color: #ef3338;
+  margin-right: 35rpx;
+}
+.order_info_con_right_price text:last-child {
+  color: #a3a3a3;
+  text-decoration: line-through;
+}
+.order_remarks {
+  margin-top: 10rpx;
+  background-color: #fff;
+  padding: 0 30rpx;
+}
+.order_dev_box {
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1rpx solid #f6f6f6;
+}
+.order_remarks_box {
+  height: auto;
+  padding: 25rpx 0;
+}
+.order_remarks_box_left {
+  width: 10%;
+}
+.order_remarks_box_right {
+  width: 90%;
+  padding-bottom: 25rpx;
+  text-align: right;
+  color: #a3a3a3;
+}
+.order_total {
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top: 10rpx;
+  background-color: #fff;
+  padding: 0 30rpx;
+}
+.order_total_right {
+  color: #ef3338;
+}
+.order_total_right text:first-child {
+  font-size: 36rpx;
+}
+.order_add {
+  margin-top: 10rpx;
+}
+.order_add_tit {
+  padding: 0 30rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+}
+.order_add_con {
+  background-color: #fff;
+  padding: 35rpx 30rpx;
+  color: #9d9d9d;
+}
+.order_add_con_top text:first-child {
+  margin-right: 56rpx;
+}
+.order_add_con_bottom {
+  margin-top: 20rpx;
+}
+.order_button {
+  width: 220rpx;
+  height: 70rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 70rpx;
+  background-color: #f8494c;
+  color: #fff;
+  margin: 40rpx auto 40rpx;
+}
+.order_tab {
+  width: 100%;
+  height: 88rpx;
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  border-top: 1rpx solid #e0e0e0;
+  z-index: 1;
+  color: #000;
+}
+.order_tab_per:first-child {
+  margin-left: 240rpx;
+}
+.order_tab_per:last-child {
+  margin-right: 240rpx;
+}
+.order_tab_per {
+  width: 60rpx;
+}
+.order_tab_per_top {
+  padding-top: 5rpx;
+  width: 100%;
+}
+.order_tab_per_top image {
+  width: 40rpx;
+  height: 40rpx;
+  display: block;
+  margin: 0 auto;
+}
+
+
+/* 输入核销码 */
+.pop {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.cover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: rgba(0,0,0,0.5);
+}
+.pop_box {
+  position: relative;
+  z-index: 3;
+  background-color: #fff;
+  border-radius: 10rpx;
+  margin: 0 84rpx;
+  text-align: center;
+  padding-top: 50rpx;
+  padding-bottom: 100rpx; 
+  margin-top: 288rpx;
+}
+.pop_box_close {
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+}
+.pop_box_close image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.pop_box_input {
+  width: 384rpx;
+  height: 84rpx;
+  border-radius: 42rpx;
+  border: 2rpx solid #cccccc;
+  margin: 78rpx auto 0;
+}
+.pop_box_input input {
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  padding-left: 30rpx;
+}
+.input {
+  font-family: "苹方";
+}
+.pop_box_des {
+  margin-top: 30rpx;
+  color: #a9a9a9;
+}
+.pop_box_button {
+  width: 220rpx;
+  height: 70rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 70rpx;
+  margin: 50rpx auto 0;
+  color: #fff;
+  background-color: #f8494c;
+}
+
+
+
+
+
+

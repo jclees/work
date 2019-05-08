@@ -1,0 +1,72 @@
+<view class="search_wrap">
+  <view class="search">
+    <image src='{{img_url}}icon_search.png' mode='widthFix'></image>
+    <input type='text' placeholder='{{inputValue}}' focus bindconfirm="bindInpconfirm" confirm-type="search" bindinput='bindInpChange'></input>
+    <image src='{{img_url}}icon_empty.png' mode='widthFix' bindtap='emptyInp' wx:if="{{searchSucc}}"></image>
+  </view>
+  <view class="search_btn" bindtap='backPage' wx:if="{{!searchSucc}}">取消</view>
+</view>
+<view class="up_btn" bindtap='goTop' hidden='{{!floorstatus}}'>
+  <image src='{{img_url}}icon_uptop.png' mode='widthFix'></image>
+</view>
+<!-- 产品 -->
+<view class="main_product" wx:if="{{searchSucc}}">
+  <view class="fixed">
+    <scroll-view scroll-x="true" class="navbar fixed" style='z-index: 2;'>
+      <!-- <text data-idx="{{index}}" class="item active" wx:key="" data-id="1" bindtap="navbarTap">全部</text> -->
+      <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="" data-id="0" data-typeid="{{item.id}}" bindtap="navbarTap">{{item.name}}</text>
+    </scroll-view>
+    <scroll-view scroll-x="true" class="navbar navbar_sub fixed fixed2">
+      <!-- <text data-idx="{{index}}" class="item {{currentTab2==index ? 'active' : ''}}" wx:key="" data-id="1" bindtap="navbarTap">全部</text> -->
+      <text wx:for="{{navbarsub}}" data-idx="{{index}}" class="item {{currentTab2==index ? 'active' : ''}}" wx:key="" data-id="1" data-typeid="{{item.id}}" bindtap="navbarTap">{{item.age}}</text>
+    </scroll-view>
+  </view>
+  <view class="null_data" wx:if="{{pdData.length<=0}}" style="padding-top:380rpx;">
+      <image src="{{img_url}}nullindex.png" mode='widthFix'></image>
+      <view>等你分享</view>
+    </view>
+  <view class="pd_wrap clearfix" wx:else>
+    <view wx:for="{{pdData}}" wx:key="" data-id="{{item.id}}" bindtap='jumpProductDetails'>
+      <view class="pd_top">
+        <image src='{{item.imgurl}}' mode='aspectFit' class="pd_top_img"></image>
+        <view class="pd_top_fbr">
+          <image src='{{item.avatar}}' mode='widthFix' class="pd_top_fbr_img"></image>
+          <view class="pd_top_fbr_name">{{item.nickname}}</view>
+        </view>
+      </view>
+      <view class="pd_bot">
+        <view>{{item.name}}</view>
+        <view class="pd_bot_jfnum">
+          <image src='{{img_url}}icon_babycoin.png' mode='widthFix' class="b_icon"></image>
+          <view>
+            <text class="cool">{{item.price}}</text> 兑换
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="history_wrap" wx:if="{{!searchSucc}}">
+  <!-- 最近搜索 -->
+  <view class="history" wx:if="{{historySearchData.length>0}}">
+    <view>
+      <view>最近搜索</view>
+      <image src='{{img_url}}icon_del.png' mode='widthFix' bindtap='delHistorySearch'></image>
+    </view>
+    <view>
+      <view wx:for="{{historySearchData}}" wx:key="" bindtap='bindInpconfirm' data-key="{{item.keyword}}">{{item.keyword}}</view>
+      <!-- <view class="cur">噜噜噜噜噜噜噜噜噜</view> -->
+    </view>
+  </view>
+  <!-- 探索发现 -->
+  <view class="history" wx:if="{{hotSearchData.length>0}}">
+    <view>
+      <view>探索发现</view>
+    </view>
+    <view>
+      <view wx:for="{{hotSearchData}}" wx:key="" bindtap='bindInpconfirm' data-key="{{item.keyword}}">{{item.keyword}}</view>
+      <!-- <view class="cur">1元话费</view> -->
+    </view>
+  </view>
+</view>

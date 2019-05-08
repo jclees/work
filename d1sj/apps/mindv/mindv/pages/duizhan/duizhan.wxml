@@ -1,0 +1,152 @@
+<!--pages/duizhan/duizhan.wxml-->
+<view class='olw'>
+
+
+  <!--匹配用户-->
+
+  <view class='' wx:if="{{step==1}}">
+    <view class="container">
+      <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+        
+      </view>
+      <view class="mate">
+        <view class="mate_box">
+          <image class='div_rotate' src="{{img_url}}yuan.png"></image>
+          <view class="mate_box_touxiang">
+            <image src="{{avatar}}"></image>
+          </view>
+        </view>
+        <view class="mate_box_text">
+          <text>{{nickname}}</text>
+          <text>LV.{{level}}</text>
+          <view class='mate-gold'>
+            <image src='{{img_url}}icon-gold.png' mode='widthFix'></image>
+            <text>{{consume_point}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <!--匹配成功进入pk-->
+  <view class='' wx:elif="{{step==2}}">
+  <view class="container">
+  <view class="index">
+    <image src="{{img_url}}bg-pk.png"></image>
+    <view class="index_box">
+      <view class="index_box_left" animation="{{animationpka}}">
+        <image src="{{img_url}}icon-bg-pk1.png"></image>
+        <view class="index_box_left_info">
+          <view class="index_box_left_info_img">
+            <image src='{{avatar}}'></image>
+          </view>
+          <view class='pk1-user-text'>
+            <view class="">{{nickname}}</view>
+            <view class="">Lv.{{from_client_info.level}}</view>
+            <view class="">{{store}}</view>
+          </view>
+
+          <!--  金币数  -->
+          <!-- <view class="index_box_left_info_money">
+            <image src="{{img_url}}money.png"></image>  
+            <text>{{gold}}</text>
+          </view> -->
+        </view>
+      </view>
+      <view class="index_box_right" animation="{{animationpkb}}">
+        <image src="{{img_url}}icon-bg-pk2.png"></image>
+        <view class="index_box_right_info">
+          <view class="index_box_right_info_img">
+            <image src="{{to_client_info.avatar}}"></image>
+          </view>
+          <view class='pk2-user-text'>
+            <view>{{to_client_info.display_name}}</view>
+            <!-- <view>来自:{{froms}}</view> -->
+            <view>Lv.{{to_client_info.level}}</view> 
+            <view class="">{{to_client_info.store}}</view>
+          </view>
+
+          <!--  金币数  -->
+          <!-- <view class="index_box_right_info_money">
+            <image src="{{img_url}}money.png"></image>
+            <text>{{golds}}</text>
+          </view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+    
+  </view>
+
+  <view wx:elif="{{step==3}}">
+    <include src="timu.wxml" />
+  </view>
+
+  <!--成功结果页面-->
+  <view class='timu_cg' wx:elif="{{step==4}}">
+    <include src="tiaozhan.wxml" />
+  </view>
+
+
+  <!--失败结果页面-->
+  <view class='timu_cg' wx:elif="{{step==5}}">
+    <include src="shibai.wxml" />
+  </view>
+
+  <view class='pipei' wx:elif="{{step==6}}">
+    <include src="dengdai.wxml" />
+  </view>
+
+
+
+  <!--表情包-->
+  <view class="emobox" wx:if="{{emoFlag}}">
+    <view class="emotionPanel" wx:if="{{emotionBox}}" animation="{{animation}}">
+      <image wx:for="{{ emotions }}" wx:key="item.id" src="{{item.src}}" class="emotion" data-name="{{item.name}}" bindtap="chooseEmotion"></image>
+    </view>
+  </view>
+  <view wx:if="{{data2.msg_type==2 && showEmo}}">
+    <image class="emopic" src="{{data2.content}}"></image>
+  </view>
+
+  <!--举报-->
+  <!-- <form bindsubmit="reportSubmit">
+    <view class="small-model" hidden='{{smallmodel}}'>
+      <view class="model_close" bindtap='modelClose'></view>
+      <view class="model_box">
+        <view class="model_close-icon" bindtap='modelClose'>
+          <image src="{{tupian}}close.png" />
+        </view>
+        <view class="img_logo">
+          <view class="tunt">
+            <image src="{{tupian}}jubao2_03.png" />
+          </view>
+        </view>
+        <view class="im_jubao">举报</view>
+        <view class='omyq'>
+          <view>请您选择举报类型</view>
+          <view>我们会认真审查您的举报和反馈</view>
+        </view>
+        <view class='ohd'>
+          <checkbox-group name="checkbox">
+            <view class='lmv'>
+              <checkbox value="对方作弊" color='#322c5b' />对方作弊 </view>
+            <view class='lmv'>
+              <checkbox value="本组题目有错误" color='#322c5b' />本组题目有错误</view>
+            <view class='lmv'>
+              <checkbox value="举报对方头像昵称" color='#322c5b' />举报对方头像昵称</view>
+          </checkbox-group>
+        </view>
+        <button class='hide_bottom' type="default" form-type="submit" style="background:#ff5858;color: #fff;">
+          <view bindtap='smallModel'>提交</view>
+        </button>
+
+      </view>
+    </view>
+  </form> -->
+
+
+</view>

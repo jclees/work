@@ -1,0 +1,31 @@
+<template name="product_noshopping">
+    <scroll-view scrollY bindscrolltolower="getMoreProduct" style="height:{{winHeight}}px;background:#f7f7f7">
+        <navigator url="/dbs_masclwlcard/pages/product_detail2/product_detail2?product_id={{item.id}}&card_id={{card_id}}" wx:if="{{business.length>0}}" wx:for="{{business}}" wx:key="index">
+            <view>
+                <view class="product_img_list">
+                    <form reportSubmit bindsubmit="from_send">
+                        <button formType="submit"></button>
+                    </form>
+                    <image mode="aspectFill" src="{{item.cp_bs_img[0]}}"></image>
+                    <view class="product_list_text">
+                        <view class="product_name">
+								{{item.cp_bs_name}}
+						  </view>
+                        <view class="product_price">
+								{{item.cp_bs_price}}
+						</view>
+                    </view>
+                </view>
+            </view>
+            <view style=" padding: 10rpx 0rpx"></view>
+        </navigator>
+        <block wx:if="{{business.length==0}}">
+            <image class="nodata_img" src="../../images/product_icon_default.png"></image>
+            <view class="no_data">
+                <block wx:if="{{business.showLoad}}">加载中...</block>
+                <block wx:if="{{!business.showLoad}}">TA还没有上传产品</block>
+            </view>
+        </block>
+        <view style="height:60px;background:transparent;"></view>
+    </scroll-view>
+</template>

@@ -1,0 +1,33 @@
+<!--pages/shop/search/search.wxml-->
+<view class="container">
+  <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+    <view class="wxapp-toast-content">
+      <view class="wxapp-toast-content-text"> {{toastText}} </view>
+    </view>
+  </view>
+  <view class="address_tit clearfix">
+    <form bindsubmit="submit" bindsubmit="search">
+      <view class="fl form_left">
+        <input placeholder-class='search' bindinput="inputKey"  placeholder='请输入商品名称'></input>
+      </view>
+      <view class="fr form_right">
+        <button form-type="submit">搜索</button>
+      </view>
+    </form>
+  </view>
+  <view class="search_hot">
+    <view class="search_hot_tit">热门搜索</view>
+    <view class="search_hot_con">
+      <text class="search_hot_con_per clearfix" wx:for="{{hotList}}" wx:for-item="item" wx:key="{{item.name}}" data-item="{{item}}" bindtap="jumpRes">{{item.name}}</text>
+    </view>
+  </view>
+  <view class="search_his">
+    <view class="search_hot_tit clearfix">
+      <view class="search_hot_tit_left fl">历史搜索</view>
+      <view class="search_hot_tit_right fr" bindtap="empty">清空历史</view>
+    </view>
+    <view class="search_hot_con">
+      <text class="search_hot_con_per clearfix" wx:for="{{hisList}}" wx:for-item="item" wx:key="{{item.name}}" data-item="{{item}}" bindtap="jumpRes">{{item.name}}</text>
+    </view>
+  </view>
+</view>

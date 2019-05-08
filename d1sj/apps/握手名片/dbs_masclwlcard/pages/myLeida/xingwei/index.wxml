@@ -1,0 +1,42 @@
+<view class="null_data" wx:if="{{xingWList.length<=0}}">
+  <view>暂时没有数据</view>
+</view>
+<view class='con_main'>
+  <view class='con_bot'>
+    <view class='items' wx:for="{{xingWList}}" wx:key="">
+      <view class="items_main">
+        <view>
+          <image src='{{item.avatar}}' mode='widthFix' bindtap='{{item.id != 0?"openJumpPop":""}}' data-id="{{item.id}}" data-zhuce="{{item.is_card}}"></image>{{item.message}}</view>
+          <view class='time'>{{item.date}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="pop" wx:if="{{pop1}}" catchtouchmove="myCatchTouch">
+  <view class="pop_cover" bindtap='hideJumpPop'></view>
+  <view class='pop_con center'>
+    <view class='pop_tit'>
+      <view>提示</view>
+      <image src='/dbs_masclwlcard/images/icon_pop_close.png' mode='widthFix' bindtap='hideJumpPop'></image>
+    </view>
+    <view class="pop_main">
+      <view class="pop_main_txt">
+        <image src='/dbs_masclwlcard/images/icon_pop.png' mode='widthFix'></image>
+        <view>是否发起互动</view>
+      </view>
+    </view>
+    <view class='pop_many_btn'>
+      <form bindsubmit='jump_parentcard' reportSubmit="true" wx:if="{{zhuce == 1}}">
+        <button hover-class='none' class='cancel' formType="submit">
+          <view>查看名片</view>
+        </button>
+      </form>
+      <form bindsubmit='goChat' reportSubmit="true">
+        <button hover-class='none' formType="submit">
+          发起对话
+        </button>
+      </form>
+    </view>
+  </view>
+</view>

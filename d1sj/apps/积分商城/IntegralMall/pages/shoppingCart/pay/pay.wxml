@@ -1,0 +1,138 @@
+<!--pages/shop/pay/pay.wxml-->
+<wxs module="filters" src="../../../addmul.wxs"></wxs>
+<view class="container">
+  <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+    <view class="wxapp-toast-content">
+      <view class="wxapp-toast-content-text"> {{toastText}} </view>
+    </view>
+  </view>
+  <view class="pay_tit" wx:if="{{order.post===1}}" hidden='{{address}}' bindtap="chooseAdd">
+    <view class="pay_tit_box">
+      <image src="../../../imgs/add.png"></image>
+      <text>选择收货地址</text>
+    </view>
+  </view>
+
+
+  <view class="pay_info" style='height:auto;' hidden='{{!address}}' bindtap="chooseAdd">
+    <view class="pay_info_top clearfix">
+      <view class="fl pay_info_top_left ">
+        姓名: {{address.userName}}
+      </view>
+    </view>
+    <view class="pay_info_top clearfix">
+      <view class="fl pay_info_top_left " style='line-height:60rpx;'>
+        手机号: {{address.telNumber}}
+      </view>
+      <view class="fr pay_info_top_right ">
+        <image src="../../../imgs/tel.png"></image>
+      </view>
+    </view>
+    <view class="pay_info_bottom clearfix" style='margin-top: 0;'>
+      <view class="fl pay_info_bottom_left">
+        地址:{{address.provinceName+address.cityName+address.countyName+address.detailInfo}}
+      </view>
+      <view class="fr pay_info_bottom_right">
+        <image src="../../../imgs/one_pos.png"></image>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="pay_info" wx:if="{{order.post!==1}}">
+    <view class="pay_info_top clearfix">
+      <view class="fl pay_info_top_left ">
+        取货时间: {{timeList.open_time}}-{{timeList.end_time}}
+      </view>
+      <!-- <view class="fr pay_info_top_right ">
+        <image src="../../../imgs/tel.png"></image>
+      </view> -->
+    </view>
+    <view class="pay_info_bottom">
+      <view class="fl pay_info_bottom_left">
+        取货地点:{{timeList.address}}
+      </view>
+      <view class="fr pay_info_bottom_right">
+        <image src="../../../imgs/one_pos.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="order_info" wx:for="{{order.data}}" wx:key="">
+    <view class="order_info_tit"><image src='/imgs/cart_shop_icon.png' mode='widthFix' style='width:35rpx;'></image>{{item.name}}</view>
+    <view class="order_info_con clearfix" wx:for="{{item.list}}" wx:for-item="subitem" wx:key="">
+      <view class="order_info_con_left">
+        <image src="{{subitem.img}}" mode='aspectFill'></image>
+      </view>
+      <view class="order_info_con_right">
+        <view class="order_info_con_right_name">
+          <view class="fl order_info_con_right_name_left">{{subitem.name}}</view>
+          <view class="fr order_info_con_right_name_right">×{{subitem.num}}</view>
+        </view>
+        <view class="order_info_con_right_style">
+          款式:{{subitem.spec}}
+        </view>
+        <view class="order_info_con_right_price">
+          <text><block wx:if="{{subitem.price.money != 0}}">¥{{subitem.price.money}}＋</block>{{subitem.price.score}}积分</text>
+          <!-- <text>¥{{subitem.price.money}}</text> -->
+          <text></text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="order_remarks clearfix">
+    <view class="order_dev_box clearfix">
+      <view class="fl">
+        配送:
+      </view>
+      <view class="fr">
+        ¥{{order.postage}}
+      </view>
+    </view>
+    <view class="order_dev_box clearfix">
+      <view class="fl">
+        社区志愿者代收免运费:
+      </view>
+      <view class="fr">
+        <view class="body-view">
+          <switch bindchange="changePrice" data-red="1" color="#febd2d" />
+        </view>
+      </view>
+    </view>
+    <!-- <view class="order_remarks_box clearfix">
+      <view class="fl order_remarks_box_left">
+        备注:
+      </view>
+      <view class="fr order_remarks_box_right">
+        <input type="text" placeholder='买家留言，最多30个字' placeholder-class='input' bindinput='remarks' value="{{remarks}}"></input>
+      </view>
+    </view> -->
+
+  </view>
+
+  <view class="order_total clearfix" style='margin-top: 20rpx;'>
+    <view class="fl order_total_left">
+      备注:
+    </view>
+    <view class="fr order_total_right">
+      <input style='height:80rpx;line-height:80rpx;color:#000;' type="text" placeholder='买家留言，最多30个字' placeholder-class='input' bindinput='remarks' value="{{remarks}}"></input>
+    </view>
+  </view>
+  <view class="order_total clearfix">
+    <view class="fl order_total_left">
+      合计:
+    </view>
+    <view class="fr order_total_right">
+      <text wx:if="{{moneyTotal != 0}}"> ¥{{moneyTotal}}＋</text>
+      <text>{{scoreTotal}}</text>
+      <text>积分</text>
+    </view>
+  </view>
+  <view style='height:88rpx;'></view>
+  <view class="pay_tab clearfix">
+    <view class="pay_tab_button fr" bindtap="pay">立即购买</view>
+    <view class="pay_tab_text fr">
+      <text>实付:</text>
+      <text>¥{{filters.toFix(moneyTotal)}}</text>
+    </view>
+  </view>
+</view>

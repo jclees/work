@@ -1,0 +1,60 @@
+@import '/pages/sellProduct/sellProduct.wxss';
+
+page {
+  background: #fff;
+  border-top: 2px dashed #ebebeb;
+}
+.near_address{
+  padding: 0 30rpx;
+  color: #4d4d4d;
+  font-size: 28rpx;
+}
+.near_address > view{
+  border-bottom: 1px solid #f0f0f0;
+  padding: 30rpx 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.near_address > view::before{
+  content: "";
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 100rpx;
+  border: 2px solid #bebebe;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0,-50%);
+}
+.near_address .address_intro{
+  padding-left: 60rpx;
+}
+.near_address .address_intro > view:nth-child(2){
+  color: #787878;
+  font-size: 26rpx;
+}
+.near_address .copy_btn{
+  border: 1px solid #d1d1d1;
+  border-radius: 200rpx;
+  padding: 0 20rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+.get_address{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #787878;
+  font-size: 28rpx;
+  padding: 40rpx;
+}
+.get_address image{
+  width: 40rpx;
+}
+.get_address view{
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-left: 20rpx;
+}

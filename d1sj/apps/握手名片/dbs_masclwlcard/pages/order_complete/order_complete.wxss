@@ -1,0 +1,99 @@
+.container {
+    background: #fff;
+}
+
+.line {
+    margin: 0 30rpx;
+}
+
+.order-success {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 326rpx;
+    border-top: 1rpx solid #E5E5E5;
+}
+
+.order-success image {
+    height: 140rpx;
+    width: 140rpx;
+    padding: 60rpx 0 30rpx;
+}
+
+.order-success text {
+    font-size: 36rpx;
+    color: #000;
+    letter-spacing: 0;
+    line-height: 36rpx;
+}
+
+.order-info {
+    margin: 0 30rpx;
+    padding: 30rpx 0 0;
+    border-top: 1rpx solid #E5E5E5;
+}
+
+.order-info-line {
+    display: flex;
+    justify-content: space-between;
+    margin: 28rpx 0;
+}
+
+.order-info-line:first-child,.order-info-line:last-child {
+    margin: 0;
+}
+
+.order-info-money {
+    font-size: 34rpx;
+    color: #5d5d5d;
+    letter-spacing: 0;
+    line-height: 34rpx;
+}
+
+.order-info-num {
+    font-size: 28rpx;
+    color: #8a8a8f;
+    letter-spacing: 0;
+    line-height: 28rpx;
+}
+
+.operation {
+    display: flex;
+    justify-content: space-around;
+    padding: 70rpx 0 50rpx;
+}
+
+.address-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.address {
+    flex: 0 0 500rpx;
+    font-size: 32rpx;
+    color: #959595;
+    letter-spacing: 0;
+    line-height: 42rpx;
+    text-align: right;
+}
+
+.operation-check-order,.operation-more {
+    font-size: 32rpx;
+    flex: 0 0 280rpx;
+    height: 88rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.operation-check-order {
+    border: 2rpx solid #FF3D33;
+    border-radius: 10rpx;
+    color: #FF3D33;
+}
+
+.operation-more {
+    background: #FF3D33;
+    border-radius: 10rpx;
+    color: #fff;
+}

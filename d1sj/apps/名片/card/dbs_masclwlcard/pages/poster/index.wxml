@@ -1,0 +1,5 @@
+<loading hidden="{{dataLoaded}}">生成海报...</loading>
+<view class="poster-wrap" hidden="{{!dataLoaded}}">
+    <canvas canvasId="myCanvas" class="type1" style="height:1000rpx"></canvas>
+    <view bindtap="savePoster" class="savePoster" style="bottom:60rpx">保存名片海报</view>
+</view>

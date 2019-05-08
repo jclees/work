@@ -1,0 +1,330 @@
+page {
+  background: #f6f6f6;
+}
+
+.contact_main .mine_user {
+  overflow: hidden;
+}
+
+.contact_main .mine_user .user_bg {
+  width: 100%;
+}
+
+.contact_main .mine_user .user_main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.contact_main .mine_user .user_img {
+  width: 100rpx;
+  height: 100rpx;
+  padding: 20rpx;
+  border-radius: 100rpx;
+  margin: 60rpx auto 14rpx;
+  border: 1px solid #fff;
+}
+
+.contact_main .mine_user .user_name {
+  font-size: 28rpx;
+  color: #fff;
+  text-align: center;
+  margin: 0 0 24rpx 0;
+}
+
+.contact_main .mine_user .user_btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 24rpx 0;
+}
+
+.contact_main .mine_user .user_btns > view:nth-child(1) {
+  background: #f67a1b;
+  border-radius: 8rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  padding: 0 30rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #fff;
+  margin-right: 90rpx;
+}
+
+.contact_main .mine_user .user_btns > view:nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact_main .mine_user .user_btns > view:nth-child(2) > view:nth-child(1) {
+  background: #1caa1b;
+  border-radius: 8rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  color: #fff;
+  margin-right: 30rpx;
+}
+
+.contact_main .mine_user .user_btns > view:nth-child(2) > image {
+  width: 36rpx;
+}
+
+.contact_main .mine_list {
+  overflow: hidden;
+  margin-top: 20rpx;
+}
+
+.contact_main .mine_list .items {
+  margin-bottom: 20rpx;
+  background: #fff;
+  padding: 0 40rpx;
+  position: relative;
+}
+
+.contact_main .mine_list .items .cut_bg {
+  width: 100%;
+  position: absolute;
+  bottom: -70rpx;
+  left: 0;
+  display: flex;
+  padding: 0 68rpx;
+  z-index: 2;
+  justify-content: space-between;
+}
+
+.contact_main .mine_list .items .cut_bg > image {
+  width: 22rpx;
+}
+
+.contact_main .mine_list .items.items_two {
+  background: transparent;
+  border: 1px solid #bfbfbf;
+  margin: 0 40rpx;
+  padding: 0 20rpx;
+  border-radius: 20rpx;
+}
+
+.contact_main .mine_list .item_tit {
+  font-size: 34rpx;
+  position: relative;
+  padding: 20rpx;
+  margin-left: 40rpx;
+}
+
+.contact_main .mine_list .items > textarea {
+  color: #000;
+  width: 100%;
+  padding: 10rpx 0;
+  font-size: 26rpx;
+}
+
+/* 
+.contact_main .mine_list .items .from_img_box {
+  font-size: 26rpx;
+  color: #5cb4e6;
+  text-align: center;
+  height: 306rpx;
+  width: 100%;
+  padding: 100rpx 0 0 0;
+}
+
+.contact_main .mine_list .items .from_img_box image{
+  width: 40rpx;
+  margin: 0 auto 10rpx;
+} */
+
+.contact_main .mine_list .item_tit::after {
+  content: "";
+  position: absolute;
+  height: 34rpx;
+  left: 0;
+  top: 24rpx;
+  width: 6rpx;
+  background: #f67a1b;
+}
+
+.sava_btn {
+  text-align: center;
+}
+
+.sava_btn button {
+  width: calc(100% - 80rpx);
+  height: 88rpx;
+  line-height: 88rpx;
+  margin-bottom: 88rpx;
+  margin-top: 66rpx;
+  color: #fff;
+  border-radius: 8rpx;
+  background: #1caa1b;
+}
+
+.contact_main .mine_list .item_con .from_info {
+  display: flex;
+  padding: 30rpx 0;
+}
+
+.contact_main .mine_list .item_con .from_info .inp_box {
+  flex: 1;
+}
+.contact_main .mine_list .item_con .from_info .img_box .img_prev {
+  width: 180rpx;
+  height: 180rpx;
+  background: #f6f6f6;
+  margin-right: 20rpx;
+  position: relative;
+}
+.contact_main .mine_list .item_con .from_info .img_box .img_prev .upload_tips {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28rpx;
+  color: #1caa1b;
+  width: 100%;
+  text-align: center;
+}
+.contact_main .mine_list .item_con .from_info .img_box .img_prev .cool {
+  font-size: 26rpx;
+  color: #bfbfbf;
+}
+
+.contact_main .mine_list .item_con .from_info .img_box > .upload_txt{
+  font-size: 20rpx;
+  color: #999;
+  padding-top: 10rpx;
+}
+
+
+.contact_main .mine_list .item_con .from_info > .inp_box input {
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-radius: 8rpx;
+  border-bottom: 1px solid #efefef;
+  font-size: 30rpx;
+  color: #000;
+  padding-left: 10rpx;
+}
+.contact_main .mine_list .item_con .from_info > .inp_box input:last-of-type{
+  border:0;
+}
+
+.contact_main .mine_list .item_con .from_info .many {
+  display: flex;
+  width: 380rpx;
+}
+
+.contact_main .mine_list .item_con .from_info .many input {
+  margin-right: 30rpx;
+}
+
+.contact_main .mine_list .item_con .more_from_info {
+  border-top: 1px solid #bfbfbf;
+  padding-top: 10rpx;
+}
+
+.contact_main .mine_list .item_con .more_from_info .more_from_info_items {
+  border-bottom: 1px solid #efefef;
+  padding: 16rpx 0;
+  display: flex;
+  align-items: center;
+}
+
+.contact_main .mine_list .item_con .more_from_info .more_from_info_items:last-of-type {
+  border: 0;
+}
+
+.contact_main .mine_list .item_con .more_from_info .more_from_info_items .more_from_info_tit {
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  color: #1caa1b;
+  margin-left: 10rpx;
+  width: 200rpx;
+}
+
+.contact_main .mine_list .item_con .more_from_info .more_from_info_items .more_from_info_tit image {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 100%;
+  margin-right: 16rpx;
+}
+
+.contact_main .mine_list .item_con .more_from_info .more_from_info_items input {
+  font-size: 30rpx;
+  color: #3c3c3c;
+  margin-left: 10rpx;
+  flex: 1;
+  text-align: right;
+}
+
+.contact_main .pop-content >.uoload_imgs {
+  margin: 0 0 30rpx;
+  align-items: flex-start;
+  height: 320rpx;
+  width: 100%;
+  padding: 20rpx;
+  position: relative;
+  border: 2px dashed #efefef;
+}
+.from_img_box {
+  padding: 20rpx 0;
+}
+
+.from_img_box .imgs_box {
+  position: relative;
+}
+
+.from_img_box .imgs_box > image {
+  width: 100%;
+}
+
+.from_img_box .imgs_box .del_img {
+  position: absolute;
+  right: -15rpx;
+  top: -15rpx;
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.from_img_box .imgs_box .del_img image {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.from_img_box .choose_box {
+  /* position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); */
+  text-align: center;
+  color:#bfbfbf;
+  font-size: 26rpx;
+  padding: 60rpx 0;
+}
+
+.from_img_box .choose_box >image {
+  width: 84rpx;
+  height: auto;
+  margin: 10rpx auto;
+}
+
+/* .contact_main .mine_list .item_con > view{
+  width: 33.33%;
+  float: left;
+  margin: 20rpx 0;
+}
+.contact_main .mine_list .item_con image {
+  width: 52rpx;
+  margin: 0 auto 10rpx;
+}
+
+.contact_main .mine_list .item_con view {
+  font-size: 30rpx;
+  color: #353535;
+  text-align: center;
+} */

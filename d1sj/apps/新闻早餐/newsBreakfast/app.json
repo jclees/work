@@ -1,0 +1,24 @@
+{
+  "pages": [
+    "pages/newsBreakfast/newsBreakfast",
+    "pages/index/index",
+    "pages/likes/likes",
+    "pages/posters/posters",
+    "pages/community/community",
+    "pages/publish/publish",
+    "pages/mine/mine",
+    "pages/spellCourse/spellCourse",
+    "pages/test/test",
+    "pages/module/nav/nav",
+    "pages/courseDetails/courseDetails",
+    "pages/message/message",
+    "pages/coin/coin",
+    "pages/curriculum/curriculum"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "链江湖",
+    "backgroundTextStyle": "light"
+  }
+}

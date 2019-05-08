@@ -1,0 +1,71 @@
+<view class="search_wrap {{menuFixed?'cur':''}}">
+  <view class="search">
+    <image src='{{img_url}}icon_search.png' mode='widthFix'></image>
+    <input type='text' placeholder='幼儿绘本' bindtap='bindInpfocus' disabled='disabled'></input>
+  </view>
+</view>
+<!--  banner  -->
+<view class="swiper-container">
+  <swiper class='swiper' indicator-dots="{{indicatorDots}}" autoplay="{{true}}" circular="{{true}}" bindchange='swiperChange'>
+    <block wx:for="{{bannerUrls}}" wx:key="unique">
+      <swiper-item>
+        <image src="{{item.img}}" class="slide-image" mode='widthFix' data-url="{{item.link}}" bindtap='jumpWebView' />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!--  自定义dots  -->
+  <view class="dots">
+    <block wx:for="{{bannerUrls}}" wx:key="unique">
+      <view class="dot{{index === swiperCurrent ? ' active' : ''}}"></view>
+    </block>
+  </view>
+</view>
+<view class="up_btn" bindtap='goTop' hidden='{{!floorstatus}}'>
+  <image src='{{img_url}}icon_uptop.png' mode='widthFix'></image>
+</view>
+<!-- 产品 -->
+<view class="main_product">
+  <view class="{{menuFixed?'fixed':''}}" id="affix">
+    <scroll-view scroll-x="true" class="navbar {{menuFixed?'fixed':''}}" style='z-index: 2;'>
+      <!-- <text data-idx="{{index}}" class="item active" wx:key="" data-id="1" bindtap="navbarTap">全部</text> -->
+      <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="" data-id="0" data-typeid="{{item.id}}" bindtap="navbarTap">{{item.name}}</text>
+    </scroll-view>
+    <scroll-view scroll-x="true" class="navbar navbar_sub {{menuFixed?'fixed fixed2':''}}">
+      <!-- <text data-idx="{{index}}" class="item {{currentTab2==index ? 'active' : ''}}" wx:key="" data-id="1" bindtap="navbarTap">全部</text> -->
+      <text wx:for="{{navbarsub}}" data-idx="{{index}}" class="item {{currentTab2==index? 'active' : ''}}" wx:key="" data-id="1" data-typeid="{{item.id}}" bindtap="navbarTap">{{item.age}} </text>
+    </scroll-view>
+  </view>
+  <view class="null_data" wx:if="{{pdData.length<=0}}">
+      <image src="{{img_url}}nullindex.png" mode='widthFix'></image>
+      <view>等你分享</view>
+    </view>
+  <view class="pd_wrap clearfix" style="margin-top:{{menuFixed?hei:'0'}};">
+    <view wx:for="{{pdData}}" wx:key="" data-id="{{item.id}}" bindtap='jumpProductDetails'>
+      <view class="pd_top">
+        <image src='{{item.imgurl}}' mode='aspectFit' class="pd_top_img"></image>
+        <view class="pd_top_fbr">
+          <image src='{{item.avatar}}' mode='widthFix' class="pd_top_fbr_img"></image>
+          <view class="pd_top_fbr_name">{{item.nickname}}</view>
+        </view>
+      </view>
+      <view class="pd_bot">
+        <view>{{item.name}}</view>
+        <view class="pd_bot_jfnum">
+          <image src='{{img_url}}icon_babycoin.png' mode='widthFix' class="b_icon"></image>
+          <view>
+            <text class="cool">{{item.price}}</text> 兑换
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- nav -->
+<view>
+  <include src="/pages/module/nav/nav.wxml" />
+</view>
+<view class='pop-box' wx:if="{{pop1}}" catchtouchmove="myCatchTouch">
+  <view class='pop-bg'></view>
+  <image class="index_guide index_guide{{guideIndex}}" src='/images/index_guide0{{guideIndex}}.png' mode='widthFix' bindtap='swithNext'></image>
+  <!-- <view class='index_guide_btn index_guide_btn{{guideIndex}}' bindtap='swithNext'></view> -->
+</view>

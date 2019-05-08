@@ -1,0 +1,402 @@
+/**index.wxss**/
+
+page {
+  background: #f0f0f5;
+}
+
+/*  index-head  */
+
+.index-head {
+  width: 750rpx;
+  padding: 40rpx 30rpx 10rpx;
+  background: #fed257;
+  display: -webkit-flex;
+  display: flex;
+  box-sizing: border-box;
+  border-radius: 0 0 20rpx 20rpx;
+  box-shadow: 0 4rpx 4rpx rgba(184, 184, 184, 0.5);
+  z-index: 10;
+  position: relative;
+}
+
+/*  用户头像  */
+
+.index-head-portrait {
+  padding: 20rpx;
+  width: 145rpx;
+  height: 145rpx;
+}
+
+.index-head-portrait image {
+  width: 145rpx;
+  height: 145rpx;
+  border-radius: 50%;
+}
+
+/*  用户信息  */
+
+.index-head-user {
+  flex: 1;
+  padding: 40rpx 20rpx;
+}
+
+.index-head-user text {
+  height: 46rpx;
+  line-height: 46rpx;
+  font-size: 36rpx;
+  color: #000;
+}
+
+.index-head-user text.index-head-username {
+  width: 200rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  float: left;
+}
+
+/*  icon  */
+
+.icon-gold {
+  height: 46rpx;
+  line-height: 46rpx;
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.icon-gold image {
+  width: 46rpx;
+  height: 46rpx;
+  float: left;
+}
+
+.index-head-gold {
+  height: 46rpx;
+  line-height: 46rpx;
+  margin-left: 10rpx;
+}
+
+/*  用户分享  */
+
+.index-head-share {
+  width: 50rpx;
+  height: 50rpx;
+  padding: 40rpx 20rpx;
+}
+
+.index-head-share image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.index-head-lv {
+  height: 46rpx;
+  line-height: 46rpx;
+  display: -webkit-flex;
+  display: flex;
+  width: 80%;
+  margin-top: 18rpx;
+  position: relative;
+}
+
+.index-head-lv>text {
+  font-size: 26rpx;
+  height: 46rpx;
+  line-height: 46rpx;
+  padding-right: 10rpx;
+}
+
+.index-head-lv>view {
+  display: inline-block;
+  flex: 1;
+  height: 20rpx;
+  overflow: hidden;
+  border: 2rpx solid #fc7636;
+  border-radius: 10rpx;
+  margin-top: 13rpx;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.index-nav-box {
+  position: relative;
+  padding: 0 15rpx 15rpx;
+  box-sizing: border-box;
+  margin-top: -4rpx;
+  z-index: 9;
+}
+
+.index-nav {
+  width: 100%;
+  padding: 30rpx 0 20rpx;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 0 0 20rpx 20rpx;
+  position: relative;
+}
+
+.bg-index {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+}
+
+.index-nav > view {
+  position: relative;
+  z-index: 10;
+}
+
+.index-nav-activity {
+  position: relative;
+  padding: 10rpx 15rpx;
+}
+
+.index-nav-activity image {
+  width: 100%;
+  border-radius: 20rpx;
+}
+
+.index-nav-activity label {
+  position: absolute;
+  top: 84rpx;
+  right: 75rpx;
+  width: 110rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #fff;
+  font-size: 36rpx;
+  text-align: center;
+  overflow: hidden;
+  text-shadow: 0 4rpx 4rpx #f23432;
+  font-weight: 700;
+}
+
+.index-nav-flex {
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.index-nav-flex view {
+  width: 50%;
+  padding: 10rpx 15rpx;
+  box-sizing: border-box;
+}
+
+.index-nav-flex view image {
+  width: 100%;
+  border-radius: 20rpx;
+}
+
+.qualifier-shadow {
+  box-shadow: 0 4rpx 4rpx rgba(248, 97, 79, 0.5);
+}
+
+.rank-shadow {
+  box-shadow: 0 4rpx 4rpx rgba(248, 146, 86, 0.5);
+}
+
+.shoping-shadow {
+  box-shadow: 0 4rpx 4rpx rgba(100, 124, 243, 0.5);
+}
+
+.friendpk-shadow {
+  box-shadow: 0 4rpx 4rpx rgba(190, 50, 221, 0.5);
+}
+
+.btn-addcitycom {
+  text-align: center;
+  margin-top: 50rpx;
+  background: transparent;
+  border: 0 none;
+}
+
+.btn-addcitycom button {
+  background: transparent;
+}
+
+.btn-addcitycom image {
+  width: 60%;
+}
+
+.btn-friendpk {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  font-size: 0;
+  border-radius: 20rpx;
+}
+
+button::after {
+  border: 0;
+}
+
+.authorization-box {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 99;
+}
+
+.authorization-main {
+  position: absolute;
+  width: 560rpx;
+  padding: 80rpx 60rpx 50rpx;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 10rpx;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.authorization-main > view {
+  font-size: 36rpx;
+  color: #000;
+  text-align: center;
+}
+
+.authorization-main .authorization-tip {
+  width: 100%;
+  font-size: 28rpx;
+  padding: 20rpx 0;
+  display: inline-block;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.authorization-main .authorization-tip text {
+  font-size: 28rpx;
+  padding: 20rpx 0;
+  display: inline-block;
+  font-weight: 700;
+}
+
+.authorization-main .icon_logo {
+  width: 130rpx;
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  background-size: 100%;
+}
+
+.authorization-main button {
+  background: #27ac28;
+  color: #fff;
+  font-size: 32rpx;
+  width: 90%;
+  height: 84rpx;
+}
+
+.authorization-main button image {
+  width: 42rpx;
+  vertical-align: top;
+  margin-top: 22rpx;
+  margin-right: 10rpx;
+}
+
+.index-head-lv .experience {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 16rpx;
+  color: #000;
+}
+
+/*  金币弹出提醒  */
+
+.pop-share-gold {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.pop-share-gold-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 101;
+}
+
+.pop-share-gold-main-box {
+  position: absolute;
+  width: 550rpx;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 102;
+  box-sizing: border-box;
+  padding: 6rpx;
+  border-radius: 30rpx;
+  background: -webkit-linear-gradient(to bottom, #2bfb61, #2a92d3);
+  background: linear-gradient(to bottom, #2bfb61, #2a92d3);
+}
+
+.pop-share-gold-main {
+  position: relative;
+  width: 100%;
+  padding: 50rpx 40rpx;
+  background: #fff;
+  border-radius: 30rpx;
+  box-sizing: border-box;
+}
+
+.pop-btn-close {
+  position: absolute;
+  top: 0rpx;
+  right: 0rpx;
+  width: 30rpx;
+  height: 30rpx;
+  padding: 20rpx;
+}
+
+.pop-btn-close image {
+  width: 100%;
+}
+
+.btn-addyuny {
+  margin-top: 20rpx;
+  padding: 0 70rpx;
+}
+
+.btn-addyuny button {
+  border-radius: 20rpx;
+  font-size: 34rpx;
+  background: -webkit-linear-gradient(to bottom, #fc7a51, #f54b4e);
+  background: linear-gradient(to bottom, #fc7a51, #f54b4e);
+  color: #fff;
+}
+
+.btn-addyuny button:hover {
+  background: -webkit-linear-gradient(to top, #fc7a51, #f54b4e);
+  background: linear-gradient(to top, #fc7a51, #f54b4e);
+}
+
+.pop-yy-tit {
+  font-size: 36rpx;
+  color: #000;
+  text-align: center;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.pop-yy-content text {
+  font-size: 30rpx;
+  color: rgba(0, 0, 0, 0.6);
+  padding: 20rpx 0;
+  display: inline-block;
+}

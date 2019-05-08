@@ -1,0 +1,55 @@
+.head {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1000000;
+}
+
+.status {
+    height: 22px;
+    background: #000;
+}
+
+.nav {
+    height: 40px;
+}
+
+.nav_title {
+    float: left;
+    height: 40px;
+    width: 100%;
+    background: #000;
+    line-height: 40px;
+    font-size: 16px;
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    color: #fff;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.newapi {
+    width: 100%;
+}
+
+.nav_goback {
+    height: 40px;
+    width: 40px;
+    padding: 10px;
+    position: relative;
+}
+
+.nav_goback image {
+    height: 17px;
+    margin-top: 2px;
+    width: 20px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+}

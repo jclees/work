@@ -1,0 +1,22 @@
+image {
+  height: auto;
+}
+
+.box > view {
+  font-size: 24rpx;
+  color: red;
+}
+
+.cool {
+  width: 300rpx;
+  height: 300rpx;
+  background: #666;
+}
+
+.imgbox {
+  width: 300rpx;
+}
+
+.imgbox image {
+  width: 300rpx;
+}

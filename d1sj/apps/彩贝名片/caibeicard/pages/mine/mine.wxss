@@ -1,0 +1,131 @@
+/* mine.wxss */
+
+.mine-userinfo-box {
+  padding: 50rpx 72rpx 86rpx;
+  background: #ffbf00;
+  font-size: 0;
+}
+
+.mine-user {
+  display: flex;
+  align-items: center;
+}
+
+.mine-user image {
+  border-radius: 50%;
+  width: 120rpx;
+  margin-right: 8rpx;
+}
+
+.mine-user> view {
+  color: #fff;
+  font-size: 30rpx;
+  padding-top: 5rpx;
+}
+
+.mine-userinfo {
+  display: flex;
+  color: #fff;
+  flex-wrap: wrap;
+  margin-top: 20rpx;
+}
+
+.mine-userinfo view {
+  width: 50%;
+  font-size: 30rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  box-sizing: border-box;
+  padding-left: 50rpx;
+}
+
+.mine-userinfo view image {
+  width: 32rpx;
+  vertical-align: top;
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.mine-coin-box {
+  position: relative;
+  margin-top: -60rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 0 1px 0 rgba(210, 210, 210, 0.50);
+  padding: 36rpx 40rpx 44rpx;
+}
+
+.mine-coin-box .coins {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.mine-coin-box .coins > image:nth-child(1) {
+  width: 50rpx;
+}
+
+.mine-coin-box .coins > .coins_nums {
+  font-size: 32rpx;
+  color: #000;
+}
+
+.mine-coin-box .coins > .coins_nums >view:nth-child(2) {
+  font-size: 24rpx;
+  padding-top: 10rpx;
+}
+
+.mine-coin-box .coins > button {
+  background: #ff8d0d;
+  box-shadow: 0 1px 1px 0 #774a17;
+  border-radius: 200rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 28rpx;
+  color: #fff;
+  padding: 0 28rpx;
+  margin: 30rpx 0 0 0;
+}
+
+.mine_nav >view {
+  background: #fff;
+  border:1px solid #f7f7f7;
+  margin-top: 30rpx;
+}
+
+.mine_nav >view button {
+  margin: 0;
+  padding: 0 30rpx 0 50rpx;
+  display: flex;
+  align-items: center;
+  height: 88rpx;
+  line-height: 88rpx;
+  justify-content: space-between;
+  border-radius: 0;
+}
+.mine_nav >view button:first-of-type{
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.mine_nav >view button text {
+  font-size: 28rpx;
+  color: #1a1a1a;
+}
+.mine_nav >view button .min_icon{
+  display: flex;
+  align-items: center;
+}
+.mine_nav >view button .min_icon image {
+  width: 12rpx;
+  margin-left: 40rpx;
+}
+
+.mine_nav >view button .min_icon view {
+  background: #ff3933;
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+}

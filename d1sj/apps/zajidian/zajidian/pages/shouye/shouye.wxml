@@ -1,0 +1,170 @@
+<!--pages/shouye/shouye.wxml-->
+<view class='omg'>
+  <view class='omg_top'>
+    <view class='omg_top_left'>
+      <view class='un'>
+        <navigator url='/pages/rycenter/rycenter'>
+          <view class='renyua_wq timu_mi'>
+            <image src='{{user_info.avatar}}'></image>
+          </view>
+        </navigator>
+        <view class='timu_mi'>
+          <view class='timu_mi_l'>
+            <view class='lmd'>{{user_info.display_name}}</view>
+            <navigator url='/pages/rycenter/rycenter'>
+              <view class='lmd'>
+                <image src='{{tupian}}10_03.png?v=1.0'></image>
+              </view>
+            </navigator>
+          </view>
+          <view class='timu_mi_r'>
+            <view class='lmd'>Lv.{{user_info.level}}</view>
+            <view class='lmd'>
+              <view class='jindu'>
+                <view class='jingdu_b'>
+                  <image src='{{tupian}}11_03.png?v=1.0'></image>
+                  <view class='jingdu_er'></view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='omg_top_right'>
+      <view class='omg_top_right_left'>
+        <view class='omg_top_right_d'>
+          <view class='omg_htf'>
+            <image src='{{tupian}}13_03.png?v=1.0'></image>
+          </view>
+          <view class='omg_qwe'>{{user_info.points}}</view>
+        </view>
+        <image src='{{tupian}}12_03.png?v=1.0'></image>
+      </view>
+      <view class='omg_top_right_right'>
+        <image src='{{tupian}}14_03.png?v=1.0'></image>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='top_f'></view>
+<view class='jnei'>
+  <view class='omg_top'>
+    <view class='yu_qe' bindtap="paiwei">
+      <view class='paiw1'>
+        <view class='paiw1_left'>
+          <image src='{{tupian}}16_03.png?v=1.0'></image>{{user_info.paiwei_count}}</view>
+        <view class='paiw1_bottom'>排位赛</view>
+      </view>
+      <view class='yu_om1'>
+        <image src='{{tupian}}16.png?v=1.0'></image>
+      </view>
+    </view>
+
+    <button class='yu_qe' open-type="share" wx:if="{{!is_sponsor}}">
+      <view class='paiw2'>
+        <view class='kes'>好友对战</view>
+        <view class='kes_er'>PK Friends</view>
+      </view>
+      <view class='yu_om2'>
+        <image src='{{tupian}}17.png?v=1.0'></image>
+      </view>
+    </button>
+    <view class='yu_qe' bindtap="friendsPk" wx:else>
+      <view class='paiw2'>
+        <view class='kes'>好友对战</view>
+        <view class='kes_er'>PK Friends</view>
+      </view>
+      <view class='yu_om2'>
+        <image src='{{tupian}}17.png?v=1.0'></image>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+<view class='top_f'></view>
+<view class='jnei'>
+  <view class='omg_top'>
+    <view class='yu_qe'>
+      <view class='yu_qe_left'>
+        <navigator url='/pages/paihang/paihang'>
+          <view class='yu_qe_left'>
+            <view class='paiw3'>
+              <view class='kes'>排行榜</view>
+              <view class='kes_er'>Charts</view>
+            </view>
+            <view class='yu_om3'>
+              <image src='{{tupian}}18.png?v=1.0'></image>
+            </view>
+          </view>
+        </navigator>
+      </view>
+      <view class='yu_qe_right'>
+        <!--<navigator url='/pages/rychuti/rychuti'></navigator>-->
+
+        <view class='yu_qe' bindtap="factory">
+          <view class='paiw7'>
+            <view class='kes'>题目工厂</view>
+            <view class='kes_er'>Factory</view>
+          </view>
+
+          <view class='yu_om4'>
+            <image src='{{tupian}}25.png?v=1.0' style="height:150rpx;"></image>
+          </view>
+        </view>
+        <view class='yu_qe' bindtap="powerDrawer" data-statu="open">
+          <view class='paiw4'>
+            <view class='kes'>设置</view>
+            <view class='kes_er'>Setting</view>
+          </view>
+          <view class='yu_om4'>
+            <image src='{{tupian}}26.png?v=1.0' style="height:120rpx;"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+  <view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+    <view class='ani_wq'>
+      <view class="btn_ok" bindtap="powerDrawer" data-statu="close">
+        <image src='{{tupian}}34_06.png?v=1.0'></image>
+      </view>
+      <view class='btu_we'>设置</view>
+      <view class='btuw_ly'>
+        <view class="section section_gap">
+          <text>推送</text> 
+          <switch name="switch" checked="{{is_send_check}}" bindtap="powerSet" data-send="{{send}}" color='#1e79fe' />
+        </view>
+        <view class="section section_gap">
+          <text>音效</text>
+          <switch name="switch" checked="{{is_check}}" bindtap="powerSet" data-sound="{{sound}}" color='#1e79fe' />
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='shij'>
+    <view class='paiw5'>
+      <view class='kes'>我的银行</view>
+      <view class='omk'>
+        <view class='omk_left'>{{clock}}</view>
+        <view class='omk_right'>后可领取金币</view>
+      </view>
+      <view class='omk_wq' type="primary" bindtap="showok">
+        <image src='{{tupian}}22_03.png?v=1.0'></image>
+      </view>
+    </view>
+    <view class='yu_om5'>
+      <image src='{{tupian}}21.png?v=1.0'></image>
+    </view>
+  </view>
+
+</view>
+
+<block wx:if="{{user_info.copy_right}}">
+  <view class='top_f'></view>
+  <view class='jnei'>
+    <view class='ope_bottm'>{{user_info.copy_right}}</view>
+  </view>
+</block>

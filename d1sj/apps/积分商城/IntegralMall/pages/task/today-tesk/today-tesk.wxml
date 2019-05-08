@@ -1,0 +1,12 @@
+<!--pages/today-tesk/today-tesk.wxml-->
+<import src="../../../templates/task_tit/task_tit.wxml" />
+<import src="../../../templates/task_list/task_list.wxml" />
+<view class="container">
+  <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+    <view class="wxapp-toast-content">
+      <view class="wxapp-toast-content-text"> {{toastText}} </view>
+    </view>
+  </view>
+  <template is="task_tit" data="{{todayInfo}}" />
+  <template is="task_list" data="{{todaylist}}" />
+</view>

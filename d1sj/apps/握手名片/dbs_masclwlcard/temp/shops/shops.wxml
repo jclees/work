@@ -1,0 +1,92 @@
+<template name="shops">
+  <scroll-view scrollY bindscrolltolower="get_moreshop" style="height:{{winHeight}}px;background:#f7f7f7">
+    <!-- <view class="top_operate_initial">
+      <view bindtap="go_user" class="order-image-container {{business.userRedPoint?'order_btn_tip':''}}">
+        <image class="order-image" src="../../images/card/my.png" style="width: 33rpx;height:38rpx;"></image>
+      </view>
+    </view> -->
+    <view class="company-info">
+      <!-- <swiper autoplay circular class="swiper" style="height:300rpx">
+        <swiper-item>
+          <view class="c-b-i-container">
+            <view class="img-cover"></view>
+            <image class="company-background-image" src="{{business.company_logo}}"></image>
+          </view>
+        </swiper-item>
+      </swiper> -->
+
+      <view class='company-background-image'>
+        <image src="{{shops2.banner[0].url}}" mode='scaleToFill'></image>
+        <navigator hover-class='none' url="/dbs_masclwlcard/pages/create_banner/index" style='width:100%;' wx:if="{{shops2.banner.length <= 0 && user_flag ==0}}">
+          <form reportSubmit bindsubmit="from_send" style='width:100%;'>
+            <button class='go_config_btn' formType="submit">
+              <view class="btn">上传商城门头图</view>
+            </button>
+          </form>
+        </navigator>
+      </view>
+      <view class="company-detail">
+        <view class="company-icon">
+          <view class="icon-top-container">
+            <view class="icon-top">
+              <image src="{{business.company_logo}}" mode='aspectFill'></image>
+              <navigator hover-class='none' url="/dbs_masclwlcard/pages/create_card/create_card" style='width:100%;' wx:if="{{!business.company_logo && user_flag == 0}}">
+                <form reportSubmit bindsubmit="from_send" style='width:100%;'>
+                  <button class='go_config_btn' formType="submit" style='width:100%;'>
+                    <view class="btn_txt">去上传</view>
+                  </button>
+                </form>
+              </navigator>
+            </view>
+          </view>
+        </view>
+        <view class="company-text">
+          <view class="company_name">{{shops2.mall_name ? shops2.mall_name: business.company_name+'商城'}}</view>
+          <view bindtap="alertcompany" class="bottom_company_name">
+            <image src="../../images/renz.png"></image>
+            <view>认证企业</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="main_product">
+      <scroll-view scroll-x="true" class="navbar">
+        <text wx:for="{{cates}}" data-idx="{{aindexs}}" wx:for-index="aindexs" class="item {{currentTab == aindexs?'active':''}}" wx:key="" data-id="0" data-typeid="{{item.id}}" bindtap="navbarTap">{{item.name}}</text>
+      </scroll-view>
+      <navigator hoverClass="none" url="/dbs_masclwlcard/pages/product_type/product_type" style="display:flex;align-items:center;">
+        <image src='../../images/icon_prod_type.png' mode='widthFix' class="icon_prod_type"></image>
+      </navigator>
+    </view>
+    <view class="dbl_pro_box">
+      <view class="dbl_sub dbl_left">
+        <view class="sm_box" wx:for="{{shops}}" wx:key="index">
+          <navigator hoverClass="none" url="/dbs_masclwlcard/pages/shops/shops_detail?&shops_id={{item.id}}">
+            <view class="dbl_deltail_box">
+              <view class="detail_pic">
+                <image mode="scaleToFill" src="{{item.show[0].url}}"></image>
+              </view>
+              <view style="width:100%;height:2rpx;background-color: #ebebeb;"></view>
+              <view class="bottom_detail">
+                <view class="title_detail">{{item.title}}</view>
+                <view class="sale_price">¥{{item.price}}</view>
+              </view>
+            </view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+
+    <navigator hover-class='none' url="/dbs_masclwlcard/pages/create_product/create_product" wx:if="{{shops.length<=0 && user_flag == 0}}" style='width:100%;'>
+      <form reportSubmit bindsubmit="from_send" style='width:100%;'>
+        <button class='go_config_btn' formType="submit" style='margin-top:60rpx;'>
+          <view class='text'>暂未上传商品..</view>
+          <view class="btn">去上传</view>
+        </button>
+      </form>
+    </navigator>
+    <view class="no_data" wx:if="{{shops.length<1 && user_flag == 1}}">暂无商品</view>
+    <view class="nomoredata" wx:if="{{shops.length>0}}">我也是有底线的..</view>
+    <!-- <view style="height:60px;background:transparent;"></view> -->
+    <view style="height:120rpx; background:#f7f7f7;" wx:if="{{shops.length>0}}"></view>
+  </scroll-view>
+</template>

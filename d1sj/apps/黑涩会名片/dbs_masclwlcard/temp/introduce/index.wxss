@@ -1,0 +1,704 @@
+.introduction_box_center {
+    background: rgba(255,255,255,0.95);
+    border-radius: 10rpx;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 700rpx;
+    max-height: 1120rpx;
+    width: 600rpx;
+}
+
+.introduction_box_head {
+    background-color: rgba(255,255,255,0.95);
+    border-radius: 10rpx 10rpx 0 0;
+    width: 100%;
+    height: 146rpx;
+    padding-top: 38rpx;
+    display: block;
+    position: relative;
+}
+
+.introduction_box_content {
+    background: rgba(255,255,255,0.95);
+    width: 100%;
+    min-height: 554rpx;
+    border-radius: 0 0 10rpx 10rpx;
+}
+
+.introduction_box_content_A {
+    background: rgba(255,255,255,0.95);
+    width: 100%;
+    min-height: 764rpx;
+}
+
+.introduction_box_content_B {
+    background: rgba(255,255,255,0.95);
+    width: 100%;
+    min-height: 754rpx;
+}
+
+.introduction_box_center_maxheight {
+    height: 900rpx;
+}
+
+.introduction_box_center_three_height {
+    height: 910rpx;
+}
+
+.introduction_box_introduce {
+    position: absolute;
+    right: 40rpx;
+    top: 38rpx;
+    width: 420rpx;
+    height: 80rpx;
+    max-height: 110rpx;
+    border-radius: 10rpx;
+    padding: 18rpx 26rpx 20rpx 27rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #333;
+    letter-spacing: 0;
+    line-height: 40rpx;
+    overflow: hidden;
+    z-index: 9999;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    background-image: url('data:image/png;base64,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');
+    background-position: 0rpx 0rpx;
+    background-repeat: no-repeat;
+    background-size: 420rpx 80rpx;
+}
+
+.introduction_box_head_img {
+    position: absolute;
+    left: 40rpx;
+    top: 38rpx;
+    height: 80rpx;
+    width: 80rpx;
+    overflow: hidden;
+    border-radius: 40rpx;
+    z-index: 99;
+}
+
+.introduction_box_head_img image {
+    border-radius: 15rpx;
+}
+
+.introduction_box_phone {
+    margin-top: 10rpx;
+    padding: 0 40rpx;
+}
+
+.introduction_box_redirect {
+    margin-top: 38rpx;
+    text-align: center;
+    line-height: 1;
+    opacity: 0.9;
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #999;
+}
+
+.introduction_box_userinfo {
+    position: relative;
+}
+
+.introduction_box_userinfo .card_box .card_bg_head {
+    height: 320rpx;
+}
+
+.introduction_box_userinfo .card_detail text {
+    font-size: 18rpx;
+}
+
+.introduction_box_userinfo .card_box {
+    height: 355rpx;
+    background-image: none;
+    padding: 0rpx 40rpx 10rpx 40rpx;
+}
+
+.introduction_box_userinfo .card_img {
+    height: 320rpx;
+}
+
+.introduction_box_userinfo .card_img .card_head {
+    height: 320rpx!important;
+    width: 320rpx!important;
+}
+
+.introduction_box_userinfo .card_com_div {
+    margin-top: 19rpx;
+    height: 21rpx;
+    color: #353535;
+    font-size: 17rpx;
+    text-align: right;
+    vertical-align: middle;
+    padding-right: 24rpx;
+    padding-left: 300rpx;
+}
+
+.introduction_box_userinfo .card_name {
+    margin-top: 25rpx;
+    font-size: 32rpx;
+    padding-left: 320rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+}
+
+.introduction_box_userinfo .card_job {
+    margin-top: 6rpx;
+    font-size: 17rpx;
+    height: 24rpx;
+    padding-left: 320rpx;
+    line-height: 24rpx;
+}
+
+.introduction_box_userinfo .card_detail {
+    margin-top: 40rpx;
+}
+
+.introduction_box_userinfo .card_msg {
+    font-size: 17rpx;
+    padding: 0rpx 24rpx 12rpx 0;
+}
+
+.introduction_box_userinfo .card_d_text {
+    max-width: 225rpx;
+}
+
+.introduction_box_userinfo .card_msg .card_d_img {
+    display: inline-block;
+    height: 16rpx;
+    width: 16rpx;
+    margin-left: 16rpx;
+    vertical-align: top;
+    margin-top: 5rpx;
+}
+
+.introduction_box_userinfo .card_d_add {
+    max-width: 220rpx;
+    display: inline-block;
+}
+
+.introduction_box_userinfo .one_pic {
+    padding: 0rpx 40rpx;
+    background-image: none;
+    padding-bottom: 20rpx;
+}
+
+.introduction_box_userinfo .one_sm_box {
+    border-radius: 13rpx;
+    overflow: hidden;
+    position: relative;
+}
+
+.introduction_box_userinfo .one_img {
+    position: relative;
+    height: 520rpx;
+    width: 520rpx;
+}
+
+.introduction_box_userinfo .pic_num {
+    position: absolute;
+    top: 21rpx;
+    left: 21rpx;
+    background: rgba(0,0,0,0.3);
+    border-radius: 3px;
+    color: #fff;
+    font-size: 18rpx;
+    padding: 8rpx 16rpx;
+}
+
+.introduction_box_userinfo .new_card_msg_box {
+    position: absolute;
+    top: 416rpx;
+    left: 0;
+    width: 520rpx;
+    height: 140prx;
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    padding: 13rpx 30rpx 13rpx 30rpx;
+}
+
+.introduction_box_userinfo .new_card_msg_box .name_job {
+    height: 34rpx;
+}
+
+.introduction_box_userinfo .new_card_msg_box .one_card_name {
+    color: #fff;
+    font-size: 28rpx;
+}
+
+.introduction_box_userinfo .new_card_msg_box .one_role_name {
+    margin-left: 20rpx;
+    font-size: 20rpx;
+    color: #fff;
+}
+
+.introduction_box_userinfo .new_card_msg_box .one_tel {
+    margin-top: 14rpx;
+    font-size: 24rpx;
+    line-height: 32rpx;
+    color: #fff;
+}
+
+.introduction_box_userinfo .com_logo {
+    border-radius: 3px;
+    border: 1px solid #ededed;
+    height: 66rpx;
+    width: 66rpx;
+    transform: translateY(-2rpx);
+    flex-shrink: 0;
+    background-color: #fff;
+}
+
+.introduction_box_userinfo .com_logo image {
+    border-radius: 3px;
+}
+
+.introduction_box_userinfo .b_box {
+    padding: 32rpx 40rpx;
+    background-image: none;
+    padding-top: 0;
+}
+
+.introduction_box_userinfo .b_sm_box {
+    position: relative;
+    width: 100%;
+    height: 320rpx;
+}
+
+.introduction_box_userinfo .b_head_img {
+    background: #fff;
+    border: 1px solid #e9e9e9;
+    overflow: hidden;
+    border-radius: 100%;
+    height: 130rpx;
+    width: 130rpx;
+    top: 33rpx;
+    right: 49rpx;
+    position: absolute;
+    z-index: 10;
+}
+
+.introduction_box_userinfo .b_head_img_logo {
+    border-radius: 100%;
+}
+
+.introduction_box_userinfo .b_com_box {
+    height: 24rpx;
+    line-height: 24rpx;
+    font-size: 18rpx;
+    color: #353535;
+    vertical-align: middle;
+    padding-right: 144rpx;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: 32rpx;
+}
+
+.introduction_box_userinfo .b_com_box image {
+    height: 17rpx;
+    width: 17rpx;
+    display: inline-block;
+    margin-right: 8rpx;
+    vertical-align: middle;
+}
+
+.introduction_box_userinfo .b_c_d_box {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    width: 100%;
+    padding: 0 49rpx;
+    height: 100%;
+}
+
+.introduction_box_userinfo .b_card_name {
+    height: 45rpx;
+    line-height: 45rpx;
+    font-size: 32rpx;
+    color: #5b8c84;
+    margin-top: 23rpx;
+    padding-right: 144rpx;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.introduction_box_userinfo .b_card_job {
+    font-size: 17rpx;
+    color: #5b8c84;
+    height: 24rpx;
+    line-height: 24rpx;
+    margin-top: 4rpx;
+    padding-right: 144rpx;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.introduction_box_userinfo .b_bottom_box {
+    margin-top: 52rpx;
+}
+
+.introduction_box_userinfo .b_tel .b_text {
+    line-height: 26rpx;
+    font-size: 18rpx;
+}
+
+.introduction_box_userinfo .b_tel image {
+    height: 18rpx;
+    width: 18rpx;
+    display: block;
+    float: left;
+    margin: 6rpx 4rpx 4rpx 0;
+    top: 6rpx;
+}
+
+.introduction_box_userinfo .h_com {
+    height: 24rpx;
+    line-height: 24rpx;
+    vertical-align: middle;
+    text-align: right;
+    color: #fff;
+    font-size: 17rpx;
+    padding: 0 64rpx;
+    margin-top: 32rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.introduction_box_userinfo .h_com image {
+    height: 17rpx;
+    width: 17rpx;
+    display: inline-block;
+    margin-right: 8rpx;
+    vertical-align: middle;
+}
+
+.introduction_box_userinfo .h_head {
+    height: 112rpx;
+    padding: 0 64rpx;
+}
+
+.introduction_box_userinfo .h_bead_box {
+    height: 112rpx;
+    width: 112rpx;
+    float: left;
+    border-radius: 100%;
+}
+
+.introduction_box_userinfo .h_bead_box image {
+    border-radius: 100%;
+}
+
+.introduction_box_userinfo .h_card_detail {
+    margin-left: 120rpx;
+    height: 112rpx;
+    color: #ddcd7c;
+}
+
+.introduction_box_userinfo .h_card_name {
+    height: 46rpx;
+    line-height: 46rpx;
+    font-size: 32rpx;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.introduction_box_userinfo .h_card_job {
+    height: 24rpx;
+    line-height: 24rpx;
+    font-size: 17rpx;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.introduction_box_userinfo .three_img {
+    height: 360rpx;
+    display: flex;
+    background: #fff;
+}
+
+.introduction_box_userinfo .left_big_img {
+    flex-basis: 360rpx;
+    flex-shrink: 0;
+    height: 360rpx;
+    border-right: 2rpx solid transparent;
+}
+
+.introduction_box_userinfo .right_big_img {
+    flex-basis: 177rpx;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.introduction_box_userinfo .right_big_img image {
+    flex-basis: 177rpx;
+    flex: 1;
+}
+
+.introduction_box_userinfo .w2_com_name {
+    height: 24rpx;
+    line-height: 24rpx;
+    font-size: 17rpx;
+    text-align: right;
+    color: #353535;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    vertical-align: middle;
+    white-space: nowrap;
+    padding: 0 24rpx 0 322rpx;
+    position: absolute;
+    top: 16rpx;
+    width: 100%;
+    left: 0;
+}
+
+.introduction_box_userinfo .w2_com_name image {
+    margin-right: 5rpx;
+    height: 17rpx;
+    width: 17rpx;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.introduction_box_userinfo .w2_head_img {
+    margin-top: 21rpx;
+    height: 105rpx;
+}
+
+.introduction_box_userinfo .w2_sm_box {
+    height: 105rpx;
+    width: 105rpx;
+    margin: 0 auto;
+    border-radius: 100%;
+    overflow: hidden;
+    border: 1px solid #e5e5e5;
+}
+
+.introduction_box_userinfo .w2_sm_box image {
+    border-radius: 100%;
+}
+
+.introduction_box_userinfo .w2_card_detail {
+    text-align: center;
+    vertical-align: bottom;
+    color: #353535;
+    padding-right: 40rpx;
+    height: 37rpx;
+    margin-top: 6rpx;
+}
+
+.introduction_box_userinfo .w2_other_detail {
+    margin-top: 48rpx;
+    padding: 0 64rpx;
+}
+
+.introduction_box_center .w2_card_name {
+    font-size: 32rpx;
+}
+
+.introduction_box_center .w2_role_name {
+    font-size: 18rpx;
+}
+
+.introduction_box_center .w2_addr image {
+    height: 18rpx;
+    width: 18rpx;
+    top: 4rpx;
+}
+
+.introduction_box_center .w2_addr {
+    padding-left: 24rpx;
+}
+
+.introduction_box_center .h_de_list .h_de_img {
+    width: 18rpx;
+    height: 18rpx;
+}
+
+.introduction_box_userinfo .w2_em_tel view {
+    flex: 1;
+    flex-shrink: 0;
+    font-size: 17rpx;
+    color: #353535;
+    vertical-align: middle;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.introduction_box_userinfo .w2_em_tel view image {
+    display: inline-block;
+    width: 17rpx;
+    height: 17rpx;
+    margin-right: 8rpx;
+    vertical-align: middle;
+}
+
+.introduction_box_userinfo .w2_addr {
+    font-size: 17rpx;
+    color: #353535;
+    vertical-align: middle;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin-top: 16rpx;
+}
+
+.introduction_box_userinfo .w2_addr image {
+    display: inline-block;
+    width: 18rpx;
+    height: 18rpx;
+    margin-right: 8rpx;
+    vertical-align: middle;
+    top: 6rpx;
+}
+
+.list_left {
+    flex: 1;
+    line-height: 460rpx;
+    font-size: 36rpx;
+    color: #80838d;
+    flex-shrink: 0;
+}
+
+.list_right {
+    flex: 9;
+    position: relative;
+    width: 0;
+}
+
+.userinfo_box {
+    padding: 10rpx 42rpx;
+    height: 364rpx;
+    background: #fff;
+    background-size: 100% 100%;
+    box-shadow: 4rpx 0rpx 10rpx rgba(215,215,220,0.35),-4rpx 0rpx 10rpx rgba(215,215,220,0.35),0rpx 8rpx 20rpx rgba(215,215,220,0.5),0rpx -2rpx 3rpx rgba(215,215,220,0.05);
+    border-radius: 15rpx;
+    position: relative;
+}
+
+.userinfo_head_img {
+    height: 110rpx;
+    width: 110rpx;
+    float: right;
+    overflow: hidden;
+    border-radius: 8rpx;
+}
+
+.userinfo_com_name {
+    font-size: 28rpx;
+    color: #80838d;
+    line-height: 40rpx;
+    margin-bottom: 39rpx;
+    padding-right: 20rpx;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.userinfo_name {
+    font-size: 48rpx;
+    color: #616161;
+    margin-bottom: 4px;
+    line-height: 67rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 50rpx;
+}
+
+.userinfo_name text {
+    display: inline-block;
+    max-width: 100%;
+    padding-right: 50rpx;
+}
+
+.userinfo_job {
+    font-size: 24rpx;
+    color: #4c4c4c;
+    line-height: 33rpx;
+    margin-bottom: 32rpx;
+}
+
+.userinfo_tel,.userinfo_email {
+    font-size: 24rpx;
+    color: #8b8e92;
+    line-height: 33rpx;
+}
+
+.introduction_box_center .h_b_detail {
+    font-size: 18rpx;
+    margin-top: 26rpx;
+    padding: 0 64rpx;
+}
+
+.introduction_box_center .b_tel {
+    font-size: 18rpx;
+    line-height: 26rpx;
+    margin-bottom: 0rpx;
+}
+
+.introduction_box_center .h_de_text {
+    font-size: 18rpx;
+    line-height: 26rpx;
+}
+
+.introduction_box_center .h_de_list {
+    height: 24rpx;
+    line-height: 24rpx;
+    vertical-align: middle;
+    margin-bottom: 9rpx;
+}
+
+.introduce_company_profile {
+    padding-top: 1rpx;
+    max-width: 150rpx;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    display: inline-block;
+    height: 28rpx;
+    line-height: 28rpx;
+}
+
+.introduce_card_name {
+    padding-top: 1rpx;
+    max-width: 100rpx;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    display: inline-block;
+    height: 28rpx;
+    line-height: 28rpx;
+}
+
+.more_right_arrow {
+    height: 18rpx;
+    width: 10rpx;
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateY(-4rpx);
+}

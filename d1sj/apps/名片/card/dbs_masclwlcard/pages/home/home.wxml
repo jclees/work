@@ -1,0 +1,29 @@
+<loading hidden="{{dataLoaded}}">加载中...</loading>
+<view class="wrap" hidden="{{!dataLoaded}}" style="min-height: 700px">
+    <view class="user section">
+        <image class="user__img" mode="aspectFill" src="{{detail.avatarUrl}}"></image>
+        <view class="user_info">
+            <view class="user__name">{{detail.nickName}}</view>
+        </view>
+    </view>
+    <view class="orderSection section">
+        <form bindsubmit="jump_url" data-url="/dbs_masclwlcard/pages/order_list/order_list" reportSubmit="true">
+            <button class="barItem nobutton" formType="submit">
+                <image class="barItem__icon" src="/dbs_masclwlcard/images/mine/icon-order.png"></image>
+                <view class="barItem__info">
+                    <view class="barItem__info__hd">全部订单</view>
+                </view>
+            </button>
+        </form>
+    </view>
+    <view class="orderSection section">
+        <form bindsubmit="jump_url" data-url="/dbs_masclwlcard/pages/myAddr/my_address/index" reportSubmit="true">
+            <button class="barItem nobutton" formType="submit">
+                <image class="barItem__icon" src="/dbs_masclwlcard/images/mine/icon-addr.png"></image>
+                <view class="barItem__info">
+                    <view class="barItem__info__hd">地址管理</view>
+                </view>
+            </button>
+        </form>
+    </view>
+</view>

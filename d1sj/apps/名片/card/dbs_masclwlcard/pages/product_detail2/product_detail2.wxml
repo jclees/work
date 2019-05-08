@@ -1,0 +1,51 @@
+<view class="circle_box" wx:if="{{product.card_id}}">
+    <view class="friends_item clearfix">
+        <navigator hoverClass="none" url="/dbs_masclwlcard/pages/tab/tab?card_id={{product.card_id}}">
+            <view class="head_logo">
+                <image src="{{product.card.card_logo}}"></image>
+            </view>
+            <view class="right_content">
+                <view class="name_share">
+                    <view class="name" style="line-height: {{product.card.card_name?'45rpx':'90rpx'}}">
+                        {{product.card.card_name}}
+                    </view>
+                    <view class="job" wx:if="{{product.card.role_name}}">
+                        {{product.card.role_name}}
+                    </view>
+                </view>
+                <view class="card_btn">
+                    <view class="btn_view">
+                        TA的名片
+                    </view>
+                    <image src="../../images/ico-right-arrow.png"></image>
+                </view>
+            </view>
+        </navigator>
+    </view>
+</view>
+<view class="wrap" style="padding:50rpx"></view>
+<swiper autoplay="{{autoplay}}" circular="{{circular}}" duration="{{duration}}" indicatorActiveColor="#000000;" indicatorColor="#fff" indicatorDots="{{false}}" interval="{{interval}}">
+    <swiper-item style="background:#000;" wx:for="{{product.cp_bs_img}}" wx:key="index">
+        <image class="slide-image" mode="aspectFill" src="{{item}}"></image>
+    </swiper-item>
+</swiper>
+<view class="detail">产品详情</view>
+<black wx:for="{{product.cp_bs_content}}" wx:key="index">
+    <view class="pro_display">
+        <image bindtap="lookimg" data-img="{{item}}" mode="widthFix" src="{{item}}"></image>
+    </view>
+</black>
+<view style="height:120rpx;"></view>
+<view class="people clearfix">
+    <view bindtap="goChat" class="left_btn">
+            咨询
+            <form reportSubmit bindsubmit="from_send">
+            <button formType="submit"></button>
+        </form>
+    </view>
+    <view class="right_btn">
+            转发给朋友
+
+				<button formType="submit" openType="share"></button>
+    </view>
+</view>

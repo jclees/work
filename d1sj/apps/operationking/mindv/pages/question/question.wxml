@@ -1,0 +1,60 @@
+<!--pages/question/question.wxml-->
+<view class="container">
+  <view class="wxapp-toast-content-box" wx:if="{{isShowToast}}">
+    <view class="wxapp-toast-content">
+      <view class="wxapp-toast-content-text"> {{toastText}} </view>
+    </view>
+  </view>
+  <view class="question">
+    <!-- <image src="https://mindking2.network.weixingzpt.com/imgs/question_bgc.png"></image> -->
+    <view class="question_box">
+      <view class="question_box_tit">
+        <text>{{type}}</text>
+        <text></text>
+        <text>{{name}}</text>
+      </view>
+      <view class="question_box_text">
+        <textarea placeholder="题干内容" bindinput="inputName" placeholder-style="color: #283a92;" />
+      </view>
+      <view class="question_box_con">
+        <view class="question_box_con_per">
+          <image src="https://mindking2.network.weixingzpt.com/imgs/right.png"></image>
+          <input placeholder="正确答案" bindinput="error1" placeholder-style="color: #fff; font-family: '苹方';" />
+        </view>
+        <view class="question_box_con_per">
+          <image src="https://mindking2.network.weixingzpt.com/imgs/error.png"></image>
+          <input placeholder="错误答案" bindinput="error2" placeholder-style="color: #fff; font-family: '苹方';" />
+        </view>
+        <view class="question_box_con_per">
+          <image src="https://mindking2.network.weixingzpt.com/imgs/error.png"></image>
+          <input placeholder="错误答案" bindinput="error3" placeholder-style="color: #fff; font-family: '苹方';" />
+        </view>
+        <view class="question_box_con_per">
+          <image src="https://mindking2.network.weixingzpt.com/imgs/error.png"></image>
+          <input placeholder="错误答案" bindinput="error4" placeholder-style="color: #fff; font-family: '苹方';" />
+        </view>
+      </view>
+      <view class="question_box_button" bindtap="openPop">
+        <text>提交</text>
+      </view>
+    </view>
+  </view>
+  <!-- 确认提交弹出框 -->
+  <view class="pop" wx:if="{{pop}}">
+    <view class="cover"></view>
+    <view class="pop_box">
+      <view class="pop_box_button clearfix">
+        <view class="pop_box_button_left fl" bindtap="closePop">
+          <image src="https://mindking2.network.weixingzpt.com/imgs/left.png"></image>
+        </view>
+        <view class="pop_box_button_right fr"
+         bindtap="{{confirmFlag?'confirm':''}}">
+          确认提交
+        </view>
+      </view>
+      <view class="pop_box_text">
+        提交后不可修改
+      </view>
+    </view>
+  </view>
+</view>

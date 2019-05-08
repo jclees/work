@@ -1,0 +1,57 @@
+<!-- coin -->
+<view class='coin-box'>
+  <view class='coin' wx:for="{{coin}}" wx:key="" data-index="{{index}}" bindtap='popLock' data-id='coin'>
+    <image mode='widthFix' src='{{item.imgUrl}}'></image>
+    <view>{{item.name}}</view>
+    <text>{{item.numSS}}SS</text>
+  </view>
+</view>
+
+<!-- nav  -->
+<view class='nav-box'></view>
+<view class='nav'>
+  <navigator url="../../pages/index/index?title=redirect" open-type="redirect" class="nav-navigator{{navActive == 1?' active':''}}" hover-class='none' id="1">
+    <image src="../../images/icon-home{{navActive == 1?'-opt':''}}.png" mode='widthFix'></image>
+    <text>首页</text>
+  </navigator>
+  <navigator url="../../pages/publish/publish?title=navigate" open-type='navigate' hover-class='none' class='nav-fabiao'>
+    <button>
+      <image mode='widthFix' src='../../images/icon-fabiao.png'></image>
+    </button>
+  </navigator>
+  <navigator url="../../pages/mine/mine?title=redirect" open-type="redirect" class="nav-navigator{{navActive == 2?' active':''}}" id="2">
+    <image src="../../images/icon-mine{{navActive == 2?'-opt':''}}.png" mode='widthFix'></image>
+    <text>我的</text>
+  </navigator>
+</view>
+
+
+<!-- 弹框 -->
+<view class='pop-box' wx:if="{{pop3}}">
+  <view class='pop-bg' bindtap='popLock'></view>
+  <view class='pop-main'>
+    <view class='pop-title'>兑换</view>
+    <view class='coin-dui'>
+      <view class='coin-num'>
+        兑换数量
+        <input type='digit' bindinput="bindKeyInput" value='0'></input>
+        个({{coin[index].numSS}}ss/个)
+      </view>
+      <view class='coin-consume'>
+        消耗平台币 {{inputValue*coin[index].numSS}}
+      </view>
+      <view class='coin-address'>
+        地址：
+        <input type='text' placeholder='请输入{{coin[index].name}}地址'></input>
+      </view>
+    </view>
+    <view class="btn-pop">
+      <button hover-class='none' bindtap='popLock'>立刻兑换</button>
+    </view>
+    <view class='btn-close'>
+      <button hover-class='none' bindtap='popLock'>
+        <image mode='widthFix' src='../../images/icon-close.png'></image>
+      </button>
+    </view>
+  </view>
+</view>
