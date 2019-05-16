@@ -1,0 +1,135 @@
+<loading wx:if="{{!show}}">加载中... </loading>
+
+<import src="/pages/authorize/index.wxml"></import>
+<template is="authorize" data="{{isAuthorize:isAuthorize}}"></template>
+
+<view wx:if="{{!closestartadv && startadv && startadv.status==1}}" class="startadv">
+  <view class="bg" style="{{startadv.style.background?'background:'+startadv.style.background+';':''}}{{startadv.style.opacity?'opacity:'+startadv.style.opacity+';':''}}"></view>
+  <view class="info">
+    <swiper indicator-dots="true" indicator-color="#ddd" indicator-active-color="#fff" autoplay="true" circular="true" duration="500" interval="4000" style="height:{{startadvh-100}}px;">
+      <swiper-item wx:for='{{startadv.data}}' wx:for-item='item' wx:for-index='idx' wx:key="*this">
+        <block wx:if="{{item.click==1}}">
+          <image mode="widthFix" src="{{item.imgurl}}" bindload="imagesHeight" class="advimg" data-type="startadvh" bindtap="closestartadv"></image>
+        </block>
+        <block wx:else>
+          <navigator url="{{item.linkurl}}">
+            <image mode="widthFix" src="{{item.imgurl}}" bindload="imagesHeight" class="advimg" data-type="startadvh"></image>
+          </navigator>
+        </block>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="closeadv" bindtap="closestartadv">
+    <view class="close-btn"></view>
+  </view>
+</view>
+
+<view wx:if="{{show}}" class="page" style="{{diydata.page.background?'background-color:'+diydata.page.background+';':''}}">
+  <block wx:for="{{diydata.items}}" wx:for-item='item' wx:for-index='idx' wx:key="*this">
+    <block wx:if="{{item.id == 'adv'}}">
+      <include src='adv.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'search'}}">
+      <include src='search.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'notice'}}">
+      <include src='notice.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'banner'}}">
+      <include src='banner.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'cube' || item.id == 'picturew'}}">
+      <include src='cube.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'nav' || item.id == 'menu'}}">
+      <include src='nav.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'recommand' || item.id == 'goods'}}">
+      <include src='recommand.wxml' />
+    </block>
+
+<!-- 
+    <block wx:if="{{idx == 'M1557471061962'}}">
+      <include src='recommand.wxml' />
+    </block>
+     <block wx:if="{{idx == 'M1557471768634'}}">
+      <include src='recommand2.wxml' />
+    </block>
+     <block wx:if="{{idx == 'M1506332594040'}}">
+      <include src='recommand3.wxml' />
+    </block> -->
+
+
+    <block wx:if="{{item.id == 'listmenu'}}">
+      <include src='listmenu.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'richtext'}}">
+      <include src='richtext.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'title'}}">
+      <include src='title.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'line'}}">
+      <include src='line.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'blank'}}">
+      <include src='blank.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'fixedsearch'}}">
+      <include src='fixedsearch.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'menu2'}}">
+      <include src='textmenu.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'picture'}}">
+      <include src='picture.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'coupon'}}">
+      <include src='coupon.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'video'}}">
+      <include src='video.wxml' />
+    </block>
+  </block>
+
+  <!--block wx:if="{{storeRecommand}}">
+    <view id='recommand'>
+      <view class="fui-line" style="background: #f4f4f4;">
+        <view class='text text-danger'><text class='icon icon-hotfill'></text>店铺推荐</view>
+      </view>
+
+      <view class='fui-goods-group block border'>
+        <block wx:for='{{storeRecommand}}' wx:for-item='item' wx:for-index='idx' wx:key="*this">
+          <template is='tpl_list' data="{{ item:item }}" />
+        </block>
+      </view>
+    </view>
+  </block-->
+</view>
+
+<template name="tpl_list">
+  <view class='fui-goods-item' data-goodsid='{{item.id}}' data-type='{{item.type}}'>
+    <navigator url='/pages/goods/detail/index?id={{item.id}}'>
+      <view class='image' style='background-image:url("{{item.thumb}}")'>
+        <block wx:if='{{item.total <= 0}}'>
+          <view class='salez' style='background-image: url("{{item.saleout}}");'></view>
+        </block>
+      </view>
+    </navigator>
+    <view class='detail'>
+      <navigator url='/pages/goods/detail/index?id={{item.id}}'>
+        <view class='name'>
+          {{item.title}}
+          <block wx:if='{{item.ispresell == 1}}'>
+            <text class='fui-tag fui-tag-danger'>预售</text>
+          </block>
+        </view>
+        <view class='index_price price'>
+          <view class='text'>
+            ￥{{item.minprice}}
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</template>

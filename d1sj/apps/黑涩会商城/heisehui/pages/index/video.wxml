@@ -1,0 +1,4 @@
+<view class='item-video' style="width:100%;height:{{item.style.height?item.style.height+'px':'auto'}};">
+
+  <video src="{{item.params.videourl}}" controls poster="{{item.params.poster}}" style="width:100%;height:{{item.style.height?item.style.height+'px':'auto'}};"></video>
+</view>

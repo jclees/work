@@ -1,0 +1,14 @@
+<view class="fui-title" style="">
+  <text wx:if="{{item.params.title == '今日推荐' || item.params.title == '在售品牌'}}">{{item.params.title}}</text>
+  <navigator hoverClass='none' url='/pages/webview/webview?type=1' wx:elif="{{item.params.title == '本季流行'}}">
+    <!-- <navigator hoverClass='none' url='{{item.params.link}}' wx:else> -->
+    <!-- <span class="icox {{item.params.icon}}" style="margin:0 15rpx"></span> -->
+    <text>{{item.params.title}}</text>
+    <text style="float:right;font-size:30rpx;color:#29292;">更多 ></text>
+  </navigator>
+  <navigator hoverClass='none' url='{{item.params.link}}' wx:else>
+    <!-- <span class="icox {{item.params.icon}}" style="margin:0 15rpx"></span> -->
+    <text>{{item.params.title}}</text>
+    <text style="float:right;font-size:30rpx;color:#29292;">更多 ></text>
+  </navigator>
+</view>

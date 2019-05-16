@@ -1,5 +1,21 @@
 const common = require('common');
 let publicMethod = {
+  getConfig(t) { //全局配置
+    let that = t
+    common.get('/memberinfo/config').then(res => {
+      console.log("全局配置")
+      console.log(res)
+      that.setData({
+        configData: res.data
+      })
+      wx.setStorageSync('configData', res.data)
+    }).catch(e => {
+      // app.showToast({
+      //   title: "数据异常"
+      // })
+      console.log(e)
+    })
+  },
   getUnreadNum(t) { //未读
     let that = t
     common.get('/chat/getUnreadNum', {
@@ -400,11 +416,11 @@ let publicMethod = {
       }
     })
   },
-  getUserInfo(e,t,f){
+  getUserInfo(e, t, f) {
     let that = t
     wx.setStorageSync('user_info', e.detail.userInfo)
     wx.login({
-      success: function (data) {
+      success: function(data) {
         common.post('/member/oauth', {
           code: data.code,
           encryptedData: e.detail.encryptedData,
@@ -434,7 +450,7 @@ let publicMethod = {
         })
       }
     })
-   
+
   },
   openSetting(t) { //打开授权设置
     let _this = t;

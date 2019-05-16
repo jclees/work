@@ -8,7 +8,6 @@ Page({
   data: {
     img_url: app.data.imgUrl,
     swiperCurrent: 0,
-    isPlayingMusic: true,
     wenzData: [],
     infoData: []
   },
@@ -38,19 +37,16 @@ Page({
     } else {
       that.setData({
         member_id: member_id,
-        pop1: false,
-        isPlayingMusic: true
+        pop1: false
       })
       publicMethod.getPos(this)
       that.getData()
     }
   },
   onShow() {
-    // wx.setStorageSync('member_id', 1);
-
+    // wx.setStorageSync('member_id', 35);
     let that = this
     this.audioCtx = wx.createAudioContext('myAudio');
-    this.audioCtx.play()
     wx.getSetting({
       success: function(res) {
         if (res.authSetting['scope.userInfo']) {
@@ -79,26 +75,10 @@ Page({
     //列表
     that.getwenzhang()
     //全局配置
-    that.getConfig()
+    publicMethod.getConfig(this)
   },
   getFormId(e) {
     publicMethod.getFormId(e, this)
-  },
-  getConfig() { //全局配置
-    let that = this
-    common.get('/memberinfo/config').then(res => {
-      console.log("全局配置")
-      console.log(res)
-      that.setData({
-        configData: res.data
-      })
-      wx.setStorageSync('configData', res.data)
-    }).catch(e => {
-      // app.showToast({
-      //   title: "数据异常"
-      // })
-      console.log(e)
-    })
   },
   getBannerUrls() { //轮播图地址
     let that = this
@@ -187,8 +167,6 @@ Page({
         })
         console.log("授权成功")
         wx.showTabBar()
-        //全局配置
-        that.getConfig()
         that.setData({
           member_id: res.data.member_id
         })

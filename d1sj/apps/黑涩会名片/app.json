@@ -1,10 +1,11 @@
 {
   "pages": [
     "dbs_masclwlcard/pages/tab/tab",
+    "dbs_masclwlcard/pages/create_product/create_product",
+    "dbs_masclwlcard/pages/publish/publish",
     "dbs_masclwlcard/pages/test/test",
     "dbs_masclwlcard/pages/create_card2/create_card",
     "dbs_masclwlcard/pages/myOrder/myOrder",
-    "dbs_masclwlcard/pages/create_product/create_product",
     "dbs_masclwlcard/pages/create_network/create_network",
     "dbs_masclwlcard/pages/create_banner/index",
     "dbs_masclwlcard/pages/product_list/product_list",

@@ -7,7 +7,7 @@ Page({
     dataLoaded: !1,
     friend_list: [],
     cardList: [],
-    test_cardList: [{
+    test_cardList2: [{
       card_id: 5,
       card_logo: "https://icard.weixingzpt.com/images/api/o18vt0AcryURWAqtyVCVJIzAIu1c/card_logo_1542076896.png",
       card_name: "夏恒",

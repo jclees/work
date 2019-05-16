@@ -6,11 +6,13 @@ var e, //user_flag
   r = !1, //授权状态
   c = !1, //注册状态
   custom_page = 1; //浏览头像page
+let page = 2;
 
 Page({
   data: {
     netWorkData: {},
     cates: [],
+    faxianData: [],
     is_like: 0,
     currentTab: 0,
     index: 0,
@@ -21,6 +23,14 @@ Page({
     cardStatus: !1,
     card_allmembr: [],
     loadFlag: false,
+    wzOptions: {
+      txt: '加载中...',
+      status: true,
+      param: {
+        page: 1
+      }
+    },
+
 
     containerHeight: 0,
     userInfo: [],
@@ -110,6 +120,9 @@ Page({
     })
   },
   onShow: function() {
+    this.setData({
+      tempInpVal: '搜索发现更多'
+    })
     if (o || r) {
       var t = this;
       custom_page = 1
@@ -135,10 +148,323 @@ Page({
     }
   },
   onHide: function() {
+    this.setData({
+      "wzOptions.param.page":1
+    })
     clearInterval(this.data.i_time), clearInterval(this.data.msgTime);
   },
   onUnload: function() {
+    this.setData({
+      "wzOptions.param.page": 1
+    })
     clearInterval(this.data.i_time), clearInterval(this.data.msgTime);
+  },
+  openSetting(t) { //打开授权设置
+    let _this = t;
+    wx.showModal({
+      title: '提示',
+      showCancel: false,
+      content: '若不打开授权，则无法将图片保存在相册中！',
+      success: function(res) {
+        wx.getSetting({
+          success(data) {
+            if (res.confirm) {
+              wx.openSetting({
+                success(res) {
+                  console.log(res)
+                  if (!res.authSetting["scope.writePhotosAlbum"]) {
+                    _this.openSetting(_this)
+                  }
+                }
+              })
+            }
+          }
+        })
+      }
+    })
+  },
+  previewImage(e) { //图片预览
+    let that = this
+    var curIndex = e.target.dataset.curindex;
+    var subIndex = e.target.dataset.subidx;
+    
+    var imgUrls = that.data.wenzData[curIndex].imgs
+    wx.previewImage({
+      current: imgUrls[subIndex], // 当前显示图片的http链接  
+      urls: imgUrls // 需要预览的图片http链接列表  
+    })
+  },
+  // 下载图片
+  downloadImgs(e) {
+    var _this = this;
+    if (_this.data.wenzData[e.currentTarget.dataset.curindex].imgs.length <= 0) {
+      wx.setClipboardData({
+        data: e.currentTarget.dataset.txt,
+        success: function(res) {
+          wx.hideLoading()
+          wx.showToast({
+            title: '图文复制成功',
+            icon: 'none'
+          })
+        }
+      });
+      return
+    }
+    wx.authorize({
+      scope: 'scope.writePhotosAlbum',
+      success() { //这里是用户同意授权后的回调
+        wx.showLoading({
+          title: '加载中',
+          mask: true
+        })
+        // 调用保存图片promise队列
+        _this.queue(_this.data.wenzData[e.currentTarget.dataset.curindex].imgs)
+          .then(res => {
+            wx.setClipboardData({
+              data: e.currentTarget.dataset.txt,
+              success: function(res) {
+                wx.hideLoading()
+                wx.showToast({
+                  title: '图文复制成功',
+                  icon: 'none'
+                })
+              }
+            });
+
+          })
+          .catch(err => {
+            wx.hideLoading()
+            console.log(err)
+          })
+      },
+      fail() { //这里是用户拒绝授权后的回调
+        _this.openSetting(_this)
+      }
+    })
+  },
+  // 队列
+  queue(urls) {
+    let promise = Promise.resolve()
+    urls.forEach((url, index) => {
+      promise = promise.then(() => {
+        return this.download(url)
+      })
+    })
+    return promise
+  },
+  // 下载
+  download(url) {
+    return new Promise((resolve, reject) => {
+      wx.downloadFile({
+        url: url,
+        success: function(res) {
+
+          var temp = res.tempFilePath
+          wx.saveImageToPhotosAlbum({
+            filePath: temp,
+            success: function(res) {
+              resolve(res)
+            },
+            fail: function(err) {
+              reject(res)
+            }
+          })
+        },
+        fail: function(err) {
+          reject(err)
+        }
+      })
+    })
+  },
+  refresh() {
+    let that = this;
+    let options = that.data.wzOptions;
+    options.txt = " 刷新中..."
+    options.param.page = 1
+    that.data.keyword && (options.param.cont = that.data.keyword)
+    options.param.type_id = that.data.faxianData[that.data.currentTab].id
+
+
+    that.setData({
+      wzOptions: options
+    })
+    that.getwenzhang()
+  },
+  emptyInp() {
+    let that = this
+    let options = that.data.wzOptions;
+
+    that.setData({
+      searchSucc: false,
+      keyword:'',
+      inputValue: "搜索发现更多",
+      wzOptions:{
+        txt:'加载中...',
+        status:true,
+        param:{
+          page:1,
+          type_id: that.data.faxianData[that.data.currentTab].id
+        }
+      }
+    })
+    setTimeout(()=>{
+      that.getwenzhang()
+    },500)
+  },
+  bindInpChange(e) {
+    let that = this
+    that.setData({
+      inputValue: e.detail.value,
+    })
+    if (that.data.inputValue == '') {
+      that.setData({
+        searchSucc: false
+      })
+    } else {
+      that.setData({
+        searchSucc: true
+      })
+    }
+
+  },
+  cateSearch(e) {
+    let that = this;
+    let options = that.data.wzOptions;
+    options.txt = " 加载中..."
+    options.param.page = 1
+    that.data.keyword && (options.param.cont = that.data.keyword)
+    options.param.type_id = that.data.faxianData[e.currentTarget.dataset.idx].id
+
+    that.setData({
+      currentTab: e.currentTarget.dataset.idx,
+      wzOptions: options
+    })
+    that.getwenzhang()
+  },
+  bindInpconfirm(e) { //搜索
+    let that = this
+    let keyword = that.data.inputValue
+    let key = e.currentTarget.dataset.key
+    if (key) {
+      keyword = key
+      that.setData({
+        inputValue: keyword
+      })
+    }
+    that.setData({
+      searchSucc: true,
+      keyword: keyword,
+      "wzOptions.txt": '搜索中...',
+      "wzOptions.param": {
+        page: 1,
+        type_id: that.data.faxianData[that.data.currentTab].id,
+        cont: keyword
+      }
+    })
+    that.getwenzhang()
+  },
+  loadMore() {
+    let that = this;
+    let options = that.data.wzOptions;
+    if (!options.status) {
+      return
+    }
+    that.setData({
+      "wzOptions.status": false,
+    })
+    that.getwenzhang()
+  },
+  getFaXianType() {
+    let that = this;
+    app.util.request({
+      url: "/news/types",
+      data: {},
+      success: function(res) {
+        console.log("发现分类")
+        console.log(res)
+        if (res.data.errno == 0) {
+          that.setData({
+            faxianData: res.data.data
+          });
+          let obj = {
+            id: 0,
+            name: "全部"
+          };
+          that.data.faxianData.unshift(obj)
+          that.setData({
+            faxianData: that.data.faxianData
+          });
+        }
+      },
+      fail: function(t) {
+        console.log("数据错误"), console.log(t);
+      }
+    });
+  },
+  getwenzhang() { //列表
+
+    let that = this;
+    let options = that.data.wzOptions;
+
+    wx.showNavigationBarLoading()
+    wx.setNavigationBarTitle({
+      title: options.txt,
+    })
+
+    let param = options.param;
+
+    app.util.request({
+      url: "/news/index",
+      data: param,
+      success: function(res) {
+
+
+        console.log("商城列表")
+        console.log(res)
+        if (res.data.errno == 0) {
+          that.setData({
+            "wzOptions.status": true
+          })
+          wx.hideNavigationBarLoading()
+          wx.setNavigationBarTitle({
+            title: '发现',
+          })
+          let wenzData = res.data.data.lists
+
+
+          if (param.page == 1) {
+            that.setData({
+              wenzData,
+            })
+          } else {
+
+            if (wenzData.length <= 0) {
+              wx.showToast({
+                title: "没有更多数据啦~~",
+                icon: "none"
+              })
+              return
+            }
+            let d = that.data.wenzData
+            for (var i = 0; i < wenzData.length; i++) {
+              d.push(wenzData[i]);
+            }
+            that.setData({
+              wenzData: d
+            })
+          }
+
+          param.page++
+
+        }
+      },
+      fail: function(t) {
+        that.setData({
+          "wzOptions.status": true
+        })
+        console.log("数据错误"), console.log(t);
+      }
+    });
   },
   //名片详情
   getCard: function() {
@@ -224,14 +550,13 @@ Page({
       title: "加载中..."
     });
     var t = this;
+    t.getFaXianType();
+    t.getwenzhang();
+    t.updateGoods();
     t.data.nav_footer_active;
     t.getCard();
     t.getCollectStatus();
     t.getCustomlists();
-    t.getProducts({
-      cate_id: 0,
-      member_id: 0 == e ? n : o
-    });
     t.getCate();
     t.getShops();
     t.getNetwork();
@@ -680,6 +1005,29 @@ Page({
     }), a.getProducts({
       cate_id: s,
       member_id: 0 == e ? n : o
+    });
+  },
+  updateGoods() {
+    // debugger
+    let that = this
+    app.util.request({
+      url: "/product/updateGoods",
+      data: {
+        member_id: 0 == e ? n : o
+      },
+      success: function(d) {
+        wx.hideLoading()
+        // debugger
+        console.log("updateGoods")
+        console.log(d)
+        that.getProducts({
+          cate_id: 0,
+          member_id: 0 == e ? n : o
+        });
+      },
+      fail: function(res) {
+
+      }
     });
   },
   //商城 产品列表

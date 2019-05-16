@@ -16,6 +16,27 @@ Page({
   getData() {
     let that = this
     that.getProducts()
+    that.updateGoods()
+  },
+  updateGoods() {
+    // debugger
+    let that = this
+    app.util.request({
+      url: "/product/updateGoods",
+      data: {
+        member_id: member_id
+      },
+      success: function (d) {
+        wx.hideLoading()
+        // debugger
+        console.log("updateGoods")
+        console.log(d)
+        that.getProducts()
+      },
+      fail: function (res) {
+      
+      }
+    });
   },
   getProducts() {
     // debugger

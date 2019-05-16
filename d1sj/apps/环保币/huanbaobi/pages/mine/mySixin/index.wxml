@@ -26,11 +26,11 @@
   </view>
   <view class='rt'>
     <view>
-      <view class='txt'>{{item.home_nickname}}私信了你！</view>
+      <view class='txt'>{{item.home_nickname}}私信了{{item.other_nickname}}！</view>
       <view class='con'>{{item.content}}</view>
-      <view class='time'>{{item.created_at}}</view>
+      <view class='time'>{{item.public_at}}</view>
     </view>
-    <form report-submit bindsubmit='goChat' data-idx="{{index}}" data-id="{{item.member_id}}" data-beid="{{item.be_member_id}}" data-name="{{item.home_nickname}}">
+    <form report-submit bindsubmit='goChat' data-options="{{item}}" data-idx="{{index}}">
       <button form-type='submit' class='guz_btn in' hover-class='none'>回复</button>
     </form>
   </view>
@@ -42,7 +42,7 @@
   </view>
   <view class='rt'>
     <view>
-      <view class='txt'>{{item.nickname}}<text style="color:#4285f4;">{{item.is_comment == 1?'评论':'点赞'}}</text>了你的发圈！</view>
+      <view class='txt'>{{item.nickname}}<text style="color:#4285f4;">{{item.is_comment == 1?'评论':'点赞'}}</text>了{{item.who}}的发圈！</view>
       <view class='con'>{{item.content}}</view>
       <view class='time'>{{item.created_at}}</view>
     </view>

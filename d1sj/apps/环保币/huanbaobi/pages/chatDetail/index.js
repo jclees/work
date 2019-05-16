@@ -2,8 +2,8 @@ const common = require('../../assets/js/common');
 const publicMethod = require('../../assets/js/publicMethod');
 var app = getApp(),
   member_id = 0,
-  parent_id = 0,
-  toViewInd = 0;
+  toViewInd = 0,
+  param = {};
 Page({
   data: {
     is_chating: !0,
@@ -12,11 +12,24 @@ Page({
     allContentList: [],
   },
   onLoad: function(t) {
-    member_id = wx.getStorageSync("member_id"),
-      parent_id = t.be_member_id;
+    member_id = wx.getStorageSync("member_id")
+
+    param = JSON.parse(t.param)
     wx.setNavigationBarTitle({
-      title: t.name || '青山派'
+      title: param.name || '青山派'
     })
+    param.member_id = member_id
+    delete param.name
+
+    console.log(t)
+    console.log(param)
+    // parent_id = t.be_member_id
+    // type = t.type
+    // t.be_business_id && (be_business_id = t.be_business_id)
+    // t.business_id && (business_id = t.business_id)
+    // t.home_id && (home_id = t.home_id)
+
+   
     var e = this;
     e.getMsgs()
     e.setData({
@@ -33,12 +46,19 @@ Page({
     });
   },
   getMsgs() {
+    let obj = {
+      member_id
+    }
+    if (param.business_id || param.business_id == 0){
+      obj.home_id = param.home_id
+    }else{
+      obj.be_member_id = param.be_member_id
+      obj.type = param.type
+    }
     wx.showNavigationBarLoading();
+    debugger
     let that = this
-    common.get('/chat/getMsgs', {
-      member_id: member_id,
-      be_member_id: parent_id
-    }).then(d => {
+    common.get('/chat/getMsgs', obj).then(d => {
       wx.hideNavigationBarLoading()
       console.log("对方聊天消息")
       console.log(d)
@@ -110,11 +130,8 @@ Page({
         is_chating: !1
       })
       debugger
-      common.post('/chat/sendMsg', {
-        member_id: member_id,
-        be_member_id: parent_id,
-        content: inputValue
-      }).then(res => {
+      param.content = inputValue
+      common.post('/chat/sendMsg', param).then(res => {
         console.log("发送聊天消息")
         console.log(res)
         if (res.data.errno == 0) {

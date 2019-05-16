@@ -1,0 +1,35 @@
+page{background: #f3f3f3}
+.fui-cell-group{ margin-top: 40rpx; border: none; }
+.cartlist{ margin-top: -2rpx; }
+.price{ text-align: right; display: inline-block; width: 100%; color: #1b1b1b; font-size: 34rpx; }
+.left{ left: -100rpx }
+wx-checkbox{ padding-right:20rpx }
+.empty{ padding:260rpx 150rpx; }
+.light{ height: 260rpx; width: 260rpx }
+.text-cancel{ padding-top:60rpx; font-size: 30rpx; }
+.fui-list-inner .car_subtitle { position:relative; font-size:26rpx; color:#444; }
+.fui-number{ height:80rpx; min-width: 176rpx; }
+.minus,.plus{ width: 60rpx; height: 80rpx; font-size: 40rpx; line-height: 80rpx; }
+.fui-list-angle { margin-right:0; }
+.btn{
+  color: #fff !important;
+  background: #666 !important;
+  border-radius: 0;
+  border: 0 none !important;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 60rpx;
+  margin: 0;
+  font-size: 30rpx;
+}
+.btn.btn-danger-o {
+  color: #fff !important;
+  background: #1b1b1b !important;
+  border-radius: 0;
+  border: 0 none !important;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 60rpx;
+  margin: 0;
+  font-size: 30rpx;
+}

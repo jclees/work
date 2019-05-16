@@ -79,7 +79,7 @@
                     <view>联系商家</view>
                   </button>
                 </form>
-                <form report-submit bindsubmit='goChat' data-id="{{item.member_id}}" data-business_id="{{item.business_id}}" data-name="{{infoData.business.name}}">
+                <form report-submit bindsubmit='goChat' data-options="{{item}}">
                   <button form-type='submit' class='last' hover-class='none'>
                     <view class='img_box'>
                       <image src='/images/icon_fun_xin.png' mode='widthFix' style="width:48rpx;"></image>
@@ -166,7 +166,7 @@
 <view class='pop-box' wx:if="{{pop1}}" catchtouchmove="myCatchTouch">
   <view class='pop-bg' bindtap='popLock'></view>
   <view class="addwx-wrap">
-    <input type='text' placeholder='{{inpPlaceholder}}' maxlength="80" focus class='inp' bindinput='bindTextChange'></input>
+    <input type='text' placeholder='{{inpPlaceholder}}' maxlength="-1" focus class='inp' bindinput='bindTextChange'></input>
     <button hover-class='none' class="send-btn" bindtap='sendComment' style="{{textVal!=''&& savaStatus?'' :'color:rgba(255,255,255,.5);'}}">
       发送
     </button>

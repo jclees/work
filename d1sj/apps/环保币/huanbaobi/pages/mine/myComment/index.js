@@ -100,16 +100,21 @@ Page({
       page = 2
     })
   },
-  goChat(e) {
-    publicMethod.getFormId(e, this)
-    wx.showTabBar()
-    this.setData({
-      pop3: false,
-      popidx: false
-    })
-    wx.navigateTo({
-      url: '/pages/chatDetail/index?be_member_id=' + e.currentTarget.dataset.id + '&name=' + e.currentTarget.dataset.name,
-    })
+ goChat(e) {
+   this.setData({
+     pop3: false,
+     popidx: false
+   })
+   publicMethod.getFormId(e, this)
+   let options = e.currentTarget.dataset.options;
+   let param = {
+     be_member_id: options.member_id,
+     name: options.home_nickname,
+     type: options.type
+   }
+   wx.navigateTo({
+     url: '/pages/chatDetail/index?param=' + JSON.stringify(param),
+   })
   },
   getFormId(e) { //取formid
     publicMethod.getFormId(e, this)

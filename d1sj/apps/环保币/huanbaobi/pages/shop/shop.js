@@ -7,7 +7,6 @@ Page({
   data: {
     img_url: app.data.imgUrl,
     swiperCurrent: 0,
-    isPlayingMusic: true,
     reeachBottomStatus:true,
     textVal: '',
     inpPlaceholder: '发表评论',
@@ -44,6 +43,7 @@ Page({
     }
   },
   onShow() {
+    this.audioCtx = wx.createAudioContext('myAudio');
     let that = this
     let member_id = wx.getStorageSync('member_id')
     wx.getSetting({
@@ -78,7 +78,6 @@ Page({
         user_info: wx.getStorageSync('user_info'),
         configData: wx.getStorageSync('configData'),
         business_id: wx.getStorageSync('business_id') || 15,
-        isPlayingMusic: true
       })
       that.getData()
       if (wx.getStorageSync('scancode') == 1) {
@@ -100,12 +99,9 @@ Page({
         business_id: that.data.business_id,
         page: 1
       }).then(res => {
-
         that.setData({
           bgMusic: res.data.business.bgmusic_url
         })
-        that.audioCtx = wx.createAudioContext('myAudio');
-        that.audioCtx.play()
       }).catch(e => {})
     }
     //是否刷新页面
@@ -132,6 +128,8 @@ Page({
     let that = this
     //列表
     that.getwenzhang()
+    //全局配置
+    publicMethod.getConfig(this)
   },
   getwenzhang() { //列表
     let that = this
@@ -186,14 +184,20 @@ Page({
     })
   },
   goChat(e) {
-    publicMethod.getFormId(e, this)
     wx.showTabBar()
     this.setData({
       pop3: false,
       popidx: false
     })
+    publicMethod.getFormId(e, this)
+    let options = e.currentTarget.dataset.options;
+    let param = {
+      be_member_id: options.member_id,
+      name: options.home_nickname,
+      type: options.type
+    }
     wx.navigateTo({
-      url: '/pages/chatDetail/index?be_member_id=' + e.currentTarget.dataset.id + '&name=' + e.currentTarget.dataset.name,
+      url: '/pages/chatDetail/index?param=' + JSON.stringify(param),
     })
   },
   getFormId(e) { //取formid

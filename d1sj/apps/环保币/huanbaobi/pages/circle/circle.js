@@ -7,7 +7,6 @@ Page({
   data: {
     img_url: app.data.imgUrl,
     swiperCurrent: 0,
-    isPlayingMusic: true,
     savaStatus: true,
     reeachBottomStatus: true,
     textVal: '',
@@ -52,9 +51,10 @@ Page({
     if (!member_id) {
       return
     }
+    //全局配置
+    publicMethod.getConfig(this)
     publicMethod.getPos(this)
     this.audioCtx = wx.createAudioContext('myAudio');
-    this.audioCtx.play()
     setTimeout(() => {
       // 未读
       publicMethod.getUnreadNum(this)
@@ -83,9 +83,6 @@ Page({
       })
       that.getData()
     }
-    that.setData({
-      isPlayingMusic: true
-    })
   },
   onHide() {
     this.audioCtx.pause()
@@ -178,14 +175,20 @@ Page({
     })
   },
   goChat(e) {
-    publicMethod.getFormId(e, this)
     wx.showTabBar()
     this.setData({
       pop3: false,
       popidx: false
     })
+    publicMethod.getFormId(e, this)
+    let options = e.currentTarget.dataset.options;
+    let param = {
+      be_member_id: options.member_id,
+      name: options.home_nickname,
+      type: options.type
+    }
     wx.navigateTo({
-      url: '/pages/chatDetail/index?be_member_id=' + e.currentTarget.dataset.id + '&name=' + e.currentTarget.dataset.name,
+      url: '/pages/chatDetail/index?param=' + JSON.stringify(param),
     })
   },
   getFormId(e) { //取formid

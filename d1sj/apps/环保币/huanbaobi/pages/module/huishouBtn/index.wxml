@@ -2,7 +2,7 @@
   <form report-submit bindsubmit='getFormId'>
     <button form-type='submit' hover-class='none'>
       <view class='pop_music huishou'>
-        <image mode='widthFix' class='audio' src="/images/icon_huishou.png"></image>
+        <image mode='widthFix' class='audio x' src="/images/icon_huishou.png"></image>
       </view>
     </button>
   </form>

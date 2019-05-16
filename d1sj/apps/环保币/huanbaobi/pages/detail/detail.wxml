@@ -61,7 +61,7 @@
 <view class='pop-box' wx:if="{{pop1}}" catchtouchmove="myCatchTouch">
   <view class='pop-bg' bindtap='popLock'></view>
   <view class="addwx-wrap">
-    <input type='text' placeholder='发表评论' maxlength="80" focus class='inp' bindinput='bindTextChange'></input>
+    <input type='text' placeholder='发表评论' maxlength="-1" focus class='inp' bindinput='bindTextChange'></input>
     <button hover-class='none' class="send-btn" bindtap='sendComment' style="{{textVal!=''?'':'color:rgba(255,255,255,.5);'}}">
       发送
     </button>

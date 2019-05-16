@@ -1,0 +1,176 @@
+.commission .user-info{ width: 100%; height:160rpx; background:#FE5455; }
+.commission .user-info{ border-bottom: 1px solid #fe9292 }
+.commission .user-info wx-image{ border-radius: 50% }
+.commission .user-info .title{ color: #fff; font-size: 30rpx; line-height:30rpx; }
+.commission .user-info .subtitle{ color: #fef31f; font-size: 26rpx; line-height:32rpx; }
+.commission .user-info .text{ color: #fff; }
+.commission .userblock{ background: #FE5455; color: #fff; padding: 0 30rpx; }
+.commission .userblock .line{ padding: 15rpx 0 15rpx 0 }
+.commission .userblock .line.total{ font-size: 30rpx; }
+.commission .userblock .line.total .num{ font-size: 50rpx; }
+.commission .userblock .line.able{ font-size: 27rpx; }
+.commission .userblock .line.able .num{ font-size: 40rpx; }
+.commission .userblock .line .text{ padding-right: 230rpx }
+.commission .userblock .line .btn{ height: 50rpx; width: auto; padding: 0 15rpx; border: 1px solid #fff; line-height: 50rpx; border-radius: 25rpx; font-size: 30rpx; color: inherit; }
+.commission .fui-block-group{ margin-top: 0 }
+.commission .fui-block-group .fui-block-child .icon{ height: auto }
+.commission .fui-block-group .fui-block-child .icon wx-image{ width: 70rpx; height: 70rpx; }
+.edtion{ width: 100%; position: fixed; bottom:100rpx; color: #999999; font-size: 14px; text-align: center; padding: 20rpx 0; }
+
+
+
+
+/* mine.wxss */
+page{
+  background: #f3f3f3;
+}
+
+.mine-userinfo-box {
+  padding: 50rpx 72rpx 86rpx;
+  background: #1b1b1b;
+  font-size: 0;
+}
+
+.mine-user {
+  display: flex;
+  align-items: center;
+}
+
+.mine-user image {
+  border-radius: 50%;
+  width: 120rpx;
+  margin-right: 8rpx;
+}
+
+.mine-user> view:nth-child(2) {
+  color: #fff;
+  font-size: 50rpx;
+  padding-top: 5rpx;
+}
+.mine-user> view:nth-child(2) >view:nth-child(2){
+  font-size: 26rpx;
+  color: #000000;
+  background: #ffffff;
+  display: inline-block;
+  border-radius: 100px;
+  padding: 6rpx 20rpx;
+}
+.mine-user> view:nth-child(3) {
+  color: #fff;
+  font-size: 30rpx;
+  padding-top: 5rpx;
+  margin-left: auto;
+}
+
+.mine-userinfo {
+  display: flex;
+  color: #fff;
+  flex-wrap: wrap;
+  margin-top: 20rpx;
+}
+
+.mine-userinfo view {
+  width: 50%;
+  font-size: 30rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  box-sizing: border-box;
+  padding-left: 50rpx;
+}
+
+.mine-userinfo view image {
+  width: 32rpx;
+  vertical-align: top;
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.mine-coin-box {
+  position: relative;
+  margin-top: -60rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 0 1px 0 rgba(210, 210, 210, 0.50);
+  padding: 36rpx 40rpx 44rpx;
+}
+
+.mine-coin-box .coins {
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.mine-coin-box .coins > image:nth-child(1) {
+  width: 50rpx;
+}
+
+.mine-coin-box .coins > .coins_nums {
+  font-size: 36rpx;
+  color: #000;
+  text-align: center;
+}
+
+.mine-coin-box .coins > .coins_nums >view:nth-child(2) {
+  font-size: 24rpx;
+  color: #a1a1a1;
+  padding-top: 10rpx;
+}
+
+.mine-coin-box .coins > button {
+  background: #1b1b1b;
+  border-radius: 200rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  font-size: 24rpx;
+  color: #fff;
+  padding: 0 28rpx;
+  margin: 30rpx 0 0 0;
+}
+
+.mine_nav >view {
+  background: #fff;
+  border:1px solid #f7f7f7;
+  margin-top: 30rpx;
+}
+
+.mine_nav >view .button1 {
+  margin: 0;
+  padding: 0 30rpx 0 50rpx;
+  display: flex;
+  align-items: center;
+  height: 88rpx;
+  line-height: 88rpx;
+  justify-content: space-between;
+  border-radius: 0;
+  background: transparent;
+  border-bottom: 1px solid #f3f3f3;
+  color: #000000;
+  font-size: 32rpx;
+}
+
+
+.mine_nav >view .button1 text {
+  font-size: 28rpx;
+  color: #1a1a1a;
+}
+.mine_nav >view .button1 .min_icon{
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+}
+.mine_nav >view .button1 .min_icon image {
+  width: 14rpx;
+  margin-left: 20rpx;
+}
+
+.mine_nav >view .button1 .min_icon view {
+  background: #ff3933;
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+}
+

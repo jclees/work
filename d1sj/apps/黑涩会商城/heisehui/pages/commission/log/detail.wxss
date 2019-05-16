@@ -1,0 +1,2 @@
+.log-detail .fui-list-inner .subtitle{ line-height: 40rpx; color: #999; font-size: 28rpx; }
+.log-detail .fui-list-inner .row .row-text{ font-size: 28rpx; }

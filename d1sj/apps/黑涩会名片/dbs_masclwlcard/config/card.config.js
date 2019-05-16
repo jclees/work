@@ -5,7 +5,7 @@ var n = {
     bgimg: "https://img.jikni.com/w1.png",
     footernav: {
       product: {
-        footer_nav: ["名片", "产品", "官网", "我的"],
+        footer_nav: ["名片", "产品", "发现", "我的"],
         nav_footer: [{
           name: "名片",
           icon: "../../images/card/01_2x_n.png",
@@ -15,7 +15,7 @@ var n = {
           icon: "../../images/card/02_x_n.png",
           selectIcon: "../../images/card/02_x.png"
         }, {
-          name: "官网",
+          name: "发现",
           icon: "../../images/card/04_x_n.png",
           selectIcon: "../../images/card/04_x.png"
         }, {
@@ -25,7 +25,7 @@ var n = {
         }]
       },
       shopping: {
-        footer_nav: ["名片", "商城", "官网", "我的"],
+        footer_nav: ["名片", "商城", "发现", "我的"],
         nav_footer: [{
           name: "名片",
           icon: "../../images/common_tab_btn_card_n.png",
@@ -35,7 +35,7 @@ var n = {
           icon: "../../images/common_tab_btn_store_n.png",
           selectIcon: "../../images/common_tab_btn_store_n_copy.png"
         }, {
-          name: "官网",
+          name: "发现",
           icon: "../../images/common_tab_btn_officialwebsite_n.png",
           selectIcon: "../../images/common_tab_btn_officialwebsite_s.png"
         }, {

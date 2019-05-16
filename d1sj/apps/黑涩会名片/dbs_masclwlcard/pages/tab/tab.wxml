@@ -9,7 +9,7 @@
 </view>
 <view bindtap="hideShopMask" catchtouchmove="true" class="mask" wx:if="{{shopMask}}"></view>
 <import src="../../temp/card/index.wxml"></import>
-<!-- <import src="../../temp/circle_friends/circle_friends.wxml"></import> -->
+<!-- <import src="../../temp/circle_friends/circle_ffriends.wxml"></import> -->
 <import src="../../temp/official_web/official_web.wxml"></import>
 <import src="../../temp/shops/shops.wxml"></import>
 <import src="../../temp/home/home.wxml"></import>
@@ -112,7 +112,7 @@
             <view class="ellipsis">{{item.nickname}}</view>
             <view class="time">{{item.date}}</view>
           </view>
-          <view class="cool_loding" >
+          <view class="cool_loding">
             <view wx:if="{{coolLoading}}">
               <image mode='widthFix' src='/dbs_masclwlcard/images/loading.gif'></image>加载中...</view>
             <view wx:if="{{allDataing}}" class='all_data'>————— 我也是有底线的 —————</view>
@@ -172,7 +172,24 @@
         <template is="circle_friends" data="{{dynamic_list:card_detail.dynamic_list,company:card_detail.card,card_detail:card_detail,winHeight:M,currentIndex:currentIndex,showKeyboard:showKeyboard,card_id:card_detail.id}}"></template>
     </view> -->
   <view class="temp_box" style="display:{{nav_footer_active==2?'block':'none'}};">
-    <template is="official_web" data="{{main:card_detail,netWorkData:netWorkData,news:news,user_flag:user_flag,winHeight:M}}"></template>
+    <!-- 搜索 -->
+    <view class='fixed_top'>
+      <view class="search_wrap">
+        <view class="search">
+          <image src='/dbs_masclwlcard/images/icon_search.png' mode='widthFix'></image>
+          <input type='text' placeholder='{{tempInpVal}}' value='{{searchSucc?inputValue:""}}' placeholder-style='color:#b2b2b2;' bindconfirm="bindInpconfirm" confirm-type="search" bindinput='bindInpChange'></input>
+          <image src='/dbs_masclwlcard/images/icon_empty.png' mode='widthFix' bindtap='emptyInp' wx:if="{{searchSucc}}"></image>
+        </view>
+        <!-- <view class="search_btn" bindtap='bindInpconfirm'>搜索</view> -->
+      </view>
+      <view class="main_product">
+        <scroll-view scroll-x="true" class="navbar">
+          <text wx:for="{{faxianData}}" wx:for-index="aindexs" data-idx="{{aindexs}}" class="item {{currentTab == aindexs?'active':''}}" wx:key="" bindtap="cateSearch" data-id="{{item.id}}">{{item.name}}</text>
+        </scroll-view>
+      </view>
+    </view>
+    <template is="official_web" data="{{wenzData,winHeight:M}}"></template>
+
   </view>
   <view class="temp_box" data-a="shopping" style="display:{{nav_footer_active==1?'block':'none'}};">
     <template is="shops" data="{{user_flag:user_flag,business:card_detail,shops:shops,shops2:shops2,cates:cates,winHeight:M,card_id:card_detail.id,currentTab:currentTab}}"></template>
@@ -190,6 +207,13 @@
         </view>
         <button bindgetphonenumber="gochatDetailAndGetPhoneNumber" class="tip_wechat_getPhoneNumber" openType="getPhoneNumber" plain="true"></button>
     </view> -->
+  <view class="tip_wechat coll_cardj" wx:if="{{vipGard.is_can_news==1 && nav_footer_active == 2}}">
+    <navigator hover-class='none' url='/dbs_masclwlcard/pages/publish/publish'>
+      <view class="msg">
+        <image src="../../images/card/fabu.png" mode='widthFix' style=''></image>
+      </view>
+    </navigator>
+  </view>
   <view class="tip_wechat coll_cardj" hidden="{{user_flag==1 || nav_footer_active != 0}}">
     <navigator hover-class='none' url='/dbs_masclwlcard/pages/load/load'>
       <view class="msg">

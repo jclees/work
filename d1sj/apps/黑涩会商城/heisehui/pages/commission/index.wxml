@@ -1,0 +1,105 @@
+<block wx:if='{{!show}}'>
+  <loading>加载中...</loading>
+</block>
+<block wx:if='{{show}}'>
+  <!--mine.wxml-->
+  <!--  userinfo  -->
+  <view class='mine-userinfo-box'>
+    <view class='mine-user'>
+      <image mode='widthFix' src='{{member.avatar}}'></image>
+      <view>
+        <view>{{member.nickname}}</view>
+        <view>{{levelname}}</view>
+      </view>
+      <view>{{set.texts.up}}：{{agentname}}</view>
+    </view>
+  </view>
+  <!--  mine-nav  -->
+  <view class='mine-coin-box'>
+    <view class="coins">
+      <view class="coins_nums">
+        <view>{{member.commission_pay}}</view>
+        <view>{{set.texts.commission_pay}}({{set.texts.yuan}})</view>
+      </view>
+      <view class="coins_nums">
+        <view>{{member.commission_ok}}</view>
+        <view>{{set.texts.commission}}{{set.texts.withdraw}}</view>
+      </view>
+      <button bindtap='jumpCharge'>
+        <navigator hoverClass='none' url='/pages/commission/withdraw/index'>佣金提现</navigator>
+      </button>
+    </view>
+  </view>
+  <view class="mine_nav">
+    <view>
+      <navigator url='/pages/commission/withdraw/index'>
+        <view class='button1'>
+          <text>{{set.texts.commission1}}</text>
+          <view class="min_icon">
+            {{member.commission_total}}{{set.texts.yuan}}
+            <image src='/static/images/icon_mine_more.png' mode='widthFix'></image>
+          </view>
+        </view>
+      </navigator>
+
+      <navigator url='/pages/commission/order/index'>
+        <view class='button1'>
+          <text>{{set.texts.order}}</text>
+          <view class="min_icon">
+            {{member.ordercount0}}笔
+            <image src='/static/images/icon_mine_more.png' mode='widthFix'></image>
+          </view>
+        </view>
+      </navigator>
+    </view>
+
+
+    <view>
+
+      <navigator url='/pages/commission/log/index'>
+        <view class='button1'>
+          <text>{{set.texts.commission_detail}}</text>
+          <view class="min_icon">
+            {{member.applycount}}笔
+            <image src='/static/images/icon_mine_more.png' mode='widthFix'></image>
+          </view>
+        </view>
+      </navigator>
+
+      <navigator url='/pages/commission/down/index'>
+        <view class='button1'>
+          <text>{{set.texts.mydown}}</text>
+          <view class="min_icon">
+            {{member.downcount}}人
+            <image src='/static/images/icon_mine_more.png' mode='widthFix'></image>
+          </view>
+        </view>
+      </navigator>
+    </view>
+
+    <view>
+      <block wx:if='{{set.closed_qrcode == 0 && ver>=314}}'>
+        <navigator url='/pages/commission/poster/index'>
+          <view class='button1'>
+            <text>分享海报</text>
+            <view class="min_icon">
+              <image src='/static/images/icon_mine_more.png' mode='widthFix'></image>
+            </view>
+          </view>
+        </navigator>
+      </block>
+      <block wx:elif='{{set.closed_qrcode == 0}}'>
+        <navigator url='/pages/commission/qrcode/index'>
+          <view class='button1'>
+            <text>推广二维码</text>
+            <view class="min_icon">
+              <image src='/static/images/icon_mine_more.png' mode='widthFix'></image>
+            </view>
+          </view>
+        </navigator>
+      </block>
+    </view>
+  </view>
+
+</block>
+<!--作者QQ:1026770372-->

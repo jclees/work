@@ -90,17 +90,22 @@ button::after {
   margin: 0;
 }
 
-.null_data {
-  padding-top: 200rpx;
-  font-size: 32rpx;
-  color: #737373;
+
+.nulldata_wrap {
+  padding: 10% 0;
+}
+
+.nulldata_wrap image {
+  width: 432rpx;
+  margin: 0 auto;
+  display: block;
+}
+
+.nulldata_wrap .txt {
+  font-size: 28rpx;
+  color: #b7b7b7;
   text-align: center;
 }
-
-.null_data image {
-  width: 432rpx;
-}
-
 .scroll_box {
   transition: all 0.5s ease-in-out;
 }

@@ -23,13 +23,24 @@ Page({
   },
   goChat(e) {
     publicMethod.getFormId(e, this)
-    let id = e.currentTarget.dataset.id;
-    if (id == this.data.member_id) {
-      id = e.currentTarget.dataset.beid;
+    let options = e.currentTarget.dataset.options;
+    if (options.be_member_id == this.data.member_id){
+      options.be_member_id = options.member_id
+    }
+    let param = {
+      be_member_id: options.be_member_id,
+      name: options.home_nickname,
+      be_business_id: options.be_business_id,
+      business_id:options.business_id,
+      type: options.type,
+      home_id: options.home_id
     }
     wx.navigateTo({
-      url: '/pages/chatDetail/index?be_member_id=' + id + '&name=' + e.currentTarget.dataset.name,
+      url: '/pages/chatDetail/index?param=' + JSON.stringify(param),
     })
+    // wx.navigateTo({
+    //   url: '/pages/chatDetail/index?be_member_id=' + options.be_member_id + '&name=' + options.home_nickname + '&be_business_id=' + options.be_business_id + '&business_id=' + options.business_id + '&type=' + options.type,
+    // })
   },
   getData() {
     let that = this;

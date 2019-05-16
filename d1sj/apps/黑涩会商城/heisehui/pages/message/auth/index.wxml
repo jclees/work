@@ -1,0 +1,9 @@
+<view class='page'>
+  <view class='inner'>
+    <image class='icon' src='/static/images/icon/cry-220.png'></image>
+    <view class='text'>{{close != 1?"您取消了授权 >_<|||":text}}</view>
+        <block wx:if='{{close != 1}}'>
+          <view class='text1'>您可以在小程序列表删除并重新进入</view>
+        </block>
+    </view>
+  </view>

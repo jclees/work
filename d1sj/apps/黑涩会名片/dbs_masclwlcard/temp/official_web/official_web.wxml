@@ -1,63 +1,46 @@
 <template name="official_web">
-  <scroll-view scroll-y="true" style="height:{{winHeight}}px;background:#f7f7f7">
-    <view class="c_top_img">
-      <image src="{{netWorkData.banner[0].url}}" mode='scaleToFill'></image>
-      <navigator hover-class='none' url="/dbs_masclwlcard/pages/create_network/create_network" wx:if="{{!netWorkData.id && user_flag == 0}}">
-        <form reportSubmit bindsubmit="from_send">
-          <button class='go_config_btn' formType="submit">
-            <view class='text'>暂未设置官网</view>
-            <view class="btn">去设置</view>
-          </button>
-        </form>
-      </navigator>
-    </view>
-    <view style="background: #fff;margin-top: 20rpx;word-break: break-all; font-size: 0" wx:if="{{netWorkData.image.length>0}}">
-      <image mode="widthFix" src="{{item.url}}" wx:for="{{netWorkData.image}}" wx:key="index"></image>
-    </view>
-    <view class="c_model_title" wx:if="{{news.length>0}}">
-      最新动态
-    </view>
-    <view class="c_dynamic_box">
-      <view bindtap="go_dynamic" class="c_dynamic_list clearfix" data-dynamic_id="{{item.id}}" wx:for="{{news}}" wx:key="index">
-        <view class="c_dynamic_img">
-          <image mode="aspectFill" src="{{item.img}}"></image>
-        </view>
-        <view class="c_dynamic_text">
-          <view class="c_dynamic_title">{{item.title}}
-          </view>
-          <view class="c_dynamic_time">
-            {{item.date}}
-          </view>
-        </view>
+  <scroll-view scroll-y="true" style="height:{{winHeight}}px;background:#fff" bindscrolltoupper="refresh" bindscrolltolower="loadMore">
+    <!-- 圈子分享 -->
+  <view style='height:170rpx;'></view>
+    <view class='circle-box'>
+      <view class='nulldata_wrap' wx:if="{{wenzData<=0}}">
+        <image src='/dbs_masclwlcard/images/null_data.png' mode='widthFix'></image>
+        <view class='txt'>暂无数据</view>
       </view>
-    </view>
-    <block wx:if="{{netWorkData.phone}}">
-      <view class="c_model_title">
-        联系电话
-      </view>
-      <view class="about_us">
-        <view bindtap="call_phone" class="about_us_button" data-tel="{{netWorkData.phone}}">
-          {{netWorkData.phone}}
-        </view>
-      </view>
-    </block>
-    <block wx:if="{{!netWorkData.id}}">
-      <view class="weal_tips" wx:if="{{user_flag == 0}}">
-        <view>5人以上企业可申请免费为您制作名片官网</view>
-        <button hover-class='none' open-type='contact' class='applynow_btn'>立即申请</button>
-      </view>
-      <view class="null_data" wx:else>
-        <view>暂未设置官网</view>
-      </view>
-    </block>
-    <view bindtap="open_sm_box" class="bottom_text" wx:if="{{netWorkData.id}}">
-      <text data-company_name="{{main.company_name||main.card.company_name}}" data-company_tel="{{main.card.company_tel}}">技术支持:北京第一时间网络科技有限公司</text>
-    </view>
-    <view style="height:60px;background:transparent;"></view>
-    <!-- <view style="height:40px;background:transparent;" wx:if="{{main.isIphoneX}}"></view> -->
-    <!-- <navigator navigator url="/dbs_masclwlcard/pages/create_network/create_network" wx:elif="{{!netWorkData.id && user_flag == 0}}">
-      <button type="primary">去设置官网</button>
-    </navigator> -->
+      <block wx:for="{{wenzData}}" wx:key="" wx:for-index="idx">
+        <!-- <view style='border-bottom:1px solid #e5e5e5;padding-bottom:30rpx;'> -->
+        <view>
+          <view class='circle'>
+            <view class='circle-head'>
+              <image class='photo' src="{{item.avatar}}" mode='aspectFill'></image>
+              <view>
+                <view class='name_box'>
+                  <view class='name'>{{item.nickname}}
+                    <!-- <image class='icon' src="/images/icon_renz.png" mode='widthFix' wx:if="{{item.business_id != 0}}"></image> -->
+                  </view>
+                </view>
+                <view class='time'>{{item.date}}</view>
+              </view>
+            </view>
+            <view class='circle-centent'>
+              <view class='circle-jottings'>
+                <text>{{item.cont}}</text>
+                <view class="circle-img" wx:if="{{item.imgs.length > 0}}">
+                  <image wx:for="{{item.imgs}}" wx:for-item="items" wx:for-index="subidx" wx:key="" src='{{items}}' data-subidx="{{subidx}}" data-curindex="{{idx}}" bindtap="previewImage" mode="{{item.imgs.length > 1? 'aspectFill': 'widthFix'}}" class="{{item.imgs.length > 1? 'imgduo-width': 'imgyi-width'}}"></image>
+                </view>
+              </view>
+              <view class='circle-footer-operation'>
+                <button hover-class='none' bindtap='downloadImgs' data-txt="{{item.cont}}" data-curindex="{{idx}}">
+                  一键复制图文
+                </button>
+              </view>
+            </view>
 
+          </view>
+        </view>
+      </block>
+
+    </view>
+    <view style='height:120rpx;'></view>
   </scroll-view>
 </template>

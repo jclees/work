@@ -7,10 +7,29 @@
 page {
   overflow-y: hidden;
 }
-.cool_loding{
+
+.f5 {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  justify-content: center;
+  padding: 20rpx 0;
+/*   
+  position: fixed;
+  top: 20rpx;
+  z-index: 100;
+  width: 100%; */
+}
+
+.f5 image {
+  margin-right: 20rpx;
+}
+
+.cool_loding {
   width: 100%;
 }
-.cool_loding > view{
+
+.cool_loding > view {
   display: flex;
   align-items: center;
   font-size: 24rpx;
@@ -19,13 +38,16 @@ page {
   justify-content: center;
   padding: 30rpx 0;
 }
-.cool_loding > view.all_data{
+
+.cool_loding > view.all_data {
   color: #efefef;
 }
-.cool_loding image{
- width: 32rpx;
- margin-right: 10rpx;
+
+.cool_loding image {
+  width: 32rpx;
+  margin-right: 10rpx;
 }
+
 .friend_look {
   width: 100%;
   max-height: 340rpx;
@@ -436,7 +458,7 @@ page {
   display: flex;
   flex-direction: column;
   box-shadow: 0 0 6px #e6e6e6;
-  border-top:1rpx solid #e5e5e5;
+  border-top: 1rpx solid #e5e5e5;
 }
 
 .poster-icon {

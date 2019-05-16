@@ -1,0 +1,61 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"checkInvalidKey": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.6.6",
+	"appid": "wxd5b538612c27f1a4",
+	"projectname": "%E9%BB%91%E6%B6%A9%E4%BC%9A%E5%95%86%E5%9F%8E-%E7%BA%BF%E4%B8%8A%E7%89%88%E6%9C%AC",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 1,
+			"list": [
+				{
+					"id": -1,
+					"name": "产品详情",
+					"pathName": "pages/goods/detail/index",
+					"query": "id=308&frommyshop=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "分销中心",
+					"pathName": "pages/commission/index",
+					"scene": null
+				}
+			]
+		}
+	}
+}

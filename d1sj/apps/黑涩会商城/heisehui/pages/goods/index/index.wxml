@@ -1,0 +1,235 @@
+<template name="tpl_list">
+  <view class='fui-goods-item diy-fui-goods-item'>
+    <navigator hoverClass="none" url="/pages/goods/detail/index?id={{item.id}}">
+      <view class="image" style="background-image:url({{item.thumb}})"></view>
+    </navigator>
+    <view class='detail'>
+      <block wx:if="{{item.saleout}}">
+        <image src="{{item.saleout}}" class="salez"></image>
+      </block>
+      <navigator hoverClass="none" url="/pages/goods/detail/index?id={{item.id}}">
+        <view class='name'>
+          {{item.title}}
+        </view>
+      </navigator>
+      <view class='price'>
+        <view class='text'>
+          ￥{{item.minprice}}
+
+
+        </view>
+        <navigator class='' hoverClass="none" url="/pages/goods/detail/index?id={{item.id}}" style=''>
+          <view class='buy buybtn-2'>立即购买</view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</template>
+
+
+
+<view class='page header-sort navbar'>
+  <view class='fui-header'>
+    <view class='searchbar'>
+      <icon size='18' type='search'></icon>
+      <input name='search' bindconfirm='bindSearch' bindfocus='bindFocus' bindinput='bindInput' focus='{{focusin}}' placeholder='输入关键字进行搜索' value='{{params.keywords}}'></input>
+    </view>
+    <block wx:if='{{!fromsearch}}'>
+      <image class='icon' bindtap='changeMode' src='/static/images/icon/{{listmode == ""?"app":"viewlist"}}.png'></image>
+    </block>
+    <block wx:if='{{fromsearch}}'>
+      <view class='cancel' bindtap='bindback'>取消</view>
+    </block>
+  </view>
+
+  <view class='sort'>
+    <view data-order='' bindtap='bindSort' class='item {{(params.order ==  "" || !params.order)?"on":""}}'>
+      <view class='text'>综合</view>
+    </view>
+    <view bindtap='bindSort' class='item {{params.order == "sales"?"on":""}}' data-order='sales'>
+      <view class='text'>销量</view>
+    </view>
+    <view bindtap='bindSort' class='item item-price {{params.order == "minprice"?"on":""}}' data-order='minprice'>
+      <view class='text'>价格
+        <image class='icon' src='/static/images/icon/listsort{{listorder}}.png'></image>
+      </view>
+    </view>
+    <view bindtap='showFilter' class='item {{isfilter?"on":""}}'>
+      <view class='text'>筛选
+        <image class='icon small' src='{{isfilter?"/static/images/icon-red/filter.png":"/static/images/icon/filter.png"}}'></image>
+      </view>
+    </view>
+  </view>
+  <view class='fui-goods-group {{listmode}}'>
+    <block wx:for='{{list}}' wx:for-item='item' wx:for-index='index' wx:key="*this">
+      <template is="tpl_list" data="{{ item:item }}" />
+    </block>
+  </view>
+
+  <block wx:if='{{loading}}'>
+    <view class='fui-loading'>
+      <view class='icon'></view>
+      <view class='text'>正在加载</view>
+    </view>
+  </block>
+
+  <block wx:if='{{fromsearch}}'>
+    <view class='records'>
+      <view hidden="-1" class='records-title'>
+        <view class='pull-right text-danger'>换一批</view>
+        <view>热门搜索</view>
+      </view>
+      <view hidden="-1" class='navs'>
+        <nav bindtap='bindnav' data-text='推子'>推子</nav>
+        <nav bindtap='bindnav' data-text='推子'>推子</nav>
+        <nav bindtap='bindnav' data-text='推子'>推子</nav>
+      </view>
+      <block wx:if='{{searchRecords.length > 0}}'>
+        <view class='records-title'>
+          <view bindtap='delRecord' class='pull-right text-danger'>清除</view>
+          <view>历史搜索</view>
+        </view>
+        <view class='navs'>
+          <block wx:for='{{searchRecords}}' wx:for-item='item' wx:for-index='index' wx:key="*this">
+            <nav data-text='{{item}}' bindtap='bindnav'>{{item}}</nav>
+          </block>
+        </view>
+      </block>
+    </view>
+  </block>
+
+  <view hidden='true' class='fui-navbar'>
+    <navigator hoverClass='none' url='/pages/index/index' class='nav-item true' openType='redirect'>
+      <image class='icon'>
+      </image>
+      <text class='label'>
+		商城首页	</text>
+    </navigator>
+    <navigator hoverClass='none' openType='redirect' class='nav-item true' url='/pages/shop/caregory/index'>
+      <image class='icon'>
+      </image>
+      <text class='label'>
+		全部分类	</text>
+    </navigator>
+    <navigator hoverClass='none' openType='redirect' class='nav-item true' url='/pages/member/cart/index'>
+      <image class='icon'>
+      </image>
+      <text class='label'>
+		购物车	</text>
+    </navigator>
+    <navigator hoverClass='none' openType='redirect' class='nav-item true' url='/pages/member/index/index'>
+      <image class='icon'>
+      </image>
+      <text class='label'>
+		会员中心	</text>
+    </navigator>
+  </view>
+  <view class='fui-toast out'>
+    <view class='text'>
+    </view>
+  </view>
+  <view class='screen {{isFilterShow?"in":""}}'>
+
+    <view class='attribute'>
+
+      <view class='item on'>
+        <view bindtap='btnFilterBtns' class='btn btn-default-o block {{filterBtns.isrecommand?"btn-danger-o":""}}' data-type='isrecommand'>
+          <block wx:if='{{filterBtns.isrecommand}}'>
+            <icon color='#1b1b1b' size='12' type='success_no_circle'></icon>
+          </block>
+          推荐商品
+        </view>
+      </view>
+
+      <view class='item'>
+        <view bindtap='btnFilterBtns' class='btn btn-default-o block {{filterBtns.isnew?"btn-danger-o":""}}' data-type='isnew'>
+          <block wx:if='{{filterBtns.isnew}}'>
+            <icon color='#1b1b1b' size='12' type='success_no_circle'></icon>
+          </block>
+          新品上市
+        </view>
+      </view>
+
+      <view class='item'>
+        <view bindtap='btnFilterBtns' class='btn btn-default-o block {{filterBtns.ishot?"btn-danger-o":""}}' data-type='ishot'>
+          <block wx:if='{{filterBtns.ishot}}'>
+            <icon color='#1b1b1b' size='12' type='success_no_circle'></icon>
+          </block>
+          热卖商品
+        </view>
+      </view>
+
+      <view class='item'>
+        <view bindtap='btnFilterBtns' class='btn btn-default-o block {{filterBtns.isdiscount?"btn-danger-o":""}}' data-type='isdiscount'>
+          <block wx:if='{{filterBtns.isdiscount}}'>
+            <icon color='#1b1b1b' size='12' type='success_no_circle'></icon>
+          </block>
+          促销商品
+        </view>
+      </view>
+
+      <view class='item'>
+        <view bindtap='btnFilterBtns' class='btn btn-default-o block {{filterBtns.issendfree?"btn-danger-o":""}}' data-type='issendfree'>
+          <block wx:if='{{filterBtns.issendfree}}'>
+            <icon color='#1b1b1b' size='12' type='success_no_circle'></icon>
+          </block>
+          卖家包邮
+        </view>
+      </view>
+
+      <view class='item'>
+        <view bindtap='btnFilterBtns' class='btn btn-default-o block {{filterBtns.istime?"btn-danger-o":""}}' data-type='istime'>
+          <block wx:if='{{filterBtns.istime}}'>
+            <icon color='#1b1b1b' size='12' type='success_no_circle'></icon>
+          </block>
+          限时抢购
+        </view>
+      </view>
+
+    </view>
+    <block wx:if='catlevel !=  && opencategory'>
+      <view class='title'>选择分类</view>
+      <view class='cate' data-catlevel='1'>
+        <view class='item'>
+          <block wx:for='{{category_parent}}' wx:for-item='item' wx:for-index='index' wx:key="*this">
+            <view>
+              <nav data-level='1' bindtap='bindCategoryEvents' class='{{category_parent_selected == item.id?"on":""}}' data-id='{{item.id}}'>{{item.name}}</nav>
+            </view>
+          </block>
+        </view>
+
+        <block wx:if='{{catlevel >= 2}}'>
+          <view class='item'>
+            <block wx:for='{{category_child}}' wx:for-item='item' wx:for-index='index' wx:key="*this">
+              <view>
+                <nav data-level='2' bindtap='bindCategoryEvents' class='{{category_child_selected == item.id?"on":""}}' data-id='{{item.id}}'>{{item.name}}</nav>
+              </view>
+            </block>
+          </view>
+        </block>
+
+        <block wx:if='{{catlevel >= 3}}'>
+          <view class='item'>
+            <block wx:for='{{category_third}}' wx:for-item='item' wx:for-index='index' wx:key="*this">
+              <view>
+                <nav data-level='3' bindtap='bindCategoryEvents' class='{{category_third_selected == item.id?"on":""}}' data-id='{{item.id}}'>{{item.name}}</nav>
+              </view>
+            </block>
+          </view>
+        </block>
+
+      </view>
+    </block>
+
+
+
+    <view class='btns'>
+      <view class='cancel' bindtap='bindFilterCancel'>
+        取消筛选 </view>
+      <view class='confirm' bindtap='bindFilterSubmit'>
+        确认 </view>
+    </view>
+  </view>
+</view>
+<view bindtap='showFilter' class='fui-mask {{isFilterShow?"show":"hide"}}'>
+</view>

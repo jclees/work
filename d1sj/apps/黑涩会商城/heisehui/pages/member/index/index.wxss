@@ -1,0 +1,87 @@
+page{background: #f3f3f3;}
+.badge{background: #1b1b1b;color: #fff;padding: 4rpx 12rpx;border-radius: 99rpx;}
+.member-head { 
+  height: 200rpx; 
+  background: #1b1b1b; 
+  padding-top: 40rpx; 
+  position: relative; 
+  display: -webkit-box; 
+  display: -webkit-flex; 
+  display: -ms-flexbox; 
+  display: flex; 
+  -webkit-box-pack: justify; 
+  -ms-flex-pack: justify; 
+  -webkit-justify-content: space-between; 
+  justify-content: space-between; 
+  -webkit-box-align: center; 
+  -ms-flex-align: center; 
+  margin-bottom:60rpx;
+  }
+.number-radius{
+  background: #1b1b1b;
+  display: block;
+  width: 130%;
+  height: 150rpx;
+  position: absolute;
+  bottom: -60rpx;
+  left:-15%; 
+  z-index: 6;
+  border-radius: 50%;
+}
+
+.bor-bottom{border-bottom: solid 1rpx #ebebeb;}
+
+.user-img{background:#fff;display:block;height:305rpx;}
+.bdsj{margin-top:0px;margin-bottom: 20rpx;}
+.add-bottom{padding-bottom: 25rpx;}
+
+.member-head .setting { height: 40rpx; width: 40rpx; overflow: hidden; position: absolute; top: 10rpx; right:18rpx; background: none; border: 0; padding: 0; }
+.member-head .setting:after { display: none; }
+.member-head .setting wx-image { height: 40rpx; width: 40rpx; vertical-align: top; }
+.member-head .child { width: 30%; text-align: center; position: relative;z-index: 8;}
+.member-head .child.userinfo { width: 40%; color: #fff; padding-top: 20rpx; }
+.member-head .child.userinfo .avatar { height: 96rpx; width: 96rpx; background: #fff; margin: auto; border-radius: 96rpx; border: 4rpx solid #fff; }
+.member-head .child.userinfo .avatar wx-image { height: 96rpx; width: 96rpx; border-radius: 96rpx; display: block; }
+.member-head .child.userinfo .nickname { height: 40rpx; padding-top: 8rpx; font-size: 24rpx; color: inherit; text-align: center; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+.member-head .child.userinfo .level { font-size: 24rpx; color: inherit; text-align: center; }
+.member-head .child .title { padding-top: 48rpx; font-size: 28rpx; color: #fff; text-align: center; }
+.member-head .child .number { font-size: 28rpx; color: #fef31f; text-align: center; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+.member-head .child .btn { width: 104rpx; height: 40rpx; padding: 0; margin: 8rpx auto 0; color: #fff; font-size: 24rpx; line-height: 40rpx; text-align: center; border-radius: 40rpx; border: 2rpx solid #fff; }
+.fui-cell-group .fui-cell .fui-cell-remark { color:#999; text-align:right; font-size:26rpx; margin-right:8rpx; }
+.contact { background: red }
+/*service button*/
+.quic{
+  z-index:999;
+  width:130px;
+}
+ .quic .info{
+  position:fixed;
+  z-index: 19;
+  bottom:100rpx;
+  right:30rpx;
+  padding:20rpx;
+ }
+.quicbg button{
+  background-color: rgba(0, 0, 0, 0);
+  color:white;
+  display:flex;
+  flex-direction:row;
+  padding:0px;
+
+}
+.quicbg button::after{ border:none !important;}
+.quicbg button .pic{
+  width:45rpx;
+  height:45rpx;
+  line-height:45rpx;
+  background:#000;
+  opacity: 0.95;
+  font-size:22rpx;
+  border-radius:100%;
+  padding:22rpx;
+}
+.quicbg button .pic image{
+  width:45rpx;
+  height:45rpx;
+  vertical-align:sub;
+}

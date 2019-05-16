@@ -36,7 +36,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 13,
+			"current": 14,
 			"list": [
 				{
 					"id": 8,
@@ -132,6 +132,13 @@
 				{
 					"id": 13,
 					"name": "我的发圈",
+					"pathName": "pages/mine/myComment/index",
+					"query": "is_who=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的评论",
 					"pathName": "pages/mine/myComment/index",
 					"query": "is_who=2",
 					"scene": null

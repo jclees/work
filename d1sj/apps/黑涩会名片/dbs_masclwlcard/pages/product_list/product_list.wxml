@@ -4,7 +4,7 @@
         <image class="order-image" src="../../images/card/my.png" style="width: 33rpx;height:38rpx;"></image>
       </view>
     </view> -->
-    <navigator hoverClass="none" url="/dbs_masclwlcard/pages/create_product/create_product"><button class="add_product_btn">添加产品 +</button></navigator>
+    <!-- <navigator hoverClass="none" url="/dbs_masclwlcard/pages/create_product/create_product"><button class="add_product_btn">添加产品 +</button></navigator> -->
   <view class="dbl_pro_box">
     <view class="dbl_sub dbl_left">
       <view class="sm_box" wx:for="{{shops}}" wx:key="index">
@@ -18,10 +18,10 @@
               <view class="title_detail">{{item.title}}</view>
               <view class="sale_price">¥{{item.price}}</view>
             </view>
-            <view class="bottom_btn">
+            <!-- <view class="bottom_btn">
              <navigator hoverClass="none" url="/dbs_masclwlcard/pages/create_product/create_product?product_id={{item.id}}"><button>编辑</button></navigator>
               <button class='del_btn' data-productid="{{item.id}}" bindtap='delProduct'>删除</button>
-            </view>
+            </view> -->
           </view>
         </view>
       </view>

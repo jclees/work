@@ -31,7 +31,7 @@
       </button>
     </form>
   </view>
-<view class="demo_line_05">——<text>小小分隔线</text>——</view>
+<!-- <view class="demo_line_05">——<text>小小分隔线</text>——</view> -->
   <view class="cardist">
     <form reportSubmit bindsubmit="send_form" data-card_id="{{item.card_id}}" wx:for="{{test_cardList}}" wx:key="index">
       <!-- <view style="margin:40rpx 0;color: #b6b6b7;font-size: 28rpx; text-align: center;font-weight: 300">来自{{item.source_name}}</view> -->
@@ -41,7 +41,7 @@
         </view>
         <view class="cool">握手名片发起人</view>
         <view class="name" data-card_id="{{item.card_id}}">
-          {{item.card_name}} 
+          {{item.card_name}}
         </view>
         <view class="position">{{item.role_name}}</view>
         <view class="company">{{item.company_name}}</view>

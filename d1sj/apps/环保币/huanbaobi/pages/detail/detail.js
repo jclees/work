@@ -8,7 +8,6 @@ let page = 1;
 Page({
   data: {
     img_url: app.data.imgUrl,
-    isPlayingMusic: true,
     coolStatus:false
   },
   bindgetuserinfoHandler(e) { //授权 获取个人信息
@@ -44,14 +43,11 @@ Page({
       return
     }
     this.audioCtx = wx.createAudioContext('myAudio');
-    this.audioCtx.play()
-
     let that = this
     that.setData({
       member_id: wx.getStorageSync('member_id'),
       configData: wx.getStorageSync("configData"),
       user_info: wx.getStorageSync('user_info'),
-      isPlayingMusic: true
     })
     that.getData()
   },

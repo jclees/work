@@ -4,16 +4,18 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"autoAudits": false,
+		"checkInvalidKey": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.3.0",
-	"appid": "wx39e9b880a6047b77",
-	"projectname": "%E9%BB%91%E6%B6%A9%E4%BC%9A-%E7%BA%BF%E4%B8%8A%E7%89%88%E6%9C%AC",
+	"libVersion": "2.6.6",
+	"appid": "wx63eaf05701b17004",
+	"projectname": "%E9%BB%91%E6%B6%A9%E4%BC%9A%E5%90%8D%E7%89%87-%E7%BA%BF%E4%B8%8A%E7%89%88%E6%9C%AC",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -38,7 +40,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 6,
+			"current": 8,
 			"list": [
 				{
 					"id": 0,
@@ -81,6 +83,19 @@
 					"name": "商品详情页",
 					"pathName": "dbs_masclwlcard/pages/shops/shops_detail",
 					"query": "shops_id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "test",
+					"pathName": "dbs_masclwlcard/pages/test/test",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "发布",
+					"pathName": "dbs_masclwlcard/pages/publish/publish",
 					"scene": null
 				}
 			]

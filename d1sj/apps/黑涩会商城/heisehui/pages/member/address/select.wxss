@@ -1,0 +1,4 @@
+page{background: #f3f3f3}
+.fui-list-inner { border-right: 1px solid #f3f3f3; }
+.fui-list-angle { margin-right: 0; }
+.fui-list-angle wx-image { margin-left: 20rpx; }

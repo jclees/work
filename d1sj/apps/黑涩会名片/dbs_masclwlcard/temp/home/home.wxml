@@ -17,7 +17,7 @@
           </view>
         </view>
       </view> -->
-      <view class='mine_user'>
+      <view class='mine_user' wx:if="{{vipGard.is_to_vip!=0}}">
         <view class='mine_user_bg'>
         </view>
         <view class="mine_user_main {{vipGard.is_vip == 1 ?'act_vip':''}}">
@@ -74,17 +74,17 @@
               <image src='/dbs_masclwlcard/images/mine/icon_mine04.png' mode='widthFix'></image>
               <view>商城设置</view>
             </view>
-            <view bindtap='jump_url' data-url="/dbs_masclwlcard/pages/product_list/product_list">
+            <!-- <view bindtap='jump_url' data-url="/dbs_masclwlcard/pages/product_list/product_list">
               <image src='/dbs_masclwlcard/images/mine/icon_mine05.png' mode='widthFix'></image>
               <view>商品管理</view>
-            </view>
+            </view> -->
             <view bindtap='jump_url' data-url="/dbs_masclwlcard/pages/myOrder/myOrder">
               <image src='/dbs_masclwlcard/images/mine/icon_mine06.png' mode='widthFix'></image>
               <view>订单管理</view>
             </view>
           </view>
         </view>
-        <view class="items">
+        <!-- <view class="items">
           <view class='item_tit'>内容</view>
           <view class="item_con clearfix">
             <view bindtap='jump_url' data-url="/dbs_masclwlcard/pages/create_network/create_network">
@@ -96,7 +96,7 @@
               <view>最新动态</view>
             </view>
           </view>
-        </view>
+        </view> -->
         <view class="items">
           <view class='item_tit'>雷达</view>
           <view class="item_con clearfix">
