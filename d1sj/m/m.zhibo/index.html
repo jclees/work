@@ -27,11 +27,21 @@
         .video-js .vjs-fullscreen-control {
             margin-left: auto;
         }
+        .play_btn{
+            position: fixed;
+            left: 0;
+            top: 10%;
+            z-index: 2;
+            color: #fff;
+        }
     </style>
 </head>
 
 <body>
     <div class="hd">
+        
+    <div onclick="plays()" class="play_btn">播放</div>
+    <!-- <div onclick="covers()" class="cover_btn">全屏</div> -->
         <video id="my-video" class="video video-js vjs-big-play-centered" autoplay preload="auto" poster="m.jpg" data-setup="{}">
             <source src="http://replayqn.wangxiao.eaydu.com/livecourse/306746_02.mp4" type="video/mp4">
             <source src="http://replayqn.wangxiao.eaydu.com/livecourse/306746_02.webm" type="video/webm">
@@ -53,6 +63,20 @@
 <script src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
 <script src="js/video.min.js"></script>
 <script>
+    var myPlayer = videojs('my-video');
+    videojs("my-video").ready(function () {
+        var myPlayer = this;
+        myPlayer.play();
+        myPlayer.currentTime(1440);
+    });
+    function plays() {
+        myPlayer.play();
+    }
+    function covers() {
+        myPlayer.enterFullScreen();
+        // myPlayer.enterFullScreen();
+    }
+
     var myPlayer = videojs('my-video');
     myPlayer.play();
     videojs("my-video").ready(function () {
