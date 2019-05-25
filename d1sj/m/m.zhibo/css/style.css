@@ -1,0 +1,93 @@
+html,body{
+    height: 100%;
+}
+.hd{
+    width: 100%;
+    height: 35%;
+    background: #000;
+}
+.hd .video{
+    width: 100%;
+    height: 100%;
+}
+.bd{
+    width: 100%;
+    position: relative;
+    height: 65%;
+    padding: .15rem;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.bd .con{
+    overflow-x: auto;
+    height: 100%;
+    padding-bottom: .8rem;
+    box-sizing: border-box;
+}
+.bd .con .item{
+    width: 100%;
+    display: flex;
+    padding-bottom: .2rem;
+}
+.bd .con .item .img{
+    width: .8rem;
+    height: .8rem;
+    background: lightblue;
+    border-radius: 100%;
+    margin-right: .15rem;
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+.bd .con .item .info{
+    flex: 1;
+}
+.bd .con .item .name{
+    font-size: .24rem;
+    color: #333;
+    padding-bottom: .03rem;
+}
+.bd .con .item .txt{
+    font-size: .26rem;
+    color: #666;
+    background: lightskyblue;
+    border-radius: .08rem;
+    padding: .1rem .15rem;
+    position: relative;
+    display: inline-block;
+}
+.bd .con .item .txt::after{
+    content: "";
+    position: absolute;
+    left: -.09rem;
+    top: .14rem;
+    width:0;
+    height:0;
+    border-top:.1rem solid transparent;
+    border-bottom:.1rem solid transparent;
+    border-right:.1rem solid lightskyblue;
+}
+.operation{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: .8rem;
+    background: #fff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 .15rem;
+    border-top: 1px solid #f1f1f1;
+}
+.operation input{
+    flex: 1;
+    font-size: 0.26rem;
+}
+.operation .sava_btn{
+    background: lightskyblue;
+    height: .6rem;
+    line-height: .6rem;
+    padding: 0 .4rem;
+    font-size: .16rem;
+    color: #fff;
+}

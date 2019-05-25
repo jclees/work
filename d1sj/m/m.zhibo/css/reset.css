@@ -1,0 +1,130 @@
+/**********
+ * reset
+ *********/
+ * {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    word-wrap:break-word;
+    word-break:break-all;
+}
+
+/* 默认不要下划线 */
+
+a {
+    text-decoration: none;
+}
+
+/* 按钮文本不可选 */
+
+button {
+    user-select: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+/* 加载不出来的图片不要显示灰色边框 */
+
+img:not([src]),
+img[src=""] {
+    opacity: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+input,
+select,
+button,
+textarea {
+    font-size: 100%;
+    font: inherit;
+    border: none;
+    outline: none;
+    resize: none;
+    /*特殊的属性定义  清除浏览器给input自带的样式*/
+    -webkit-appearance: none;
+    /*组件默认的样式空*/
+}
+
+}
+
+html,
+body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.clearfix::after,
+.clearfix::before {
+    content: "";
+    line-height: 0;
+    height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.mult_line_ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
